@@ -1,0 +1,21 @@
+---
+title: "Software"
+toc: true
+toc-location: right
+---
+
+## Required Software
+
+*Placeholder – list of required software and installation instructions go here.*
+
+### R and RStudio / Positron
+
+*Placeholder.*
+
+### Python
+
+*Placeholder.*
+
+### Git
+
+*Placeholder.*

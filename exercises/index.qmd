@@ -1,0 +1,15 @@
+---
+title: "Exercises"
+sidebar: false
+toc: true
+---
+
+## Exercises Overview
+
+*Placeholder – course exercises go here.*
+
+Exercises are designed to reinforce the concepts covered in the course materials.
+
+## Exercise List
+
+*Placeholder – individual exercises will be listed here.*

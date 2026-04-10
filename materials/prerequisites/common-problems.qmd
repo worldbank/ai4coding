@@ -1,0 +1,21 @@
+---
+title: "Common Problems"
+toc: true
+toc-location: right
+---
+
+## Troubleshooting
+
+*Placeholder – common setup issues and solutions go here.*
+
+### Installation Issues
+
+*Placeholder.*
+
+### Authentication Issues
+
+*Placeholder.*
+
+### Environment Issues
+
+*Placeholder.*
