@@ -31,6 +31,21 @@ website:
             - materials/prerequisites/assistant.qmd
             - materials/prerequisites/licenses.qmd
             - materials/prerequisites/common-problems.qmd
+        - section: "Day 1"
+          contents:
+            - materials/day1/index.qmd
+            - materials/day1/demo-refactoring.qmd
+            - materials/day1/ai-overview.qmd
+            - materials/day1/case-studies.qmd
+        - section: "Self-Study"
+          contents:
+            - materials/self-study/index.qmd
+            - materials/self-study/case-studies.qmd
+        - section: "Day 2"
+          contents:
+            - materials/day2/index.qmd
+            - materials/day2/advanced-topics.qmd
+            - materials/day2/case-studies.qmd
 
     - title: "Exercises"
       style: "docked"
