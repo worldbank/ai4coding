@@ -4,18 +4,108 @@ toc: true
 toc-location: right
 ---
 
-## Troubleshooting
+**Issues covered here:**
 
-*Placeholder – common setup issues and solutions go here.*
+- `uv` fails to install or is not recognised after install
+- "Access denied" errors when installing software or running code
+- Positron needs updating but auto-update fails
 
-### Installation Issues
+---
 
-*Placeholder.*
+## UV Installation Problem
 
-### Authentication Issues
+### Symptom
 
-*Placeholder.*
+Running `pip install uv` fails, or `uv --version` returns `command not found` / `not recognised` after install.
 
-### Environment Issues
+### Causes and fixes
 
-*Placeholder.*
+**`pip` not found or points to the wrong Python:**
+
+```powershell
+# Check which pip you have
+pip --version
+
+# If missing, try with the explicit Python launcher
+python -m pip install uv
+# or
+py -m pip install uv
+```
+
+**`uv` installed but not on PATH:**
+
+After install, Python scripts are placed in a folder that may not be on your system PATH (e.g. `%APPDATA%\Python\Python313\Scripts`).
+
+1. Search Windows for **"Edit the system environment variables"**
+2. Under **User variables**, select `Path` → **Edit**
+3. Add the Scripts folder shown in the `pip install uv` output
+4. Restart Command Prompt / PowerShell and retry `uv --version`
+
+**On WB laptops — pip blocked by policy:**
+
+Contact [ITHelp@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org) and request permission to run `pip install` or ask for `uv` to be added to the Software Center.
+
+::: callout-tip
+If `pip install uv` succeeds but the command still isn't found after restarting, check the install output for the Scripts path and add it to PATH as described above.
+:::
+
+---
+
+## Access Denied
+
+### Symptom
+
+An installer or command fails with `Access is denied`, `Permission denied`, or `Error 5`.
+
+### Causes and fixes
+
+**Installing software that requires admin rights:**
+
+Most software at the WB must be installed through the **Software Center** rather than by running an installer directly. If something is missing from the Software Center:
+
+- Submit a [Software Installation Request](https://worldbankgroup.service-now.com/wbg/en/software-installation-request?id=wbg_sc_catalog&sys_id=bd1e71b86f16d340db112d232e3ee4b7&table=sc_cat_item&searchTerm=Software%20installation)
+- Or contact [ITHelp@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org) / visit a [Walk-in centre](https://worldbankgroup.sharepoint.com/sites/itsupport/SitePages/PublishingPages/Walk-in-Centers-in-Washington-DC--05042021-1608401_new.aspx)
+
+**Stata MCP running `.do` files from a OneDrive folder:**
+
+OneDrive folders at the WB include a space in the path (`OneDrive - WBG`), which the Stata MCP extension cannot handle.
+
+**Workaround:** move your project to a local folder with no spaces in the path, e.g.:
+
+```
+C:\Users\wb123456\code\my-project\
+```
+
+This issue is tracked on [GitHub](https://github.com/hanlulong/stata-mcp/issues/52) and will be resolved in a future extension update.
+
+**Writing to a restricted folder:**
+
+If you see access denied when saving files, avoid `C:\Program Files\` and use your home directory (`C:\Users\wbXXXXXXX\`) or a project folder instead.
+
+---
+
+## Positron Update
+
+### Symptom
+
+Positron shows a notification that an update is available but the update fails, or you are on an outdated version and extensions behave unexpectedly.
+
+### Recommended approach on WB laptops
+
+The version in the **Software Center** is the recommended baseline. Reinstall from there to get the latest stable build:
+
+1. Open **Software Center**
+2. Find **Positron** and click **Install** (or **Reinstall**)
+3. This version supports **auto-updating** — after the initial install, Positron will update itself
+
+::: callout-note
+If you installed Positron manually (outside of the Software Center), the auto-update mechanism may not work correctly. Reinstall from the Software Center to restore it.
+:::
+
+### On private laptops
+
+Download the latest installer from <https://positron.posit.co/download.html> and run it. The user-level installer does not require admin rights.
+
+### After any update
+
+Reload the window or restart Positron, then verify your extensions are still active (`Ctrl+Shift+X`). Occasionally an update resets extension states.

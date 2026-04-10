@@ -9,5 +9,23 @@ toc-location: right
 
 *Placeholder – course materials overview goes here.*
 
-This section contains all learning materials for the course, organized by topic.
-Navigate using the sidebar.
+This section contains all learning materials, organized by topic. Use the sidebar to navigate.
+
+---
+
+## Pre-requisites
+
+Before the first session, complete the setup steps in order:
+
+1. **[Software Setup](prerequisites/software.qmd)** — Install Stata, R, Python, Positron, Quarto, Git, and UV
+2. **[GitHub](prerequisites/github.qmd)** — Create a GitHub account, join the WB org, request Copilot access
+3. **[Positron Extensions](prerequisites/extensions.qmd)** — Install and configure the Stata MCP extension
+4. **[Positron Assistant](prerequisites/assistant.qmd)** — Connect GitHub to Positron and enable the AI assistant
+5. **[Licenses & Access](prerequisites/licenses.qmd)** — Understand Copilot quotas, WB overuse budget, and software licences
+6. **[Common Problems](prerequisites/common-problems.qmd)** — UV install issues, access denied errors, Positron update
+
+---
+
+## Course Content
+
+*Placeholder – additional course topics and modules will be listed here.*

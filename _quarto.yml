@@ -20,18 +20,22 @@ website:
     - title: "Materials"
       style: "docked"
       pinned: true
-      collapse-level: 2
+      collapse-level: 3
       contents:
         - materials/index.qmd
         - section: "Pre-requisites"
           contents:
             - materials/prerequisites/software.qmd
             - materials/prerequisites/github.qmd
+            - materials/prerequisites/extensions.qmd
+            - materials/prerequisites/assistant.qmd
+            - materials/prerequisites/licenses.qmd
             - materials/prerequisites/common-problems.qmd
 
     - title: "Exercises"
       style: "docked"
       pinned: true
+      collapse-level: 3
       contents:
         - exercises/index.qmd
 

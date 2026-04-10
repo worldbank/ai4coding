@@ -1,21 +1,57 @@
 ---
-title: "Software"
+title: "Software Setup"
 toc: true
 toc-location: right
 ---
 
+**What you need to do:**
+
+- Install six core tools: Stata, R, Python, Positron, Quarto, Git
+- Install the `uv` Python package manager
+
+---
+
 ## Required Software
 
-*Placeholder – list of required software and installation instructions go here.*
+The table below lists the software needed and the minimum recommended version.
 
-### R and RStudio / Positron
+| Software | Version | Notes |
+|----------|---------|-------|
+| Stata | 19 or higher | MP edition preferred |
+| Positron | latest | User-level install |
+| Quarto | 1.9+ | Admin-level install (all users) |
+| R | 4.5.2+ | Regular install |
+| Python | 3.13+ | Regular install |
+| Git | 2.52+ | Regular install |
 
-*Placeholder.*
+### World Bank Laptops
 
-### Python
+All software above is available through the **Software Center**.
 
-*Placeholder.*
+![Software Center](https://worldbank.github.io/geoPovLearn/seminars/seminar-2026-02/images/software-center.png)
 
-### Git
+If something is missing, submit a [Software Installation Request](https://worldbankgroup.service-now.com/wbg/en/software-installation-request?id=wbg_sc_catalog&sys_id=bd1e71b86f16d340db112d232e3ee4b7&table=sc_cat_item&searchTerm=Software%20installation) or contact [ITHelp@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org).
 
-*Placeholder.*
+::: callout-note
+If you have an older version of Positron, reinstall it — the Software Center version supports auto-updating.
+:::
+
+### Private Laptops
+
+- **R**: <https://cran.r-project.org/>
+- **Python**: <https://www.python.org/downloads/>
+- **Positron**: <https://positron.posit.co/download.html>
+- **Quarto**: <https://quarto.org/docs/get-started/>
+- **Git**: <https://git-scm.com/download/win>
+
+---
+
+## UV: Python Package Manager
+
+`uv` is required for Python environment management.
+
+1. Open Command Prompt or PowerShell (`Win + R` → type `cmd` or `powershell`)
+2. Run: `pip install uv`
+3. Verify: `uv --version` — you should see output like `uv 0.9.18 ...`
+
+For Positron extensions setup (including the **Stata MCP** extension), see [Positron Extensions](extensions.qmd).
