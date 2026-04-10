@@ -1,0 +1,58 @@
+---
+title: "Self-Study — Overview"
+toc: true
+toc-location: right
+---
+
+**What the self-study period is for:**
+
+- Practice AI-assisted coding on your own, at your own pace
+- Get comfortable with the Positron + Copilot workflow before Day 2
+- Accumulate specific questions and observations to bring back to the group
+
+---
+
+## How It Works
+
+The self-study period runs for **2–3 days** between the two sessions.
+You work independently through the structured case studies below and document your experience.
+
+### Teams channel
+
+A live Teams channel is open throughout the self-study period.
+Use it to ask questions, share screenshots of what worked or didn't, and pick up tips from colleagues.
+
+*Placeholder — add Teams channel link here.*
+
+### Submission
+
+At the end of the self-study period you are expected to **submit a completed case study**
+showing how you used AI assistance. This is one of the two course deliverables.
+
+- Submit via *placeholder — add submission link/instructions*
+- Deadline: *placeholder — before Session 2 start*
+- Format: a brief write-up (half a page) + the code you produced
+
+::: callout-note
+You do not need to submit a perfect result. Honest documentation of what worked, what failed, and what questions you have is more valuable than a polished but uncritical submission.
+:::
+
+---
+
+## Suggested Approach
+
+1. Pick **one case study** from the list below that is closest to your current work
+2. Set up the exercise files in a local folder (no OneDrive paths with spaces — see [Common Problems](../prerequisites/common-problems.qmd))
+3. Attempt the task first without AI to have a baseline
+4. Repeat with AI assistance and note the differences
+5. Write up your observations and open questions
+
+---
+
+## Case Studies
+
+| Case study | Best for | Link |
+|------------|---------|------|
+| Reproducing old code with new data | Anyone with legacy scripts | [→](case-studies.qmd#reproducing-old-code) |
+| Reproducing an analysis from an example | New to a topic or language | [→](case-studies.qmd#reproducing-from-example) |
+| Trying a different language (R or Python instead of Stata) | Stata users wanting to expand | [→](case-studies.qmd#trying-a-different-language) |

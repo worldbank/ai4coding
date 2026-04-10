@@ -1,0 +1,41 @@
+---
+title: "Day 2 — Everyday AI-Assisted Coding"
+toc: true
+toc-location: right
+---
+
+**Session goals:**
+
+- Address questions and blockers from the self-study period
+- Learn to plan and execute complex, multi-step tasks with an AI agent
+- Understand prompt engineering, token cost, and when to stop using AI
+- Get hands-on with advanced use cases: agentic development, Positron Data Bot
+
+By the end of this session you should be able to delegate a complex analytical task to an
+AI agent, supervise its execution, and course-correct when it goes off track.
+
+---
+
+## Session Structure (3 hours)
+
+| Block | Duration | Topic |
+|-------|----------|-------|
+| 1 | 30 min | Q&A from self-study — open discussion of challenges and discoveries |
+| 2 | 20 min | Demo: planning and executing a complex task with an agent |
+| 3 | 40 min | [Advanced topics presentation](advanced-topics.qmd) |
+| 4 | 60 min | [Case studies](case-studies.qmd) — hands-on practice |
+| 5 | 10 min | Q&A and wrap-up |
+
+---
+
+## Course Completion
+
+To complete the course, submit **two deliverables**:
+
+| Deliverable | When | What |
+|-------------|------|------|
+| Self-study case study | Before Day 2 | See [Self-Study](../self-study/index.qmd) |
+| Day 2 case study | Within one week after Day 2 | See [Day 2 Case Studies](case-studies.qmd) |
+
+Both submissions demonstrate independent use of AI assistance for coding.
+Successful submission is required for course completion.

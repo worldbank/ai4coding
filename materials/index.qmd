@@ -7,25 +7,48 @@ toc-location: right
 
 ## Overview
 
-*Placeholder – course materials overview goes here.*
-
-This section contains all learning materials, organized by topic. Use the sidebar to navigate.
+This section contains all learning materials for the course.
+Complete the **Pre-requisites** before Day 1, then follow the course in order.
 
 ---
 
 ## Pre-requisites
 
-Before the first session, complete the setup steps in order:
+Complete these setup steps **before the first session**:
 
-1. **[Software Setup](prerequisites/software.qmd)** — Install Stata, R, Python, Positron, Quarto, Git, and UV
-2. **[GitHub](prerequisites/github.qmd)** — Create a GitHub account, join the WB org, request Copilot access
-3. **[Positron Extensions](prerequisites/extensions.qmd)** — Install and configure the Stata MCP extension
-4. **[Positron Assistant](prerequisites/assistant.qmd)** — Connect GitHub to Positron and enable the AI assistant
-5. **[Licenses & Access](prerequisites/licenses.qmd)** — Understand Copilot quotas, WB overuse budget, and software licences
-6. **[Common Problems](prerequisites/common-problems.qmd)** — UV install issues, access denied errors, Positron update
+1. [Software Setup](prerequisites/software.qmd) — Stata, R, Python, Positron, Quarto, Git, UV
+2. [GitHub](prerequisites/github.qmd) — account, WB org membership, Copilot access
+3. [Positron Extensions](prerequisites/extensions.qmd) — Stata MCP extension
+4. [Positron Assistant](prerequisites/assistant.qmd) — connect GitHub, enable AI
+5. [Licenses & Access](prerequisites/licenses.qmd) — Copilot quotas and WB budget
+6. [Common Problems](prerequisites/common-problems.qmd) — UV, access denied, Positron update
 
 ---
 
-## Course Content
+## Day 1 — Introduction to AI-Assisted Coding
 
-*Placeholder – additional course topics and modules will be listed here.*
+**3-hour in-person / hybrid session**
+
+- [Session Overview](day1/index.qmd)
+- [Opening Demo: Refactoring With and Without AI](day1/demo-refactoring.qmd)
+- [AI Overview](day1/ai-overview.qmd) — how LLMs work, strengths/limits, responsible use, prompting
+- [Case Studies](day1/case-studies.qmd) — code refactoring and reproducibility packages
+
+---
+
+## Self-Study Period
+
+**2–3 days of independent practice between sessions**
+
+- [Overview & Instructions](self-study/index.qmd)
+- [Case Studies](self-study/case-studies.qmd) — reproduce old code, reproduce from example, try a new language
+
+---
+
+## Day 2 — Everyday AI-Assisted Coding
+
+**3-hour in-person / hybrid session**
+
+- [Session Overview](day2/index.qmd)
+- [Advanced Topics](day2/advanced-topics.qmd) — prompt engineering, cost, Git workflow, agents and skills
+- [Case Studies](day2/case-studies.qmd) — complex task planning, testing & debugging, Positron Data Bot

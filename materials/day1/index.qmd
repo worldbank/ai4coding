@@ -1,0 +1,41 @@
+---
+title: "Day 1 — Introduction to AI-Assisted Coding"
+toc: true
+toc-location: right
+---
+
+**Session goals:**
+
+- See AI in action: live code refactoring demo with and without AI assistance
+- Troubleshoot your Positron + GitHub Copilot setup
+- Understand what AI can and cannot do for your coding workflow
+- Practice the first two use cases: code refactoring and reproducibility package writing
+
+By the end of this session you should be able to use AI independently on your
+own computer and be ready for the self-study exercises.
+
+---
+
+## Session Structure (3 hours)
+
+| Block | Duration | Topic |
+|-------|----------|-------|
+| 1 | 20 min | [Opening demo](demo-refactoring.qmd) — refactoring with and without AI |
+| 2 | 30 min | Software walkthrough and troubleshooting |
+| 3 | 45 min | [AI overview presentation](ai-overview.qmd) |
+| 4 | 60 min | [Case studies](case-studies.qmd) — hands-on practice |
+| 5 | 15 min | Q&A and discussion |
+
+---
+
+## Before You Arrive
+
+Make sure all prerequisites are complete:
+
+1. [Software Setup](../prerequisites/software.qmd)
+2. [GitHub Setup](../prerequisites/github.qmd)
+3. [Positron Extensions](../prerequisites/extensions.qmd)
+4. [Positron Assistant](../prerequisites/assistant.qmd)
+
+If you run into issues, check [Common Problems](../prerequisites/common-problems.qmd) or
+contact [ITHelp@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org) before the session.
