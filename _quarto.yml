@@ -2,12 +2,41 @@ project:
   type: website
 
 website:
-  title: "ai4coding"
+  title: "AI for Coding"
   navbar:
+    background: primary
+    search: true
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+      - text: "Home"
+        href: index.qmd
+      - text: "Materials"
+        href: materials/index.qmd
+      - text: "Exercises"
+        href: exercises/index.qmd
+      - text: "About"
+        href: about.qmd
+
+  sidebar:
+    - title: "Materials"
+      style: "docked"
+      pinned: true
+      collapse-level: 2
+      contents:
+        - materials/index.qmd
+        - section: "Pre-requisites"
+          contents:
+            - materials/prerequisites/software.qmd
+            - materials/prerequisites/github.qmd
+            - materials/prerequisites/common-problems.qmd
+
+    - title: "Exercises"
+      style: "docked"
+      pinned: true
+      contents:
+        - exercises/index.qmd
+
+  page-navigation: true
+  back-to-top-navigation: true
 
 format:
   html:
@@ -16,6 +45,3 @@ format:
       - brand
     css: styles.css
     toc: true
-
-
-

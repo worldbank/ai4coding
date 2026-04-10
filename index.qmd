@@ -1,7 +1,39 @@
 ---
-title: "ai4coding"
+title: "AI for Coding"
+sidebar: false
+toc: true
 ---
 
-This is a Quarto website.
+## Course Overview
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+*Placeholder – brief course description goes here.*
+
+---
+
+## Syllabus
+
+*Placeholder – full course syllabus goes here.*
+
+---
+
+## Schedule & Plan
+
+*Placeholder – session schedule, dates, and topics go here.*
+
+| Session | Date | Topic |
+|---------|------|-------|
+| 1 | TBD | *Placeholder* |
+| 2 | TBD | *Placeholder* |
+| 3 | TBD | *Placeholder* |
+
+---
+
+## Learning Objectives
+
+*Placeholder – list of learning objectives goes here.*
+
+---
+
+## Logistics & Organisation
+
+*Placeholder – logistics, access, communication channels, etc.*

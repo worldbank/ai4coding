@@ -1,0 +1,13 @@
+---
+title: "Materials"
+sidebar: true
+toc: true
+toc-location: right
+---
+
+## Overview
+
+*Placeholder – course materials overview goes here.*
+
+This section contains all learning materials for the course, organized by topic.
+Navigate using the sidebar.

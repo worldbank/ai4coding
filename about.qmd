@@ -1,5 +1,50 @@
 ---
 title: "About"
+sidebar: false
+toc: true
 ---
 
-About this site
+## Lecturer
+
+### Eduard Bukin
+
+*Economist passionate about spatial data and poverty analysis*
+
+Eduard Bukin is an experienced economist, data scientist, and statistician
+spending the last decade at the World Bank, UN, and academia. His career has focused
+on econometrics, economic research, microeconomics, and statistics, with a
+strong emphasis on empowering non-specialists to extract insights from complex
+datasets and effectively communicate analyses through interactive web tools, and
+artificial intelligence.
+
+Key technical expertise lies in the use of modern data science technologies and
+programming languages such as R, Python, STATA, and GIS tools. He holds a
+Master's degree in Rural Development from Ghent University and pursues a Ph.D. in
+Agricultural Economics from Justus Liebig University Giessen.
+
+- Email: [ebukin@worldbank.org](mailto:ebukin@worldbank.org)
+- GitHub: [EBukin](https://github.com/EBukin)
+
+---
+
+## About This Course
+
+*Placeholder – course description, motivation, and context go here.*
+
+---
+
+## Acknowledgements
+
+*Placeholder – acknowledgements, funding, and contributors go here.*
+
+---
+
+## License & Reuse
+
+*Placeholder – license information and reuse guidelines go here.*
+
+---
+
+## Useful Links
+
+*Placeholder – links to related projects, repositories, and resources go here.*

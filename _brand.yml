@@ -1,0 +1,63 @@
+meta:
+  name: AI 4 Coding
+  link:
+    home: https://worldbank.github.io/ai4coding/
+    github: https://github.com/worldbank/ai4coding
+
+color:
+  palette:
+    wb-blue: "#009FDA"
+    wb-navy: "#003263"
+    wb-red: "#EB1C2D"
+    wb-light: "#F5F9FC"
+    white: "#FFFFFF"
+    black: "#1A1A2E"
+    gray: "#5C6878"
+    light-gray: "#E8EDF2"
+    green: "#2E8B57"
+    orange: "#E87722"
+    teal: "#008591"
+    blue: "#009FDA"
+    red: "#EB1C2D"
+  foreground: black
+  background: white
+  primary: wb-blue
+  secondary: gray
+  tertiary: light-gray
+  success: green
+  info: teal
+  warning: orange
+  danger: red
+  light: wb-light
+  dark: wb-navy
+
+typography:
+  fonts:
+    - family: Source Sans Pro
+      source: google
+      weight: [300, 400, 600, 700]
+      style: [normal, italic]
+    - family: Source Serif 4
+      source: google
+      weight: [400, 600]
+      style: [normal, italic]
+    - family: Source Code Pro
+      source: google
+      weight: [400, 500]
+  base:
+    family: Source Sans Pro
+    size: 16px
+    line-height: 1.6
+  headings:
+    family: Source Serif 4
+    weight: 600
+    color: wb-navy
+  monospace:
+    family: Source Code Pro
+    size: 0.9em
+  monospace-inline:
+    color: wb-navy
+    background-color: light-gray
+  link:
+    color: wb-blue
+    weight: 600

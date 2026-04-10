@@ -1,0 +1,21 @@
+---
+title: "GitHub"
+toc: true
+toc-location: right
+---
+
+## GitHub Setup
+
+*Placeholder – GitHub account setup and workflow overview goes here.*
+
+### Creating an Account
+
+*Placeholder.*
+
+### Repositories and Cloning
+
+*Placeholder.*
+
+### GitHub Copilot
+
+*Placeholder.*
