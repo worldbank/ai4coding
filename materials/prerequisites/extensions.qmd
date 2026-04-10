@@ -1,0 +1,75 @@
+---
+title: "Positron Extensions"
+toc: true
+toc-location: right
+---
+
+**What you need to do:**
+
+- Open the Extensions panel in Positron and install the **Stata MCP** extension
+- Set the path to your Stata executable and the Stata edition
+- Verify Stata runs correctly from Positron
+
+::: callout-note
+Extensions are add-ons that extend Positron's functionality. Install them once; they persist across sessions.
+:::
+
+---
+
+## Managing Extensions
+
+Open the Extensions panel with `Ctrl+Shift+X` or click the square icon ![Extensions icon](https://worldbank.github.io/geoPovLearn/seminars/seminar-2026-02/images/paste-2.png) on the left sidebar.
+
+To install any extension: search by name → click **Install** → reload if prompted (`Ctrl+Shift+P` → `Developer: Reload Window`).
+
+---
+
+## Stata MCP Extension
+
+The [Stata MCP extension](https://open-vsx.org/extension/DeepEcon/stata-mcp) enables **Model Context Protocol (MCP)** for Stata. It lets you:
+
+- Run Stata `.do` files directly from Positron
+- Give AI agents (GitHub Copilot, Claude) full context of your Stata environment
+- See Stata output inside Positron without switching windows
+
+### Install
+
+1. Open the Extensions panel (`Ctrl+Shift+X`)
+2. Search for **Stata MCP**
+3. Click **Install**
+4. Reload Positron: `Ctrl+Shift+P` → `Developer: Reload Window`
+
+### Configure
+
+Open settings (`Ctrl+,`) and update the two Stata settings:
+
+| Setting | Value | Notes |
+|---------|-------|-------|
+| `stata-vscode.stataPath` | `C:\Program Files\StataNow19\` | Adjust if Stata is installed elsewhere |
+| `stata-vscode.stataEdition` | `mp` | Use `se` or `be` if you have a different edition |
+
+### Verify
+
+Create a new `.do` file and enter:
+
+```stata
+sysuse auto
+summarize price
+display "Stata is working!"
+```
+
+| # | Action |
+|---|--------|
+| 1 | Save the file (`Ctrl+S`) — **unsaved edits are not executed** |
+| 2 | Run with `Ctrl+Shift+D`, or `Ctrl+Shift+P` → `Stata: Run Current File` |
+| 3 | Check output: `Ctrl+Shift+P` → `Output: Show Output Channels` → `Stata` |
+
+::: callout-tip
+You can drag the Output panel to a different position in Positron to keep it visible alongside your code.
+:::
+
+---
+
+## Other Recommended Extensions
+
+*Placeholder — add further extensions as the course expands (e.g., Quarto, Python, R-related).*

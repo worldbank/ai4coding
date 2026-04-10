@@ -4,18 +4,102 @@ toc: true
 toc-location: right
 ---
 
-## GitHub Setup
+**What you need to do:**
 
-*Placeholder – GitHub account setup and workflow overview goes here.*
+- Create a GitHub account using your **personal** email (not WB email)
+- Join the World Bank GitHub organization via eServices
+- Request GitHub Copilot access from the WB organization or subscribe privately
 
-### Creating an Account
+---
 
-*Placeholder.*
+## Access Levels
 
-### Repositories and Cloning
+Different setup steps unlock different capabilities:
 
-*Placeholder.*
+| Setup | Repositories | GitHub Copilot | WB Org Repos |
+|-------|-------------|----------------|--------------|
+| No GitHub account | Public only | ❌ | ❌ |
+| Personal account | Personal repos | ⚠️ Limited, no Claude | ❌ |
+| + Copilot Pro/Pro+ subscription | Personal repos | ✅ Full (500/1500 req/mo), Claude | ❌ |
+| + WB Org member | Personal + WB repos | ⚠️ Basic only | ✅ |
+| + WB Org + WB Copilot access | Personal + WB repos | ✅ Full (300 req/mo), Claude, GPT-4.5 | ✅ |
 
-### GitHub Copilot
+::: callout-tip
+For AI-assisted coding you need at minimum a personal GitHub account with Copilot access (private subscription **or** WB Copilot access).
+:::
 
-*Placeholder.*
+---
+
+## Step 1: Create a GitHub Account
+
+Create an account at <https://github.com/signup>.
+
+::: callout-warning
+Use your **personal email address**, not your World Bank email.
+:::
+
+---
+
+## Step 2: Join the World Bank GitHub Organization
+
+1. Submit a [Join GitHub Organization Account Request](https://worldbankgroup.service-now.com/wbg/en/join-github-organization-account-request?id=wbg_sc_catalog&sys_id=910e1739db1a54903c5960ab13961912&table=sc_cat_item&searchTerm=github) on eServices to join [github.com/worldbank](https://github.com/worldbank)
+2. Accept the invitation email sent to your GitHub account email
+3. Confirm membership by following the steps in the email
+
+::: callout-note
+If you don't accept the invitation within a few days it expires — resubmit through eServices.
+:::
+
+::: callout-warning
+**Inactivity policy.** Members who have not contributed to any WB GitHub repository for several months may be removed from the organisation automatically. If you lose access, resubmit the eServices request to rejoin. This does **not** affect your personal GitHub account or Copilot subscription.
+
+<!-- TODO: confirm exact inactivity period with github@worldbank.org and update this note -->
+:::
+
+---
+
+## Step 3: Request GitHub Copilot Access
+
+After joining the WB org, go to [GitHub → Settings → Copilot](https://github.com/settings/copilot).
+
+![Copilot settings page](https://worldbank.github.io/geoPovLearn/seminars/seminar-2026-02/images/gh-copilot-access-1.png)
+
+Scroll down to **"Get Copilot from an organization"** and click **Request access** from the worldbank organization.
+
+![Request access button](https://worldbank.github.io/geoPovLearn/seminars/seminar-2026-02/images/gh-copilot-access-2.png)
+
+Then send an email to [github@worldbank.org](mailto:github@worldbank.org) with:
+
+- Subject: `Request GitHub Copilot Access`
+- Body: your GitHub username + brief reason
+- Copy your manager for approval
+
+::: callout-tip
+[Bryan Cahill](mailto:bcahill@worldbankgroup.org) and [github@worldbank.org](mailto:github@worldbank.org) manage the WB org and can help.
+:::
+
+---
+
+## Step 4: Verify Copilot Access
+
+Go to [GitHub → Settings → Copilot](https://github.com/settings/copilot) and check your usage statistics.
+
+**No access:**
+
+![No Copilot access](https://worldbank.github.io/geoPovLearn/seminars/seminar-2026-02/images/gh-copilot-access-3a.png)
+
+**Access granted:**
+
+![Copilot access confirmed](https://worldbank.github.io/geoPovLearn/seminars/seminar-2026-02/images/gh-copilot-access-4a.png)
+
+---
+
+## Step 5: Overuse Budget (Optional)
+
+The WB plan includes 300 premium requests/month. To enable budget for overuse:
+
+1. Get manager approval for a budget code
+2. Set a monthly spending limit
+3. Email [github@worldbank.org](mailto:github@worldbank.org) with your budget code (cc your manager)
+
+<!-- TODO: add direct link to the WB internal page / eServices form for Copilot overuse budget request -->
