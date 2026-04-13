@@ -38,7 +38,6 @@ Different setup steps unlock different capabilities:
 For AI-assisted coding you need at minimum a personal GitHub account with Copilot access (private subscription **or** WB Copilot access).
 :::
 
-
 ## Create a GitHub Account
 
 Create an account at <https://github.com/signup>. Use your [**personal email address**]{style="background-color: #c0392b; color: white; padding: 2px 4px;"}, not your World Bank email.
@@ -116,10 +115,21 @@ Go to [GitHub → Settings → Copilot](https://github.com/settings/copilot) and
 ## Enable Premium Request Overuse
 
 The WB plan includes 300 premium requests/month. This is sufficient but limited.
-If you find yourself hitting the limit, you can request an overuse budget to increase your monthly limit.
+
+To check your usage, go to [GitHub → Settings → Copilot](https://github.com/settings/copilot/features) and scroll down to the "Usage" section.
+
+![GH Copilot 100% use limit](../../assets/img/gh-max.png){width="600"}
+
+When you reach 100% of your monthly premium request limit, you will lose access
+to advanced LLMs (Claude / GPT 5.4) for the rest of the month. You can still
+use basic Copilot features that rely on older models, but the quality and
+capabilities will be significantly reduced. The limit resets at the beginning of
+each month.
 
 To enable budget for overuse **enable [Premium Request Chargeback Process](https://github.com/worldbank/ospo/blob/main/docs/copilot/premium-request-chargeback.md)**:
 
 1. Get manager approval and a budget code.
 2. Set a monthly spending limit.
 3. Email [github@worldbank.org](mailto:github@worldbank.org) with your budget code (cc your manager)
+
+With a private plan, you can set up overuse through [Billing > Budgets](https://github.com/settings/billing/budgets).
