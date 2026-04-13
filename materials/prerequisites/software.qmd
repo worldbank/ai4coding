@@ -9,49 +9,137 @@ toc-location: right
 - Install six core tools: Stata, R, Python, Positron, Quarto, Git
 - Install the `uv` Python package manager
 
----
+------------------------------------------------------------------------
 
-## Required Software
+## Software Installation
 
-The table below lists the software needed and the minimum recommended version.
+**World Bank Laptops**
 
-| Software | Version | Notes |
-|----------|---------|-------|
-| Stata | 19 or higher | MP edition preferred |
-| Positron | latest | User-level install |
-| Quarto | 1.9+ | Admin-level install (all users) |
-| R | 4.5.2+ | Regular install |
-| Python | 3.13+ | Regular install |
-| Git | 2.52+ | Regular install |
+1.  Restart your computer to ensure it is fully up to date.
+2.
+3.  Open the **Software Center** and install all items in the table
+    below in this exact order.
 
-### World Bank Laptops
+4.  If any program from @tbl-software does not appear in the Software
+    Center, submit a [Software Installation Request](https://worldbankgroup.service-now.com/wbg/en/software-installation-request?id=wbg_sc_catalog&sys_id=bd1e71b86f16d340db112d232e3ee4b7&table=sc_cat_item&searchTerm=Software%20installation)
+    or contact [ITHelp\@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org).
 
-All software above is available through the **Software Center**.
+    ![](../../assets/img/software-center.png)
 
-![Software Center](https://worldbank.github.io/geoPovLearn/seminars/seminar-2026-02/images/software-center.png)
 
-If something is missing, submit a [Software Installation Request](https://worldbankgroup.service-now.com/wbg/en/software-installation-request?id=wbg_sc_catalog&sys_id=bd1e71b86f16d340db112d232e3ee4b7&table=sc_cat_item&searchTerm=Software%20installation) or contact [ITHelp@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org).
+| Software | WB Laptop (Software Center) | Private Laptop |
+|:-----------------:|:--------------------------------:|-------------------|
+| Stata (19+ MP) | ![](../../assets/img/sc-stata.png){width="50"} |  |
+| Positron (latest) | ![](../../assets/img/sc-positron.png){width="50"} | [positron.posit.co](https://positron.posit.co/download.html) |
+| Quarto (1.9+) | ![](../../assets/img/sc-quarto.png){width="50"} | [quarto.org](https://quarto.org/docs/get-started/) |
+| R (4.5.3+) | ![](../../assets/img/sc-r.png){width="50"} | [cran.r-project.org](https://cran.r-project.org/) |
+| Python (3.13+) | ![](../../assets/img/sc-python.png){width="50"} | [python.org](https://www.python.org/downloads/) |
+| `uv` Python package manager | See below. |  See below. |
+| Git (2.52+) | ![](../../assets/img/sc-git.png){width="50"} | [git-scm.com](https://git-scm.com/download/win) |
 
-::: callout-note
-If you have an older version of Positron, reinstall it — the Software Center version supports auto-updating.
+: Software {#tbl-software}
+
+
+**`uv`: Python environment management**
+
+1.  Press `Windows` button and type: `Power Shell`
+2.  Type commands below and hit enter
+
+``` ps
+pip install uv
+uv --version
+```
+
+::: {.callout-info collapse="true"}
+### GIF guide for `uv` installation
+
+![](../../assets/img/uv-working.gif){width="650"}
 :::
 
-### Private Laptops
+::::::: columns
+:::: {.column width="50%"}
+::: callout-note
+**If any software was previously installed from the Software Center:**
 
-- **R**: <https://cran.r-project.org/>
-- **Python**: <https://www.python.org/downloads/>
-- **Positron**: <https://positron.posit.co/download.html>
-- **Quarto**: <https://quarto.org/docs/get-started/>
-- **Git**: <https://git-scm.com/download/win>
+Press "**Install**" and each eligible package will update to the latest
+version.
+:::
+::::
 
----
+:::: {.column width="50%"}
+::: callout-warning
+**If any software was previously installed manually (by using an admin
+password):**
 
-## UV: Python Package Manager
+Contact [ITHelp\@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org)
+to remove it first.
+:::
+::::
+:::::::
 
-`uv` is required for Python environment management.
 
-1. Open Command Prompt or PowerShell (`Win + R` → type `cmd` or `powershell`)
-2. Run: `pip install uv`
-3. Verify: `uv --version` — you should see output like `uv 0.9.18 ...`
+## Verification
 
-For Positron extensions setup (including the **Stata MCP** extension), see [Positron Extensions](extensions.qmd).
+::: {.panel-tabset}
+
+## Positron
+
+Open **Positron**: If it launches, it is working! See [Positron
+Overview](https://positron.posit.co/layout.html#basic-overview) for help
+about the layout:
+
+![Positron layout](../../assets/img/ui-positron.jpeg){width="650"}
+
+## R
+
+In Positron:
+
+- Open "Console" (`Ctrl + Shift + P` and type "Console: Focus on
+  Console") or navigate to "**Panel \> CONSOLE**". You should see R
+  there.
+
+![](../../assets/img/R-working.gif){width="650"}
+
+## Python
+
+In Positron:
+
+1. Open **Terminal** inside Positron: (or `` Ctrl + Shift + ` `` or
+    `Ctrl + Shift + P` and type: "**Terminal: Focus Terminal**").
+2. Type text below and hit "Enter". It should work smoothly.
+
+``` ps
+python --version
+pip list
+```
+
+![](../../assets/img/python-working.gif){width="650"}
+
+## Quarto
+
+**Quarto**
+
+1.  Open **Terminal** inside Positron: (or `` Ctrl + Shift + ` `` or
+    `Ctrl + Shift + P` and type: "**Terminal: Focus Terminal**").
+2.  Type text below and hit "Enter". It should work smoothly.
+
+``` ps
+quarto --version
+quarto check
+```
+
+![](../../assets/img/quarto-working.gif){width="650"}
+
+## `uv`
+
+1.  Open **Terminal** inside Positron: (or `` Ctrl + Shift + ` `` or
+    `Ctrl + Shift + P` and type: "**Terminal: Focus Terminal**").
+2.  Type text below and hit "Enter". It should work smoothly.
+
+``` ps
+uv --version
+```
+
+![](../../assets/img/uv-working.gif){width="650"}
+
+:::
