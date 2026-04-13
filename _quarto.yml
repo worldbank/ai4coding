@@ -57,6 +57,9 @@ website:
   page-navigation: true
   back-to-top-navigation: true
 
+execute:
+  freeze: true
+
 format:
   html:
     theme:
