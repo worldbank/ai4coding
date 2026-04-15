@@ -4,46 +4,73 @@ toc: true
 toc-location: right
 ---
 
+::: callout-warning
+## Minimum requirement for this course:
+
+1. a **personal GitHub account**
+2. a **GitHub Copilot** subscription (private or institutional).
+3. **available premium request** ([chek here](https://github.com/settings/copilot/features))
+:::
+
+
+> **Why?** GitHub hosts your code repositories and enables collaboration with
+  version control. It also provides access to **GitHub Copilot**, an AI pair
+  programmer that suggests and completes code directly in your editor.
+
 **What you need to do:**
 
-- [Create a GitHub account](https://github.com/signup) using your [**personal email address**]{style="background-color: #c0392b; color: white; padding: 2px 4px;"} (not the WB email)
+1. [**Create a GitHub account**](https://github.com/signup) with your
+   [**personal email**]{style="background-color: #c0392b; color: white; padding: 2px 4px;"} (not your WB email).
 
-- Join the [github.com/worldbank](https://github.com/worldbank) (World Bank GitHub organization) [via eServices](https://worldbankgroup.service-now.com/wbg/en/join-github-organization-account-request?id=wbg_sc_catalog&sys_id=910e1739db1a54903c5960ab13961912&table=sc_cat_item&searchTerm=github)
+2. [**Join the WB GitHub organization**](https://worldbankgroup.service-now.com/wbg/en/join-github-organization-account-request?id=wbg_sc_catalog&sys_id=910e1739db1a54903c5960ab13961912&table=sc_cat_item&searchTerm=github) ([github.com/worldbank](https://github.com/worldbank)).
+   — See [WB GitHub Enterprise Overview](https://github.com/worldbank/ospo/tree/main?tab=readme-ov-file#octocat-github-enterprise)
 
-  - See [WB GitHub Enterprise Overview](https://github.com/worldbank/ospo/tree/main?tab=readme-ov-file#octocat-github-enterprise)
+3. **Get GitHub Copilot access** — either [request it from WB](https://github.com/worldbank/ospo/tree/main?tab=readme-ov-file#-github-copilot) or [subscribe privately](https://github.com/features/copilot/plans).
 
-- Request GitHub Copilot access from the WB organization or subscribe privately.
+4. Update your **Copilot premium request budget** (optional but recommended) — the WB plan includes 300 free premium requests/month (private subscription includes 500/1500). Beyond that, requests are blocked unless you set up a budget. With a private subscription, you can can [update your Copilot premium request budget](https://github.com/settings/billing/budgets) through GitHub billing settings, while with the WB plan you need to follow **[Enable premium request chargeback](https://github.com/worldbank/ospo/blob/main/docs/copilot/premium-request-chargeback.md)**.
 
-  - See: [WB GitHub Copilot](https://github.com/worldbank/ospo/tree/main?tab=readme-ov-file#-github-copilot)
+Questions? Email [github@worldbank.org](mailto:github@worldbank.org).
 
-- **Enable [Premium Request Chargeback Process](https://github.com/worldbank/ospo/blob/main/docs/copilot/premium-request-chargeback.md)**
+## Premium request (limits and overuse)
 
-  - Using Copilot bears cost. WB copilot access allows 300 free requests per month to advanced LLMs (GPT-4.5, Claude). Any overuse beyond the free requests incurs a cost that are blocked by default.
+GitHub Copilot's advanced features beyond in-line code copletion rely on
+"**premium requests**" to AI models like GPT-5+ and Claude Sonette/Opus.
+Each copilot subscription plan includes a certain number of free premium
+requests per month (WB org plan includes 300, private plans include 500/1500).
+**Once you reach that limit, you lose access to advanced AI features for the**
+**rest of the month**.
 
-- With any questions related to WB Github reach out to [github@worldbank.org](mailto:github@worldbank.org).
+**Check your current premium request usage** here:
+[GitHub → Settings → Copilot](https://github.com/settings/copilot/features)
+and scroll down to the "Usage" section.
+
+To avoid hitting the limit, set up a budget for overuse ($0.04/request).
+
+- private subscription: [update premium request budget](https://github.com/settings/billing/budgets) through GitHub billing settings.
+- WB org plan: setup [premium request chargeback](https://github.com/worldbank/ospo/blob/main/docs/copilot/premium-request-chargeback.md).
 
 ## Access Levels
 
-Different setup steps unlock different capabilities:
+Different setup unlock different capabilities:
 
 | Setup | Repositories | GitHub Copilot | WB Org Repos |
 |-------|-------------|----------------|--------------|
 | No GitHub account | Public only | ❌ | ❌ |
 | Personal account | Personal repos | ⚠️ Limited, no Claude | ❌ |
-| + Copilot Pro/Pro+ subscription | Personal repos | ✅ Full (500/1500 req/mo), Claude | ❌ |
+| + **Private** Copilot Pro/Pro+ subscription | Personal repos | ✅ Full (500/1500 req/mo), Claude; ❌ No access to Copilot after 500/1500 requests / month | ❌ |
+| + Premium requests budget | Personal repos | ✅ 500/1500 req/mo + overuse budget | ❌ |
 | + WB Org member | Personal + WB repos | ⚠️ Basic only (No premium request) | ✅ |
-| + WB Org + WB Copilot access | Personal + WB repos | ✅ Full (300 req/mo), Claude/GPT. Overuse budget | ✅ |
+| + WB Org + **Institutional WB** Copilot access | Personal + WB repos | ✅ Full (300 req/mo), Claude/GPT. Overuse budget | ✅ |
+| + WB Org + **premium requests chargeback** | Personal + WB repos | ✅ 300 req/mo + overuse budget | ✅ |
 
-::: callout-tip
-For AI-assisted coding you need at minimum a personal GitHub account with Copilot access (private subscription **or** WB Copilot access).
-:::
+## Setup guide
 
-## Create a GitHub Account
+### Create a GitHub Account
 
 Create an account at <https://github.com/signup>. Use your [**personal email address**]{style="background-color: #c0392b; color: white; padding: 2px 4px;"}, not your World Bank email.
 
 
-## Join [github.com/worldbank](https://github.com/worldbank)
+### Join [github.com/worldbank](https://github.com/worldbank)
 
 1. Submit a [Join GitHub Organization Account Request](https://worldbankgroup.service-now.com/wbg/en/join-github-organization-account-request?id=wbg_sc_catalog&sys_id=910e1739db1a54903c5960ab13961912&table=sc_cat_item&searchTerm=github) on eServices to join [github.com/worldbank](https://github.com/worldbank)
 
@@ -59,7 +86,7 @@ Create an account at <https://github.com/signup>. Use your [**personal email add
 :::
 
 
-## Access GitHub Copilot
+### Access GitHub Copilot
 
 You can either use Github Copilot **from the WB Organization** or **subscribe privately**.
 
@@ -67,17 +94,17 @@ To access GitHub Copilot through the WB organization, you need to request access
 
 ::: {.panel-tabset}
 
-## Copilot settings
+### Copilot settings
 
 ![Copilot settings](../../assets/img/gh-copilot-access-1.png)
 
-## Request access
+### Request access
 
 Scroll down to **"Get Copilot from an organization"** and click **Request access** from the worldbank organization.
 
 ![Request access button](../../assets/img/gh-copilot-access-2.png)
 
-## Email WB GitHub team
+### Email WB GitHub team
 
 Then send an email to [github@worldbank.org](mailto:github@worldbank.org) with:
 
@@ -96,7 +123,7 @@ If you have a personal Copilot subscription, you can use it with your GitHub acc
 Once you are granted access to Copilot through the WB org, your private subscription will be terminated and you will be refunded unused budget. You cannot easily switch to private subscription after joining the WB org.
 :::
 
-## Verify GitHub Copilot
+### Verify GitHub Copilot
 
 Go to [GitHub → Settings → Copilot](https://github.com/settings/copilot) and check your usage statistics.
 
@@ -112,7 +139,7 @@ Go to [GitHub → Settings → Copilot](https://github.com/settings/copilot) and
 
 :::
 
-## Enable Premium Request Overuse
+### Enable Premium Request Overuse
 
 The WB plan includes 300 premium requests/month. This is sufficient but limited.
 
