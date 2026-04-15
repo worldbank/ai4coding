@@ -1,5 +1,5 @@
 ---
-title: "Day 1 — Introduction to AI-Assisted Coding"
+title: "Overview"
 ---
 
 **Session goals:**
@@ -33,8 +33,6 @@ own computer and be ready for the self-study exercises.
 | 30 min | AI overview presentation: how GitHub Copilot and LLMs work, key concepts, and capabilities |
 | 30 min | Cookbook: securing sensitive data, guardrails, and responsible AI use |
 | 30 min | Self-study exercises overview and Q&A |
-
----
 
 ## Before You Arrive
 

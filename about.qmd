@@ -3,12 +3,22 @@ title: "About"
 sidebar: false
 ---
 
-## Lecturer
+## Author
 
 ### Eduard Bukin
 
-*Economist passionate about spatial data and poverty analysis*
+:::: {.columns}
 
+::: {.column width="25%"}
+![](assets/img/eduard-bukin.jpg){style="border-radius: 50%; width: 100%;" .no-lightbox}
+
+*Economist passionate about spatial data and poverty analysis*
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="70%"}
 Eduard Bukin is an experienced economist, data scientist, and statistician
 spending the last decade at the World Bank, UN, and academia. His career has focused
 on econometrics, economic research, microeconomics, and statistics, with a
@@ -22,28 +32,11 @@ Master's degree in Rural Development from Ghent University and pursues a Ph.D. i
 Agricultural Economics from Justus Liebig University Giessen.
 
 - Email: [ebukin@worldbank.org](mailto:ebukin@worldbank.org)
-- GitHub: [EBukin](https://github.com/EBukin)
+- GitHub/Website: [EBukin](https://github.com/EBukin)
+:::
 
----
-
-## About This Course
-
-*Placeholder – course description, motivation, and context go here.*
-
----
-
-## Acknowledgements
-
-*Placeholder – acknowledgements, funding, and contributors go here.*
-
----
+::::
 
 ## License & Reuse
 
-*Placeholder – license information and reuse guidelines go here.*
-
----
-
-## Useful Links
-
-*Placeholder – links to related projects, repositories, and resources go here.*
+This project is licensed under the MIT License together with the [World Bank IGO Rider](WB-IGO-RIDER.md). The Rider is purely procedural: it reserves all privileges and immunities enjoyed by the World Bank, without adding restrictions to the MIT permissions. Please review both files before using, distributing or contributing.

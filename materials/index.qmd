@@ -3,8 +3,6 @@ title: "Materials"
 sidebar: true
 ---
 
-## Overview
-
 This course equips economists who regularly use Stata and other modern statistical programming languages to leverage AI-assisted coding tools effectively and responsibly. It introduces participants to AI coding assistants (GitHub Copilot) within the Positron IDE, across two 3-hour sessions with a self-study period in between.
 
 **By the end of the course, participants will be able to:**
@@ -17,9 +15,7 @@ This course equips economists who regularly use Stata and other modern statistic
 - Apply context engineering techniques: `#tools`, `skills`, `/prompts`, `/agents`, and `MCP` connectors
 - Supervise AI agent execution and course-correct when it goes off track
 
----
-
-## Prerequisites
+## [Prerequisites](prerequisites/index.qmd)
 
 Complete these setup steps **before the first session**:
 
@@ -29,9 +25,7 @@ Complete these setup steps **before the first session**:
 4. [Positron Assistant](prerequisites/assistant.qmd) — enable assistant, connect to GitHub Copilot provider
 5. [Common Problems](prerequisites/common-problems.qmd) — `uv` install issues, access denied, Positron update, Quarto
 
----
-
-## Day 1 — Introduction to AI-Assisted Coding
+## [Day 1 — Introduction to AI-Assisted Coding](day1/index.qmd)
 
 **3-hour in-person / hybrid session**
 
@@ -52,9 +46,7 @@ Complete these setup steps **before the first session**:
 - [AI Overview](day1/ai-overview.qmd) — how LLMs work, strengths/limits, responsible use, prompting
 - [Case Studies](day1/case-studies.qmd) — code refactoring and reproducibility packages
 
----
-
-## Self-Study Period
+## [Self-Study Period](self-study/index.qmd)
 
 **2–3 days of independent practice between sessions**
 
@@ -63,9 +55,7 @@ Independent practice with structured case studies: reproduce old code, reproduce
 - [Overview & Instructions](self-study/index.qmd) — pick a case study, attempt with and without AI, write up observations
 - [Case Studies](self-study/case-studies.qmd) — reproduce old code, reproduce from example, try a new language
 
----
-
-## Day 2 — Everyday AI-Assisted Coding
+## [Day 2 — Everyday AI-Assisted Coding](day2/index.qmd)
 
 **3-hour in-person / hybrid session**
 
