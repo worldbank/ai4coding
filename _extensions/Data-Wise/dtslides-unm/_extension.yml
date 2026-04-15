@@ -1,0 +1,35 @@
+title: dtslides-unm
+author: Davood Tofighi
+version: 1.2.1
+quarto-required: ">=1.6.0"
+
+contributes:
+  formats:
+    revealjs:
+      theme: [simple, "styles/custom.scss"]
+      include-after-body:
+        - text: |
+            <script>
+            (function() {
+              function toggleFooter() {
+                var f = document.querySelector(".reveal > .footer");
+                if (!f || typeof Reveal === "undefined") return;
+                var i = Reveal.getIndices();
+                f.style.display = (i.h === 0 && i.v === 0) ? "none" : "block";
+              }
+              if (typeof Reveal !== "undefined") {
+                Reveal.on("slidechanged", toggleFooter);
+                Reveal.on("ready", toggleFooter);
+                if (Reveal.isReady()) toggleFooter();
+              }
+            })();
+            </script>
+      width: 1050
+      height: 700
+      margin: 0.10
+      logo: "images/ms-logo.png"
+      slide-number: true
+      code-copy: false
+      html-math-method: mathjax
+
+    date-format: long
