@@ -69,3 +69,15 @@ format:
     toc: true
     toc-location: right
     lightbox: true
+  dtslides-revealjs:
+    theme: [assets/custom.scss]
+    slide-number: c/t
+    background-transition: zoom
+    preload-iframes: true
+    scrollable: true
+    transition: fade
+    preview-links: auto
+    logo: assets/img/WBG-Prosperity Horizontal-Black.svg
+    footer: '[worldbank.github.io/ai4coding](https://worldbank.github.io/ai4coding) © 2026 World Bank.'
+    resources:
+      - assets/bg-frames/

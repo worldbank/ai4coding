@@ -1,25 +1,14 @@
 ---
 title: "AI for Coding"
 subtitle: "Day 1: Course Overview"
-author: |
-  <p><br/>**Eduard Bukin** [ebukin@worldbank.org](mailto:ebukin@worldbank.org)
-  <br/>Distributional Impact of Policies
-  <br/>Fiscal Policy and Growth Department<p/>
+author:
+  - name: Eduard Bukin
+    orcid: 0000-0002-1003-1260
+    github: ebukin
+    email: ebukin@worldbank.org
+    affiliations: Distributional Impact of Policies. Fiscal Policy and Growth Department
 date: "April 20, 2024"
-
-format:
-  dtslides-revealjs:
-    theme: [custom.scss]
-    slide-number: c/t
-    background-transition: zoom
-    preload-iframes: true
-    scrollable: true
-    transition: fade
-    preview-links: auto
-    logo: ../../assets/img/WBG-Prosperity Horizontal-Black.svg
-    footer: '[worldbank.github.io/ai4coding](https://worldbank.github.io/ai4coding) © 2026 World Bank.'
-    resources:
-      - ../../assets/bg-frames/
+format: dtslides-revealjs
 ---
 
 ## Welcome {.center .small-slide}
@@ -109,29 +98,35 @@ format:
 ## Logistics
 
 | | Morning | Evening (repeat) |
-|---|----------------|----------------|
+|------|----------------|----------------|
 | **Format** | In person + virtual | Virtual only |
 | **Session 1** | Mon Apr 20, 9 AM–12 PM ET | Mon Apr 20, 9 PM–12 AM ET |
 | **Session 2 (repeat)** | Thu Apr 23, 9 AM–12 PM ET | Thu Apr 23, 9 PM–12 AM ET |
 
-- Materials: [worldbank.github.io/ai4coding](https://worldbank.github.io/ai4coding)
-- Questions during session: **use Teams chat** or rais hand
+- Questions during session: **use Teams chat** or raise hand please
 
 ## Agenda {.tiny-slide}
 
 [Part 1 — Setup & Live Demo (80 min)]{.fg}
 
 | Time   | Topic |
-|--------|------------------------------------------|
+|--------|--------------------------------------------------|
 | 10 min | Welcome, introductions, course overview |
 | 30 min | Software overview: Positron, GitHub Copilot, and Stata setup |
 | 40 min | AI in action with Stata (R): my typical data workflow using AI |
+
 [☕ Break (10 min)]{.fg}
 
 [Part 2 — Concepts & Practice (90 min)]{.fg}
 
 | Time   | Topic |
-|--------|------------------------------------------|
+|--------|--------------------------------------------------|
 | 30 min | AI overview presentation: how GitHub Copilot and LLMs work, key concepts, and capabilities |
 | 30 min | Cookbook: securing sensitive data, guardrails, and responsible AI use |
 | 30 min | Self-study exercises overview and Q&A |
+
+## Resources
+
+TODO
+
+- Materials: [worldbank.github.io/ai4coding](https://worldbank.github.io/ai4coding).

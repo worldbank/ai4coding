@@ -1,0 +1,12 @@
+---
+title: "AI for Coding"
+subtitle: "Day 1: Core concepts"
+author:
+  - name: Eduard Bukin
+    orcid: 0000-0002-1003-1260
+    github: ebukin
+    email: ebukin@worldbank.org
+    affiliations: Distributional Impact of Policies. Fiscal Policy and Growth Department
+date: "April 20, 2024"
+format: dtslides-revealjs
+---
