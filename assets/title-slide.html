@@ -1,0 +1,28 @@
+<section id="$idattr$" class="title slide level1 center" data-background-iframe="../../assets/bg-frames/grid-worms/index.html">
+  <div class="semi-transparent-bg">
+    <div class="columns v-center-container">
+      <div class="column" style="width: 25%;">
+        <img src="../../assets/img/prosp-logo.webp" style="width: 100%;" />
+        <img src="../../assets/img/geopov-logo.png" style="width: 100%;" />
+        <!-- <img src="images/mml-logo.png" style="width: 100%;" /> -->
+      </div>
+      <div class="column" style="width: 75%;">
+        $if(title)$
+        <h3 class="title">$title$</h3>
+        $endif$
+        $if(subtitle)$
+        <p class="subtitle"><strong>$subtitle$</strong></p>
+        $endif$
+        $if(author)$
+        <p class="author" style="text-align: left;"></p>
+        $for(author)$
+        <p class="author" style="text-align: left;">$author$</p>
+        $endfor$
+        $endif$
+        $if(date)$
+        <p class="date">$date$</p>
+        $endif$
+      </div>
+    </div>
+  </div>
+</section>

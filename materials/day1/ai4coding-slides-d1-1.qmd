@@ -1,0 +1,86 @@
+---
+title: "AI for Coding"
+subtitle: "Day 1: Course Overview"
+author: |
+  <p><br/>**Eduard Bukin** [ebukin@worldbank.org](mailto:ebukin@worldbank.org)
+  <br/>Distributional Impact of Policies
+  <br/>Fiscal Policy and Growth Department<p/>
+date: "April 20, 2024"
+format:
+  revealjs:
+    background-transition: zoom
+    preload-iframes: true
+    theme: white
+    smaller: false
+    scrollable: true
+    transition: fade
+    slide-number: true
+    chalkboard:
+      buttons: false
+    preview-links: auto
+    scss: ../../assets/reveal-styles.scss
+    css: ../../assets/reveal-styles.css
+    logo: ../../assets/img/WBG-Prosperity Horizontal-Black.svg
+    footer: '[worldbank.github.io/ai4coding](https://worldbank.github.io/ai4coding) © 2026 World Bank.'
+    template-partials:
+      - ../../assets/title-slide.html
+    resources:
+      - ai4coding-slides-d1-1.pdf
+      - ../../assets/img/prosp-logo.webp
+      - ../../assets/img/geopov-logo.png
+      - ../../assets/bg-frames/grid-worms/
+      - ../../assets/bg-frames/logo-fall/
+      - ../../assets/img/WBG-Prosperity Horizontal-Black.svg
+---
+
+## Welcome {background-iframe="../../assets/bg-frames/logo-fall/index.html"}
+
+
+
+## Course Structure
+
+Three parts, each building on the previous one.
+
+::: {.notes}
+Emphasise that this is not two standalone sessions — the self-study bridge is essential.
+:::
+
+## What to Expect
+
+**Day 1** — See AI in action, learn key concepts, get set up
+
+- Live demo of a real data workflow with AI
+- How LLMs work, what they can and cannot do
+- Responsible use and data security
+
+**Self-Study** — The most important part
+
+- Your time to build the habit with your own code
+- Structured case studies to guide you
+- Come back to Day 2 with questions and observations
+
+**Day 2** — Go deeper, work smarter
+
+- Debrief self-study experiences
+- Advanced techniques: agents, context engineering, planning
+- Hands-on exercises with real workflows
+
+::: {.notes}
+Stress that the self-study period is where the real learning happens.
+Day 1 gives the foundation; self-study builds muscle memory; Day 2 refines technique.
+:::
+
+## Logistics
+
+| | Morning | Evening (repeat) |
+|---|---|---|
+| **Format** | In person + virtual | Virtual only |
+| **Session 1** | Mon Apr 20, 9 AM–12 PM ET | Mon Apr 20, 9 PM–12 AM ET |
+| **Session 2** | Thu Apr 23, 9 AM–12 PM ET | Thu Apr 23, 9 PM–12 AM ET |
+
+- Materials: [worldbank.github.io/ai4coding](https://worldbank.github.io/ai4coding)
+- Questions during session: **use Teams chat** or rais hand
+
+::: {.notes}
+Point people to the materials site. Mention that everything is there including prerequisites and exercises.
+:::
