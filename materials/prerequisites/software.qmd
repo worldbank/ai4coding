@@ -4,12 +4,16 @@ toc: true
 toc-location: right
 ---
 
+> **Why?** These software enable the AI-assisted coding workflow. Please complete the
+  installation and verification steps. If you have any issues, please reach
+  out to the contacts provided below.
+
 **What you need to do:**
 
 - Install six core tools: Stata, R, Python, Positron, Quarto, Git
 - Install the `uv` Python package manager
-
-------------------------------------------------------------------------
+- Verify that all software is working correctly
+- Troubleshoot any issues with installation or access (see [Common Problems](common-problems.qmd)).
 
 ## Software Installation
 
@@ -40,7 +44,7 @@ toc-location: right
 : Software {#tbl-software}
 
 
-**`uv`: Python environment management**
+**`uv`: Python package management**
 
 1.  Press `Windows` button and type: `Power Shell`
 2.  Type commands below and hit enter
