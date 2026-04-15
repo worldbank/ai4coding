@@ -4,36 +4,41 @@ title: "Day 2 — Everyday AI-Assisted Coding"
 
 **Session goals:**
 
-- Address questions and blockers from the self-study period
-- Learn to plan and execute complex, multi-step tasks with an AI agent
-- Understand prompt engineering, token cost, and when to stop using AI
-- Get hands-on with advanced use cases: agentic development, Positron Data Bot
+- Address questions from the self-study period.
+- Learn to plan and execute complex, multi-step tasks with an AI agent.
+- Context engineering and optimization with Copilot: `#tools`, `skills`,
+  `/prompts`, `/agents`, `MCP` connectors, and other relevant features.
+- Get hands-on with these concepts through exercises and demos.
+- Positron's cutting-edge features and best practices for AI-assisted coding.
 
-By the end of this session you should be able to delegate a complex analytical task to an
-AI agent, supervise its execution, and course-correct when it goes off track.
+By the end of this session you should be able to delegate a complex analytical
+task to an AI agent, supervise its execution, and course-correct when it goes
+off track using appropriate tools and prompting techniques.
 
----
 
-## Session Structure (3 hours)
+## Agenda
 
-| Block | Duration | Topic |
-|-------|----------|-------|
-| 1 | 30 min | Q&A from self-study — open discussion of challenges and discoveries |
-| 2 | 20 min | Demo: planning and executing a complex task with an agent |
-| 3 | 40 min | [Advanced topics presentation](advanced-topics.qmd) |
-| 4 | 60 min | [Case studies](case-studies.qmd) — hands-on practice |
-| 5 | 10 min | Q&A and wrap-up |
+### Part 1 — Review, Practice, and Concepts (80 min)
 
----
+| Time   | Topic |
+|--------|-------|
+| 20 min | Q&A from self-study: summary of questions from chat, open discussion of challenges and discoveries |
+| 30 min | Exercise: planning and executing complex tasks with parallel agentic workflows |
+| 30 min | Context engineering: `#tools`, `skills`, `MCP`, and other relevant features |
 
-## Course Completion
+### ☕ Break (10 min)
 
-To complete the course, submit **two deliverables**:
+### Part 2 — Skills in Action (90 min)
 
-| Deliverable | When | What |
-|-------------|------|------|
-| Self-study case study | Before Day 2 | See [Self-Study](../self-study/index.qmd) |
-| Day 2 case study | Within one week after Day 2 | See [Day 2 Case Studies](case-studies.qmd) |
+| Time   | Topic |
+|--------|-------|
+| 45 min | Exercise: using the right `#tools`, integrating AI `skills`, developing `/prompts` and `/agents` |
+| 30 min | Q&A and discussion |
+| 5 min  | Feedback survey |
+| 10 min | Closing remarks and next steps and additional learning materials |
 
-Both submissions demonstrate independent use of AI assistance for coding.
-Successful submission is required for course completion.
+## Before You Arrive
+
+- post your questions, challenges, and discoveries from the self-study exercises
+  in the teams chat a day before the session to help guide the discussion and
+  practice exercises.
