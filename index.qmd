@@ -11,36 +11,69 @@ effectively and responsibly. It introduces participants to AI coding assistants
 (GitHub Copilot) within the Positron IDE, across two 3-hour sessions with a
 self-study period in between.
 
-
 ## Syllabus
 
-*Placeholder – full course syllabus goes here.*
+### Prerequisites
 
----
+Complete setup steps **before the first session**: install Stata 19+, R, Python, Positron, Quarto, and Git; configure GitHub and Copilot access; install required extensions.
+
+### Day 1 — Introduction to AI-Assisted Coding (3 hours)
+
+- Software overview: Positron, GitHub Copilot, and Stata setup
+- Live demo: a typical data workflow using AI
+- AI overview: how LLMs work, key concepts, strengths and limitations
+- Responsible use: securing sensitive data and applying guardrails
+- Self-study exercises overview and Q&A
+
+### Self-Study (2–3 days)
+
+Independent practice with structured case studies: reproduce old code, reproduce from an example, or try a new language.
+
+### Day 2 — Everyday AI-Assisted Coding (3 hours)
+
+- Q&A from self-study: challenges and discoveries
+- Planning and executing complex tasks with parallel agentic workflows
+- Context engineering: `#tools`, `skills`, `MCP`, `/prompts`, `/agents`
+- Hands-on exercises integrating AI tools into real workflows
+- Discussion, feedback, and next steps
+
+See the Materials page for full session details, slides, and exercises.
 
 ## Schedule & Plan
 
-*Placeholder – session schedule, dates, and topics go here.*
+### Morning Course — In Person and Virtual [Join Teams Channel](https://teams.microsoft.com/meet/27612063989198?p=jK5O2M12JmSoQGPFcg)
 
-| Session | Date | Topic |
-|---------|------|-------|
-| 1 | TBD | *Placeholder* |
-| 2 | TBD | *Placeholder* |
-| 3 | TBD | *Placeholder* |
+| Session | Date | Time (ET) |
+|---------|------|-----------|
+| 1 | Mon Apr 20 | 9:00 AM–12:00 PM |
+| 2 | Thu Apr 23 | 9:00 AM–12:00 PM |
 
----
+### Evening Course (Repeat) — Virtual [Join Teams Channel](https://teams.microsoft.com/meet/22792960965888?p=7H3zxnQKgcG0elimZb)
+
+| Session | Date | Time (ET) | Time Jakarta (GMT+7) |
+|---------|------|-----------|---------|
+| 1 | Mon Apr 20 | 9:00 PM–12:00 AM | Tue Apr 21, 9:00 AM–12:00 PM |
+| 2 | Thu Apr 23 | 9:00 PM–12:00 AM | Fri Apr 24, 9:00 AM–12:00 PM |
 
 ## Learning Objectives
 
-- Use AI assistants for code understanding, refactoring, and revision
-- Understand how LLMs work and what key concepts mean: tokens, prompts, context windows, agents
-- Identify what AI can and cannot do reliably in a coding workflow
-- Secure sensitive data and apply responsible AI guardrails
-- Plan and execute complex, multi-step analytical tasks with an AI agent
-- Apply context engineering techniques: `#tools`, `skills`, `/prompts`, `/agents`, and `MCP` connectors
-- Supervise AI agent execution and course-correct when it goes off track.
+By the end of this course, participants will be able to:
 
----
+**Understand**
+
+- Explain core LLM concepts (tokens, prompts, context windows, agents) and how they affect AI-assisted coding
+- Recognize the strengths and limitations of AI code assistants for analytical work
+
+**Apply**
+
+- Use an AI assistant to read, refactor, and revise existing code
+- Structure prompts and context to guide AI output for multi-step analytical tasks
+- Supervise and course-correct AI-generated code through iterative review
+
+**Govern**
+
+- Apply data-security practices when using AI tools with sensitive or confidential data
+- Follow responsible-use guidelines for AI-assisted research workflows
 
 ## Logistics & Organisation
 

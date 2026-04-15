@@ -3,17 +3,27 @@ title: "Materials"
 sidebar: true
 ---
 
-This course equips economists who regularly use Stata and other modern statistical programming languages to leverage AI-assisted coding tools effectively and responsibly. It introduces participants to AI coding assistants (GitHub Copilot) within the Positron IDE, across two 3-hour sessions with a self-study period in between.
+This course aims to equip economists who regularly use Stata and other modern statistical programming languages to leverage AI-assisted coding tools effectively and responsibly. It introduces participants to AI coding assistants (GitHub Copilot) within the Positron IDE, across two 3-hour sessions with a self-study period in between.
 
-**By the end of the course, participants will be able to:**
+By the end of this course, participants will be able to:
 
-- Use AI assistants for code understanding, refactoring, and revision
-- Understand how LLMs work and what key concepts mean: tokens, prompts, context windows, agents
-- Identify what AI can and cannot do reliably in a coding workflow
-- Secure sensitive data and apply responsible AI guardrails
-- Plan and execute complex, multi-step analytical tasks with an AI agent
-- Apply context engineering techniques: `#tools`, `skills`, `/prompts`, `/agents`, and `MCP` connectors
-- Supervise AI agent execution and course-correct when it goes off track
+- **Understand**
+  - Explain core LLM concepts (tokens, prompts, context windows, agents) and
+    how they affect AI-assisted coding
+  - Recognize the strengths and limitations of AI code assistants for
+    analytical work
+
+- **Apply**
+
+  - Use an AI assistant to read, refactor, and revise existing code
+  - Structure prompts and context to guide AI output for multi-step analytical tasks
+  - Supervise and course-correct AI-generated code through iterative review
+
+- **Govern**
+
+  - Apply data-security practices when using AI tools with sensitive or confidential data
+  - Follow responsible-use guidelines for AI-assisted research workflows
+
 
 ## [Prerequisites](prerequisites/index.qmd)
 
