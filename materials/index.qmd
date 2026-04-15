@@ -1,8 +1,6 @@
 ---
 title: "Materials"
 sidebar: true
-toc: true
-toc-location: right
 ---
 
 ## Overview

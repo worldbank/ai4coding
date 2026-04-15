@@ -1,7 +1,5 @@
 ---
 title: "Day 2 — Case Studies"
-toc: true
-toc-location: right
 ---
 
 **What you will practice:**

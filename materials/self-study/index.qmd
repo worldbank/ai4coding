@@ -1,7 +1,5 @@
 ---
 title: "Self-Study — Overview"
-toc: true
-toc-location: right
 ---
 
 **What the self-study period is for:**

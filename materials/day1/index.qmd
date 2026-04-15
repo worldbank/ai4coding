@@ -1,7 +1,5 @@
 ---
 title: "Day 1 — Introduction to AI-Assisted Coding"
-toc: true
-toc-location: right
 ---
 
 **Session goals:**

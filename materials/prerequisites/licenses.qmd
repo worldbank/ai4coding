@@ -1,7 +1,5 @@
 ---
 title: "Licenses & Access"
-toc: true
-toc-location: right
 ---
 
 **What you need to know:**

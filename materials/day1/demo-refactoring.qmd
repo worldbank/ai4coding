@@ -1,7 +1,5 @@
 ---
 title: "Opening Demo — Refactoring With and Without AI"
-toc: true
-toc-location: right
 ---
 
 **What this demo shows:**

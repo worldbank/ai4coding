@@ -1,7 +1,5 @@
 ---
 title: "Self-Study — Case Studies"
-toc: true
-toc-location: right
 ---
 
 Complete at least one of the three case studies below and submit your write-up before Day 2.

@@ -1,7 +1,5 @@
 ---
 title: "Positron Assistant"
-toc: true
-toc-location: right
 ---
 
 **What you need to do:**

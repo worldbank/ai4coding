@@ -1,7 +1,5 @@
 ---
 title: "Common Problems"
-toc: true
-toc-location: right
 ---
 
 **Issues covered here:**

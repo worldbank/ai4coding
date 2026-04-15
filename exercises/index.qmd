@@ -1,7 +1,6 @@
 ---
 title: "Exercises"
 sidebar: false
-toc: true
 ---
 
 ## Exercises Overview
