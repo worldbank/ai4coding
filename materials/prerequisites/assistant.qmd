@@ -41,11 +41,11 @@ Reload Positron after installing extensions or signing in: `Ctrl+Shift+P` → `D
 
 Open Positron settings (`Ctrl+,`) and search for `positron.assistant.enable`. Check the box to enable it.
 
-![Enable Positron Assistant](https://worldbank.github.io/geoPovLearn/seminars/seminar-2026-02/images/positron-assistant-enable.png)
+![Enable Positron Assistant](../../assets/img/positron-assistant-enable.png)
 
 Reload Positron to apply changes.
 
-![Reload Positron](https://worldbank.github.io/geoPovLearn/seminars/seminar-2026-02/images/positron-reload.png)
+![Reload Positron](../../assets/img/positron-reload.png)
 
 See [Enable Positron Assistant](https://positron.posit.co/assistant-getting-started.html#step-1-enable-positron-assistant) in the official docs.
 
