@@ -6,35 +6,67 @@ author: |
   <br/>Distributional Impact of Policies
   <br/>Fiscal Policy and Growth Department<p/>
 date: "April 20, 2024"
-format:
-  revealjs:
-    background-transition: zoom
-    preload-iframes: true
-    theme: white
-    smaller: false
-    scrollable: true
-    transition: fade
-    slide-number: true
-    chalkboard:
-      buttons: false
-    preview-links: auto
-    scss: ../../assets/reveal-styles.scss
-    css: ../../assets/reveal-styles.css
-    logo: ../../assets/img/WBG-Prosperity Horizontal-Black.svg
-    footer: '[worldbank.github.io/ai4coding](https://worldbank.github.io/ai4coding) © 2026 World Bank.'
-    template-partials:
-      - ../../assets/title-slide.html
-    resources:
-      - ai4coding-slides-d1-1.pdf
-      - ../../assets/img/prosp-logo.webp
-      - ../../assets/img/geopov-logo.png
-      - ../../assets/bg-frames/grid-worms/
-      - ../../assets/bg-frames/logo-fall/
-      - ../../assets/img/WBG-Prosperity Horizontal-Black.svg
+
+# format:
+#   revealjs:
+#     background-transition: zoom
+#     preload-iframes: true
+#     smaller: false
+#     scrollable: true
+#     transition: fade
+#     slide-number: true
+#     chalkboard:
+#       buttons: false
+#     preview-links: auto
+#     theme: [white, ../../assets/reveal-styles.scss]
+#     css: ../../assets/reveal-styles.css
+#     logo: ../../assets/img/WBG-Prosperity Horizontal-Black.svg
+#     footer: '[worldbank.github.io/ai4coding](https://worldbank.github.io/ai4coding) © 2026 World Bank.'
+#     template-partials:
+#       - ../../assets/title-slide.html
+#     resources:
+#       - ai4coding-slides-d1-1.pdf
+#       - ../../assets/img/prosp-logo.webp
+#       - ../../assets/img/geopov-logo.png
+#       - ../../assets/bg-frames/
+#       - ../../assets/img/WBG-Prosperity Horizontal-Black.svg
 ---
 
-## Welcome {background-iframe="../../assets/bg-frames/logo-fall/index.html"}
+## Welcome
 
+**Goal:** Equip economists with AI-skills for coding.
+
+[2 × 3-hour sessions]{.pill} [Self-study in between]{.pill} [GitHub Copilot · Positron IDE]{.pill} [Stata & modern stat languages]{.pill}
+
+
+:::: {.columns}
+
+::: {.column width="33%" .obj-card .card-understand}
+#### Understand
+
+- Core LLM concepts: tokens, prompts, context windows, agents
+- How these affect AI-assisted coding
+- Strengths and limitations for analytical work
+-
+:::
+
+::: {.column width="33%" .obj-card .card-apply}
+#### Practice
+
+- Use AI to understand, revise and reuse code
+- Plan execution and write prompts for multi-step tasks
+- Leverage `#tools`, `skills` and `/agents`
+- Supervise and course-correct AI-generated code
+:::
+
+::: {.column width="33%" .obj-card .card-control}
+#### Take Control
+
+- Data-security practices and guardrailing AI.
+- Responsible-use guidelines for AI-assisted
+:::
+
+::::
 
 
 ## Course Structure

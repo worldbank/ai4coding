@@ -63,7 +63,7 @@ typography:
 #     size: 0.9em
   monospace-inline:
 #     color: wb-navy
-    background-color: light-gray
+    background-color: "#f0f0f0"
   link:
 #     color: wb-blue
     weight: 600
