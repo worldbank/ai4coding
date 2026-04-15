@@ -1,0 +1,215 @@
+---
+title: "dtslides UNM Theme"
+subtitle: "Feature Showcase"
+format:
+  dtslides-unm-revealjs:
+    slide-number: c/t
+    chalkboard:
+      theme: chalkboard
+author:
+  - name: Your Name
+    orcid: 0000-0000-0000-0000
+    email: alias@email.com
+    affiliations: Department of Mathematics & Statistics
+date: last-modified
+---
+
+## Example slide
+
+### This is Heading 3
+
+Here we have some text that may run over several lines of the slide frame,
+depending on how long it is.
+
+- This is a bullet point
+- first item
+    - A sub item
+
+### Lists
+1. first item
+2. second item
+   1. sub item
+
+# Section Slide
+
+## Additional theme classes {.small-slide}
+
+### Special classes for emphasis
+
+- `.alert` class for default emphasis, e.g. `[important note]{.alert}` ==> [important note]{.alert}.
+- `.fg` class for custom color, e.g. [important note]{.fg style="--col: #e64173"}.
+- `.bg` class for custom background, e.g. [important note]{.bg style="--col: #e64173"}.
+- `.highlight` class for highlighting, e.g. [important note]{.highlight}.
+- `.note` class for notes, e.g. [important note]{.note}.
+- `.warning` class for warnings, e.g. [warning note]{.warning}.
+
+### Cross-references
+
+- `.button` class provides a Beamer-like button, e.g.
+  - `[[Call-out Section]{.button}](#callout-sec)`
+[[Call-out Section]{.button}](#callout-sec)
+
+## Code blocks I
+
+This is a regular code block in a slide:
+
+```{r}
+#| echo: true
+# This is an R code block
+x <- rnorm(100)
+y <- 2 * x + rnorm(100)
+summary(lm(y ~ x))
+```
+
+## Code blocks II
+This is a regular code block with the cell option, `output-location: column`:
+
+```{r}
+#| echo: true
+#| output-location: column
+# This is an R code block
+x <- rnorm(100)
+y <- 2 * x + rnorm(100)
+summary(lm(y ~ x))
+```
+
+## Code blocks III {.small-slide}
+
+This is a code slide with the class `{.small-slide}`, which is useful for code-heavy slides.
+
+```{r}
+#| echo: true
+N <- 12 # Number of experimental units, Step 1
+# Define experimental units and treatments
+experimental_units <- 1:N ## 10 experimental units
+treatments <- c("A", "B", "C") ## 3 treatments, Step 2
+
+# Repeat treatments to match the number of units. The code covers both balanced and unbalanced designs.
+treatments <- rep(treatments, length.out = N) ## Step 3
+
+# For a balanced design, we can also use:
+# treatments <- rep(treatments, each = N/length(treatments))
+
+# Shuffle (randomize) treatments randomly to assign to units, Step 4
+set.seed(123) ## For reproducibility
+randomized_treatments <- sample(treatments)
+
+# Create a data frame with randomized assignments
+randomization_crd <- data.frame(Unit = experimental_units, Treatment = randomized_treatments) ## Step 5
+print(randomization_crd)
+```
+
+## A Long Slide
+
+Here is an example of a slide with a long list:
+
+1. This is item 1
+2. This is item 2
+3. This is item 3
+4. This is item 4
+5. This is item 5
+6. This is item 6
+7. This is item 7
+8. This is item 8
+9. This is item 9
+10. This is item 10
+11. This is item 11
+12. This is item 12
+13. This is item 13
+14. This is item 14
+
+## A Long Slide {.small-slide}
+
+Here is an example of a slide with a long list and a smaller attribute class `{.small-slide}`:
+
+1. This is item 1
+2. This is item 2
+3. This is item 3
+4. This is item 4
+5. This is item 5
+6. This is item 6
+7. This is item 7
+8. This is item 8
+9. This is item 9
+10. This is item 10
+11. This is item 11
+12. This is item 12
+13. This is item 13
+14. This is item 14
+
+## A Long Slide {.tiny-slide}
+
+Here is an example of a slide with a long list and a tiny attribute class `{.tiny-slide}`:
+
+1. This is item 1
+2. This is item 2
+3. This is item 3
+4. This is item 4
+5. This is item 5
+6. This is item 6
+7. This is item 7
+8. This is item 8
+9. This is item 9
+10. This is item 10
+11. This is item 11
+12. This is item 12
+13. This is item 13
+14. This is item 14
+
+## Callouts Examples {#callout-sec .tiny-slide}
+
+Here are some examples of callout boxes:
+
+::: {.callout-note}
+This is a note callout box.
+:::
+
+::: {.callout-tip}
+This is a tip callout box.
+:::
+
+::: {.callout-important}
+This is an important callout box.
+:::
+
+::: {.callout-warning}
+This is a warning callout box.
+:::
+
+::: {.callout-caution}
+This is a caution callout box.
+:::
+
+## Table
+
+
+```{r}
+#| label: tab-tab1
+#| echo: true
+#| output-location: column
+
+# Create a data frame
+df <- data.frame(
+    Name = c("Alice", "Bob", "Charlie", "David"),
+    Age = c(25, 30, 35, 40),
+    Height = c(5.6, 5.8, 5.9, 6.0)
+)
+
+# Print the data frame
+df |> knitr::kable()
+
+```
+
+## Custom Call-out
+
+::: {.callout-example}
+Here’s a worked example illustrating a random intercept model.
+:::
+
+::: {.callout-question}
+What changes if random slopes are included in the model?
+:::
+
+::: {.callout-insight}
+This is an insight block using custom CSS.
+:::
