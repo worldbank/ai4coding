@@ -68,3 +68,4 @@ format:
     css: styles.css
     toc: true
     toc-location: right
+    lightbox: true
