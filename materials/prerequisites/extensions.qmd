@@ -2,6 +2,12 @@
 title: "Positron Extensions"
 ---
 
+::: callout-warning
+## Minimum requirements for this course
+
+1.  **Positron Stata** extension installed and configured.
+:::
+
 > **Why?** Positron extensions add language support, tooling, and AI features
 > to the editor. The extensions below are required for AI-assisted Stata
 > workflows in this course.

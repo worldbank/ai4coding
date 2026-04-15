@@ -4,106 +4,42 @@ title: "Common Problems"
 
 **Issues covered here:**
 
-- `uv` fails to install or is not recognised after install
+- `uv` fails to install or is not recognised after installation
 - "Access denied" errors when installing software or running code
 - Positron needs updating but auto-update fails
 
 ---
 
-## UV Installation Problem
+## GitHub Copilot / Positron Assistant Issues
 
-### Symptom
+Most often, issues with Positron Assistant and GitHub Copilot are related to **authentication**, **configuration**, or **exceeding the free-requests quota**.
 
-Running `pip install uv` fails, or `uv --version` returns `command not found` / `not recognised` after install.
+- You may not have activated GitHub Copilot through a private or WB subscription. Check the [GitHub Copilot setup guide](github.qmd) for details.
 
-### Causes and fixes
+- Check whether you still have free premium requests available. If you have exhausted your quota, you will need to wait until it resets or subscribe to a paid plan. See the [GitHub Copilot setup guide](github.qmd) for details.
 
-**`pip` not found or points to the wrong Python:**
+- Positron Assistant may not be enabled or configured to use GitHub Copilot as the provider. Check the [Positron Assistant setup guide](assistant.qmd) for details.
 
-```powershell
-# Check which pip you have
-pip --version
-
-# If missing, try with the explicit Python launcher
-python -m pip install uv
-# or
-py -m pip install uv
-```
-
-**`uv` installed but not on PATH:**
-
-After install, Python scripts are placed in a folder that may not be on your system PATH (e.g. `%APPDATA%\Python\Python313\Scripts`).
-
-1. Search Windows for **"Edit the system environment variables"**
-2. Under **User variables**, select `Path` → **Edit**
-3. Add the Scripts folder shown in the `pip install uv` output
-4. Restart Command Prompt / PowerShell and retry `uv --version`
-
-**On WB laptops — pip blocked by policy:**
-
-Contact [ITHelp@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org) and request permission to run `pip install` or ask for `uv` to be added to the Software Center.
-
-::: callout-tip
-If `pip install uv` succeeds but the command still isn't found after restarting, check the install output for the Scripts path and add it to PATH as described above.
-:::
-
----
-
-## Access Denied
-
-### Symptom
-
-An installer or command fails with `Access is denied`, `Permission denied`, or `Error 5`.
-
-### Causes and fixes
-
-**Installing software that requires admin rights:**
-
-Most software at the WB must be installed through the **Software Center** rather than by running an installer directly. If something is missing from the Software Center:
-
-- Submit a [Software Installation Request](https://worldbankgroup.service-now.com/wbg/en/software-installation-request?id=wbg_sc_catalog&sys_id=bd1e71b86f16d340db112d232e3ee4b7&table=sc_cat_item&searchTerm=Software%20installation)
-- Or contact [ITHelp@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org) / visit a [Walk-in centre](https://worldbankgroup.sharepoint.com/sites/itsupport/SitePages/PublishingPages/Walk-in-Centers-in-Washington-DC--05042021-1608401_new.aspx)
-
-**Stata MCP running `.do` files from a OneDrive folder:**
-
-OneDrive folders at the WB include a space in the path (`OneDrive - WBG`), which the Stata MCP extension cannot handle.
-
-**Workaround:** move your project to a local folder with no spaces in the path, e.g.:
-
-```
-C:\Users\wb123456\code\my-project\
-```
-
-This issue is tracked on [GitHub](https://github.com/hanlulong/stata-mcp/issues/52) and will be resolved in a future extension update.
-
-**Writing to a restricted folder:**
-
-If you see access denied when saving files, avoid `C:\Program Files\` and use your home directory (`C:\Users\wbXXXXXXX\`) or a project folder instead.
-
----
+If error messages persist after confirming the above, contact [ITHelp@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org) for assistance and [github@worldbankgroup.org](mailto:github@worldbankgroup.org) to verify that your GitHub Copilot subscription is active.
 
 ## Positron Update
 
-### Symptom
+Positron shows a notification that an update is available but the update fails.
 
-Positron shows a notification that an update is available but the update fails, or you are on an outdated version and extensions behave unexpectedly.
+- Reinstall Positron from the Software Center to get the latest version and restore auto-update functionality. See [Software Setup](software.qmd) for details.
 
-### Recommended approach on WB laptops
 
-The version in the **Software Center** is the recommended baseline. Reinstall from there to get the latest stable build:
+## Python UV Installation Problem
 
-1. Open **Software Center**
-2. Find **Positron** and click **Install** (or **Reinstall**)
-3. This version supports **auto-updating** — after the initial install, Positron will update itself
+For example:
 
-::: callout-note
-If you installed Positron manually (outside of the Software Center), the auto-update mechanism may not work correctly. Reinstall from the Software Center to restore it.
-:::
+- Running `pip install uv` fails, or `uv --version` returns `command not found` / `not recognised` after installation.
+- `uv` installs but does not work in the terminal or Positron, or you see an error like `The system cannot find the file specified` when running `uv`.
 
-### On private laptops
+Reach out to [ITHelp@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org) for assistance.
 
-Download the latest installer from <https://positron.posit.co/download.html> and run it. The user-level installer does not require admin rights.
+## Quarto
 
-### After any update
+Quarto is not found after installation: contact [ITHelp@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org) for assistance setting up the Quarto path in your user environment variables.
 
-Reload the window or restart Positron, then verify your extensions are still active (`Ctrl+Shift+X`). Occasionally an update resets extension states.
+When Quarto renders fail with an error like `access denied` or `permission denied`, you might be using a wrong path for your Quarto executable or may not have installed Quarto from the Software Center. Contact [ITHelp@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org) for assistance.

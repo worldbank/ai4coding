@@ -2,6 +2,16 @@
 title: "Software Setup"
 ---
 
+::: callout-warning
+## Minimum requirements for this course
+
+1.  **Stata 19+ MP** installed and licensed
+2.  **Positron** (latest version)
+3.  **R** (4.5.3+)
+4.  **Python** (3.13+) with **`uv`**
+5.  **Quarto** (1.9+) and **Git** (2.52+)
+:::
+
 > **Why?** This software stack powers the AI-assisted coding workflow used
 > throughout the course.
 
