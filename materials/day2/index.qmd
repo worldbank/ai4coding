@@ -1,5 +1,5 @@
 ---
-title: "Day 2 — Everyday AI-Assisted Coding"
+title: "Overview"
 ---
 
 **Session goals:**
@@ -39,6 +39,6 @@ off track using appropriate tools and prompting techniques.
 
 ## Before You Arrive
 
-- post your questions, challenges, and discoveries from the self-study exercises
-  in the teams chat a day before the session to help guide the discussion and
-  practice exercises.
+Post your questions, challenges, and discoveries from the self-study exercises
+in the Teams chat a day before the session to help guide the discussion and
+practice exercises.

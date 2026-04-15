@@ -11,8 +11,8 @@ website:
         href: index.qmd
       - text: "Materials"
         href: materials/index.qmd
-      - text: "Exercises"
-        href: exercises/index.qmd
+      # - text: "Exercises"
+      #   href: exercises/index.qmd
       - text: "About"
         href: about.qmd
 
@@ -20,38 +20,39 @@ website:
     - title: "Materials"
       style: "docked"
       pinned: true
-      collapse-level: 3
+      collapse-level: 10
       contents:
         - materials/index.qmd
         - section: "Pre-requisites"
+          href: materials/prerequisites/index.qmd
           contents:
             - materials/prerequisites/software.qmd
             - materials/prerequisites/github.qmd
             - materials/prerequisites/extensions.qmd
             - materials/prerequisites/assistant.qmd
-            # - materials/prerequisites/common-problems.qmd
+            - materials/prerequisites/common-problems.qmd
         - section: "Day 1"
-          contents:
-            - materials/day1/index.qmd
-            - materials/day1/demo-refactoring.qmd
-            - materials/day1/ai-overview.qmd
-            - materials/day1/case-studies.qmd
+          href: materials/day1/index.qmd
+          # contents:
+            # - materials/day1/demo-refactoring.qmd
+            # - materials/day1/ai-overview.qmd
+            # - materials/day1/case-studies.qmd
         - section: "Self-Study"
-          contents:
-            - materials/self-study/index.qmd
-            - materials/self-study/case-studies.qmd
+          href: materials/self-study/index.qmd
+          # contents:
+            # - materials/self-study/case-studies.qmd
         - section: "Day 2"
-          contents:
-            - materials/day2/index.qmd
-            - materials/day2/advanced-topics.qmd
-            - materials/day2/case-studies.qmd
+          href: materials/day2/index.qmd
+          # contents:
+            # - materials/day2/advanced-topics.qmd
+            # - materials/day2/case-studies.qmd
 
-    - title: "Exercises"
-      style: "docked"
-      pinned: true
-      collapse-level: 3
-      contents:
-        - exercises/index.qmd
+    # - title: "Exercises"
+    #   style: "docked"
+    #   pinned: true
+    #   collapse-level: 3
+    #   contents:
+    #     - exercises/index.qmd
 
   page-navigation: true
   back-to-top-navigation: true
