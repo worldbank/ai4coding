@@ -5,27 +5,47 @@ sidebar: true
 
 ## Overview
 
-This section contains all learning materials for the course.
-Complete the **Pre-requisites** before Day 1, then follow the course in order.
+This course equips economists who regularly use Stata and other modern statistical programming languages to leverage AI-assisted coding tools effectively and responsibly. It introduces participants to AI coding assistants (GitHub Copilot) within the Positron IDE, across two 3-hour sessions with a self-study period in between.
+
+**By the end of the course, participants will be able to:**
+
+- Use AI assistants for code understanding, refactoring, and revision
+- Understand how LLMs work and what key concepts mean: tokens, prompts, context windows, agents
+- Identify what AI can and cannot do reliably in a coding workflow
+- Secure sensitive data and apply responsible AI guardrails
+- Plan and execute complex, multi-step analytical tasks with an AI agent
+- Apply context engineering techniques: `#tools`, `skills`, `/prompts`, `/agents`, and `MCP` connectors
+- Supervise AI agent execution and course-correct when it goes off track
 
 ---
 
-## Pre-requisites
+## Prerequisites
 
 Complete these setup steps **before the first session**:
 
-1. [Software Setup](prerequisites/software.qmd) — Stata, R, Python, Positron, Quarto, Git, UV
-2. [GitHub](prerequisites/github.qmd) — account, WB org membership, Copilot access
-3. [Positron Extensions](prerequisites/extensions.qmd) — Stata MCP extension
-4. [Positron Assistant](prerequisites/assistant.qmd) — connect GitHub, enable AI
-5. [Licenses & Access](prerequisites/licenses.qmd) — Copilot quotas and WB budget
-6. [Common Problems](prerequisites/common-problems.qmd) — UV, access denied, Positron update
+1. [Software Setup](prerequisites/software.qmd) — Stata 19+ MP, R 4.5+, Python 3.13+ with `uv`, Positron, Quarto 1.9+, Git
+2. [GitHub & Copilot](prerequisites/github.qmd) — personal GitHub account, WB org membership, Copilot access and premium requests
+3. [Positron Extensions](prerequisites/extensions.qmd) — Positron Stata (or Stata MCP), stataglow, databot
+4. [Positron Assistant](prerequisites/assistant.qmd) — enable assistant, connect to GitHub Copilot provider
+5. [Common Problems](prerequisites/common-problems.qmd) — `uv` install issues, access denied, Positron update, Quarto
 
 ---
 
 ## Day 1 — Introduction to AI-Assisted Coding
 
 **3-hour in-person / hybrid session**
+
+| Time   | Topic |
+|--------|-------|
+| 10 min | Welcome, introductions, course and materials overview |
+| 30 min | Software overview: Positron, GitHub Copilot, and Stata setup |
+| 40 min | AI in action with Stata (R): my typical data workflow using AI |
+| 10 min | Break |
+| 30 min | AI overview: how GitHub Copilot and LLMs work, key concepts, and capabilities |
+| 30 min | Cookbook: securing sensitive data, guardrails, and responsible AI use |
+| 30 min | Self-study exercises overview and Q&A |
+
+**Materials:**
 
 - [Session Overview](day1/index.qmd)
 - [Opening Demo: Refactoring With and Without AI](day1/demo-refactoring.qmd)
@@ -38,7 +58,9 @@ Complete these setup steps **before the first session**:
 
 **2–3 days of independent practice between sessions**
 
-- [Overview & Instructions](self-study/index.qmd)
+Independent practice with structured case studies: reproduce old code, reproduce from an example, or try a new language.
+
+- [Overview & Instructions](self-study/index.qmd) — pick a case study, attempt with and without AI, write up observations
 - [Case Studies](self-study/case-studies.qmd) — reproduce old code, reproduce from example, try a new language
 
 ---
@@ -46,6 +68,19 @@ Complete these setup steps **before the first session**:
 ## Day 2 — Everyday AI-Assisted Coding
 
 **3-hour in-person / hybrid session**
+
+| Time   | Topic |
+|--------|-------|
+| 20 min | Q&A from self-study: challenges and discoveries |
+| 30 min | Exercise: planning and executing complex tasks with parallel agentic workflows |
+| 30 min | Context engineering: `#tools`, `skills`, `MCP`, and other relevant features |
+| 10 min | Break |
+| 45 min | Exercise: using the right `#tools`, integrating AI `skills`, developing `/prompts` and `/agents` |
+| 30 min | Q&A and discussion |
+| 5 min  | Feedback survey |
+| 10 min | Closing remarks and next steps |
+
+**Materials:**
 
 - [Session Overview](day2/index.qmd)
 - [Advanced Topics](day2/advanced-topics.qmd) — prompt engineering, cost, Git workflow, agents and skills
