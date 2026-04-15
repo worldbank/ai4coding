@@ -1,34 +1,35 @@
 ---
 title: "Software Setup"
-toc: true
-toc-location: right
 ---
 
-> **Why?** These software enable the AI-assisted coding workflow. Please complete the
-  installation and verification steps. If you have any issues, please reach
-  out to the contacts provided below.
+> **Why?** This software stack powers the AI-assisted coding workflow used
+> throughout the course.
 
 **What you need to do:**
 
-- Install six core tools: Stata, R, Python, Positron, Quarto, Git
-- Install the `uv` Python package manager
-- Verify that all software is working correctly
-- Troubleshoot any issues with installation or access (see [Common Problems](common-problems.qmd)).
+1. Install seven tools: Stata, R, Python + `uv`, Positron, Quarto, and Git
+2. Verify each tool works correctly (see [Verification](#verification))
+3. Troubleshoot any issues (see [Common Problems](common-problems.qmd))
 
 ## Software Installation
 
-**World Bank Laptops**
+::: {.panel-tabset}
 
-1.  Restart your computer to ensure it is fully up to date.
-2.
-3.  Open the **Software Center** and install all items in the table
-    below in this exact order.
+### WB Laptop
 
-4.  If any program from @tbl-software does not appear in the Software
-    Center, submit a [Software Installation Request](https://worldbankgroup.service-now.com/wbg/en/software-installation-request?id=wbg_sc_catalog&sys_id=bd1e71b86f16d340db112d232e3ee4b7&table=sc_cat_item&searchTerm=Software%20installation)
-    or contact [ITHelp\@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org).
+1. Restart your computer to ensure pending updates are applied.
+2. Open **Software Center** and install the items in @tbl-software in order.
+3. If any program does not appear in the Software Center, submit a
+   [Software Installation Request](https://worldbankgroup.service-now.com/wbg/en/software-installation-request?id=wbg_sc_catalog&sys_id=bd1e71b86f16d340db112d232e3ee4b7&table=sc_cat_item&searchTerm=Software%20installation)
+   or contact [ITHelp@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org).
 
-    ![](../../assets/img/software-center.png)
+![](../../assets/img/software-center.png)
+
+### Private Laptop
+
+Download and install each tool from the links in @tbl-software.
+
+:::
 
 
 | Software | WB Laptop (Software Center) | Private Laptop |
@@ -44,15 +45,17 @@ toc-location: right
 : Software {#tbl-software}
 
 
-**`uv`: Python package management**
+**Install `uv` (Python package manager)**
 
-1.  Press `Windows` button and type: `Power Shell`
-2.  Type commands below and hit enter
+1. Open PowerShell (press `Windows` key, type `PowerShell`, and open it).
+2. Run:
 
 ``` ps
 pip install uv
 uv --version
 ```
+
+You should see a version number printed. If not, see [Common Problems](common-problems.qmd).
 
 ::: {.callout-info collapse="true"}
 ### GIF guide for `uv` installation
@@ -88,62 +91,52 @@ to remove it first.
 
 ## Positron
 
-Open **Positron**: If it launches, it is working! See [Positron
-Overview](https://positron.posit.co/layout.html#basic-overview) for help
-about the layout:
+Open **Positron** — if it launches, it's working. See [Positron Overview](https://positron.posit.co/layout.html#basic-overview) for a tour of the layout.
 
 ![Positron layout](../../assets/img/ui-positron.jpeg){width="650"}
 
 ## R
 
-In Positron:
-
-- Open "Console" (`Ctrl + Shift + P` and type "Console: Focus on
-  Console") or navigate to "**Panel \> CONSOLE**". You should see R
-  there.
+In Positron, open the **Console** (`Ctrl+Shift+P` → "Console: Focus on Console"). You should see an R prompt.
 
 ![](../../assets/img/R-working.gif){width="650"}
 
 ## Python
 
-In Positron:
-
-1. Open **Terminal** inside Positron: (or `` Ctrl + Shift + ` `` or
-    `Ctrl + Shift + P` and type: "**Terminal: Focus Terminal**").
-2. Type text below and hit "Enter". It should work smoothly.
+In Positron, open the **Terminal** (`` Ctrl+Shift+` ``) and run:
 
 ``` ps
 python --version
 pip list
 ```
 
+You should see the Python version and a list of installed packages.
+
 ![](../../assets/img/python-working.gif){width="650"}
+
+## `uv`
+
+In the Terminal, run:
+
+``` ps
+uv --version
+```
+
+You should see a version number.
+
+![](../../assets/img/uv-working.gif){width="650"}
 
 ## Quarto
 
-**Quarto**
-
-1.  Open **Terminal** inside Positron: (or `` Ctrl + Shift + ` `` or
-    `Ctrl + Shift + P` and type: "**Terminal: Focus Terminal**").
-2.  Type text below and hit "Enter". It should work smoothly.
+In the Terminal, run:
 
 ``` ps
 quarto --version
 quarto check
 ```
 
+You should see a version number and a passing check.
+
 ![](../../assets/img/quarto-working.gif){width="650"}
-
-## `uv`
-
-1.  Open **Terminal** inside Positron: (or `` Ctrl + Shift + ` `` or
-    `Ctrl + Shift + P` and type: "**Terminal: Focus Terminal**").
-2.  Type text below and hit "Enter". It should work smoothly.
-
-``` ps
-uv --version
-```
-
-![](../../assets/img/uv-working.gif){width="650"}
 
 :::

@@ -1,7 +1,5 @@
 ---
 title: "GitHub"
-toc: true
-toc-location: right
 ---
 
 ::: callout-warning
@@ -181,13 +179,14 @@ Note: If you have copilot access from the WB, you will see "**Managed by worldba
 
 Go to [GitHub Settings \> Copilot](https://github.com/settings/copilot)
 
-- Status bar between 0-100% indicates how much of your monthly premium request allowance you've used.
-- If you reach 100% and premium request budget is enabled, 100%+ will start to accumulate, and you will be charged for each additional request at the end of the month.
-- Limits reset at the beginning of each month, so your percentage will drop back to 0% and you will regain access to advanced models if you had hit the limit in the previous month.
--
-### 6. Enable premium request budget *(recommended)*
 
 ![GH Copilot 100% use limit](../../assets/img/gh-max.png){width="600"}
+
+- **0–100%** — share of your monthly allowance used so far.
+- **100%+** — overuse; billed at ~$0.04/request if a budget is enabled.
+- **Resets monthly** — usage drops to 0% at the start of each billing cycle.
+
+### 6. Enable premium request budget *(recommended)*
 
 When you reach your monthly limit, advanced models (Claude, GPT) are
 unavailable until the next month. To keep access, enable premium request budget
