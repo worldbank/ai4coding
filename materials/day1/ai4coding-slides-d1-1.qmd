@@ -7,50 +7,42 @@ author: |
   <br/>Fiscal Policy and Growth Department<p/>
 date: "April 20, 2024"
 
-# format:
-#   revealjs:
-#     background-transition: zoom
-#     preload-iframes: true
-#     smaller: false
-#     scrollable: true
-#     transition: fade
-#     slide-number: true
-#     chalkboard:
-#       buttons: false
-#     preview-links: auto
-#     theme: [white, ../../assets/reveal-styles.scss]
-#     css: ../../assets/reveal-styles.css
-#     logo: ../../assets/img/WBG-Prosperity Horizontal-Black.svg
-#     footer: '[worldbank.github.io/ai4coding](https://worldbank.github.io/ai4coding) © 2026 World Bank.'
-#     template-partials:
-#       - ../../assets/title-slide.html
-#     resources:
-#       - ai4coding-slides-d1-1.pdf
-#       - ../../assets/img/prosp-logo.webp
-#       - ../../assets/img/geopov-logo.png
-#       - ../../assets/bg-frames/
-#       - ../../assets/img/WBG-Prosperity Horizontal-Black.svg
+format:
+  dtslides-revealjs:
+    theme: [custom.scss]
+    slide-number: c/t
+    background-transition: zoom
+    preload-iframes: true
+    scrollable: true
+    transition: fade
+    preview-links: auto
+    logo: ../../assets/img/WBG-Prosperity Horizontal-Black.svg
+    footer: '[worldbank.github.io/ai4coding](https://worldbank.github.io/ai4coding) © 2026 World Bank.'
+    resources:
+      - ../../assets/bg-frames/
 ---
 
-## Welcome
+## Welcome {.center .small-slide}
 
-**Goal:** Equip economists with AI-skills for coding.
+[**Goal:** Equip economists with AI-skills for coding.]{.alert}
 
 [2 × 3-hour sessions]{.pill} [Self-study in between]{.pill} [GitHub Copilot · Positron IDE]{.pill} [Stata & modern stat languages]{.pill}
 
 
 :::: {.columns}
 
-::: {.column width="33%" .obj-card .card-understand}
+::: {.column width="30%" .obj-card .card-understand}
 #### Understand
 
 - Core LLM concepts: tokens, prompts, context windows, agents
 - How these affect AI-assisted coding
-- Strengths and limitations for analytical work
--
+- Strengths and limitations for analytical workflows
 :::
 
-::: {.column width="33%" .obj-card .card-apply}
+::: {.column width="5%" }
+:::
+
+::: {.column width="30%" .obj-card .card-apply}
 #### Practice
 
 - Use AI to understand, revise and reuse code
@@ -59,7 +51,10 @@ date: "April 20, 2024"
 - Supervise and course-correct AI-generated code
 :::
 
-::: {.column width="33%" .obj-card .card-control}
+::: {.column width="5%" }
+:::
+
+::: {.column width="30%" .obj-card .card-control}
 #### Take Control
 
 - Data-security practices and guardrailing AI.
@@ -69,50 +64,74 @@ date: "April 20, 2024"
 ::::
 
 
-## Course Structure
+## Course Structure {.small-slide}
 
-Three parts, each building on the previous one.
+:::: {.columns}
 
-::: {.notes}
-Emphasise that this is not two standalone sessions — the self-study bridge is essential.
+::: {.column width="30%" .phase-card .phase-day1}
+#### Day 1
+**Basics**
+
+- Software setup & prerequisites
+- AI concepts: tokens, context, agents
+- Demo of AI-assisted coding
+- Common workflows & best practices
 :::
 
-## What to Expect
+::: {.column width="5%"}
+:::
 
-**Day 1** — See AI in action, learn key concepts, get set up
+::: {.column width="30%" .phase-card .phase-selfstudy}
+#### Self-Study
+**The most important part**
 
-- Live demo of a real data workflow with AI
-- How LLMs work, what they can and cannot do
-- Responsible use and data security
-
-**Self-Study** — The most important part
-
-- Your time to build the habit with your own code
+- Build the habit with your own code
 - Structured case studies to guide you
-- Come back to Day 2 with questions and observations
+- Come back with questions & observations
+:::
 
-**Day 2** — Go deeper, work smarter
+::: {.column width="5%"}
+:::
+
+::: {.column width="30%" .phase-card .phase-day2}
+#### Day 2
+**Go deeper, work smarter**
 
 - Debrief self-study experiences
-- Advanced techniques: agents, context engineering, planning
-- Hands-on exercises with real workflows
-
-::: {.notes}
-Stress that the self-study period is where the real learning happens.
-Day 1 gives the foundation; self-study builds muscle memory; Day 2 refines technique.
+- Planning & executing complex tasks
+- `#Tools`, `skills`, `/agents`, `/prompts`
+- Context engineering & frontier techniques
 :::
+
+::::
+
 
 ## Logistics
 
 | | Morning | Evening (repeat) |
-|---|---|---|
+|---|----------------|----------------|
 | **Format** | In person + virtual | Virtual only |
 | **Session 1** | Mon Apr 20, 9 AM–12 PM ET | Mon Apr 20, 9 PM–12 AM ET |
-| **Session 2** | Thu Apr 23, 9 AM–12 PM ET | Thu Apr 23, 9 PM–12 AM ET |
+| **Session 2 (repeat)** | Thu Apr 23, 9 AM–12 PM ET | Thu Apr 23, 9 PM–12 AM ET |
 
 - Materials: [worldbank.github.io/ai4coding](https://worldbank.github.io/ai4coding)
 - Questions during session: **use Teams chat** or rais hand
 
-::: {.notes}
-Point people to the materials site. Mention that everything is there including prerequisites and exercises.
-:::
+## Agenda {.tiny-slide}
+
+[Part 1 — Setup & Live Demo (80 min)]{.fg}
+
+| Time   | Topic |
+|--------|------------------------------------------|
+| 10 min | Welcome, introductions, course overview |
+| 30 min | Software overview: Positron, GitHub Copilot, and Stata setup |
+| 40 min | AI in action with Stata (R): my typical data workflow using AI |
+[☕ Break (10 min)]{.fg}
+
+[Part 2 — Concepts & Practice (90 min)]{.fg}
+
+| Time   | Topic |
+|--------|------------------------------------------|
+| 30 min | AI overview presentation: how GitHub Copilot and LLMs work, key concepts, and capabilities |
+| 30 min | Cookbook: securing sensitive data, guardrails, and responsible AI use |
+| 30 min | Self-study exercises overview and Q&A |
