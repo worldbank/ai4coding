@@ -29,8 +29,7 @@ website:
             - materials/prerequisites/github.qmd
             - materials/prerequisites/extensions.qmd
             - materials/prerequisites/assistant.qmd
-            - materials/prerequisites/licenses.qmd
-            - materials/prerequisites/common-problems.qmd
+            # - materials/prerequisites/common-problems.qmd
         - section: "Day 1"
           contents:
             - materials/day1/index.qmd

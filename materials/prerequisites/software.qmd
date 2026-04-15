@@ -140,3 +140,17 @@ You should see a version number and a passing check.
 ![](../../assets/img/quarto-working.gif){width="650"}
 
 :::
+
+
+## Software Licences
+
+| Tool | Licence  |
+|------|---------------|
+| Stata | [Commercial](https://www.stata.com/order/license-options/)|
+| R | [Free and Open Source](https://www.r-project.org/Licenses/) |
+| Python | [Free and Open Source](https://docs.python.org/3/license.html) |
+| Positron |  [Elastic License 2.0 - Source code available, built by Posit](https://positron.posit.co/licensing.html) |
+| Quarto | [MIT - Free and open source, built by Posit](https://github.com/quarto-dev/quarto-cli/blob/main/COPYING.md) |
+| Git | [Free and Open Source](https://git-scm.com/about) |
+| Stata MCP extension | [MIT - Free, open source](https://github.com/hanlulong/stata-mcp/blob/main/LICENSE) |
+| Positron Stata extension | [Not-clear...](https://github.com/ntluong95/positron-stata/blob/main/LICENSE) |
