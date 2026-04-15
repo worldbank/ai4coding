@@ -1,0 +1,291 @@
+---
+title: "dtslides Feature Showcase"
+subtitle: "A Comprehensive Guide to Quarto RevealJS & dtslides"
+format:
+  dtslides-unm-revealjs:
+    slide-number: c/t
+    chalkboard: true
+author:
+  - name: Your Name
+    orcid: 0000-0000-0000-0000
+    email: alias@email.com
+    affiliations: Department of Examples
+date: last-modified
+execute:
+  echo: true
+---
+
+# Introduction {.section-slide}
+
+## About This Showcase
+
+This presentation demonstrates the capabilities of the **dtslides** extension for Quarto RevealJS. 
+
+It covers:
+
+-   Markdown & Typography
+-   Layouts & Columns
+-   Code & Syntax Highlighting
+-   Math & Equations
+-   Custom Theme Classes
+-   Interactive Elements
+
+# Typography & Basics {.section-slide}
+
+## Text Formatting
+
+We support standard Markdown formatting:
+
+-   **Bold text** for emphasis
+-   *Italic text* for nuance
+-   ~~Strikethrough~~ for deletions
+-   `Inline code` for technical terms
+-   [Links to resources](https://quarto.org)
+
+> "Blockquotes are useful for citing sources or highlighting key concepts."
+
+## Lists & Fragments
+
+Lists can be revealed sequentially using fragments:
+
+::: {.fragment}
+1.  First item (appears first)
+:::
+::: {.fragment}
+2.  Second item (appears second)
+:::
+::: {.fragment}
+3.  Third item (appears last)
+    -   Nested item A
+    -   Nested item B
+:::
+
+## Slide Sizes {.small-slide}
+
+This slide uses the `.small-slide` class.
+
+-   Content is smaller (80% size).
+-   Useful for slides with slightly more content.
+-   Still maintains readability.
+
+## Tiny Slide {.tiny-slide}
+
+This slide uses the `.tiny-slide` class (40% size).
+
+1.  This is useful for very dense information.
+2.  Reference lists.
+3.  Detailed code blocks that need to fit on one screen.
+4.  Appendix material.
+5.  Item 5
+6.  Item 6
+7.  Item 7
+8.  Item 8
+9.  Item 9
+10. Item 10
+
+# Layouts {.section-slide}
+
+## Multiple Columns
+
+::: {.columns}
+::: {.column width="50%"}
+### Left Column
+
+This column takes up 50% of the slide width.
+
+-   Point A
+-   Point B
+:::
+
+::: {.column width="50%"}
+### Right Column
+
+This column also takes up 50%.
+
+-   Point C
+-   Point D
+:::
+:::
+
+## Column Layouts with Images
+
+::: {.columns}
+::: {.column width="40%"}
+**Text & Context**
+
+You can place text on one side to explain a visual element.
+
+-   Explanation 1
+-   Explanation 2
+:::
+
+::: {.column width="60%"}
+![Placeholder Image](https://placehold.co/600x400)
+:::
+:::
+
+## Tabsets
+
+::: {.panel-tabset}
+### R Code
+
+```r
+library(ggplot2)
+ggplot(mtcars, aes(mpg, hp)) + geom_point()
+```
+
+### Python Code
+
+```python
+import matplotlib.pyplot as plt
+plt.scatter(mtcars["mpg"], mtcars["hp"])
+plt.show()
+```
+
+### Analysis
+
+Tabsets allow you to organize content without cluttering the slide. Great for switching between languages or results.
+:::
+
+# Code & Output {.section-slide}
+
+## R Code Execution
+
+Standard R code blocks with output:
+
+```{r}
+#| label: simple-plot
+#| fig-height: 4
+library(ggplot2)
+ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
+  geom_point(size = 3) +
+  theme_minimal() +
+  labs(title = "Motor Trend Car Road Tests")
+```
+
+## Side-by-Side Code & Output
+
+Using `output-location: column`:
+
+```{r}
+#| output-location: column
+#| fig-height: 6
+# Generate data
+x <- rnorm(100)
+y <- 2 * x + rnorm(100)
+
+# Fit model
+model <- lm(y ~ x)
+
+# Plot
+par(mar = c(4, 4, 1, 1))
+plot(x, y, pch = 19, col = "steelblue")
+abline(model, lwd = 2, col = "darkred")
+```
+
+# Math & Equations {.section-slide}
+
+## LaTeX Support
+
+Mathematical equations are rendered beautifully using MathJax.
+
+**Inline math:** $E = mc^2$
+
+**Display math:**
+
+$$
+\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \mathbf{v}) = 0
+$$
+
+**Aligned equations:**
+
+$$
+\begin{align}
+f(x) &= a x^2 + b x + c \\
+f'(x) &= 2 a x + b
+\end{align}
+$$
+
+# Theme Features {.section-slide}
+
+## Custom Classes
+
+The `dtslides` theme includes special utility classes:
+
+-   [Alert text]{.alert} for emphasis (`.alert`)
+-   [Custom Foreground]{.fg style="--col: #e64173"} (`.fg`)
+-   [Highlighted text]{.highlight} (`.highlight`)
+-   [Note style]{.note} (`.note`)
+-   [Warning style]{.warning} (`.warning`)
+
+## Standard Callouts
+
+::: {.callout-note}
+Note callouts are great for non-critical information.
+:::
+
+::: {.callout-important}
+Important callouts highlight critical warnings.
+:::
+
+::: {.callout-tip}
+Tip callouts suggest best practices.
+:::
+
+## Theme-Specific Callouts
+
+The theme provides custom semantic callouts:
+
+::: {.callout-example}
+**Example:**
+A worked problem or specific case study.
+:::
+
+::: {.callout-question}
+**Question:**
+A prompt for audience reflection or discussion.
+:::
+
+::: {.callout-insight}
+**Insight:**
+A deeper observation or key takeaway.
+:::
+
+# Diagrams {.section-slide}
+
+## Mermaid Diagrams
+
+```{mermaid}
+flowchart LR
+  A[Start] --> B{Decision}
+  B -- Yes --> C[OK]
+  B -- No --> D[Retry]
+  D --> B
+```
+
+## Graphviz
+
+```{dot}
+digraph G {
+  rankdir=LR;
+  start -> a0 -> a1 -> end;
+}
+```
+
+# Conclusion {.section-slide}
+
+## Summary
+
+This template provides a robust foundation for academic and professional presentations.
+
+**Key features:**
+1.  Clean, readable typography.
+2.  Flexible layout options.
+3.  Rich code and math support.
+4.  Customizable thematic elements.
+
+## Thank You {.center}
+
+Questions?
+
+[contact@email.com](mailto:contact@email.com)
