@@ -1,7 +1,5 @@
 ---
 title: "Advanced Topics"
-toc: true
-toc-location: right
 ---
 
 **What this section covers:**

@@ -1,7 +1,5 @@
 ---
 title: "Positron Extensions"
-toc: true
-toc-location: right
 ---
 
 > **Why?** Positron extensions add functionality to the Positron code editor,

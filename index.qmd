@@ -1,7 +1,6 @@
 ---
 title: "AI for Coding"
 sidebar: false
-toc: true
 ---
 
 ## Course Overview

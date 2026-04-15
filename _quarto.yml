@@ -67,3 +67,4 @@ format:
       - brand
     css: styles.css
     toc: true
+    toc-location: right

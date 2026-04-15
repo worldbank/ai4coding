@@ -1,7 +1,5 @@
 ---
 title: "Day 2 — Everyday AI-Assisted Coding"
-toc: true
-toc-location: right
 ---
 
 **Session goals:**
