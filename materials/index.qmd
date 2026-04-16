@@ -1,0 +1,88 @@
+---
+title: "Materials"
+sidebar: true
+---
+
+This course aims to equip economists who regularly use Stata and other modern statistical programming languages to leverage AI-assisted coding tools effectively and responsibly. It introduces participants to AI coding assistants (GitHub Copilot) within the Positron IDE, across two 3-hour sessions with a self-study period in between.
+
+By the end of this course, participants will be able to:
+
+- **Understand**
+
+  - Explain core LLM concepts (tokens, prompts, context windows, agents) and
+    how they affect AI-assisted coding
+  - Recognize the strengths and limitations of AI code assistants for
+    analytical work
+
+- **Apply**
+
+  - Use an AI assistant to read, refactor, and revise existing code
+  - Structure prompts and context to guide AI output for multi-step analytical tasks
+  - Supervise and course-correct AI-generated code through iterative review
+
+- **Take control**
+
+  - Apply data-security practices when using AI tools with sensitive or confidential data
+  - Follow responsible-use guidelines for AI-assisted research workflows
+
+
+## [Prerequisites](prerequisites/index.qmd)
+
+Complete these setup steps **before the first session**:
+
+1. [Software Setup](prerequisites/software.qmd) — Stata 19+ MP, R 4.5+, Python 3.13+ with `uv`, Positron, Quarto 1.9+, Git
+2. [GitHub & Copilot](prerequisites/github.qmd) — personal GitHub account, WB org membership, Copilot access and premium requests
+3. [Positron Extensions](prerequisites/extensions.qmd) — Positron Stata (or Stata MCP), stataglow, databot
+4. [Positron Assistant](prerequisites/assistant.qmd) — enable assistant, connect to GitHub Copilot provider
+5. [Common Problems](prerequisites/common-problems.qmd) — `uv` install issues, access denied, Positron update, Quarto
+
+## [Day 1 — Introduction to AI-Assisted Coding](day1/index.qmd)
+
+**3-hour in-person / hybrid session**
+
+| Time   | Topic |
+|--------|-------|
+| 10 min | Welcome, introductions, course and materials overview |
+| 30 min | Software overview: Positron, GitHub Copilot, and Stata setup |
+| 40 min | AI in action with Stata (R): my typical data workflow using AI |
+| 10 min | Break |
+| 30 min | AI overview: how GitHub Copilot and LLMs work, key concepts, and capabilities |
+| 30 min | Cookbook: securing sensitive data, guardrails, and responsible AI use |
+| 30 min | Self-study exercises overview and Q&A |
+
+**Materials:**
+
+- [Session Overview](day1/index.qmd)
+- [Opening Demo: Refactoring With and Without AI](day1/demo-refactoring.qmd)
+- [AI Overview](day1/ai-overview.qmd) — how LLMs work, strengths/limits, responsible use, prompting
+- [Case Studies](day1/case-studies.qmd) — code refactoring and reproducibility packages
+
+## [Self-Study Period](self-study/index.qmd)
+
+**2–3 days of independent practice between sessions**
+
+Independent practice with structured case studies: reproduce old code, reproduce from an example, or try a new language.
+
+- [Overview & Instructions](self-study/index.qmd) — pick a case study, attempt with and without AI, write up observations
+- [Case Studies](self-study/case-studies.qmd) — reproduce old code, reproduce from example, try a new language
+
+## [Day 2 — Everyday AI-Assisted Coding](day2/index.qmd)
+
+**3-hour in-person / hybrid session**
+
+| Time   | Topic |
+|--------|-------|
+| 20 min | Q&A from self-study: challenges and discoveries |
+| 30 min | Exercise: planning and executing complex tasks with parallel agentic workflows |
+| 30 min | Context engineering: `#tools`, `skills`, `MCP`, and other relevant features |
+| 10 min | Break |
+| 45 min | Exercise: using the right `#tools`, integrating AI `skills`, developing `/prompts` and `/agents` |
+| 30 min | Q&A and discussion |
+| 5 min  | Feedback survey |
+| 10 min | Closing remarks and next steps |
+
+**Materials:**
+
+- [Session Overview](day2/index.qmd)
+- [Advanced Topics](day2/advanced-topics.qmd) — prompt engineering, cost, Git workflow, agents and skills
+- [Case Studies](day2/case-studies.qmd) — complex task planning, testing & debugging, Positron Data Bot
