@@ -55,7 +55,17 @@ Once authenticated with at least one provider, open the Assistant chat:
 
 1. Select the chat robot icon in the sidebar, or run `Chat: Open Chat` from the Command Palette.
 
-![Assistant Sidebar Icon](../../assets/img/assistant-sidebar-icon.png){height=450}
+::: {.columns}
+
+::: {.column width="20%"}
+![Assistant Sidebar Icon](../../assets/img/assistant-sidebar-icon.png){style="max-height: 300;"}
+:::
+
+::: {.column width="80%"}
+![Assistant Panel](../../assets/img/assistant-panel.png){style="max-height: 500px;"}
+:::
+
+:::
 
 2. Type your question in the chat input box and press `Enter`.
 

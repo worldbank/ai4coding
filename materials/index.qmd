@@ -1,29 +1,9 @@
 ---
 title: "Materials"
-sidebar: true
+# sidebar: true
 ---
 
-This course aims to equip economists who regularly use Stata and other modern statistical programming languages to leverage AI-assisted coding tools effectively and responsibly. It introduces participants to AI coding assistants (GitHub Copilot) within the Positron IDE, across two 3-hour sessions with a self-study period in between.
 
-By the end of this course, participants will be able to:
-
-- **Understand**
-
-  - Explain core LLM concepts (tokens, prompts, context windows, agents) and
-    how they affect AI-assisted coding
-  - Recognize the strengths and limitations of AI code assistants for
-    analytical work
-
-- **Apply**
-
-  - Use an AI assistant to read, refactor, and revise existing code
-  - Structure prompts and context to guide AI output for multi-step analytical tasks
-  - Supervise and course-correct AI-generated code through iterative review
-
-- **Take control**
-
-  - Apply data-security practices when using AI tools with sensitive or confidential data
-  - Follow responsible-use guidelines for AI-assisted research workflows
 
 
 ## [Prerequisites](prerequisites/index.qmd)

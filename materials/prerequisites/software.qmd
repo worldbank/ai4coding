@@ -57,6 +57,11 @@ Download and install each tool from the links in @tbl-software.
 
 **Install `uv` (Python package manager)**
 
+
+::: {.panel-tabset}
+
+## Instructions
+
 1. Open PowerShell (press `Windows` key, type `PowerShell`, and open it).
 2. Run:
 
@@ -67,10 +72,10 @@ uv --version
 
 You should see a version number printed. If not, see [Common Problems](common-problems.qmd).
 
-::: {.callout-info collapse="true"}
-### GIF guide for `uv` installation
+### Video guide
 
 ![](../../assets/img/uv-working.gif){width="650"}
+
 :::
 
 ::::::: columns
