@@ -130,11 +130,7 @@
 }
 
 /* ── Table cell padding ─────────────────────────────────────────────── */
-.reveal table td,
-.reveal table th {
-  padding-top: 0.15em;
-  padding-bottom: 0.15em;
-}
+/* (moved to end of file to override dtslides theme defaults) */
 
 // ============================================================
 // dtslides — Academic Theme (academic.scss)
@@ -1000,4 +996,15 @@ body {
     content: "💡 Insight";
     color: $callout-insight-color;
   }
+}
+
+// ============================================================
+// 20. Table Cell Padding Override
+// Placed after dtslides theme defaults so it actually wins.
+// ============================================================
+
+.reveal table td,
+.reveal table th {
+  padding-top: 0.15em;
+  padding-bottom: 0.15em;
 }

@@ -71,10 +71,9 @@ If any problems arise: follow the [troubleshooting guide](../prerequisites/commo
 - Accept invitation email within 7 days
 
 
-## Get GitHub Copilot: WB vs. Private {.small-slide}
+## Get GitHub Copilot: WB vs. Private {.tiny-slide}
 
 **Why?** To get AI code assistance in Positron and GitHub.
-
 
 |  | Private Free | WB Organization | Private Copilot Pro | Private Copilot Pro+ |
 |------|:------------:|:---------------:|:-------------------:|:--------------------:|
@@ -150,7 +149,8 @@ Set a **budget** (~$0.04/request):
 | + WB Copilot access | + WB repos | ✅ 300 premium req/mo |
 | + WB chargeback | + WB repos | ✅ 300 + extra at $0.04/req |
 
-[Recommended: WB Copilot access + chargeback enabled.]{.highlight}
+[Recommended: WB Copilot access + good prompting.]{.highlight}
+[For most use cases, 300 premium requests per month is sufficient with thoughtful usage.]{.note}
 
 ## Github @ World Bank is more than copilot {.small-slide}
 
@@ -172,8 +172,6 @@ Set a **budget** (~$0.04/request):
 ## Positron Assistant {.small-slide}
 
 It is needed to connect GitHub Copilot to Positron and use AI features in the editor and chat.
-
-
 
 ::::: {.columns}
 :::: {.column width="50%"}
@@ -202,7 +200,6 @@ You can also sign in via the **Accounts** icon (bottom-left of Activity Bar).
 :::
 ::::
 :::::
-
 
 ## Support & Links {.small-slide}
 

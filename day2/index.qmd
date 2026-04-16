@@ -21,7 +21,7 @@ off track using appropriate tools and prompting techniques.
 ### Part 1 — Review, Practice, and Concepts (80 min)
 
 | Time   | Topic |
-|--------|-------|
+|--------||--------|--------------------------------------------------------------||
 | 20 min | Q&A from self-study: summary of questions from chat, open discussion of challenges and discoveries |
 | 30 min | Exercise: planning and executing complex tasks with parallel agentic workflows |
 | 30 min | Context engineering: `#tools`, `skills`, `MCP`, and other relevant features |
@@ -31,7 +31,7 @@ off track using appropriate tools and prompting techniques.
 ### Part 2 — Skills in Action (90 min)
 
 | Time   | Topic |
-|--------|-------|
+|--------||--------|--------------------------------------------------------------||
 | 45 min | Exercise: using the right `#tools`, integrating AI `skills`, developing `/prompts` and `/agents` |
 | 30 min | Q&A and discussion |
 | 5 min  | Feedback survey |

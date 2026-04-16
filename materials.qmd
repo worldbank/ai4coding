@@ -43,7 +43,7 @@ Complete these setup steps **before the first session**:
 **3-hour in-person / hybrid / online session**
 
 | Time   | Topic |
-|--------|-------|
+|--------|-----------------------------------------------------------------------------|
 | 10 min | Welcome, introductions, course and materials overview |
 | 30 min | Software overview: Positron, GitHub Copilot, and Stata setup |
 | 40 min | AI in action with Stata (R): my typical data workflow using AI |
@@ -73,7 +73,7 @@ thoughts and questions using Team's chat.
 **3-hour in-person / hybrid session**
 
 | Time   | Topic |
-|--------|-------|
+|--------| -----------------------------------------------------------------------------|
 | 20 min | Q&A from self-study: challenges and discoveries |
 | 30 min | Exercise: planning and executing complex tasks with parallel agentic workflows |
 | 30 min | Context engineering: `#tools`, `skills`, `MCP`, and other relevant features |
