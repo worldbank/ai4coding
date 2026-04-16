@@ -3,11 +3,9 @@ project:
   render:
     - about.qmd
     - index.qmd
-    - materials/index.qmd
-    - materials/prerequisites/*
-    - materials/day1/*.qmd
-    # - materials/day2/*.qmd
-    # - materials/selfstudy/*.qmd
+    - materials.qmd
+    - prerequisites/*.qmd
+    - day1/*.qmd
 
 
 website:
@@ -19,7 +17,7 @@ website:
       - text: "Home"
         href: index.qmd
       - text: "Materials"
-        href: materials/index.qmd
+        href: materials.qmd
       - text: "About"
         href: about.qmd
 
@@ -29,27 +27,25 @@ website:
       pinned: true
       collapse-level: 10
       contents:
-        - materials/index.qmd
+        - materials.qmd
         - section: "Pre-requisites"
-          href: materials/prerequisites/index.qmd
+          href: prerequisites/index.qmd
           contents:
-            - materials/prerequisites/software.qmd
-            - materials/prerequisites/github.qmd
-            - materials/prerequisites/extensions.qmd
-            - materials/prerequisites/assistant.qmd
-            - materials/prerequisites/common-problems.qmd
+            - prerequisites/software.qmd
+            - prerequisites/github.qmd
+            - prerequisites/extensions.qmd
+            - prerequisites/assistant.qmd
+            - prerequisites/common-problems.qmd
         - section: "Day 1"
-          href: materials/day1/index.qmd
-          # contents:
-            # - materials/day1/slides.qmd
-            # - materials/day1/ai-overview.qmd
-            # - materials/day1/case-studies.qmd
+          href: day1/index.qmd
+          contents:
+            - day1/demo-refactoring.qmd
         - section: "Self Study"
-          href: materials/selfstudy/index.qmd
+          href: selfstudy/index.qmd
   #       #   # contents:
   #       #     # - materials/self-study/case-studies.qmd
         - section: "Day 2"
-          href: materials/day2/index.qmd
+          href: day2/index.qmd
   #       #   # contents:
   #       #     # - materials/day2/advanced-topics.qmd
   #       #     # - materials/day2/case-studies.qmd
@@ -65,5 +61,6 @@ format:
       - cosmo
       - brand
     toc: true
+    toc-depth: 3
     toc-location: right
     lightbox: true

@@ -21,7 +21,7 @@ title: "Software Setup"
 2. Verify each tool works correctly (see [Verification](#verification))
 3. Troubleshoot any issues (see [Common Problems](common-problems.qmd))
 
-## Software Installation
+## Installation
 
 ::: {.panel-tabset}
 
@@ -157,7 +157,7 @@ You should see a version number and a passing check.
 :::
 
 
-## Software Licences
+## Licences
 
 | Tool | Licence  |
 |------|---------------|
