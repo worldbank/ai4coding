@@ -1,5 +1,11 @@
 project:
   type: website
+  render:
+    - materials/prerequisites/*
+    - materials/day1/*.qmd
+    - materials/day2/index.qmd
+    - materials/self-study/index.qmd
+
 
 website:
   title: "AI for Coding"
