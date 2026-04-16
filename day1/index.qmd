@@ -48,27 +48,36 @@ contact [ITHelp@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org) before the
 
 ## Slides
 
-### Introductions, and overview
+::: {.column-page-inset-right}
 
-<div>
+::: {.panel-tabset .tabset-pills}
+
+## Introductions, and overview
 
 ```{=html}
-<iframe src="day1/ai4coding-slides-d1-1.html" title="Quarto Slides"></iframe>
+<iframe class="slide-deck"  src="ai4coding-slides-d1-1/"></iframe>
+
 ```
-</div>
 
-View slides in a [new tab](ai4coding-slides-d1-1.qmd) or download [PDF version](day1/ai4coding-slides-d1-1.pdf).
+View slides in a [new tab](ai4coding-slides-d1-1/){target="_blank"} or download a [PDF version](day1/ai4coding-slides-d1-1/ai4coding-slides-d1-1.pdf).
 
-<!-- ### Setup overview
 
-<div class="ratio ratio-16x9">
-  <iframe src="ai4coding-slides-d1-2.html" title="Quarto Slides"></iframe>
-</div>
+## Setup overview
 
-### AI in action with Stata/R
+```{=html}
+<iframe class="slide-deck" src="ai4coding-slides-d1-2/"></iframe>
 
-### Core AI concepts
+```
 
-<div class="ratio ratio-16x9">
-  <iframe src="ai4coding-slides-d1-3.html" title="Quarto Slides"></iframe>
-</div> -->
+View slides in a [new tab](ai4coding-slides-d1-2/){target="_blank"} or download a [PDF version](day1/ai4coding-slides-d1-2/ai4coding-slides-d1-2.pdf).
+
+## AI in action with Stata/R
+
+```{=html}
+<iframe class="slide-deck" src="ai4coding-slides-d1-3/"></iframe>
+
+```
+View slides in a [new tab](ai4coding-slides-d1-3/){target="_blank"} or download a [PDF version](day1/ai4coding-slides-d1-3/ai4coding-slides-d1-3.pdf).
+
+:::
+:::
