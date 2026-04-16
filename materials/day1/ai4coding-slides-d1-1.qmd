@@ -1,5 +1,5 @@
 ---
-title: "AI for Coding"
+title: "AI 4 Coding"
 subtitle: "Day 1: Course Overview"
 author:
   - name: Eduard Bukin
@@ -11,12 +11,35 @@ date: "April 20, 2024"
 format: dtslides-revealjs
 ---
 
-## Welcome {.center .small-slide}
+
+## Motivation
+
+:::::: columns
+::: {.column width="50%"}
+**Chat-Based AI tools** [Claude](https://www.anthropic.com/claude) \| [ChatGPT](https://chatgpt.com/) \| [Copilot](https://copilot.microsoft.com/) \| [Gemini](https://search.google/ai-in-search/) \| [WB MAI](https://ai.worldbank.org/chat/mai)
+
+- use familiar technologies: 🌐 Web-Browser, 💬 Chat, 📝 Stata editor, [**📋 copy-paste**]{.warning}
+- improve our workflow.
+
+
+[**Is this the most effective way to use AI in coding❓**]{.fg}
+:::
+
+::: {.column width="50%"}
+There are many [**Integrated** Development Environments (IDEs)]{.highlight} for data science with AI integrated into your coding workflow.
+
+Introducing [**Positron**]{.bg} with [**Github Copilot**]{.fg} is the goal of this course.
+
+:::
+::::::
+
+[See also: previous seminar on [AI-Assisted Coding in Stata and R](https://worldbank.github.io/geoPovLearn/seminars/seminar-2026-02/overview.html) on [GeoPovlearn](https://worldbank.github.io/geoPovLearn).]{.center .alert}
+
+## Course Overview {.center .small-slide}
 
 [**Goal:** Equip economists with AI-skills for coding.]{.alert}
 
 [2 × 3-hour sessions]{.pill} [Self-study in between]{.pill} [GitHub Copilot · Positron IDE]{.pill} [Stata & modern stat languages]{.pill}
-
 
 :::: {.columns}
 
@@ -127,6 +150,12 @@ format: dtslides-revealjs
 
 ## Resources
 
-TODO
+- Slides and tutorials: [worldbank.github.io/ai4coding](https://worldbank.github.io/ai4coding).
 
-- Materials: [worldbank.github.io/ai4coding](https://worldbank.github.io/ai4coding).
+- Code for exercises and demos: [github.com/worldbank/ai4coding-examples](https://github.com/worldbank/ai4coding-examples).
+
+- Data for exercises share throug the OneDrive shared folder [ ai4coding-data](https://worldbankgroup-my.sharepoint.com/:f:/g/personal/ebukin_worldbank_org/IgBy2yGjpLJPRbM67FJpBFVgAbMRYhEPmS30H2RJSBFO_gE?e=GlDEiR)
+
+  - Available to anyone at the World Bank.
+
+- Previous seminar on [AI-Assisted Coding in Stata and R](https://worldbank.github.io/geoPovLearn/seminars/seminar-2026-02/overview.html) on [GeoPovlearn](https://worldbank.github.io/geoPovLearn)
