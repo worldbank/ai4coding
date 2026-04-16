@@ -10,7 +10,7 @@ author:
 date: "April 20, 2024"
 format:
   revealjs:
-    theme: [simple, "../../assets/academic.scss"]
+    theme: [simple, custom.scss]
     include-after-body:
       - text: |
           <script>
@@ -179,7 +179,7 @@ Introducing [**Positron**]{.bg} with [**Github Copilot**]{.fg} is the goal of th
 | 30 min | Cookbook: securing sensitive data, guardrails, and responsible AI use |
 | 30 min | Self-study exercises overview and Q&A |
 
-## Resources
+## Resources {.small-slide}
 
 - Slides and tutorials: [worldbank.github.io/ai4coding](https://worldbank.github.io/ai4coding).
 

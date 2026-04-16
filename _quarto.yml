@@ -6,10 +6,12 @@ project:
     - materials.qmd
     - prerequisites/*.qmd
     - day1/*.qmd
+    - day1/**/*.qmd
 
 
 website:
   title: "AI for Coding"
+  llms-txt: true
   navbar:
     background: primary
     search: true
@@ -57,6 +59,7 @@ execute:
 
 format:
   html:
+    css: assets/custom.css
     theme:
       - cosmo
       - brand
