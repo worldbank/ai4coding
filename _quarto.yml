@@ -41,7 +41,10 @@ website:
         - section: "Day 1"
           href: day1/index.qmd
           contents:
-            - day1/demo-refactoring.qmd
+            - day1/setup-overview.qmd
+            - day1/ex1-1-harmonization.qmd
+            # - day1/ex1-2-revision.qmd
+
         - section: "Self Study"
           href: selfstudy/index.qmd
   #       #   # contents:
