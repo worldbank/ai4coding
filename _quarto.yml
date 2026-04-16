@@ -1,10 +1,12 @@
 project:
   type: website
   render:
+    - about.qmd
+    - index.qmd
     - materials/prerequisites/*
     - materials/day1/*.qmd
-    - materials/day2/index.qmd
-    - materials/self-study/index.qmd
+    - materials/day2/*.qmd
+    # - materials/selfstudy/*.qmd
 
 
 website:
@@ -43,8 +45,8 @@ website:
             # - materials/day1/demo-refactoring.qmd
             # - materials/day1/ai-overview.qmd
             # - materials/day1/case-studies.qmd
-        - section: "Self-Study"
-          href: materials/self-study/index.qmd
+        # - section: "Self Study"
+          # href: materials/selfstudy/index.qmd
           # contents:
             # - materials/self-study/case-studies.qmd
         - section: "Day 2"
@@ -71,7 +73,7 @@ format:
     theme:
       - cosmo
       - brand
-    css: styles.css
+    # css: styles.css
     toc: true
     toc-location: right
     lightbox: true
