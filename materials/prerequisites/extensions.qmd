@@ -137,8 +137,7 @@ To install it:
 
 ![](../../assets/img/pos-stat-p2.gif){width="600"}
 
-
-### Key features
+## Key features
 
 - Create and run `.do` files
 - AI agent integration
@@ -190,13 +189,12 @@ To install it:
     - Run the file (`Ctrl+Shift+D` or `Ctrl+Shift+P` → `Stata: Run Current File`)
 
 :::: panel-tabset
-## Installation, verification and Key features
+## Installation, verification and features
 
 - Run Stata `.do` files directly from Positron
 - AI agent integration (GitHub Copilot, Claude) with full context of your Stata environment
-- Funcitons with other IDEs and tools that support MCP (e.g. VS Code, Cursor)
+- Functions with other IDEs and tools that support MCP (e.g. VS Code, Cursor)
 
 ![](../../assets/img/pos-stata-ext2-demo.gif){width="600"}
-
 
 :::
