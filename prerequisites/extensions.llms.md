@@ -1,0 +1,180 @@
+# Positron Extensions
+
+> **WARNING:**
+>
+> 1.  **Positron Stata** extension installed and configured.
+
+> **Why?** Positron extensions add language support, tooling, and AI features to the editor. The extensions below are required for AI-assisted Stata workflows in this course.
+
+**What you need to do:**
+
+1.  Install extensions in positron:
+    1.  [Positron Stata](https://open-vsx.org/vscode/item?itemName=ntluong95.positron-stata) extension (or alternative [Stata MCP](https://open-vsx.org/vscode/item?itemName=DeepEcon.stata-mcp)).
+    2.  [stataglow](https://open-vsx.org/vscode/item?itemName=randrescastaneda.stataglow) extension for Stata syntax highlighting.
+    3.  [databot](https://open-vsx.org/vscode/item?itemName=posit.databot) extension for AI-assisted data analysis in R (optional).
+    4.  Other extensions as desired (e.g., Python, R, Quarto support).
+2.  Set correct settings for some extensions, e.g.
+    1.  Set [Stata installation path](vscode-server://settings/positron.stata.installationPath) in Positron settings.
+    2.  Set Stata MCP server settings for autonomous agent use (optional).
+    3.  Set [stataEdition](vscode-server://settings/positron.stata.stataEdition) to `mp`, `se`, or `be` depending on your Stata license.
+3.  Verify that Stata runs correctly from Positron.
+
+## Extensions overview
+
+Positron/VS Code ships with minimal built-in functionality by design — extensions add support for specific languages, tools, and workflows without bloating the core editor.
+
+Notable extensions for this course:
+
+- [Positron Assistant](https://open-vsx.org/vscode/item?itemName=posit.assistant) — installed by default; provides AI code suggestions and completions via GitHub Copilot and other AI providers.
+- [Claude Code](https://open-vsx.org/vscode/item?itemName=Anthropic.claude-code) — agentic AI coding using Anthropic’s Claude models.
+- [Positron Databot](https://open-vsx.org/vscode/item?itemName=posit.databot) — AI-assisted data analysis and visualization.
+
+## Installing any extensions
+
+Open the **Extensions panel** with `Ctrl+Shift+X` or click the square icon ![Extensions panel](../../assets/img/extensions.png) on the left sidebar.
+
+To install any extension:
+
+1.  **Search** for it by name
+2.  Click **Install**
+3.  If prompted “Do you trust the publisher?”, click **Trust and Install**
+4.  If needed, **reload Positron**: `Ctrl+Shift+P` → `Developer: Reload Window`
+
+[![Extensions panel](../../assets/img/extensions-panel.png)](../../assets/img/extensions-panel.png "Extensions panel")
+
+Extensions panel
+
+### Positron–Stata integration
+
+Stata has no built-in editor integration. Extensions bridge the gap by connecting Positron to Stata’s backend, enabling an AI-assisted coding workflow. Three components work together:
+
+1.  **Stata 18+** with Model Context Protocol (MCP) support executes Stata code.
+2.  **Python + `uv`** — sends code to Stata and captures output.
+3.  **A Positron extension** — surfaces results in the editor UI.
+
+> **WARNING:**
+>
+> - **Custom logs not supported** — `log using <filename>` conflicts with the extension’s own logging. Stata only allows one log at a time. Use `capture log using <filename>` to bypass this limitation.
+> - **Bugs are possible** — report issues to the extension developers (links below).
+
+### Which extension to install?
+
+Two extensions provide Stata integration. Install one — not both.
+
+| Extension | Recommendation | Highlights |
+|----|----|----|
+| [**Positron Stata**](https://open-vsx.org/extension/ntluong95/positron-stata) | **Recommended** | Native Positron integration (console, data viewer, plots) |
+| [Stata MCP](https://open-vsx.org/extension/DeepEcon/stata-mcp) | Alternative | More mature; better for VS Code / Cursor users |
+| [**stataglow**](https://open-vsx.org/vscode/item?itemName=randrescastaneda.stataglow) | Stata syntax highlighting | works with either extension |
+
+**Key differences:**
+
+| Feature | Positron Stata | Stata MCP |
+|----|----|----|
+| Console output in Positron | ✅ | ✅ |
+| Data viewer | ✅ | ❌ |
+| Multiple Stata sessions | ✅ | ❌ |
+| AI agent integration | ✅ | ✅ |
+| MCP support | ✅ | ✅ |
+| Maturity | New (2026) | More mature (2023) |
+| Good for… | Positron users who want native integration | VS Code / Cursor users who want MCP support |
+
+## Positron Stata
+
+Native Positron integration of Stata with console, data viewer, plots. Help and documentation are on GitHub along with issue reporting: [github.com/ntluong95/positron-stata](https://github.com/ntluong95/positron-stata).
+
+To install it:
+
+1.  Open the Extensions panel (`Ctrl+Shift+X`)
+
+2.  Search for **Positron Stata** or `ntluong95.positron-stata`
+
+3.  Click **Install** -\> **Trust and Install**
+
+4.  Reload Positron: `Ctrl+Shift+P` → `Developer: Reload Window`
+
+5.  Open settings in Positron (`Ctrl+,`).
+
+6.  Search for [`positron.stata.installationPath`](vscode-server://settings/positron.stata.installationPath)
+
+7.  Set the path to your Stata installation, e.g. `C:\Program Files\StataNow19\` (adjust if Stata is installed elsewhere).
+
+8.  Create a new `.do` file and run exemplary code to verify the extension is working (or open an existing one).
+
+    - create `test.do` with:
+
+      ``` stata
+      sysuse auto
+      summarize price
+      display "Stata is working!"
+      ```
+
+    - Save the file (`Ctrl+S`) — **unsaved edits are not executed**.
+
+    - Run the file (`Ctrl+Shift+D` or `Ctrl+Shift+P` → `Stata: Run Current File`)
+
+## Installation
+
+[![](../../assets/img/pos-stat-p1.gif)](../../assets/img/pos-stat-p1.gif)
+
+## Verification
+
+[![](../../assets/img/pos-stat-p2.gif)](../../assets/img/pos-stat-p2.gif)
+
+## Key features
+
+- Create and run `.do` files
+- AI agent integration
+- Console: execute Stata code and see output
+- Environment: variables and globals
+- Data: view, and explore
+- Figures: display, manage, and export
+- Have multiple Stata sessions
+
+[![](../../assets/img/pos-stata-ext1.gif)](../../assets/img/pos-stata-ext1.gif)
+
+## Stata MCP Extension
+
+The [Stata MCP extension](https://open-vsx.org/extension/DeepEcon/stata-mcp) enables **Model Context Protocol (MCP)** for Stata. Help and documentation are on the [Open VSX page](https://open-vsx.org/extension/DeepEcon/stata-mcp).
+
+To install it:
+
+1.  Open the Extensions panel (`Ctrl+Shift+X`)
+
+2.  Search for **Stata MCP** or `DeepEcon.stata-mcp`
+
+3.  Click **Install** -\> **Trust and Install**
+
+4.  Reload Positron: `Ctrl+Shift+P` → `Developer: Reload Window`
+
+5.  Open settings in Positron (`Ctrl+,`).
+
+6.  Search for `stata-vscode.stataPath`
+
+7.  Set the path to your Stata installation, e.g. `C:\Program Files\StataNow19\` (adjust if Stata is installed elsewhere).
+
+8.  Search for `stata-vscode.stataEdition` and set it to `mp`, `se`, or `be` depending on your Stata license.
+
+9.  Create a new `.do` file and run exemplary code to verify the extension is working (or open an existing one).
+
+    - create `test.do` with:
+
+      ``` stata
+      sysuse auto
+      summarize price
+      display "Stata is working!"
+      ```
+
+    - Save the file (`Ctrl+S`) — **unsaved edits are not executed**.
+
+    - Run the file (`Ctrl+Shift+D` or `Ctrl+Shift+P` → `Stata: Run Current File`)
+
+## Installation, verification and features
+
+- Run Stata `.do` files directly from Positron
+- AI agent integration (GitHub Copilot, Claude) with full context of your Stata environment
+- Functions with other IDEs and tools that support MCP (e.g. VS Code, Cursor)
+
+[![](../../assets/img/pos-stata-ext2-demo.gif)](../../assets/img/pos-stata-ext2-demo.gif)
+
+Back to top

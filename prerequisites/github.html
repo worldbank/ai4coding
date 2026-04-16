@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>GitHub &amp; Copilot – AI for Coding</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../prerequisites/extensions.html" rel="next">
+<link href="../prerequisites/software.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-4b8b535605d27086117a1b1ae3a37b34.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-5bff2ba0731e695f8f21b1268c83896f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-4b8b535605d27086117a1b1ae3a37b34.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-b508f628e689cf140e0b520297b55a88.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-2ef71245278a5536b26a660716fdd4af.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-b508f628e689cf140e0b520297b55a88.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../assets/custom.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">AI for Coding</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../materials.html" aria-current="page"> 
+<span class="menu-text">Materials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../prerequisites/index.html">Pre-requisites</a></li><li class="breadcrumb-item"><a href="../prerequisites/github.html">GitHub &amp; Copilot</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Materials</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Pre-requisites</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prerequisites/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prerequisites/software.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Software Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prerequisites/github.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">GitHub &amp; Copilot</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prerequisites/extensions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Positron Extensions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prerequisites/assistant.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Positron Assistant</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prerequisites/common-problems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Common Problems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Day 1</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../day1/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../day1/setup-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Positron + Copilot setup and overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../day1/ex1-1-harmonization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example 1. Data Harmonization</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Self Study</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Day 2</span></span>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#quick-start" id="toc-quick-start" class="nav-link active" data-scroll-target="#quick-start">Quick start</a></li>
+  <li><a href="#premium-requests" id="toc-premium-requests" class="nav-link" data-scroll-target="#premium-requests">Premium requests</a></li>
+  <li><a href="#access-levels" id="toc-access-levels" class="nav-link" data-scroll-target="#access-levels">Access levels</a></li>
+  <li><a href="#step-by-step-setup" id="toc-step-by-step-setup" class="nav-link" data-scroll-target="#step-by-step-setup">Step-by-step setup</a>
+  <ul class="collapse">
+  <li><a href="#create-a-github-account" id="toc-create-a-github-account" class="nav-link" data-scroll-target="#create-a-github-account">1. Create a GitHub account</a></li>
+  <li><a href="#join-the-wb-github-organization" id="toc-join-the-wb-github-organization" class="nav-link" data-scroll-target="#join-the-wb-github-organization">2. Join the WB GitHub organization</a></li>
+  <li><a href="#get-github-copilot" id="toc-get-github-copilot" class="nav-link" data-scroll-target="#get-github-copilot">3. Get GitHub Copilot</a></li>
+  <li><a href="#verify-copilot-access" id="toc-verify-copilot-access" class="nav-link" data-scroll-target="#verify-copilot-access">4. Verify Copilot access</a></li>
+  <li><a href="#check-premium-requests-usage" id="toc-check-premium-requests-usage" class="nav-link" data-scroll-target="#check-premium-requests-usage">5. Check premium requests usage</a></li>
+  <li><a href="#enable-premium-request-budget-recommended" id="toc-enable-premium-request-budget-recommended" class="nav-link" data-scroll-target="#enable-premium-request-budget-recommended">6. Enable premium request budget <em>(recommended)</em></a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../prerequisites/index.html">Pre-requisites</a></li><li class="breadcrumb-item"><a href="../prerequisites/github.html">GitHub &amp; Copilot</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">GitHub &amp; Copilot</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Minimum requirements for this course
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>A <strong>personal GitHub account</strong></li>
+<li><strong>GitHub Copilot</strong> access (private or institutional)</li>
+<li><strong>Available premium requests</strong> — <a href="https://github.com/settings/copilot/features">check here</a></li>
+</ol>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Why?</strong> GitHub hosts your code and enables version-controlled collaboration. It also provides <strong>GitHub Copilot</strong>, an AI assistant that suggests and completes code directly in your editor.</p>
+</blockquote>
+<section id="quick-start" class="level2">
+<h2 class="anchored" data-anchor-id="quick-start">Quick start</h2>
+<ol type="1">
+<li><p><a href="https://github.com/signup"><strong>Create a GitHub account</strong></a> with your <span style="background-color: #c0392b; color: white; padding: 2px 4px;"><strong>personal email</strong></span> (not your WB email).</p></li>
+<li><p><a href="https://worldbankgroup.service-now.com/wbg/en/join-github-organization-account-request?id=wbg_sc_catalog&amp;sys_id=910e1739db1a54903c5960ab13961912&amp;table=sc_cat_item&amp;searchTerm=github"><strong>Join</strong></a> the <a href="https://github.com/worldbank">github.com/worldbank</a> organization.</p></li>
+<li><p><strong>Get GitHub Copilot</strong> — either <a href="https://github.com/worldbank/ospo/tree/main?tab=readme-ov-file#-github-copilot">request access from WB</a> or <a href="https://github.com/features/copilot/plans">subscribe privately</a>.</p></li>
+<li><p><strong>Set up a premium request budget</strong> <em>(recommended)</em> — your plan includes a monthly allowance (WB: 300, Pro: 500, Pro+: 1,500). Once exhausted, advanced models are blocked unless you enable overuse billing:</p>
+<ul>
+<li><strong>Private plan →</strong> <a href="https://github.com/settings/billing/budgets">GitHub &gt; Settings &gt; Budgets and Alerts &gt; + New Budget</a></li>
+<li><strong>WB plan →</strong> <a href="https://github.com/worldbank/ospo/blob/main/docs/copilot/premium-request-chargeback.md">Premium request chargeback</a></li>
+</ul></li>
+</ol>
+<p>Questions? Email <a href="mailto:github@worldbank.org">github@worldbank.org</a>.</p>
+<hr>
+</section>
+<section id="premium-requests" class="level2">
+<h2 class="anchored" data-anchor-id="premium-requests">Premium requests</h2>
+<p>GitHub Copilot’s advanced features (Chat, Agent mode, Claude/GPT models) consume <strong>premium requests</strong>. Each plan includes a monthly allowance:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Plan</th>
+<th style="text-align: right;">Premium requests / month</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Institutional WB org</td>
+<td style="text-align: right;">300</td>
+</tr>
+<tr class="even">
+<td>Private Copilot Pro</td>
+<td style="text-align: right;">500</td>
+</tr>
+<tr class="odd">
+<td>Private Copilot Pro+</td>
+<td style="text-align: right;">1,500</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Once you hit the limit, advanced AI features (Ask and Agent mode,Claude) are unavailable for the rest of the month.</strong> Basic inline completions still work, but with older, less capable models.</p>
+<p><strong>Check your usage →</strong> <a href="https://github.com/settings/copilot/features">GitHub Settings &gt; Copilot</a>, scroll to “Usage”.</p>
+<p>To avoid hitting the limit, enable <strong>premium requests budget</strong> (~$0.04/request):</p>
+<ul>
+<li><p><strong>Private plan →</strong> <a href="https://github.com/settings/billing/budgets">GitHub &gt; Settings &gt; Budgets and Alerts &gt; + New Budget</a></p></li>
+<li><p><strong>WB plan →</strong> <a href="https://github.com/worldbank/ospo/blob/main/docs/copilot/premium-request-chargeback.md">setup chargeback</a>. Setting up private usage limit using a credit card is not possible for WB org members.</p></li>
+<li><p><strong>Note:</strong> You can only have one active plan: private or institutional. If you have a private subscription and get institutional WB access, your private subscription is automatically cancelled and remaining balance is refunded. Exiting institutional subscription (e.g.&nbsp;leaving WB org) is only possible in the end of the month and does not restore private subscription — you would need to resubscribe privately if you want to switch back.</p></li>
+</ul>
+</section>
+<section id="access-levels" class="level2">
+<h2 class="anchored" data-anchor-id="access-levels">Access levels</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Setup</th>
+<th>Repos</th>
+<th>Copilot</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>No GitHub account</td>
+<td>✅ Public / ❌ Personal / ❌ WB</td>
+<td>❌</td>
+</tr>
+<tr class="even">
+<td>Personal account (free)</td>
+<td>+✅Personal / ❌ WB</td>
+<td>⚠️ Only old LLMs</td>
+</tr>
+<tr class="odd">
+<td>+ Copilot Pro/Pro+ (private)</td>
+<td>+✅Personal / ❌ WB</td>
+<td>✅Claude+ 300/1500</td>
+</tr>
+<tr class="even">
+<td>+ Premium requests budget (private)</td>
+<td>+✅Personal / ❌ WB</td>
+<td>✅ + extra at 0.04$/request</td>
+</tr>
+<tr class="odd">
+<td>WB Org member</td>
+<td>+✅ WB</td>
+<td>⚠️ No premium requests</td>
+</tr>
+<tr class="even">
+<td>+ or Private Copilot and premium requests budget</td>
+<td>+✅ WB</td>
+<td>✅Claude+ 300/1500 (+ extra)</td>
+</tr>
+<tr class="odd">
+<td>+ or WB Copilot access</td>
+<td>+✅ WB</td>
+<td>✅ 300 req/mo</td>
+</tr>
+<tr class="even">
+<td>+ WB chargeback</td>
+<td>+✅ WB</td>
+<td>✅ + extra at 0.04$/request</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="step-by-step-setup" class="level2">
+<h2 class="anchored" data-anchor-id="step-by-step-setup">Step-by-step setup</h2>
+<section id="create-a-github-account" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-github-account">1. Create a GitHub account</h3>
+<p>Sign up at <a href="https://github.com/signup" class="uri">https://github.com/signup</a>. Use your <span style="background-color: #ff4f3c; color: black; padding: 2px 4px;"><strong>personal email address</strong></span>, not your World Bank email.</p>
+</section>
+<section id="join-the-wb-github-organization" class="level3">
+<h3 class="anchored" data-anchor-id="join-the-wb-github-organization">2. Join the WB GitHub organization</h3>
+<ol type="1">
+<li>Submit a <a href="https://worldbankgroup.service-now.com/wbg/en/join-github-organization-account-request?id=wbg_sc_catalog&amp;sys_id=910e1739db1a54903c5960ab13961912&amp;table=sc_cat_item&amp;searchTerm=github">Join GitHub Organization request</a> on eServices.</li>
+<li>Accept the invitation email (sent to your private email linked with your GitHub account).</li>
+<li>Confirm membership by following the link in the email.
+<ul>
+<li><strong>Invitations expire after 7 days</strong> — resubmit through eServices if needed.</li>
+</ul></li>
+</ol>
+<p>See <a href="https://github.com/worldbank/ospo/tree/main?tab=readme-ov-file#octocat-github-enterprise">WB GitHub Enterprise Overview</a> for details.</p>
+<div class="callout-info">
+<p><strong>Inactivity policy.</strong> Members inactive for several months may be removed automatically. Resubmit the eServices request to rejoin. This does <strong>not</strong> affect your personal GitHub account or Copilot subscription.</p>
+</div>
+</section>
+<section id="get-github-copilot" class="level3">
+<h3 class="anchored" data-anchor-id="get-github-copilot">3. Get GitHub Copilot</h3>
+<p>Choose <strong>one</strong> of the following:</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Option A: WB Organization access</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Option B: Private subscription</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>After joining the WB org, go to <a href="https://github.com/settings/copilot">GitHub Settings &gt; Copilot</a>:</p>
+<ol type="1">
+<li><p>Scroll to <strong>“Get Copilot from an organization”</strong> and click <strong>Request access</strong> from <code>worldbank</code>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../assets/img/gh-copilot-access-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Request access button"><img src="../../assets/img/gh-copilot-access-2.png" class="img-fluid figure-img" alt="Request access button"></a></p>
+<figcaption>Request access button</figcaption>
+</figure>
+</div></li>
+<li><p>Email <a href="mailto:github@worldbank.org">github@worldbank.org</a>:</p>
+<ul>
+<li><strong>Subject:</strong> <code>Request GitHub Copilot Access</code></li>
+<li><strong>Body:</strong> your GitHub username + brief reason</li>
+<li><strong>CC:</strong> your manager</li>
+</ul></li>
+</ol>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>Purchase <a href="https://github.com/features/copilot/plans">Copilot Pro or Pro+</a>. This works independently of WB org membership.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Once you receive WB Copilot access, your private subscription is automatically cancelled and refunded. You cannot easily switch back to a private subscription afterward.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="verify-copilot-access" class="level3">
+<h3 class="anchored" data-anchor-id="verify-copilot-access">4. Verify Copilot access</h3>
+<p>Go to <a href="https://github.com/settings/copilot">GitHub Settings &gt; Copilot</a> and confirm your status:</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">No Copilot access</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Private or WB Copilot access granted</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../assets/img/gh-copilot-access-3a.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="No Copilot access"><img src="../../assets/img/gh-copilot-access-3a.png" class="img-fluid figure-img" alt="No Copilot access"></a></p>
+<figcaption>No Copilot access</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../assets/img/gh-copilot-access-4a.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Copilot access confirmed"><img src="../../assets/img/gh-copilot-access-4a.png" class="img-fluid figure-img" alt="Copilot access confirmed"></a></p>
+<figcaption>Copilot access confirmed</figcaption>
+</figure>
+</div>
+<p>Note: If you have copilot access from the WB, you will see “<strong>Managed by worldbank</strong>”.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="check-premium-requests-usage" class="level3">
+<h3 class="anchored" data-anchor-id="check-premium-requests-usage">5. Check premium requests usage</h3>
+<p>Go to <a href="https://github.com/settings/copilot">GitHub Settings &gt; Copilot</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../assets/img/gh-max.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="GH Copilot 100% use limit"><img src="../../assets/img/gh-max.png" class="img-fluid figure-img" width="600" alt="GH Copilot 100% use limit"></a></p>
+<figcaption>GH Copilot 100% use limit</figcaption>
+</figure>
+</div>
+<ul>
+<li><strong>0–100%</strong> — share of your monthly allowance used so far.</li>
+<li><strong>100%+</strong> — overuse; billed at ~$0.04/request if a budget is enabled.</li>
+<li><strong>Resets monthly</strong> — usage drops to 0% at the start of each billing cycle.</li>
+</ul>
+</section>
+<section id="enable-premium-request-budget-recommended" class="level3">
+<h3 class="anchored" data-anchor-id="enable-premium-request-budget-recommended">6. Enable premium request budget <em>(recommended)</em></h3>
+<p>When you reach your monthly limit, advanced models (Claude, GPT) are unavailable until the next month. To keep access, enable premium request budget billing:</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">WB Copilot plan</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Private plan</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<p>Follow the <a href="https://github.com/worldbank/ospo/blob/main/docs/copilot/premium-request-chargeback.md">Premium Request Chargeback Process</a>:</p>
+<ol type="1">
+<li>Get manager approval and a budget code.</li>
+<li>Set a monthly spending limit.</li>
+<li>Email <a href="mailto:github@worldbank.org">github@worldbank.org</a> with your budget code (cc your manager).</li>
+</ol>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<p>Go to <a href="https://github.com/settings/billing/budgets">GitHub Billing &gt; Budgets</a> and set a spending limit.</p>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/worldbank\.github\.io\/ai4coding\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../prerequisites/software.html" class="pagination-link" aria-label="Software Setup">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Software Setup</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../prerequisites/extensions.html" class="pagination-link" aria-label="Positron Extensions">
+        <span class="nav-page-text">Positron Extensions</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

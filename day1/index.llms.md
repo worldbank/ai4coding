@@ -1,0 +1,59 @@
+# Overview
+
+**Session goals:**
+
+- See AI in action: live code understanding, reision, and reuse with AI
+- Software setup overview: Positron + GitHub Copilot + Stata
+- Understand how AI models work and learn key vocabulary:
+  - IDE, LLM, Assistant, tokens, prompts, context window, agent, plan.
+- What AI can and cannot do for your coding workflow
+- Get ready to practice on your own.
+
+By the end of this session you should be able to use AI independently on your own computer and be ready for the self-study exercises.
+
+## Agenda
+
+### Part 1 — Setup & Live Demo (80 min)
+
+| Time   | Topic                                                        |
+|--------|--------------------------------------------------------------|
+| 10 min | Welcome, introductions, and overview                         |
+| 30 min | Software overview: Positron, GitHub Copilot, and Stata setup |
+| 40 min | AI in action with Stata/R: my typical data workflow          |
+
+### ☕ Break (10 min)
+
+### Part 2 — Concepts & Practice (90 min)
+
+| Time | Topic |
+|----|----|
+| 30 min | AI overview presentation: how GitHub Copilot and LLMs work, key concepts, and capabilities |
+| 30 min | Cookbook: securing sensitive data, guardrails, and responsible AI use |
+| 30 min | Self-study exercises overview and Q&A |
+
+## Before You Arrive
+
+Make sure all prerequisites are complete:
+
+1.  [Software Setup](../prerequisites/software.llms.md)
+2.  [GitHub Setup](../prerequisites/github.llms.md)
+3.  [Positron Extensions](../prerequisites/extensions.llms.md)
+4.  [Positron Assistant](../prerequisites/assistant.llms.md)
+
+If you run into issues, check [Common Problems](../prerequisites/common-problems.llms.md) or contact <ITHelp@worldbankgroup.org> before the session.
+
+## Slides
+
+## Introductions, and overview
+
+View slides in a [new tab](ai4coding-slides-d1-1/) or download a [PDF version](day1/ai4coding-slides-d1-1/ai4coding-slides-d1-1.pdf).
+
+## Setup overview
+
+View slides in a [new tab](ai4coding-slides-d1-2/) or download a [PDF version](day1/ai4coding-slides-d1-2/ai4coding-slides-d1-2.pdf).
+
+## AI in action with Stata/R
+
+View slides in a [new tab](ai4coding-slides-d1-3/) or download a [PDF version](day1/ai4coding-slides-d1-3/ai4coding-slides-d1-3.pdf).
+
+Back to top

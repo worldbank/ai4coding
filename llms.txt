@@ -1,0 +1,20 @@
+# AI for Coding
+
+## Pages
+
+- [AI for Coding](https://worldbank.github.io/ai4coding/day1/ai4coding-slides-d1-3/index.llms.md)
+- [AI 4 Coding](https://worldbank.github.io/ai4coding/day1/ai4coding-slides-d1-1/index.llms.md)
+- [Overview](https://worldbank.github.io/ai4coding/day1/index.llms.md)
+- [AI Overview](https://worldbank.github.io/ai4coding/day1/ai-overview.llms.md)
+- [Overview](https://worldbank.github.io/ai4coding/prerequisites/index.llms.md)
+- [Positron Extensions](https://worldbank.github.io/ai4coding/prerequisites/extensions.llms.md)
+- [Positron Assistant](https://worldbank.github.io/ai4coding/prerequisites/assistant.llms.md)
+- [Materials](https://worldbank.github.io/ai4coding/index.llms.md)
+- [About](https://worldbank.github.io/ai4coding/about.llms.md)
+- [Materials](https://worldbank.github.io/ai4coding/materials.llms.md)
+- [Common Problems](https://worldbank.github.io/ai4coding/prerequisites/common-problems.llms.md)
+- [GitHub & Copilot](https://worldbank.github.io/ai4coding/prerequisites/github.llms.md)
+- [Software Setup](https://worldbank.github.io/ai4coding/prerequisites/software.llms.md)
+- [Example 1. Data Harmonization](https://worldbank.github.io/ai4coding/day1/ex1-1-harmonization.llms.md)
+- [Positron + Copilot setup and overview](https://worldbank.github.io/ai4coding/day1/setup-overview.llms.md)
+- [AI for Coding](https://worldbank.github.io/ai4coding/day1/ai4coding-slides-d1-2/index.llms.md)

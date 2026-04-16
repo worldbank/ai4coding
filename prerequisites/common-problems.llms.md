@@ -1,0 +1,44 @@
+# Common Problems
+
+**Issues covered here:**
+
+- `uv` fails to install or is not recognised after installation
+- “Access denied” errors when installing software or running code
+- Positron needs updating but auto-update fails
+
+------------------------------------------------------------------------
+
+## GitHub Copilot / Positron Assistant Issues
+
+Most often, issues with Positron Assistant and GitHub Copilot are related to **authentication**, **configuration**, or **exceeding the free-requests quota**.
+
+- You may not have activated GitHub Copilot through a private or WB subscription. Check the [GitHub Copilot setup guide](../prerequisites/github.llms.md) for details.
+
+- Check whether you still have free premium requests available. If you have exhausted your quota, you will need to wait until it resets or subscribe to a paid plan. See the [GitHub Copilot setup guide](../prerequisites/github.llms.md) for details.
+
+- Positron Assistant may not be enabled or configured to use GitHub Copilot as the provider. Check the [Positron Assistant setup guide](../prerequisites/assistant.llms.md) for details.
+
+If error messages persist after confirming the above, contact <ITHelp@worldbankgroup.org> for assistance and <github@worldbankgroup.org> to verify that your GitHub Copilot subscription is active.
+
+## Positron Update
+
+Positron shows a notification that an update is available but the update fails.
+
+- Reinstall Positron from the Software Center to get the latest version and restore auto-update functionality. See [Software Setup](../prerequisites/software.llms.md) for details.
+
+## Python UV Installation Problem
+
+For example:
+
+- Running `pip install uv` fails, or `uv --version` returns `command not found` / `not recognised` after installation.
+- `uv` installs but does not work in the terminal or Positron, or you see an error like `The system cannot find the file specified` when running `uv`.
+
+Reach out to <ITHelp@worldbankgroup.org> for assistance.
+
+## Quarto
+
+Quarto is not found after installation: contact <ITHelp@worldbankgroup.org> for assistance setting up the Quarto path in your user environment variables.
+
+When Quarto renders fail with an error like `access denied` or `permission denied`, you might be using a wrong path for your Quarto executable or may not have installed Quarto from the Software Center. Contact <ITHelp@worldbankgroup.org> for assistance.
+
+Back to top
