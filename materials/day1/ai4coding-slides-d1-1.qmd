@@ -8,32 +8,31 @@ author:
     email: ebukin@worldbank.org
     affiliations: Distributional Impact of Policies. Fiscal Policy and Growth Department
 date: "April 20, 2024"
-format: dtslides-revealjs
+format: revealjs
 ---
 
 
 ## Motivation
 
+::::::::: {.small}
 :::::: columns
 ::: {.column width="50%"}
-**Chat-Based AI tools** [Claude](https://www.anthropic.com/claude) \| [ChatGPT](https://chatgpt.com/) \| [Copilot](https://copilot.microsoft.com/) \| [Gemini](https://search.google/ai-in-search/) \| [WB MAI](https://ai.worldbank.org/chat/mai)
+**Chat-Based AI tools** [Claude](https://www.anthropic.com/claude) \| [ChatGPT](https://chatgpt.com/) \| [Gemini](https://search.google/ai-in-search/) \| [MAI](https://ai.worldbank.org/chat/mai)
 
 - use familiar technologies: 🌐 Web-Browser, 💬 Chat, 📝 Stata editor, [**📋 copy-paste**]{.warning}
 - improve our workflow.
-
 
 [**Is this the most effective way to use AI in coding❓**]{.fg}
 :::
 
 ::: {.column width="50%"}
 There are many [**Integrated** Development Environments (IDEs)]{.highlight} for data science with AI integrated into your coding workflow.
-
 Introducing [**Positron**]{.bg} with [**Github Copilot**]{.fg} is the goal of this course.
-
 :::
 ::::::
 
 [See also: previous seminar on [AI-Assisted Coding in Stata and R](https://worldbank.github.io/geoPovLearn/seminars/seminar-2026-02/overview.html) on [GeoPovlearn](https://worldbank.github.io/geoPovLearn).]{.center .alert}
+:::::::::
 
 ## Course Overview {.center .small-slide}
 
