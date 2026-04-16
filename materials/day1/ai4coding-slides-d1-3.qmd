@@ -8,5 +8,5 @@ author:
     email: ebukin@worldbank.org
     affiliations: Distributional Impact of Policies. Fiscal Policy and Growth Department
 date: "April 20, 2024"
-format: dtslides-revealjs
+format: revealjs
 ---
