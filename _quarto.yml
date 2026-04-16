@@ -3,9 +3,10 @@ project:
   render:
     - about.qmd
     - index.qmd
+    # - materials/index.qmd
     - materials/prerequisites/*
     - materials/day1/*.qmd
-    - materials/day2/*.qmd
+    # - materials/day2/*.qmd
     # - materials/selfstudy/*.qmd
 
 
@@ -19,8 +20,6 @@ website:
         href: index.qmd
       - text: "Materials"
         href: materials/index.qmd
-      # - text: "Exercises"
-      #   href: exercises/index.qmd
       - text: "About"
         href: about.qmd
 
@@ -30,7 +29,6 @@ website:
       pinned: true
       collapse-level: 10
       contents:
-        - materials/index.qmd
         - section: "Pre-requisites"
           href: materials/prerequisites/index.qmd
           contents:
@@ -42,26 +40,18 @@ website:
         - section: "Day 1"
           href: materials/day1/index.qmd
           # contents:
-            # - materials/day1/demo-refactoring.qmd
+            # - materials/day1/slides.qmd
             # - materials/day1/ai-overview.qmd
             # - materials/day1/case-studies.qmd
-        # - section: "Self Study"
-          # href: materials/selfstudy/index.qmd
-          # contents:
-            # - materials/self-study/case-studies.qmd
+        - section: "Self Study"
+          href: materials/selfstudy/index.qmd
+  #       #   # contents:
+  #       #     # - materials/self-study/case-studies.qmd
         - section: "Day 2"
           href: materials/day2/index.qmd
-          # contents:
-            # - materials/day2/advanced-topics.qmd
-            # - materials/day2/case-studies.qmd
-
-    # - title: "Exercises"
-    #   style: "docked"
-    #   pinned: true
-    #   collapse-level: 3
-    #   contents:
-    #     - exercises/index.qmd
-
+  #       #   # contents:
+  #       #     # - materials/day2/advanced-topics.qmd
+  #       #     # - materials/day2/case-studies.qmd
   page-navigation: true
   back-to-top-navigation: true
 
@@ -73,42 +63,6 @@ format:
     theme:
       - cosmo
       - brand
-    # css: styles.css
     toc: true
     toc-location: right
     lightbox: true
-
-  revealjs:
-    theme: [simple, "assets/academic.scss", "assets/custom.scss"]
-    include-after-body:
-      - text: |
-          <script>
-          (function() {
-            function toggleFooter() {
-              var f = document.querySelector(".reveal > .footer");
-              if (!f || typeof Reveal === "undefined") return;
-              var i = Reveal.getIndices();
-              f.style.display = (i.h === 0 && i.v === 0) ? "none" : "block";
-            }
-            if (typeof Reveal !== "undefined") {
-              Reveal.on("slidechanged", toggleFooter);
-              Reveal.on("ready", toggleFooter);
-              if (Reveal.isReady()) toggleFooter();
-            }
-          })();
-          </script>
-    # slide-number: true
-    code-copy: false
-    margin: 0.10
-    html-math-method: mathjax
-    slide-number: c/t
-    background-transition: zoom
-    preload-iframes: true
-    scrollable: true
-    transition: fade
-    preview-links: auto
-    logo: assets/img/WBG-Prosperity Horizontal-Black.svg
-    footer: '[worldbank.github.io/ai4coding](https://worldbank.github.io/ai4coding) © 2026 World Bank.'
-    resources:
-      - assets/bg-frames/
-      - assets/img/WBG-Prosperity Horizontal-Black.svg
