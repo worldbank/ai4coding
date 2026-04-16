@@ -31,16 +31,16 @@ website:
       contents:
         - materials.qmd
         - section: "Pre-requisites"
-          href: prerequisites/index.qmd
           contents:
+            - prerequisites/index.qmd
             - prerequisites/software.qmd
             - prerequisites/github.qmd
             - prerequisites/extensions.qmd
             - prerequisites/assistant.qmd
             - prerequisites/common-problems.qmd
         - section: "Day 1"
-          href: day1/index.qmd
           contents:
+            - day1/index.qmd
             - day1/setup-overview.qmd
             - day1/ex1-1-harmonization.qmd
             # - day1/ex1-2-revision.qmd
