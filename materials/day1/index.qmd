@@ -20,9 +20,9 @@ own computer and be ready for the self-study exercises.
 
 | Time   | Topic |
 |--------|-------|
-| 10 min | Welcome, introductions, course and materials overview |
+| 10 min | Welcome, introductions, and overview |
 | 30 min | Software overview: Positron, GitHub Copilot, and Stata setup |
-| 40 min | AI in action with Stata (R): my typical data workflow using AI |
+| 40 min | AI in action with Stata/R: my typical data workflow |
 
 ### ☕ Break (10 min)
 
@@ -48,4 +48,22 @@ contact [ITHelp@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org) before the
 
 ## Resources
 
-TODO
+### Welcome, introductions, and overview
+
+<div class="ratio ratio-16x9">
+  <iframe src="ai4coding-slides-d1-1.html" title="Quarto Slides"></iframe>
+</div>
+
+### Setup overview
+
+<div class="ratio ratio-16x9">
+  <iframe src="ai4coding-slides-d1-2.html" title="Quarto Slides"></iframe>
+</div>
+
+### AI in action with Stata/R
+
+### Core AI concepts
+
+<div class="ratio ratio-16x9">
+  <iframe src="ai4coding-slides-d1-3.html" title="Quarto Slides"></iframe>
+</div>

@@ -53,7 +53,7 @@ If any problems arise: follow the [troubleshooting guide](../prerequisites/commo
 | **Overage billing** | N/A | [Chargeback process](https://github.com/worldbank/ospo/blob/main/docs/copilot/premium-request-chargeback.md) | Credit card | Credit card |
 
 ::: {.callout-important}
-You can only have [**one active plan**]{.alert}. If you get WB access, your private subscription is **automatically cancelled** and refunded. Switching back requires re-subscribing and is possible only after a month.
+You can only have [**one active plan**]{.alert}. WB access **automatically cancelles and refunds** your private subscription. Switching back requires re-subscribing and is possible in the end of a month.
 :::
 
 ## How GitHub Copilot works? {.small-slide}
@@ -71,37 +71,40 @@ You can only have [**one active plan**]{.alert}. If you get WB access, your priv
 ::::
 :::::
 
+## Premium Requests Limits {.small-slide}
 
-## Premium Requests & Limits {.small-slide}
-
-[What are premium requests?]{.fg} — Every Chat, Agent mode, or advanced model interaction consumes **one premium request**.
+[What are premium requests?]{.fg} — Every chat/agent interaction interaction with advanced models (Claude Sonette, GPT-5+) consumes (x1-x3) **premium request**.
 
 ::::: {.columns}
 :::: {.column width="50%"}
-### Monthly allowances
+### Monthly included allowances
 
-| Plan | Requests/mo |
+| Plan | Included req/mo |
 |------|:-----------:|
 | WB org | 300 |
-| Copilot Pro | 500 |
-| Copilot Pro+ | 1,500 |
+| Private Copilot Pro | 500 |
+| Private Copilot Pro+ | 1,500 |
 
-[At 100%, advanced AI features stop working.]{.warning} Basic inline completions still work (older models).
+
+![](../../assets/img/gh-max.png)
+
 ::::
 
 :::: {.column width="50%"}
-### Avoid hitting the limit
+### Hit the limit?
 
-Enable **premium request budget** (~$0.04/request):
+Set a **budget** (~$0.04/request):
 
 - **WB plan →** [chargeback process](https://github.com/worldbank/ospo/blob/main/docs/copilot/premium-request-chargeback.md) (manager approval + budget code)
 
 - **Private plan →** [GitHub Billing → Budgets](https://github.com/settings/billing/budgets)
 
-- **Check usage →** [GitHub Settings → Copilot](https://github.com/settings/copilot/features)
+- **Usage →** [GitHub Settings → Copilot](https://github.com/settings/copilot/features)
+
+[[When you've used all included requests (100%), advanced AI features stop working.]{.warning} Basic inline completions still work (older models).]{.smallest}
+
 ::::
 :::::
-
 
 ## Access Levels at a Glance {.small-slide .center}
 
@@ -117,8 +120,28 @@ Enable **premium request budget** (~$0.04/request):
 
 [Recommended: WB Copilot access + chargeback enabled.]{.highlight}
 
+## Github @ World Bank is more than copilot {.small-slide}
 
-## Positron Assistant Setup
+[**Why to use GitHub @ World Bank?**]{.fg}
+
+- It is a modern standard of research and collaboration.
+
+- Github integration improves your code, version control, and collaboration standard leading to better quality, transparency, and reproducibility.
+
+  - Request access to [github.com/worldbank](https://github.com/worldbank) on [eServices](https://worldbankgroup.service-now.com/wbg/en/join-github-organization-account-request?id=wbg_sc_catalog&sys_id=910e1739db1a54903c5960ab13961912&table=sc_cat_item&searchTerm=github)
+
+- WB Open source [https://opensource.worldbank.org/](https://opensource.worldbank.org/) — builds open source communities and shares open data, software, and research to advance transparent, evidence-based progress toward the SDGs.
+  - [make your code public](https://worldbankgroup.service-now.com/wbg/en/github-open-source-public-repository-request?id=wbg_sc_catalog&sys_id=63bb210e1b272610185ceb17b04bcbfa) as part of WB Open Source.
+
+- [Viva Engage](https://engage.cloud.microsoft/main/groups/eyJfdHlwZSI6Ikdyb3VwIiwiaWQiOiIxNzA2ODQ1NDcwNzIifQ): stay connected with the community.
+
+- Support: [github@worldbank.org](mailto:github@worldbank.org)
+
+## Positron Assistant {.small-slide}
+
+It is needed to connect GitHub Copilot to Positron and use AI features in the editor and chat.
+
+
 
 ::::: {.columns}
 :::: {.column width="50%"}

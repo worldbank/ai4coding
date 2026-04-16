@@ -1,6 +1,6 @@
 ---
 title: "AI for Coding"
-subtitle: "Day 1: Core concepts"
+subtitle: "Day 1: Core AI concepts"
 author:
   - name: Eduard Bukin
     orcid: 0000-0002-1003-1260
