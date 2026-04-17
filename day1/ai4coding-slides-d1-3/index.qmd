@@ -37,10 +37,10 @@ format:
     scrollable: true
     transition: fade
     preview-links: auto
-    logo: ../../assets/img/WBG-Prosperity Horizontal-Black.svg
+    logo: ../../assets/images/WBG-Prosperity Horizontal-Black.svg
     footer: '[worldbank.github.io/ai4coding](https://worldbank.github.io/ai4coding) © 2026 World Bank.'
     resources:
-        - ../../assets/img/WBG-Prosperity Horizontal-Black.svg
+        - ../../assets/images/WBG-Prosperity Horizontal-Black.svg
 ---
 
 ## Core concepts worth knowing about
@@ -82,17 +82,17 @@ There are many IDEs, with user interface (UI) and as a command-line interfaces (
 :::
 
 ::: {.column width="58%" style="position: relative; min-height: 560px;"}
-![](img/positron-small.gif){.absolute .stacked-gif top="0" right="0" width="260"}
+![](images/positron-small.gif){.absolute .stacked-gif top="0" right="0" width="260"}
 
-![](img/vscode-small.gif){.absolute .stacked-gif top="80" left="0" width="260"}
+![](images/vscode-small.gif){.absolute .stacked-gif top="80" left="0" width="260"}
 
-![](img/cursor-small.gif){.absolute .stacked-gif top="160" right="20" width="260"}
+![](images/cursor-small.gif){.absolute .stacked-gif top="160" right="20" width="260"}
 
-![](img/rstudio.jpeg){.absolute .stacked-gif top="240" left="20" width="260"}
+![](images/rstudio.jpeg){.absolute .stacked-gif top="240" left="20" width="260"}
 
-![](img/copilot-cli.webp){.absolute .stacked-gif top="320" right="0" width="260"}
+![](images/copilot-cli.webp){.absolute .stacked-gif top="320" right="0" width="260"}
 
-![](img/claude-small.gif){.absolute .stacked-gif top="400" left="0" width="260"}
+![](images/claude-small.gif){.absolute .stacked-gif top="400" left="0" width="260"}
 
 :::
 ::::
@@ -121,7 +121,7 @@ There are many IDEs, with user interface (UI) and as a command-line interfaces (
 :::
 ::::
 
-![](img/github_copilot_how_it_works.svg){.absolute bottom="50" right="0" width="650px" }
+![](images/github_copilot_how_it_works.svg){.absolute bottom="50" right="0" width="650px" }
 
 
 ## IDE + AI assistant: data risks
@@ -154,13 +154,13 @@ There are many IDEs, with user interface (UI) and as a command-line interfaces (
 :::
 ::::
 
-![](img/context-assembly.png){.absolute bottom="0" right="0" width="650px" }
+![](images/context-assembly.png){.absolute bottom="0" right="0" width="650px" }
 
 ## Token
 
 - 🔢 **Tokens** are pieces of text (words, subwords, characters) that LLMs process.
 
-![](img/token.png)
+![](images/token.png)
 
 ::: {.footer}
 Figure adopted from [Alignment Forum: LLM Basics](https://www.alignmentforum.org/posts/pHPmMGEMYefk9jLeh/llm-basics-embedding-spaces-transformer-token-vectors-are)
@@ -170,7 +170,7 @@ Figure adopted from [Alignment Forum: LLM Basics](https://www.alignmentforum.org
 
 - 🧠 **LLMs** are AI models trained on vast text data to match patterns and similarities between text resulting in the prediction of the next word.
 
-![](img/llm-prediction.png)
+![](images/llm-prediction.png)
 
 ::: {.footer}
 From "LLM explained briefly" by 3Blue1Brown <https://youtu.be/LPZh9BOjkQs>
@@ -181,7 +181,7 @@ From "LLM explained briefly" by 3Blue1Brown <https://youtu.be/LPZh9BOjkQs>
 
 - Respond with a distribution of likely next words.
 
-![](img/llm-prediction-3.png)
+![](images/llm-prediction-3.png)
 
 ::: {.footer}
 From "LLM explained briefly" by 3Blue1Brown <https://youtu.be/LPZh9BOjkQs>
@@ -191,7 +191,7 @@ From "LLM explained briefly" by 3Blue1Brown <https://youtu.be/LPZh9BOjkQs>
 
 - Responce depnds on the context.
 
-![](img/llm-prediction-2.png)
+![](images/llm-prediction-2.png)
 
 ::: {.footer}
 From "LLM explained briefly" by 3Blue1Brown <https://youtu.be/LPZh9BOjkQs>

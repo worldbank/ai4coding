@@ -22,16 +22,60 @@ Key concepts are:
 
 ## Positron IDE Overview
 
+> Adopted from Positron UI <https://positron.posit.co/layout.html>
+
+![Interface of the Positron IDE showing Activity Bar, Primary Side Bar, Editor, Panel, and Secondary Side Bar](../../assets/images/user-interface-for-rstudio-migration.jpeg){fig-alt="Positron IDE with labeled regions: Activity Bar on the far left, Primary Side Bar to its right, Editor in the center, Panel below the editor, and Secondary Side Bar on the right."}
+
+- The **Activity Bar** provides quick access to switch between core views such as Explorer, Search, [Source Control](https://positron.posit.co/git.html), and [Extensions](https://positron.posit.co/extensions.html).
+
+- The **Primary Side Bar** is on the left by default and shows you different views depending on what you have chosen in the Activity Bar. When you choose the Explorer icon, this pane provides the File Explorer to navigate your project directory and the outline. When you choose the Assistant icon, this pane provides access to [Positron Assistant](https://positron.posit.co/assistant.html).
+
+- The **Editor** is in the center by default, and is where you write your code. For editor controls, refer to [VS Code Editor Basics](https://code.visualstudio.com/docs/editing/codebasics).
+
+- The **Panel** is below the editor by default and contains the fully interactive, integrated Console as well as the [Terminal](https://code.visualstudio.com/docs/terminal/basics) You can also access logs from [Output](https://positron.posit.co/troubleshooting.html) channels in the Panel.
+
+- The **Secondary Side Bar** is on the right by default. You can switch between the **Session** pane (where you can explore the [variables](https://positron.posit.co/variables-pane.html) you have defined and the [plots](https://positron.posit.co/plots-pane.html) you have created), the [**Connections**](https://positron.posit.co/connections-pane.html) pane, the [**Help**](https://positron.posit.co/help-pane.html) pane, the **History** pane, and the **Viewer** pane.
+
+The **Title Bar** at the very top of the window shows the active file and project, along with window controls. Below it, the **Top Bar** provides global project tools such as file search, the project switcher, and the [interpreter selector](https://positron.posit.co/managing-interpreters.html#active-interpreter-session) with the ability to start, stop, and switch interpreters. The **Status Bar** at the bottom of the window displays details such as your git branch, language mode, [Quarto version](https://positron.posit.co/quarto.html), and cursor position.
+
+### Layout customization
+
+![Interface of the Positron IDE showing how panels can be rearranged by dragging and toggled in and out of view using commands](images/layout-customization.gif){fig-alt="Positron IDE showing how panels can be rearranged by dragging and toggled in and out of view using commands."}
+
+Positron offers flexible layout options to suit a variety of development workflows. Almost every component can be rearranged by dragging.
+
+### Command Palette
+
+Command Palette - `Ctrl+Shift+P` - <https://positron.posit.co/command-palette.html> - is your gateway to all Positron features. It provides quick access to commands, settings, and more. For example, you can open files, run code, manage git, and interact with the assistant all from the Command Palette.
+
+![Positron IDE showing how to access settings through the command palette](img/command-palette.gif){fig-alt="Positron IDE showing how to access settings through the command palette."}
+
+Try:
+
+- `Ctrl+Shift+P` → type "Open file"
+- `Ctrl+Shift+P` → type "Assistant: Configure Language Model Providers"
+- `Ctrl+Shift+P` → type "Preferences: Open Settings (UI)" and search for "Stata" to find all related settings in one place.
+
+### Settings
+
+Settings can be accessed through:
+
+- `Ctrl+Shift+P` (Command Palette) > search for "Preferences: Open Settings (UI)"
+- or through the menu `File > Preferences > Settings`
+- or `Ctrl+,`.
+
+Here you can customize your Positron experience, including enabling the Assistant and configuring GitHub Copilot.
+
+> Settings marked with a vertical line are modified from their default values in your IDE. You can click "Gear > Reset" button next to each setting to revert it to the default value.
+
+> ![](img/settings-reset.gif){fig-alt="Positron IDE showing how to reset settings to their default values."}
+
+
+### Read/watch more
+
 - UI <https://positron.posit.co/layout.html>
 
-- Command palette <https://positron.posit.co/command-palette.html>
--
-  - `Ctrl+Shift+P` : and search for any command, e.g. "Open file", "Run code", "Git: commit", "Assistant: ask a question"
-  - or `Search bar` in the top center of the IDE: type `>` and the command name, e.g. `>Open file`
-
 - Extensions <https://positron.posit.co/extensions.html>
-
-- AI tools <https://positron.posit.co/assistant.html>
 
 - Data analysis <https://positron.posit.co/data-explorer.html>
 
@@ -55,11 +99,36 @@ Key concepts are:
 
 :::
 
-## Assistant + GitHub Copilot
+## Assistant + GitHub Copilot: Setup and Overview
 
-1. [Enable Positron Assistant](https://positron.posit.co/assistant-getting-started.html#step-1-enable-positron-assistant)
-2. [Configure GitHub Copilot](https://positron.posit.co/assistant-getting-started.html#step-2-configure-language-model-providers)
-3. Explore the assistant panel: in-line conversations, agents, and LLMs
+To use the assistant's AI features, you need to [Enable Positron Assistant](https://positron.posit.co/assistant-getting-started.html#step-1-enable-positron-assistant) and [Configure GitHub Copilot](https://positron.posit.co/assistant-getting-started.html#step-2-configure-language-model-providers). Other useful
+
+This could be done in the following way:
+
+- `Ctrl+Shift+P` → "Preferences: Open Settings (UI)" → search `positron.assistant.enable` → ☑️
+
+Other settings to consider:
+
+- `positron.assistant.showTokenUsage.enable` - to show token usage details in the assistant chat
+- `positron.assistant.toolDetails.enable` - to show tool usage details in the assistant chat
+
+### Inline suggestions
+
+### Chat
+
+### Agent
+
+### Inline chat
+
+### Settings and personalization
+
+
+
+<!-- TODO -->
+
+### Read/watch more
+
+- AI tools <https://positron.posit.co/assistant.html>
 
 ::: panel-tabset
 
