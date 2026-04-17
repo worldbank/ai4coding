@@ -8,23 +8,24 @@ Key concepts are:
 
   - panels and layouts
   - file explorer, editor, and extensions
-  - command palette: quick access to all commands and features
+  - command palette and settings
 
-- Assistant: authentication, chat, agents, conversations, and LLMs
+- Workflow basics:
 
-- Workflow-basics
+  - working folder, console, terminal, session, data viewer, help pane, and more
 
-  - Working folder: where your code lives and where the AI agent looks for context
-  - Console: where you run code and see output; multiple consoles for same/different languages and projects
-  - Terminal: for command-line work, e.g. file system navigation, running requests, scripts
-  - Session / data / plots / help
-  - Stata / R code examles
+- Assistant:
+
+  - authentication
+  - workflow: chat, agents, conversations, and LLMs
+
+
 
 ## Positron IDE Overview
 
 > Adopted from Positron UI <https://positron.posit.co/layout.html>
 
-![Interface of the Positron IDE showing Activity Bar, Primary Side Bar, Editor, Panel, and Secondary Side Bar](../../assets/images/user-interface-for-rstudio-migration.jpeg){fig-alt="Positron IDE with labeled regions: Activity Bar on the far left, Primary Side Bar to its right, Editor in the center, Panel below the editor, and Secondary Side Bar on the right."}
+![Interface of the Positron IDE showing Activity Bar, Primary Side Bar, Editor, Panel, and Secondary Side Bar](images/user-interface-for-rstudio-migration.jpeg){fig-alt="Positron IDE with labeled regions: Activity Bar on the far left, Primary Side Bar to its right, Editor in the center, Panel below the editor, and Secondary Side Bar on the right."}
 
 - The **Activity Bar** provides quick access to switch between core views such as Explorer, Search, [Source Control](https://positron.posit.co/git.html), and [Extensions](https://positron.posit.co/extensions.html).
 
@@ -48,7 +49,7 @@ Positron offers flexible layout options to suit a variety of development workflo
 
 Command Palette - `Ctrl+Shift+P` - <https://positron.posit.co/command-palette.html> - is your gateway to all Positron features. It provides quick access to commands, settings, and more. For example, you can open files, run code, manage git, and interact with the assistant all from the Command Palette.
 
-![Positron IDE showing how to access settings through the command palette](img/command-palette.gif){fig-alt="Positron IDE showing how to access settings through the command palette."}
+![Positron IDE showing how to access settings through the command palette](images/command-palette.gif){fig-alt="Positron IDE showing how to access settings through the command palette."}
 
 Try:
 
@@ -68,7 +69,7 @@ Here you can customize your Positron experience, including enabling the Assistan
 
 > Settings marked with a vertical line are modified from their default values in your IDE. You can click "Gear > Reset" button next to each setting to revert it to the default value.
 
-> ![](img/settings-reset.gif){fig-alt="Positron IDE showing how to reset settings to their default values."}
+> ![](images/settings-reset.gif){fig-alt="Positron IDE showing how to reset settings to their default values."}
 
 
 ### Read/watch more
@@ -80,10 +81,6 @@ Here you can customize your Positron experience, including enabling the Assistan
 - Data analysis <https://positron.posit.co/data-explorer.html>
 
 ::: panel-tabset
-
-## AI-Powered Data Science in Positron
-
-{{< video https://www.youtube.com/embed/TrN-FMcOsOA >}}
 
 ## A quick tour
 
@@ -98,6 +95,18 @@ Here you can customize your Positron experience, including enabling the Assistan
 {{< video https://www.youtube.com/embed/QU0N--y-skA >}}
 
 :::
+
+## Workflow overview
+
+- Open/create a working folder
+- Create your script or notebook and start coding
+- Execute code.
+- Use console directly
+- Explore plots
+- Data viewer
+- Help pane for documentation
+
+![Stata workflow in Positron](/images/Workflow.gif){fig-alt=" Positron IDE showing a workflow of opening a folder, creating a script, writing code, executing it, and exploring the output in the console, plots pane, data viewer, and help pane."}
 
 ## Assistant + GitHub Copilot: Setup and Overview
 
@@ -136,25 +145,8 @@ Other settings to consider:
 
 {{< video https://www.youtube.com/embed/X_eqwFFH4jI >}}
 
+## AI-Powered Data Science in Positron
+
+{{< video https://www.youtube.com/embed/TrN-FMcOsOA >}}
+
 :::
-
-## Workflow basics
-
-1. Open a working folder (create if needed): where your code lives and where the AI agent looks for context
-
-2. Create your script or notebook and start coding
-
-3. Use console to execute code and see output.
-
-   - Code execution
-   - Plotting
-   - Data viewer
-   - Help pane for documentation and function signatures
-   - Session pane for environment info, variables
-   - View panel for websites
-
-4. Multiple consoles for same/different languages and projects/ output panel.
-
-5. Command palette for quick access
-
-6. Use the terminal for command-line work, e.g. file system navigation, running requests
