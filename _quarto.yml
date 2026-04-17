@@ -48,7 +48,7 @@ website:
         - day1/index.qmd
         - day1/setup-overview.qmd
         - day1/ex1-1-explore-positron.qmd
-        - day1/ex1-2-harmonization.qmd
+        - day1/ex1-2-data-understanding.qmd
 
     - title: "Materials"
       style: "docked"

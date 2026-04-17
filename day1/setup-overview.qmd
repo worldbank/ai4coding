@@ -110,7 +110,7 @@ Here you can customize your Positron experience, including enabling the Assistan
 
 ## Assistant + GitHub Copilot: Setup and Overview
 
-To use the assistant's AI features, you need to [Enable Positron Assistant](https://positron.posit.co/assistant-getting-started.html#step-1-enable-positron-assistant) and [Configure GitHub Copilot](https://positron.posit.co/assistant-getting-started.html#step-2-configure-language-model-providers). Other useful
+To use the assistant's AI features, you need to [Enable Positron Assistant](https://positron.posit.co/assistant-getting-started.html#step-1-enable-positron-assistant) and [Configure GitHub Copilot](https://positron.posit.co/assistant-getting-started.html#step-2-configure-language-model-providers).
 
 This could be done in the following way:
 

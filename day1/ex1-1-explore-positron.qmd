@@ -15,13 +15,13 @@ This exercise overviews the following features of Positron's AI assistance:
 - agent mode: automating code execution and debugging
 - context monitoring
 
-To start this excersise:
+To start this exercise:
 
 1. Copy folder with `ex01-explore-positron` to your working directory
 2. Open `ex01-explore-positron` in Positron
 3. Follow the instructions below
 
-All exercise are available:
+All exercises are available:
 
 - on GitHub: <https://github.com/worldbank/ai4coding-examples>
 - on One Drive (WB only): [ai4coding-examples](https://worldbankgroup-my.sharepoint.com/:f:/g/personal/ebukin_worldbank_org/IgCXQVakSxEpT7VJFmKp_qtnAXx8RX9iemnwfGwITkEA3bE?e=U08qTX)
@@ -37,7 +37,7 @@ Data is pre-packaged with this exercise, but you can also download it from
 
 :::
 
-## Prompts examples and excersise details
+## Prompt examples and exercise details
 
 ### Step 1. Create a script file in your editor
 
@@ -65,7 +65,7 @@ In details, these steps are:
 
 - if it does not work, check: [Positron Assistant Completions](https://positron.posit.co/assistant-completions.html)
 
-- Remeber that there might me manu suggestsion and you can customize them:
+- Remember that there might be many suggestions and you can customize them:
 
 ![AI is an assistant, not a replacement for analytical judgment. Always review and test AI-generated code before using it in your analysis.](images/inline-code.png)
 :::
@@ -106,12 +106,12 @@ Use `run` button to execute the code
 ::: {.callout-note}
 ### Tips
 
-- Interrupt req uest if it goes wrong.
-- Swithch between different models (e.g. GPT-4, Claude)
-- Choose the right mode: chat, agen, edit or plan.
+- Interrupt request if it goes wrong.
+- Switch between different models (e.g. GPT-4, Claude)
+- Choose the right mode: chat, agent, edit or plan.
 - Monitor the context window size
 
-  - When it too big, AI forgets or optimizes it, potentially loosing some important details.
+  - When it is too big, AI forgets or optimizes it, potentially losing some important details.
   - Use `Show Chat Debug View` to monitor the context and how it changes with each interaction.
 :::
 
@@ -121,7 +121,7 @@ Select the code that does not behave as expected. Press `Ctrl + I`, then ask the
 
 - Select model and adjust settings if needed.
 - If happy, accept the changes. If not, provide feedback and ask for another revision.
-- Could bne useed with free models.
+- Can be used with free models.
 
 ::: {.callout-note}
 ![AI in-line chat allows you to ask for revisions to specific code snippets without leaving the editor.](images/inline-chat.png)
@@ -138,7 +138,7 @@ the robust standard errors. Then run the stata code.
 ```
 
 ```
-Rememberd: Use #executeCode to run stata code in console autonomously to check whether it works. Resolve execution errors in an agent mode using #executeCode and running all needed code in console.
+Remember: Use #executeCode to run stata code in console autonomously to check whether it works. Resolve execution errors in an agent mode using #executeCode and running all needed code in console.
 ```
 
 ::: {.callout-warning}
