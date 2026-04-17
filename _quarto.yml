@@ -20,42 +20,68 @@ website:
         href: index.qmd
       - text: "Materials"
         href: materials.qmd
+      - text: "Pre-requisites"
+        href: prerequisites/index.qmd
+      - text: "Day 1"
+        href: day1/index.qmd
       - text: "About"
         href: about.qmd
 
   sidebar:
+    - title: Prerequisites
+      style: "docked"
+      pinned: true
+      collapse-level: 10
+      contents:
+        - prerequisites/index.qmd
+        - prerequisites/software.qmd
+        - prerequisites/github.qmd
+        - prerequisites/extensions.qmd
+        - prerequisites/assistant.qmd
+        - prerequisites/common-problems.qmd
+
+    - title: "Day 1"
+      style: "docked"
+      pinned: true
+      collapse-level: 10
+      contents:
+        - day1/index.qmd
+        - day1/setup-overview.qmd
+        - day1/ex1-1-explore-positron.qmd
+        - day1/ex1-2-harmonization.qmd
+
     - title: "Materials"
       style: "docked"
       pinned: true
       collapse-level: 10
       contents:
         - materials.qmd
-        - section: "Pre-requisites"
-          contents:
-            - prerequisites/index.qmd
-            - prerequisites/software.qmd
-            - prerequisites/github.qmd
-            - prerequisites/extensions.qmd
-            - prerequisites/assistant.qmd
-            - prerequisites/common-problems.qmd
-        - section: "Day 1"
-          contents:
-            - day1/index.qmd
-            - day1/setup-overview.qmd
-            - day1/ex1-1-harmonization.qmd
-            # - day1/ex1-2-revision.qmd
+        # - section: "Pre-requisites"
+        #   contents:
+        #     - prerequisites/index.qmd
+        #     - prerequisites/software.qmd
+        #     - prerequisites/github.qmd
+        #     - prerequisites/extensions.qmd
+        #     - prerequisites/assistant.qmd
+        #     - prerequisites/common-problems.qmd
+        # - section: "Day 1"
+        #   contents:
+        #     - day1/index.qmd
+        #     - day1/setup-overview.qmd
+        #     - day1/ex1-1-harmonization.qmd
+        #     # - day1/ex1-2-revision.qmd
 
         - section: "Self Study"
           href: selfstudy/index.qmd
   #       #   # contents:
   #       #     # - materials/self-study/case-studies.qmd
-        - section: "Day 2"
-          href: day2/index.qmd
+        # - section: "Day 2"
+        #   href: day2/index.qmd
   #       #   # contents:
   #       #     # - materials/day2/advanced-topics.qmd
   #       #     # - materials/day2/case-studies.qmd
   page-navigation: true
-  back-to-top-navigation: true
+  back-to-top-navigation: false
 
 execute:
   freeze: true
