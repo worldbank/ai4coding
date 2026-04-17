@@ -2,41 +2,38 @@
 title: "Overview"
 ---
 
-**Session goals:**
+## Goals:
 
 - See AI in action: live code understanding, reision, and reuse with AI
-- Software setup overview: Positron + GitHub Copilot + Stata
-- Understand how AI models work and learn key vocabulary:
-  - IDE, LLM, Assistant, tokens, prompts, context window, agent, plan.
-- What AI can and cannot do for your coding workflow
-- Get ready to practice on your own.
 
-By the end of this session you should be able to use AI independently on your
-own computer and be ready for the self-study exercises.
+- Setup: Positron + GitHub Copilot + Stata
+
+- Understand how AI work and relevant vocabulary:
+
+  - IDE, LLM, Assistant, tokens, prompts, context window, agent, etc.
+
+- Get ready to practice on your own during the self-study exercises
+
+- Familiarize with key principles and the workflow
+
 
 ## Agenda
 
-### Part 1 — Setup & Live Demo (80 min)
+**Part 1 — Setup & Live Demo (80 min)**
 
 | Time   | Topic |
 |--------|--------------------------------------------------------------|
 | 10 min | Welcome, introductions, and overview |
-| 30 min | Software overview: Positron, GitHub Copilot, and Stata setup |
-| 40 min | AI in action with Stata/R: my typical data workflow |
-
-### ☕ Break (10 min)
-
-### Part 2 — Concepts & Practice (90 min)
-
-| Time   | Topic |
-|--------|--------------------------------------------------------------|
+| 30 min | Setup: Positron + GitHub Copilot + Stata + Working folder |
+| 40 min | Agentic coding with Stata/R: Example 1 |
+| 10 min | ☕ Break (10 min) |
 | 30 min | AI overview presentation: how GitHub Copilot and LLMs work, key concepts, and capabilities |
 | 30 min | Cookbook: securing sensitive data, guardrails, and responsible AI use |
 | 30 min | Self-study exercises overview and Q&A |
 
 ## Before You Arrive
 
-Make sure all prerequisites are complete:
+Try completing the prerequisites:
 
 1. [Software Setup](../prerequisites/software.qmd)
 2. [GitHub Setup](../prerequisites/github.qmd)
@@ -46,33 +43,74 @@ Make sure all prerequisites are complete:
 If you run into issues, check [Common Problems](../prerequisites/common-problems.qmd) or
 contact [ITHelp@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org) before the session.
 
-## Slides
+## Materials
 
-::: {.column-page-inset-right}
-
-::: {.panel-tabset .tabset-pills}
-
-## Introductions, and overview
+### Welcome, introductions, and overview
 
 ```{=html}
 <iframe class="slide-deck"  src="ai4coding-slides-d1-1/"></iframe>
-
 ```
 
-View slides in a [new tab](ai4coding-slides-d1-1/){target="_blank"} or download a [PDF version](day1/ai4coding-slides-d1-1/ai4coding-slides-d1-1.pdf).
+View slides in a [new tab](ai4coding-slides-d1-1/){target="_blank"}.
 
+### Setup overview
 
-## Setup overview
+Important on folder structure:
+
+::: {.callout-warning}
+**Do not use OneDrive for developing code during this course! (temporary)**.
+
+- Positron is a new software for the WB.
+- Unfortunately we only discovered last week that WB security policies block Positron from writing files on OneDrive.
+- This means that you will not be able to save your code or data if you are working in a OneDrive folder.
+- New policy could only be implemented after the spring meeting freeze is over after Friday, April 24.
+
+**Follow these instructions instead.**
+
+1. On `C:\WBG\` create a folder called `ai`.
+
+2. Copy the exercise templates from shared [One Drive WB only folder `ai4coding-examples`](https://worldbankgroup-my.sharepoint.com/:f:/g/personal/ebukin_worldbank_org/IgCXQVakSxEpT7VJFmKp_qtnAXx8RX9iemnwfGwITkEA3bE?e=U08qTX) or GitHub [worldbank/ai4coding-examples](https://github.com/worldbank/ai4coding-examples)  `C:\WBG\ai\ai4coding-practice\`
+
+3. Work on your local copies of exercises in `C:\WBG\ai\ai4coding-practice\ex0...\`.
+
+4. Data shade [One Drive WB only `ai4coding-data`](https://worldbankgroup-my.sharepoint.com/:f:/r/personal/ebukin_worldbank_org/Documents/AI/AI-course-2026-April/ai4coding-data?csf=1&web=1&e=ITG6Sk) can still be used from the one-drive as it is read only.
+   If there are any problems, copy the data to `C:\WBG\ai\ai4coding-data\` and use it from there.
+:::
 
 ```{=html}
 <iframe class="slide-deck" src="ai4coding-slides-d1-2/"></iframe>
-
 ```
 
-View slides in a [new tab](ai4coding-slides-d1-2/){target="_blank"} or download a [PDF version](day1/ai4coding-slides-d1-2/ai4coding-slides-d1-2.pdf).
+View slides in a [new tab](ai4coding-slides-d1-2/){target="_blank"}.
 
-## AI in action with Stata/R
+## Excersize 1: Stata in Positron with GitHub Copilot (Not covered in the live session)
 
+The goal of this exercise is to get familiar with Positron's AI assistance
+features and how they can be used to write and execute Stata code. We go
+through a typical workflow of creating a Stata do file, writing code with
+AI assistance, and executing it in the console.
+
+This exercise overviews the following features of Positron's AI assistance:
+
+- inline suggestions: accepting, rejecting, and customizing
+- chat mode: asking for code generation, revision, and troubleshooting
+- inline chat: revising specific code snippets without leaving the editor
+- agent mode: automating code execution and debugging
+- context monitoring
+
+Full exercise details are in [ex1-1-explore-positron.qmd](ex1-1-explore-positron.qmd).
+
+Pre-recorded video is here:
+
+{{< video https://www.youtube.com/embed/U29xAoivY5Y >}}
+
+
+## Excersize 2: Understanding and cleaning the data (Covered in the live session)
+
+<!-- TODO -->
+
+
+##
 ```{=html}
 <iframe class="slide-deck" src="ai4coding-slides-d1-3/"></iframe>
 
