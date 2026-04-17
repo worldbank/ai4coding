@@ -24,17 +24,18 @@ To start this excersise:
 All exercise are available:
 
 - on GitHub: <https://github.com/worldbank/ai4coding-examples>
-- on One Drive (WB only): [](https://worldbankgroup-my.sharepoint.com/:f:/g/personal/ebukin_worldbank_org/IgCXQVakSxEpT7VJFmKp_qtnAXx8RX9iemnwfGwITkEA3bE?e=U08qTX)
+- on One Drive (WB only): [ai4coding-examples](https://worldbankgroup-my.sharepoint.com/:f:/g/personal/ebukin_worldbank_org/IgCXQVakSxEpT7VJFmKp_qtnAXx8RX9iemnwfGwITkEA3bE?e=U08qTX)
 
 Data is pre-packaged with this exercise, but you can also download it from
 [ai4coding-data](https://worldbankgroup-my.sharepoint.com/:f:/r/personal/ebukin_worldbank_org/Documents/AI/AI-course-2026-April/ai4coding-data?csf=1&web=1&e=ITG6Sk) and place it your course folder.
 
-::: panel-tabset .tabset-pills
+::: {.panel-tabset}
+
 ## Watch the full video here
 
-{{< video https://www.youtube.com/embed/Q1YqgPAtzho >}}
-:::
+{{< video https://www.youtube.com/embed/U29xAoivY5Y >}}
 
+:::
 
 ## Prompts examples and excersise details
 
