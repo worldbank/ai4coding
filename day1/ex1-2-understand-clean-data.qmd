@@ -1,5 +1,5 @@
 ---
-title: "Example 2. Data Harmonization"
+title: "Exercise 2: Understanding and cleaning the data with AI"
 ---
 
 In this example, our goal is to learn how to work with AI to harmonize and

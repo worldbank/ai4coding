@@ -4,11 +4,11 @@ title: "Overview"
 
 ## Goals:
 
-- See AI in action: live code understanding, reision, and reuse with AI
+- See AI in action: live code understanding, revision, and reuse with AI
 
 - Setup: Positron + GitHub Copilot + Stata
 
-- Understand how AI work and relevant vocabulary:
+- Understand how AI works and relevant vocabulary:
 
   - IDE, LLM, Assistant, tokens, prompts, context window, agent, etc.
 
@@ -73,7 +73,7 @@ Important on folder structure:
 
 3. Work on your local copies of exercises in `C:\WBG\ai\ai4coding-practice\ex0...\`.
 
-4. Data shade [One Drive WB only `ai4coding-data`](https://worldbankgroup-my.sharepoint.com/:f:/r/personal/ebukin_worldbank_org/Documents/AI/AI-course-2026-April/ai4coding-data?csf=1&web=1&e=ITG6Sk) can still be used from the one-drive as it is read only.
+4. Data shared [One Drive WB only `ai4coding-data`](https://worldbankgroup-my.sharepoint.com/:f:/r/personal/ebukin_worldbank_org/Documents/AI/AI-course-2026-April/ai4coding-data?csf=1&web=1&e=ITG6Sk) can still be used from the one-drive as it is read only.
    If there are any problems, copy the data to `C:\WBG\ai\ai4coding-data\` and use it from there.
 :::
 
@@ -83,7 +83,7 @@ Important on folder structure:
 
 View slides in a [new tab](ai4coding-slides-d1-2/){target="_blank"}.
 
-## Excersize 1: Stata in Positron with GitHub Copilot (Not covered in the live session)
+## Exercise 1: Stata in Positron with GitHub Copilot (Not covered in the live session)
 
 The goal of this exercise is to get familiar with Positron's AI assistance
 features and how they can be used to write and execute Stata code. We go
@@ -98,24 +98,33 @@ This exercise overviews the following features of Positron's AI assistance:
 - agent mode: automating code execution and debugging
 - context monitoring
 
-Full exercise details are in [ex1-1-explore-positron.qmd](ex1-1-explore-positron.qmd).
+Full exercise details, suggested prompts and instructions are in [ex1-1-explore-positron.qmd](ex1-1-explore-positron.qmd).
 
-Pre-recorded video is here:
+Pre-recorded video (18 min.) is here:
 
 {{< video https://www.youtube.com/embed/U29xAoivY5Y >}}
 
 
-## Excersize 2: Understanding and cleaning the data (Covered in the live session)
+## Exercise 2: Understanding and cleaning the data (Covered in the live session)
 
 <!-- TODO -->
 
+This Excersie inproduces principles of effective prompting for making AI
+results more deterministic when working with the data. It also shows key methods
+how confidential data can be protected when working with AI to minimize the risk of data exposure.
 
-##
+Full exercise details, suggested prompts, and instructions are in [Exercise 2: Understanding and cleaning the data with AI](ex1-2-understand-clean-data.qmd).
+
+<!-- TODO: Pre-recorded video is here:
+
+{{< video https://www.youtube.com/embed/QU0N--y-skA >}} -->
+
+## Presentation: How AI works, key concepts, and capabilities
+
 ```{=html}
 <iframe class="slide-deck" src="ai4coding-slides-d1-3/"></iframe>
 
 ```
 View slides in a [new tab](ai4coding-slides-d1-3/){target="_blank"} or download a [PDF version](day1/ai4coding-slides-d1-3/ai4coding-slides-d1-3.pdf).
 
-:::
-:::
+<!-- TODO: Additional materials on AI concepts and capabilities worth familiarizing with. A pills tab with links to videos and reading -->
