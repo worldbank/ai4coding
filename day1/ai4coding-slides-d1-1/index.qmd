@@ -115,10 +115,10 @@ Introducing [**Positron**]{.bg} with [**Github Copilot**]{.fg} is the goal of th
 #### Day 1
 **Basics**
 
-- Software setup & prerequisites
-- AI concepts: tokens, context, agents
-- Demo of AI-assisted coding
-- Common workflows & best practices
+- Software setup & walk-through
+- Key concepts: IDE, assistants, context, tokens, LLM, and how it works
+- Examples: data preparation and cleaning, revising and reusing old code
+- Common techniques: managing AI's context and securing your data
 :::
 
 ::: {.column width="5%"}
@@ -128,7 +128,7 @@ Introducing [**Positron**]{.bg} with [**Github Copilot**]{.fg} is the goal of th
 #### Self-Study
 **The most important part**
 
-- Build the habit with your own code
+- Practice AI use with your own code
 - Structured case studies to guide you
 - Come back with questions & observations
 :::
@@ -141,9 +141,9 @@ Introducing [**Positron**]{.bg} with [**Github Copilot**]{.fg} is the goal of th
 **Go deeper, work smarter**
 
 - Debrief self-study experiences
-- Planning & executing complex tasks
-- `#Tools`, `skills`, `/agents`, `/prompts`
-- Context engineering & frontier techniques
+- Examples: `planning` and using `#tools`, `skills`, `/agents`, and `/prompt-files`.
+- Examples: customizing agents with `skills` and `/prompt-files`
+- Other relevant techniques
 :::
 
 ::::
@@ -152,14 +152,16 @@ Introducing [**Positron**]{.bg} with [**Github Copilot**]{.fg} is the goal of th
 ## Logistics
 
 | | Morning | Evening (repeat) |
-|------|----------------|----------------|
+|-------0--|----------------|----------------|
 | **Format** | In person + virtual | Virtual only |
 | **Session 1** | Mon Apr 20, 9 AM–12 PM ET | Mon Apr 20, 9 PM–12 AM ET |
 | **Session 2 (repeat)** | Thu Apr 23, 9 AM–12 PM ET | Thu Apr 23, 9 PM–12 AM ET |
 
 - Questions during session: **use Teams chat** or raise hand please
 
-## Agenda {.tiny-slide}
+## Today's Agenda {.tiny-slide}
+
+<!-- TODO: update with actual agenda after finalizing slides -->
 
 [Part 1 — Setup & Live Demo (80 min)]{.fg}
 
@@ -179,14 +181,12 @@ Introducing [**Positron**]{.bg} with [**Github Copilot**]{.fg} is the goal of th
 | 30 min | Cookbook: securing sensitive data, guardrails, and responsible AI use |
 | 30 min | Self-study exercises overview and Q&A |
 
-## Resources {.small-slide}
+## Course resources
 
 - Slides and tutorials: [worldbank.github.io/ai4coding](https://worldbank.github.io/ai4coding).
 
-- Code for exercises and demos: [github.com/worldbank/ai4coding-examples](https://github.com/worldbank/ai4coding-examples).
+- Code for exercises: [github.com/worldbank/ai4coding-examples](https://github.com/worldbank/ai4coding-examples).
 
-- Data for exercises share throug the OneDrive shared folder [ ai4coding-data](https://worldbankgroup-my.sharepoint.com/:f:/g/personal/ebukin_worldbank_org/IgBy2yGjpLJPRbM67FJpBFVgAbMRYhEPmS30H2RJSBFO_gE?e=GlDEiR)
-
-  - Available to anyone at the World Bank.
+- Data for exercises (OneDrive - WB only) [ ai4coding-data](https://worldbankgroup-my.sharepoint.com/:f:/g/personal/ebukin_worldbank_org/IgBy2yGjpLJPRbM67FJpBFVgAbMRYhEPmS30H2RJSBFO_gE?e=GlDEiR)
 
 - Previous seminar on [AI-Assisted Coding in Stata and R](https://worldbank.github.io/geoPovLearn/seminars/seminar-2026-02/overview.html) on [GeoPovlearn](https://worldbank.github.io/geoPovLearn)
