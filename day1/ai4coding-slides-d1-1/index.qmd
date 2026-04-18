@@ -58,7 +58,7 @@ format:
 :::
 
 ::: {.column width="50%"}
-There are many [**Integrated** Development Environments (IDEs)]{.highlight} for data science with AI integrated into your coding workflow.
+There are many [**Integrated** Development Environments (IDEs)]{.highlight} for data science with AI as a part of your coding workflow.
 Introducing [**Positron**]{.bg} with [**Github Copilot**]{.fg} is the goal of this course.
 :::
 ::::::
@@ -74,7 +74,7 @@ Introducing [**Positron**]{.bg} with [**Github Copilot**]{.fg} is the goal of th
 
 :::: {.columns}
 
-::: {.column width="30%" .obj-card .card-understand}
+::: {.column width="32%" .obj-card .card-understand}
 #### Understand
 
 - Core LLM concepts: tokens, prompts, context windows, agents
@@ -82,22 +82,22 @@ Introducing [**Positron**]{.bg} with [**Github Copilot**]{.fg} is the goal of th
 - Strengths and limitations for analytical workflows
 :::
 
-::: {.column width="5%" }
+::: {.column width="2%" }
 :::
 
-::: {.column width="30%" .obj-card .card-apply}
+::: {.column width="33%" .obj-card .card-apply}
 #### Practice
 
 - Use AI to understand, revise and reuse code
 - Plan execution and write prompts for multi-step tasks
-- Leverage `#tools`, `skills` and `/agents`
 - Supervise and course-correct AI-generated code
+- Leverage cutting-edge tech: `#tools`, `skills` and `/agents`
 :::
 
-::: {.column width="5%" }
+::: {.column width="2%" }
 :::
 
-::: {.column width="30%" .obj-card .card-control}
+::: {.column width="31%" .obj-card .card-control}
 #### Take Control
 
 - Data-security practices and guardrailing AI.
@@ -117,7 +117,7 @@ Introducing [**Positron**]{.bg} with [**Github Copilot**]{.fg} is the goal of th
 
 - Software setup & walk-through
 - Key concepts: IDE, assistants, context, tokens, LLM, and how it works
-- Examples: data preparation and cleaning, revising and reusing old code
+- Examples: data preparation and cleaning and security techniques
 - Common techniques: managing AI's context and securing your data
 :::
 
@@ -130,6 +130,10 @@ Introducing [**Positron**]{.bg} with [**Github Copilot**]{.fg} is the goal of th
 
 - Practice AI use with your own code
 - Structured case studies to guide you
+- Examples (pre-recorded):
+  - Starting simple: using AI to develop new code in Stata
+  - Day 1 example: data preparation, cleaning and security techniques
+  - Reproduce, Revise, and Reuse existing code with AI
 - Come back with questions & observations
 :::
 
@@ -138,7 +142,7 @@ Introducing [**Positron**]{.bg} with [**Github Copilot**]{.fg} is the goal of th
 
 ::: {.column width="30%" .phase-card .phase-day2}
 #### Day 2
-**Go deeper, work smarter**
+**Go deeper**
 
 - Debrief self-study experiences
 - Examples: `planning` and using `#tools`, `skills`, `/agents`, and `/prompt-files`.
@@ -148,40 +152,41 @@ Introducing [**Positron**]{.bg} with [**Github Copilot**]{.fg} is the goal of th
 
 ::::
 
-
 ## Logistics
 
 | | Morning | Evening (repeat) |
-|-------0--|----------------|----------------|
+|-----------| ---------------------- | ----------------------|
 | **Format** | In person + virtual | Virtual only |
 | **Session 1** | Mon Apr 20, 9 AM–12 PM ET | Mon Apr 20, 9 PM–12 AM ET |
 | **Session 2 (repeat)** | Thu Apr 23, 9 AM–12 PM ET | Thu Apr 23, 9 PM–12 AM ET |
 
-- Questions during session: **use Teams chat** or raise hand please
+- Questions during session: **use Teams chat** or raise your hand please
 
 ## Today's Agenda {.tiny-slide}
 
 <!-- TODO: update with actual agenda after finalizing slides -->
 
-[Part 1 — Setup & Live Demo (80 min)]{.fg}
+Day 1: Introduction and common workflows
 
-| Time   | Topic |
-|--------|--------------------------------------------------|
-| 10 min | Welcome, introductions, course overview |
-| 30 min | Software overview: Positron, GitHub Copilot, and Stata setup |
-| 40 min | AI in action with Stata (R): my typical data workflow using AI |
+| Time        | Topic |
+|-------------|----------------------------------------------------|
+| 9:00        | Welcome, introductions, and overview |
+| 9:10        | Setup: Positron + GitHub Copilot + Stata + Working folder |
+| 9:40        | Agentic coding with Stata/R: Example 1 |
+| 10:20       | ☕ Break (10 min) |
+| 10:30       | AI overview presentation: how GitHub Copilot and LLMs work, key concepts, and capabilities |
+| 11:00       | Cookbook: securing sensitive data, guardrails, and responsible AI use |
+| 11:30       | Self-study exercises overview and Q&A |
 
-[☕ Break (10 min)]{.fg}
+## What next?
 
-[Part 2 — Concepts & Practice (90 min)]{.fg}
+1. [Setup your course working folder](../day1/index.qmd#setup-overview){target="_blank"} and [software](../prerequisites/software.qmd){target="_blank"}.
 
-| Time   | Topic |
-|--------|--------------------------------------------------|
-| 30 min | AI overview presentation: how GitHub Copilot and LLMs work, key concepts, and capabilities |
-| 30 min | Cookbook: securing sensitive data, guardrails, and responsible AI use |
-| 30 min | Self-study exercises overview and Q&A |
+2. Copy relevant materials to your working folder:
 
-## Course resources
+
+
+3. Familiarize yourself with the materials and schedule for Day 1 (see [Day 1 materials](day1/index.qmd)).
 
 - Slides and tutorials: [worldbank.github.io/ai4coding](https://worldbank.github.io/ai4coding).
 

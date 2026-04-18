@@ -20,10 +20,9 @@ Key concepts are:
   - workflow: chat, agents, conversations, and LLMs
 
 
-
 ## Positron IDE Overview
 
-> Adopted from Positron UI <https://positron.posit.co/layout.html>
+> Adapted from Positron UI <https://positron.posit.co/layout.html>
 
 ![Interface of the Positron IDE showing Activity Bar, Primary Side Bar, Editor, Panel, and Secondary Side Bar](images/user-interface-for-rstudio-migration.jpeg){fig-alt="Positron IDE with labeled regions: Activity Bar on the far left, Primary Side Bar to its right, Editor in the center, Panel below the editor, and Secondary Side Bar on the right."}
 
@@ -33,7 +32,7 @@ Key concepts are:
 
 - The **Editor** is in the center by default, and is where you write your code. For editor controls, refer to [VS Code Editor Basics](https://code.visualstudio.com/docs/editing/codebasics).
 
-- The **Panel** is below the editor by default and contains the fully interactive, integrated Console as well as the [Terminal](https://code.visualstudio.com/docs/terminal/basics) You can also access logs from [Output](https://positron.posit.co/troubleshooting.html) channels in the Panel.
+- The **Panel** is below the editor by default and contains the fully interactive, integrated Console as well as the [Terminal](https://code.visualstudio.com/docs/terminal/basics). You can also access logs from [Output](https://positron.posit.co/troubleshooting.html) channels in the Panel.
 
 - The **Secondary Side Bar** is on the right by default. You can switch between the **Session** pane (where you can explore the [variables](https://positron.posit.co/variables-pane.html) you have defined and the [plots](https://positron.posit.co/plots-pane.html) you have created), the [**Connections**](https://positron.posit.co/connections-pane.html) pane, the [**Help**](https://positron.posit.co/help-pane.html) pane, the **History** pane, and the **Viewer** pane.
 
@@ -70,7 +69,6 @@ Here you can customize your Positron experience, including enabling the Assistan
 > Settings marked with a vertical line are modified from their default values in your IDE. You can click "Gear > Reset" button next to each setting to revert it to the default value.
 
 > ![](images/settings-reset.gif){fig-alt="Positron IDE showing how to reset settings to their default values."}
-
 
 ### Read/watch more
 
@@ -112,7 +110,7 @@ Here you can customize your Positron experience, including enabling the Assistan
 
 To use the assistant's AI features, you need to [Enable Positron Assistant](https://positron.posit.co/assistant-getting-started.html#step-1-enable-positron-assistant) and [Configure GitHub Copilot](https://positron.posit.co/assistant-getting-started.html#step-2-configure-language-model-providers).
 
-This could be done in the following way:
+This can be done as follows:
 
 - `Ctrl+Shift+P` → "Preferences: Open Settings (UI)" → search `positron.assistant.enable` → ☑️
 
@@ -121,19 +119,8 @@ Other settings to consider:
 - `positron.assistant.showTokenUsage.enable` - to show token usage details in the assistant chat
 - `positron.assistant.toolDetails.enable` - to show tool usage details in the assistant chat
 
-### Inline suggestions
-
-### Chat
-
-### Agent
-
-### Inline chat
-
-### Settings and personalization
-
-
-
-<!-- TODO -->
+Assistant permits you to use AI for inline code suggestions and chat-based help.
+See videos below for a quick tour or follow along with the course examples.
 
 ### Read/watch more
 

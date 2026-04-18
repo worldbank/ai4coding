@@ -93,7 +93,7 @@ Two extensions provide Stata integration. [Install one — not both.]{style="bac
 | Good for… | Positron users who want native integration | VS Code / Cursor users who want MCP support |
 
 
-## Positron Stata
+## Positron Stata extension {#sec-positron-stata-extension}
 
 Native Positron integration of Stata with console, data viewer, plots.
 Help and documentation are on GitHub along with issue reporting: [github.com/ntluong95/positron-stata](https://github.com/ntluong95/positron-stata).
@@ -150,7 +150,6 @@ To install it:
 ![](../../assets/img/pos-stata-ext1.gif){width="600"}
 
 ::::
-
 
 ## Stata MCP Extension
 
