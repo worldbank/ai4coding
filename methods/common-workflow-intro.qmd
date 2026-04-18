@@ -1,0 +1,16 @@
+---
+title: Common workflow in data analysis with AI
+---
+
+As AI is probabilistic, you will often need to curate its context well in
+order to get good results. With experience I came accross with the following
+common workflow for data understanding and preparation tasks:
+
+1. Set the objective and constraints
+2. Provide descriptions of inputs and requirements for outputs
+3. Verify AI understanding of your tasks, goals and requirements
+4. (Optional) Secure the data: Privacy‑First Development Using Metadata, Anonymization, and Simulation
+5. Iterative Data Understanding and Assumptions
+6. Develop and correct the code
+7. Independent verification using an AI "auditor" and manual inspection
+8. Documentation

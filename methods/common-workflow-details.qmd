@@ -1,0 +1,21 @@
+---
+title: Common workflow in data analysis with AI: details and examples
+---
+
+Let us go through the common workflow in more details, with examples and
+instructions for each step. This workflow is based on my experience and best
+practices in using AI for data analysis, and it can be adapted to different
+contexts and tasks.
+
+## Step 1: Set the objective and constraints
+
+
+## 2. Describe inputs and explain requirements for outputs
+
+
+3. Verify AI understanding of your tasks, goals and requirements
+4. (Optional) Secure the data: Privacy‑First Development Using Metadata, Anonymization, and Simulation
+5. Iterative Data Understanding and Assumptions
+6. Develop and correct the code
+7. Independent verification using an AI "auditor" and manual inspection
+8. Documentation

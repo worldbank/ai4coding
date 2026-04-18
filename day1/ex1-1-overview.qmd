@@ -1,0 +1,16 @@
+The goal of this exercise is to get familiar with Positron's AI assistance
+features and how they can be used to write and execute Stata code. We go
+through a typical workflow of creating a Stata do file, writing code with
+AI assistance, and executing it in the console.
+
+This exercise overviews the following features of Positron's AI assistance:
+
+- inline suggestions: accepting, rejecting, and customizing
+- chat mode: asking for code generation, revision, and troubleshooting
+- inline chat: revising specific code snippets without leaving the editor
+- agent mode: automating code execution and debugging
+- context monitoring
+
+**Watch the full video (18 min.) here**:
+
+{{< video https://www.youtube.com/embed/U29xAoivY5Y >}}

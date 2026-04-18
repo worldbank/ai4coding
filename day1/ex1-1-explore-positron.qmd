@@ -2,42 +2,25 @@
 title: "Stata in Positron with GitHub Copilot"
 ---
 
-The goal of this exercise is to get familiar with Positron's AI assistance
-features and how they can be used to write and execute Stata code. We go
-through a typical workflow of creating a Stata do file, writing code with
-AI assistance, and executing it in the console.
+{{< include ex1-1-overview.qmd >}}
 
-This exercise overviews the following features of Positron's AI assistance:
+## Where to start
 
-- inline suggestions: accepting, rejecting, and customizing
-- chat mode: asking for code generation, revision, and troubleshooting
-- inline chat: revising specific code snippets without leaving the editor
-- agent mode: automating code execution and debugging
-- context monitoring
-
-To start this exercise:
+Setup [working folders properly](../day1/working-folder.qmd):
 
 1. Copy folder with `ex01-explore-positron` to your working directory
 2. Open `ex01-explore-positron` in Positron
 3. Follow the instructions below
 
-All exercises are available:
+All examples are available:
 
 - on GitHub: <https://github.com/worldbank/ai4coding-examples>
 - on One Drive (WB only): [ai4coding-examples](https://worldbankgroup-my.sharepoint.com/:f:/g/personal/ebukin_worldbank_org/IgCXQVakSxEpT7VJFmKp_qtnAXx8RX9iemnwfGwITkEA3bE?e=U08qTX)
 
-Data is pre-packaged with this exercise, but you can also download it from
+Data is already contained in example folder, but you can also download it from
 [ai4coding-data](https://worldbankgroup-my.sharepoint.com/:f:/r/personal/ebukin_worldbank_org/Documents/AI/AI-course-2026-April/ai4coding-data?csf=1&web=1&e=ITG6Sk) and place it your course folder.
 
-::: {.panel-tabset}
-
-## Watch the full video here
-
-{{< video https://www.youtube.com/embed/U29xAoivY5Y >}}
-
-:::
-
-## Prompt examples and exercise details
+## Prompt examples and example details
 
 ### Step 1. Create a script file in your editor
 
