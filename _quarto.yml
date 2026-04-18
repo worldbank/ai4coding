@@ -24,6 +24,10 @@ website:
         href: prerequisites/index.qmd
       - text: "Day 1"
         href: day1/index.qmd
+      - text: "Self Study"
+        href: selfstudy/index.qmd
+      - text: "Day 1"
+        href:
       - text: "About"
         href: about.qmd
 
@@ -51,36 +55,20 @@ website:
         - day1/ex1-1-explore-positron.qmd
         - day1/ex1-2-data-understanding.qmd
 
-    - title: "Materials"
+    - title: "Self Study"
       style: "docked"
       pinned: true
       collapse-level: 10
       contents:
-        - materials.qmd
-        # - section: "Pre-requisites"
-        #   contents:
-        #     - prerequisites/index.qmd
-        #     - prerequisites/software.qmd
-        #     - prerequisites/github.qmd
-        #     - prerequisites/extensions.qmd
-        #     - prerequisites/assistant.qmd
-        #     - prerequisites/common-problems.qmd
-        # - section: "Day 1"
-        #   contents:
-        #     - day1/index.qmd
-        #     - day1/setup-overview.qmd
-        #     - day1/ex1-1-harmonization.qmd
-        #     # - day1/ex1-2-revision.qmd
+        - selfstudy/index.qmd
 
-        - section: "Self Study"
-          href: selfstudy/index.qmd
-  #       #   # contents:
-  #       #     # - materials/self-study/case-studies.qmd
-        # - section: "Day 2"
-        #   href: day2/index.qmd
-  #       #   # contents:
-  #       #     # - materials/day2/advanced-topics.qmd
-  #       #     # - materials/day2/case-studies.qmd
+    - title: "Day 2"
+      style: "docked"
+      pinned: true
+      collapse-level: 10
+      contents:
+        - day2/index.qmd
+
   page-navigation: true
   back-to-top-navigation: false
 
