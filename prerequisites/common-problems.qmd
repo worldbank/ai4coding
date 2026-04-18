@@ -29,7 +29,7 @@ Positron shows a notification that an update is available but the update fails.
 - Reinstall Positron from the Software Center to get the latest version and restore auto-update functionality. See [Software Setup](software.qmd) for details.
 
 
-## Python UV Installation Problem
+## Python `uv` Installation Problem
 
 For example:
 

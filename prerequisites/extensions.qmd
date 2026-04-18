@@ -114,7 +114,7 @@ To install it:
 
 7. Set the path to your Stata installation, e.g. `C:\Program Files\StataNow19\` (adjust if Stata is installed elsewhere).
 
-8. Create a new `.do` file and run exemplary code to verify the extension is working (or open an existing one).
+8. Create a new `.do` file and run example code to verify the extension is working (or open an existing one).
 
    - create `test.do` with:
 
@@ -174,7 +174,7 @@ To install it:
 
 8. Search for `stata-vscode.stataEdition` and set it to `mp`, `se`, or `be` depending on your Stata license.
 
-9. Create a new `.do` file and run exemplary code to verify the extension is working (or open an existing one).
+9. Create a new `.do` file and run example code to verify the extension is working (or open an existing one).
 
    - create `test.do` with:
 
@@ -196,4 +196,4 @@ To install it:
 
 ![](../../assets/img/pos-stata-ext2-demo.gif){width="600"}
 
-:::
+::::

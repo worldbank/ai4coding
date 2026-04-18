@@ -56,7 +56,7 @@ consume **premium requests**. Each plan includes a monthly allowance:
 | Private Copilot Pro+ |                    1,500 |
 
 **Once you hit the limit, advanced AI features (Ask and Agent
-mode,Claude) are unavailable for the rest of the month.** Basic inline
+mode, Claude) are unavailable for the rest of the month.** Basic inline
 completions still work, but with older, less capable models.
 
 **Check your usage →** [GitHub Settings \>
