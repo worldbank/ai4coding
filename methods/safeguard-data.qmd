@@ -1,0 +1,110 @@
+---
+title: "Safeguadring confidential data"
+---
+
+The problem with secure and confidential data is that if leaked to AI models,
+it can lead to data breaches and privacy violations bearing substantial legal
+and reputational risks. We must remember that it is **our responsibility to**:
+
+1. control of what data is shared with the AI.
+2. review and curate the context AI uses.
+3. properly anonymize, aggregate, or simulate data before sharing with AI.
+4. follow organizational policies and legal requirements for responsible
+   AI use [ai/](https://ai.worldbank.org/).
+
+::: callout-important
+Please familiarize yourself with the [World Bank's AI Use Policy](https://ai.worldbank.org/policy) and [Responsible AI Guidelines](https://ai.worldbank.org/guidelines) to ensure compliance and responsible use of AI in your work.
+:::
+
+## Key data exposure channels
+
+In general, **AI does not load raw data into context as is**. However,
+as it develops code to understand the data, it can potentially
+propose doing things that lead to data exposure. Based on literature [^1]
+most common channels of data exposure are:
+
+[^1]: Yan, B., Li, K., Xu, M., Dong, Y., Zhang, Y., Ren, Z., & Cheng, X. (2024). *On Protecting the Data Privacy of Large Language Models (LLMs): A Survey*. arXiv:2403.05156. <https://arxiv.org/abs/2403.05156>
+
+1. **user-written prompts that include sensitive information**,
+2. **AI suggests code that prints raw data as Stata output in the console**,
+3. **AI instructs IDE to read text files or load them into context**
+4. **AI proposes command line code that searches specific text in the data files (e.g. `.csv` files) or load them into context**.
+
+In any of these cases, sensitive data becomes part of the context that AI uses
+to generate code and outputs, and thus **always there is a risk of data leakage**.
+
+::: callout-note
+
+In principle and depending on the AI provider, each chat session with AI is an
+isolated instance of a foundational model. Data shared with it my not be used
+for training, but it may be retained for a certain period of time. However,
+**every movel provider has a different**
+**policies on data usage, retention, and training**. If you need please
+familiarize yourself with:
+
+1. [Positron Assistant Provider Privacy Information](https://positron.posit.co/assistant-provider-info.html) and
+2. [Responsible use of GitHub Copilot inline suggestions](https://docs.github.com/en/copilot/responsible-use/copilot-code-completion), and
+3. [Responsible use of GitHub Copilot Chat in your IDE](https://docs.github.com/en/copilot/responsible-use/chat-in-your-ide)
+
+:::
+
+The problem with secure and confidential data is that if leaked to AI models,
+it can lead to data breaches and privacy violations bearing substantial legal
+and reputational risks. We must remember that it is **our responsibility to**:
+
+1. control of what data is shared with the AI.
+2. review and curate the context AI uses.
+3. properly anonymize, aggregate, or simulate data before sharing with AI.
+4. follow organizational policies and legal requirements for responsible
+   AI use [ai/](https://ai.worldbank.org/).
+
+::: callout-important
+Please familiarize yourself with the [World Bank's AI Use Policy](https://ai.worldbank.org/policy) and [Responsible AI Guidelines](https://ai.worldbank.org/guidelines) to ensure compliance and responsible use of AI in your work.
+:::
+
+
+## Remedies
+
+### Think what you write in the prompts
+
+Be careful with what you write in the prompts, and avoid sharing any sensitive
+information in them. For example, instead of sharing raw data values, share
+variable names, types, summary statistics, and data dictionaries to provide
+AI with necessary context without sharing raw data values.
+
+
+::: callout-warning
+Never share with AI any passwords, personally identifiable information, or
+any other sensitive data in the prompts.
+:::
+
+### Instruct IDE to exclude certain files from context
+
+1. Instructing IDE to exclude certain files from context.
+
+
+### Instruct AI explicitly to not read specific files
+2. Instruct AI explicitly to not read specific files (also using a command line tools).
+3. Using Metadata‑based AI Assistance.
+   - Move sensitive data outside of the working folder.
+   - Locate in the working folder only metadata files that contain variable
+     names, types, labels, summary statistics, missing observations, and data dictionaries.
+
+4. Anonymizate / pseudoaggregate data.
+5. Develop code that never prints raw data in the console.
+
+6. Metadata‑Driven AI Assistance.
+
+   - Use AI to generate code that produces **textual metadata** and summary
+     of your data set that contains: Variables names, types, labels, summary
+     statistics, missing observations, and dictionaries. This allows you to
+     leverage AI's capabilities for data understanding and code generation
+     without sharing examples of the raw data.
+     AI will use this metadata to generate code for data cleaning, validation,
+     and harmonization, while the actual data remains secure on your local
+     machine and you decide whether or not to execute with AI in Positron or
+     in Stata without Positron's context aggregation.
+
+7. Anonymization and Aggregation.
+
+      for  to provide AI with necessary context without sharing raw data. For example, share variable names, types, summary statistics, and data dictionaries instead of actual data values.

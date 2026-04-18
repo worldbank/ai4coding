@@ -2,6 +2,49 @@
 title: "Exercise 2: Understanding and cleaning the data with AI"
 ---
 
-In this example, our goal is to learn how to work with AI to harmonize and
-standardize data from its raw format to a format that is more suitable
-for analysis.
+{{< include ex1-2-overview.qmd >}}
+
+## Common workflow in data analysis with AI
+
+::: {.shift-headings by=2}
+
+{{< include ../methods/common-workflow-intro.qmd >}}
+
+:::
+
+Before we dive into the example along the workflow, let's cover ways of securing
+data first.
+
+### Safeguarding Data {#safeguarding-data}
+
+::: {.shift-headings by=2}
+
+{{< include ../methods/safeguard-data.qmd >}}
+
+:::
+
+
+
+
+
+### Step 1. Set the Overall Objective
+What this step does
+Defines what success means and what the AI is allowed to do before any technical discussion begins.
+Why it matters
+LLMs optimize for completion, not correctness. Without a firm objective and constraints, the model may jump to code or infer unstated rules.
+What to include
+
+Purpose of harmonization
+Target output format and quality bar
+Explicit instruction not to write code yet
+
+Example prompts
+Prompt A
+
+You are my Stata co‑programmer. The objective is to harmonize multiple survey waves into a single long-format dataset with consistent variable names, types, units, labels, and validation checks.
+Do not write code yet. First restate the objective, constraints, and success criteria in your own words and report any uncertainty.
+
+Prompt B
+
+Before coding, summarize the harmonization goal, expected outputs, and non‑negotiable constraints.
+For each item, report your certainty level (high / medium / low) and flag anything that needs clarification.

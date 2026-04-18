@@ -75,6 +75,11 @@ website:
 execute:
   freeze: true
 
+author:
+  - name: Eduard Bukin
+    email: ebukin@worldbank.org
+    url: https://github.com/ebukin
+
 format:
   html:
     css: assets/custom.css
