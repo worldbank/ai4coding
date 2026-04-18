@@ -38,6 +38,7 @@ website:
         - prerequisites/github.qmd
         - prerequisites/extensions.qmd
         - prerequisites/assistant.qmd
+        - prerequisites/verify.qmd
         - prerequisites/common-problems.qmd
 
     - title: "Day 1"
