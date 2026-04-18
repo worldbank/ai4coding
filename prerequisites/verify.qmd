@@ -8,13 +8,13 @@ Check that everything is set up correctly by following the instructions.
 ## Positron is working
 
 - Open Positron.
-- Create a new wioring directory in `C:\WBG\ai\` called `ex00-positron-test`.
+- Create a new working directory in `C:\WBG\ai\` called `ex00-positron-test`.
 - Open this folder in Positron.
 
 ## GitHub Copilot is working
 
 - Open chat in Positron (select the chat robot icon in the sidebar, or run `Chat: Open Chat` from the Command Palette `Ctrl+Shift+P`).
-- Ask AI how to create a new `.R` script in positrons and write a simple R code to print "Hello World".
+- Ask AI how to create a new `.R` script in Positron and write a simple R code to print "Hello World".
 - If you see the code generated in the chat, and some answers, then everything is set up correctly.
 
 
@@ -49,7 +49,7 @@ save auto_modified, replace
 ```
 :::
 
-If there are no results, common problemsmay include:
+If there are no results, common problems may include:
 
 - Stata is not installed >>> Check with ITS.
 
@@ -57,7 +57,7 @@ If there are no results, common problemsmay include:
 
 - Stata path is not set correctly in Positron settings >>> check [Positron Stata extension](extensions.qmd#sec-positron-stata-extension)
 
-- Python package UV dose not work properly >>> check [Common Problems](common-problems.qmd#python-uv-installation-problem)
+- Python package `uv` does not work properly >>> check [Common Problems](common-problems.qmd#python-uv-installation-problem)
 
 
 ## R
@@ -65,7 +65,7 @@ If there are no results, common problemsmay include:
 - Create a new file `test-r.R` in the `ex00-positron-test` folder.
 - Copy paste the following code in this file and run it. If you see the plots and regression output in the terminal, then R is working correctly.
 - Press ![](images/run.png) to run it.
-- If something does not work, check the [software Setup](software.qmd)
+- If something does not work, check the [Software Setup](software.qmd)
 
 ::: {.scrollable-code}
 
