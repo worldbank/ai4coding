@@ -6,7 +6,7 @@ title: "Exercise 2: Understanding and cleaning the data with AI"
 
 ## Common workflow in data analysis with AI
 
-::: {.shift-headings by=2}
+::: {.shift-heading-level-by by=0}
 
 {{< include ../methods/common-workflow-intro.qmd >}}
 
@@ -15,11 +15,11 @@ title: "Exercise 2: Understanding and cleaning the data with AI"
 Before we dive into the example along the workflow, let's cover ways of securing
 data first.
 
-### Safeguarding Data {#safeguarding-data}
+## Safeguarding Data {#safeguarding-data}
 
-::: {.shift-headings by=2}
+::: {.shift-heading-level-by by=-2}
 
-{{< include ../methods/safeguard-data.qmd >}}
+{{< include ../methods/safeguard-data-overview.qmd >}}
 
 :::
 

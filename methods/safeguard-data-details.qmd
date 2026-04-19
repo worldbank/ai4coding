@@ -1,0 +1,534 @@
+---
+title: "Safeguarding confidential data: details"
+---
+
+## Be careful about what you write in prompts
+
+Be careful with what you write in the prompts, and avoid sharing any sensitive
+information in them. For example, instead of sharing raw data values, share
+variable names, types, summary statistics, and data dictionaries to provide
+AI with necessary context without sharing raw data values.
+
+::: callout-warning
+Never share with AI any passwords, personally identifiable information, or
+any other sensitive data in the prompts.
+:::
+
+## Instruct AI to NOT read specific files {#instruct-ai-not-read-files}
+
+AI tools can be customized through so-called System instructions.
+See for example:
+
+- Positron [Automatic workspace instructions](https://positron.posit.co/assistant-chat-instructions.html#automatic-workspace-instructions)
+
+- GitHub Copilot [Adding repository custom instructions for GitHub Copilot](https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions#creating-custom-instructions)
+
+- Claude Code [How Claude remembers your project](https://code.claude.com/docs/en/memory)
+
+These instructions are applied to every chat session with AI in Positron, and
+they are attached to your prompt before your prompt starts.
+You can use them to instruct AI to not read specific files in your working folder.
+
+::: callout-warning
+### Caveat
+
+This solution is not absolute. It relies on AI's context and AI tends to forget
+instructions, especially if they are not repeated in the prompt.
+:::
+
+:::::: callout-tip
+### How to add custom ignore instructions
+
+1. Create files:
+   - `.github/copilot-instructions.md` (for Copilot) in the folder `.github/` in your working folder.
+   - `claude.md` (for Claude Code) in the root of your working folder.
+
+2. Add the following instruction, replacing the placeholder paths with the actual
+   folders and files that contain sensitive data in your project.
+
+   ```{.markdown filename=".github/copilot-instructions.md"}
+   NEVER read, index, or propose shell commands (Bash / PowerShell / CMD) that
+   would reveal the contents of the following to you:
+
+   - `data/raw/`  ← replace with your sensitive folder path
+   - `data/raw/survey_2024.dta`  ← replace with your sensitive file path
+
+   If reading one of these files is absolutely necessary for code generation:
+
+   1. **Ask for permission first** — do not read the file without explicit confirmation.
+   2. **Explain** what file you want to read, why you need it, and how you will use the data from it.
+   3. **Wait** for me to confirm before proceeding.
+   ````
+3. Create a `.gitignore` file in the root of your working folder
+
+4. Add the paths to the sensitive data files and folders in `.gitignore`, for example:
+
+   ```{.bash filename=".gitignore"}
+   # Raw and confidential data
+   data/raw/
+   data/raw/survey_2024.dta
+   ```
+
+::::::
+
+If you are in doubt how to do this, ask AI to help by typing this prompt in a
+new chat session:
+
+```{.markdown filename="Prompt"}
+I want you to ignore files from both AI context and version control.
+- `data/raw/`  ← replace with your sensitive folder path
+- `data/raw/survey_2024.dta`  ← replace with your sensitive file path
+- Add more files and folders as needed.
+Follow these instructions exactly as they say, create the necessary files, and
+populate them with the correct content.
+
+[Paste here the instruction from above or provide a URL link to these instructions]
+```
+
+## Instruct AI to NOT print raw data in the console {#instruct-ai-not-print-data}
+
+When you ask AI to generate code for data understanding, cleaning, or
+analysis, make sure to instruct it to never print raw data in the console. For
+example, you can use the following prompt:
+
+```{.markdown filename="Prompt"}
+You are not allowed to print raw data in the console. You must produce code
+that does not print raw data. It is allowed however to present aggregated data,
+summary statistics, regression results and any other data that makes it impossible to
+identify individual observations.
+If in doubt that some code may print raw data, ask for permission before
+proposing this code.
+```
+
+::: callout-note
+### Tip
+
+You can add this text into the System instructions for your AI tool
+(see [Instruct AI to NOT read specific files for setup steps](#instruct-ai-not-read-files)),
+so that it is applied to every chat session with AI in Positron in your project.
+Follow the same steps as [in the previous section](#instruct-ai-not-read-files) to add the necessary instructions to the
+`.github/copilot-instructions.md` and `claude.md` files.
+:::
+
+## Use metadata and move data outside of the working folder
+
+Instead of giving AI access to raw data files, generate lightweight
+**metadata files** that describe the structure and statistics of each dataset. Place raw
+data outside the working folder and share only the metadata with AI. This gives
+the AI enough context to write correct code while the raw data never enters
+its context.
+
+**Process:**
+
+1. Generate code for Stata, R, or Python that will:
+
+   - Accept a path to the folder where the raw data resides as the only input.
+   - Loop over all files of a given type (e.g. `.dta`, `.csv`) in that folder.
+   - Produce one plain-text metadata file per data file, named
+     `<data-file-name.ext>.md`, containing:
+     - File size, number of variables, and number of observations.
+     - For each variable: name, type, and label.
+       - *Numeric variables:* summary statistics and count of missing observations.
+       - *Categorical variables:* category names, frequency counts, and count of missing observations.
+   - Write the metadata files to a folder specified by the user.
+
+2. Execute this code on your local machine, in software where you can control
+   the process and ensure that metadata files are generated and saved in
+   the working folder, while raw data files remain secure outside of it.
+
+3. When you continue working with your project, where only metadata is present,
+   tell AI that:
+
+   ```{.markdown filename="Prompt"}
+   You are not allowed to read any data outside your working folder.
+   You must use only the metadata files to understand the data structure to
+   generate code for analysis.
+   ```
+
+::: callout-warning
+### Caveat
+
+Although this solution is more secure, and leaves the LLM with sufficient context
+to generate code, the LLM still cannot execute the code.
+If you allow it to run the code with the data in another folder,
+then it may print the data in the console, which can lead to data exposure.
+:::
+
+Code examples for generating metadata files:
+
+::: {.panel-tabset}
+
+## Stata
+
+```stata
+global data_folder "data/raw"
+global metadata_folder "data/metadata"
+
+capture mkdir "$metadata_folder"
+local dta_files : dir "$data_folder" files "*.dta", respectcase
+local csv_files : dir "$data_folder" files "*.csv", respectcase
+local files "`dta_files' `csv_files'"
+
+foreach f of local files {
+    local fpath "$data_folder/`f'"
+    quietly checksum "`fpath'"
+    local fsize = r(filelen)
+    local ext = lower(substr("`f'", -4, .))
+    if "`ext'" == ".dta" quietly use "`fpath'", clear
+    else                 quietly import delimited "`fpath'", clear
+    local nobs = c(N)
+    local outf "$metadata_folder/`f'.md"
+    file open fh using "`outf'", write replace text
+    file write fh "# `f'" _n _n
+    file write fh "- **File size:** `fsize' bytes" _n
+    file write fh "- **Observations:** `nobs'" _n
+    file write fh "- **Variables:** `= c(k)'" _n _n
+
+    foreach v of varlist _all {
+        local vlab : variable label `v'
+        local vtype : type `v'
+        file write fh "## `v'" _n _n
+        file write fh "- **Type:** `vtype'" _n
+        file write fh `"- **Label:** `vlab'"' _n
+
+        capture confirm numeric variable `v'
+        if !_rc {
+            quietly summarize `v'
+            local nmiss = `nobs' - r(N)
+            file write fh "- **Missing:** `nmiss'" _n
+            file write fh "- **Mean:** `: di %12.4f r(mean)'" _n
+            file write fh "- **SD:** `: di %12.4f r(sd)'" _n
+            file write fh "- **Min:** `: di %12.4g r(min)'" _n
+            file write fh "- **Max:** `: di %12.4g r(max)'" _n
+        }
+        else {
+            quietly count if missing(`v')
+            file write fh "- **Missing:** `r(N)'" _n
+            quietly levelsof `v', local(vals)
+            local nlev : word count `vals'
+            file write fh "- **Unique values:** `nlev'" _n
+            if `nlev' <= 25 {
+                file write fh "- **Frequencies:**" _n
+                foreach val of local vals {
+                    quietly count if `v' == `val'
+                    file write fh `"    - `val': `r(N)'"' _n
+                }
+            }
+        }
+        file write fh _n
+    }
+    file close fh
+    display "Saved: `outf'"
+}
+```
+
+## R
+
+```r
+data_folder <- "data/raw"
+metadata_folder <- "data/metadata"
+
+dir.create(metadata_folder, showWarnings = FALSE, recursive = TRUE)
+files <- list.files(data_folder, pattern = "\\.(dta|csv)$", full.names = TRUE)
+
+for (fpath in files) {
+  fname <- basename(fpath)
+  ext <- tolower(tools::file_ext(fpath))
+  df <- if (ext == "dta") haven::read_dta(fpath) else readr::read_csv(fpath, show_col_types = FALSE)
+  fsize <- file.size(fpath)
+  outf <- file.path(metadata_folder, paste0(fname, ".md"))
+  lines <- c(
+    paste0("# ", fname), "",
+    paste0("- **File size:** ", fsize, " bytes"),
+    paste0("- **Observations:** ", nrow(df)),
+    paste0("- **Variables:** ", ncol(df)), ""
+  )
+  for (v in names(df)) {
+    col <- df[[v]]
+    vlab <- attr(col, "label") %||% ""
+    vtype <- class(col)[1]
+    lines <- c(lines, paste0("## ", v), "",
+               paste0("- **Type:** ", vtype),
+               paste0("- **Label:** ", vlab))
+    if (is.numeric(col)) {
+      nmiss <- sum(is.na(col))
+      s <- summary(col)
+      lines <- c(lines,
+        paste0("- **Missing:** ", nmiss),
+        paste0("- **Mean:** ", round(mean(col, na.rm = TRUE), 4)),
+        paste0("- **SD:** ", round(sd(col, na.rm = TRUE), 4)),
+        paste0("- **Min:** ", s[["Min."]]),
+        paste0("- **Max:** ", s[["Max."]]))
+    } else {
+      nmiss <- sum(is.na(col))
+      vals <- table(col, useNA = "no")
+      lines <- c(lines,
+        paste0("- **Missing:** ", nmiss),
+        paste0("- **Unique values:** ", length(vals)))
+      if (length(vals) <= 25) {
+        lines <- c(lines, "- **Frequencies:**")
+        for (i in seq_along(vals))
+          lines <- c(lines, paste0("    - ", names(vals)[i], ": ", vals[i]))
+      }
+    }
+    lines <- c(lines, "")
+  }
+  writeLines(lines, outf)
+}
+```
+
+:::
+
+:::::: {.callout-note}
+### Tip
+
+To speed up the process of developing code for metadata generation, you can ask
+AI to generate code for you providing the link to this section of the course
+materials as context. For example you can use the following prompt
+in a new chat session:
+
+```{.markdown filename="Prompt"}
+I need to generate metadata files for my datasets that are stored outside of
+my working folder. Use these instructions and examples to generate Stata code
+to do so: [provide a link to this section of the course materials or paste the
+instructions and examples from above]
+```
+
+::::::
+
+
+## Data anonymization
+
+When confidential microdata must be analyzed but cannot be shared in its
+original form, **data anonymization** (also called de-identification or
+Statistical Disclosure Control — SDC) transforms the dataset so that individual
+respondents cannot be re-identified, while preserving as much analytical utility
+as possible [^2] [^3] [^4].
+
+[^2]: IHSN. *Microdata Anonymization*. <https://www.ihsn.org/anonymization>
+[^3]: Utrecht University. *Data Privacy Handbook — Pseudonymisation & Anonymisation*. <https://utrechtuniversity.github.io/dataprivacyhandbook/pseudonymisation-anonymisation.html>
+[^4]: Utrecht University. *Data Privacy Handbook — Statistical Approaches to De-identification*. <https://utrechtuniversity.github.io/dataprivacyhandbook/statistical-privacy.html>
+
+It is important to distinguish two related but different concepts:
+
+- **Pseudonymization** replaces direct identifiers (names, ID numbers) with
+  artificial codes. A key file links the codes back to individuals.
+  The data are still *personal data* and subject to data-protection regulations.
+- **Anonymization** transforms the data so that re-identification is no longer
+  reasonably possible — even by the data holder. Anonymized data are no
+  longer personal data.
+
+### Common de-identification techniques
+
+The techniques below are widely used in SDC and are described in detail in the
+[Data Privacy Handbook — De-identification techniques](https://utrechtuniversity.github.io/dataprivacyhandbook/deidentification-techniques.html)
+and the
+[IHSN SDC Theory Guide](https://sdctheory.readthedocs.io/en/latest/):
+
+| Technique | Description | Typical use |
+|-----------|-------------|-------------|
+| **Suppression** | Remove variables, values, or entire records | Direct identifiers (names, SSNs) |
+| **Generalization / Recoding** | Reduce granularity (e.g. exact age → age group, city → region) | Categorical quasi-identifiers |
+| **Top / bottom coding** | Cap extreme values at a threshold | Continuous variables with outliers (e.g. income) |
+| **Noise addition** | Add random noise proportional to the variable's spread | Continuous quasi-identifiers |
+| **Permutation / Shuffling** | Randomly reorder values within a variable | Break correlations while preserving marginal distributions |
+| **Pseudonymization / Hashing** | Replace identifiers with random codes or cryptographic hashes | Names, IDs, e-mail addresses |
+
+### Statistical privacy models
+
+Beyond individual techniques, formal privacy models help quantify and verify
+the protection level of the anonymized dataset:
+
+- [**k-anonymity**](https://en.wikipedia.org/wiki/K-anonymity): each record is
+  indistinguishable from at least *k − 1* other records on the quasi-identifiers.
+- **l-diversity**: each equivalence class contains at least *l* distinct values
+  of the sensitive attribute, preventing attribute disclosure.
+- **t-closeness**: the distribution of the sensitive attribute in each equivalence
+  class is within distance *t* of its distribution in the full dataset.
+
+See [Data Privacy Handbook — k-anonymity, l-diversity and t-closeness](https://utrechtuniversity.github.io/dataprivacyhandbook/k-l-t-anonymity.html)
+for an accessible introduction.
+
+### Available tools by language
+
+::: {.panel-tabset}
+
+## R
+
+- **sdcMicro** — The reference R package for Statistical Disclosure Control,
+  developed at Statistics Austria. Implements risk estimation, local suppression,
+  recoding, microaggregation, noise addition, PRAM, and record swapping. Includes
+  a Shiny GUI (`sdcApp`) and AI-assisted anonymization features.
+  See Templ, Kowarik & Meindl (2015) and the
+  [AI-Assisted SDC vignette](https://cran.r-project.org/web/packages/sdcMicro/vignettes/ai_assisted_anonymization.html).
+  CRAN: <https://CRAN.R-project.org/package=sdcMicro>
+
+- **deident** — A pipeline-based framework for building reusable and serializable
+  de-identification workflows. Supports pseudonymization, encryption (hashing),
+  blurring (categorical aggregation), numeric blurring, noise addition, and
+  shuffling. See Cook, Asaduzzaman & Jones (2025). *Deident: An R package for data
+  anonymization.* Journal of Open Source Software, 10(105), 7157.
+  <https://doi.org/10.21105/joss.07157>.
+  CRAN: <https://CRAN.R-project.org/package=deident>
+
+- **anonymizer** — A lightweight package for salting and hashing PII columns.
+  Useful for quick pseudonymization of string identifiers.
+  GitHub: <https://github.com/paulhendricks/anonymizer>
+
+## Python
+
+- **pycanon** — Implements k-anonymity, l-diversity, and t-closeness checks and
+  transformations. See Sáinz-Pardo Díaz & López García (2022). *A Python
+  library to check the level of anonymity of a dataset.* Scientific Data, 9, 785.
+  <https://doi.org/10.1038/s41597-022-01894-2>.
+  GitHub: <https://github.com/IFCA-Advanced-Computing/pycanon>
+
+- **Faker** — Generates realistic synthetic replacements for PII fields
+  (names, addresses, phone numbers).
+  GitHub: <https://github.com/joke2k/faker>
+
+## Stata
+
+There are currently no established Stata packages for automated SDC.
+Practitioners typically implement anonymization manually (recoding, top-coding,
+noise addition) or call R/Python via Stata's interoperability features
+(`rsource`, `python:`). The [IHSN Practice Guide](https://sdcpractice.readthedocs.io/en/latest/)
+provides worked examples that can be adapted to Stata workflows.
+
+
+### Example prompts for AI-assisted anonymization
+
+::: {.panel-tabset}
+
+## Using `sdcMicro` in R
+
+If you work in R and need to anonymize a microdata file, you can use the
+following prompt. It points AI to the sdcMicro package and its AI-assisted
+features, and lets you specify dataset, variables, privacy level, and output
+location.
+
+
+```{.markdown filename="Prompt"}
+I need to anonymize a microdata dataset using the `sdcMicro` R package.
+
+**Context and references:**
+
+- IHSN Microdata Anonymization guidelines: <https://www.ihsn.org/anonymization>
+- SDC Theory Guide: <https://sdctheory.readthedocs.io/en/latest/>
+- sdcMicro AI-Assisted SDC vignette: <https://cran.r-project.org/web/packages/sdcMicro/vignettes/ai_assisted_anonymization.html>
+- Data Privacy Handbook — De-identification techniques: <https://utrechtuniversity.github.io/dataprivacyhandbook/deidentification-techniques.html>
+
+**My dataset and requirements:**
+
+- Input file: `path/to/my_data.dta` ← replace with your file path
+- Categorical quasi-identifiers (key variables): `var1, var2, var3` ← replace
+- Numerical quasi-identifiers: `income, expenditure` ← replace
+- Direct identifiers to remove before SDC: `name, id_number` ← replace
+- Desired k-anonymity level: 5 (use 3 for restricted-access files, 5 for public use)
+- Output path for anonymized file: `path/to/anonymized_data.csv` ← replace
+
+**Instructions:**
+
+1. Read the sdcMicro AI-Assisted SDC vignette linked above.
+2. Load the dataset and remove direct identifiers.
+3. Create an `sdcMicroObj` classifying variables into key variables,
+   numerical variables, weight variable, and household ID as appropriate.
+4. Apply an anonymization strategy that achieves the desired k-anonymity,
+   balancing suppression, recoding, and noise addition to minimize
+   information loss.
+5. Report the disclosure risk before and after anonymization.
+6. Save the anonymized dataset to the specified output path.
+7. Do NOT print or display raw individual-level data at any point.
+```
+
+## Using `deident` in R
+
+For simpler de-identification tasks — pseudonymizing names, hashing IDs,
+shuffling or perturbing specific columns — the `deident` package provides a
+clean pipeline interface.
+
+
+```{.markdown filename="Prompt"}
+I need to de-identify specific variables in a dataset using the `deident`
+R package.
+
+**References:**
+
+- deident package documentation: <https://CRAN.R-project.org/package=deident>
+- Cook et al. (2025), *Deident: An R package for data anonymization*,
+  JOSS 10(105), 7157. <https://doi.org/10.21105/joss.07157>
+
+**My dataset and requirements:**
+
+- Input file: `path/to/my_data.csv` ← replace with your file path
+- Variables to pseudonymize (replace with random strings): `name, respondent_id` ← replace
+- Variables to encrypt (hash): `email, phone` ← replace
+- Variables to perturb (add noise): `income, age` ← replace
+- Variables to shuffle: `occupation` ← replace
+- Output path: `path/to/deidentified_data.csv` ← replace
+
+**Instructions:**
+
+1. Read the deident package documentation linked above.
+2. Build a `deident` pipeline that applies the appropriate transformation
+   to each variable: `add_pseudonymize()` for pseudonymization,
+   `add_encrypt()` for hashing, `add_perturb()` for noise addition,
+   `add_shuffle()` for shuffling.
+3. Apply the pipeline to my dataset and save the result.
+4. Serialize the pipeline to a YAML file so it can be reapplied consistently
+   to new data batches.
+5. Do NOT print or display raw individual-level data at any point.
+```
+
+## Using a language-agnostic approach
+
+If you prefer to work in Python, Stata, or want a language-agnostic approach,
+use the following prompt. It asks AI to propose and implement an anonymization
+strategy based on established references.
+
+
+```{.markdown filename="Prompt"}
+I need to anonymize a microdata dataset to prevent re-identification of
+individual respondents while preserving analytical utility.
+
+**Language:** Stata / R / Python ← choose one
+
+**Context and references (read these before proposing a strategy):**
+
+- IHSN Microdata Anonymization: <https://www.ihsn.org/anonymization>
+- SDC Theory Guide: <https://sdctheory.readthedocs.io/en/latest/>
+- Data Privacy Handbook — De-identification techniques: <https://utrechtuniversity.github.io/dataprivacyhandbook/deidentification-techniques.html>
+- Data Privacy Handbook — Statistical approaches: <https://utrechtuniversity.github.io/dataprivacyhandbook/statistical-privacy.html>
+
+**My dataset and requirements:**
+
+- Input file: `path/to/my_data.dta` ← replace with your file path
+- Direct identifiers to remove: `name, national_id` ← replace
+- Categorical quasi-identifiers to recode/generalize: `region, education, marital_status` ← replace
+- Numerical quasi-identifiers to perturb or top-code: `income, expenditure` ← replace
+- Target protection level: k-anonymity ≥ 5
+- Output path: `path/to/anonymized_data.dta` ← replace
+
+**Instructions:**
+
+1. Read the references above to understand the SDC process.
+2. Propose an anonymization strategy explaining which technique you will apply
+   to each variable and why.
+3. Wait for my approval before implementing.
+4. Implement the approved strategy and save the anonymized dataset.
+5. Report a summary of changes: number of records suppressed, variables
+   recoded, noise level applied, and estimated re-identification risk.
+6. Do NOT print or display raw individual-level data at any point.
+```
+
+:::
+
+::: callout-warning
+### Caveat
+
+Data anonymization is a specialized field. AI-generated anonymization strategies
+are a useful starting point, but they **must be reviewed by someone with domain
+knowledge** before the data are released. Always verify re-identification risk
+on the anonymized dataset — for example by checking k-anonymity violations —
+and consult your organization's data protection guidelines.
+:::

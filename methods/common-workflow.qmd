@@ -1,8 +1,4 @@
 ---
-title: Workflow in data analysis with AI
-author:
-  - name: Eduard Bukin
-    email: ebukin@worldbank.org
-    url: https://github.com/ebukin
-date: 2024-06-17
+title: "AI Workflow"
+date: 2026-04-17
 ---

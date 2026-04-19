@@ -1,5 +1,5 @@
 ---
-title: Common workflow in data analysis with AI: details and examples
+title: "Common workflow in data analysis with AI: details and examples"
 ---
 
 Let us go through the common workflow in more details, with examples and

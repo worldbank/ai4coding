@@ -3,7 +3,7 @@ project:
   render:
     - about.qmd
     - index.qmd
-    - materials.qmd
+    # - materials.qmd
     - prerequisites/*.qmd
     - day1/*.qmd
     - day1/**/*.qmd
@@ -19,15 +19,15 @@ website:
     left:
       - text: "Home"
         href: index.qmd
-      - text: "Materials"
-        href: materials.qmd
-      - text: "Pre-requisites"
+      # - text: "Materials"
+      #   href: materials.qmd
+      - text: "Setup"
         href: prerequisites/index.qmd
-      - text: "Day 1"
+      - text: "Day 1: Introduction"
         href: day1/index.qmd
       - text: "Self Study"
         href: selfstudy/index.qmd
-      - text: "Day 2"
+      - text: "Day 2: Customizing AI"
         href: day2/index.qmd
       - text: "Methods"
         href: methods/index.qmd
@@ -56,7 +56,7 @@ website:
         - day1/index.qmd
         - day1/setup-overview.qmd
         - day1/ex1-1-explore-positron.qmd
-        - day1/ex1-2-data-understanding.qmd
+        - day1/ex1-2-understand-clean-data.qmd
 
     - title: "Self Study"
       style: "docked"
@@ -93,10 +93,16 @@ author:
 format:
   html:
     css: assets/custom.css
-    theme:
-      - cosmo
-      - brand
+    # theme:
+    #   - cosmo
+    #   - brand
     toc: true
-    toc-depth: 3
+    toc-depth: 4
     toc-location: right
     lightbox: true
+    code-overflow: wrap
+    code-fold: show
+    # code-tools: true
+    code-copy: true
+    code-line-numbers: true
+    code-block-border-left: true

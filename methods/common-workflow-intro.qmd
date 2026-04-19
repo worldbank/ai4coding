@@ -1,5 +1,5 @@
 ---
-title: Common workflow in data analysis with AI
+title: "Common workflow in data analysis with AI"
 ---
 
 As AI is probabilistic, you will often need to curate its context well in
