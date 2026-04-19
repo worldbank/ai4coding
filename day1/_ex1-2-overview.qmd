@@ -1,3 +1,40 @@
-In this example, our goal is to learn how to work with AI to harmonize and
-standardize data from its raw format to a format that is more suitable
-for analysis.
+In this example, we explore how AI can support a common data science workflow:
+taking raw data and transforming it into a clean, analysis-ready format.
+
+Following the common agentic [data analysis workflow](/methods/common-workflow.qmd)
+and principles of [safeguarding data](/methods/safeguard-data.qmd), we adopt a
+**metadata-driven approach** — using a data dictionary as an intermediary between
+the raw data and the AI, rather than exposing sensitive data directly.
+
+By the end of this example, you will have practiced using AI to:
+
+1. Explore the structure and content of a dataset.
+2. Build a data dictionary that captures variable names, types, units, and labels.
+3. Document data harmonization requirements systematically.
+4. Generate harmonization code driven by metadata.
+5. Iterate on that code to resolve errors and refine outputs.
+6. Verify results and troubleshoot any remaining issues.
+
+As examplary data we us Mexico National Survey of Household Income and
+Expenditure (ENIGH) for 2016 and 2018, which contains detailed information on
+household income, and other socio-economic characteristics.
+
+This data was downloaded from:
+
+- 2016: <https://en.www.inegi.org.mx/programas/enigh/nc/2016/> and
+- 2018: <https://en.www.inegi.org.mx/programas/enigh/nc/2018/>
+
+Metadata is available at:
+
+- 2016: <https://www.inegi.org.mx/rnm/index.php/catalog/310>
+- 2018:<https://www.inegi.org.mx/rnm/index.php/catalog/511>
+
+This data is stored on your local machine on `OneDrive/.../ai4coding-data/mex/2016/`
+as a read-only file.
+
+The objective is to clean this data to the specifications describeed in the
+global monitoring database (GMD) selectively outlines in [Self-Study -> GMD requirements.](/selfstudy/gmd-requirements.qmd). We would like to harmonize only following modules of the GMD:
+
+1. Demographics
+2. Income
+3. Consumption

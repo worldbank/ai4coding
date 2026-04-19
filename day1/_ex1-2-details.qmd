@@ -1,4 +1,91 @@
-## Step 1. Set the Overall Objective
+Let us proceed with the analysis of the data following the common agentic
+[data analysis workflow](/methods/common-workflow.qmd).
+
+
+### Step 1. Set the Overall Objective
+
+```{.markdown file-name="Prompt"}
+You are my Stata co‑programmer. The objective is to harmonize multiple survey
+waves into a single dataset with consistent variable names, types, units, labels,
+categories, and same recall periods.
+```
+
+### Step 2. Define inputs and outputs requirement
+
+```{.markdown file-name="Prompt"}
+The final dataset should be in format, where each row represents individual-year
+observation, while each collumn represents harmonized variables. The dataset
+should be analysis-ready, with clear variable names, labels, and documented
+harmonization rules. The code should be modular, well-commented, and follow best
+practices for reproducibility and data safeguarding. Do not write any code yet.
+
+It should harmonize the data to the specifications describes in [Link to the Requirements].
+
+I would like to harmonize only following modules: [demographics, income, and consumption].
+```
+
+```{.markdown file-name="Prompt"}
+Input data is located on the local machine at `OneDrive/.../ai4coding-data/mex/
+in subfolders 2016 and 2018. It is a read-only file. You are not
+allowed to access the data directly or write code that accesses the data directly.
+You must write code in the way that path to the data  is specified as
+an input parameter, and the code runs without modification. Do not write any code yet.
+```
+
+### Step 3. Create a data dictionary to understand the structure and content of the data
+
+```{.markdown file-name="Prompt"}
+I would liek you to write stata code in file `01-data-dictionary.do`
+that creates a data dictionary for each dataset (2016 and 2018) that
+captures variable names, types, units, labels, and any other relevant metadata.
+This infomraiton should also include informaiton on the recall period of the
+variables, units of measurments and any other relevant information
+
+The code should:
+
+1. Have parameter to specify path to the folder with raw data.
+2. loop over all raw data files with `.dta` and `.csv` extensions, read them,
+   and extract the necessary information to build the data dictionary.
+3. save data dictionary as a separate file in `data/dictionary/original-file-name.md`
+4. At no circumstances the code should print data in the console or load it into the context.
+
+Do not write any code yet. First, restate the objective, constraints, and
+success criteria in your own words and report any uncertainty. Only when
+confirmed, proceed to write the code.
+```
+
+### Step 4. Gather relevant metadata from the internet and add it to the data dictionary
+
+```{.markdown file-name="Prompt"}
+I would like you to fetch original metadata for the datasets from the following links:
+- 2016: <https://www.inegi.org.mx/rnm/index.php/catalog/310>
+- 2018: <https://www.inegi.org.mx/rnm/index.php/catalog/511>
+This metadata may contain detailed information on variable definitions, units of
+measurement, recall periods, and other relevant information that is not
+captured in the raw data files.
+Save summary of the variable-specific metadata in a separate file in
+`data/dictionary/metadata-year.md`.
+```
+
+### Step 5. Verify understanding and clarify uncertainties
+
+```{.markdown file-name="Prompt"}
+Before developing data cleaning code, you must first develop a data dictionary
+that captures the structure and content of the data.
+```
+
+
+### Step 6. Develop data cleaning code iteratively based on data dictionary
+
+```{.markdown file-name="Prompt"}
+Based on the data dictionary and metadata, develop data cleaning code.
+
+
+that performs the necessary data cleaning and harmonization steps to produce
+
+
+Before writing code, restate the objective, constraints, and success criteria in
+your own words and report any uncertainty.
 
 What this step does
 Defines what success means and what the AI is allowed to do before any technical discussion begins.
