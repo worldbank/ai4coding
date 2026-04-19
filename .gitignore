@@ -56,4 +56,4 @@ site_libs/*
 _freeze/
 
 .DS_Store
-day1/setup-overview.qmd
+**/*_files/

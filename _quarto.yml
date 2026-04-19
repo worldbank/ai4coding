@@ -7,6 +7,7 @@ project:
     - prerequisites/*.qmd
     - day1/*.qmd
     - day1/**/*.qmd
+    - methods/*.qmd
 
 
 website:
@@ -26,8 +27,10 @@ website:
         href: day1/index.qmd
       - text: "Self Study"
         href: selfstudy/index.qmd
-      - text: "Day 1"
-        href:
+      - text: "Day 2"
+        href: day2/index.qmd
+      - text: "Methods"
+        href: methods/index.qmd
       - text: "About"
         href: about.qmd
 
@@ -68,7 +71,14 @@ website:
       collapse-level: 10
       contents:
         - day2/index.qmd
-
+    - title: "Methods"
+      style: "docked"
+      pinned: true
+      collapse-level: 10
+      contents:
+        - methods/index.qmd
+        - methods/common-workflow.qmd
+        - methods/safeguard-data.qmd
   page-navigation: true
   back-to-top-navigation: false
 
