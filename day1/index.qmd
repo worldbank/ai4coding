@@ -1,8 +1,7 @@
 ---
 title: "Day 1: Overview and materials"
 ---
-
-## Goals:
+## Goals for Day 1
 
 - See AI in action: live code understanding, revision, and reuse with AI
 - Setup: Positron + GitHub Copilot + Stata
@@ -17,13 +16,13 @@ Day 1: Introduction and common workflows
 
 | Time        | Topic |
 |-------------|--------------------------------------------------------------|
-| 9:00        | 1. [Welcome, introductions, and overview (slides)](#welcome) |
-| 9:10        | 2. [Setup overview (slides)](#setup-overview). [Example 0 (live)](#example-0) and [Example 1 (self-study)](#understanding-data) |
-| 9:40        | 3. [Example 1: Understanding data with AI (live)](#understanding-data) |
+| 9:00        | 1. [Welcome: course overview (slides)](#welcome) |
+| 9:10        | 2. [Setup overview (slides)](#setup-overview). [Example 0 (live)](#example-0) and [Example 1 (self-study)](#example-1) |
+| 9:40        | 3. [Example 2: Understanding data with AI (live)](#understanding-data) |
 | 10:20       | ☕ Break (10 min) |
 | 10:30       | 4. [How GitHub Copilot work, and key AI concepts](#ai-concepts) |
 | 10:45       | 5. [Common AI workflow and data safeguarding practices](#ai-workflow) |
-| 11:00       | 6. [Self-study examples overview and Q&A](#self-study) |
+| 11:00       | 6. [Example 3: Reproduce, Revise, and Reuse existing analysis (self-study)](#self-study) |
 
 ## Before You Arrive
 
@@ -34,9 +33,8 @@ contact [ITHelp@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org) before the
 
 -------------------------------------------------------------------------------
 
-## Day 1: materials {#materials}
+## Day 1: Materials {#materials}
 
--------------------------------------------------------------------------------
 
 ### 1. Learn: Welcome, introductions, and overview {#welcome}
 
@@ -45,19 +43,15 @@ Introduction and housekeeping, then an overview of the day's agenda and material
 **Slides**
 
 ```{=html}
-<iframe class="slide-deck"  src="ai4coding-slides-d1-1/"></iframe>
+<iframe class="slide-deck"  src="ai4coding-slides-d1-1/index.html"></iframe>
 ```
-View slides in a [new tab](ai4coding-slides-d1-1/){target="_blank"}.
+View slides in a [new tab](ai4coding-slides-d1-1/index.html){target="_blank"}.
 
 -------------------------------------------------------------------------------
 
 ### 2. Setup overview {#setup-overview}
 
-::: callout-warning
-**Important**
-
-> Setup your working folders properly!
-:::
+> **Important**Setup your working folders properly!
 
 {{< include /day1/_working-folder.qmd >}}
 
@@ -72,12 +66,12 @@ View slides in a [new tab](day1/ai4coding-slides-d1-2/){target="_blank"}.
 #### Example 0: Test your setup (live) {#example-0}
 
 This presentation ends with an example that demonstrates how to test
-if the setup is working correctly. Example 0 could be found in [Self-Study > Example 0](selfstudy/example-0.qmd).
+if the setup is working correctly. Example 0 could be found in [Self-Study > Example 0](/selfstudy/example-0.qmd).
 
 #### Example 1: Stata in Positron with GitHub Copilot (self-study) {#example-1}
 
 This introductory example is plan for self-study, full details, suggested
-prompts, and instructions are in the [Self-Study > Example 1](selfstudy/example-1.qmd).
+prompts, and instructions are in the [Self-Study > Example 1](/selfstudy/example-1.qmd).
 
 {{< include /day1/_ex1-1-overview.qmd >}}
 
@@ -87,16 +81,17 @@ prompts, and instructions are in the [Self-Study > Example 1](selfstudy/example-
 
 This example is planned for live demonstration during the session, but you can
 also follow along on your own as a self-study exercise. Full details, suggested
-prompts, and instructions are in the [Self-Study > Example 2](selfstudy/example-2.qmd).
-
-
+prompts, and instructions are in the [Self-Study > Example 2](/selfstudy/example-2.qmd).
 
 
 <!-- TODO -->
 
 {{< include /day1/_ex1-2-overview.qmd >}}
 
-## Presentation: How AI works, key concepts, and capabilities
+
+-------------------------------------------------------------------------------
+
+## 4. Core AI-related concepts {#ai-concepts}
 
 ```{=html}
 <iframe class="slide-deck" src="day1/ai4coding-slides-d1-3/"></iframe>

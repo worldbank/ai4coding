@@ -31,10 +31,10 @@ format:
     scrollable: true
     transition: fade
     preview-links: auto
-    logo: ../../assets/img/WBG-Prosperity Horizontal-Black.svg
+    logo: /assets/img/WBG-Prosperity Horizontal-Black.svg
     footer: '[worldbank.github.io/ai4coding](https://worldbank.github.io/ai4coding) © 2026 World Bank.'
     resources:
-        - ../../assets/img/WBG-Prosperity Horizontal-Black.svg
+        - /assets/img/WBG-Prosperity Horizontal-Black.svg
 ---
 
 
@@ -169,7 +169,7 @@ Day 1: Introduction and common workflows
 |-------------|----------------------------------------------------|
 | 9:00        | Welcome, introductions, and overview |
 | 9:10        | Setup overview |
-| 9:40        | [Understanding data with AI (live example)](/day1/ex1-2-understand-clean-data.qmd) |
+| 9:40        | [Understanding data with AI (live example)]() |
 | 10:20       | ☕ Break (10 min) |
 | 10:30       | AI overview presentation: how GitHub Copilot and LLMs work, key concepts, and capabilities |
 | 11:00       | Cookbook: securing sensitive data, guardrails, and responsible AI use |
