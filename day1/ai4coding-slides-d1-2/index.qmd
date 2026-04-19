@@ -1,7 +1,7 @@
 ---
 title: "AI for Coding"
 subtitle: "Day 1: Setup overview"
-date: "April 20, 2024"
+date: "April 20, 2026"
 format:
   revealjs:
     theme: [simple, custom.scss]
@@ -133,7 +133,7 @@ Set a **budget** (~$0.04/request):
 ::: {.small}
 [When your usage reaches 100% capable AI models stop working.]{.warning}
 
-- Basic inline completions still works.
+- Basic inline completions still work.
 :::
 
 ::::
@@ -156,13 +156,13 @@ Set a **budget** (~$0.04/request):
 | \+ [or WB Copilot access]{.fg} | +✅ WB | ✅ 300 req/mo |
 | \+ WB chargeback | +✅ WB | ✅ + extra at 0.04\$/request (WB chargeback) |
 
-## GitHub @ World Bank is more than a Copilot {.small-slide}
+## GitHub @ World Bank is more than Copilot {.small-slide}
 
 [**Why to use GitHub @ World Bank?**]{.fg}
 
 - It is a modern standard of research and collaboration.
 
-- GitHub integration improves your code, version control, and collaboration standard leading to better quality, transparency, and reproducibility.
+- GitHub integration improves your code, version control, and collaboration standards, leading to better quality, transparency, and reproducibility.
 
   - Request access to [github.com/worldbank](https://github.com/worldbank) on [eServices](https://worldbankgroup.service-now.com/wbg/en/join-github-organization-account-request?id=wbg_sc_catalog&sys_id=910e1739db1a54903c5960ab13961912&table=sc_cat_item&searchTerm=github)
 
@@ -210,7 +210,7 @@ You can also sign in via the **Accounts** icon (bottom-left of Activity Bar).
 ::: {.callout-danger}
 **Do not use OneDrive for coding with Positron during this course! (temporary)**
 
-- Positron is a new software for the WB.
+- Positron is new software for the WB.
 - WB security policies **block Positron from writing text files** on OneDrive.
 - [Do not save your code-in-progress in a OneDrive folder.]{.alert}
 - New security policy will be implemented on **Friday, April 24** (spring meeting freeze).
@@ -250,7 +250,7 @@ C:\WBG\ai\
 Quick [[Example 0]{.fg}](){target="_blank"} to verify your setup.
 
 - Open `C:\WBG\ai\ai4coding-practice\ex00-positron-test` in Positron.
-- Follow instructions in the readme.md file to test your setup.
+- Follow instructions in the README.md file to test your setup.
 
 ## Supporting materials and references {.small-slide}
 
@@ -261,7 +261,7 @@ Quick [[Example 0]{.fg}](){target="_blank"} to verify your setup.
 | WB premium request chargeback | [github@worldbank.org](mailto:github@worldbank.org) + manager CC |
 | Course materials | [worldbank.github.io/ai4coding](https://worldbank.github.io/ai4coding) |
 | Course examples | [github.com/worldbank/ai4coding-examples](https://github.com/worldbank/ai4coding-examples) |
-| course data | **OneDrive (WB only):** [`ai4coding-data`](https://worldbankgroup-my.sharepoint.com/:f:/r/personal/ebukin_worldbank_org/Documents/AI/AI-course-2026-April/ai4coding-data?csf=1&web=1&e=ITG6Sk){target="_blank"} |
+| Course data | **OneDrive (WB only):** [`ai4coding-data`](https://worldbankgroup-my.sharepoint.com/:f:/r/personal/ebukin_worldbank_org/Documents/AI/AI-course-2026-April/ai4coding-data?csf=1&web=1&e=ITG6Sk){target="_blank"} |
 
 - Positron docs: [positron.posit.co](https://positron.posit.co/)
 - GitHub Copilot docs: [docs.github.com/copilot](https://docs.github.com/en/copilot)
