@@ -1,7 +1,7 @@
 ---
 title: "AI for Coding"
 subtitle: "Day 1: Core AI concepts"
-date: "April 20, 2024"
+date: "April 20, 2026"
 format:
   revealjs:
     theme: [simple, custom.scss]
@@ -26,16 +26,16 @@ format:
 
 - 🤖 AI assistants:
 
-  -  Local software: Positron assistant, VS Code Github Copilot, Claude Code, Copilot CLI ...
-  -  Cloud-based providerd: GitHub Copilot, MAI, Anmthropic Claude API, ...
+  -  Local software: Positron Assistant, VS Code GitHub Copilot, Claude Code, Copilot CLI ...
+  -  Cloud-based providers: GitHub Copilot, MAI, Anthropic Claude API, ...
 
 - 📚 Context: information that AI uses to generate responses.
 
-- 🔢 Tokens: pieces of text that LLMs processes.
+- 🔢 Tokens: pieces of text that LLMs process.
 
 - ❓ Requests: prompts, instructions.
 
-- 🧠 LLMs: Large Language Models, e.g. GPT-4, Gemini Pro, Claude 2 and more.
+- 🧠 LLMs: Large Language Models, e.g. GPT, Claude and more.
 
 - ❌ Hallucinations: when AI generates incorrect or fabricated information.
 
@@ -46,7 +46,7 @@ format:
 :::: {.columns}
 ::: {.column width="42%" .smaller}
 
-is the [workspace for coding and executing data analysis]{.fg}
+An IDE is the [workspace for coding and executing data analysis]{.fg}:
 
 - a code editor
 - a console / terminal
@@ -55,9 +55,9 @@ is the [workspace for coding and executing data analysis]{.fg}
 - Git and extensions
 - AI assistance and more...
 
-There are many IDEs, with user interface (UI) and as a command-line interfaces (CLIs)
+There are many IDEs, both with user interfaces (UIs) and as command-line interfaces (CLIs).
 
-[Most are made for programming. **Positron, R Studio and JupyterLab**--for data science.]{.highlight .center}
+[Most are made for programming. **Positron, RStudio, and JupyterLab** — for data science.]{.highlight .center}
 
 :::
 
@@ -86,18 +86,18 @@ There are many IDEs, with user interface (UI) and as a command-line interfaces (
 :::: {.columns .smallest}
 ::: {.column width="50%"}
 
-- 💻 **Code, data, and analysis** stay inside the IDE on user's computer.
+- 💻 **Code, data, and analysis** stay inside the IDE on the user's computer.
 - {{< fa solid robot >}} **Positron Assistant** works in the IDE as a middleman that connects user, IDE, and cloud-based AI services.
 
-- {{< fa brands github >}} **GitHub Copilot** is a cloud-based AI orchestrator: co-steers assistant and LLMs, submits prompts to the LLMs, pre-processes responses before sending it back to the assistant.
+- {{< fa brands github >}} **GitHub Copilot** is a cloud-based AI orchestrator: coordinates the assistant and LLMs, submits prompts to the LLMs, pre-processes responses before sending them back to the assistant.
 
 
 - 🔢 **The LLM**:
 
-  - ingesting **prompt as text**,
+  - ingests the **prompt as text**,
   - converts it **into tokens**,
   - **embeds tokens as numeric vectors**,
-  - **performs inference** to generate tokenized response, decodes tokens, and
+  - **performs inference** to generate a tokenized response, decodes tokens, and
   - **responds back to the assistant**.
 
 - ✅ **The user controls and decides** if they want to accept, edit, or reject the suggested code.
@@ -120,10 +120,11 @@ There are many IDEs, with user interface (UI) and as a command-line interfaces (
 - Every message, file, and code snippet **adds to the context**.
 - 🔧 Context is assembled by the IDE **cumulatively**.
 - 📏 Size is measured in **tokens**.
+- Context has layers: **system prompt** (hidden instructions that steer the LLM's behavior in Copilot and Positron) vs **user prompt** (your visible messages and attached files).
 
 [**Be mindful of context size and content.**]{.warning}
 
-⚠️ LLMs have a max context window (64k–2M tokens) — exceeding it leads to information loss.
+⚠️ LLMs have a max context window (4k–2M tokens) — exceeding it leads to information loss.
 
 :::
 ::: {.column width="50%"}
@@ -141,8 +142,8 @@ There are many IDEs, with user interface (UI) and as a command-line interfaces (
 [**Best practices:**]{.highlight}
 
 - 📁 Explicitly attach only relevant files.
-- Start a new session often.
-- Ask AI to summarize conversation in a file to preserve key context, curate it, and use it as a starting point for the new conversation.
+- 🔄 Start a new session often.
+- 📝 Ask AI to summarize conversation in a file to preserve key context, curate it, and use it as a starting point for the new conversation.
 - ⚙️ Use system instructions, prompt files, and skills **(day 2)**.
 
 ## IDE + AI assistant: data risks
@@ -159,7 +160,7 @@ There are many IDEs, with user interface (UI) and as a command-line interfaces (
 
 [Use AI responsibly and securely: <https://ai.worldbank.org/risk-mitigation>]{.highlight .warning .center}
 
-## Token and embeddings
+## Tokens and embeddings
 ::: {.small}
 - 🔢 **Tokens** are text units (words, subwords) forming the LLM **vocabulary** (GPT-3: 50k tokens; Claude speculated ~ 200k).
 - 🧠 Each token is **embedded** as a numeric vector (GPT-3: 12,288 dimensions) — a sentence becomes a matrix of vectors.
@@ -205,7 +206,7 @@ From [Neural Networks Series](https://www.3blue1brown.com/?topic=neural-networks
 
 ## LLMs are probabilistic
 
-- LLMs respond with a distribution of likely next words and then choose one following an algorithm.
+- LLMs respond with a distribution of likely next words and then **sample** one using a decoding strategy (e.g., **Temperature** or **Top-k** sampling).
 
 ![](images/3b1b-predictions.jpg){ width="100%" .center}
 
@@ -226,9 +227,9 @@ From [Neural Networks Series](https://www.3blue1brown.com/?topic=neural-networks
 From [Neural Networks Series](https://www.3blue1brown.com/?topic=neural-networks) by [3Blue1Brown](https://www.3blue1brown.com/) and [NN-Full Video Course](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)
 :::
 
-## LLMs inference
+## LLM inference
 
-- Process of responses generation based on the input prompt, which contains all the context.
+- The process of generating responses based on the input prompt, which contains all the context.
 
 ![LLM inference](images/inference.png){width="80%" .center}
 
@@ -238,30 +239,28 @@ Adapted from [10.48550/arXiv.2408.02549](https://arxiv.org/abs/2408.02549)
 
 ## Hallucinations {.small-slide}
 
-[Hallucinations]{.fg} happen when **LLM does not have sufficient context** and
-produces text that is fluent, confident, and **wrong**.
+[Hallucinations]{.fg} occur when an LLM generates text that is fluent, confident, and **wrong**. Common causes: insufficient or irrelevant context, training data biases or gaps, over-generalization of learned patterns.
 
 ::: {.columns}
 ::: {.column width="50%"}
-Hallucinations patterns
+Hallucination patterns
 
-  - Fake citations
-  - Wrong but close facts
-  - Entity blending
-  - Overconfident extrapolation
-    - correctly reasoning partway through a problem, then guessing the rest as
+  - **Fake** citations
+  - **Wrong** but close facts
+  - **Entity** blending
+  - **Overconfident** extrapolation: correctly reasoning partway through a problem, then guessing the rest as
       if it were known.
-  - Recency failures
+  - **Recency** failures
 
 :::
 
-::: {.column width="50%}
+::: {.column width="50%"}
 [**Mitigation:**]{.highlight}
 
-- Provide more context.
-- Ask for step-by-step reasoning.
-- Verify with external sources.
-- Use fresh agents to fact-check and verify LLMs results re-reading sources.
+- Provide [more context]{.fg}.
+- **Ask for step-by-step reasoning**.
+- **Verify** with external sources.
+- **Use fresh agents to fact-check and verify** results asking to re-reading sources.
 :::
 :::
 
@@ -281,11 +280,9 @@ We will focus **Day 2** on advanced AI features that enrich context and mitigate
 
 ## Would you like to read/watch more about LLMs?
 
-Chek out:
+Check out:
 
-- 2blue1brown's
+- 3Blue1Brown's
   - [Neural Networks Series](https://www.3blue1brown.com/?topic=neural-networks)
 
-  - or [Youtube playlis](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)
-
--
+  - or [YouTube playlist](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)
