@@ -20,7 +20,208 @@ format:
         - /assets/img/WBG-Prosperity Horizontal-Black.svg
 ---
 
-## Objective
+<!-- ## Objective {.center .small-slide} -->
 
 
-## Data safeguarding practices while using AI
+
+<!-- ## Common workflows in data analysis with AI -->
+
+<!-- TODO: include common workflow slides from methods/_common-workflow-intro.qmd -->
+
+## Data safeguarding practices while using AI {.small-slide}
+
+If sensitive or confidential data leaks to AI models, it can lead to [**data breaches and privacy violations**]{.warning} bearing substantial legal and reputational risks.
+
+[**It is our responsibility to:**]{.fg}
+
+1. Control what data is shared with the AI.
+2. Review and curate the context AI uses.
+3. Properly anonymize, aggregate, or simulate data before sharing with AI.
+4. Follow organizational policies and legal requirements for responsible AI use.
+
+>Familiarize yourself with the [World Bank's AI Use Policy](https://ai.worldbank.org/policy) and [Responsible AI Guidelines](https://ai.worldbank.org/guidelines).
+
+[In Positron Assistant, each model provider has **different policies** on data usage, retention, and training. See: [Positron Assistant Provider Privacy](https://positron.posit.co/assistant-provider-info.html) | [Copilot Responsible Use](https://docs.github.com/en/copilot/responsible-use/copilot-code-completion) | [Copilot Chat Responsible Use](https://docs.github.com/en/copilot/responsible-use/chat-in-your-ide)]{.note .center}
+
+
+## Key data exposure channels {.small-slide}
+
+Normally, AI does not load raw data into context because it operates with textual data.
+However, it can propose actions that may lead to data exposure:
+
+:::: {.columns}
+::: {.column width="55%"}
+
+1. 💬 **User-written prompts** that include sensitive information
+
+2. 🖨️ **AI suggests code that prints raw data** in the console
+
+3. 📂 **AI instructs the IDE to read** text data files (.csv) into context
+
+4. 🔍 **AI proposes shell/command line commands** that load data files into context (e.g. `.csv`, `.dta`)
+
+:::
+::: {.column width="45%"}
+
+[In any of these cases, sensitive data becomes part of the context and **there is always a risk of data leakage**.]{.warning}
+
+[Every chat session is an isolated instance. Data may not be used for training, but may be retained temporarily by the provider.]{.note}
+
+:::
+::::
+
+::: footer
+Yan et al. (2024). *On Protecting the Data Privacy of Large Language Models (LLMs): A Survey*. [arXiv:2403.05156](https://arxiv.org/abs/2403.05156)
+:::
+
+
+## Remedy 1: Be careful about what you write in prompts {.small-slide}
+
+::: callout-warning
+- **Never** share passwords, personally identifiable information (PII), or any other sensitive data in prompts.
+- **Never** upload data to AI.
+:::
+
+[**Write instead:**]{.fg}
+
+```{.markdown filename="Example prompt"}
+"Using `/file.md` as the data dictionary for my household survey, identify
+which variables may contain sensitive information.
+
+Then write Stata code to load `data/raw/survey_2024.dta` that:
+- Drops variables `a`, `b`, and `c` immediately after loading
+- Never prints or displays these variables at any point"
+```
+
+## Remedy 2: Instruct AI to NOT read specific files {.tiny-slide}
+
+Use **system instructions** to prevent AI from accessing sensitive data files:
+
+:::: {.columns}
+::: {.column width="50%"}
+
+**Step 1 — Create instruction files:**
+
+- `.github/copilot-instructions.md` (for Copilot)
+- `claude.md` (for Claude Code)
+
+**Step 2 — Add ignore rules:**
+
+```{.markdown filename=".github/copilot-instructions.md"}
+NEVER read, index, or propose shell commands
+that would reveal the contents of:
+
+- `data/raw/`
+- `data/raw/survey_2024.dta`
+
+If reading is absolutely necessary:
+1. Ask for permission first.
+2. Explain why you need it.
+3. Wait for confirmation.
+```
+:::
+::: {.column width="50%"}
+
+**Step 3 — Add `.gitignore`:**
+
+```{.bash filename=".gitignore"}
+# Raw and confidential data
+data/raw/
+data/raw/survey_2024.dta
+```
+::: callout-warning
+### Caveat
+This is not absolute. AI can forget instructions, especially in long sessions. Repeat in prompts when working with sensitive projects.
+:::
+
+:::
+::::
+
+## Remedy 3: Instruct AI to NOT print raw data {.tiny-slide}
+
+Add to your system instructions (`.github/copilot-instructions.md` or `claude.md`):
+
+``````{.markdown filename="System instruction"}
+You are not allowed to print raw data in the console. You must produce code
+that does not print raw data. It is allowed however to present aggregated data,
+summary statistics, regression results and any other data that makes it
+impossible to identify individual observations.
+If in doubt that some code may print raw data, ask for permission before
+proposing this code.
+
+Code example that may show data and is not allowed:
+
+```stata
+use data/raw/survey_2024.dta, clear
+list var1 var2 var3
+```
+
+``````
+
+::: callout-note
+### Tip
+Add this into the same system instruction files from Remedy 2. It will apply to **every** chat session in your project automatically.
+:::
+
+## Remedy 4: Use metadata, move data outside the project {.tiny-slide}
+
+[**The idea:**]{.fg} generate lightweight **metadata files** describing each dataset. Keep raw data outside the working folder. Share only metadata with AI.
+
+:::: {.columns}
+::: {.column width="50%"}
+
+**Process:**
+
+1. Write code (Stata/R/Python) that produces one `.md` file per data file containing data description and codebook information.
+
+2. Execute it locally saving metadata into the project; raw data stays outside.
+
+3. Tell AI: *"Use only the metadata files to understand the data structure."*
+
+:::
+::: {.column width="50%"}
+
+**Resulting folder structure:**
+
+```
+C:\WBG\ai\
+├── my-project\          ← AI works here
+|   ├── .gitignore       ← Excl. version
+                         System instructions:
+|   ├── .github/copilot-instructions.md
+|   ├── claude.md
+│   ├── data/metadata/   ← metadata `.md`
+│   └── code/
+└── confidential-data\   ← AI cannot see
+    └── survey_2024.dta
+```
+:::
+::::
+
+
+::: {.callout-warning appearance="minimal"}
+**Caveat:** If you allow AI to **run** code against external data, it may print results in the console — which re-enters context. Control execution carefully.
+:::
+
+::: footer
+[Detailed code examples for Stata and R](https://worldbank.github.io/ai4coding/methods/safeguard-data.html)
+:::
+
+
+## Remedy 5: Data anonymization {.tiny-slide}
+
+When confidential microdata must be analyzed but cannot be shared in its original form, **anonymization** transforms the dataset so that re-identification is no longer reasonably possible.
+
+- **Suppression** — remove direct identifiers (names, SSNs)
+- **Generalization** — reduce granularity (age → age group)
+- **Top/bottom coding** — cap extreme values (income outliers)
+- **Noise addition** — add random noise to continuous quasi-identifiers
+- **Shuffling** — randomly reorder values to break correlations
+- **Pseudonymization** — replace with codes/hashes (names, IDs, emails)
+- **Statistical privacy models:** *k*-anonymity (indistinguishable groups), *l*-diversity (diverse sensitive values), *t*-closeness (distribution similarity).
+
+[**Tools:**]{.fg} R: `sdcMicro`, `deident` | Python: `pycanon`, `Faker` | Stata: manual or via R/Python.
+
+::: footer
+[IHSN Anonymization](https://www.ihsn.org/anonymization) | [Data Privacy Handbook](https://utrechtuniversity.github.io/dataprivacyhandbook/) | [SDC Theory Guide](https://sdctheory.readthedocs.io/en/latest/)
+:::
