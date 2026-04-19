@@ -47,9 +47,12 @@ View slides in a [new tab](ai4coding-slides-d1-1/){target="_blank"}.
 
 ### 2. Setup overview {#setup-overview}
 
-> Important: [setup your working folders properly](../day1/working-folder.qmd)
+::: callout-warning
+### Important
+> Setup your working folders properly!
+:::
 
-{{< include working-folder.qmd >}}
+{{< include /day1_working-folder.qmd >}}
 
 **Slides**
 

@@ -1,7 +1,3 @@
----
-title: "Working folder setup"
----
-
 ::: {.callout-warning}
 **Do not use OneDrive for coding with Positron during this course! (temporary)**.
 
