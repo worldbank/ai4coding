@@ -1,6 +1,6 @@
 ## Where to start?
 
-Setup [working folders properly](/day1/working-folder.qmd):
+Setup [working folders properly](/day1/_working-folder.qmd):
 
 1. Copy folder with `ex01-explore-positron` to your working directory
 2. Open `ex01-explore-positron` in Positron

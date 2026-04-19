@@ -67,6 +67,9 @@ website:
       contents:
         - day1/index.qmd
         - day1/setup-overview.qmd
+        - day1/ai4coding-slides-d1-1/
+        - day1/ai4coding-slides-d1-2/
+        - day1/ai4coding-slides-d1-3/
 
     - title: "Self Study"
       style: "docked"

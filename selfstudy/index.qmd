@@ -24,7 +24,7 @@ Use it to ask questions, share screenshots of what worked or didn't, and pick up
 
 Example 0 is a live demonstration during the session, but you can also follow
 along on your own as a self-study exercise. Full details, suggested prompts,
-and instructions are in [Example 0](example-0.qmd).
+and instructions are in [Example 0](/selfstudy/example-0.qmd).
 The objective of this example is to verify that your software environment is
 correctly set up for the course. Each file in this folder runs a small analysis
 that exercises a different language or tool. If every file runs without errors,
@@ -52,7 +52,7 @@ without manual intervention, the workflow is working.
 
 This example demonstrates how to use AI to harmonize and standardize survey
 data from raw format into an analysis-ready dataset. Full details, suggested
-prompts, and instructions are in [Example 2](example-2.qmd).
+prompts, and instructions are in [Example 2](/selfstudy/example-2.qmd).
 
 The exercise follows the common AI workflow:
 
@@ -71,7 +71,7 @@ dataset with consistent names and labels, the workflow is working.
 This example practices the 3R workflow: take existing analytical code and use
 AI to reproduce it with new data, revise it for a different specification, and
 reuse components in a new context. Full details, suggested prompts, and
-instructions are in [Example 3](example-3.qmd).
+instructions are in [Example 3](/selfstudy/example-3.qmd).
 
 | Task | What you practice |
 |------|-------------------|
