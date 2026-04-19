@@ -31,25 +31,42 @@ format:
     scrollable: true
     transition: fade
     preview-links: auto
-    logo: ../../assets/img/WBG-Prosperity Horizontal-Black.svg
+    logo: /assets/img/WBG-Prosperity Horizontal-Black.svg
     footer: '[worldbank.github.io/ai4coding](https://worldbank.github.io/ai4coding) © 2026 World Bank.'
     resources:
-        - ../../assets/img/WBG-Prosperity Horizontal-Black.svg
+        - /assets/img/WBG-Prosperity Horizontal-Black.svg
 ---
+
+## [Minimal]{.warning} and [**optimal**]{.fg} setup requirements {.small-slide}
+
+To be able to reproduce examples and follow along with AI for coding in Stata,
+you need to have a [minimal setup]{.warning} in place (or [optimal setup]{.fg} if possible). This includes:
+
+- ![](/assets/img/positron.svg){style="width:35px;height:35px;vertical-align:middle;"} [**Software** —  Positron, Python, R, Stata]{.warning}, and [Quarto]{.fg}
+- [Stata extension in Positron]{.warning}
+- {{< fa brands github >}} [**GitHub account**]{.warning} on private email
+- [Access to github.com/worldbank organization]{.fg}
+- ![](/assets/img/github-copilot-icon.svg){style="width:25px;height:25px;vertical-align:middle;"} [**GitHub Copilot** activated]{.warning}
+  - [WB organization subscription]{.fg} (recommended)
+  - [or private subscription to the Pro plan]{.warning} (fall-back option)
+- ![](/assets/img/positron-assistant-blue.svg){style="width:35px;height:35px;vertical-align:middle;"} [**Positron Assistant**]{.warning} — connected to Copilot and enabled in Positron
+- [**Working folders**]{.warning} properly set up with data and code access.
+
+If in doubt, [follow the detailed instructions in the prerequisites](/prerequisites/index.qmd){target="_blank"} and verify your setup.
 
 ## Software Setup {.small-slide}
 
-[Follow instructions on software setup and verification]{.alert} in [prerequisites](../prerequisites/index.qmd).
+[Follow instructions on software setup and verification]{.alert} in [prerequisites](/prerequisites/index.qmd).
 
 - Thanks to our IT team, all required software is available for installation via
 **Software Center** on WB laptops:
 - **Stata 19+ MP**, **Positron** (latest), **R 4.5.3+**, **Python 3.13+**, **Quarto 1.9+**, and **Git 2.52+**
 - Everything except Stata is **free and open source** - [no license required.]{.highlight}
 
-If any problems arise: follow the [troubleshooting guide](../prerequisites/common-problems.qmd) or contact [ITHelp@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org).
+If any problems arise: follow the [troubleshooting guide](/prerequisites/common-problems.qmd) or contact [ITHelp@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org).
 
 
-## GitHub Account Setup {.small-slide}
+## {{< fa brands github >}} GitHub Account Setup {.small-slide}
 
 **Why?** To use version control, collaborate with colleagues, and access GitHub Copilot AI features.
 
@@ -65,7 +82,7 @@ If any problems arise: follow the [troubleshooting guide](../prerequisites/commo
 - Accept invitation email within 7 days
 
 
-## Get GitHub Copilot: WB vs. Private {.tiny-slide}
+## ![](/assets/img/github-copilot-icon.svg){style="width:40px;height:40px;vertical-align:middle;"} GitHub Copilot: WB vs. Private {.tiny-slide}
 
 **Why?** To get AI code assistance in Positron and GitHub.
 
@@ -81,32 +98,15 @@ If any problems arise: follow the [troubleshooting guide](../prerequisites/commo
 You can only have [**one active plan**]{.alert}. WB access **automatically cancels and refunds** your private subscription. Switching back requires re-subscribing and is possible at the end of a month.
 :::
 
-<!--
-## How does GitHub Copilot work? {.small-slide}
-
-::::: {.columns}
-:::: {.column width="60%"}
-![](../../assets/img/github_copilot_how_it_works.svg)
-::::
-
-:::: {.column width="40%"}
-
-GH Copilot:
-- hosts **models** (Claude, GPT, Gemini, etc.)
-- optimizes your **context** and preparses for **requests/prompts** as **tokens**
-- User sends **requests**
-- Each interaction costs **one premium request**
-::::
-:::::
--->
-
 ## Premium Requests and Limits {.small-slide}
 
-[What are premium requests?]{.fg} — Every chat/agent interaction with advanced models (Claude Sonnet, GPT-5+) consumes (one or more) **premium request**.
+[What are premium requests?]{.fg}
+
+Every chat/agent interaction is a **premium request** (with Claude, GPT-5, Gemini).
 
 ::::: {.columns}
 :::: {.column width="50%"}
-### Monthly included allowances
+**Monthly included allowances**
 
 | Plan | Req./month |
 |-----------------------|:-----------:|
@@ -122,15 +122,19 @@ Check **usage** [GitHub Settings → Copilot](https://github.com/settings/copilo
 ::::
 
 :::: {.column width="50%"}
-### Hit the limit?
+**Exhausted your premium requests?**
 
 Set a **budget** (~$0.04/request):
 
-- **WB plan →** [chargeback process](https://github.com/worldbank/ospo/blob/main/docs/copilot/premium-request-chargeback.md) (manager approval + budget code)
-
+- **WB plan →** [chargeback process](https://github.com/worldbank/ospo/blob/main/docs/copilot/premium-request-chargeback.md)
 - **Private plan →** [GitHub Billing → Budgets](https://github.com/settings/billing/budgets)
 
-[[When you've used all included requests (100%), advanced AI features stop working.]{.warning} Basic inline completions still work (older models).]{.small}
+
+::: {.small}
+[When your usage reaches 100% capable AI models stop working.]{.warning}
+
+- Basic inline completions still works.
+:::
 
 ::::
 :::::
@@ -140,7 +144,6 @@ Set a **budget** (~$0.04/request):
 [For the course, it is recommended to have **WB Copilot** access + good prompting.]{.highlight}
 
 [Fall-back: **Personal GH** + **Private Copilot Pro subscription**]{.note}
-
 
 | Setup | Repos | Copilot |
 |--------------|---------|-------------|
@@ -170,18 +173,18 @@ Set a **budget** (~$0.04/request):
 
 - Support: [github@worldbank.org](mailto:github@worldbank.org)
 
-## ![](assets/img/positron-assistant-blue.svg){width="50px"} Positron Assistant {.small-slide}
+## ![](/assets/img/positron-assistant-blue.svg){style="width:40px;height:40px;vertical-align:middle;"} Positron Assistant {.small-slide}
 
 The Positron Assistant connects GitHub Copilot to Positron, enabling AI features in the editor and chat.
 
 ::::: {.columns}
 :::: {.column width="50%"}
-### Enable
+**Enable**
 
 1. In Positron: Settings (`Ctrl+,`) → search `positron.assistant.enable` → ☑️
 2. Reload Positron
 
-### Connect to Copilot
+**Connect to Copilot**
 
 1. `Ctrl+Shift+P` → *Configure Language Model Providers*
 2. Select **GitHub Copilot**
@@ -190,7 +193,7 @@ The Positron Assistant connects GitHub Copilot to Positron, enabling AI features
 ::::
 
 :::: {.column width="50%"}
-### Use
+**Use**
 
 - Click chat icon in sidebar (or `Chat: Open Chat`)
 - Type a question → press Enter
@@ -202,19 +205,80 @@ You can also sign in via the **Accounts** icon (bottom-left of Activity Bar).
 ::::
 :::::
 
-## Example 2: Understanding and cleaning the data
+## Working folders setup and data (1/2)  {.small-slide}
 
-## Support & Links {.small-slide}
+::: {.callout-danger}
+**Do not use OneDrive for coding with Positron during this course! (temporary)**
+
+- Positron is a new software for the WB.
+- WB security policies **block Positron from writing text files** on OneDrive.
+- [Do not save your code-in-progress in a OneDrive folder.]{.alert}
+- New security policy will be implemented on **Friday, April 24** (spring meeting freeze).
+:::
+
+[**Step 1 — Create working folders**]{.fg}
+
+- Create a folder `C:\WBG\ai\` on your local drive (not OneDrive).
+
+
+## Working folders setup and data (2/2) {.small-slide}
+
+[**Step 2 — Copy exercise templates and data**]{.fg} into `C:\WBG\ai\ai4coding-practice\` from:
+
+- either [**OneDrive (WB only):** `ai4coding-examples`](https://worldbankgroup-my.sharepoint.com/:f:/g/personal/ebukin_worldbank_org/IgCXQVakSxEpT7VJFmKp_qtnAXx8RX9iemnwfGwITkEA3bE?e=U08qTX){target="_blank"}
+- or [**GitHub repo worldbank/ai4coding-examples**](https://github.com/worldbank/ai4coding-examples){target="_blank"}
+
+- Data is shared through **OneDrive (WB only):** [`ai4coding-data`](https://worldbankgroup-my.sharepoint.com/:f:/r/personal/ebukin_worldbank_org/Documents/AI/AI-course-2026-April/ai4coding-data?csf=1&web=1&e=ITG6Sk){target="_blank"}
+
+- It is [read-only]{.alert}. You can sync it to your OneDrive and use it from there.
+
+- If you encounter problems, copy the data to `C:\WBG\ai\ai4coding-data\`.
+
+**Your local folder structure should look like:**
+
+```
+C:\WBG\ai\
+├── ai4coding-practice\    ← exercise templates (you write here)
+│   ├── ex01..\
+│   ├── ex02..\
+│   └── ...
+└── ai4coding-data\        ← course data (optional)
+```
+
+## Example 0: Verify your setup
+
+Quick [[Example 0]{.fg}](){target="_blank"} to verify your setup.
+
+- Open `C:\WBG\ai\ai4coding-practice\ex00-positron-test` in Positron.
+- Follow instructions in the readme.md file to test your setup.
+
+## Supporting materials and references {.small-slide}
 
 | Need | Contact |
 |------|---------|
 | Software installation issues | [ITHelp@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org) |
 | GitHub / Copilot access | [github@worldbank.org](mailto:github@worldbank.org) |
 | WB premium request chargeback | [github@worldbank.org](mailto:github@worldbank.org) + manager CC |
+| Course materials | [worldbank.github.io/ai4coding](https://worldbank.github.io/ai4coding) |
+| Course examples | [github.com/worldbank/ai4coding-examples](https://github.com/worldbank/ai4coding-examples) |
+| course data | **OneDrive (WB only):** [`ai4coding-data`](https://worldbankgroup-my.sharepoint.com/:f:/r/personal/ebukin_worldbank_org/Documents/AI/AI-course-2026-April/ai4coding-data?csf=1&web=1&e=ITG6Sk){target="_blank"} |
+
+- Positron docs: [positron.posit.co](https://positron.posit.co/)
+- GitHub Copilot docs: [docs.github.com/copilot](https://docs.github.com/en/copilot)
+- WB GitHub overview: [github.com/worldbank/ospo](https://github.com/worldbank/ospo)
+
+## Example 1: Explore Positron and Copilot (self-study) {.small-slide}
+
+The goal of this exercise is to get familiar with Positron's AI assistance
+features and how they can be used to write and execute Stata code. We go
+through a typical workflow of creating a Stata do file, writing code with
+AI assistance, and executing it in the console.
+
+This exercise is pre-recorded for self-study (18 min), full details, suggested prompts, and instructions are in the [Self-Study > Example 1](/selfstudy/ex1-1-explore-positron.qmd){target="_blank"}.
+
+
+## Example 2: Understanding and cleaning the data
 
 **Documentation:**
 
 - Course materials: [worldbank.github.io/ai4coding](https://worldbank.github.io/ai4coding)
-- Positron docs: [positron.posit.co](https://positron.posit.co/)
-- GitHub Copilot docs: [docs.github.com/copilot](https://docs.github.com/en/copilot)
-- WB GitHub overview: [github.com/worldbank/ospo](https://github.com/worldbank/ospo)
