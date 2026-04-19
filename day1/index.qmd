@@ -116,3 +116,8 @@ View slides in a [new tab](day1/ai4coding-slides-d1-3/){target="_blank"}.
 ```
 
 View slides in a [new tab](day1/ai4coding-slides-d1-4/){target="_blank"}.
+
+
+-------------------------------------------------------------------------------
+
+## 6. Example 3: Reproduce, Revise, and Reuse (self-study) {#self-study}
