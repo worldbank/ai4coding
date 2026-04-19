@@ -2,9 +2,9 @@
 title: "Methods"
 ---
 
-This section covers methods and best practices for working with AI in data
-analysis, including:
+This section covers some methods and best practices for working with AI in data
+analysis. These are:
 
-- [Common workflow for data analysis with AI](common-workflow.qmd)
+- [Common workflow for data analysis with AI](/methods/common-workflow.qmd)
 
-- [Safeguarding confidential data](safeguard-data.qmd#instruct-ai-not-read-files)
+- [Safeguarding confidential data](/methods/safeguard-data.qmd)

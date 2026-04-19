@@ -105,7 +105,7 @@ directly on the quality of the context:
 - Close unrelated tabs and panels before starting an agent task
 - Use prompt files (`.prompt.md`) and skills to provide standing instructions without re-typing them every session
 
-*Prompt files and skills are covered in detail in [Day 2 → Advanced Topics](../day2/advanced-topics.qmd).*
+*Prompt files and skills are covered in detail in [Day 2 → Advanced Topics](day2/index.qmd).*
 
 ---
 
@@ -132,5 +132,3 @@ Stata support has improved significantly with the Stata MCP extension, which giv
 | **Inline completion** | Suggests the next line or block as you type | Always — an instant productivity boost |
 | **Chat / Assistant** | Answers questions with awareness of your open files | Explaining code, finding functions, quick fixes |
 | **Agent** | Plans and executes multi-step tasks autonomously | Refactoring, reproducibility packages, complex analysis pipelines |
-
-*Hands-on practice with all three modes is in [Case Studies](case-studies.qmd).*

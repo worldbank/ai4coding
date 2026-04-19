@@ -1,8 +1,4 @@
----
-title: "Safeguarding confidential data: details"
----
-
-## Be careful about what you write in prompts
+### Be careful about what you write in prompts {#be-careful}
 
 Be careful with what you write in the prompts, and avoid sharing any sensitive
 information in them. For example, instead of sharing raw data values, share
@@ -14,7 +10,7 @@ Never share with AI any passwords, personally identifiable information, or
 any other sensitive data in the prompts.
 :::
 
-## Instruct AI to NOT read specific files {#instruct-ai-not-read-files}
+### Instruct AI to NOT read specific files {#instruct-ai-not-read-files}
 
 AI tools can be customized through so-called System instructions.
 See for example:
@@ -85,7 +81,7 @@ populate them with the correct content.
 [Paste here the instruction from above or provide a URL link to these instructions]
 ```
 
-## Instruct AI to NOT print raw data in the console {#instruct-ai-not-print-data}
+### Instruct AI to NOT print raw data in the console {#instruct-ai-not-print-data}
 
 When you ask AI to generate code for data understanding, cleaning, or
 analysis, make sure to instruct it to never print raw data in the console. For
@@ -110,7 +106,7 @@ Follow the same steps as [in the previous section](#instruct-ai-not-read-files) 
 `.github/copilot-instructions.md` and `claude.md` files.
 :::
 
-## Use metadata and move data outside of the working folder
+### Use metadata and move data outside of the working folder {#use-metadata}
 
 Instead of giving AI access to raw data files, generate lightweight
 **metadata files** that describe the structure and statistics of each dataset. Place raw
@@ -297,7 +293,7 @@ instructions and examples from above]
 ::::::
 
 
-## Data anonymization
+### Data anonymization {#data-anonymization}
 
 When confidential microdata must be analyzed but cannot be shared in its
 original form, **data anonymization** (also called de-identification or
@@ -318,7 +314,7 @@ It is important to distinguish two related but different concepts:
   reasonably possible — even by the data holder. Anonymized data are no
   longer personal data.
 
-### Common de-identification techniques
+#### Common de-identification techniques
 
 The techniques below are widely used in SDC and are described in detail in the
 [Data Privacy Handbook — De-identification techniques](https://utrechtuniversity.github.io/dataprivacyhandbook/deidentification-techniques.html)
@@ -334,7 +330,7 @@ and the
 | **Permutation / Shuffling** | Randomly reorder values within a variable | Break correlations while preserving marginal distributions |
 | **Pseudonymization / Hashing** | Replace identifiers with random codes or cryptographic hashes | Names, IDs, e-mail addresses |
 
-### Statistical privacy models
+#### Statistical privacy models
 
 Beyond individual techniques, formal privacy models help quantify and verify
 the protection level of the anonymized dataset:
@@ -349,7 +345,7 @@ the protection level of the anonymized dataset:
 See [Data Privacy Handbook — k-anonymity, l-diversity and t-closeness](https://utrechtuniversity.github.io/dataprivacyhandbook/k-l-t-anonymity.html)
 for an accessible introduction.
 
-### Available tools by language
+#### Available tools by language
 
 ::: {.panel-tabset}
 
@@ -396,7 +392,7 @@ noise addition) or call R/Python via Stata's interoperability features
 provides worked examples that can be adapted to Stata workflows.
 
 
-### Example prompts for AI-assisted anonymization
+#### Example prompts for AI-assisted anonymization
 
 ::: {.panel-tabset}
 

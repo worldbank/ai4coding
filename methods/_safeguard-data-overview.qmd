@@ -1,7 +1,3 @@
----
-title: "Safeguarding confidential data: overview"
----
-
 The problem with secure and confidential data is that if leaked to AI models,
 it can lead to data breaches and privacy violations bearing substantial legal
 and reputational risks. We must remember that it is **our responsibility to**:
@@ -16,7 +12,7 @@ and reputational risks. We must remember that it is **our responsibility to**:
 Please familiarize yourself with the [World Bank's AI Use Policy](https://ai.worldbank.org/policy) and [Responsible AI Guidelines](https://ai.worldbank.org/guidelines) to ensure compliance and responsible use of AI in your work.
 :::
 
-## Key data exposure channels
+### Key data exposure channels
 
 In general, **AI does not load raw data into context as is**. However,
 as it develops code to understand the data, it can potentially
@@ -48,10 +44,10 @@ familiarize yourself with:
 
 :::
 
-## Remedies and best practices to safeguard data {#remedies-safeguard-data}
+### Remedies and best practices to safeguard data {#remedies-safeguard-data}
 
-- [**Be careful about what you write in prompts**](safeguard-data-details.qmd#be-careful-about-what-you-write-in-prompts) — share variable names, types, and summary statistics instead of raw data values; never include passwords or personally identifiable information.
-- [**Instruct AI to NOT read specific files**](safeguard-data-details.qmd#instruct-ai-not-read-files) — use system instructions (`.github/copilot-instructions.md`, `claude.md`) and `.gitignore` to prevent AI from accessing sensitive data files.
-- [**Instruct AI to NOT print raw data in the console**](safeguard-data-details.qmd#instruct-ai-not-print-data) — add standing instructions that forbid code from displaying individual-level observations; allow only aggregated statistics and regression results.
-- [**Use metadata and move data outside of the working folder**](safeguard-data-details.qmd#use-metadata-and-move-data-outside-of-the-working-folder) — generate lightweight metadata files (variable names, types, summary stats) and keep raw data in a separate location so it never enters AI context.
-- [**Anonymize data before sharing**](safeguard-data-details.qmd#data-anonymization) — apply de-identification techniques (suppression, generalization, noise addition, pseudonymization) and verify protection levels (k-anonymity, l-diversity, t-closeness) using dedicated packages such as `sdcMicro` or `deident` (R), `pycanon` or `Faker` (Python).
+- [**Be careful about what you write in prompts**](/methods/_safeguard-data-details.qmd#be-careful) — share variable names, types, and summary statistics instead of raw data values; never include passwords or personally identifiable information.
+- [**Instruct AI to NOT read specific files**](/methods/_safeguard-data-details.qmd#instruct-ai-not-read-files) — use system instructions (`.github/copilot-instructions.md`, `claude.md`) and `.gitignore` to prevent AI from accessing sensitive data files.
+- [**Instruct AI to NOT print raw data in the console**](/methods/_safeguard-data-details.qmd#instruct-ai-not-print-data) — add standing instructions that forbid code from displaying individual-level observations; allow only aggregated statistics and regression results.
+- [**Use metadata and move data outside of the working folder**](/methods/_safeguard-data-details.qmd#use-metadata) — generate lightweight metadata files (variable names, types, summary stats) and keep raw data in a separate location so it never enters AI context.
+- [**Anonymize data before sharing**](/methods/_safeguard-data-details.qmd#data-anonymization) — apply de-identification techniques (suppression, generalization, noise addition, pseudonymization) and verify protection levels (k-anonymity, l-diversity, t-closeness) using dedicated packages such as `sdcMicro` or `deident` (R), `pycanon` or `Faker` (Python).

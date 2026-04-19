@@ -1,13 +1,7 @@
 ---
 title: "AI 4 Coding"
 subtitle: "Day 1: Course Overview"
-author:
-  - name: Eduard Bukin
-    orcid: 0000-0002-1003-1260
-    github: ebukin
-    email: ebukin@worldbank.org
-    affiliations: Distributional Impact of Policies. Fiscal Policy and Growth Department
-date: "April 20, 2024"
+date: "April 20, 2026"
 format:
   revealjs:
     theme: [simple, custom.scss]
@@ -51,15 +45,15 @@ format:
 ::: {.column width="50%"}
 **Chat-Based AI tools** [Claude](https://www.anthropic.com/claude) \| [ChatGPT](https://chatgpt.com/) \| [Gemini](https://search.google/ai-in-search/) \| [MAI](https://ai.worldbank.org/chat/mai)
 
-- use familiar technologies: 🌐 Web-Browser, 💬 Chat, 📝 Stata editor, [**📋 copy-paste**]{.warning}
-- improve our workflow.
+- Use familiar technologies: 🌐 web browser, 💬 chat, 📝 Stata editor, [**📋 copy-paste**]{.warning}.
+- Improve our workflow.
 
 [**Is this the most effective way to use AI in coding❓**]{.fg}
 :::
 
 ::: {.column width="50%"}
 There are many [**Integrated** Development Environments (IDEs)]{.highlight} for data science with AI as a part of your coding workflow.
-Introducing [**Positron**]{.bg} with [**Github Copilot**]{.fg} is the goal of this course.
+Introducing [**Positron**]{.bg} with [**GitHub Copilot**]{.fg} is the goal of this course.
 :::
 ::::::
 
@@ -101,18 +95,18 @@ Introducing [**Positron**]{.bg} with [**Github Copilot**]{.fg} is the goal of th
 #### Take Control
 
 - Data-security practices and guardrailing AI.
-- Responsible-use guidelines for AI-assisted
+- Responsible-use guidelines for AI-assisted coding.
 :::
 
 ::::
 
 
-## Course Structure {.small-slide}
+## Course content {.small-slide}
 
 :::: {.columns}
 
 ::: {.column width="30%" .phase-card .phase-day1}
-#### Day 1
+#### [Day 1](/day1/index.qmd#materials)
 **Basics**
 
 - Software setup & walk-through
@@ -130,10 +124,10 @@ Introducing [**Positron**]{.bg} with [**Github Copilot**]{.fg} is the goal of th
 
 - Practice AI use with your own code
 - Structured case studies to guide you
-- Examples (pre-recorded):
-  - Starting simple: using AI to develop new code in Stata
-  - Day 1 example: data preparation, cleaning and security techniques
-  - Reproduce, Revise, and Reuse existing code with AI
+- Examples (pre-recorded and live):
+  - [Explor positron (self-study)](/day1/ex1-1-explore-positron.qmd)
+  - [Understanding data with AI (live)](/day1/ex1-2-understand-clean-data.qmd)
+  - [Reproduce, Revise, and Reuse existing ananlysiss]()
 - Come back with questions & observations
 :::
 
@@ -157,10 +151,12 @@ Introducing [**Positron**]{.bg} with [**Github Copilot**]{.fg} is the goal of th
 | | Morning | Evening (repeat) |
 |-----------| ---------------------- | ----------------------|
 | **Format** | In person + virtual | Virtual only |
-| **Session 1** | Mon Apr 20, 9 AM–12 PM ET | Mon Apr 20, 9 PM–12 AM ET |
-| **Session 2 (repeat)** | Thu Apr 23, 9 AM–12 PM ET | Thu Apr 23, 9 PM–12 AM ET |
+| **Day 1** | Mon Apr 20, 9 AM–12 PM ET | Mon Apr 20, 9 PM–12 AM ET |
+| **Day 2** | Thu Apr 23, 9 AM–12 PM ET | Thu Apr 23, 9 PM–12 AM ET |
 
-- Questions during session: **use Teams chat** or raise your hand please
+- Evening repeat session is for those who cannot attend the morning session. It will cover the same material, but it will be virtual only.
+
+- Questions during the session: **use the Teams chat** or raise your hand.
 
 ## Today's Agenda {.tiny-slide}
 
@@ -171,27 +167,44 @@ Day 1: Introduction and common workflows
 | Time        | Topic |
 |-------------|----------------------------------------------------|
 | 9:00        | Welcome, introductions, and overview |
-| 9:10        | Setup: Positron + GitHub Copilot + Stata + Working folder |
-| 9:40        | Agentic coding with Stata/R: Example 1 |
+| 9:10        | Setup overview |
+| 9:40        | [Understanding data with AI (live example)](/day1/ex1-2-understand-clean-data.qmd) |
 | 10:20       | ☕ Break (10 min) |
 | 10:30       | AI overview presentation: how GitHub Copilot and LLMs work, key concepts, and capabilities |
 | 11:00       | Cookbook: securing sensitive data, guardrails, and responsible AI use |
 | 11:30       | Self-study exercises overview and Q&A |
+| 12:00       | End |
+
+## Course resources {.small-slide .slide-resources}
+
+:::: {.columns}
+::: {.column width="40%"}
+[worldbank.github.io/ai4coding](https://worldbank.github.io/ai4coding)
+
+- References, detailed explanations, guided self-study exercises and recordings, along with in-class materials.
+
+[github.com/worldbank/ai4coding-examples](https://github.com/worldbank/ai4coding-examples)
+
+- Code for exercises and examples.
+- also available on OneDrive for WB staff: [ai4coding-examples](https://worldbankgroup-my.sharepoint.com/:f:/g/personal/ebukin_worldbank_org/IgCXQVakSxEpT7VJFmKp_qtnAXx8RX9iemnwfGwITkEA3bE?e=U08qTX)
+
+[ai4coding-data](https://worldbankgroup-my.sharepoint.com/:f:/g/personal/ebukin_worldbank_org/IgBy2yGjpLJPRbM67FJpBFVgAbMRYhEPmS30H2RJSBFO_gE?e=GlDEiR) - data for exercises (OneDrive - WB only)
+
+Previous seminar on [AI-Assisted Coding in Stata and R](https://worldbank.github.io/geoPovLearn/seminars/seminar-2026-02/overview.html) on [GeoPovlearn](https://worldbank.github.io/geoPovLearn)
+
+:::
+::: {.column width="60%"}
+:::
+::::
+
+<iframe src="/index.html" class="absolute" style="right: 0; top: 0; width: 60%; height: 100%; border: 1px solid #ccc; zoom: 0.4;">
+
+</iframe>
 
 ## What next?
 
-1. [Setup your course working folder](../day1/index.qmd#setup-overview){target="_blank"} and [software](../prerequisites/software.qmd){target="_blank"}.
+1. [Set up the software](/prerequisites/software.qmd){target="_blank"}.
 
-2. Copy relevant materials to your working folder:
+2. [Set up your course working folder](/day1/index.qmd#setup-overview){target="_blank"} and copy relevant materials into it.
 
-
-
-3. Familiarize yourself with the materials and schedule for Day 1 (see [Day 1 materials](day1/index.qmd)).
-
-- Slides and tutorials: [worldbank.github.io/ai4coding](https://worldbank.github.io/ai4coding).
-
-- Code for exercises: [github.com/worldbank/ai4coding-examples](https://github.com/worldbank/ai4coding-examples).
-
-- Data for exercises (OneDrive - WB only) [ ai4coding-data](https://worldbankgroup-my.sharepoint.com/:f:/g/personal/ebukin_worldbank_org/IgBy2yGjpLJPRbM67FJpBFVgAbMRYhEPmS30H2RJSBFO_gE?e=GlDEiR)
-
-- Previous seminar on [AI-Assisted Coding in Stata and R](https://worldbank.github.io/geoPovLearn/seminars/seminar-2026-02/overview.html) on [GeoPovlearn](https://worldbank.github.io/geoPovLearn)
+3. Follow along with the materials for [Day 1](/day1/index.qmd).
