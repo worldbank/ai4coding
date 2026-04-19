@@ -8,8 +8,6 @@ title: "Overview"
 - Get comfortable with the Positron + Copilot workflow before Day 2
 - Accumulate specific questions and observations to bring back to the group
 
----
-
 ## How It Works
 
 The self-study period runs for **2–3 days** between the two sessions.
@@ -22,8 +20,12 @@ Use it to ask questions, share screenshots of what worked or didn't, and pick up
 
 ## Case Studies
 
-| Case study | Best for | Link |
-|------------|---------|------|
-| Reproducing old code with new data | Anyone with legacy scripts | [→](case-studies.qmd#reproducing-old-code) |
-| Reproducing an analysis from an example | New to a topic or language | [→](case-studies.qmd#reproducing-from-example) |
-| Trying a different language (R or Python instead of Stata) | Stata users wanting to expand | [→](case-studies.qmd#trying-a-different-language) |
+### Example 0: Test your setup (live)
+
+Example 0 is a live demonstration during the session, but you can also follow
+along on your own as a self-study exercise. Full details, suggested prompts,
+and instructions are in the [Self-Study > Example 0](selfstudy/example-0.qmd).
+The objective of this example is to verify that your software environment is
+correctly set up for the course. Each file in this folder runs a small analysis
+that exercises a different language or tool. If every file runs without errors,
+your setup is ready.

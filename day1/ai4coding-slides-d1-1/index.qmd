@@ -123,11 +123,12 @@ Introducing [**Positron**]{.bg} with [**GitHub Copilot**]{.fg} is the goal of th
 **The most important part**
 
 - Practice AI use with your own code
-- Structured case studies to guide you
+- [Structured examples](/selfstudy/index.qmd) and [learning materials]() to guide you
 - Examples (pre-recorded and live):
-  - [Explor positron (self-study)](/day1/ex1-1-explore-positron.qmd)
-  - [Understanding data with AI (live)](/day1/ex1-2-understand-clean-data.qmd)
-  - [Reproduce, Revise, and Reuse existing ananlysiss]()
+  - [Testing your setup](/selfstudy/example-0.qmd){target="_blank"}
+  - [Explor positron (self-study)](/selfstudy/example-1.qmd){target="_blank"}
+  - [Understanding data with AI (live)](/selfstudy/example-2.qmd){target="_blank"}
+  - [Reproduce, Revise, and Reuse existing ananlysiss](/selfstudy/example-3.qmd){target="_blank"}
 - Come back with questions & observations
 :::
 

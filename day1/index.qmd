@@ -17,13 +17,13 @@ Day 1: Introduction and common workflows
 
 | Time        | Topic |
 |-------------|--------------------------------------------------------------|
-| 9:00        | [Welcome, introductions, and overview (slides)](/day1/ai4coding-slides-d1-1/){target="_blank"} |
-| 9:10        | [Setup overview (slides)](/day1/ai4coding-slides-d1-2/){target="_blank"} |
-| 9:40        | [Understanding data with AI (live example)](/day1/ex1-2-understand-clean-data.qmd) |
+| 9:00        | 1. [Welcome, introductions, and overview (slides)](#welcome) |
+| 9:10        | 2. [Setup overview (slides)](#setup-overview). [Example 0 (live)](#example-0) and [Example 1 (self-study)](#understanding-data) |
+| 9:40        | 3. [Example 1: Understanding data with AI (live)](#understanding-data) |
 | 10:20       | ☕ Break (10 min) |
-| 10:30       | [How GitHub Copilot work, and key AI concepts](/day1/ai4coding-slides-d1-3/){target="_blank"} |
-| 10:45       | [Common AI workflow and data safeguarding practices](/day1/ai4coding-slides-d1-4/){target="_blank"} |
-| 11:00       | [Self-study examples overview and Q&A](/day1/ai4coding-slides-d1-5/){target="_blank"} |
+| 10:30       | 4. [How GitHub Copilot work, and key AI concepts](#ai-concepts) |
+| 10:45       | 5. [Common AI workflow and data safeguarding practices](#ai-workflow) |
+| 11:00       | 6. [Self-study examples overview and Q&A](#self-study) |
 
 ## Before You Arrive
 
@@ -32,9 +32,13 @@ Day 1: Introduction and common workflows
 If you run into issues, check [Common Problems](/prerequisites/common-problems.qmd) or
 contact [ITHelp@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org) before the session.
 
-## Day 1: Step-by-step {#materials}
+-------------------------------------------------------------------------------
 
-### 1. Learn: Welcome, introductions, and overview
+## Day 1: materials {#materials}
+
+-------------------------------------------------------------------------------
+
+### 1. Learn: Welcome, introductions, and overview {#welcome}
 
 Introduction and housekeeping, then an overview of the day's agenda and materials.
 
@@ -45,39 +49,52 @@ Introduction and housekeeping, then an overview of the day's agenda and material
 ```
 View slides in a [new tab](ai4coding-slides-d1-1/){target="_blank"}.
 
+-------------------------------------------------------------------------------
+
 ### 2. Setup overview {#setup-overview}
 
 ::: callout-warning
-### Important
+**Important**
+
 > Setup your working folders properly!
 :::
 
-{{< include /day1_working-folder.qmd >}}
+{{< include /day1/_working-folder.qmd >}}
 
 **Slides**
 
 ```{=html}
 <iframe class="slide-deck" src="ai4coding-slides-d1-2/"></iframe>
 ```
+
 View slides in a [new tab](day1/ai4coding-slides-d1-2/){target="_blank"}.
 
-## 3. Stata in Positron with GitHub Copilot (self-study example 1)
+#### Example 0: Test your setup (live) {#example-0}
+
+This presentation ends with an example that demonstrates how to test
+if the setup is working correctly. Example 0 could be found in [Self-Study > Example 0](selfstudy/example-0.qmd).
+
+#### Example 1: Stata in Positron with GitHub Copilot (self-study) {#example-1}
 
 This introductory example is plan for self-study, full details, suggested
-prompts, and instructions are in the [Self-Study > Example 1](ex1-1-explore-positron.qmd).
+prompts, and instructions are in the [Self-Study > Example 1](selfstudy/example-1.qmd).
 
 {{< include /day1/_ex1-1-overview.qmd >}}
 
-## Example 2: Understanding and cleaning the data (live session)
+-------------------------------------------------------------------------------
+
+### 3. Example 2: Understanding data with AI (live) {#understanding-data}
 
 This example is planned for live demonstration during the session, but you can
 also follow along on your own as a self-study exercise. Full details, suggested
-prompts, and instructions are in the [Self-Study > Example 2](ex1-2-understand-clean-data.qmd).
+prompts, and instructions are in the [Self-Study > Example 2](selfstudy/example-2.qmd).
+
+
+
 
 <!-- TODO -->
 
 {{< include /day1/_ex1-2-overview.qmd >}}
-
 
 ## Presentation: How AI works, key concepts, and capabilities
 
