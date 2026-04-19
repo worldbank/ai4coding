@@ -8,6 +8,11 @@ AI with necessary context without sharing raw data values.
 ::: callout-warning
 Never share with AI any passwords, personally identifiable information, or
 any other sensitive data in the prompts.
+
+For guidance on handling PII in research projects, see the DIME Data Handbook:
+[Chapter 5 — Processing confidential data](https://worldbank.github.io/dime-data-handbook/processing.html#processing-confidential-data)
+and
+[Chapter 4 — Handling data securely](https://worldbank.github.io/dime-data-handbook/acquisition.html#handling-data-securely).
 :::
 
 ### Instruct AI to NOT read specific files {#instruct-ai-not-read-files}
@@ -113,6 +118,9 @@ Instead of giving AI access to raw data files, generate lightweight
 data outside the working folder and share only the metadata with AI. This gives
 the AI enough context to write correct code while the raw data never enters
 its context.
+
+This approach aligns with the de-identification workflow recommended in the DIME Data Handbook;
+see [Chapter 5 — Implementing de-identification](https://worldbank.github.io/dime-data-handbook/processing.html#implementing-de-identification).
 
 **Process:**
 
@@ -299,9 +307,10 @@ When confidential microdata must be analyzed but cannot be shared in its
 original form, **data anonymization** (also called de-identification or
 Statistical Disclosure Control — SDC) transforms the dataset so that individual
 respondents cannot be re-identified, while preserving as much analytical utility
-as possible [^2] [^3] [^4].
+as possible [^2] [^2a] [^3] [^4].
 
 [^2]: IHSN. *Microdata Anonymization*. <https://www.ihsn.org/anonymization>
+[^2a]: Bjarkefur, Cardoso de Andrade, Daniels & Jones. *Development Research in Practice: The DIME Analytics Data Handbook* — Chapter 5: Processing confidential data. <https://worldbank.github.io/dime-data-handbook/processing.html#processing-confidential-data>
 [^3]: Utrecht University. *Data Privacy Handbook — Pseudonymisation & Anonymisation*. <https://utrechtuniversity.github.io/dataprivacyhandbook/pseudonymisation-anonymisation.html>
 [^4]: Utrecht University. *Data Privacy Handbook — Statistical Approaches to De-identification*. <https://utrechtuniversity.github.io/dataprivacyhandbook/statistical-privacy.html>
 
