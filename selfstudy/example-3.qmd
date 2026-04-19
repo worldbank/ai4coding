@@ -1,3 +1,118 @@
 ---
 title: "Ex.3: Reproduce, Revise, and Reuse existing analysis (self-study)"
 ---
+
+This example is in `ex03-reproduce-revise-reuse`, which should be in
+`C:/WBG/ai/` on your computer if you followed the setup instructions correctly.
+Open this folder as a project in Positron.
+
+## Objective
+
+Practice the **3R workflow** — Reproduce, Revise, and Reuse — using AI
+assistance to adapt, modify, and repurpose existing analytical code. This is
+one of the most common tasks in applied economics: you inherit a script,
+need to run it on new data, change the specification, and extract reusable
+components.
+
+## What you will practice
+
+| Task          | Description                                                     |
+| ------------- | --------------------------------------------------------------- |
+| **Reproduce** | Adapt an existing script to run on a different dataset           |
+| **Revise**    | Change the model specification (add controls, switch estimators) |
+| **Reuse**     | Extract reusable components for a new project                    |
+
+## Part 1: Reproduce
+
+### Step 1. Understand the original script
+
+Open the provided do-file and ask AI to explain what it does **before making
+any changes**.
+
+```{.markdown filename="Prompt"}
+Explain what this do-file does step by step. List the input data, key
+variables, estimation method, and outputs. Do not modify the code yet.
+```
+
+### Step 2. Map variables to the new dataset
+
+Share the new dataset (or its codebook) and ask AI to propose a variable
+mapping.
+
+```{.markdown filename="Prompt"}
+I need to run this analysis on a new dataset. Compare the variable names
+in the original script with the variables in the new dataset. Propose a
+mapping table and flag any variables that do not have a direct equivalent.
+```
+
+### Step 3. Update and run
+
+Ask AI to update the script using the mapping, then execute it one section at
+a time.
+
+```{.markdown filename="Prompt"}
+Update the do-file to use the new variable names from the mapping table.
+Run the code section by section using #executeCode and verify each step
+produces output without errors.
+```
+
+**Checkpoint:** Compare the outputs (summary statistics, regression
+coefficients) to the original results. Differences are expected if the data
+changed — what matters is that the code runs correctly.
+
+## Part 2: Revise
+
+### Step 4. Change the specification
+
+Ask AI to modify the regression — e.g., add fixed effects, cluster standard
+errors, or switch the estimator.
+
+```{.markdown filename="Prompt"}
+Revise the regression in the do-file to include time fixed effects and
+cluster standard errors at the PSU level. Explain what changed and why.
+Run the updated regression using #executeCode.
+```
+
+### Step 5. Add a robustness check
+
+```{.markdown filename="Prompt"}
+Add a robustness check that runs the same regression with an alternative
+dependent variable. Present both results side by side in a formatted table.
+```
+
+## Part 3: Reuse
+
+### Step 6. Extract a reusable cleaning routine
+
+Ask AI to refactor the data-cleaning portion of the script into a standalone,
+reusable program (Stata) or function (R/Python).
+
+```{.markdown filename="Prompt"}
+Extract the data cleaning steps from this do-file into a standalone Stata
+program called `clean_survey_data` that takes the input file path as an
+argument and returns a cleaned dataset. Include comments documenting each
+step.
+```
+
+### Step 7. Reuse in a new context
+
+Test the extracted routine on a different dataset to verify it generalizes.
+
+```{.markdown filename="Prompt"}
+Apply the `clean_survey_data` program to the second dataset in the data/
+folder. Run it and report any errors or adjustments needed.
+```
+
+## Expected outcome
+
+- A working script that reproduces the original analysis on new data
+- A revised specification with fixed effects and clustered standard errors
+- A reusable cleaning routine that works on at least two datasets
+- A side-by-side comparison table of original vs. revised regression results
+
+## Reflect and write up
+
+- What kinds of changes did AI handle well? What required manual intervention?
+- Did AI introduce any silent errors (wrong variable, wrong merge key)?
+- How did you verify correctness at each step?
+- Could you confidently hand the revised script to a colleague?

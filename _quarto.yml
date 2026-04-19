@@ -8,6 +8,7 @@ project:
     - day1/*.qmd
     - day1/**/*.qmd
     - methods/*.qmd
+    - selfstudy/*.qmd
 
 
 website:
@@ -66,8 +67,6 @@ website:
       contents:
         - day1/index.qmd
         - day1/setup-overview.qmd
-        - day1/ex1-1-explore-positron.qmd
-        - day1/ex1-2-understand-clean-data.qmd
 
     - title: "Self Study"
       style: "docked"
@@ -75,6 +74,10 @@ website:
       collapse-level: 10
       contents:
         - selfstudy/index.qmd
+        - selfstudy/example-0.qmd
+        - selfstudy/example-1.qmd
+        - selfstudy/example-2.qmd
+        - selfstudy/example-3.qmd
 
     - title: "Day 2"
       style: "docked"
