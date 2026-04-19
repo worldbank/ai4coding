@@ -1,14 +1,18 @@
 ---
-title: "Day 1: Overview and materials"
+title: "Day 1: Overview and Materials"
 ---
+
 ## Goals for Day 1
 
-- See AI in action: live code understanding, revision, and reuse with AI
-- Setup: Positron + GitHub Copilot + Stata
-- Understand how AI works and relevant vocabulary:
-  - IDE, LLM, Assistant, tokens, prompts, context window, agent, etc.
-- Get ready to practice on your own during the self-study examples
-- Familiarize with key principles and the workflow
+- **Familiarize yourself** with the basics of AI-assisted coding and its workflow.
+- **Get an intuitive understanding** of the key concepts behind the technology,
+  how it works and what are its capabilities, and limitations.
+- **Setup the software environment** to be able to practice AI-assisted coding on
+  your own during the self-study period following examples and
+  supplementary materials.
+- **See AI in action** by following along with live demonstrations and
+  examples of common use cases, such as data preparation and cleaning, and
+  securing sensitive data.
 
 ## Agenda
 
@@ -16,13 +20,13 @@ Day 1: Introduction and common workflows
 
 | Time        | Topic |
 |-------------|--------------------------------------------------------------|
-| 9:00        | 1. [Welcome: course overview (slides)](#welcome) |
-| 9:10        | 2. [Setup overview (slides)](#setup-overview). [Example 0 (live)](#example-0) and [Example 1 (self-study)](#example-1) |
-| 9:40        | 3. [Example 2: Understanding data with AI (live)](#understanding-data) |
-| 10:20       | ☕ Break (10 min) |
-| 10:30       | 4. [How GitHub Copilot work, and key AI concepts](#ai-concepts) |
-| 10:45       | 5. [Common AI workflow and data safeguarding practices](#ai-workflow) |
-| 11:00       | 6. [Example 3: Reproduce, Revise, and Reuse existing analysis (self-study)](#self-study) |
+| 9:00-9:10   | 1. [Welcome and course overview (slides)](#welcome) |
+| 9:10-9:40   | 2. [Setup overview (slides)](#setup-overview). [Example 0 (live)](#example-0) and [Example 1 (self-study)](#example-1) |
+| 9:40-10:20  | 3. [Example 2: Understanding data with AI (live)](#understanding-data) |
+| 10:20-10:30 | ☕ Break (10 min) |
+| 10:30-10:50 | 4. [Core AI-related concepts](#ai-concepts) |
+| 10:50-11:00 | 5. [Common workflows and data safeguarding practices while using AI (slides)](#ai-workflow) |
+| 11:00-11:30 | 6. [Example 3: Reproduce, Revise, and Reuse existing analysis (self-study)](#self-study) |
 
 ## Before You Arrive
 
@@ -97,6 +101,18 @@ prompts, and instructions are in the [Self-Study > Example 2](/selfstudy/example
 <iframe class="slide-deck" src="day1/ai4coding-slides-d1-3/"></iframe>
 
 ```
+
 View slides in a [new tab](day1/ai4coding-slides-d1-3/){target="_blank"}.
 
-<!-- TODO: Additional materials on AI concepts and capabilities worth familiarizing with. A pills tab with links to videos and reading -->
+
+-------------------------------------------------------------------------------
+
+## 5. Common workflows and data safeguarding practices while using AI (slides) {#ai-workflow}
+
+
+```{=html}
+<iframe class="slide-deck" src="day1/ai4coding-slides-d1-4/"></iframe>
+
+```
+
+View slides in a [new tab](day1/ai4coding-slides-d1-4/){target="_blank"}.
