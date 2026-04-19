@@ -72,39 +72,186 @@ information in them. For example, instead of sharing raw data values, share
 variable names, types, summary statistics, and data dictionaries to provide
 AI with necessary context without sharing raw data values.
 
-
 ::: callout-warning
 Never share with AI any passwords, personally identifiable information, or
 any other sensitive data in the prompts.
 :::
 
-### Instruct IDE to exclude certain files from context
+### Instruct AI to NOT read specific files {#instruct-ai-not-read-files}
 
-1. Instructing IDE to exclude certain files from context.
+AI tools can be customized through so-called System instructions.
+See for example:
+
+- Positron [Automatic workspace instructions](https://positron.posit.co/assistant-chat-instructions.html#automatic-workspace-instructions)
+- GitHub Copilot [Adding repository custom instructions for GitHub Copilot](https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions#creating-custom-instructions)
+- Claude Code [How Claude remembers your project](https://code.claude.com/docs/en/memory)
+
+These instructions are applied to every chat session with AI in Positron, and
+they are attached to your prompt before your prompt starts.
+You can use them to instruct AI to not read specific files in your working folder.
+
+::: callout-warning
+#### Caveat
+
+This solution is not absolute. It relies on AIs context and AI tends to forget
+instructions, especially if they are not repeated in the prompt.
+:::
+
+:::::: callout-tip
+#### How to add custom ignore instructions
+
+1. Create files:
+   - `.github/copilot-instructions.md` (for Copilot) in the folder `.github/` in your working folder.
+   - `claude.md` (for Claude Code) in the root of your working folder.
+
+2. Add following instruction, replacing the placeholder paths with the actual
+   folders and files that contain sensitive data in your project.
+
+::: {.prompt}
+NEVER read, index, or propose shell commands (Bash / PowerShell / CMD) that
+would reveal the contents of the following to you:
+
+- `data/raw/`  ← replace with your sensitive folder path
+- `data/raw/survey_2024.dta`  ← replace with your sensitive file path
+
+If reading one of these files is absolutely necessary for code generation:
+
+1. **Ask for permission first** — do not read the file without explicit confirmation.
+2. **Explain** what file you want to read, why you need it, and how you will use the data from it.
+3. **Wait** for me to confirm before proceeding.
+:::
+
+3. Create a `.gitignore` file in the root of your working folder
+
+4. Add only path to the sensitive data files and folders in `.gitignore` , for example:
+
+   ```{.bash filename=".gitignore"}
+   # Raw and confidential data
+   data/raw/
+   data/raw/survey_2024.dta
+   ```
+
+::::::
+
+If you are in doubt how to do this, ask AI to help by typing this prompt in a
+new chat session:
+
+::: {.prompt}
+I want you to ignore files from both AI context and version control.
+- `data/raw/`  ← replace with your sensitive folder path
+- `data/raw/survey_2024.dta`  ← replace with your sensitive file path
+- Add more files and folders as needed.
+Follow these instructions exactly as they say create necessary files or and
+populatethem with correct context.
+
+[Paste here instruction form above or provide a URL link to these instructions]
+:::
+
+### Instruct AI to NOT print raw data in the console {#instruct-ai-not-print-data}
+
+When you ask AI to generate code for data understanding, cleaning, or
+analysis, make sure to instruct it to never print raw data in the console. For
+example, you can use the following prompt:
+
+::: {.prompt}
+You are not allowed to print raw data in the console. You must produce code
+that does not print raw data. It is allowed however to present aggregated data,
+summary statics, regression results and any other data that makes it impossible
+identify individual observations.
+If in doubt that some code may print raw data, ask for permission before
+proposing this code.
+:::
+
+::: callout-note
+#### Tip
+
+You can add this text into the System instructions for your AI tool, so that
+it is applied to every chat session with AI in Positron in your project.
+Follow the instructions in [the previous section](#instruct-ai-not-print-data)
+to do so.
+:::
+
+### Use metadata and move data outside of the working folder
+
+Instead of giving AI access to raw data files, generate lightweight
+**metadata files** that describe the structure and statistics of each dataset. Place raw
+data outside the working folder and share only the metadata with AI. This gives
+the AI enough context to write correct code while the raw data never enters
+its context.
+
+**Process:**
+
+1. Generate code for Stata, R, or Python that will:
+
+   - Accept a path to the folder where the raw data resides as the only input.
+   - Loop over all files of a given type (e.g. `.dta`, `.csv`) in that folder.
+   - Produce one plain-text metadata file per data file, named
+     `<data-file-name.ext>.md`, containing:
+     - File size, number of variables, and number of observations.
+     - For each variable: name, type, and label.
+       - *Numeric variables:* summary statistics and count of missing observations.
+       - *Categorical variables:* category names, frequency counts, and count of missing observations.
+   - Write the metadata files to a folder specified by the user.
+
+2. Execute this code on your local machine, in software where you can control
+   the process and ensure that metadata files are generated and saved in
+   the working folder, while raw data files remain secure outside of it.
+
+3. When you continue working with you project, where only metadata is present
+   tell AI that:
+
+   ::: {.prompt}
+   You are not allowed to read any data outside your working folder.
+   You must use only the metadata files to understand the data structure to
+   generate code for analysis.
+   :::
+
+::: callout-warning
+#### Caveat
+
+Although this solution is more secure, and leaves the LLM with sufficient context
+to generate code, stil, the LLM cannot execute the code.
+If you allow it to run the code with the data in another folder,
+then it may print the data in the console, which can lead to data exposure.
+:::
+
+Code examples for generating metadata files:
+
+::: {.panel-tabset}
+## Stata
+```stata
+global data_folder "data/raw"
+global metadata_folder "data/metadata"
+
+```
+
+## R
+
+```r
+data_folder <- "data/raw"
+metadata_folder <- "data/metadata"
+```
+
+:::
+
+:::::: {.callout-note}
+## Tip
+
+To speed up the process of developing code for metadata generation, you can ask
+AI to generate code for you providing the link to this section of the course
+materials as context. For example you can use the following prompt
+in a new chat session:
+
+::: {.prompt}
+I need to generate metadata files for my datasets that are stored outside of
+my working folder. Use these instructions and examples to generate Stata code
+to do so: [provide a link to this section of the course materials or paste the
+instructions and examples from above]
+:::
+
+::::::
 
 
-### Instruct AI explicitly to not read specific files
-2. Instruct AI explicitly to not read specific files (also using a command line tools).
-3. Using Metadata‑based AI Assistance.
-   - Move sensitive data outside of the working folder.
-   - Locate in the working folder only metadata files that contain variable
-     names, types, labels, summary statistics, missing observations, and data dictionaries.
+### Anonymizate pre-aggregate data
 
-4. Anonymizate / pseudoaggregate data.
-5. Develop code that never prints raw data in the console.
-
-6. Metadata‑Driven AI Assistance.
-
-   - Use AI to generate code that produces **textual metadata** and summary
-     of your data set that contains: Variables names, types, labels, summary
-     statistics, missing observations, and dictionaries. This allows you to
-     leverage AI's capabilities for data understanding and code generation
-     without sharing examples of the raw data.
-     AI will use this metadata to generate code for data cleaning, validation,
-     and harmonization, while the actual data remains secure on your local
-     machine and you decide whether or not to execute with AI in Positron or
-     in Stata without Positron's context aggregation.
-
-7. Anonymization and Aggregation.
-
-      for  to provide AI with necessary context without sharing raw data. For example, share variable names, types, summary statistics, and data dictionaries instead of actual data values.
+<!-- AI to complete follwoing the examples form above -->
