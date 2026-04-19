@@ -830,6 +830,20 @@ body {
     padding-left: 0;
   }
 
+  // Show the author URL as visible text below the name
+  .quarto-title-authors a[href] {
+    text-decoration: none;
+
+    &::after {
+      content: attr(href);
+      display: block;
+      font-size: 0.65em;
+      font-weight: normal;
+      opacity: 0.7;
+      margin-top: 0.2em;
+    }
+  }
+
   .institute,
   .quarto-title-author,
   .author {

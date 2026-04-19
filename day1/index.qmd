@@ -17,13 +17,13 @@ Day 1: Introduction and common workflows
 
 | Time        | Topic |
 |-------------|--------------------------------------------------------------|
-| 9:00        | Welcome, introductions, and overview |
-| 9:10        | Setup: Positron + GitHub Copilot + Stata + Working folder |
-| 9:40        | Agentic coding with Stata/R: Example 1 |
+| 9:00        | [Welcome, introductions, and overview (slides)](/day1/ai4coding-slides-d1-1/){target="_blank"} |
+| 9:10        | [Setup overview (slides)](/day1/ai4coding-slides-d1-2/){target="_blank"} |
+| 9:40        | [Understanding data with AI (live example)](/day1/ex1-2-understand-clean-data.qmd) |
 | 10:20       | ☕ Break (10 min) |
-| 10:30       | AI overview presentation: how GitHub Copilot and LLMs work, key concepts, and capabilities |
-| 11:00       | Cookbook: securing sensitive data, guardrails, and responsible AI use |
-| 11:30       | Self-study examples overview and Q&A |
+| 10:30       | [How GitHub Copilot work, and key AI concepts](/day1/ai4coding-slides-d1-3/){target="_blank"} |
+| 10:45       | [Common AI workflow and data safeguarding practices](/day1/ai4coding-slides-d1-4/){target="_blank"} |
+| 11:00       | [Self-study examples overview and Q&A](/day1/ai4coding-slides-d1-5/){target="_blank"} |
 
 ## Before You Arrive
 

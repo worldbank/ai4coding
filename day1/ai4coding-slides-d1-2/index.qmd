@@ -1,12 +1,6 @@
 ---
 title: "AI for Coding"
-subtitle: "Day 1: Software & Account Setup"
-author:
-  - name: Eduard Bukin
-    orcid: 0000-0002-1003-1260
-    github: ebukin
-    email: ebukin@worldbank.org
-    affiliations: Distributional Impact of Policies. Fiscal Policy and Growth Department
+subtitle: "Day 1: Setup overview"
 date: "April 20, 2024"
 format:
   revealjs:
@@ -84,9 +78,10 @@ If any problems arise: follow the [troubleshooting guide](../prerequisites/commo
 | **Overage billing** | N/A | [Chargeback process](https://github.com/worldbank/ospo/blob/main/docs/copilot/premium-request-chargeback.md) | Credit card | Credit card |
 
 ::: {.callout-important}
-You can only have [**one active plan**]{.alert}. WB access **automatically cancels and refunds** your private subscription. Switching back requires re-subscribing and is possible in the end of a month.
+You can only have [**one active plan**]{.alert}. WB access **automatically cancels and refunds** your private subscription. Switching back requires re-subscribing and is possible at the end of a month.
 :::
 
+<!--
 ## How does GitHub Copilot work? {.small-slide}
 
 ::::: {.columns}
@@ -103,10 +98,11 @@ GH Copilot:
 - Each interaction costs **one premium request**
 ::::
 :::::
+-->
 
 ## Premium Requests and Limits {.small-slide}
 
-[What are premium requests?]{.fg} — Every chat/agent interaction with advanced models (Claude Sonnet, GPT-5+) consumes (x1-x3) **premium request**.
+[What are premium requests?]{.fg} — Every chat/agent interaction with advanced models (Claude Sonnet, GPT-5+) consumes (one or more) **premium request**.
 
 ::::: {.columns}
 :::: {.column width="50%"}
@@ -119,7 +115,9 @@ GH Copilot:
 | Private Copilot Pro+ | 1,500 |
 
 
-![](../../assets/img/gh-max.png)
+Check **usage** [GitHub Settings → Copilot](https://github.com/settings/copilot/features){target="_blank"}.
+
+![](/assets/img/gh-max.png){width="80%"}
 
 ::::
 
@@ -132,32 +130,28 @@ Set a **budget** (~$0.04/request):
 
 - **Private plan →** [GitHub Billing → Budgets](https://github.com/settings/billing/budgets)
 
-- **Usage →** [GitHub Settings → Copilot](https://github.com/settings/copilot/features)
-
-[[When you've used all included requests (100%), advanced AI features stop working.]{.warning} Basic inline completions still work (older models).]{.smallest}
+[[When you've used all included requests (100%), advanced AI features stop working.]{.warning} Basic inline completions still work (older models).]{.small}
 
 ::::
 :::::
 
 ## Access Levels at a Glance {.small-slide .center}
 
+[For the course, it is recommended to have **WB Copilot** access + good prompting.]{.highlight}
+
+[Fall-back: **Personal GH** + **Private Copilot Pro subscription**]{.note}
+
 
 | Setup | Repos | Copilot |
 |--------------|---------|-------------|
 | No GitHub account | ✅ Public / ❌ Personal / ❌ WB | ❌ |
-| Personal account (free) | +✅Personal / ❌ WB | ⚠️ Only old LLMs |
+| [Personal account (free)]{.fg} | +✅Personal / ❌ WB | ⚠️ Only old LLMs |
 | \+ Copilot Pro/Pro+ (private) | +✅Personal / ❌ WB | ✅Claude+ 300/1500 |
 | \+ Premium req. budget (private) | +✅Personal / ❌ WB | ✅ + extra at 0.04\$/request (credit card) |
 | [WB Org member]{.fg} | +✅ WB | ⚠️ No premium requests |
-| \+ or Private Copilot & budget | +✅ WB | ✅Claude+ 300/1500 + extra at 0.04\$/request (credit card) |
-| \+ or WB Copilot access | +✅ WB | ✅ 300 req/mo |
+| \+ [or Private Copilot & budget]{.fg} | +✅ WB | ✅Claude+ 300/1500 + extra at 0.04\$/request (credit card) |
+| \+ [or WB Copilot access]{.fg} | +✅ WB | ✅ 300 req/mo |
 | \+ WB chargeback | +✅ WB | ✅ + extra at 0.04\$/request (WB chargeback) |
-
-[Recommended: WB Copilot access + good prompting.]{.highlight}
-
-[Fall-back: Personal GH + Private Copilot Pro & budget.]{.note}
-
-[300 premium requests per month is sufficient with thoughtful usage.]{.fg}
 
 ## GitHub @ World Bank is more than a Copilot {.small-slide}
 
@@ -165,7 +159,7 @@ Set a **budget** (~$0.04/request):
 
 - It is a modern standard of research and collaboration.
 
-- Github integration improves your code, version control, and collaboration standard leading to better quality, transparency, and reproducibility.
+- GitHub integration improves your code, version control, and collaboration standard leading to better quality, transparency, and reproducibility.
 
   - Request access to [github.com/worldbank](https://github.com/worldbank) on [eServices](https://worldbankgroup.service-now.com/wbg/en/join-github-organization-account-request?id=wbg_sc_catalog&sys_id=910e1739db1a54903c5960ab13961912&table=sc_cat_item&searchTerm=github)
 
@@ -176,7 +170,7 @@ Set a **budget** (~$0.04/request):
 
 - Support: [github@worldbank.org](mailto:github@worldbank.org)
 
-## Positron Assistant {.small-slide}
+## ![](assets/img/positron-assistant-blue.svg){width="50px"} Positron Assistant {.small-slide}
 
 The Positron Assistant connects GitHub Copilot to Positron, enabling AI features in the editor and chat.
 
@@ -184,7 +178,7 @@ The Positron Assistant connects GitHub Copilot to Positron, enabling AI features
 :::: {.column width="50%"}
 ### Enable
 
-1. Settings (`Ctrl+,`) → search `positron.assistant.enable` → ☑️
+1. In Positron: Settings (`Ctrl+,`) → search `positron.assistant.enable` → ☑️
 2. Reload Positron
 
 ### Connect to Copilot
@@ -207,6 +201,8 @@ You can also sign in via the **Accounts** icon (bottom-left of Activity Bar).
 :::
 ::::
 :::::
+
+## Example 2: Understanding and cleaning the data
 
 ## Support & Links {.small-slide}
 
