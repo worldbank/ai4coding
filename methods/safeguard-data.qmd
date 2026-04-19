@@ -1,21 +1,12 @@
 ---
 title: "Safeguarding data"
-format:
-   html:
-      toc: true
-      toc-depth: 3
 date: 2026-04-17
 ---
 
-::: {.shift-headings by=0}
+## Overview
 
-{{< include ../methods/safeguard-data-overview.qmd >}}
+{{< include /methods/_safeguard-data-overview.qmd >}}
 
-:::
+## Detailed instructions and best practices
 
-
-::: {.shift-headings by=1}
-
-{{< include ../methods/safeguard-data-details.qmd >}}
-
-:::
+{{< include /methods/_safeguard-data-details.qmd >}}

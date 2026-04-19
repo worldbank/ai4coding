@@ -1,7 +1,3 @@
----
-title: "Common workflow in data analysis with AI"
----
-
 As AI is probabilistic, you will often need to curate its context well in
 order to get good results. With experience I came accross with the following
 common workflow for data understanding and preparation tasks:

@@ -45,7 +45,7 @@ The course consis of:
   - Key AI concepts: tokens, prompts, context windows, agents, and how they affect AI-assisted coding
   - Strengths and limitations of AI code assistants for analytical work
 
-- [**Self-study**](self-study/index.qmd): 2–3 days of independent practice based on the provided exercises and team's channel for support.
+- [**Self-study**](selfstudy/index.qmd): 2–3 days of independent practice based on the provided exercises and team's channel for support.
 -
   - Main goals are to build confidence and discover how to use AI tools in your own workflow.
   - Please share your challenges, discoveries, and questions in the Team's chat to get support from the team and other participants.

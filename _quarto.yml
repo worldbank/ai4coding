@@ -13,6 +13,8 @@ project:
 website:
   title: "AI for Coding"
   llms-txt: true
+  repo-url: https://github.com/worldbank/ai4coding
+  repo-actions: [source, issue]
   navbar:
     background: primary
     search: true
@@ -33,6 +35,15 @@ website:
         href: methods/index.qmd
       - text: "About"
         href: about.qmd
+    right:
+      - text: "Internal Resources"
+        menu:
+          - text: "Prosperity VP"
+            href: https://worldbankgroup.sharepoint.com/sites/WBgge/
+          - text: "Distributional Impact of Policies Dep."
+            href: https://worldbankgroup.sharepoint.com/sites/wbpoverty
+          - text: "geoPovLearn"
+            href: https://worldbank.github.io/geoPovLearn/
 
   sidebar:
     - title: Prerequisites
@@ -89,13 +100,17 @@ author:
   - name: Eduard Bukin
     email: ebukin@worldbank.org
     url: https://github.com/ebukin
+    orcid: 0000-0002-1003-1260
+    affiliations: Distributional Impact of Policies. Fiscal Policy and Growth Department
 
 format:
   html:
     css: assets/custom.css
-    # theme:
+    theme:
     #   - cosmo
     #   - brand
+      light: cosmo
+      dark: darkly
     toc: true
     toc-depth: 4
     toc-location: right

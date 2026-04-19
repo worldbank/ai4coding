@@ -551,6 +551,10 @@ body {
   font-size: $presentation-font-smaller;
 }
 
+.slide-resources h2 {
+  text-align: left;
+}
+
 .tiny-slide {
   font-size: $font-size-small;
 }
@@ -792,6 +796,10 @@ body {
 // ============================================================
 
 #title-slide {
+
+  .quarto-title-authors {
+    display: none;
+  }
 
   .title,
   .subtitle {

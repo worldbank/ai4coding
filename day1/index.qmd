@@ -5,15 +5,10 @@ title: "Day 1: Overview and materials"
 ## Goals:
 
 - See AI in action: live code understanding, revision, and reuse with AI
-
 - Setup: Positron + GitHub Copilot + Stata
-
 - Understand how AI works and relevant vocabulary:
-
   - IDE, LLM, Assistant, tokens, prompts, context window, agent, etc.
-
 - Get ready to practice on your own during the self-study examples
-
 - Familiarize with key principles and the workflow
 
 ## Agenda
@@ -32,18 +27,12 @@ Day 1: Introduction and common workflows
 
 ## Before You Arrive
 
-(Try) completing the prerequisites:
+(Try) [completing the prerequisites](/prerequisites/index.qmd).
 
-1. [Software Setup](../prerequisites/software.qmd)
-2. [GitHub Setup](../prerequisites/github.qmd)
-3. [Positron Extensions](../prerequisites/extensions.qmd)
-4. [Positron Assistant](../prerequisites/assistant.qmd)
-5. [Verify your setup](../prerequisites/verification.qmd)
-
-If you run into issues, check [Common Problems](../prerequisites/common-problems.qmd) or
+If you run into issues, check [Common Problems](/prerequisites/common-problems.qmd) or
 contact [ITHelp@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org) before the session.
 
-## Day 1: Step-by-step {#day1-materials}
+## Day 1: Step-by-step {#materials}
 
 ### 1. Learn: Welcome, introductions, and overview
 
@@ -67,14 +56,14 @@ View slides in a [new tab](ai4coding-slides-d1-1/){target="_blank"}.
 ```{=html}
 <iframe class="slide-deck" src="ai4coding-slides-d1-2/"></iframe>
 ```
-View slides in a [new tab](ai4coding-slides-d1-2/){target="_blank"}.
+View slides in a [new tab](day1/ai4coding-slides-d1-2/){target="_blank"}.
 
 ## 3. Stata in Positron with GitHub Copilot (self-study example 1)
 
 This introductory example is plan for self-study, full details, suggested
 prompts, and instructions are in the [Self-Study > Example 1](ex1-1-explore-positron.qmd).
 
-{{< include ex1-1-overview.qmd >}}
+{{< include /day1/_ex1-1-overview.qmd >}}
 
 ## Example 2: Understanding and cleaning the data (live session)
 
@@ -84,15 +73,15 @@ prompts, and instructions are in the [Self-Study > Example 2](ex1-2-understand-c
 
 <!-- TODO -->
 
-{{< include ex1-2-overview.qmd >}}
+{{< include /day1/_ex1-2-overview.qmd >}}
 
 
 ## Presentation: How AI works, key concepts, and capabilities
 
 ```{=html}
-<iframe class="slide-deck" src="ai4coding-slides-d1-3/"></iframe>
+<iframe class="slide-deck" src="day1/ai4coding-slides-d1-3/"></iframe>
 
 ```
-View slides in a [new tab](ai4coding-slides-d1-3/){target="_blank"} or download a [PDF version](day1/ai4coding-slides-d1-3/ai4coding-slides-d1-3.pdf).
+View slides in a [new tab](day1/ai4coding-slides-d1-3/){target="_blank"}.
 
 <!-- TODO: Additional materials on AI concepts and capabilities worth familiarizing with. A pills tab with links to videos and reading -->
