@@ -24,8 +24,78 @@ Use it to ask questions, share screenshots of what worked or didn't, and pick up
 
 Example 0 is a live demonstration during the session, but you can also follow
 along on your own as a self-study exercise. Full details, suggested prompts,
-and instructions are in the [Self-Study > Example 0](selfstudy/example-0.qmd).
+and instructions are in [Example 0](example-0.qmd).
 The objective of this example is to verify that your software environment is
 correctly set up for the course. Each file in this folder runs a small analysis
 that exercises a different language or tool. If every file runs without errors,
 your setup is ready.
+
+### Example 1: Stata in Positron with GitHub Copilot (self-study)
+
+This introductory example walks you through Positron's AI assistance features
+using Stata. Full details, suggested prompts, and instructions are in
+[Example 1](example-1.qmd). You will practice:
+
+| Feature | What you learn |
+|---------|----------------|
+| Inline suggestions | Accepting, rejecting, and customizing AI completions |
+| Chat mode | Asking for code generation, revision, and troubleshooting |
+| Inline chat | Revising specific code snippets without leaving the editor |
+| Agent mode | Automating code execution and debugging |
+
+**What to test:** Create a Stata do-file from scratch using AI assistance. The
+file should load data, produce descriptive statistics, run a regression, and
+generate plots. If AI can generate, run, and troubleshoot the code in Positron
+without manual intervention, the workflow is working.
+
+### Example 2: Understanding data with AI (live)
+
+This example demonstrates how to use AI to harmonize and standardize survey
+data from raw format into an analysis-ready dataset. Full details, suggested
+prompts, and instructions are in [Example 2](example-2.qmd).
+
+The exercise follows the common AI workflow:
+
+1. **Set the overall objective** — define success criteria before writing code
+2. **Understand the data** — use AI to inspect structure, variables, and quality
+3. **Plan the harmonization** — get AI to propose a variable mapping and cleaning steps
+4. **Implement step by step** — execute one transformation at a time, verifying at each checkpoint
+
+**What to test:** Give AI a raw survey dataset and ask it to propose a
+harmonization plan. Then implement the plan one step at a time. If AI can
+correctly inspect variables, propose mappings, and produce a clean long-format
+dataset with consistent names and labels, the workflow is working.
+
+### Example 3: Reproduce, Revise, and Reuse existing analysis (self-study)
+
+This example practices the 3R workflow: take existing analytical code and use
+AI to reproduce it with new data, revise it for a different specification, and
+reuse components in a new context. Full details, suggested prompts, and
+instructions are in [Example 3](example-3.qmd).
+
+| Task | What you practice |
+|------|-------------------|
+| **Reproduce** | Adapt an existing script to run on a different dataset |
+| **Revise** | Change model specification, add controls, switch estimators |
+| **Reuse** | Extract reusable components (cleaning functions, output tables) for a new project |
+
+**What to test:** Take a provided Stata do-file, reproduce its outputs with a
+new dataset, revise the regression specification, and extract a reusable
+cleaning routine. If AI can map variables between datasets, update the code, and
+produce comparable outputs, the workflow is working.
+
+## Self-Study Case Studies
+
+After completing the examples above, work through **at least one** of the case
+studies below. Each is designed to take 1–2 hours with AI assistance. Write up
+your reflections and submit before Day 2.
+
+1. **Reproducing Old Code with New Data** — adapt a legacy script to a new
+   dataset with different variable naming conventions.
+2. **Reproducing an Analysis from an Example** — use AI to replicate a
+   published analysis step by step.
+3. **Trying a Different Language** — translate a Stata do-file to R or Python
+   and verify outputs match.
+
+Full instructions for all case studies are in
+[Case Studies](case-studies.md).
