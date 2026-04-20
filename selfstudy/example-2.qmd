@@ -1,5 +1,5 @@
 ---
-title: "Ex.2: Understanding data with AI"
+title: "Ex.2 Understanding data with AI"
 ---
 
 {{< include /day1/_ex1-2-overview.qmd >}}
