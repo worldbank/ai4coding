@@ -1,0 +1,72 @@
+## Course Overview and learning objectives
+
+This course aims to equip economists who regularly use Stata and other modern
+statistical programming languages to leverage AI-assisted coding tools
+effectively and responsibly. It introduces participants to AI coding
+assistants (GitHub Copilot) within the Positron IDE, across two 3-hour sessions
+with a self-study period in between and afterwards.
+
+By the end of this course, participants will be able to:
+
+- **Understand**
+
+  - Core LLM concepts (tokens, prompts, context windows, agents) and
+    how they affect AI-assisted coding
+  - Strengths and limitations of AI code assistants for analytical work
+
+- **Apply**
+
+  - AI assistant for 3R: read, revise, and reuse existing code.
+  - Prompts engineering and context management for precise AI answers and code generation
+  - Planning and executing complex tasks with multi-step agentic workflows
+  - `#tools`, `skills`, and `/agents`
+  - Supervise and course-correct AI-generated code through iterative review
+
+- **Take control**
+
+  - Apply data-security practices when using AI tools with sensitive or confidential data
+  - Follow responsible-use guidelines for AI-assisted research workflows
+
+## Format and logistics
+
+This course is designed to be self-explanatory and self-paced, with a mix of
+live sessions, pre-recorded materials, written guides, and exercises. The main
+learning happens through doing, so active participation in exercises and
+practice is highly encouraged.
+
+The course consis of:
+
+- [**Prerequiisites**](prerequisites/index.qmd): detailed instructions on software and github setup.
+
+- [**Day 1**](day1/index.qmd): introduction to AI-assisted coding, setup, and live demo, which covers:
+
+  - Basic workflow of AI-assisted coding for data cleaning, preparation, and exploratory analysis
+  - Key methods of securing sensitive data when using AI tools: working with metadata, ananonymizing data, and synthetic data generation
+  - Key AI concepts: tokens, prompts, context windows, agents, and how they affect AI-assisted coding
+  - Strengths and limitations of AI code assistants for analytical work
+
+- [**Self-study**](selfstudy/index.qmd): 2–3 days of independent practice based on the provided exercises and team's channel for support.
+-
+  - Main goals are to build confidence and discover how to use AI tools in your own workflow.
+  - Please share your challenges, discoveries, and questions in the Team's chat to get support from the team and other participants.
+  - We will review common challenges and questions in the beginning of Day 2.
+
+- [**Day 2**](day2/index.qmd): advanced features and workflows
+
+  - Planning and executing complex tasks with multi-step agentic workflows
+  - Context engineering: `#tools`, `skills`, `MCP`, and other relevant features
+  - Agents customization: `/prompts` and `/agents`
+  - `skills`: integrating precise knowladge to yout analysis
+  - Q&A and discussion
+
+**Materials**: slide decks, written gudes, examples, exercises, and **recordings** for self-paced review.
+
+<!-- ## How to start?
+
+1. Install all software and [complete all prerequisites](prerequisites/index.qmd).
+
+   - [Verify that everything works](prerequisites/verify.qmd)
+
+2. Familiarize yourself with the materials and schedule for Day 1 (see [Day 1 materials](day1/index.qmd)).
+
+3.  -->

@@ -1,0 +1,8 @@
+---
+title: "Ex.2 Understanding data with AI"
+---
+
+{{< include /selfstudy/_ex1-2-overview.qmd >}}
+
+
+{{< include /selfstudy/_ex1-2-details.qmd >}}

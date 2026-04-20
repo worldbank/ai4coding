@@ -1,0 +1,11 @@
+---
+title: "Overview"
+---
+
+Complete these setup steps **before the first session**:
+
+1. [Software Setup](software.qmd) — Stata 19+ MP, R 4.5+, Python 3.13+ with `uv`, Positron, Quarto 1.9+, Git
+2. [GitHub & Copilot](github.qmd) — personal GitHub account, WB org membership, Copilot access and premium requests
+3. [Positron Extensions](extensions.qmd) — Positron Stata (or Stata MCP), stataglow, databot
+4. [Positron Assistant](assistant.qmd) — enable assistant, connect to GitHub Copilot provider
+5. [Common Problems](common-problems.qmd) — `uv` install issues, access denied, Positron update, Quarto

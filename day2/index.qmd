@@ -1,0 +1,31 @@
+---
+title: "Overview"
+---
+
+**Session goals:**
+
+- Address questions from the self-study period.
+
+  - Please do share your questions and experiences in the Teams chat a day
+    before the session to help guide the discussion and practice exercises.
+
+- Learn "Plan mode" to execute complex, multi-step tasks with an AI agent.
+
+- Context engineering and optimization with Copilot: `#tools`, `skills`,
+  `/prompts`, `/agents`, `MCP` connectors, and other relevant features.
+
+- Customizing your Positron's assistant with out-of-the-box `skills`, and agents.
+
+By the end of this session you should be able to delegate a complex analytical
+task to an AI agent, supervise its execution, and course-correct when it goes
+off track using appropriate tools and prompting techniques.
+
+## Agenda
+
+TBD
+
+## Before You Arrive
+
+Post your questions, challenges, and discoveries from the self-study exercises
+in the Teams chat a day before the session to help guide the discussion and
+practice exercises.
