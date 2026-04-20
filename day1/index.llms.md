@@ -145,6 +145,10 @@ The objective is to clean and harmonize this data to the Global Monitoring Datab
 2.  Income
 3.  Consumption
 
+### Where to start?
+
+The full example, including suggested prompts and instructions, is in `C:/WBG/ai/ai4coding-practice/ex02-understand-data/` in the self-study section. You can follow along
+
 ------------------------------------------------------------------------
 
 ## 4. Core AI-related concepts
@@ -161,13 +165,11 @@ View slides in a [new tab](..\day1/ai4coding-slides-d1-4/index.llms.md).
 
 ## 6. Example 3: Reproduce, Revise, and Reuse (live/self-study)
 
-This example is planned for live demonstration during the session, but you can also follow along on your own as a self-study exercise. Full details, suggested prompts, and instructions are in the [Self-Study \> Example 3](../selfstudy/example-3.llms.md).
+This example is planned for a live demonstration during the session, but you can also follow along on your own as a self-study exercise. Full details, suggested prompts, and instructions are in the [Self-Study \> Example 3](../selfstudy/example-3.llms.md).
 
-### Overview
+Consider using your own data and problem for this example if you have one in mind. The goal of this example is to practice the workflow of analysis refactoring and improvement. The example provided is based on a real analysis, but the workflow and principles apply broadly to any analysis you might be working on.
 
-Practice the **3R workflow** — Reproduce, Revise, and Reuse — using AI assistance to adapt, modify, and repurpose existing analytical code. This is one of the most common tasks in applied economics: you inherit a script, need to run it on new data, change the specification, and extract reusable components.
-
-You will learn how to use AI to:
+This example will show you how to use AI to:
 
 1.  Understand and reproduce existing analysis.
 2.  Revise it to make it clear, transparent, and well documented.

@@ -43,6 +43,10 @@ The objective is to clean and harmonize this data to the Global Monitoring Datab
 2.  Income
 3.  Consumption
 
+### Where to start?
+
+The full example, including suggested prompts and instructions, is in `C:/WBG/ai/ai4coding-practice/ex02-understand-data/` in the self-study section. You can follow along
+
 Let us proceed with the analysis of the data following the common agentic [data analysis workflow](../methods/common-workflow.llms.md).
 
 > **TIP:**

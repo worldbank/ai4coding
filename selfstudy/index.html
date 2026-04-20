@@ -263,18 +263,25 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../day1/index.html"> 
-<span class="menu-text">Day 1</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-course-materials-(april-2026" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Course materials (April 2026)</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-course-materials-(april-2026">    
+        <li>
+    <a class="dropdown-item" href="../day1/index.html">
+ <span class="dropdown-text">Day 1</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="../selfstudy/index.html" aria-current="page"> 
-<span class="menu-text">Self Study</span></a>
+        <li>
+    <a class="dropdown-item" href="../selfstudy/index.html">
+ <span class="dropdown-text">Self Study</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../day2/index.html"> 
-<span class="menu-text">Day 2</span></a>
+        <li>
+    <a class="dropdown-item" href="../day2/index.html">
+ <span class="dropdown-text">Day 2</span></a>
   </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="../prerequisites/index.html"> 
 <span class="menu-text">Prerequisites</span></a>
@@ -289,6 +296,11 @@ ul.task-list li input[type="checkbox"] {
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/worldbank/ai4coding"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-internal-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Internal Resources</span>
@@ -378,17 +390,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#how-it-works" id="toc-how-it-works" class="nav-link active" data-scroll-target="#how-it-works">How It Works</a>
-  <ul>
-  <li><a href="#teams-channel" id="toc-teams-channel" class="nav-link" data-scroll-target="#teams-channel">Teams channel</a></li>
-  </ul></li>
-  <li><a href="#case-studies" id="toc-case-studies" class="nav-link" data-scroll-target="#case-studies">Case Studies</a>
-  <ul>
-  <li><a href="#example-0-test-your-setup-live" id="toc-example-0-test-your-setup-live" class="nav-link" data-scroll-target="#example-0-test-your-setup-live">Example 0: Test your setup (live)</a></li>
-  <li><a href="#example-1-stata-in-positron-with-github-copilot-self-study" id="toc-example-1-stata-in-positron-with-github-copilot-self-study" class="nav-link" data-scroll-target="#example-1-stata-in-positron-with-github-copilot-self-study">Example 1: Stata in Positron with GitHub Copilot (self-study)</a></li>
-  <li><a href="#example-2-understanding-data-with-ai-live" id="toc-example-2-understanding-data-with-ai-live" class="nav-link" data-scroll-target="#example-2-understanding-data-with-ai-live">Example 2: Understanding data with AI (live)</a></li>
-  <li><a href="#example-3-reproduce-revise-and-reuse-existing-analysis-self-study" id="toc-example-3-reproduce-revise-and-reuse-existing-analysis-self-study" class="nav-link" data-scroll-target="#example-3-reproduce-revise-and-reuse-existing-analysis-self-study">Example 3: Reproduce, Revise, and Reuse existing analysis (self-study)</a></li>
-  </ul></li>
+  <li><a href="#how-it-works" id="toc-how-it-works" class="nav-link active" data-scroll-target="#how-it-works">How It Works</a></li>
+  <li><a href="#supporting-materials" id="toc-supporting-materials" class="nav-link" data-scroll-target="#supporting-materials">Supporting materials</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/worldbank/ai4coding/blob/main/selfstudy/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/worldbank/ai4coding/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -437,56 +440,15 @@ ul.task-list li input[type="checkbox"] {
 <section id="how-it-works" class="level2">
 <h2 class="anchored" data-anchor-id="how-it-works">How It Works</h2>
 <p>The self-study period runs for <strong>2–3 days</strong> between the two sessions. You work independently through the structured case studies below and document your experience.</p>
-<section id="teams-channel" class="level3">
-<h3 class="anchored" data-anchor-id="teams-channel">Teams channel</h3>
-<p>A live Teams channel is open throughout the self-study period. Use it to ask questions, share screenshots of what worked or didn’t, and pick up tips from colleagues.</p>
-</section>
-</section>
-<section id="case-studies" class="level2">
-<h2 class="anchored" data-anchor-id="case-studies">Case Studies</h2>
-<section id="example-0-test-your-setup-live" class="level3">
-<h3 class="anchored" data-anchor-id="example-0-test-your-setup-live">Example 0: Test your setup (live)</h3>
-<p>Example 0 is a live demonstration during the session, but you can also follow along on your own as a self-study exercise. Full details, suggested prompts, and instructions are in <a href="../selfstudy/example-0.html">Example 0</a>. The objective of this example is to verify that your software environment is correctly set up for the course. Each file in this folder runs a small analysis that exercises a different language or tool. If every file runs without errors, your setup is ready.</p>
-</section>
-<section id="example-1-stata-in-positron-with-github-copilot-self-study" class="level3">
-<h3 class="anchored" data-anchor-id="example-1-stata-in-positron-with-github-copilot-self-study">Example 1: Stata in Positron with GitHub Copilot (self-study)</h3>
-<p>This introductory example walks you through Positron’s AI assistance features using Stata. Full details, suggested prompts, and instructions are in <a href="../selfstudy/example-1.html">Example 1</a>. You will practice:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 36%">
-<col style="width: 64%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Feature</th>
-<th>What you learn</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Inline suggestions</td>
-<td>Accepting, rejecting, and customizing AI completions</td>
-</tr>
-<tr class="even">
-<td>Chat mode</td>
-<td>Asking for code generation, revision, and troubleshooting</td>
-</tr>
-<tr class="odd">
-<td>Inline chat</td>
-<td>Revising specific code snippets without leaving the editor</td>
-</tr>
-<tr class="even">
-<td>Agent mode</td>
-<td>Automating code execution and debugging</td>
-</tr>
-</tbody>
-</table>
-<p><strong>What to test:</strong> Create a Stata do-file from scratch using AI assistance. The file should load data, produce descriptive statistics, run a regression, and generate plots. If AI can generate, run, and troubleshoot the code in Positron without manual intervention, the workflow is working.</p>
-</section>
-<section id="example-2-understanding-data-with-ai-live" class="level3">
-<h3 class="anchored" data-anchor-id="example-2-understanding-data-with-ai-live">Example 2: Understanding data with AI (live)</h3>
-<p>This example demonstrates how to use AI to harmonize Mexico’s ENIGH survey (2016 and 2018) into an analysis-ready dataset following the Global Monitoring Database (GMD) specification. Full details, suggested prompts, and instructions are in <a href="../selfstudy/example-2.html">Example 2</a>.</p>
-<p>The key principle is a <strong>metadata-driven approach</strong>: a data dictionary serves as the intermediary between raw data and the AI, avoiding direct exposure of sensitive data. The exercise follows a structured seven-step workflow:</p>
+<blockquote class="blockquote">
+<p>Share your experience in the Teams channel: ask questions, share screenshots of what worked or didn’t, and pick up tips from colleagues.</p>
+</blockquote>
+<p>Exercises are designed to be progressively more complex, but feel free to jump around based on your interests and needs.</p>
+<ul>
+<li><p><strong>Example 0</strong> is a quick test of your setup. If you haven’t completed it yet, start here. All you need are fulfilled <a href="../prerequisites/index.html">minimal prerequisite requirements</a>,</p></li>
+<li><p><strong>Example 1</strong> is an introduction to the Positron + Copilot workflow using Stata. It’s a great place to start if you’re new to AI-assisted coding or want to get comfortable with the tools. It covers the basics AI tools such as: inline suggestions, chat mode, inline chat, and agent mode. <a href="../selfstudy/example-1.html">Example 1</a> contains detailed instructions and suggested prompts to guide you through the process. Finally, there is an <a href="https://www.youtube.com/watch?v=U29xAoivY5Y" target="_blank">18 min video walkthrough</a> in case you want to follow along.</p></li>
+<li><p><strong>Example 2</strong> is a live demonstration of using AI to clean and prepare for analysis Mexico’s ENIGH survey (2016 and 2018). Full details, suggested prompts, and instructions are in <a href="../selfstudy/example-2.html">Example 2</a>.</p>
+<p>The exercise follows a structured seven-step workflow:</p>
 <ol type="1">
 <li><strong>Set the overall objective</strong> — name the survey, years, target spec, and language up front</li>
 <li><strong>Define inputs and outputs</strong> — specify unit of observation, file format, and modules</li>
@@ -496,41 +458,95 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Develop code iteratively</strong> — generate modular, DIME Wiki-compliant scripts one module at a time</li>
 <li><strong>Verify with an independent review</strong> — audit the cleaning code in a separate AI session</li>
 </ol>
-<p><strong>What to test:</strong> Work through the prompts to build a data dictionary, confirm a variable mapping table, and produce modular Stata scripts for demographics, income, and consumption. If the AI can correctly map source variables to GMD targets, apply DIME Wiki coding standards, and pass an independent audit, the workflow is working. Prompts include a substitution table for adapting to R or Python.</p>
+<p>Its main objective is to demonstrate how versatile AI assistance can be in understanding data structure and metadata.</p></li>
+<li><p><strong>Example 3</strong> is a final example with less hand-holding that gives you the opportunity to practice AI for data analysis tasks with bare minimum guidance. It contains an example of a data analysis from the past and asks you to reproduce, revise, and reuse it with the help of AI by adding an additional survey year. This is one of the most common tasks. Full details and instructions are in <a href="../selfstudy/example-3.html">Example 3</a>.</p></li>
+</ul>
 </section>
-<section id="example-3-reproduce-revise-and-reuse-existing-analysis-self-study" class="level3">
-<h3 class="anchored" data-anchor-id="example-3-reproduce-revise-and-reuse-existing-analysis-self-study">Example 3: Reproduce, Revise, and Reuse existing analysis (self-study)</h3>
-<p>This example practices the 3R workflow: take existing analytical code and use AI to reproduce it with new data, revise it for a different specification, and reuse components in a new context. Full details, suggested prompts, and instructions are in <a href="../selfstudy/example-3.html">Example 3</a>.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 24%">
-<col style="width: 76%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Task</th>
-<th>What you practice</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Reproduce</strong></td>
-<td>Adapt an existing script to run on a different dataset</td>
-</tr>
-<tr class="even">
-<td><strong>Revise</strong></td>
-<td>Change model specification, add controls, switch estimators</td>
-</tr>
-<tr class="odd">
-<td><strong>Reuse</strong></td>
-<td>Extract reusable components (cleaning functions, output tables) for a new project</td>
-</tr>
-</tbody>
-</table>
-<p><strong>What to test:</strong> Take a provided Stata do-file, reproduce its outputs with a new dataset, revise the regression specification, and extract a reusable cleaning routine. If AI can map variables between datasets, update the code, and produce comparable outputs, the workflow is working.</p>
+<section id="supporting-materials" class="level1">
+<h1>Supporting materials</h1>
+<ul>
+<li><a href="..\methods/gmd-variables.qmd">Global Monitoring Database (GMD) variables description</a> is a key reference for the Example 2.</li>
+</ul>
+<!--
+- practices the 3R workflow: take existing analytical code and use
+  AI to reproduce it with new data, revise it for a different specification, and
+  reuse components in a new context. Full details, suggested prompts, and
+  instructions are in [Example 3](/selfstudy/example-3.qmd).
+
+## Case Studies
+
+### Example 0: Test your setup (live)
+
+Example 0 is a live demonstration during the session, but you can also follow
+along on your own as a self-study exercise. Full details, suggested prompts,
+and instructions are in [Example 0](/selfstudy/example-0.qmd).
+The objective of this example is to verify that your software environment is
+correctly set up for the course. Each file in this folder runs a small analysis
+that exercises a different language or tool. If every file runs without errors,
+your setup is ready.
+
+### Example 1: Stata in Positron with GitHub Copilot (self-study)
+
+This introductory example walks you through Positron's AI assistance features
+using Stata. Full details, suggested prompts, and instructions are in
+[Example 1](example-1.qmd). You will practice:
+
+| Feature | What you learn |
+|---------|----------------|
+| Inline suggestions | Accepting, rejecting, and customizing AI completions |
+| Chat mode | Asking for code generation, revision, and troubleshooting |
+| Inline chat | Revising specific code snippets without leaving the editor |
+| Agent mode | Automating code execution and debugging |
+
+**What to test:** Create a Stata do-file from scratch using AI assistance. The
+file should load data, produce descriptive statistics, run a regression, and
+generate plots. If AI can generate, run, and troubleshoot the code in Positron
+without manual intervention, the workflow is working.
+
+### Example 2: Understanding data with AI (live)
+
+This example demonstrates how to use AI to harmonize Mexico's ENIGH survey
+(2016 and 2018) into an analysis-ready dataset following the Global Monitoring
+Database (GMD) specification.
+
+The key principle is a **metadata-driven approach**: a data dictionary serves
+as the intermediary between raw data and the AI, avoiding direct exposure of
+sensitive data. The exercise follows a structured seven-step workflow:
+
+1. **Set the overall objective** — name the survey, years, target spec, and language up front
+2. **Define inputs and outputs** — specify unit of observation, file format, and modules
+3. **Create a data dictionary** — capture variable names, types, labels, and missings without sharing raw data
+4. **Gather external metadata** — fetch variable definitions, units, recall periods from official catalogs
+5. **Verify understanding** — produce a mapping table before writing any code
+6. **Develop code iteratively** — generate modular, DIME Wiki-compliant scripts one module at a time
+7. **Verify with an independent review** — audit the cleaning code in a separate AI session
+
+**What to test:** Work through the prompts to build a data dictionary, confirm
+a variable mapping table, and produce modular Stata scripts for demographics,
+income, and consumption. If the AI can correctly map source variables to GMD
+targets, apply DIME Wiki coding standards, and pass an independent audit, the
+workflow is working. Prompts include a substitution table for adapting to R or
+Python.
+
+### Example 3: Reproduce, Revise, and Reuse existing analysis (self-study)
+
+This example practices the 3R workflow: take existing analytical code and use
+AI to reproduce it with new data, revise it for a different specification, and
+reuse components in a new context. Full details, suggested prompts, and
+instructions are in [Example 3](/selfstudy/example-3.qmd).
+
+| Task | What you practice |
+|------|-------------------|
+| **Reproduce** | Adapt an existing script to run on a different dataset |
+| **Revise** | Change model specification, add controls, switch estimators |
+| **Reuse** | Extract reusable components (cleaning functions, output tables) for a new project |
+
+**What to test:** Take a provided Stata do-file, reproduce its outputs with a
+new dataset, revise the regression specification, and extract a reusable
+cleaning routine. If AI can map variables between datasets, update the code, and
+produce comparable outputs, the workflow is working. -->
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

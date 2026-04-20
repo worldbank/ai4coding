@@ -263,18 +263,25 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="../day1/index.html" aria-current="page"> 
-<span class="menu-text">Day 1</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-course-materials-(april-2026" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Course materials (April 2026)</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-course-materials-(april-2026">    
+        <li>
+    <a class="dropdown-item" href="../day1/index.html">
+ <span class="dropdown-text">Day 1</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../selfstudy/index.html"> 
-<span class="menu-text">Self Study</span></a>
+        <li>
+    <a class="dropdown-item" href="../selfstudy/index.html">
+ <span class="dropdown-text">Self Study</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../day2/index.html"> 
-<span class="menu-text">Day 2</span></a>
+        <li>
+    <a class="dropdown-item" href="../day2/index.html">
+ <span class="dropdown-text">Day 2</span></a>
   </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="../prerequisites/index.html"> 
 <span class="menu-text">Prerequisites</span></a>
@@ -289,6 +296,11 @@ ul.task-list li input[type="checkbox"] {
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/worldbank/ai4coding"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-internal-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Internal Resources</span>
@@ -371,13 +383,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
   <li><a href="#target-specification" id="toc-target-specification" class="nav-link" data-scroll-target="#target-specification">Target specification</a></li>
+  <li><a href="#where-to-start" id="toc-where-to-start" class="nav-link" data-scroll-target="#where-to-start">Where to start?</a></li>
   </ul></li>
   <li><a href="#ai-concepts" id="toc-ai-concepts" class="nav-link" data-scroll-target="#ai-concepts">4. Core AI-related concepts</a></li>
   <li><a href="#ai-workflow" id="toc-ai-workflow" class="nav-link" data-scroll-target="#ai-workflow">5. Common workflows and data safeguarding practices while using AI (slides)</a></li>
-  <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3">6. Example 3: Reproduce, Revise, and Reuse (live/self-study)</a>
-  <ul class="collapse">
-  <li><a href="#overview-1" id="toc-overview-1" class="nav-link" data-scroll-target="#overview-1">Overview</a></li>
-  </ul></li>
+  <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3">6. Example 3: Reproduce, Revise, and Reuse (live/self-study)</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/worldbank/ai4coding/blob/main/day1/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/worldbank/ai4coding/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -604,6 +614,10 @@ Warning
 <li>Income</li>
 <li>Consumption</li>
 </ol>
+</section>
+<section id="where-to-start" class="level3">
+<h3 class="anchored" data-anchor-id="where-to-start">Where to start?</h3>
+<p>The full example, including suggested prompts and instructions, is in <code>C:/WBG/ai/ai4coding-practice/ex02-understand-data/</code> in the self-study section. You can follow along</p>
 <hr>
 </section>
 </section>
@@ -623,11 +637,9 @@ Warning
 </section>
 <section id="example-3" class="level2">
 <h2 class="anchored" data-anchor-id="example-3">6. Example 3: Reproduce, Revise, and Reuse (live/self-study)</h2>
-<p>This example is planned for live demonstration during the session, but you can also follow along on your own as a self-study exercise. Full details, suggested prompts, and instructions are in the <a href="../selfstudy/example-3.html">Self-Study &gt; Example 3</a>.</p>
-<section id="overview-1" class="level3">
-<h3 class="anchored" data-anchor-id="overview-1">Overview</h3>
-<p>Practice the <strong>3R workflow</strong> — Reproduce, Revise, and Reuse — using AI assistance to adapt, modify, and repurpose existing analytical code. This is one of the most common tasks in applied economics: you inherit a script, need to run it on new data, change the specification, and extract reusable components.</p>
-<p>You will learn how to use AI to:</p>
+<p>This example is planned for a live demonstration during the session, but you can also follow along on your own as a self-study exercise. Full details, suggested prompts, and instructions are in the <a href="../selfstudy/example-3.html">Self-Study &gt; Example 3</a>.</p>
+<p>Consider using your own data and problem for this example if you have one in mind. The goal of this example is to practice the workflow of analysis refactoring and improvement. The example provided is based on a real analysis, but the workflow and principles apply broadly to any analysis you might be working on.</p>
+<p>This example will show you how to use AI to:</p>
 <ol type="1">
 <li>Understand and reproduce existing analysis.</li>
 <li>Revise it to make it clear, transparent, and well documented.</li>
@@ -637,7 +649,6 @@ Warning
 </ol>
 
 
-</section>
 </section>
 </section>
 
