@@ -1,5 +1,5 @@
 ---
-title: "Example 0: Test your setup"
+title: "Ex.0 Test your setup"
 ---
 
 This example is in `ex00-positron-test`, which should be in `C:/WBG/ai/` on your computer if you followed the setup instructions correctly.

@@ -1,12 +1,44 @@
-As AI is probabilistic, you will often need to curate its context well in
-order to get good results. With experience I came accross with the following
-common workflow for data understanding and preparation tasks:
+AI coding assistants are probabilistic: the quality of their output
+depends heavily on the quality of the context you provide. Through
+experience across many data preparation and analysis projects, we have
+found that a structured, eight-step workflow consistently produces
+better results than ad-hoc prompting. Each step builds on the
+previous one, gradually narrowing the AI's degrees of freedom until
+it has enough context to generate correct, reproducible code.
 
-1. Set the objective and constraints
-2. Provide descriptions of inputs and requirements for outputs
-3. Verify AI understanding of your tasks, goals and requirements
-4. (Optional) Secure the data: Privacy‑First Development Using Metadata, Anonymization, and Simulation
-5. Iterative Data Understanding and Assumptions
-6. Develop and correct the code
-7. Independent verification using an AI "auditor" and manual inspection
-8. Documentation
+The workflow applies regardless of language (Stata, R, Python) or
+domain (survey harmonization, administrative data cleaning, indicator
+construction). Adapt the details to your project, but follow the
+sequence.
+
+1. **Set the objective and constraints** --- State the task, the
+   target specification, and the language so the AI has clear
+   guardrails from the start.
+2. **Define inputs and outputs** --- Specify the unit of observation,
+   file format, ID requirements, variable labeling conventions, and
+   parameterized file paths.
+3. **Create a data dictionary** --- Generate metadata from the raw
+   files so the AI can reason about variable structure without
+   seeing actual microdata.
+4. **Gather external metadata** --- Supplement file-level metadata
+   with codebooks, catalogs, or survey documentation that describe
+   units, recall periods, and skip patterns.
+5. **Verify understanding (checkpoint)** --- Ask the AI to produce a
+   mapping table (target variable, source variable, transformation,
+   open questions) and resolve every question before coding begins.
+6. **Develop code iteratively** --- Request a master script first,
+   then one module at a time; run, test assertions, and iterate on
+   failures.
+7. **Independent verification** --- In a *separate* AI session, have
+   a fresh agent audit the code and summary statistics against the
+   target specification.
+8. **Document the work** --- Produce a report covering the objective,
+   data sources, variable mapping, decisions, limitations, and a
+   reproducibility checklist.
+
+::: {.callout-note}
+Steps 3 and 4 involve handling raw data files. Before proceeding
+with those steps, review the
+[Safeguarding Data](/methods/safeguard-data.qmd) page to ensure
+that no sensitive microdata is inadvertently exposed to the AI.
+:::

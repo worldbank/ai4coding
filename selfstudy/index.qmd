@@ -50,21 +50,29 @@ without manual intervention, the workflow is working.
 
 ### Example 2: Understanding data with AI (live)
 
-This example demonstrates how to use AI to harmonize and standardize survey
-data from raw format into an analysis-ready dataset. Full details, suggested
-prompts, and instructions are in [Example 2](/selfstudy/example-2.qmd).
+This example demonstrates how to use AI to harmonize Mexico's ENIGH survey
+(2016 and 2018) into an analysis-ready dataset following the Global Monitoring
+Database (GMD) specification. Full details, suggested prompts, and instructions
+are in [Example 2](/selfstudy/example-2.qmd).
 
-The exercise follows the common AI workflow:
+The key principle is a **metadata-driven approach**: a data dictionary serves
+as the intermediary between raw data and the AI, avoiding direct exposure of
+sensitive data. The exercise follows a structured seven-step workflow:
 
-1. **Set the overall objective** — define success criteria before writing code
-2. **Understand the data** — use AI to inspect structure, variables, and quality
-3. **Plan the harmonization** — get AI to propose a variable mapping and cleaning steps
-4. **Implement step by step** — execute one transformation at a time, verifying at each checkpoint
+1. **Set the overall objective** — name the survey, years, target spec, and language up front
+2. **Define inputs and outputs** — specify unit of observation, file format, and modules
+3. **Create a data dictionary** — capture variable names, types, labels, and missings without sharing raw data
+4. **Gather external metadata** — fetch variable definitions, units, recall periods from official catalogs
+5. **Verify understanding** — produce a mapping table before writing any code
+6. **Develop code iteratively** — generate modular, DIME Wiki-compliant scripts one module at a time
+7. **Verify with an independent review** — audit the cleaning code in a separate AI session
 
-**What to test:** Give AI a raw survey dataset and ask it to propose a
-harmonization plan. Then implement the plan one step at a time. If AI can
-correctly inspect variables, propose mappings, and produce a clean long-format
-dataset with consistent names and labels, the workflow is working.
+**What to test:** Work through the prompts to build a data dictionary, confirm
+a variable mapping table, and produce modular Stata scripts for demographics,
+income, and consumption. If the AI can correctly map source variables to GMD
+targets, apply DIME Wiki coding standards, and pass an independent audit, the
+workflow is working. Prompts include a substitution table for adapting to R or
+Python.
 
 ### Example 3: Reproduce, Revise, and Reuse existing analysis (self-study)
 
@@ -83,19 +91,3 @@ instructions are in [Example 3](/selfstudy/example-3.qmd).
 new dataset, revise the regression specification, and extract a reusable
 cleaning routine. If AI can map variables between datasets, update the code, and
 produce comparable outputs, the workflow is working.
-
-## Self-Study Case Studies
-
-After completing the examples above, work through **at least one** of the case
-studies below. Each is designed to take 1–2 hours with AI assistance. Write up
-your reflections and submit before Day 2.
-
-1. **Reproducing Old Code with New Data** — adapt a legacy script to a new
-   dataset with different variable naming conventions.
-2. **Reproducing an Analysis from an Example** — use AI to replicate a
-   published analysis step by step.
-3. **Trying a Different Language** — translate a Stata do-file to R or Python
-   and verify outputs match.
-
-Full instructions for all case studies are in
-[Case Studies](case-studies.md).
