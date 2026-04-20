@@ -23,7 +23,7 @@ The steps below are adapted from the [Positron Assistant Getting Started](https:
 1.  Open Positron settings (`Ctrl+,`).
 2.  Search for `positron.assistant.enable` and check the box.
 
-[![Enable Positron Assistant setting](../../assets/img/positron-assistant-enable.png)](../../assets/img/positron-assistant-enable.png "Enable Positron Assistant setting")
+[![Enable Positron Assistant setting](..\assets/img/positron-assistant-enable.png)](..\assets/img/positron-assistant-enable.png "Enable Positron Assistant setting")
 
 Enable Positron Assistant setting
 
@@ -40,7 +40,7 @@ GitHub Copilot is enabled by default when you are signed in.
 1.  Run the command *Positron Assistant: Configure Language Model Providers* (`Ctrl+Shift+P`).
 2.  Select **GitHub Copilot** as the model provider.
 
-[![GitHub Copilot selected in provider modal](../../assets/img/assistant-provider-modal-github-copilot.png)](../../assets/img/assistant-provider-modal-github-copilot.png "GitHub Copilot selected in provider modal")
+[![GitHub Copilot selected in provider modal](..\assets/img/assistant-provider-modal-github-copilot.png)](..\assets/img/assistant-provider-modal-github-copilot.png "GitHub Copilot selected in provider modal")
 
 GitHub Copilot selected in provider modal
 
@@ -56,11 +56,11 @@ Once authenticated with at least one provider, open the Assistant chat:
 
 1.  Select the chat robot icon in the sidebar, or run `Chat: Open Chat` from the Command Palette.
 
-[![Assistant Sidebar Icon](../../assets/img/assistant-sidebar-icon.png)](../../assets/img/assistant-sidebar-icon.png "Assistant Sidebar Icon")
+[![Assistant Sidebar Icon](..\assets/img/assistant-sidebar-icon.png)](..\assets/img/assistant-sidebar-icon.png "Assistant Sidebar Icon")
 
 Assistant Sidebar Icon
 
-[![Assistant Panel](../../assets/img/assistant-panel.png)](../../assets/img/assistant-panel.png "Assistant Panel")
+[![Assistant Panel](..\assets/img/assistant-panel.png)](..\assets/img/assistant-panel.png "Assistant Panel")
 
 Assistant Panel
 

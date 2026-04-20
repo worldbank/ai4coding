@@ -97,7 +97,7 @@ After joining the WB org, go to [GitHub Settings \> Copilot](https://github.com/
 
 1.  Scroll to **“Get Copilot from an organization”** and click **Request access** from `worldbank`.
 
-    [![Request access button](../../assets/img/gh-copilot-access-2.png)](../../assets/img/gh-copilot-access-2.png "Request access button")
+    [![Request access button](..\assets/img/gh-copilot-access-2.png)](..\assets/img/gh-copilot-access-2.png "Request access button")
 
     Request access button
 
@@ -121,13 +121,13 @@ Go to [GitHub Settings \> Copilot](https://github.com/settings/copilot) and conf
 
 ## No Copilot access
 
-[![No Copilot access](../../assets/img/gh-copilot-access-3a.png)](../../assets/img/gh-copilot-access-3a.png "No Copilot access")
+[![No Copilot access](..\assets/img/gh-copilot-access-3a.png)](..\assets/img/gh-copilot-access-3a.png "No Copilot access")
 
 No Copilot access
 
 ## Private or WB Copilot access granted
 
-[![Copilot access confirmed](../../assets/img/gh-copilot-access-4a.png)](../../assets/img/gh-copilot-access-4a.png "Copilot access confirmed")
+[![Copilot access confirmed](..\assets/img/gh-copilot-access-4a.png)](..\assets/img/gh-copilot-access-4a.png "Copilot access confirmed")
 
 Copilot access confirmed
 
@@ -137,7 +137,7 @@ Note: If you have copilot access from the WB, you will see “**Managed by world
 
 Go to [GitHub Settings \> Copilot](https://github.com/settings/copilot)
 
-[![GH Copilot 100% use limit](../../assets/img/gh-max.png)](../../assets/img/gh-max.png "GH Copilot 100% use limit")
+[![GH Copilot 100% use limit](..\assets/img/gh-max.png)](..\assets/img/gh-max.png "GH Copilot 100% use limit")
 
 GH Copilot 100% use limit
 

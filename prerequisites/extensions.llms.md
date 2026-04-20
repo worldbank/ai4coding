@@ -39,7 +39,7 @@ Notable extensions for this course:
 
 ## Installing any extensions
 
-Open the **Extensions panel** with `Ctrl+Shift+X` or click the square icon ![Extensions panel](../../assets/img/extensions.png) on the left sidebar.
+Open the **Extensions panel** with `Ctrl+Shift+X` or click the square icon ![Extensions panel](..\assets/img/extensions.png) on the left sidebar.
 
 To install any extension:
 
@@ -48,7 +48,7 @@ To install any extension:
 3.  If prompted “Do you trust the publisher?”, click **Trust and Install**
 4.  If needed, **reload Positron**: `Ctrl+Shift+P` → `Developer: Reload Window`
 
-[![Extensions panel](../../assets/img/extensions-panel.png)](../../assets/img/extensions-panel.png "Extensions panel")
+[![Extensions panel](..\assets/img/extensions-panel.png)](..\assets/img/extensions-panel.png "Extensions panel")
 
 Extensions panel
 
@@ -123,11 +123,11 @@ To install it:
 
 ## Installation
 
-[![](../../assets/img/pos-stat-p1.gif)](../../assets/img/pos-stat-p1.gif)
+[![](..\assets/img/pos-stat-p1.gif)](..\assets/img/pos-stat-p1.gif)
 
 ## Verification
 
-[![](../../assets/img/pos-stat-p2.gif)](../../assets/img/pos-stat-p2.gif)
+[![](..\assets/img/pos-stat-p2.gif)](..\assets/img/pos-stat-p2.gif)
 
 ## Key features
 
@@ -139,7 +139,7 @@ To install it:
 - Figures: display, manage, and export
 - Have multiple Stata sessions
 
-[![](../../assets/img/pos-stata-ext1.gif)](../../assets/img/pos-stata-ext1.gif)
+[![](..\assets/img/pos-stata-ext1.gif)](..\assets/img/pos-stata-ext1.gif)
 
 ## Stata MCP Extension
 
@@ -183,4 +183,4 @@ To install it:
 - AI agent integration (GitHub Copilot, Claude) with full context of your Stata environment
 - Functions with other IDEs and tools that support MCP (e.g. VS Code, Cursor)
 
-[![](../../assets/img/pos-stata-ext2-demo.gif)](../../assets/img/pos-stata-ext2-demo.gif)
+[![](..\assets/img/pos-stata-ext2-demo.gif)](..\assets/img/pos-stata-ext2-demo.gif)

@@ -32,7 +32,7 @@ Distributional Impact of Policies. Fiscal Policy and Growth Department
 2.  Open **Software Center** and install the items in [Table 1](#tbl-software) in order.
 3.  If any program does not appear in the Software Center, submit a [Software Installation Request](https://worldbankgroup.service-now.com/wbg/en/software-installation-request?id=wbg_sc_catalog&sys_id=bd1e71b86f16d340db112d232e3ee4b7&table=sc_cat_item&searchTerm=Software%20installation) or contact <ITHelp@worldbankgroup.org>.
 
-[![](../../assets/img/software-center.png)](../../assets/img/software-center.png)
+[![](..\assets/img/software-center.png)](..\assets/img/software-center.png)
 
 ## Private Laptop
 
@@ -40,13 +40,13 @@ Download and install each tool from the links in [Table 1](#tbl-software).
 
 | Software | WB Laptop (Software Center) | Private Laptop |
 |:--:|:--:|----|
-| Stata (19+ MP) | [![](../../assets/img/sc-stata.png)](../../assets/img/sc-stata.png "Table 1: Software") |  |
-| Positron (latest) | [![](../../assets/img/sc-positron.png)](../../assets/img/sc-positron.png "Table 1: Software") | [positron.posit.co](https://positron.posit.co/download.html) |
-| Quarto (1.9+) | [![](../../assets/img/sc-quarto.png)](../../assets/img/sc-quarto.png "Table 1: Software") | [quarto.org](https://quarto.org/docs/get-started/) |
-| R (4.5.3+) | [![](../../assets/img/sc-r.png)](../../assets/img/sc-r.png "Table 1: Software") | [cran.r-project.org](https://cran.r-project.org/) |
-| Python (3.13+) | [![](../../assets/img/sc-python.png)](../../assets/img/sc-python.png "Table 1: Software") | [python.org](https://www.python.org/downloads/) |
+| Stata (19+ MP) | [![](..\assets/img/sc-stata.png)](..\assets/img/sc-stata.png "Table 1: Software") |  |
+| Positron (latest) | [![](..\assets/img/sc-positron.png)](..\assets/img/sc-positron.png "Table 1: Software") | [positron.posit.co](https://positron.posit.co/download.html) |
+| Quarto (1.9+) | [![](..\assets/img/sc-quarto.png)](..\assets/img/sc-quarto.png "Table 1: Software") | [quarto.org](https://quarto.org/docs/get-started/) |
+| R (4.5.3+) | [![](..\assets/img/sc-r.png)](..\assets/img/sc-r.png "Table 1: Software") | [cran.r-project.org](https://cran.r-project.org/) |
+| Python (3.13+) | [![](..\assets/img/sc-python.png)](..\assets/img/sc-python.png "Table 1: Software") | [python.org](https://www.python.org/downloads/) |
 | `uv` Python package manager | See below. | See below. |
-| Git (2.52+) | [![](../../assets/img/sc-git.png)](../../assets/img/sc-git.png "Table 1: Software") | [git-scm.com](https://git-scm.com/download/win) |
+| Git (2.52+) | [![](..\assets/img/sc-git.png)](..\assets/img/sc-git.png "Table 1: Software") | [git-scm.com](https://git-scm.com/download/win) |
 
 Table 1: Software
 
@@ -66,7 +66,7 @@ You should see a version number printed. If not, see [Common Problems](../prereq
 
 ### Video guide
 
-[![](../../assets/img/uv-working.gif)](../../assets/img/uv-working.gif)
+[![](..\assets/img/uv-working.gif)](..\assets/img/uv-working.gif)
 
 > **NOTE:**
 >
@@ -86,7 +86,7 @@ You should see a version number printed. If not, see [Common Problems](../prereq
 
 Open **Positron** — if it launches, it’s working. See [Positron Overview](https://positron.posit.co/layout.html#basic-overview) for a tour of the layout.
 
-[![Positron layout](../../assets/img/ui-positron.jpeg)](../../assets/img/ui-positron.jpeg "Positron layout")
+[![Positron layout](..\assets/img/ui-positron.jpeg)](..\assets/img/ui-positron.jpeg "Positron layout")
 
 Positron layout
 
@@ -94,7 +94,7 @@ Positron layout
 
 In Positron, open the **Console** (`Ctrl+Shift+P` → “Console: Focus on Console”). You should see an R prompt.
 
-[![](../../assets/img/R-working.gif)](../../assets/img/R-working.gif)
+[![](..\assets/img/R-working.gif)](..\assets/img/R-working.gif)
 
 ## Python
 
@@ -107,7 +107,7 @@ pip list
 
 You should see the Python version and a list of installed packages.
 
-[![](../../assets/img/python-working.gif)](../../assets/img/python-working.gif)
+[![](..\assets/img/python-working.gif)](..\assets/img/python-working.gif)
 
 ## `uv`
 
@@ -119,7 +119,7 @@ uv --version
 
 You should see a version number.
 
-[![](../../assets/img/uv-working.gif)](../../assets/img/uv-working.gif)
+[![](..\assets/img/uv-working.gif)](..\assets/img/uv-working.gif)
 
 ## Quarto
 
@@ -132,7 +132,7 @@ quarto check
 
 You should see a version number and a passing check.
 
-[![](../../assets/img/quarto-working.gif)](../../assets/img/quarto-working.gif)
+[![](..\assets/img/quarto-working.gif)](..\assets/img/quarto-working.gif)
 
 ## Licences
 
