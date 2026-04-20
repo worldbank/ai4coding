@@ -103,7 +103,7 @@ Note: consumption variables are at the household level; demographic
 and income variables are at the individual level. Consumption
 variables will be merged onto the individual-level dataset via
 household ID, so each individual inherits their household's
-consumption values.
+consumption values, which should be further harmonized to per capita terms.
 The code should be modular, well-commented, and reproducible.
 Do not write any code yet.
 ```
@@ -122,6 +122,10 @@ Do not write any code yet.
 Leaving the path as `OneDrive/.../` with an ellipsis. The AI will either
 guess or error. Replace `[your path to]` with the actual path on your
 machine, e.g., `C:/Users/jdoe/OneDrive - WBG/`.
+
+Whatch out for the AI trying to use command line tools or
+power-shell tools to the folder and list all files in it.
+Simply cancel this request.
 :::
 
 
@@ -170,6 +174,55 @@ output `.md` files. Do the variable names, types, and labels look
 correct? Are there any files that were missed?
 :::
 
+```{.markdown file-name="Prompt"}
+The proposal looks ok. Please proceed to write the code for `01-data-dictionary.do`
+following the specifications above.
+```
+
+The ai should produce a Stata do-file but it may or may not run it.
+Therefore, you should then see how to act further. I usually ask AI
+to run the code and check the output iteratively. If data is sensitive,
+you may want to run it yourself. To ask AI to run it, you can use a prompt like this:
+
+
+```{.markdown file-name="Prompt"}
+Add global variables to the script `01-data-dictionary.do` and iteratively run this code to resolve any errors. Then check if the dictionary is produced correctly.
+```
+
+::: {.callout-warning}
+## WATCH OUT FOR AI TRYING TO INVENT HOW TO RUN STATA
+
+The problem is that AI may not be aware of the Stata console and may try to
+invent a way to run the code itself. For example, AI could write a Python script
+that passes a do file into Stata and executes it. **We must prevent this** because
+it is not only unnecessary but also a potential security risk.
+
+To make AI run code in our controlled environment we must indicate to it what
+`tool` to use! (we will cover tools in Day 2). For now, simply answer with the
+following prompt if AI tries to invent the way of running Stata code itself.
+:::
+
+
+```{.markdown file-name="Prompt"}
+How do you plan on running the Stata code? Please do not attempt to run the code
+by writing a workaround using Python or other programming languages.
+Instead check if there is a console to #executeCode . If there is no console
+available, please tell me and I will start console or run the code myself.
+If there is not way of using the console, you may search for the MCP server
+for Stata.
+```
+
+`#executeCode` is a special instruction that tells the AI to run the code
+in the console, if it has access to one. If it does not have access, it
+should say so and you can run the code yourself.
+
+::: {.callout-tip }
+Sometimes it may take Stata long to execute code.
+The stata console may ran into the `ERROR: Execution timed out after 600s`.
+
+Go to Positron settings `Ctrl + ,` and find `positron.stata.runFileTimeout`
+increase the `Execution timeout` to a higher value, e.g., 1200s or 1800s.
+:::
 
 ### Step 4. Gather external metadata
 
@@ -199,6 +252,43 @@ variable list with definitions, the coding scheme for categorical
 variables, and any notes on recall periods or skip patterns.
 ```
 
+It is recommended to use AI at this stage to document the data even further,
+creating a synthesis of what this data is about and what are the key similarities
+and differences between the two waves. Perhaps, it makes sence to use existing
+context window to write such readme as it has all preloaded information about
+the data structure and metadata. However, if you want to use a fresh agent,
+that may also give additional insights free of some learning biases.
+Try both and see which one gives better results! Use the following prompt:
+
+
+```{.markdown file-name="Prompt"}
+Create a `README.md` file in the `dictionary` directory that serves
+as a navigable index and summary of all generated data dictionaries.
+The file should:
+
+- Survey-level overview — Write two paragraphs per survey wave (2016 and 2018)
+  describing the ENIGH survey: its purpose, scope, sample design, and key
+  thematic coverage. Include a full data citation and a link to the raw data
+  on the INEGI website for each wave.
+
+- File-level summaries — For each .dta file, write one sentence describing
+  the unit of observation and the main variables it contains (drawing from
+  the data dictionaries already generated).
+
+- Cross-wave comparison — Where the same file exists in both waves (e.g.,
+  poblacion, hogares), note any meaningful differences in variables,
+  coverage, or structure between 2016 and 2018.
+
+Navigation links — Every file summary should include a relative Markdown
+hyperlink to its corresponding dictionary file
+(e.g., [poblacion_2016.md](poblacion_2016.md)).
+
+The README should be written in English, be self-contained, and suitable
+as a reference document for a research team working with these data.
+It should also contain references to the original metadata and data and any key
+insights or caveats gleaned from the metadata review that are relevant for
+using this data in analysis.
+```
 
 ### Step 5. Verify understanding before coding
 
@@ -213,15 +303,31 @@ Misunderstandings caught here save hours of debugging later.
 ```{.markdown file-name="Prompt"}
 Before we write any cleaning code, summarize your understanding of:
 
-1. The structure of the raw data (which files, key variables, units
+1. What the resulting data structure should look like:
+   - group of variables.
+   - specific variable names and brief definition if not trivial from the name
+2. The structure of the raw data (which files, key variables, units
    of observation).
-2. The target GMD variables for each module (demographics, income,
-   consumption).
-3. Any variables that are ambiguous, missing, or require assumptions.
+   - what files contain the relevant variables
+   - what are the IDs for mapping between data files
+   - What are the variabels and their definitions in the raw data that are relevant for the mapping
+3. The mapping table/plan for each variable, including:
+   - source variable(s) in the raw data
+   - transformations needed (units conversion, recall period harmonization, categorical mapping, etc.)
+   - flag any variables that require special handling (e.g., top-coding, skip patterns)
+   - indicate if you are uncertain about any of the transformations or if you need more information to confirm the mapping
+   - summarize what variables cannot be mapped with the current information and what additional information is needed to complete the mapping.
+4. Any variables that are ambiguous, missing, or require assumptions.
 
 Present this as a mapping table with columns: GMD variable name,
 source file, source variable(s), transformation needed, and open
-questions. Do not write any code yet.
+questions. In the preansformation column provide vullet points details
+describing the transformation needed, such as units conversion,
+recall period harmonization, categorical mapping or conversion between per
+capita of per HH terms. Mention any required or recommended transformation
+if you plan on implementing it. List any uncertainties or assumptions that
+need to be resolved before coding.
+Do not write any code yet.
 ```
 
 ::: {.callout-tip }
