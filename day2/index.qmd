@@ -2,6 +2,14 @@
 title: "Overview"
 ---
 
+We will focus **Day 2** on advanced AI features that enrich context and mitigate hallucinations:
+
+- 🔧 **Tools** — connect LLMs to your file system, APIs, applications, databases, and the Internet.
+- 📝 **Prompt files** and **custom instructions** — pre-load specific context and steer or template LLM responses.
+- 🗺️ **Plan mode** — break down complex tasks into smaller steps, discuss implementation with the LLM, and execute an actionable plan.
+- 🧩 **Skills** — knowledge that AI plugs into context when it encounters a specific problem.
+- 🤖 **Agents** — AI-driven programs that autonomously execute tasks by orchestrating tools, skills, and APIs sequentially.
+
 **Session goals:**
 
 - Address questions from the self-study period.

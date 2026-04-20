@@ -111,7 +111,7 @@ There are many IDEs, both with user interfaces (UIs) and as command-line interfa
 ![](images/ai_coding_flow_v5.svg){.absolute bottom="0" right="0" height="650px"}
 
 
-## Context
+## Context {.small-slide}
 
 :::: {.columns}
 ::: {.column width="50%" .small}
@@ -133,7 +133,7 @@ There are many IDEs, both with user interfaces (UIs) and as command-line interfa
 ::::
 
 
-## Context saturation
+## Context saturation {.small-slide}
 
 - ⚠️ When the context window fills up, old context is **pushed out**, causing [information loss]{.fg} and reduced quality.
 
@@ -190,12 +190,12 @@ From [Neural Networks Series](https://www.3blue1brown.com/?topic=neural-networks
 
 ::: columns
 ::: {.column width="48%"}
-![LLM training illustration from 3Blue1Brown](images/3b1b-training.jpg){width="100%" .fragment .center}
+![LLM training illustration](images/3b1b-training.jpg){width="100%" .fragment .center}
 :::
 ::: {.column width="2%"}
 :::
 ::: {.column width="48%"}
-![Backpropagation illustration from 3Blue1Brown](images/3b1b-backpropogation.jpg){width="100%" .fragment .center}
+![Backpropagation illustration](images/3b1b-backpropogation.jpg){width="100%" .fragment .center}
 :::
 :::
 
@@ -208,7 +208,7 @@ From [Neural Networks Series](https://www.3blue1brown.com/?topic=neural-networks
 
 - LLMs respond with a distribution of likely next words and then **sample** one using a decoding strategy (e.g., **Temperature** or **Top-k** sampling).
 
-![Next-token prediction example from 3Blue1Brown](images/3b1b-predictions.jpg){ width="100%" .center}
+![Next-token prediction example](images/3b1b-predictions.jpg){ width="100%" .center}
 
 ::: {.footer}
 From [Neural Networks Series](https://www.3blue1brown.com/?topic=neural-networks) by [3Blue1Brown](https://www.3blue1brown.com/) and [NN-Full Video Course](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)
@@ -221,7 +221,7 @@ From [Neural Networks Series](https://www.3blue1brown.com/?topic=neural-networks
 - Claude Sonnet/Opus: 64k–2M token context window (GPT-3 had 8k).
 
 
-![Context-dependent LLM prediction from 3Blue1Brown](images/llm-prediction-2.png){width="100%" .center}
+![Context-dependent LLM prediction](images/llm-prediction-2.png){width="100%" .center}
 
 ::: {.footer}
 From [Neural Networks Series](https://www.3blue1brown.com/?topic=neural-networks) by [3Blue1Brown](https://www.3blue1brown.com/) and [NN-Full Video Course](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)
