@@ -14,10 +14,10 @@ format:
     scrollable: true
     transition: fade
     preview-links: auto
-    logo: /assets/images/WBG-Prosperity Horizontal-Black.svg
+    logo: /assets/img/WBG-Prosperity Horizontal-Black.svg
     footer: '[worldbank.github.io/ai4coding](https://worldbank.github.io/ai4coding) © 2026 World Bank.'
     resources:
-        - /assets/images/WBG-Prosperity Horizontal-Black.svg
+        - /assets/img/WBG-Prosperity Horizontal-Black.svg
 ---
 
 ## Core AI-related concepts worth knowing about {.small-slide .center}

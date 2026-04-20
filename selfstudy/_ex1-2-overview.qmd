@@ -51,3 +51,8 @@ We harmonize only these three modules:
 1. Demographics
 2. Income
 3. Consumption
+
+### Where to start?
+
+The full example, including suggested prompts and instructions, is in
+`C:/WBG/ai/ai4coding-practice/ex02-understand-data/` in the self-study section. You can follow along
