@@ -45,7 +45,7 @@ Introduction and housekeeping, then an overview of the day’s agenda and materi
 
 **Slides**
 
-View slides in a [new tab](ai4coding-slides-d1-1/index.llms.md).
+View slides in a [new tab](..\day1/ai4coding-slides-d1-1/index.llms.md).
 
 ------------------------------------------------------------------------
 
@@ -76,7 +76,7 @@ View slides in a [new tab](ai4coding-slides-d1-1/index.llms.md).
 
 **Slides**
 
-View slides in a [new tab](day1/ai4coding-slides-d1-2/index.llms.md).
+View slides in a [new tab](..\day1/ai4coding-slides-d1-2/index.llms.md).
 
 ### Example 0: Test your setup (live)
 
@@ -149,13 +149,13 @@ The objective is to clean and harmonize this data to the Global Monitoring Datab
 
 ## 4. Core AI-related concepts
 
-View slides in a [new tab](day1/ai4coding-slides-d1-3/index.llms.md).
+View slides in a [new tab](..\day1/ai4coding-slides-d1-3/index.llms.md).
 
 ------------------------------------------------------------------------
 
 ## 5. Common workflows and data safeguarding practices while using AI (slides)
 
-View slides in a [new tab](day1/ai4coding-slides-d1-4/index.llms.md).
+View slides in a [new tab](..\day1/ai4coding-slides-d1-4/index.llms.md).
 
 ------------------------------------------------------------------------
 
