@@ -930,21 +930,21 @@
     "href": "day1/ai4coding-slides-d1-3/index.html#llm-training",
     "title": "AI for Coding",
     "section": "LLM Training",
-    "text": "LLM Training\n\n\n🧠 LLMs are trained on massive text datasets (GPT-3: ~300B tokens / 570GB; modern models: &gt;15T tokens).\nThe model learns to predict the next token given previous tokens, updating its weights via backpropagation.\n\n\n\n\n\n\n\n\nLLM training illustration from 3Blue1Brown\n\n\n\n\n\n\n\n\n\n\nBackpropagation illustration from 3Blue1Brown\n\n\n\n\n\nFrom Neural Networks Series by 3Blue1Brown and NN-Full Video Course"
+    "text": "LLM Training\n\n\n🧠 LLMs are trained on massive text datasets (GPT-3: ~300B tokens / 570GB; modern models: &gt;15T tokens).\nThe model learns to predict the next token given previous tokens, updating its weights via backpropagation.\n\n\n\n\n\n\n\n\nLLM training illustration\n\n\n\n\n\n\n\n\n\n\nBackpropagation illustration\n\n\n\n\n\nFrom Neural Networks Series by 3Blue1Brown and NN-Full Video Course"
   },
   {
     "objectID": "day1/ai4coding-slides-d1-3/index.html#llms-are-probabilistic",
     "href": "day1/ai4coding-slides-d1-3/index.html#llms-are-probabilistic",
     "title": "AI for Coding",
     "section": "LLMs are probabilistic",
-    "text": "LLMs are probabilistic\n\nLLMs respond with a distribution of likely next words and then sample one using a decoding strategy (e.g., Temperature or Top-k sampling).\n\n\nNext-token prediction example from 3Blue1Brown\nFrom Neural Networks Series by 3Blue1Brown and NN-Full Video Course"
+    "text": "LLMs are probabilistic\n\nLLMs respond with a distribution of likely next words and then sample one using a decoding strategy (e.g., Temperature or Top-k sampling).\n\n\nNext-token prediction example\nFrom Neural Networks Series by 3Blue1Brown and NN-Full Video Course"
   },
   {
     "objectID": "day1/ai4coding-slides-d1-3/index.html#llms-are-context-dependent",
     "href": "day1/ai4coding-slides-d1-3/index.html#llms-are-context-dependent",
     "title": "AI for Coding",
     "section": "LLMs are context-dependent",
-    "text": "LLMs are context-dependent\n\nResponses depend on the context of the prompt.\nContext size and quality affect accuracy.\nClaude Sonnet/Opus: 64k–2M token context window (GPT-3 had 8k).\n\n\nContext-dependent LLM prediction from 3Blue1Brown\nFrom Neural Networks Series by 3Blue1Brown and NN-Full Video Course"
+    "text": "LLMs are context-dependent\n\nResponses depend on the context of the prompt.\nContext size and quality affect accuracy.\nClaude Sonnet/Opus: 64k–2M token context window (GPT-3 had 8k).\n\n\nContext-dependent LLM prediction\nFrom Neural Networks Series by 3Blue1Brown and NN-Full Video Course"
   },
   {
     "objectID": "day1/ai4coding-slides-d1-3/index.html#llm-inference",
@@ -979,7 +979,7 @@
     "href": "day2/index.html",
     "title": "Overview",
     "section": "",
-    "text": "Session goals:\nBy the end of this session you should be able to delegate a complex analytical task to an AI agent, supervise its execution, and course-correct when it goes off track using appropriate tools and prompting techniques.",
+    "text": "We will focus Day 2 on advanced AI features that enrich context and mitigate hallucinations:\nSession goals:\nBy the end of this session you should be able to delegate a complex analytical task to an AI agent, supervise its execution, and course-correct when it goes off track using appropriate tools and prompting techniques.",
     "crumbs": [
       "Overview"
     ]
