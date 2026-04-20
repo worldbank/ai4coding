@@ -22,16 +22,14 @@ website:
     left:
       - text: "Home"
         href: index.qmd
-      # - text: "Materials"
-      #   href: materials.qmd
-      - text: "Setup"
-        href: prerequisites/index.qmd
-      - text: "Day 1: Introduction"
+      - text: "Day 1"
         href: day1/index.qmd
       - text: "Self Study"
         href: selfstudy/index.qmd
-      - text: "Day 2: Customizing AI"
+      - text: "Day 2"
         href: day2/index.qmd
+      - text: "Prerequisites"
+        href: prerequisites/index.qmd
       - text: "Methods"
         href: methods/index.qmd
       - text: "About"

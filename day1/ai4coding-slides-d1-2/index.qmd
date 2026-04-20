@@ -61,7 +61,7 @@ If in doubt, [follow the detailed instructions in the prerequisites](/prerequisi
 - Thanks to our IT team, all required software is available for installation via
 **Software Center** on WB laptops:
 - **Stata 19+ MP**, **Positron** (latest), **R 4.5.3+**, **Python 3.13+**, **Quarto 1.9+**, and **Git 2.52+**
-- Everything except Stata is **free and open source** - [no license required.]{.highlight}
+- Everything except Stata is **free and open source** — [no license required.]{.highlight}
 
 If any problems arise: follow the [troubleshooting guide](/prerequisites/common-problems.qmd) or contact [ITHelp@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org).
 
@@ -114,7 +114,6 @@ Every chat/agent interaction is a **premium request** (with Claude, GPT-5, Gemin
 | Private Copilot Pro | 500 |
 | Private Copilot Pro+ | 1,500 |
 
-
 Check **usage** [GitHub Settings → Copilot](https://github.com/settings/copilot/features){target="_blank"}.
 
 ![](/assets/img/gh-max.png){width="80%"}
@@ -131,7 +130,7 @@ Set a **budget** (~$0.04/request):
 
 
 ::: {.small}
-[When your usage reaches 100% capable AI models stop working.]{.warning}
+[When your usage reaches 100%, capable AI models stop working.]{.warning}
 
 - Basic inline completions still work.
 :::
@@ -158,7 +157,7 @@ Set a **budget** (~$0.04/request):
 
 ## GitHub @ World Bank is more than Copilot {.small-slide}
 
-[**Why to use GitHub @ World Bank?**]{.fg}
+[**Why use GitHub @ World Bank?**]{.fg}
 
 - It is a modern standard of research and collaboration.
 
@@ -166,7 +165,7 @@ Set a **budget** (~$0.04/request):
 
   - Request access to [github.com/worldbank](https://github.com/worldbank) on [eServices](https://worldbankgroup.service-now.com/wbg/en/join-github-organization-account-request?id=wbg_sc_catalog&sys_id=910e1739db1a54903c5960ab13961912&table=sc_cat_item&searchTerm=github)
 
-- WB Open source [https://opensource.worldbank.org/](https://opensource.worldbank.org/) — builds open source communities and shares open data, software, and research to advance transparent, evidence-based progress toward the SDGs.
+- WB Open Source [https://opensource.worldbank.org/](https://opensource.worldbank.org/) — builds open source communities and shares open data, software, and research to advance transparent, evidence-based progress toward the SDGs.
   - [make your code public](https://worldbankgroup.service-now.com/wbg/en/github-open-source-public-repository-request?id=wbg_sc_catalog&sys_id=63bb210e1b272610185ceb17b04bcbfa) as part of WB Open Source.
 
 - [Viva Engage](https://engage.cloud.microsoft/main/groups/eyJfdHlwZSI6Ikdyb3VwIiwiaWQiOiIxNzA2ODQ1NDcwNzIifQ): stay connected with the community.
@@ -205,6 +204,26 @@ You can also sign in via the **Accounts** icon (bottom-left of Activity Bar).
 ::::
 :::::
 
+## ![](/assets/img/claude.svg){style="width:40px;height:40px;vertical-align:middle;"} What about Claude Code? {.small-slide}
+
+Claude Code is an AI coding assistant that calls Anthropic's Claude API directly — similar to Positron Assistant.
+
+::: {.callout-note}
+**Claude API is not yet approved at WB** — currently in review for release next FY.
+:::
+
+We access the same Anthropic models (Claude Sonnet/Opus 4.5) through **GitHub Copilot**.
+
+**The LLMs are identical.** Differences are only in:
+
+- The interface (Positron Assistant vs. Claude Code)
+- System instructions for content management
+
+::: {.callout-warning}
+Claude Code is not designed for data science and lacks the IDE integration of Positron + GitHub Copilot.
+:::
+
+
 ## Working folders setup and data (1/2)  {.small-slide}
 
 ::: {.callout-danger}
@@ -236,7 +255,7 @@ You can also sign in via the **Accounts** icon (bottom-left of Activity Bar).
 
 **Your local folder structure should look like:**
 
-```
+```{.default}
 C:\WBG\ai\
 ├── ai4coding-practice\    ← exercise templates (you write here)
 │   ├── ex01..\
@@ -247,7 +266,7 @@ C:\WBG\ai\
 
 ## Example 0: Verify your setup
 
-Quick [[Example 0]{.fg}](){target="_blank"} to verify your setup.
+Quick [[Example 0]{.fg}](/selfstudy/example-0.qmd){target="_blank"} to verify your setup.
 
 - Open `C:\WBG\ai\ai4coding-practice\ex00-positron-test` in Positron.
 - Follow instructions in the README.md file to test your setup.
@@ -277,8 +296,14 @@ AI assistance, and executing it in the console.
 This exercise is pre-recorded for self-study (18 min), full details, suggested prompts, and instructions are in the [Self-Study > Example 1](/selfstudy/example-1.qmd){target="_blank"}.
 
 
-## Example 2: Understanding and cleaning the data
+## Example 2: Understanding and cleaning the data {.small-slide}
 
-**Documentation:**
+**You will practice using AI to:**
 
-- Course materials: [worldbank.github.io/ai4coding](https://worldbank.github.io/ai4coding)
+1. Set a clear objective and constraints for an AI session
+2. Build a **data dictionary** (variable names, types, labels) as the AI intermediary
+3. Document harmonization requirements as a **mapping table**
+4. Generate modular cleaning code following [DIME Wiki](https://dimewiki.worldbank.org/) best practices
+5. Iterate, verify with an independent auditor session, and document results
+
+Full details and prompts: [Self-Study → Example 2](/selfstudy/example-2.qmd){target="_blank"}

@@ -1,7 +1,0 @@
----
-title: "Ex.1: Stata in Positron and copilot"
----
-
-{{< include /day1/_ex1-1-overview.qmd >}}
-
-{{< include /day1/_ex1-1-details.qmd >}}

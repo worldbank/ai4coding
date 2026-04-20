@@ -2,7 +2,7 @@
 title: "Day 1: Overview and Materials"
 ---
 
-## Goals for Day 1
+# Goals for Day 1
 
 - **Familiarize yourself** with the basics of AI-assisted coding and its workflow.
 - **Get an intuitive understanding** of the key concepts behind the technology,
@@ -14,7 +14,7 @@ title: "Day 1: Overview and Materials"
   examples of common use cases, such as data preparation and cleaning, and
   securing sensitive data.
 
-## Agenda
+# Agenda
 
 Day 1: Introduction and common workflows
 
@@ -22,13 +22,13 @@ Day 1: Introduction and common workflows
 |-------------|--------------------------------------------------------------|
 | 9:00-9:10   | 1. [Welcome and course overview (slides)](#welcome) |
 | 9:10-9:40   | 2. [Setup overview (slides)](#setup-overview). [Example 0 (live)](#example-0) and [Example 1 (self-study)](#example-1) |
-| 9:40-10:20  | 3. [Example 2: Understanding data with AI (live)](#understanding-data) |
+| 9:40-10:20  | 3. [Example 2: Understanding data with AI (live)](#example-2) |
 | 10:20-10:30 | ☕ Break (10 min) |
 | 10:30-10:50 | 4. [Core AI-related concepts](#ai-concepts) |
-| 10:50-11:00 | 5. [Common workflows and data safeguarding practices while using AI (slides)](#ai-workflow) |
-| 11:00-11:30 | 6. [Example 3: Reproduce, Revise, and Reuse existing analysis (self-study)](#self-study) |
+| 10:50-11:00 | 5. [Common workflows and data safeguarding (slides)](#ai-workflow) |
+| 11:00-11:30 | 6. [Example 3: Reproduce, Revise, and Reuse existing analysis (live/self-study)](#example-3) |
 
-## Before You Arrive
+# Before You Arrive
 
 (Try) [completing the prerequisites](/prerequisites/index.qmd).
 
@@ -37,10 +37,10 @@ contact [ITHelp@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org) before the
 
 -------------------------------------------------------------------------------
 
-## Day 1: Materials {#materials}
+# Day 1: Materials {#materials}
 
 
-### 1. Learn: Welcome, introductions, and overview {#welcome}
+## 1. Learn: Welcome, introductions, and overview {#welcome}
 
 Introduction and housekeeping, then an overview of the day's agenda and materials.
 
@@ -53,7 +53,7 @@ View slides in a [new tab](ai4coding-slides-d1-1/index.html){target="_blank"}.
 
 -------------------------------------------------------------------------------
 
-### 2. Setup overview {#setup-overview}
+## 2. Setup overview {#setup-overview}
 
 > **Important**Setup your working folders properly!
 
@@ -67,31 +67,29 @@ View slides in a [new tab](ai4coding-slides-d1-1/index.html){target="_blank"}.
 
 View slides in a [new tab](day1/ai4coding-slides-d1-2/){target="_blank"}.
 
-#### Example 0: Test your setup (live) {#example-0}
+### Example 0: Test your setup (live) {#example-0}
 
 This presentation ends with an example that demonstrates how to test
 if the setup is working correctly. Example 0 could be found in [Self-Study > Example 0](/selfstudy/example-0.qmd).
 
-#### Example 1: Stata in Positron with GitHub Copilot (self-study) {#example-1}
+### Example 1: Stata in Positron with GitHub Copilot (self-study) {#example-1}
 
 This introductory example is plan for self-study, full details, suggested
 prompts, and instructions are in the [Self-Study > Example 1](/selfstudy/example-1.qmd).
 
-{{< include /day1/_ex1-1-overview.qmd >}}
+{{< include /selfstudy/_ex1-1-overview.qmd >}}
 
 -------------------------------------------------------------------------------
 
-### 3. Example 2: Understanding data with AI (live) {#understanding-data}
+## 3. Example 2: Understanding data with AI (live) {#example-2}
 
 This example is planned for live demonstration during the session, but you can
 also follow along on your own as a self-study exercise. Full details, suggested
 prompts, and instructions are in the [Self-Study > Example 2](/selfstudy/example-2.qmd).
 
+### Overview
 
-<!-- TODO -->
-
-{{< include /day1/_ex1-2-overview.qmd >}}
-
+{{< include /selfstudy/_ex1-2-overview.qmd >}}
 
 -------------------------------------------------------------------------------
 
@@ -103,7 +101,6 @@ prompts, and instructions are in the [Self-Study > Example 2](/selfstudy/example
 ```
 
 View slides in a [new tab](day1/ai4coding-slides-d1-3/){target="_blank"}.
-
 
 -------------------------------------------------------------------------------
 
@@ -120,4 +117,4 @@ View slides in a [new tab](day1/ai4coding-slides-d1-4/){target="_blank"}.
 
 -------------------------------------------------------------------------------
 
-## 6. Example 3: Reproduce, Revise, and Reuse (self-study) {#self-study}
+## 6. Example 3: Reproduce, Revise, and Reuse (live/self-study) {#example-3}
