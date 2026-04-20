@@ -2,7 +2,7 @@
 title: "Ex.2 Understanding data with AI"
 ---
 
-{{< include /day1/_ex1-2-overview.qmd >}}
+{{< include /selfstudy/_ex1-2-overview.qmd >}}
 
 
-{{< include /day1/_ex1-2-details.qmd >}}
+{{< include /selfstudy/_ex1-2-details.qmd >}}
