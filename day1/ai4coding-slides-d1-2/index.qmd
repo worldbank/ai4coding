@@ -274,7 +274,7 @@ features and how they can be used to write and execute Stata code. We go
 through a typical workflow of creating a Stata do file, writing code with
 AI assistance, and executing it in the console.
 
-This exercise is pre-recorded for self-study (18 min), full details, suggested prompts, and instructions are in the [Self-Study > Example 1](/selfstudy/ex1-1-explore-positron.qmd){target="_blank"}.
+This exercise is pre-recorded for self-study (18 min), full details, suggested prompts, and instructions are in the [Self-Study > Example 1](/selfstudy/example-1.qmd){target="_blank"}.
 
 
 ## Example 2: Understanding and cleaning the data
