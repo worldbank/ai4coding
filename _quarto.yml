@@ -23,12 +23,14 @@ website:
     left:
       - text: "Home"
         href: index.qmd
-      - text: "Day 1"
-        href: day1/index.qmd
-      - text: "Self Study"
-        href: selfstudy/index.qmd
-      - text: "Day 2"
-        href: day2/index.qmd
+      - text: "Course materials (April 2026)"
+        menu:
+          - text: "Day 1"
+            href: day1/index.qmd
+          - text: "Self Study"
+            href: selfstudy/index.qmd
+          - text: "Day 2"
+            href: day2/index.qmd
       - text: "Prerequisites"
         href: prerequisites/index.qmd
       - text: "Methods"
@@ -36,6 +38,9 @@ website:
       - text: "About"
         href: about.qmd
     right:
+      - icon: github
+        href: https://github.com/worldbank/ai4coding
+        aria-label: GitHub
       - text: "Internal Resources"
         menu:
           - text: "Prosperity VP"
@@ -80,6 +85,7 @@ website:
         - selfstudy/example-1.qmd
         - selfstudy/example-2.qmd
         - selfstudy/example-3.qmd
+        - selfstudy/gmd-requirements.qmd
 
     - title: "Day 2"
       style: "docked"

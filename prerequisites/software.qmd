@@ -33,7 +33,7 @@ title: "Software Setup"
    [Software Installation Request](https://worldbankgroup.service-now.com/wbg/en/software-installation-request?id=wbg_sc_catalog&sys_id=bd1e71b86f16d340db112d232e3ee4b7&table=sc_cat_item&searchTerm=Software%20installation)
    or contact [ITHelp@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org).
 
-![](../../assets/img/software-center.png)
+![](/assets/img/software-center.png)
 
 ### Private Laptop
 
@@ -44,13 +44,13 @@ Download and install each tool from the links in @tbl-software.
 
 | Software | WB Laptop (Software Center) | Private Laptop |
 |:-----------------:|:--------------------------------:|-------------------|
-| Stata (19+ MP) | ![](../../assets/img/sc-stata.png){width="50"} |  |
-| Positron (latest) | ![](../../assets/img/sc-positron.png){width="50"} | [positron.posit.co](https://positron.posit.co/download.html) |
-| Quarto (1.9+) | ![](../../assets/img/sc-quarto.png){width="50"} | [quarto.org](https://quarto.org/docs/get-started/) |
-| R (4.5.3+) | ![](../../assets/img/sc-r.png){width="50"} | [cran.r-project.org](https://cran.r-project.org/) |
-| Python (3.13+) | ![](../../assets/img/sc-python.png){width="50"} | [python.org](https://www.python.org/downloads/) |
+| Stata (19+ MP) | ![](/assets/img/sc-stata.png){width="50"} |  |
+| Positron (latest) | ![](/assets/img/sc-positron.png){width="50"} | [positron.posit.co](https://positron.posit.co/download.html) |
+| Quarto (1.9+) | ![](/assets/img/sc-quarto.png){width="50"} | [quarto.org](https://quarto.org/docs/get-started/) |
+| R (4.5.3+) | ![](/assets/img/sc-r.png){width="50"} | [cran.r-project.org](https://cran.r-project.org/) |
+| Python (3.13+) | ![](/assets/img/sc-python.png){width="50"} | [python.org](https://www.python.org/downloads/) |
 | `uv` Python package manager | See below. |  See below. |
-| Git (2.52+) | ![](../../assets/img/sc-git.png){width="50"} | [git-scm.com](https://git-scm.com/download/win) |
+| Git (2.52+) | ![](/assets/img/sc-git.png){width="50"} | [git-scm.com](https://git-scm.com/download/win) |
 
 : Software {#tbl-software}
 
@@ -74,7 +74,7 @@ You should see a version number printed. If not, see [Common Problems](common-pr
 
 ### Video guide
 
-![](../../assets/img/uv-working.gif){width="650"}
+![](/assets/img/uv-working.gif){width="650"}
 
 :::
 
@@ -108,13 +108,13 @@ to remove it first.
 
 Open **Positron** — if it launches, it's working. See [Positron Overview](https://positron.posit.co/layout.html#basic-overview) for a tour of the layout.
 
-![Positron layout](../../assets/img/ui-positron.jpeg){width="650"}
+![Positron layout](/assets/img/ui-positron.jpeg){width="650"}
 
 ## R
 
 In Positron, open the **Console** (`Ctrl+Shift+P` → "Console: Focus on Console"). You should see an R prompt.
 
-![](../../assets/img/R-working.gif){width="650"}
+![](/assets/img/R-working.gif){width="650"}
 
 ## Python
 
@@ -127,7 +127,7 @@ pip list
 
 You should see the Python version and a list of installed packages.
 
-![](../../assets/img/python-working.gif){width="650"}
+![](/assets/img/python-working.gif){width="650"}
 
 ## `uv`
 
@@ -139,7 +139,7 @@ uv --version
 
 You should see a version number.
 
-![](../../assets/img/uv-working.gif){width="650"}
+![](/assets/img/uv-working.gif){width="650"}
 
 ## Quarto
 
@@ -152,7 +152,7 @@ quarto check
 
 You should see a version number and a passing check.
 
-![](../../assets/img/quarto-working.gif){width="650"}
+![](/assets/img/quarto-working.gif){width="650"}
 
 :::
 

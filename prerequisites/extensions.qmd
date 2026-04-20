@@ -40,7 +40,7 @@ Notable extensions for this course:
 ## Installing any extensions
 
 Open the **Extensions panel** with `Ctrl+Shift+X` or click the square icon
-![Extensions panel](../../assets/img/extensions.png) on the left sidebar.
+![Extensions panel](/assets/img/extensions.png) on the left sidebar.
 
 To install any extension:
 
@@ -49,7 +49,7 @@ To install any extension:
 3. If prompted "Do you trust the publisher?", click **Trust and Install**
 4. If needed, **reload Positron**: `Ctrl+Shift+P` → `Developer: Reload Window`
 
-![Extensions panel](../../assets/img/extensions-panel.png){width="600"}
+![Extensions panel](/assets/img/extensions-panel.png){width="600"}
 
 ### Positron–Stata integration
 
@@ -131,11 +131,11 @@ To install it:
 :::: panel-tabset
 ## Installation
 
-![](../../assets/img/pos-stat-p1.gif){width="600"}
+![](/assets/img/pos-stat-p1.gif){width="600"}
 
 ## Verification
 
-![](../../assets/img/pos-stat-p2.gif){width="600"}
+![](/assets/img/pos-stat-p2.gif){width="600"}
 
 ## Key features
 
@@ -147,7 +147,7 @@ To install it:
 - Figures: display, manage, and export
 - Have multiple Stata sessions
 
-![](../../assets/img/pos-stata-ext1.gif){width="600"}
+![](/assets/img/pos-stata-ext1.gif){width="600"}
 
 ::::
 
@@ -194,6 +194,6 @@ To install it:
 - AI agent integration (GitHub Copilot, Claude) with full context of your Stata environment
 - Functions with other IDEs and tools that support MCP (e.g. VS Code, Cursor)
 
-![](../../assets/img/pos-stata-ext2-demo.gif){width="600"}
+![](/assets/img/pos-stata-ext2-demo.gif){width="600"}
 
 ::::

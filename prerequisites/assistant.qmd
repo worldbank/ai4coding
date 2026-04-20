@@ -22,7 +22,7 @@ The steps below are adapted from the [Positron Assistant Getting Started](https:
 1. Open Positron settings (`Ctrl+,`).
 2. Search for `positron.assistant.enable` and check the box.
 
-![Enable Positron Assistant setting](../../assets/img/positron-assistant-enable.png){width=600}
+![Enable Positron Assistant setting](/assets/img/positron-assistant-enable.png){width=600}
 
 3. Restart Positron or run the *Developer: Reload Window* command in the Command Palette (`Ctrl+Shift+P`).
 
@@ -39,7 +39,7 @@ GitHub Copilot is enabled by default when you are signed in.
 1. Run the command *Positron Assistant: Configure Language Model Providers* (`Ctrl+Shift+P`).
 2. Select **GitHub Copilot** as the model provider.
 
-![GitHub Copilot selected in provider modal](../../assets/img/assistant-provider-modal-github-copilot.png){width=600}
+![GitHub Copilot selected in provider modal](/assets/img/assistant-provider-modal-github-copilot.png){width=600}
 
 3. Select **Sign in** and complete the GitHub OAuth flow in your browser.
 
@@ -58,11 +58,11 @@ Once authenticated with at least one provider, open the Assistant chat:
 ::: {.columns}
 
 ::: {.column width="20%"}
-![Assistant Sidebar Icon](../../assets/img/assistant-sidebar-icon.png){style="max-height: 300;"}
+![Assistant Sidebar Icon](/assets/img/assistant-sidebar-icon.png){style="max-height: 300;"}
 :::
 
 ::: {.column width="80%"}
-![Assistant Panel](../../assets/img/assistant-panel.png){style="max-height: 500px;"}
+![Assistant Panel](/assets/img/assistant-panel.png){style="max-height: 500px;"}
 :::
 
 :::
