@@ -7,6 +7,7 @@ project:
     - prerequisites/*.qmd
     - day1/*.qmd
     - day1/**/*.qmd
+    - day2/*.qmd
     - methods/*.qmd
     - selfstudy/*.qmd
 

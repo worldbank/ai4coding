@@ -47,9 +47,9 @@ Introduction and housekeeping, then an overview of the day's agenda and material
 **Slides**
 
 ```{=html}
-<iframe class="slide-deck"  src="ai4coding-slides-d1-1/index.html"></iframe>
+<iframe class="slide-deck"  src="/day1/ai4coding-slides-d1-1/index.html"></iframe>
 ```
-View slides in a [new tab](ai4coding-slides-d1-1/index.html){target="_blank"}.
+View slides in a [new tab](/day1/ai4coding-slides-d1-1/index.html){target="_blank"}.
 
 -------------------------------------------------------------------------------
 
@@ -62,10 +62,10 @@ View slides in a [new tab](ai4coding-slides-d1-1/index.html){target="_blank"}.
 **Slides**
 
 ```{=html}
-<iframe class="slide-deck" src="ai4coding-slides-d1-2/"></iframe>
+<iframe class="slide-deck" src="/day1/ai4coding-slides-d1-2/index.html"></iframe>
 ```
 
-View slides in a [new tab](day1/ai4coding-slides-d1-2/){target="_blank"}.
+View slides in a [new tab](/day1/ai4coding-slides-d1-2/index.html){target="_blank"}.
 
 ### Example 0: Test your setup (live) {#example-0}
 
@@ -96,11 +96,11 @@ prompts, and instructions are in the [Self-Study > Example 2](/selfstudy/example
 ## 4. Core AI-related concepts {#ai-concepts}
 
 ```{=html}
-<iframe class="slide-deck" src="day1/ai4coding-slides-d1-3/"></iframe>
+<iframe class="slide-deck" src="/day1/ai4coding-slides-d1-3/index.html"></iframe>
 
 ```
 
-View slides in a [new tab](day1/ai4coding-slides-d1-3/){target="_blank"}.
+View slides in a [new tab](/day1/ai4coding-slides-d1-3/index.html){target="_blank"}.
 
 -------------------------------------------------------------------------------
 
@@ -108,11 +108,11 @@ View slides in a [new tab](day1/ai4coding-slides-d1-3/){target="_blank"}.
 
 
 ```{=html}
-<iframe class="slide-deck" src="day1/ai4coding-slides-d1-4/"></iframe>
+<iframe class="slide-deck" src="/day1/ai4coding-slides-d1-4/index.html"></iframe>
 
 ```
 
-View slides in a [new tab](day1/ai4coding-slides-d1-4/){target="_blank"}.
+View slides in a [new tab](/day1/ai4coding-slides-d1-4/index.html){target="_blank"}.
 
 
 -------------------------------------------------------------------------------
