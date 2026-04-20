@@ -51,7 +51,7 @@ View slides in a [new tab](..\day1/ai4coding-slides-d1-1/index.llms.md).
 
 ## 2. Setup overview
 
-> **Important**Setup your working folders properly!
+> **Important**: Setup your working folders properly!
 
 > **WARNING:**
 >
