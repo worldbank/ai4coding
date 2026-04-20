@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Eduard Bukin">
 
 <title>Positron + Copilot setup and overview – AI for Coding</title>
 <style>
@@ -32,7 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../day1/ex1-1-harmonization.html" rel="next">
+<link href="../day1/ai4coding-slides-d1-1/" rel="next">
 <link href="../day1/index.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -45,9 +46,12 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-4b8b535605d27086117a1b1ae3a37b34.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-b508f628e689cf140e0b520297b55a88.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-2ef71245278a5536b26a660716fdd4af.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-b508f628e689cf140e0b520297b55a88.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-4171068133aede7dcdd4332bb120bd8a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-99caa98c746fb559f6a2efa6562da6f3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-4171068133aede7dcdd4332bb120bd8a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -80,7 +84,169 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../assets/custom.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed quarto-light">
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -102,16 +268,54 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../materials.html" aria-current="page"> 
-<span class="menu-text">Materials</span></a>
+    <a class="nav-link active" href="../day1/index.html" aria-current="page"> 
+<span class="menu-text">Day 1</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../selfstudy/index.html"> 
+<span class="menu-text">Self Study</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../day2/index.html"> 
+<span class="menu-text">Day 2</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../prerequisites/index.html"> 
+<span class="menu-text">Prerequisites</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../methods/index.html"> 
+<span class="menu-text">Methods</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-internal-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Internal Resources</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-internal-resources">    
+        <li>
+    <a class="dropdown-item" href="https://worldbankgroup.sharepoint.com/sites/WBgge/">
+ <span class="dropdown-text">Prosperity VP</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://worldbankgroup.sharepoint.com/sites/wbpoverty">
+ <span class="dropdown-text">Distributional Impact of Policies Dep.</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://worldbank.github.io/geoPovLearn/">
+ <span class="dropdown-text">geoPovLearn</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -120,7 +324,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../day1/index.html">Day 1</a></li><li class="breadcrumb-item"><a href="../day1/setup-overview.html">Positron + Copilot setup and overview</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../day1/setup-overview.html">Positron + Copilot setup and overview</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -134,94 +338,16 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Materials</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Pre-requisites</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../prerequisites/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Overview</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../prerequisites/software.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Software Setup</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../prerequisites/github.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">GitHub &amp; Copilot</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../prerequisites/extensions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Positron Extensions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../prerequisites/assistant.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Positron Assistant</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../prerequisites/common-problems.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Common Problems</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Day 1</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../day1/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Overview</span></a>
+ <span class="menu-text">Day 1: Overview and Materials</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../day1/setup-overview.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Positron + Copilot setup and overview</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../day1/ex1-1-harmonization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Example 1. Data Harmonization</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Self Study</span></span>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Day 2</span></span>
-  </li>
     </ul>
     </div>
 </nav>
@@ -232,25 +358,48 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#positron-ide-overview" id="toc-positron-ide-overview" class="nav-link active" data-scroll-target="#positron-ide-overview">Positron IDE Overview</a></li>
-  <li><a href="#assistant-github-copilot" id="toc-assistant-github-copilot" class="nav-link" data-scroll-target="#assistant-github-copilot">Assistant + GitHub Copilot</a></li>
-  <li><a href="#workflow-basics" id="toc-workflow-basics" class="nav-link" data-scroll-target="#workflow-basics">Workflow basics</a></li>
+  <li><a href="#positron-ide-overview" id="toc-positron-ide-overview" class="nav-link active" data-scroll-target="#positron-ide-overview">Positron IDE Overview</a>
+  <ul>
+  <li><a href="#layout-customization" id="toc-layout-customization" class="nav-link" data-scroll-target="#layout-customization">Layout customization</a></li>
+  <li><a href="#command-palette" id="toc-command-palette" class="nav-link" data-scroll-target="#command-palette">Command Palette</a></li>
+  <li><a href="#settings" id="toc-settings" class="nav-link" data-scroll-target="#settings">Settings</a></li>
+  <li><a href="#readwatch-more" id="toc-readwatch-more" class="nav-link" data-scroll-target="#readwatch-more">Read/watch more</a></li>
+  </ul></li>
+  <li><a href="#workflow-overview" id="toc-workflow-overview" class="nav-link" data-scroll-target="#workflow-overview">Workflow overview</a></li>
+  <li><a href="#assistant-github-copilot-setup-and-overview" id="toc-assistant-github-copilot-setup-and-overview" class="nav-link" data-scroll-target="#assistant-github-copilot-setup-and-overview">Assistant + GitHub Copilot: Setup and Overview</a>
+  <ul>
+  <li><a href="#readwatch-more-1" id="toc-readwatch-more-1" class="nav-link" data-scroll-target="#readwatch-more-1">Read/watch more</a></li>
+  </ul></li>
   </ul>
-</nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/worldbank/ai4coding/blob/main/day1/setup-overview.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/worldbank/ai4coding/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../day1/index.html">Day 1</a></li><li class="breadcrumb-item"><a href="../day1/setup-overview.html">Positron + Copilot setup and overview</a></li></ol></nav>
+
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Positron + Copilot setup and overview</h1>
 </div>
 
 
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author"><a href="https://github.com/ebukin">Eduard Bukin</a> <a href="mailto:ebukin@worldbank.org" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0002-1003-1260" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Distributional Impact of Policies. Fiscal Policy and Growth Department
+          </p>
+      </div>
+  </div>
 
 <div class="quarto-title-meta">
 
-    
+      
   
     
   </div>
@@ -266,90 +415,170 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>panels and layouts</li>
 <li>file explorer, editor, and extensions</li>
-<li>command palette: quick access to all commands and features</li>
+<li>command palette and settings</li>
 </ul></li>
-<li><p>Assistant: authentication, chat, agents, conversations, and LLMs</p></li>
-<li><p>Workflow-basics</p>
+<li><p>Workflow basics:</p>
 <ul>
-<li>Working folder: where your code lives and where the AI agent looks for context</li>
-<li>Console: where you run code and see output; multiple consoles for same/different languages and projects</li>
-<li>Terminal: for command-line work, e.g.&nbsp;file system navigation, running requests, scripts</li>
-<li>Session / data / plots / help</li>
-<li>Stata / R code examles</li>
+<li>working folder, console, terminal, session, data viewer, help pane, and more</li>
+</ul></li>
+<li><p>Assistant:</p>
+<ul>
+<li>authentication</li>
+<li>workflow: chat, agents, conversations, and LLMs</li>
 </ul></li>
 </ul>
 <section id="positron-ide-overview" class="level2">
 <h2 class="anchored" data-anchor-id="positron-ide-overview">Positron IDE Overview</h2>
+<blockquote class="blockquote">
+<p>Adapted from Positron UI <a href="https://positron.posit.co/layout.html" class="uri">https://positron.posit.co/layout.html</a></p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/user-interface-for-rstudio-migration.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Interface of the Positron IDE showing Activity Bar, Primary Side Bar, Editor, Panel, and Secondary Side Bar"><img src="images/user-interface-for-rstudio-migration.jpeg" class="img-fluid figure-img" alt="Positron IDE with labeled regions: Activity Bar on the far left, Primary Side Bar to its right, Editor in the center, Panel below the editor, and Secondary Side Bar on the right."></a></p>
+<figcaption>Interface of the Positron IDE showing Activity Bar, Primary Side Bar, Editor, Panel, and Secondary Side Bar</figcaption>
+</figure>
+</div>
+<ul>
+<li><p>The <strong>Activity Bar</strong> provides quick access to switch between core views such as Explorer, Search, <a href="https://positron.posit.co/git.html">Source Control</a>, and <a href="https://positron.posit.co/extensions.html">Extensions</a>.</p></li>
+<li><p>The <strong>Primary Side Bar</strong> is on the left by default and shows you different views depending on what you have chosen in the Activity Bar. When you choose the Explorer icon, this pane provides the File Explorer to navigate your project directory and the outline. When you choose the Assistant icon, this pane provides access to <a href="https://positron.posit.co/assistant.html">Positron Assistant</a>.</p></li>
+<li><p>The <strong>Editor</strong> is in the center by default, and is where you write your code. For editor controls, refer to <a href="https://code.visualstudio.com/docs/editing/codebasics">VS Code Editor Basics</a>.</p></li>
+<li><p>The <strong>Panel</strong> is below the editor by default and contains the fully interactive, integrated Console as well as the <a href="https://code.visualstudio.com/docs/terminal/basics">Terminal</a>. You can also access logs from <a href="https://positron.posit.co/troubleshooting.html">Output</a> channels in the Panel.</p></li>
+<li><p>The <strong>Secondary Side Bar</strong> is on the right by default. You can switch between the <strong>Session</strong> pane (where you can explore the <a href="https://positron.posit.co/variables-pane.html">variables</a> you have defined and the <a href="https://positron.posit.co/plots-pane.html">plots</a> you have created), the <a href="https://positron.posit.co/connections-pane.html"><strong>Connections</strong></a> pane, the <a href="https://positron.posit.co/help-pane.html"><strong>Help</strong></a> pane, the <strong>History</strong> pane, and the <strong>Viewer</strong> pane.</p></li>
+</ul>
+<p>The <strong>Title Bar</strong> at the very top of the window shows the active file and project, along with window controls. Below it, the <strong>Top Bar</strong> provides global project tools such as file search, the project switcher, and the <a href="https://positron.posit.co/managing-interpreters.html#active-interpreter-session">interpreter selector</a> with the ability to start, stop, and switch interpreters. The <strong>Status Bar</strong> at the bottom of the window displays details such as your git branch, language mode, <a href="https://positron.posit.co/quarto.html">Quarto version</a>, and cursor position.</p>
+<section id="layout-customization" class="level3">
+<h3 class="anchored" data-anchor-id="layout-customization">Layout customization</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/layout-customization.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Interface of the Positron IDE showing how panels can be rearranged by dragging and toggled in and out of view using commands"><img src="images/layout-customization.gif" class="img-fluid figure-img" alt="Positron IDE showing how panels can be rearranged by dragging and toggled in and out of view using commands."></a></p>
+<figcaption>Interface of the Positron IDE showing how panels can be rearranged by dragging and toggled in and out of view using commands</figcaption>
+</figure>
+</div>
+<p>Positron offers flexible layout options to suit a variety of development workflows. Almost every component can be rearranged by dragging.</p>
+</section>
+<section id="command-palette" class="level3">
+<h3 class="anchored" data-anchor-id="command-palette">Command Palette</h3>
+<p>Command Palette - <code>Ctrl+Shift+P</code> - <a href="https://positron.posit.co/command-palette.html" class="uri">https://positron.posit.co/command-palette.html</a> - is your gateway to all Positron features. It provides quick access to commands, settings, and more. For example, you can open files, run code, manage git, and interact with the assistant all from the Command Palette.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/command-palette.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Positron IDE showing how to access settings through the command palette"><img src="images/command-palette.gif" class="img-fluid figure-img" alt="Positron IDE showing how to access settings through the command palette."></a></p>
+<figcaption>Positron IDE showing how to access settings through the command palette</figcaption>
+</figure>
+</div>
+<p>Try:</p>
+<ul>
+<li><code>Ctrl+Shift+P</code> → type “Open file”</li>
+<li><code>Ctrl+Shift+P</code> → type “Assistant: Configure Language Model Providers”</li>
+<li><code>Ctrl+Shift+P</code> → type “Preferences: Open Settings (UI)” and search for “Stata” to find all related settings in one place.</li>
+</ul>
+</section>
+<section id="settings" class="level3">
+<h3 class="anchored" data-anchor-id="settings">Settings</h3>
+<p>Settings can be accessed through:</p>
+<ul>
+<li><code>Ctrl+Shift+P</code> (Command Palette) &gt; search for “Preferences: Open Settings (UI)”</li>
+<li>or through the menu <code>File &gt; Preferences &gt; Settings</code></li>
+<li>or <code>Ctrl+,</code>.</li>
+</ul>
+<p>Here you can customize your Positron experience, including enabling the Assistant and configuring GitHub Copilot.</p>
+<blockquote class="blockquote">
+<p>Settings marked with a vertical line are modified from their default values in your IDE. You can click “Gear &gt; Reset” button next to each setting to revert it to the default value.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><a href="images/settings-reset.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/settings-reset.gif" class="img-fluid" alt="Positron IDE showing how to reset settings to their default values."></a></p>
+</blockquote>
+</section>
+<section id="readwatch-more" class="level3">
+<h3 class="anchored" data-anchor-id="readwatch-more">Read/watch more</h3>
 <ul>
 <li><p>UI <a href="https://positron.posit.co/layout.html" class="uri">https://positron.posit.co/layout.html</a></p></li>
-<li><p>Command palette <a href="https://positron.posit.co/command-palette.html" class="uri">https://positron.posit.co/command-palette.html</a></p></li>
-<li><ul>
-<li><code>Ctrl+Shift+P</code> : and search for any command, e.g.&nbsp;“Open file”, “Run code”, “Git: commit”, “Assistant: ask a question”</li>
-<li>or <code>Search bar</code> in the top center of the IDE: type <code>&gt;</code> and the command name, e.g.&nbsp;<code>&gt;Open file</code></li>
-</ul></li>
 <li><p>Extensions <a href="https://positron.posit.co/extensions.html" class="uri">https://positron.posit.co/extensions.html</a></p></li>
-<li><p>AI tools <a href="https://positron.posit.co/assistant.html" class="uri">https://positron.posit.co/assistant.html</a></p></li>
 <li><p>Data analysis <a href="https://positron.posit.co/data-explorer.html" class="uri">https://positron.posit.co/data-explorer.html</a></p></li>
 </ul>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">AI-Powered Data Science in Positron</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">A quick tour</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Exploratory Data Analysis (R)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false" href="">Quarto Document (Python)</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">A quick tour</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Exploratory Data Analysis (R)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Quarto Document (Python)</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/TrN-FMcOsOA" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/4Ir_HX4riHw" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/ndq2Mm3Dju8" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </div>
-<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/QU0N--y-skA" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </div>
 </div>
 </div>
 </section>
-<section id="assistant-github-copilot" class="level2">
-<h2 class="anchored" data-anchor-id="assistant-github-copilot">Assistant + GitHub Copilot</h2>
-<ol type="1">
-<li><a href="https://positron.posit.co/assistant-getting-started.html#step-1-enable-positron-assistant">Enable Positron Assistant</a></li>
-<li><a href="https://positron.posit.co/assistant-getting-started.html#step-2-configure-language-model-providers">Configure GitHub Copilot</a></li>
-<li>Explore the assistant panel: in-line conversations, agents, and LLMs</li>
-</ol>
+</section>
+<section id="workflow-overview" class="level2">
+<h2 class="anchored" data-anchor-id="workflow-overview">Workflow overview</h2>
+<ul>
+<li>Open/create a working folder</li>
+<li>Create your script or notebook and start coding</li>
+<li>Execute code.</li>
+<li>Use console directly</li>
+<li>Explore plots</li>
+<li>Data viewer</li>
+<li>Help pane for documentation</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/Workflow.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Positron workflow overview"><img src="images/Workflow.gif" class="img-fluid figure-img" alt="Positron IDE showing a workflow of opening a folder, creating a script, writing code, executing it, and exploring the output in the console, plots pane, data viewer, and help pane."></a></p>
+<figcaption>Positron workflow overview</figcaption>
+</figure>
+</div>
+</section>
+<section id="assistant-github-copilot-setup-and-overview" class="level2">
+<h2 class="anchored" data-anchor-id="assistant-github-copilot-setup-and-overview">Assistant + GitHub Copilot: Setup and Overview</h2>
+<p>To use the assistant’s AI features, you need to <a href="https://positron.posit.co/assistant-getting-started.html#step-1-enable-positron-assistant">Enable Positron Assistant</a> and <a href="https://positron.posit.co/assistant-getting-started.html#step-2-configure-language-model-providers">Configure GitHub Copilot</a>.</p>
+<p>This can be done as follows:</p>
+<ul>
+<li><code>Ctrl+Shift+P</code> → “Preferences: Open Settings (UI)” → search <code>positron.assistant.enable</code> → ☑️</li>
+</ul>
+<p>Other settings to consider:</p>
+<ul>
+<li><code>positron.assistant.showTokenUsage.enable</code> - to show token usage details in the assistant chat</li>
+<li><code>positron.assistant.toolDetails.enable</code> - to show tool usage details in the assistant chat</li>
+</ul>
+<p>The Assistant lets you use AI for inline code suggestions and chat-based help. See videos below for a quick tour or follow along with the course examples.</p>
+<section id="readwatch-more-1" class="level3">
+<h3 class="anchored" data-anchor-id="readwatch-more-1">Read/watch more</h3>
+<ul>
+<li>AI tools <a href="https://positron.posit.co/assistant.html" class="uri">https://positron.posit.co/assistant.html</a></li>
+</ul>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">What can you do with assistant?</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">What can you do with assistant?</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">AI-Powered Data Science in Positron</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/X_eqwFFH4jI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/TrN-FMcOsOA" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </div>
 </div>
-</section>
-<section id="workflow-basics" class="level2">
-<h2 class="anchored" data-anchor-id="workflow-basics">Workflow basics</h2>
-<ol type="1">
-<li><p>Open a working folder (create if needed): where your code lives and where the AI agent looks for context</p></li>
-<li><p>Create your script or notebook and start coding</p></li>
-<li><p>Use console to execute code and see output.</p>
-<ul>
-<li>Code execution</li>
-<li>Plotting</li>
-<li>Data viewer</li>
-<li>Help pane for documentation and function signatures</li>
-<li>Session pane for environment info, variables</li>
-<li>View panel for websites</li>
-</ul></li>
-<li><p>Multiple consoles for same/different languages and projects/ output panel.</p></li>
-<li><p>Command palette for quick access</p></li>
-<li><p>Use the terminal for command-line work, e.g.&nbsp;file system navigation, running requests</p></li>
-</ol>
+</div>
 
 
 </section>
+</section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -750,17 +979,49 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../day1/index.html" class="pagination-link" aria-label="Overview">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Overview</span>
+      <a href="../day1/index.html" class="pagination-link" aria-label="Day 1: Overview and Materials">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Day 1: Overview and Materials</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../day1/ex1-1-harmonization.html" class="pagination-link" aria-label="Example 1. Data Harmonization">
-        <span class="nav-page-text">Example 1. Data Harmonization</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../day1/ai4coding-slides-d1-1/" class="pagination-link" aria-label="">
+        <span class="nav-page-text"></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/worldbank/ai4coding/blob/main/day1/setup-overview.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/worldbank/ai4coding/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

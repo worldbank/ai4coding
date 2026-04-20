@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Eduard Bukin">
 
-<title>Materials – AI for Coding</title>
+<title>AI for Coding</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -43,9 +44,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-4b8b535605d27086117a1b1ae3a37b34.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b508f628e689cf140e0b520297b55a88.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-2ef71245278a5536b26a660716fdd4af.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-b508f628e689cf140e0b520297b55a88.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-4171068133aede7dcdd4332bb120bd8a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-99caa98c746fb559f6a2efa6562da6f3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-4171068133aede7dcdd4332bb120bd8a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -78,7 +79,169 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="assets/custom.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -100,16 +263,54 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./materials.html"> 
-<span class="menu-text">Materials</span></a>
+    <a class="nav-link" href="./day1/index.html"> 
+<span class="menu-text">Day 1</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./selfstudy/index.html"> 
+<span class="menu-text">Self Study</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./day2/index.html"> 
+<span class="menu-text">Day 2</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./prerequisites/index.html"> 
+<span class="menu-text">Prerequisites</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./methods/index.html"> 
+<span class="menu-text">Methods</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-internal-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Internal Resources</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-internal-resources">    
+        <li>
+    <a class="dropdown-item" href="https://worldbankgroup.sharepoint.com/sites/WBgge/">
+ <span class="dropdown-text">Prosperity VP</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://worldbankgroup.sharepoint.com/sites/wbpoverty">
+ <span class="dropdown-text">Distributional Impact of Policies Dep.</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://worldbank.github.io/geoPovLearn/">
+ <span class="dropdown-text">geoPovLearn</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -124,27 +325,38 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#course-overview-and-learning-objectives" id="toc-course-overview-and-learning-objectives" class="nav-link active" data-scroll-target="#course-overview-and-learning-objectives">Course Overview and learning objectives</a></li>
-  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
-  <li><a href="#day-1-introduction-to-ai-assisted-coding" id="toc-day-1-introduction-to-ai-assisted-coding" class="nav-link" data-scroll-target="#day-1-introduction-to-ai-assisted-coding">Day 1 — Introduction to AI-Assisted Coding</a></li>
-  <li><a href="#self-study" id="toc-self-study" class="nav-link" data-scroll-target="#self-study">Self-Study</a></li>
-  <li><a href="#day-2-everyday-ai-assisted-coding" id="toc-day-2-everyday-ai-assisted-coding" class="nav-link" data-scroll-target="#day-2-everyday-ai-assisted-coding">Day 2 — Everyday AI-Assisted Coding</a></li>
+  <li><a href="#format-and-logistics" id="toc-format-and-logistics" class="nav-link" data-scroll-target="#format-and-logistics">Format and logistics</a></li>
   <li><a href="#schedule-plan" id="toc-schedule-plan" class="nav-link" data-scroll-target="#schedule-plan">Schedule &amp; Plan</a></li>
   </ul>
-</nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/worldbank/ai4coding/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/worldbank/ai4coding/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Materials</h1>
+<h1 class="title">AI for Coding</h1>
 </div>
 
 
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author"><a href="https://github.com/ebukin">Eduard Bukin</a> <a href="mailto:ebukin@worldbank.org" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0002-1003-1260" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Distributional Impact of Policies. Fiscal Policy and Growth Department
+          </p>
+      </div>
+  </div>
 
 <div class="quarto-title-meta">
 
-    
+      
   
     
   </div>
@@ -179,117 +391,44 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="prerequisites" class="level2">
-<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
-<p>Complete these setup steps <strong>before the first session</strong>:</p>
-<p><a href="./prerequisites/index.html">All prerequisites</a></p>
-</section>
-<section id="day-1-introduction-to-ai-assisted-coding" class="level2">
-<h2 class="anchored" data-anchor-id="day-1-introduction-to-ai-assisted-coding">Day 1 — Introduction to AI-Assisted Coding</h2>
-<p><strong>3-hour in-person / hybrid / online session</strong></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 53%">
-<col style="width: 46%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Time</th>
-<th>Topic</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>10 min</td>
-<td>Welcome, introductions, course and materials overview</td>
-</tr>
-<tr class="even">
-<td>30 min</td>
-<td>Software overview: Positron, GitHub Copilot, and Stata setup</td>
-</tr>
-<tr class="odd">
-<td>40 min</td>
-<td>AI in action with Stata (R): my typical data workflow using AI</td>
-</tr>
-<tr class="even">
-<td>10 min</td>
-<td>Break</td>
-</tr>
-<tr class="odd">
-<td>30 min</td>
-<td>AI overview: how GitHub Copilot and LLMs work, key concepts, and capabilities</td>
-</tr>
-<tr class="even">
-<td>30 min</td>
-<td>Cookbook: securing sensitive data, guardrails, and responsible AI use</td>
-</tr>
-<tr class="odd">
-<td>30 min</td>
-<td>Self-study exercises overview and Q&amp;A</td>
-</tr>
-</tbody>
-</table>
-<p><a href="./day1/index.html">Day 1 materials</a></p>
-</section>
-<section id="self-study" class="level2">
-<h2 class="anchored" data-anchor-id="self-study">Self-Study</h2>
-<p><strong>2–3 days of independent practice between sessions</strong></p>
-<p>Independent practice is meant to help you build confidence and discover how to use AI tools in your own workflow. You can pick any case study that interests you. You are encouraged to try the AI and report your observations, thoughts and questions using Team’s chat.</p>
+<section id="format-and-logistics" class="level2">
+<h2 class="anchored" data-anchor-id="format-and-logistics">Format and logistics</h2>
+<p>This course is designed to be self-explanatory and self-paced, with a mix of live sessions, pre-recorded materials, written guides, and exercises. The main learning happens through doing, so active participation in exercises and practice is highly encouraged.</p>
+<p>The course consis of:</p>
 <ul>
-<li>If possible, your challenges will be answered immediately by the team or other participants.</li>
+<li><p><a href="./prerequisites/index.html"><strong>Prerequiisites</strong></a>: detailed instructions on software and github setup.</p></li>
+<li><p><a href="./day1/index.html"><strong>Day 1</strong></a>: introduction to AI-assisted coding, setup, and live demo, which covers:</p>
+<ul>
+<li>Basic workflow of AI-assisted coding for data cleaning, preparation, and exploratory analysis</li>
+<li>Key methods of securing sensitive data when using AI tools: working with metadata, ananonymizing data, and synthetic data generation</li>
+<li>Key AI concepts: tokens, prompts, context windows, agents, and how they affect AI-assisted coding</li>
+<li>Strengths and limitations of AI code assistants for analytical work</li>
+</ul></li>
+<li><p><a href="./selfstudy/index.html"><strong>Self-study</strong></a>: 2–3 days of independent practice based on the provided exercises and team’s channel for support.</p></li>
+<li><ul>
+<li>Main goals are to build confidence and discover how to use AI tools in your own workflow.</li>
+<li>Please share your challenges, discoveries, and questions in the Team’s chat to get support from the team and other participants.</li>
+<li>We will review common challenges and questions in the beginning of Day 2.</li>
+</ul></li>
+<li><p><a href="./day2/index.html"><strong>Day 2</strong></a>: advanced features and workflows</p>
+<ul>
+<li>Planning and executing complex tasks with multi-step agentic workflows</li>
+<li>Context engineering: <code>#tools</code>, <code>skills</code>, <code>MCP</code>, and other relevant features</li>
+<li>Agents customization: <code>/prompts</code> and <code>/agents</code></li>
+<li><code>skills</code>: integrating precise knowladge to yout analysis</li>
+<li>Q&amp;A and discussion</li>
+</ul></li>
 </ul>
-<p><a href="self-study/index.qmd">Self-study materials</a></p>
-</section>
-<section id="day-2-everyday-ai-assisted-coding" class="level2">
-<h2 class="anchored" data-anchor-id="day-2-everyday-ai-assisted-coding">Day 2 — Everyday AI-Assisted Coding</h2>
-<p><strong>3-hour in-person / hybrid session</strong></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 53%">
-<col style="width: 46%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Time</th>
-<th>Topic</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>20 min</td>
-<td>Q&amp;A from self-study: challenges and discoveries</td>
-</tr>
-<tr class="even">
-<td>30 min</td>
-<td>Exercise: planning and executing complex tasks with parallel agentic workflows</td>
-</tr>
-<tr class="odd">
-<td>30 min</td>
-<td>Context engineering: <code>#tools</code>, <code>skills</code>, <code>MCP</code>, and other relevant features</td>
-</tr>
-<tr class="even">
-<td>10 min</td>
-<td>Break</td>
-</tr>
-<tr class="odd">
-<td>45 min</td>
-<td>Exercise: using the right <code>#tools</code>, integrating AI <code>skills</code>, developing <code>/prompts</code> and <code>/agents</code></td>
-</tr>
-<tr class="even">
-<td>30 min</td>
-<td>Q&amp;A and discussion</td>
-</tr>
-<tr class="odd">
-<td>5 min</td>
-<td>Feedback survey</td>
-</tr>
-<tr class="even">
-<td>10 min</td>
-<td>Closing remarks and next steps</td>
-</tr>
-</tbody>
-</table>
-<p><a href="day2/index.qmd">Day 2 materials</a></p>
+<p><strong>Materials</strong>: slide decks, written gudes, examples, exercises, and <strong>recordings</strong> for self-paced review.</p>
+<!-- ## How to start?
+
+1. Install all software and [complete all prerequisites](prerequisites/index.qmd).
+
+   - [Verify that everything works](prerequisites/verify.qmd)
+
+2. Familiarize yourself with the materials and schedule for Day 1 (see [Day 1 materials](day1/index.qmd)).
+
+3.  -->
 </section>
 <section id="schedule-plan" class="level2">
 <h2 class="anchored" data-anchor-id="schedule-plan">Schedule &amp; Plan</h2>
@@ -344,9 +483,22 @@ ul.task-list li input[type="checkbox"] {
 
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -750,4 +902,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-</body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/worldbank/ai4coding/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/worldbank/ai4coding/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

@@ -1,67 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://worldbank.github.io/ai4coding/day1/ai4coding-slides-d1-3/index.html</loc>
-    <lastmod>2026-04-16T16:18:36.469Z</lastmod>
+    <loc>https://worldbank.github.io/ai4coding/selfstudy/index.html</loc>
+    <lastmod>2026-04-20T01:09:02.478Z</lastmod>
   </url>
   <url>
-    <loc>https://worldbank.github.io/ai4coding/day1/ai4coding-slides-d1-1/index.html</loc>
-    <lastmod>2026-04-16T16:18:28.998Z</lastmod>
+    <loc>https://worldbank.github.io/ai4coding/selfstudy/example-3.html</loc>
+    <lastmod>2026-04-20T02:45:23.437Z</lastmod>
   </url>
   <url>
-    <loc>https://worldbank.github.io/ai4coding/day1/index.html</loc>
-    <lastmod>2026-04-16T19:41:41.093Z</lastmod>
+    <loc>https://worldbank.github.io/ai4coding/selfstudy/example-1.html</loc>
+    <lastmod>2026-04-20T01:33:11.943Z</lastmod>
   </url>
   <url>
-    <loc>https://worldbank.github.io/ai4coding/day1/ai-overview.html</loc>
-    <lastmod>2026-04-15T10:37:51.510Z</lastmod>
+    <loc>https://worldbank.github.io/ai4coding/methods/safeguard-data.html</loc>
+    <lastmod>2026-04-19T09:45:59.369Z</lastmod>
+  </url>
+  <url>
+    <loc>https://worldbank.github.io/ai4coding/methods/common-workflow.html</loc>
+    <lastmod>2026-04-20T01:04:57.597Z</lastmod>
+  </url>
+  <url>
+    <loc>https://worldbank.github.io/ai4coding/day1/ai4coding-slides-d1-4/index.html</loc>
+    <lastmod>2026-04-20T02:37:45.833Z</lastmod>
+  </url>
+  <url>
+    <loc>https://worldbank.github.io/ai4coding/day1/ai4coding-slides-d1-2/index.html</loc>
+    <lastmod>2026-04-20T02:24:58.570Z</lastmod>
+  </url>
+  <url>
+    <loc>https://worldbank.github.io/ai4coding/day1/setup-overview.html</loc>
+    <lastmod>2026-04-18T09:39:49.944Z</lastmod>
+  </url>
+  <url>
+    <loc>https://worldbank.github.io/ai4coding/prerequisites/verify.html</loc>
+    <lastmod>2026-04-18T09:59:31.488Z</lastmod>
   </url>
   <url>
     <loc>https://worldbank.github.io/ai4coding/prerequisites/index.html</loc>
-    <lastmod>2026-04-15T18:22:37.083Z</lastmod>
+    <lastmod>2026-04-18T09:47:42.111Z</lastmod>
   </url>
   <url>
     <loc>https://worldbank.github.io/ai4coding/prerequisites/extensions.html</loc>
-    <lastmod>2026-04-16T15:11:31.948Z</lastmod>
+    <lastmod>2026-04-18T09:59:31.482Z</lastmod>
   </url>
   <url>
     <loc>https://worldbank.github.io/ai4coding/prerequisites/assistant.html</loc>
     <lastmod>2026-04-16T15:11:28.170Z</lastmod>
   </url>
   <url>
-    <loc>https://worldbank.github.io/ai4coding/index.html</loc>
-    <lastmod>2026-04-16T15:28:14.842Z</lastmod>
-  </url>
-  <url>
     <loc>https://worldbank.github.io/ai4coding/about.html</loc>
     <lastmod>2026-04-15T18:50:02.485Z</lastmod>
   </url>
   <url>
-    <loc>https://worldbank.github.io/ai4coding/materials.html</loc>
-    <lastmod>2026-04-16T15:25:11.859Z</lastmod>
+    <loc>https://worldbank.github.io/ai4coding/index.html</loc>
+    <lastmod>2026-04-18T02:29:58.569Z</lastmod>
   </url>
   <url>
     <loc>https://worldbank.github.io/ai4coding/prerequisites/common-problems.html</loc>
-    <lastmod>2026-04-15T16:56:32.327Z</lastmod>
+    <lastmod>2026-04-18T09:59:31.482Z</lastmod>
   </url>
   <url>
     <loc>https://worldbank.github.io/ai4coding/prerequisites/github.html</loc>
-    <lastmod>2026-04-16T15:01:43.516Z</lastmod>
+    <lastmod>2026-04-18T09:59:31.482Z</lastmod>
   </url>
   <url>
     <loc>https://worldbank.github.io/ai4coding/prerequisites/software.html</loc>
     <lastmod>2026-04-16T15:29:38.617Z</lastmod>
   </url>
   <url>
-    <loc>https://worldbank.github.io/ai4coding/day1/ex1-1-harmonization.html</loc>
-    <lastmod>2026-04-16T19:34:36.228Z</lastmod>
+    <loc>https://worldbank.github.io/ai4coding/day1/index.html</loc>
+    <lastmod>2026-04-20T02:50:54.796Z</lastmod>
   </url>
   <url>
-    <loc>https://worldbank.github.io/ai4coding/day1/setup-overview.html</loc>
-    <lastmod>2026-04-16T19:34:50.352Z</lastmod>
+    <loc>https://worldbank.github.io/ai4coding/day1/ai4coding-slides-d1-1/index.html</loc>
+    <lastmod>2026-04-20T01:57:04.837Z</lastmod>
   </url>
   <url>
-    <loc>https://worldbank.github.io/ai4coding/day1/ai4coding-slides-d1-2/index.html</loc>
-    <lastmod>2026-04-16T16:18:30.990Z</lastmod>
+    <loc>https://worldbank.github.io/ai4coding/day1/ai4coding-slides-d1-3/index.html</loc>
+    <lastmod>2026-04-20T02:33:58.094Z</lastmod>
+  </url>
+  <url>
+    <loc>https://worldbank.github.io/ai4coding/day2/index.html</loc>
+    <lastmod>2026-04-20T02:35:27.252Z</lastmod>
+  </url>
+  <url>
+    <loc>https://worldbank.github.io/ai4coding/methods/index.html</loc>
+    <lastmod>2026-04-20T01:29:27.493Z</lastmod>
+  </url>
+  <url>
+    <loc>https://worldbank.github.io/ai4coding/selfstudy/example-0.html</loc>
+    <lastmod>2026-04-20T00:49:06.326Z</lastmod>
+  </url>
+  <url>
+    <loc>https://worldbank.github.io/ai4coding/selfstudy/example-2.html</loc>
+    <lastmod>2026-04-20T01:31:52.541Z</lastmod>
+  </url>
+  <url>
+    <loc>https://worldbank.github.io/ai4coding/selfstudy/gmd-requirements.html</loc>
+    <lastmod>2026-04-19T23:37:22.012Z</lastmod>
   </url>
 </urlset>

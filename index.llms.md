@@ -1,4 +1,12 @@
-# Materials
+# AI for Coding
+
+Author
+
+Affiliation
+
+[Eduard Bukin](https://github.com/ebukin) [](mailto:ebukin@worldbank.org) [![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==)](https://orcid.org/0000-0002-1003-1260)
+
+Distributional Impact of Policies. Fiscal Policy and Growth Department
 
 ## Course Overview and learning objectives
 
@@ -24,54 +32,36 @@ By the end of this course, participants will be able to:
   - Apply data-security practices when using AI tools with sensitive or confidential data
   - Follow responsible-use guidelines for AI-assisted research workflows
 
-## Prerequisites
+## Format and logistics
 
-Complete these setup steps **before the first session**:
+This course is designed to be self-explanatory and self-paced, with a mix of live sessions, pre-recorded materials, written guides, and exercises. The main learning happens through doing, so active participation in exercises and practice is highly encouraged.
 
-[All prerequisites](prerequisites/index.llms.md)
+The course consis of:
 
-## Day 1 — Introduction to AI-Assisted Coding
+- [**Prerequiisites**](prerequisites/index.llms.md): detailed instructions on software and github setup.
 
-**3-hour in-person / hybrid / online session**
+- [**Day 1**](day1/index.llms.md): introduction to AI-assisted coding, setup, and live demo, which covers:
 
-| Time | Topic |
-|----|----|
-| 10 min | Welcome, introductions, course and materials overview |
-| 30 min | Software overview: Positron, GitHub Copilot, and Stata setup |
-| 40 min | AI in action with Stata (R): my typical data workflow using AI |
-| 10 min | Break |
-| 30 min | AI overview: how GitHub Copilot and LLMs work, key concepts, and capabilities |
-| 30 min | Cookbook: securing sensitive data, guardrails, and responsible AI use |
-| 30 min | Self-study exercises overview and Q&A |
+  - Basic workflow of AI-assisted coding for data cleaning, preparation, and exploratory analysis
+  - Key methods of securing sensitive data when using AI tools: working with metadata, ananonymizing data, and synthetic data generation
+  - Key AI concepts: tokens, prompts, context windows, agents, and how they affect AI-assisted coding
+  - Strengths and limitations of AI code assistants for analytical work
 
-[Day 1 materials](day1/index.llms.md)
+- [**Self-study**](selfstudy/index.llms.md): 2–3 days of independent practice based on the provided exercises and team’s channel for support.
 
-## Self-Study
+- - Main goals are to build confidence and discover how to use AI tools in your own workflow.
+  - Please share your challenges, discoveries, and questions in the Team’s chat to get support from the team and other participants.
+  - We will review common challenges and questions in the beginning of Day 2.
 
-**2–3 days of independent practice between sessions**
+- [**Day 2**](day2/index.llms.md): advanced features and workflows
 
-Independent practice is meant to help you build confidence and discover how to use AI tools in your own workflow. You can pick any case study that interests you. You are encouraged to try the AI and report your observations, thoughts and questions using Team’s chat.
+  - Planning and executing complex tasks with multi-step agentic workflows
+  - Context engineering: `#tools`, `skills`, `MCP`, and other relevant features
+  - Agents customization: `/prompts` and `/agents`
+  - `skills`: integrating precise knowladge to yout analysis
+  - Q&A and discussion
 
-- If possible, your challenges will be answered immediately by the team or other participants.
-
-[Self-study materials](self-study/index.qmd)
-
-## Day 2 — Everyday AI-Assisted Coding
-
-**3-hour in-person / hybrid session**
-
-| Time | Topic |
-|----|----|
-| 20 min | Q&A from self-study: challenges and discoveries |
-| 30 min | Exercise: planning and executing complex tasks with parallel agentic workflows |
-| 30 min | Context engineering: `#tools`, `skills`, `MCP`, and other relevant features |
-| 10 min | Break |
-| 45 min | Exercise: using the right `#tools`, integrating AI `skills`, developing `/prompts` and `/agents` |
-| 30 min | Q&A and discussion |
-| 5 min | Feedback survey |
-| 10 min | Closing remarks and next steps |
-
-[Day 2 materials](day2/index.qmd)
+**Materials**: slide decks, written gudes, examples, exercises, and **recordings** for self-paced review.
 
 ## Schedule & Plan
 
@@ -88,5 +78,3 @@ Independent practice is meant to help you build confidence and discover how to u
 |---------|------------|------------------|------------------------------|
 | 1       | Mon Apr 20 | 9:00 PM–12:00 AM | Tue Apr 21, 9:00 AM–12:00 PM |
 | 2       | Thu Apr 23 | 9:00 PM–12:00 AM | Fri Apr 24, 9:00 AM–12:00 PM |
-
-Back to top

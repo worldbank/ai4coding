@@ -1,43 +1,93 @@
 # Positron + Copilot setup and overview
 
+Author
+
+Affiliation
+
+[Eduard Bukin](https://github.com/ebukin) [](mailto:ebukin@worldbank.org) [![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==)](https://orcid.org/0000-0002-1003-1260)
+
+Distributional Impact of Policies. Fiscal Policy and Growth Department
+
 Key concepts are:
 
 - Positron IDE:
 
   - panels and layouts
   - file explorer, editor, and extensions
-  - command palette: quick access to all commands and features
+  - command palette and settings
 
-- Assistant: authentication, chat, agents, conversations, and LLMs
+- Workflow basics:
 
-- Workflow-basics
+  - working folder, console, terminal, session, data viewer, help pane, and more
 
-  - Working folder: where your code lives and where the AI agent looks for context
-  - Console: where you run code and see output; multiple consoles for same/different languages and projects
-  - Terminal: for command-line work, e.g. file system navigation, running requests, scripts
-  - Session / data / plots / help
-  - Stata / R code examles
+- Assistant:
+
+  - authentication
+  - workflow: chat, agents, conversations, and LLMs
 
 ## Positron IDE Overview
 
+> Adapted from Positron UI <https://positron.posit.co/layout.html>
+
+[![Positron IDE with labeled regions: Activity Bar on the far left, Primary Side Bar to its right, Editor in the center, Panel below the editor, and Secondary Side Bar on the right.](images/user-interface-for-rstudio-migration.jpeg)](images/user-interface-for-rstudio-migration.jpeg "Interface of the Positron IDE showing Activity Bar, Primary Side Bar, Editor, Panel, and Secondary Side Bar")
+
+Interface of the Positron IDE showing Activity Bar, Primary Side Bar, Editor, Panel, and Secondary Side Bar
+
+- The **Activity Bar** provides quick access to switch between core views such as Explorer, Search, [Source Control](https://positron.posit.co/git.html), and [Extensions](https://positron.posit.co/extensions.html).
+
+- The **Primary Side Bar** is on the left by default and shows you different views depending on what you have chosen in the Activity Bar. When you choose the Explorer icon, this pane provides the File Explorer to navigate your project directory and the outline. When you choose the Assistant icon, this pane provides access to [Positron Assistant](https://positron.posit.co/assistant.html).
+
+- The **Editor** is in the center by default, and is where you write your code. For editor controls, refer to [VS Code Editor Basics](https://code.visualstudio.com/docs/editing/codebasics).
+
+- The **Panel** is below the editor by default and contains the fully interactive, integrated Console as well as the [Terminal](https://code.visualstudio.com/docs/terminal/basics). You can also access logs from [Output](https://positron.posit.co/troubleshooting.html) channels in the Panel.
+
+- The **Secondary Side Bar** is on the right by default. You can switch between the **Session** pane (where you can explore the [variables](https://positron.posit.co/variables-pane.html) you have defined and the [plots](https://positron.posit.co/plots-pane.html) you have created), the [**Connections**](https://positron.posit.co/connections-pane.html) pane, the [**Help**](https://positron.posit.co/help-pane.html) pane, the **History** pane, and the **Viewer** pane.
+
+The **Title Bar** at the very top of the window shows the active file and project, along with window controls. Below it, the **Top Bar** provides global project tools such as file search, the project switcher, and the [interpreter selector](https://positron.posit.co/managing-interpreters.html#active-interpreter-session) with the ability to start, stop, and switch interpreters. The **Status Bar** at the bottom of the window displays details such as your git branch, language mode, [Quarto version](https://positron.posit.co/quarto.html), and cursor position.
+
+### Layout customization
+
+[![Positron IDE showing how panels can be rearranged by dragging and toggled in and out of view using commands.](images/layout-customization.gif)](images/layout-customization.gif "Interface of the Positron IDE showing how panels can be rearranged by dragging and toggled in and out of view using commands")
+
+Interface of the Positron IDE showing how panels can be rearranged by dragging and toggled in and out of view using commands
+
+Positron offers flexible layout options to suit a variety of development workflows. Almost every component can be rearranged by dragging.
+
+### Command Palette
+
+Command Palette - `Ctrl+Shift+P` - <https://positron.posit.co/command-palette.html> - is your gateway to all Positron features. It provides quick access to commands, settings, and more. For example, you can open files, run code, manage git, and interact with the assistant all from the Command Palette.
+
+[![Positron IDE showing how to access settings through the command palette.](images/command-palette.gif)](images/command-palette.gif "Positron IDE showing how to access settings through the command palette")
+
+Positron IDE showing how to access settings through the command palette
+
+Try:
+
+- `Ctrl+Shift+P` → type “Open file”
+- `Ctrl+Shift+P` → type “Assistant: Configure Language Model Providers”
+- `Ctrl+Shift+P` → type “Preferences: Open Settings (UI)” and search for “Stata” to find all related settings in one place.
+
+### Settings
+
+Settings can be accessed through:
+
+- `Ctrl+Shift+P` (Command Palette) \> search for “Preferences: Open Settings (UI)”
+- or through the menu `File > Preferences > Settings`
+- or `Ctrl+,`.
+
+Here you can customize your Positron experience, including enabling the Assistant and configuring GitHub Copilot.
+
+> Settings marked with a vertical line are modified from their default values in your IDE. You can click “Gear \> Reset” button next to each setting to revert it to the default value.
+
+> [![Positron IDE showing how to reset settings to their default values.](images/settings-reset.gif)](images/settings-reset.gif)
+
+### Read/watch more
+
 - UI <https://positron.posit.co/layout.html>
-
-- Command palette <https://positron.posit.co/command-palette.html>
-
-- - `Ctrl+Shift+P` : and search for any command, e.g. “Open file”, “Run code”, “Git: commit”, “Assistant: ask a question”
-  - or `Search bar` in the top center of the IDE: type `>` and the command name, e.g. `>Open file`
 
 - Extensions <https://positron.posit.co/extensions.html>
 
-- AI tools <https://positron.posit.co/assistant.html>
-
 - Data analysis <https://positron.posit.co/data-explorer.html>
-
-## AI-Powered Data Science in Positron
-
-# An error occurred.
-
-Unable to execute JavaScript.
 
 ## A quick tour
 
@@ -57,11 +107,38 @@ Unable to execute JavaScript.
 
 Unable to execute JavaScript.
 
-## Assistant + GitHub Copilot
+## Workflow overview
 
-1.  [Enable Positron Assistant](https://positron.posit.co/assistant-getting-started.html#step-1-enable-positron-assistant)
-2.  [Configure GitHub Copilot](https://positron.posit.co/assistant-getting-started.html#step-2-configure-language-model-providers)
-3.  Explore the assistant panel: in-line conversations, agents, and LLMs
+- Open/create a working folder
+- Create your script or notebook and start coding
+- Execute code.
+- Use console directly
+- Explore plots
+- Data viewer
+- Help pane for documentation
+
+[![Positron IDE showing a workflow of opening a folder, creating a script, writing code, executing it, and exploring the output in the console, plots pane, data viewer, and help pane.](images/Workflow.gif)](images/Workflow.gif "Positron workflow overview")
+
+Positron workflow overview
+
+## Assistant + GitHub Copilot: Setup and Overview
+
+To use the assistant’s AI features, you need to [Enable Positron Assistant](https://positron.posit.co/assistant-getting-started.html#step-1-enable-positron-assistant) and [Configure GitHub Copilot](https://positron.posit.co/assistant-getting-started.html#step-2-configure-language-model-providers).
+
+This can be done as follows:
+
+- `Ctrl+Shift+P` → “Preferences: Open Settings (UI)” → search `positron.assistant.enable` → ☑️
+
+Other settings to consider:
+
+- `positron.assistant.showTokenUsage.enable` - to show token usage details in the assistant chat
+- `positron.assistant.toolDetails.enable` - to show tool usage details in the assistant chat
+
+The Assistant lets you use AI for inline code suggestions and chat-based help. See videos below for a quick tour or follow along with the course examples.
+
+### Read/watch more
+
+- AI tools <https://positron.posit.co/assistant.html>
 
 ## What can you do with assistant?
 
@@ -69,25 +146,8 @@ Unable to execute JavaScript.
 
 Unable to execute JavaScript.
 
-## Workflow basics
+## AI-Powered Data Science in Positron
 
-1.  Open a working folder (create if needed): where your code lives and where the AI agent looks for context
+# An error occurred.
 
-2.  Create your script or notebook and start coding
-
-3.  Use console to execute code and see output.
-
-    - Code execution
-    - Plotting
-    - Data viewer
-    - Help pane for documentation and function signatures
-    - Session pane for environment info, variables
-    - View panel for websites
-
-4.  Multiple consoles for same/different languages and projects/ output panel.
-
-5.  Command palette for quick access
-
-6.  Use the terminal for command-line work, e.g. file system navigation, running requests
-
-Back to top
+Unable to execute JavaScript.

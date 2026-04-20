@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Eduard Bukin">
+<meta name="dcterms.date" content="2026-04-17">
+
+<title>AI Workflow – AI for Coding</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../methods/safeguard-data.html" rel="next">
+<link href="../methods/index.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-4b8b535605d27086117a1b1ae3a37b34.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-5bff2ba0731e695f8f21b1268c83896f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-4b8b535605d27086117a1b1ae3a37b34.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-4171068133aede7dcdd4332bb120bd8a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-99caa98c746fb559f6a2efa6562da6f3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-4171068133aede7dcdd4332bb120bd8a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../assets/custom.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">AI for Coding</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../day1/index.html"> 
+<span class="menu-text">Day 1</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../selfstudy/index.html"> 
+<span class="menu-text">Self Study</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../day2/index.html"> 
+<span class="menu-text">Day 2</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../prerequisites/index.html"> 
+<span class="menu-text">Prerequisites</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../methods/index.html" aria-current="page"> 
+<span class="menu-text">Methods</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-internal-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Internal Resources</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-internal-resources">    
+        <li>
+    <a class="dropdown-item" href="https://worldbankgroup.sharepoint.com/sites/WBgge/">
+ <span class="dropdown-text">Prosperity VP</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://worldbankgroup.sharepoint.com/sites/wbpoverty">
+ <span class="dropdown-text">Distributional Impact of Policies Dep.</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://worldbank.github.io/geoPovLearn/">
+ <span class="dropdown-text">geoPovLearn</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../methods/common-workflow.html">AI Workflow</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../methods/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Methods</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../methods/common-workflow.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">AI Workflow</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../methods/safeguard-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Safeguarding data</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#detailed-workflow" id="toc-detailed-workflow" class="nav-link" data-scroll-target="#detailed-workflow">Detailed workflow</a>
+  <ul>
+  <li><a href="#step-1.-set-the-objective-and-constraints" id="toc-step-1.-set-the-objective-and-constraints" class="nav-link" data-scroll-target="#step-1.-set-the-objective-and-constraints">Step 1. Set the objective and constraints</a></li>
+  <li><a href="#step-2.-define-inputs-and-outputs" id="toc-step-2.-define-inputs-and-outputs" class="nav-link" data-scroll-target="#step-2.-define-inputs-and-outputs">Step 2. Define inputs and outputs</a></li>
+  <li><a href="#step-3.-create-a-data-dictionary" id="toc-step-3.-create-a-data-dictionary" class="nav-link" data-scroll-target="#step-3.-create-a-data-dictionary">Step 3. Create a data dictionary</a></li>
+  <li><a href="#step-4.-gather-external-metadata" id="toc-step-4.-gather-external-metadata" class="nav-link" data-scroll-target="#step-4.-gather-external-metadata">Step 4. Gather external metadata</a></li>
+  <li><a href="#step-5.-verify-understanding-before-coding" id="toc-step-5.-verify-understanding-before-coding" class="nav-link" data-scroll-target="#step-5.-verify-understanding-before-coding">Step 5. Verify understanding before coding</a></li>
+  <li><a href="#step-6.-develop-code-iteratively" id="toc-step-6.-develop-code-iteratively" class="nav-link" data-scroll-target="#step-6.-develop-code-iteratively">Step 6. Develop code iteratively</a></li>
+  <li><a href="#step-7.-independent-verification" id="toc-step-7.-independent-verification" class="nav-link" data-scroll-target="#step-7.-independent-verification">Step 7. Independent verification</a></li>
+  <li><a href="#step-8.-document-the-work" id="toc-step-8.-document-the-work" class="nav-link" data-scroll-target="#step-8.-document-the-work">Step 8. Document the work</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/worldbank/ai4coding/blob/main/methods/common-workflow.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/worldbank/ai4coding/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">AI Workflow</h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author"><a href="https://github.com/ebukin">Eduard Bukin</a> <a href="mailto:ebukin@worldbank.org" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0002-1003-1260" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Distributional Impact of Policies. Fiscal Policy and Growth Department
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 17, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>AI coding assistants are probabilistic: the quality of their output depends heavily on the quality of the context you provide. Through experience across many data preparation and analysis projects, we have found that a structured, eight-step workflow consistently produces better results than ad-hoc prompting. Each step builds on the previous one, gradually narrowing the AI’s degrees of freedom until it has enough context to generate correct, reproducible code.</p>
+<p>The workflow applies regardless of language (Stata, R, Python) or domain (survey harmonization, administrative data cleaning, indicator construction). Adapt the details to your project, but follow the sequence.</p>
+<ol type="1">
+<li><strong>Set the objective and constraints</strong> — State the task, the target specification, and the language so the AI has clear guardrails from the start.</li>
+<li><strong>Define inputs and outputs</strong> — Specify the unit of observation, file format, ID requirements, variable labeling conventions, and parameterized file paths.</li>
+<li><strong>Create a data dictionary</strong> — Generate metadata from the raw files so the AI can reason about variable structure without seeing actual microdata.</li>
+<li><strong>Gather external metadata</strong> — Supplement file-level metadata with codebooks, catalogs, or survey documentation that describe units, recall periods, and skip patterns.</li>
+<li><strong>Verify understanding (checkpoint)</strong> — Ask the AI to produce a mapping table (target variable, source variable, transformation, open questions) and resolve every question before coding begins.</li>
+<li><strong>Develop code iteratively</strong> — Request a master script first, then one module at a time; run, test assertions, and iterate on failures.</li>
+<li><strong>Independent verification</strong> — In a <em>separate</em> AI session, have a fresh agent audit the code and summary statistics against the target specification.</li>
+<li><strong>Document the work</strong> — Produce a report covering the objective, data sources, variable mapping, decisions, limitations, and a reproducibility checklist.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Steps 3 and 4 involve handling raw data files. Before proceeding with those steps, review the <a href="../methods/safeguard-data.html">Safeguarding Data</a> page to ensure that no sensitive microdata is inadvertently exposed to the AI.</p>
+</div>
+</div>
+</section>
+<section id="detailed-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="detailed-workflow">Detailed workflow</h2>
+<p>Each step below includes a rationale, a reusable prompt template, and an actionable checklist. Placeholders in <code>[square brackets]</code> must be replaced with your project-specific values. The prompts are language-neutral; where a language-specific detail matters, short Stata / R / Python alternatives are noted.</p>
+<section id="step-1.-set-the-objective-and-constraints" class="level3">
+<h3 class="anchored" data-anchor-id="step-1.-set-the-objective-and-constraints">Step 1. Set the objective and constraints</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Why this matters
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A clear, specific objective anchors the entire conversation. A vague prompt like <em>“help me clean some data”</em> gives the AI no guardrails and leads to generic, unusable output. Stating the task, the target specification, and the programming language up front constrains the AI to the correct domain from the first message.</p>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-file-name="Prompt"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a>You are my <span class="co">[</span><span class="ot">your language</span><span class="co">]</span> co-programmer. The objective is to</span>
+<span id="cb1-2"><a href="#cb1-2"></a>[describe the task, e.g., harmonize / clean / construct indicators</span>
+<span id="cb1-3"><a href="#cb1-3"></a>from] <span class="co">[</span><span class="ot">survey or dataset name</span><span class="co">]</span> (<span class="co">[</span><span class="ot">years or waves</span><span class="co">]</span>) into a single</span>
+<span id="cb1-4"><a href="#cb1-4"></a>analysis-ready dataset following <span class="co">[</span><span class="ot">target specification or standard</span><span class="co">]</span>.</span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a>Do not write any code yet.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>What to check before moving on
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>The AI echoes back the dataset name, years, and target specification in its own words.</li>
+<li>If it asks clarifying questions, answer them.</li>
+<li>If it immediately starts writing code, reply: <em>“Do not write any code yet.”</em></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="step-2.-define-inputs-and-outputs" class="level3">
+<h3 class="anchored" data-anchor-id="step-2.-define-inputs-and-outputs">Step 2. Define inputs and outputs</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Why this matters
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ambiguous output specifications are the most common source of wrong results. Being explicit about the unit of observation, file format, ID requirements, and variable conventions prevents the AI from making assumptions that silently corrupt the data. Following <a href="https://dimewiki.worldbank.org/Master_Dataset">DIME Wiki Master Dataset</a> and <a href="https://dimewiki.worldbank.org/ID_Variable_Properties">ID Variable Properties</a> conventions ensures consistency across the project.</p>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-file-name="Prompt"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1"></a>The final output should be a <span class="co">[</span><span class="ot">.dta / .parquet / .rds</span><span class="co">]</span> master dataset</span>
+<span id="cb2-2"><a href="#cb2-2"></a>following these conventions:</span>
+<span id="cb2-3"><a href="#cb2-3"></a></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="ss">- </span>Each row is a <span class="co">[</span><span class="ot">unit of observation, e.g., individual-year</span><span class="co">]</span>;</span>
+<span id="cb2-5"><a href="#cb2-5"></a>  each column is a harmonized variable.</span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="ss">- </span>The dataset must have a unique, fully identifying ID variable.</span>
+<span id="cb2-7"><a href="#cb2-7"></a>  ID variables must have no missing values and must uniquely</span>
+<span id="cb2-8"><a href="#cb2-8"></a>  identify observations.</span>
+<span id="cb2-9"><a href="#cb2-9"></a><span class="ss">- </span>All variables must have labels (up to 80 characters).</span>
+<span id="cb2-10"><a href="#cb2-10"></a><span class="ss">- </span>All categorical variables must be stored numerically with value</span>
+<span id="cb2-11"><a href="#cb2-11"></a>  labels attached.</span>
+<span id="cb2-12"><a href="#cb2-12"></a><span class="ss">- </span>Missing values must use [your language's convention for</span>
+<span id="cb2-13"><a href="#cb2-13"></a>  labeled/tagged missings] with labels explaining the reason.</span>
+<span id="cb2-14"><a href="#cb2-14"></a><span class="ss">- </span>Higher-level IDs (e.g., household ID in an individual dataset)</span>
+<span id="cb2-15"><a href="#cb2-15"></a>  must be included to enable merging across units.</span>
+<span id="cb2-16"><a href="#cb2-16"></a></span>
+<span id="cb2-17"><a href="#cb2-17"></a>Harmonize only these modules: [list modules, e.g., demographics,</span>
+<span id="cb2-18"><a href="#cb2-18"></a>income, consumption].</span>
+<span id="cb2-19"><a href="#cb2-19"></a></span>
+<span id="cb2-20"><a href="#cb2-20"></a>The code must be modular, well-commented, and reproducible.</span>
+<span id="cb2-21"><a href="#cb2-21"></a>Do not write any code yet.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-file-name="Prompt"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1"></a>Input data is located at <span class="in">`[your data path]`</span> in subfolders</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="in">`[wave1]/`</span> and <span class="in">`[wave2]/`</span>. Files are read-only. All paths must be</span>
+<span id="cb3-3"><a href="#cb3-3"></a>specified as parameters (global macros / config file / constants</span>
+<span id="cb3-4"><a href="#cb3-4"></a>module) so the code runs on any machine without modification.</span>
+<span id="cb3-5"><a href="#cb3-5"></a>Do not write any code yet.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>What to check before moving on
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>The AI confirms the unit of observation, ID structure, and labeling conventions without writing code.</li>
+<li>File paths use parameterized references, not hard-coded strings.</li>
+<li>If your data mixes units of observation (e.g., household-level consumption merged onto individual-level records), verify the AI understands the merge strategy.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="step-3.-create-a-data-dictionary" class="level3">
+<h3 class="anchored" data-anchor-id="step-3.-create-a-data-dictionary">Step 3. Create a data dictionary</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Why this matters
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A data dictionary lets the AI reason about variable names, types, labels, and distributions without ever seeing actual observations. This is a key <a href="../methods/safeguard-data.html">data safeguarding</a> practice: the AI gets enough context to write correct code while microdata never enters its context window.</p>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-file-name="Prompt"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1"></a>Write <span class="co">[</span><span class="ot">your language</span><span class="co">]</span> code that creates a data dictionary for each</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="co">[</span><span class="ot">wave / year</span><span class="co">]</span>. For every variable, capture: name, storage type,</span>
+<span id="cb4-3"><a href="#cb4-3"></a>display format, label, number of missing values, number of distinct</span>
+<span id="cb4-4"><a href="#cb4-4"></a>values, and min/max for numeric variables.</span>
+<span id="cb4-5"><a href="#cb4-5"></a></span>
+<span id="cb4-6"><a href="#cb4-6"></a>The code should:</span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="ss">1. </span>Accept a parameter specifying the path to raw data.</span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="ss">2. </span>Loop over all <span class="co">[</span><span class="ot">.dta / .csv / .parquet</span><span class="co">]</span> files in the relevant</span>
+<span id="cb4-9"><a href="#cb4-9"></a>   subfolders.</span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="ss">3. </span>Save each dictionary as a markdown file in</span>
+<span id="cb4-11"><a href="#cb4-11"></a>   <span class="in">`[output path, e.g., data/dictionary/{filename}.md]`</span>.</span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="ss">4. </span>Never print or display actual observation-level data.</span>
+<span id="cb4-13"><a href="#cb4-13"></a></span>
+<span id="cb4-14"><a href="#cb4-14"></a>Do not write any code yet. First, restate the objective,</span>
+<span id="cb4-15"><a href="#cb4-15"></a>constraints, and success criteria in your own words. Report any</span>
+<span id="cb4-16"><a href="#cb4-16"></a>uncertainties. Only when I confirm, proceed to write the code.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>What to check before moving on
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>The AI’s restatement mentions all four constraints (parameterized path, loop over files, markdown output, no raw data display).</li>
+<li>After running the generated code, open a few <code>.md</code> files and verify that variable names, types, and labels look correct.</li>
+<li>Confirm no files were missed.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="step-4.-gather-external-metadata" class="level3">
+<h3 class="anchored" data-anchor-id="step-4.-gather-external-metadata">Step 4. Gather external metadata</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Why this matters
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>File-level labels often lack detail on recall periods, units of measurement, or survey design. External documentation — codebooks, catalogs, questionnaires — fills those gaps. If the AI cannot browse the web, download the documentation yourself and paste the relevant sections into the chat.</p>
+<p>Before proceeding, review the <a href="../methods/safeguard-data.html">Safeguarding Data</a> page to ensure that no sensitive information is inadvertently shared when pasting documentation or providing URLs.</p>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-file-name="Prompt"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1"></a>Fetch the variable-level metadata for <span class="co">[</span><span class="ot">survey name</span><span class="co">]</span> from:</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="ss">- </span><span class="co">[</span><span class="ot">wave 1</span><span class="co">]</span>: <span class="co">[</span><span class="ot">URL to catalog or codebook</span><span class="co">]</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="ss">- </span><span class="co">[</span><span class="ot">wave 2</span><span class="co">]</span>: <span class="co">[</span><span class="ot">URL to catalog or codebook</span><span class="co">]</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a></span>
+<span id="cb5-5"><a href="#cb5-5"></a>Extract: variable names, definitions, units of measurement, recall</span>
+<span id="cb5-6"><a href="#cb5-6"></a>periods, universe (who was asked), and coding notes. Save a summary</span>
+<span id="cb5-7"><a href="#cb5-7"></a>in <span class="in">`[output path, e.g., data/dictionary/metadata-wave1.md]`</span>.</span>
+<span id="cb5-8"><a href="#cb5-8"></a></span>
+<span id="cb5-9"><a href="#cb5-9"></a>If you cannot access these URLs, tell me and I will paste the</span>
+<span id="cb5-10"><a href="#cb5-10"></a>relevant metadata manually.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>What to check before moving on
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>If web access failed, paste the relevant sections yourself (at minimum: variable list with definitions, coding scheme for categorical variables, notes on recall periods or skip patterns).</li>
+<li>Verify that the saved metadata files are complete and correctly attributed to the right wave.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="step-5.-verify-understanding-before-coding" class="level3">
+<h3 class="anchored" data-anchor-id="step-5.-verify-understanding-before-coding">Step 5. Verify understanding before coding</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Why this matters
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is a <strong>checkpoint</strong>, not a coding step. Before investing time in code generation, the AI must demonstrate that it understands the data structure, the target specification, and the mapping between them. Misunderstandings caught here save hours of debugging later.</p>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-file-name="Prompt"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1"></a>Before we write any code, summarize your understanding of:</span>
+<span id="cb6-2"><a href="#cb6-2"></a></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="ss">1. </span>The structure of the raw data (which files, key variables,</span>
+<span id="cb6-4"><a href="#cb6-4"></a>   units of observation).</span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="ss">2. </span>The target variables for each module (<span class="co">[</span><span class="ot">list modules</span><span class="co">]</span>).</span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="ss">3. </span>Any variables that are ambiguous, missing, or require</span>
+<span id="cb6-7"><a href="#cb6-7"></a>   assumptions.</span>
+<span id="cb6-8"><a href="#cb6-8"></a></span>
+<span id="cb6-9"><a href="#cb6-9"></a>Present this as a mapping table with columns:</span>
+<span id="cb6-10"><a href="#cb6-10"></a>target variable | source file | source variable(s) |</span>
+<span id="cb6-11"><a href="#cb6-11"></a>transformation needed | open questions.</span>
+<span id="cb6-12"><a href="#cb6-12"></a></span>
+<span id="cb6-13"><a href="#cb6-13"></a>Do not write any code yet.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>What to check before moving on
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The mapping table is the single most important artifact of this workflow. Review every row:</p>
+<ul>
+<li>Is the source variable correct?</li>
+<li>Is the proposed transformation reasonable?</li>
+<li>Are the open questions genuine, or does the AI need more context?</li>
+</ul>
+<p>Resolve <strong>every</strong> open question before proceeding to Step 6.</p>
+</div>
+</div>
+</section>
+<section id="step-6.-develop-code-iteratively" class="level3">
+<h3 class="anchored" data-anchor-id="step-6.-develop-code-iteratively">Step 6. Develop code iteratively</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Why this matters
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Asking for all code at once typically produces something that looks plausible but fails on edge cases. Instead, request a master script first (following <a href="https://dimewiki.worldbank.org/Master_Do-files">DIME Wiki Master Do-files</a> conventions), then one module at a time. Run each module, check assertions, and iterate on failures before moving to the next.</p>
+<p>For coding standards, see <a href="https://dimewiki.worldbank.org/Data_Cleaning">DIME Wiki Data Cleaning</a> and <a href="https://dimewiki.worldbank.org/Stata_Coding_Practices">Stata Coding Practices</a> (or their equivalents for R and Python).</p>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-file-name="Prompt"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1"></a>Based on the confirmed mapping table, develop the data cleaning</span>
+<span id="cb7-2"><a href="#cb7-2"></a>code in <span class="co">[</span><span class="ot">your language</span><span class="co">]</span>. The master script must include:</span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="ss">1. </span>Intro header (project purpose, inputs, outputs, unit of</span>
+<span id="cb7-5"><a href="#cb7-5"></a>   observation).</span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="ss">2. </span>Package/dependency installation section.</span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="ss">3. </span>Settings (version check, seed for reproducibility).</span>
+<span id="cb7-8"><a href="#cb7-8"></a><span class="ss">4. </span>Root folder parameters with user switching so each team member</span>
+<span id="cb7-9"><a href="#cb7-9"></a>   sets only their own path.</span>
+<span id="cb7-10"><a href="#cb7-10"></a><span class="ss">5. </span>Project folder parameters for all sub-folders, relative to the</span>
+<span id="cb7-11"><a href="#cb7-11"></a>   root.</span>
+<span id="cb7-12"><a href="#cb7-12"></a><span class="ss">6. </span>Units and assumptions (conversion rates, control variable lists)</span>
+<span id="cb7-13"><a href="#cb7-13"></a>   stored as parameters.</span>
+<span id="cb7-14"><a href="#cb7-14"></a><span class="ss">7. </span>Logging.</span>
+<span id="cb7-15"><a href="#cb7-15"></a><span class="ss">8. </span>Sub-scripts with toggles so individual modules can be turned</span>
+<span id="cb7-16"><a href="#cb7-16"></a>   on/off.</span>
+<span id="cb7-17"><a href="#cb7-17"></a><span class="ss">9. </span>Final merge of module outputs into a single dataset.</span>
+<span id="cb7-18"><a href="#cb7-18"></a></span>
+<span id="cb7-19"><a href="#cb7-19"></a>Write the master script first. Do not write the module scripts yet.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>What to check before moving on
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>The master script contains all nine sections listed above.</li>
+<li>All paths are parameterized; no hard-coded paths remain.</li>
+<li>Toggles allow each module to run independently.</li>
+</ul>
+<p>After confirming the master script, request each module individually:</p>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" data-file-name="Prompt"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1"></a>Now write <span class="co">[</span><span class="ot">module script name</span><span class="co">]</span> following the confirmed mapping table</span>
+<span id="cb8-2"><a href="#cb8-2"></a>and the coding standards defined in the master script. Process all</span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="co">[</span><span class="ot">waves / years</span><span class="co">]</span>. Read all paths from parameters. After every merge</span>
+<span id="cb8-4"><a href="#cb8-4"></a>or reshape, verify the unit of observation.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>What to check after each module script
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Read through the code — does every transformation match the confirmed mapping table?</li>
+<li>Run the code on one wave first.</li>
+<li>Check assertion results: failures indicate a coding bug or a mistaken assumption.</li>
+<li>Report failures back to the AI and iterate until the module passes cleanly.</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="step-7.-independent-verification" class="level3">
+<h3 class="anchored" data-anchor-id="step-7.-independent-verification">Step 7. Independent verification</h3>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Run this in a separate AI session
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This step <strong>must</strong> be performed in a <strong>different</strong> AI session (a new chat window or a different AI tool) than the one that wrote the code. The original agent is biased toward confirming its own work and will tend to overlook its own mistakes. A fresh agent reviews the code and results without prior context.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Why this matters
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Independent verification is a standard practice in data work for the same reason that financial audits are independent: the person who produced the work cannot objectively evaluate it. In AI-assisted workflows this is even more important, because LLMs are prone to confirmation bias within a conversation.</p>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" data-file-name="Prompt"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1"></a>Act as an independent data auditor. I will provide:</span>
+<span id="cb9-2"><a href="#cb9-2"></a></span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="ss">1. </span>The target variable specifications for <span class="co">[</span><span class="ot">list modules</span><span class="co">]</span>.</span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="ss">2. </span>The cleaning code for each module.</span>
+<span id="cb9-5"><a href="#cb9-5"></a><span class="ss">3. </span>Summary statistics of the cleaned output (which I will paste).</span>
+<span id="cb9-6"><a href="#cb9-6"></a></span>
+<span id="cb9-7"><a href="#cb9-7"></a>For each target variable, check:</span>
+<span id="cb9-8"><a href="#cb9-8"></a><span class="ss">- </span>Does the code correctly map from source to target?</span>
+<span id="cb9-9"><a href="#cb9-9"></a><span class="ss">- </span>Are value labels and coding consistent with the specification?</span>
+<span id="cb9-10"><a href="#cb9-10"></a><span class="ss">- </span>Are edge cases handled (missings, top/bottom coding, skip</span>
+<span id="cb9-11"><a href="#cb9-11"></a>  patterns)?</span>
+<span id="cb9-12"><a href="#cb9-12"></a><span class="ss">- </span>Are assertions sufficient?</span>
+<span id="cb9-13"><a href="#cb9-13"></a></span>
+<span id="cb9-14"><a href="#cb9-14"></a>Also check general data quality standards:</span>
+<span id="cb9-15"><a href="#cb9-15"></a><span class="ss">- </span>Are ID variables uniquely and fully identifying?</span>
+<span id="cb9-16"><a href="#cb9-16"></a><span class="ss">- </span>Are all survey codes replaced with labeled missing values?</span>
+<span id="cb9-17"><a href="#cb9-17"></a><span class="ss">- </span>Are all categorical variables stored numerically with value</span>
+<span id="cb9-18"><a href="#cb9-18"></a>  labels?</span>
+<span id="cb9-19"><a href="#cb9-19"></a><span class="ss">- </span>Are all variables labeled?</span>
+<span id="cb9-20"><a href="#cb9-20"></a><span class="ss">- </span>Are file paths parameterized (no hard-coded paths)?</span>
+<span id="cb9-21"><a href="#cb9-21"></a></span>
+<span id="cb9-22"><a href="#cb9-22"></a>Report issues as a numbered list: variable name, problem, and</span>
+<span id="cb9-23"><a href="#cb9-23"></a>suggested fix.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>What to check before moving on
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Generate summary statistics (means, frequencies, cross-tabs) for key variables and paste them into the auditor session. The auditor prompt works best with concrete numbers, not just code.</li>
+<li>Address every issue the auditor raises before finalizing the code.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="step-8.-document-the-work" class="level3">
+<h3 class="anchored" data-anchor-id="step-8.-document-the-work">Step 8. Document the work</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Why this matters
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Code without documentation is a liability. The <a href="https://dimewiki.worldbank.org/Reproducible_Research">DIME Wiki Reproducible Research</a> guidelines emphasize four pillars: data documentation, data publication, code publication, and output publication. A final report captures decisions that are invisible in the code and ensures that someone unfamiliar with the project can reproduce the results.</p>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10" data-file-name="Prompt"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1"></a>Write a project report in <span class="in">`[output path, e.g., docs/report.md]`</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>covering:</span>
+<span id="cb10-3"><a href="#cb10-3"></a></span>
+<span id="cb10-4"><a href="#cb10-4"></a><span class="ss">1. </span>**Objective**: what was produced and to which specification.</span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="ss">2. </span>**Data sources**: dataset name, years, download URLs, file</span>
+<span id="cb10-6"><a href="#cb10-6"></a>   inventory.</span>
+<span id="cb10-7"><a href="#cb10-7"></a><span class="ss">3. </span>**Data documentation**: data dictionary, metadata sources, and</span>
+<span id="cb10-8"><a href="#cb10-8"></a>   any corrections incorporated during cleaning --- including</span>
+<span id="cb10-9"><a href="#cb10-9"></a>   records of AI-suggested changes that were accepted or rejected.</span>
+<span id="cb10-10"><a href="#cb10-10"></a><span class="ss">4. </span>**Variable mapping**: the confirmed mapping table from Step 5.</span>
+<span id="cb10-11"><a href="#cb10-11"></a><span class="ss">5. </span>**Decisions and assumptions**: for each variable where a</span>
+<span id="cb10-12"><a href="#cb10-12"></a>   judgment call was needed, record the choice and rationale.</span>
+<span id="cb10-13"><a href="#cb10-13"></a><span class="ss">6. </span>**Known limitations**: variables that could not be processed,</span>
+<span id="cb10-14"><a href="#cb10-14"></a>   quality concerns, or caveats for downstream users.</span>
+<span id="cb10-15"><a href="#cb10-15"></a><span class="ss">7. </span>**Reproducibility checklist**:</span>
+<span id="cb10-16"><a href="#cb10-16"></a><span class="ss">   - </span>Required language version.</span>
+<span id="cb10-17"><a href="#cb10-17"></a><span class="ss">   - </span>Required packages / dependencies.</span>
+<span id="cb10-18"><a href="#cb10-18"></a><span class="ss">   - </span>Folder structure and parameter setup.</span>
+<span id="cb10-19"><a href="#cb10-19"></a><span class="ss">   - </span>Instructions for a new user: change user ID in the master</span>
+<span id="cb10-20"><a href="#cb10-20"></a>     script, set path, and run.</span>
+<span id="cb10-21"><a href="#cb10-21"></a><span class="ss">   - </span>Seed value (if any randomization or sampling is involved).</span>
+<span id="cb10-22"><a href="#cb10-22"></a><span class="ss">8. </span>**Code publication readiness**: confirm that no hard-coded paths</span>
+<span id="cb10-23"><a href="#cb10-23"></a>   remain, all scripts run from the master, and output is fully</span>
+<span id="cb10-24"><a href="#cb10-24"></a>   reproducible.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>What to check before moving on
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The ultimate test: can a colleague clone your project folder, change only their user ID in the master script, and reproduce every output? If not, the documentation is incomplete.</p>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/worldbank\.github\.io\/ai4coding\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../methods/index.html" class="pagination-link" aria-label="Methods">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Methods</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../methods/safeguard-data.html" class="pagination-link" aria-label="Safeguarding data">
+        <span class="nav-page-text">Safeguarding data</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/worldbank/ai4coding/blob/main/methods/common-workflow.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/worldbank/ai4coding/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

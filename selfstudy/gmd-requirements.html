@@ -1,0 +1,2490 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Eduard Bukin">
+
+<title>gmd-requirements – AI for Coding</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-4b8b535605d27086117a1b1ae3a37b34.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-5bff2ba0731e695f8f21b1268c83896f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-4b8b535605d27086117a1b1ae3a37b34.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-4171068133aede7dcdd4332bb120bd8a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-99caa98c746fb559f6a2efa6562da6f3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-4171068133aede7dcdd4332bb120bd8a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../assets/custom.css">
+</head>
+
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">AI for Coding</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../day1/index.html"> 
+<span class="menu-text">Day 1</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../selfstudy/index.html"> 
+<span class="menu-text">Self Study</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../day2/index.html"> 
+<span class="menu-text">Day 2</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../prerequisites/index.html"> 
+<span class="menu-text">Prerequisites</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../methods/index.html"> 
+<span class="menu-text">Methods</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-internal-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Internal Resources</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-internal-resources">    
+        <li>
+    <a class="dropdown-item" href="https://worldbankgroup.sharepoint.com/sites/WBgge/">
+ <span class="dropdown-text">Prosperity VP</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://worldbankgroup.sharepoint.com/sites/wbpoverty">
+ <span class="dropdown-text">Distributional Impact of Policies Dep.</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://worldbank.github.io/geoPovLearn/">
+ <span class="dropdown-text">geoPovLearn</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#id-module-idn" id="toc-id-module-idn" class="nav-link active" data-scroll-target="#id-module-idn">2. ID Module (IDN)</a></li>
+  <li><a href="#geography-geo" id="toc-geography-geo" class="nav-link" data-scroll-target="#geography-geo">3. Geography (GEO)</a></li>
+  <li><a href="#demography-education-disability" id="toc-demography-education-disability" class="nav-link" data-scroll-target="#demography-education-disability">4. Demography, Education &amp; Disability</a></li>
+  <li><a href="#labor-module-lbr" id="toc-labor-module-lbr" class="nav-link" data-scroll-target="#labor-module-lbr">5. Labor Module (LBR)</a></li>
+  <li><a href="#consumption-cons" id="toc-consumption-cons" class="nav-link" data-scroll-target="#consumption-cons">8. Consumption (CONS)</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/worldbank/ai4coding/blob/main/selfstudy/gmd-requirements.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/worldbank/ai4coding/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Global Monitoring Database (GMD) variables specification</h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author"><a href="https://github.com/ebukin">Eduard Bukin</a> <a href="mailto:ebukin@worldbank.org" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0002-1003-1260" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Distributional Impact of Policies. Fiscal Policy and Growth Department
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="id-module-idn" class="level2">
+<h2 class="anchored" data-anchor-id="id-module-idn">2. ID Module (IDN)</h2>
+<p>Household and individual unique identifier</p>
+<p><strong>Table 2.1: ID Module</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 19%">
+<col style="width: 22%">
+<col style="width: 24%">
+<col style="width: 19%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Module Code</th>
+<th>Variable name</th>
+<th>Variable label</th>
+<th>Description</th>
+<th>Tier</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>ID</td>
+<td>countrycode</td>
+<td>Country code</td>
+<td>String</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>ID</td>
+<td>year</td>
+<td>4-digit survey start year</td>
+<td>Numeric</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>ID</td>
+<td>int_year</td>
+<td>4-digit year of household survey interview</td>
+<td>Numeric</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>ID</td>
+<td>int_month</td>
+<td>Month of household survey interview</td>
+<td>Numeric</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>ID</td>
+<td>hhid_orig</td>
+<td>Household unique identifier in the raw data</td>
+<td>Numeric or string</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>ID</td>
+<td>hhid</td>
+<td>Household unique identifier</td>
+<td>String or numeric</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>ID</td>
+<td>pid_orig</td>
+<td>Personal unique identifier in the raw data</td>
+<td>Numeric or string</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>ID</td>
+<td>pid</td>
+<td>Personal unique identifier</td>
+<td>String or numeric</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>ID</td>
+<td>weight</td>
+<td>Household weights</td>
+<td>Numeric</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>ID</td>
+<td>variable name in raw data</td>
+<td>Variables used to construct Household identifier</td>
+<td>Numeric or string</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="geography-geo" class="level2">
+<h2 class="anchored" data-anchor-id="geography-geo">3. Geography (GEO)</h2>
+<p>Location identifier</p>
+<p><strong>Table 3.1: Geography Module</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 14%">
+<col style="width: 16%">
+<col style="width: 17%">
+<col style="width: 41%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Module Code</th>
+<th>Variable name</th>
+<th>Variable label</th>
+<th>Allowed codes after standardization</th>
+<th>Tier</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>ID</td>
+<td>countrycode</td>
+<td>Country code</td>
+<td>String; See Table 2.1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>ID</td>
+<td>year</td>
+<td>Year</td>
+<td>Numeric; See Table 2.1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>ID</td>
+<td>hhid</td>
+<td>Household identifier</td>
+<td>String or Numeric; See Table 2.1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>ID</td>
+<td>weight</td>
+<td>Household weights</td>
+<td>Numeric; See Table 2.1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Geography</td>
+<td>subnatid1</td>
+<td>Subnational ID - highest level</td>
+<td>String, country-specific categorical variable; numeric entries in string format using the following naming convention: “1 - Hatay” (as string)</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Geography</td>
+<td>subnatid2</td>
+<td>Subnational ID - second highest level</td>
+<td>String, country-specific categorical variable; numeric entries in string format using the following naming convention: “1 - Hatay” (as string)</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Geography</td>
+<td>subnatid3</td>
+<td>Subnational ID - third highest level</td>
+<td>String, country-specific categorical variable; numeric entries in string format using the following naming convention: “1 - Hatay” (as string)</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>Geography</td>
+<td>subnatid4</td>
+<td>Subnational ID - fourth highest level</td>
+<td>String, country-specific categorical variable; numeric entries in string format using the following naming convention: “1 - Hatay” (as string)</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>Geography</td>
+<td>subnatidsurvey</td>
+<td>Lowest level of Subnational ID</td>
+<td>String</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>Geography</td>
+<td>strata</td>
+<td>Strata</td>
+<td>String</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td>Geography</td>
+<td>psu</td>
+<td>PSU</td>
+<td>Numeric, country-specific</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td>Geography</td>
+<td>subnatid1_prev</td>
+<td>SUBNATID previous - highest level</td>
+<td>String, country-specific categorical variable</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td>Geography</td>
+<td>subnatid2_prev</td>
+<td>SUBNATID previous - second highest level</td>
+<td>String, country-specific categorical variable</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>Geography</td>
+<td>subnatid3_prev</td>
+<td>SUBNATID previous - third highest level</td>
+<td>String, country-specific categorical variable</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td>Geography</td>
+<td>subnatid4_prev</td>
+<td>SUBNATID previous - lowest level</td>
+<td>String, country-specific categorical variable</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td>Geography</td>
+<td>gaul_adm1_code</td>
+<td>Gaul Code</td>
+<td>Numeric</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>17</td>
+<td>Geography</td>
+<td>gaul_adm2_code</td>
+<td>Gaul Code</td>
+<td>Numeric</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>18</td>
+<td>Geography</td>
+<td>urban</td>
+<td>Urban</td>
+<td>1 = Urban; 0 = Rural</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="demography-education-disability" class="level2">
+<h2 class="anchored" data-anchor-id="demography-education-disability">4. Demography, Education &amp; Disability</h2>
+<p><strong>Table 4.1: Demography, Education &amp; Disability Module</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 14%">
+<col style="width: 16%">
+<col style="width: 17%">
+<col style="width: 41%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Module Code</th>
+<th>Variable name</th>
+<th>Variable label</th>
+<th>Allowed codes after standardization</th>
+<th>Tier</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>ID</td>
+<td>countrycode</td>
+<td>Country code</td>
+<td>String; See Table 2.1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>ID</td>
+<td>year</td>
+<td>Year</td>
+<td>Numeric; See Table 2.1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>ID</td>
+<td>hhid</td>
+<td>Household identifier</td>
+<td>String or numeric; See Table 2.1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>ID</td>
+<td>pid</td>
+<td>Personal identifier</td>
+<td>String or numeric</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>ID</td>
+<td>weight</td>
+<td>Weight</td>
+<td>Numeric; See Table 2.1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Demography</td>
+<td>language</td>
+<td>Language</td>
+<td>String, country-specific categorical variable</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Demography</td>
+<td>age</td>
+<td>Age of individual (continuous)</td>
+<td>Numeric, continuous</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>Demography</td>
+<td>agecat</td>
+<td>Age of individual (categorical)</td>
+<td>String, country-specific categorical variable</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>Demography</td>
+<td>childyr</td>
+<td>Child age in years for those under 5</td>
+<td>Numeric, continuous</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>Demography</td>
+<td>childmth</td>
+<td>Child age in months those under 5</td>
+<td>Numeric, continuous</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td>Demography</td>
+<td>male</td>
+<td>Sex of household member</td>
+<td>1 = Male; 0 = Female</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td>Demography</td>
+<td>relationcs</td>
+<td>Relationship to head of household country/region specific</td>
+<td>String, country-specific categorical variable</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td>Demography</td>
+<td>relationharm</td>
+<td>Relationship to head of household harmonized across all regions</td>
+<td>1 = Head; 2 = Spouse; 3 = Children; 4 = Parent; 5 = Other relative; 6 = Non-relative</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>Demography</td>
+<td>marital</td>
+<td>Marital status</td>
+<td>1 = Married; 2 = Never married; 3 = Living together; 4 = Divorced/separated; 5 = Widowed</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td>Education</td>
+<td>literacy</td>
+<td>Can both read and write</td>
+<td>1 = Yes; 0 = No</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td>Education</td>
+<td>everattend</td>
+<td>Ever attended school</td>
+<td>1 = Yes; 0 = No</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>17</td>
+<td>Education</td>
+<td>mineducatage</td>
+<td>Education module application age (country specific)</td>
+<td>Numeric</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>18</td>
+<td>Education</td>
+<td>educat7</td>
+<td>Highest level of education completed (7 categories)</td>
+<td>1 = No education; 2 = Primary incomplete</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>19</td>
+<td>Education</td>
+<td>educat5</td>
+<td>Highest level of education completed (5 categories)</td>
+<td>1 = No education; 2 = Primary incomplete; 3 = Primary complete but secondary incomplete; 4 = Secondary complete; 5 = Some tertiary/post-secondary</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>20</td>
+<td>Education</td>
+<td>educat4</td>
+<td>Highest level of education completed (4 categories)</td>
+<td>1 = Incomplete secondary; 2 = General Secondary; 3 = Special Secondary; 4 = Tertiary; 5 = None or incomplete primary</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>21</td>
+<td>Education</td>
+<td>educy</td>
+<td>Years of education</td>
+<td>Numeric</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>22</td>
+<td>Education</td>
+<td>primarycomp</td>
+<td>Primary school completion</td>
+<td>1 = Yes; 0 = No</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>23</td>
+<td>Education</td>
+<td>school</td>
+<td>Currently enrolled in school</td>
+<td>1 = Yes; 0 = No</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>24</td>
+<td>Disability</td>
+<td>eye_dsablty</td>
+<td>Eye disability</td>
+<td>1 = No - no difficulty; 2 = Yes - some difficulty; 3 = Yes - a lot of difficulty; 4 = Cannot do at all</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>25</td>
+<td>Disability</td>
+<td>hear_dsablty</td>
+<td>Hearing disability</td>
+<td>1 = No - no difficulty; 2 = Yes - some difficulty; 3 = Yes - a lot of difficulty; 4 = Cannot do at all</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>26</td>
+<td>Disability</td>
+<td>walk_dsablty</td>
+<td>Walk disability</td>
+<td>1 = No - no difficulty; 2 = Yes - some difficulty; 3 = Yes - a lot of difficulty; 4 = Cannot do at all</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>27</td>
+<td>Disability</td>
+<td>conc_dsord</td>
+<td>Concentration disorder</td>
+<td>1 = No - no difficulty; 2 = Yes - some difficulty; 3 = Yes - a lot of difficulty; 4 = Cannot do at all</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>28</td>
+<td>Disability</td>
+<td>slfcre_dsablty</td>
+<td>Selfcare disability</td>
+<td>1 = No - no difficulty; 2 = Yes - some difficulty; 3 = Yes - a lot of difficulty; 4 = Cannot do at all</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>29</td>
+<td>Disability</td>
+<td>comm_dsablty</td>
+<td>Communication disability</td>
+<td>1 = No - no difficulty; 2 = Yes - some difficulty; 3 = Yes - a lot of difficulty; 4 = Cannot do at all</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="labor-module-lbr" class="level2">
+<h2 class="anchored" data-anchor-id="labor-module-lbr">5. Labor Module (LBR)</h2>
+<p>Labor (7-day recall and 12-month recall)</p>
+<p><strong>Table 5.1: Labor status, 7-day reference period</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 14%">
+<col style="width: 16%">
+<col style="width: 17%">
+<col style="width: 41%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Module Code</th>
+<th>Variable name</th>
+<th>Variable label</th>
+<th>Allowed codes after standardization</th>
+<th>Tier</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>ID</td>
+<td>countrycode</td>
+<td>Country code</td>
+<td>String; See Table 2.1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>ID</td>
+<td>year</td>
+<td>Year</td>
+<td>Numeric; See Table 2.1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>ID</td>
+<td>hhid</td>
+<td>Household identifier</td>
+<td>String or numeric; See Table 2.1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>ID</td>
+<td>pid</td>
+<td>Personal identifier</td>
+<td>String or numeric; See Table 2.1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>ID</td>
+<td>weight</td>
+<td>Weight</td>
+<td>Numeric; See Table 2.1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Labor</td>
+<td>minlaborage</td>
+<td>Labor module application age (country-specific)</td>
+<td>Numeric</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Labor</td>
+<td>lstatus</td>
+<td>Labor status (7-day ref period)</td>
+<td>1 = Employed; 2 = Unemployed; 3 = Not-in-labor force</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>Labor</td>
+<td>nlfreason</td>
+<td>Reason not in the labor force (7-day ref period)</td>
+<td>1 = Student; 2 = Housewife; 3 = Retired; 4 = Disabled; 5 = Other</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>Labor</td>
+<td>unempldur_l</td>
+<td>Unemployment duration (months) lower bracket (7-day ref period)</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>11</td>
+<td>Labor</td>
+<td>unempldur_u</td>
+<td>Unemployment duration (months) upper bracket (7-day ref period)</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table 5.2: Primary Employment, 7-day reference period</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 14%">
+<col style="width: 16%">
+<col style="width: 17%">
+<col style="width: 41%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Module Code</th>
+<th>Variable name</th>
+<th>Variable label</th>
+<th>Allowed codes after standardization</th>
+<th>Tier</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Labor</td>
+<td>empstat</td>
+<td>Employment status, primary job (7-day ref period)</td>
+<td>1 = Paid Employee; 2 = Non-Paid Employee; 3 = Employer; 4 = Self-employed; 5 = Other, workers not classifiable by status</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Labor</td>
+<td>ocusec</td>
+<td>Sector of activity, primary job (7-day ref period)</td>
+<td>1 = Public sector, Central Government, Army; 2 = Private, NGO; 3 = State owned; 4 = Public or State-owned, but cannot distinguish</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Labor</td>
+<td>industry_orig</td>
+<td>Original industry code, primary job (7-day ref period)</td>
+<td>Country specific</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Labor</td>
+<td>industrycat10</td>
+<td>1 digit industry classification, primary job (7-day ref period)</td>
+<td>1 = Agriculture, Hunting, Fishing, etc.; 2 = Mining; 3 = Manufacturing; 4 = Public Utility Services; 5 = Construction; 6 = Commerce; 7 = Transport and Communications; 8 = Financial and Business Services; 9 = Public Administration; 10 = Other Services, Unspecified</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Labor</td>
+<td>industrycat4</td>
+<td>4-category industry classification, primary job (7-day ref period)</td>
+<td>1 = Agriculture; 2 = Industry; 3 = Services; 4 = Other</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Labor</td>
+<td>occup_orig</td>
+<td>Original occupation classification, primary job (7-day ref period)</td>
+<td>Country specific</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Labor</td>
+<td>occup</td>
+<td>1-digit occupation classification, primary job (7-day ref period)</td>
+<td>1 = Managers; 2 = Professionals; 3 = Technicians and associate professionals; 4 = Clerical support workers; 5 = Service and sales workers; 6 = Skilled agricultural, forestry and fishery workers; 7 = Craft and related trades workers; 8 = Plant and machine operators, and assemblers; 9 = Elementary occupations; 10 = Armed forces occupations; 99 = Other/unspecified</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>Labor</td>
+<td>wage_no_compen</td>
+<td>Last wage payment, primary job, excl. bonuses, etc. (7-day ref period)</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>Labor</td>
+<td>unitwage</td>
+<td>Time unit of last wages payment, primary job (7-day ref period)</td>
+<td>1 = Daily; 2 = Weekly; 3 = Every two weeks; 4 = Every two months; 5 = Monthly; 6 = Quarterly; 7 = Every six months; 8 = Annually; 9 = Hourly; 10 = Other</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>Labor</td>
+<td>whours</td>
+<td>Hours of work in last week, primary job (7-day ref period)</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td>Labor</td>
+<td>wmonths</td>
+<td>Months worked in the last 12 months, primary job (7-day ref period)</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td>Labor</td>
+<td>wage_total</td>
+<td>Annualized total wage, primary job (7-day ref period)</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td>Labor</td>
+<td>contract</td>
+<td>Contract (7-day ref period)</td>
+<td>0 = No; 1 = Yes</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>Labor</td>
+<td>healthins</td>
+<td>Health insurance (7-day ref period)</td>
+<td>0 = No; 1 = Yes</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td>Labor</td>
+<td>socialsec</td>
+<td>Social security (7-day ref period)</td>
+<td>0 = No; 1 = Yes</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td>Labor</td>
+<td>union</td>
+<td>Union membership (7-day ref period)</td>
+<td>0 = No; 1 = Yes</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>17</td>
+<td>Labor</td>
+<td>firmsize_l</td>
+<td>Firm size (lower bracket), primary job (7-day ref period)</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>18</td>
+<td>Labor</td>
+<td>firmsize_u</td>
+<td>Firm size (upper bracket), primary job (7-day ref period)</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table 5.3: Secondary Employment, 7-day reference period</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 14%">
+<col style="width: 16%">
+<col style="width: 17%">
+<col style="width: 41%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Module Code</th>
+<th>Variable name</th>
+<th>Variable label</th>
+<th>Allowed codes after standardization</th>
+<th>Tier</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Labor</td>
+<td>empstat_2</td>
+<td>Employment status, secondary job (7-day ref period)</td>
+<td>1 = Paid Employee; 2 = Non-Paid Employee; 3 = Employer; 4 = Self-employed; 5 = Other, workers not classifiable by status</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Labor</td>
+<td>ocusec_2</td>
+<td>Sector of activity, secondary job (7-day ref period)</td>
+<td>1 = Public sector, Central Government, Army; 2 = Private, NGO; 3 = State owned; 4 = Public or State-owned, but cannot distinguish</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Labor</td>
+<td>industry_orig_2</td>
+<td>Original industry code, secondary job (7-day ref period)</td>
+<td>Country specific</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Labor</td>
+<td>industrycat10_2</td>
+<td>1 digit industry classification, secondary job (7-day ref period)</td>
+<td>1 = Agriculture, Hunting, Fishing, etc.; 2 = Mining; 3 = Manufacturing; 4 = Public Utility Services; 5 = Construction; 6 = Commerce; 7 = Transport and Communications; 8 = Financial and Business Services; 9 = Public Administration; 10 = Other Services, Unspecified</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Labor</td>
+<td>industrycat4_2</td>
+<td>4-category industry classification, secondary job (7-day ref period)</td>
+<td>1 = Agriculture; 2 = Industry; 3 = Services; 4 = Other</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Labor</td>
+<td>occup_orig_2</td>
+<td>Original occupational classification, secondary job (7-day ref period)</td>
+<td>Country specific</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Labor</td>
+<td>occup_2</td>
+<td>1-digit occupation classification, secondary job (7-day ref period)</td>
+<td>1 = Managers; 2 = Professionals; 3 = Technicians and associate professionals; 4 = Clerical support workers; 5 = Service and sales workers; 6 = Skilled agricultural, forestry and fishery workers; 7 = Craft and related trades workers; 8 = Plant and machine operators, and assemblers; 9 = Elementary occupations; 10 = Armed forces occupations; 99 = Other/unspecified</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>Labor</td>
+<td>wage_nc_2</td>
+<td>Last wage payment, secondary job, excl. bonuses, etc. (7-day ref period)</td>
+<td>Continuous variable</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>Labor</td>
+<td>unitwage_2</td>
+<td>Time unit of last wages payment, secondary job (7-day ref period)</td>
+<td>1 = Daily; 2 = Weekly; 3 = Every two weeks; 4 = Every two months; 5 = Monthly; 6 = Quarterly; 7 = Every six months; 8 = Annually; 9 = Hourly; 10 = Other</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>Labor</td>
+<td>whours_2</td>
+<td>Hours of work in last week, secondary job (7-day ref period)</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td>Labor</td>
+<td>wmonths_2</td>
+<td>Months worked in the last 12 months, secondary job (7-day ref period)</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td>Labor</td>
+<td>wage_total_2</td>
+<td>Annualized total wage, secondary job (7-day ref period)</td>
+<td>Continuous variable</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td>Labor</td>
+<td>firmsize_l_2</td>
+<td>Firm size (lower bracket), secondary job (7-day ref period)</td>
+<td>Continuous variable</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>Labor</td>
+<td>firmsize_u_2</td>
+<td>Firm size (upper bracket), secondary job (7-day ref period)</td>
+<td>Continuous variable</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table 5.4: Other employment earnings, 7-day reference period</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 14%">
+<col style="width: 16%">
+<col style="width: 17%">
+<col style="width: 41%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Module Code</th>
+<th>Variable name</th>
+<th>Variable label</th>
+<th>Allowed codes after standardization</th>
+<th>Tier</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Labor</td>
+<td>t_hours_others</td>
+<td>Total hours of work in the last 7-day in other jobs excluding the primary and secondary ones</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Labor</td>
+<td>t_wage_nc_others</td>
+<td>Annualized wage in all jobs excluding the primary and secondary ones (excluding tips, bonuses, etc.)</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Labor</td>
+<td>t_wage_others</td>
+<td>Annualized wage (including tips, bonuses, etc.) in all other jobs excluding the primary and secondary ones</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table 5.5: Total employment earnings, 7-day reference period</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 14%">
+<col style="width: 16%">
+<col style="width: 17%">
+<col style="width: 41%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Module Code</th>
+<th>Variable name</th>
+<th>Variable label</th>
+<th>Allowed codes after standardization</th>
+<th>Tier</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Labor</td>
+<td>t_hours_total</td>
+<td>Annualized hours worked in all jobs (7-day ref period)</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Labor</td>
+<td>t_wage_nc_total</td>
+<td>Annualized wage in all jobs excl. bonuses, etc. (7-day ref period)</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Labor</td>
+<td>t_wage_total</td>
+<td>Annualized total wage for all jobs (7-day ref period)</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table 5.6: Labour force status, 12-month reference period</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 14%">
+<col style="width: 16%">
+<col style="width: 17%">
+<col style="width: 41%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Module Code</th>
+<th>Variable name</th>
+<th>Variable label</th>
+<th>Allowed codes after standardization</th>
+<th>Tier</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Labor</td>
+<td>minlaborage_year</td>
+<td>Labor module application age</td>
+<td>Numeric</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Labor</td>
+<td>lstatus_year</td>
+<td>Labor status (12-month ref period)</td>
+<td>1 = Employed; 2 = Unemployed; 3 = Not-in-labor force</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Labor</td>
+<td>nlfreason_year</td>
+<td>Reason not in the labor force (12-month ref period)</td>
+<td>1 = Student; 2 = Housewife; 3 = Retired; 4 = Disabled; 5 = Other</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Labor</td>
+<td>unempldur_l_year</td>
+<td>Unemployment duration (months) lower bracket (12-month ref period)</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Labor</td>
+<td>unempldur_u_year</td>
+<td>Unemployment duration (months) upper bracket (12-month ref period)</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table 5.7: Primary Employment, 12-month reference period</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 14%">
+<col style="width: 16%">
+<col style="width: 17%">
+<col style="width: 41%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Module Code</th>
+<th>Variable name</th>
+<th>Variable label</th>
+<th>Allowed codes after standardization</th>
+<th>Tier</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Labor</td>
+<td>empstat_year</td>
+<td>Employment status, primary job (12-month ref period)</td>
+<td>1 = Paid Employee; 2 = Non-Paid Employee; 3 = Employer; 4 = Self-employed; 5 = Other workers not classifiable by status</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Labor</td>
+<td>ocusec_year</td>
+<td>Sector of activity, primary job (12-month ref period)</td>
+<td>1 = Public sector, Central Government, Army; 2 = Private, NGO; 3 = State owned; 4 = Public or State-owned, but cannot distinguish</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Labor</td>
+<td>industry_orig_year</td>
+<td>Original industry code, primary job (12-month ref period)</td>
+<td>Country specific</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Labor</td>
+<td>industrycat10_year</td>
+<td>1 digit industry classification, primary job (12-month ref period)</td>
+<td>1 = Agriculture, Hunting, Fishing, etc.; 2 = Mining; 3 = Manufacturing; 4 = Public Utility Services; 5 = Construction; 6 = Commerce; 7 = Transport and Communications; 8 = Financial and Business Services; 9 = Public Administration; 10 = Other Services, Unspecified</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Labor</td>
+<td>industrycat4_year</td>
+<td>4-category industry classification, primary job (12-month ref period)</td>
+<td>1 = Agriculture; 2 = Industry; 3 = Services; 4 = Other</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Labor</td>
+<td>occup_orig_year</td>
+<td>Original occupation classification, primary job (12-month ref period)</td>
+<td>Country specific</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Labor</td>
+<td>occup_year</td>
+<td>1-digit occupation classification, primary job (12-month ref period)</td>
+<td>1 = Managers; 2 = Professionals; 3 = Technicians and associate professionals; 4 = Clerical support workers; 5 = Service and sales workers; 6 = Skilled agricultural, forestry and fishery workers; 7 = Craft and related trades workers; 8 = Plant and machine operators, and assemblers; 9 = Elementary occupations; 10 = Armed forces occupations; 99 = Other/unspecified</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>Labor</td>
+<td>wage_nc_year</td>
+<td>Last wage payment, primary job, excl. bonuses, etc. (12-month ref period)</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>Labor</td>
+<td>unitwage_year</td>
+<td>Time unit of last wages payment, primary job (12-month ref period)</td>
+<td>1 = Daily; 2 = Weekly; 3 = Every two weeks; 4 = Every two months; 5 = Monthly; 6 = Quarterly; 7 = Every six months; 8 = Annually; 9 = Hourly; 10 = Other</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>Labor</td>
+<td>whours_year</td>
+<td>Hours of work in last week, primary job (12-month ref period)</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td>Labor</td>
+<td>wmonths_year</td>
+<td>Months worked in the last 12 months, primary job (12-month ref period)</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td>Labor</td>
+<td>wage_total_year</td>
+<td>Annualized total wage, primary job (12-month ref period)</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td>Labor</td>
+<td>contract_year</td>
+<td>Contract (12-month ref period)</td>
+<td>0 = No; 1 = Yes</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>Labor</td>
+<td>healthins_year</td>
+<td>Health insurance (12-month ref period)</td>
+<td>0 = No; 1 = Yes</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td>Labor</td>
+<td>socialsec_year</td>
+<td>Social security (12-month ref period)</td>
+<td>0 = No; 1 = Yes</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td>Labor</td>
+<td>union_year</td>
+<td>Union membership (12-month ref period)</td>
+<td>0 = No; 1 = Yes</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>17</td>
+<td>Labor</td>
+<td>firmsize_l_year</td>
+<td>Firm size (lower bracket), primary job (12-month ref period)</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>18</td>
+<td>Labor</td>
+<td>firmsize_u_year</td>
+<td>Firm size (upper bracket), primary job (12-month ref period)</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table 5.8: Secondary Employment, 12-month reference period</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 14%">
+<col style="width: 16%">
+<col style="width: 17%">
+<col style="width: 41%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Module Code</th>
+<th>Variable name</th>
+<th>Variable label</th>
+<th>Allowed codes after standardization</th>
+<th>Tier</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Labor</td>
+<td>empstat_2_year</td>
+<td>Employment status, primary job (12-month ref period)</td>
+<td>1 = Paid Employee; 2 = Non-Paid Employee; 3 = Employer; 4 = Self-employed; 5 = Other workers not classifiable by status</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Labor</td>
+<td>ocusec_2_year</td>
+<td>Sector of activity, secondary job (12-month ref period)</td>
+<td>1 = Public sector, Central Government, Army; 2 = Private, NGO; 3 = State owned; 4 = Public or State-owned, but cannot distinguish</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Labor</td>
+<td>industry_orig_2_year</td>
+<td>Original industry code, secondary job (12-month ref period)</td>
+<td>Country specific</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Labor</td>
+<td>industrycat10_2_year</td>
+<td>1 digit industry classification, secondary job (12-month ref period)</td>
+<td>1 = Agriculture, Hunting, Fishing, etc.; 2 = Mining; 3 = Manufacturing; 4 = Public Utility Services; 5 = Construction; 6 = Commerce; 7 = Transport and Communications; 8 = Financial and Business Services; 9 = Public Administration; 10 = Other Services, Unspecified</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Labor</td>
+<td>industrycat4_2_year</td>
+<td>4-category industry classification, secondary job (12-month ref period)</td>
+<td>1 = Agriculture; 2 = Industry; 3 = Services; 4 = Other</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Labor</td>
+<td>occup_orig_2_year</td>
+<td>Original occupation classification, secondary job (12-month ref period)</td>
+<td>Country specific</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Labor</td>
+<td>occup_2_year</td>
+<td>1-digit occupation classification, secondary job (12-month ref period)</td>
+<td>1 = Managers; 2 = Professionals; 3 = Technicians and associate professionals; 4 = Clerical support workers; 5 = Service and sales workers; 6 = Skilled agricultural, forestry and fishery workers; 7 = Craft and related trades workers; 8 = Plant and machine operators, and assemblers; 9 = Elementary occupations; 10 = Armed forces occupations; 99 = Other/unspecified</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>Labor</td>
+<td>wage_nc_2_year</td>
+<td>Last wage payment, secondary job, excl. bonuses, etc. (12-month ref period)</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>Labor</td>
+<td>unitwage_2_year</td>
+<td>Time unit of last wages payment, secondary job (12-month ref period)</td>
+<td>1 = Daily; 2 = Weekly; 3 = Every two weeks; 4 = Every two months; 5 = Monthly; 6 = Quarterly; 7 = Every six months; 8 = Annually; 9 = Hourly; 10 = Other</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>Labor</td>
+<td>whours_2_year</td>
+<td>Hours of work in last week, secondary job (12-month ref period)</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td>Labor</td>
+<td>wmonths_2_year</td>
+<td>Months worked in the last 12 months, secondary job (12-month ref period)</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td>Labor</td>
+<td>wage_total_2_year</td>
+<td>Annualized total wage, secondary job (12-month ref period)</td>
+<td></td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td>Labor</td>
+<td>firmsize_l_2_year</td>
+<td>Firm size (lower bracket), secondary job (12-month ref period)</td>
+<td>Continuous variable</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>Labor</td>
+<td>firmsize_u_2_year</td>
+<td>Firm size (upper bracket), secondary job (12-month ref period)</td>
+<td>Continuous variable</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table 5.9: Other employment earnings, 12-month reference period</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 14%">
+<col style="width: 16%">
+<col style="width: 17%">
+<col style="width: 41%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Module Code</th>
+<th>Variable name</th>
+<th>Variable label</th>
+<th>Allowed codes after standardization</th>
+<th>Tier</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Labor</td>
+<td>t_hours_others_year</td>
+<td>Total hours of work in the last 12 months in other jobs excluding the primary and secondary ones</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Labor</td>
+<td>t_wage_nc_others_year</td>
+<td>Annualized wage in all jobs excluding the primary and secondary ones (excluding tips, bonuses, etc.)</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Labor</td>
+<td>t_wage_others_year</td>
+<td>Annualized wage (including tips, bonuses, etc.) in all other jobs excluding the primary and secondary ones</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table 5.10: Total employment earnings, 12-month reference period</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 14%">
+<col style="width: 16%">
+<col style="width: 17%">
+<col style="width: 41%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Module Code</th>
+<th>Variable name</th>
+<th>Variable label</th>
+<th>Allowed codes after standardization</th>
+<th>Tier</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Labor</td>
+<td>t_hours_total_year</td>
+<td>Annualized hours worked in all jobs (12-month ref period)</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Labor</td>
+<td>t_wage_nc_total_year</td>
+<td>Annualized wage in all jobs excl. bonuses, etc. (12-month ref period)</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Labor</td>
+<td>t_wage_total_year</td>
+<td>Annualized total wage for all jobs (12-month ref period)</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table 5.11: Total Labor Income</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 14%">
+<col style="width: 16%">
+<col style="width: 17%">
+<col style="width: 41%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Module Code</th>
+<th>Variable name</th>
+<th>Variable label</th>
+<th>Allowed codes after standardization</th>
+<th>Tier</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Labor</td>
+<td>njobs</td>
+<td>Total number of jobs</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Labor</td>
+<td>t_hours_annual</td>
+<td>Total hours worked in all jobs in the previous 12 months</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Labor</td>
+<td>linc_nc</td>
+<td>Total annual wage income in all jobs, excl. bonuses, etc.</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Labor</td>
+<td>laborincome</td>
+<td>Total annual individual labor income in all jobs, incl.&nbsp;bonuses, etc.</td>
+<td>Continuous variable</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="consumption-cons" class="level2">
+<h2 class="anchored" data-anchor-id="consumption-cons">8. Consumption (CONS)</h2>
+<p>Consumption variables used for national and international level poverty estimation.</p>
+<p><strong>Table 8.1: Consumption variables</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 24%">
+<col style="width: 28%">
+<col style="width: 30%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Module code</th>
+<th>Variable name</th>
+<th>Variable label</th>
+<th>Tier</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>ID</td>
+<td>countrycode</td>
+<td>Country code</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>ID</td>
+<td>year</td>
+<td>Year (survey start year)</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>ID</td>
+<td>hhid</td>
+<td>Household unique identifier</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>ID</td>
+<td>weight</td>
+<td>Household weights</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>ID</td>
+<td>hhsize</td>
+<td>Household size</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>ID</td>
+<td>ctry_adq</td>
+<td>Sum total of adult equivalent scales (country-specific scales)</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Consumption</td>
+<td>fdtexp_own</td>
+<td>Total annual household own food consumption</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>Consumption</td>
+<td>fdtexp_buy</td>
+<td>Total annual household purchased food consumption</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>Consumption</td>
+<td>fdtexp</td>
+<td>Total annual household food expenditure</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>Consumption</td>
+<td>nfdtexp</td>
+<td>Total annual non-food expenditure</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td>Consumption</td>
+<td>totexp</td>
+<td>Total annual consumption of food and nonfood</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td>Consumption</td>
+<td>fdpindex</td>
+<td>Food price index (spatial and/or temporal)</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td>Consumption</td>
+<td>nfdpindex</td>
+<td>Non-food price index (spatial and/or temporal)</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>Consumption</td>
+<td>pindex</td>
+<td>Price index (spatial and/or temporal)</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td>Consumption</td>
+<td>ctry_totexp</td>
+<td>Total annual consumption of food and nonfood</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td>Consumption</td>
+<td>pl_ext</td>
+<td>Extreme poverty line</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>17</td>
+<td>Consumption</td>
+<td>pl_abs</td>
+<td>Absolute/overall poverty line</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/worldbank\.github\.io\/ai4coding\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/worldbank/ai4coding/blob/main/selfstudy/gmd-requirements.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/worldbank/ai4coding/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

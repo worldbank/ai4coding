@@ -5,11 +5,13 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.36">
 
   <meta name="author" content="Eduard Bukin">
-  <meta name="dcterms.date" content="2024-04-20">
+  <meta name="dcterms.date" content="2026-04-20">
   <title>AI for Coding</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -31,8 +33,74 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-51bf37afa25f3819dd530dbdcc3889e7.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-bc291419284fc172d40c2cb31b75a45e.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -132,12 +200,12 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">AI for Coding</h1>
-  <p class="subtitle">Day 1: Setup Overview</p>
+  <p class="subtitle">Day 1: Setup overview</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Eduard Bukin <a href="https://orcid.org/0000-0002-1003-1260" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
+<a href="https://github.com/ebukin">Eduard Bukin</a> <a href="https://orcid.org/0000-0002-1003-1260" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
 </div>
 <div class="quarto-title-author-email">
 <a href="mailto:ebukin@worldbank.org">ebukin@worldbank.org</a>
@@ -148,20 +216,38 @@ Eduard Bukin <a href="https://orcid.org/0000-0002-1003-1260" class="quarto-title
     </div>
 </div>
 
-  <p class="date">2024-04-20</p>
+  <p class="date">2026-04-20</p>
+</section>
+<section id="minimal-and-optimal-setup-requirements" class="slide level2 small-slide">
+<h2><span class="warning">Minimal</span> and <span class="fg"><strong>optimal</strong></span> setup requirements</h2>
+<p>To be able to reproduce examples and follow along with AI for coding in Stata, you need to have a <span class="warning">minimal setup</span> in place (or <span class="fg">optimal setup</span> if possible). This includes:</p>
+<ul>
+<li><img data-src="../..\assets/img/positron.svg" style="width:35px;height:35px;vertical-align:middle;"> <span class="warning"><strong>Software</strong> — Positron, Python, R, Stata</span>, and <span class="fg">Quarto</span></li>
+<li><span class="warning">Stata extension in Positron</span></li>
+<li><i class="fa-brands fa-github" aria-label="github"></i> <span class="warning"><strong>GitHub account</strong></span> on private email</li>
+<li><span class="fg">Access to github.com/worldbank organization</span></li>
+<li><img data-src="../..\assets/img/github-copilot-icon.svg" style="width:25px;height:25px;vertical-align:middle;"> <span class="warning"><strong>GitHub Copilot</strong> activated</span>
+<ul>
+<li><span class="fg">WB organization subscription</span> (recommended)</li>
+<li><span class="warning">or private subscription to the Pro plan</span> (fall-back option)</li>
+</ul></li>
+<li><img data-src="../..\assets/img/positron-assistant-blue.svg" style="width:35px;height:35px;vertical-align:middle;"> <span class="warning"><strong>Positron Assistant</strong></span> — connected to Copilot and enabled in Positron</li>
+<li><span class="warning"><strong>Working folders</strong></span> properly set up with data and code access.</li>
+</ul>
+<p>If in doubt, <a href="../../prerequisites/index.html" target="_blank">follow the detailed instructions in the prerequisites</a> and verify your setup.</p>
 </section>
 <section id="software-setup" class="slide level2 small-slide">
 <h2>Software Setup</h2>
-<p><span class="alert">Follow instructions on software setup and verification</span> in <a href="../prerequisites/index.qmd">prerequisites</a>.</p>
+<p><span class="alert">Follow instructions on software setup and verification</span> in <a href="../../prerequisites/index.html">prerequisites</a>.</p>
 <ul>
 <li>Thanks to our IT team, all required software is available for installation via <strong>Software Center</strong> on WB laptops:</li>
 <li><strong>Stata 19+ MP</strong>, <strong>Positron</strong> (latest), <strong>R 4.5.3+</strong>, <strong>Python 3.13+</strong>, <strong>Quarto 1.9+</strong>, and <strong>Git 2.52+</strong></li>
-<li>Everything except Stata is <strong>free and open source</strong> - <span class="highlight">no license required.</span></li>
+<li>Everything except Stata is <strong>free and open source</strong> — <span class="highlight">no license required.</span></li>
 </ul>
-<p>If any problems arise: follow the <a href="../prerequisites/common-problems.qmd">troubleshooting guide</a> or contact <a href="mailto:ITHelp@worldbankgroup.org">ITHelp@worldbankgroup.org</a>.</p>
+<p>If any problems arise: follow the <a href="../../prerequisites/common-problems.html">troubleshooting guide</a> or contact <a href="mailto:ITHelp@worldbankgroup.org">ITHelp@worldbankgroup.org</a>.</p>
 </section>
-<section id="github-account-setup" class="slide level2 small-slide">
-<h2>GitHub Account Setup</h2>
+<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-account-setup" class="slide level2 small-slide">
+<h2><i class="fa-brands fa-github" aria-label="github"></i> GitHub Account Setup</h2>
 <p><strong>Why?</strong> To use version control, collaborate with colleagues, and access GitHub Copilot AI features.</p>
 <p><span class="fg">1. Create account</span></p>
 <ul>
@@ -174,8 +260,8 @@ Eduard Bukin <a href="https://orcid.org/0000-0002-1003-1260" class="quarto-title
 <li><p>Accept invitation email within 7 days</p></li>
 </ul>
 </section>
-<section id="get-github-copilot-wb-vs.-private" class="slide level2 small-slide">
-<h2>Get GitHub Copilot: WB vs.&nbsp;Private</h2>
+<section id="github-copilot-wb-vs.-private" class="slide level2 tiny-slide">
+<h2><img data-src="../..\assets/img/github-copilot-icon.svg" style="width:40px;height:40px;vertical-align:middle;"> GitHub Copilot: WB vs.&nbsp;Private</h2>
 <p><strong>Why?</strong> To get AI code assistance in Positron and GitHub.</p>
 <table class="caption-top">
 <thead>
@@ -234,36 +320,23 @@ Eduard Bukin <a href="https://orcid.org/0000-0002-1003-1260" class="quarto-title
 <p><strong>Important</strong></p>
 </div>
 <div class="callout-content">
-<p>You can only have <span class="alert"><strong>one active plan</strong></span>. WB access <strong>automatically cancelles and refunds</strong> your private subscription. Switching back requires re-subscribing and is possible in the end of a month.</p>
+<p>You can only have <span class="alert"><strong>one active plan</strong></span>. WB access <strong>automatically cancels and refunds</strong> your private subscription. Switching back requires re-subscribing and is possible at the end of a month.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="how-github-copilot-works" class="slide level2 small-slide">
-<h2>How GitHub Copilot works?</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p><img data-src="../../assets/img/github_copilot_how_it_works.svg"></p>
-</div><div class="column" style="width:40%;">
-<ul>
-<li>GH hosts <strong>foundational models</strong> (Claude, GPT, Gemini, etc.)</li>
-<li><strong>Context</strong> from your code is optimized and sent to models as <strong>tokens</strong></li>
-<li>User sends messages - <strong>requests</strong></li>
-<li>Each interaction costs <strong>one premium request</strong></li>
-</ul>
-</div></div>
-</section>
-<section id="premium-requests-limits" class="slide level2 small-slide">
-<h2>Premium Requests Limits</h2>
-<p><span class="fg">What are premium requests?</span> — Every chat/agent interaction interaction with advanced models (Claude Sonette, GPT-5+) consumes (x1-x3) <strong>premium request</strong>.</p>
+<section id="premium-requests-and-limits" class="slide level2 small-slide">
+<h2>Premium Requests and Limits</h2>
+<p><span class="fg">What are premium requests?</span></p>
+<p>Every chat/agent interaction is a <strong>premium request</strong> (with Claude, GPT-5, Gemini).</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<h3 id="monthly-included-allowances">Monthly included allowances</h3>
+<p><strong>Monthly included allowances</strong></p>
 <table class="caption-top">
 <thead>
 <tr class="header">
 <th>Plan</th>
-<th style="text-align: center;">Included req/mo</th>
+<th style="text-align: center;">Req./month</th>
 </tr>
 </thead>
 <tbody>
@@ -281,83 +354,94 @@ Eduard Bukin <a href="https://orcid.org/0000-0002-1003-1260" class="quarto-title
 </tr>
 </tbody>
 </table>
-<p><img data-src="../../assets/img/gh-max.png"></p>
+<p>Check <strong>usage</strong> <a href="https://github.com/settings/copilot/features" target="_blank">GitHub Settings → Copilot</a>.</p>
+<p><img data-src="../..\assets/img/gh-max.png" style="width:80.0%"></p>
 </div><div class="column" style="width:50%;">
-<h3 id="hit-the-limit">Hit the limit?</h3>
+<p><strong>Exhausted your premium requests?</strong></p>
 <p>Set a <strong>budget</strong> (~$0.04/request):</p>
 <ul>
-<li><p><strong>WB plan →</strong> <a href="https://github.com/worldbank/ospo/blob/main/docs/copilot/premium-request-chargeback.md">chargeback process</a> (manager approval + budget code)</p></li>
-<li><p><strong>Private plan →</strong> <a href="https://github.com/settings/billing/budgets">GitHub Billing → Budgets</a></p></li>
-<li><p><strong>Usage →</strong> <a href="https://github.com/settings/copilot/features">GitHub Settings → Copilot</a></p></li>
+<li><strong>WB plan →</strong> <a href="https://github.com/worldbank/ospo/blob/main/docs/copilot/premium-request-chargeback.md">chargeback process</a></li>
+<li><strong>Private plan →</strong> <a href="https://github.com/settings/billing/budgets">GitHub Billing → Budgets</a></li>
 </ul>
-<p><span class="smallest"><span class="warning">When you’ve used all included requests (100%), advanced AI features stop working.</span> Basic inline completions still work (older models).</span></p>
+<div class="small">
+<p><span class="warning">When your usage reaches 100%, capable AI models stop working.</span></p>
+<ul>
+<li>Basic inline completions still work.</li>
+</ul>
+</div>
 </div></div>
 </section>
 <section id="access-levels-at-a-glance" class="slide level2 small-slide center">
 <h2>Access Levels at a Glance</h2>
+<p><span class="highlight">For the course, it is recommended to have <strong>WB Copilot</strong> access + good prompting.</span></p>
+<p><span class="note">Fall-back: <strong>Personal GH</strong> + <strong>Private Copilot Pro subscription</strong></span></p>
 <table class="caption-top">
 <colgroup>
-<col style="width: 32%">
-<col style="width: 29%">
 <col style="width: 38%">
+<col style="width: 25%">
+<col style="width: 36%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Setup</th>
 <th>Repos</th>
-<th>Copilot AI</th>
+<th>Copilot</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>No GitHub account</td>
-<td>Public only</td>
-<td>❌ None</td>
+<td>✅ Public / ❌ Personal / ❌ WB</td>
+<td>❌</td>
 </tr>
 <tr class="even">
-<td>Personal account (free)</td>
-<td>+ Personal repos</td>
-<td>⚠️ Old models only</td>
+<td><span class="fg">Personal account (free)</span></td>
+<td>+✅Personal / ❌ WB</td>
+<td>⚠️ Only old LLMs</td>
 </tr>
 <tr class="odd">
-<td>+ Copilot Pro (private)</td>
-<td>+ Personal repos</td>
-<td>✅ 500 premium req/mo</td>
+<td>+ Copilot Pro/Pro+ (private)</td>
+<td>+✅Personal / ❌ WB</td>
+<td>✅Claude+ 300/1500</td>
 </tr>
 <tr class="even">
-<td>+ Copilot Pro+ (private)</td>
-<td>+ Personal repos</td>
-<td>✅ 1,500 premium req/mo</td>
+<td>+ Premium req. budget (private)</td>
+<td>+✅Personal / ❌ WB</td>
+<td>✅ + extra at 0.04$/request (credit card)</td>
 </tr>
 <tr class="odd">
-<td>+ WB org member</td>
-<td>+ WB repos</td>
+<td><span class="fg">WB Org member</span></td>
+<td>+✅ WB</td>
 <td>⚠️ No premium requests</td>
 </tr>
 <tr class="even">
-<td>+ WB Copilot access</td>
-<td>+ WB repos</td>
-<td>✅ 300 premium req/mo</td>
+<td>+ <span class="fg">or Private Copilot &amp; budget</span></td>
+<td>+✅ WB</td>
+<td>✅Claude+ 300/1500 + extra at 0.04$/request (credit card)</td>
 </tr>
 <tr class="odd">
+<td>+ <span class="fg">or WB Copilot access</span></td>
+<td>+✅ WB</td>
+<td>✅ 300 req/mo</td>
+</tr>
+<tr class="even">
 <td>+ WB chargeback</td>
-<td>+ WB repos</td>
-<td>✅ 300 + extra at $0.04/req</td>
+<td>+✅ WB</td>
+<td>✅ + extra at 0.04$/request (WB chargeback)</td>
 </tr>
 </tbody>
 </table>
-<p><span class="highlight">Recommended: WB Copilot access + chargeback enabled.</span></p>
 </section>
 <section id="github-world-bank-is-more-than-copilot" class="slide level2 small-slide">
-<h2>Github @ World Bank is more than copilot</h2>
-<p><span class="fg"><strong>Why to use GitHub @ World Bank?</strong></span></p>
+<h2>GitHub @ World Bank is more than Copilot</h2>
+<p><span class="fg"><strong>Why use GitHub @ World Bank?</strong></span></p>
 <ul>
 <li><p>It is a modern standard of research and collaboration.</p></li>
-<li><p>Github integration improves your code, version control, and collaboration standard leading to better quality, transparency, and reproducibility.</p>
+<li><p>GitHub integration improves your code, version control, and collaboration standards, leading to better quality, transparency, and reproducibility.</p>
 <ul>
 <li>Request access to <a href="https://github.com/worldbank">github.com/worldbank</a> on <a href="https://worldbankgroup.service-now.com/wbg/en/join-github-organization-account-request?id=wbg_sc_catalog&amp;sys_id=910e1739db1a54903c5960ab13961912&amp;table=sc_cat_item&amp;searchTerm=github">eServices</a></li>
 </ul></li>
-<li><p>WB Open source <a href="https://opensource.worldbank.org/">https://opensource.worldbank.org/</a> — builds open source communities and shares open data, software, and research to advance transparent, evidence-based progress toward the SDGs.</p>
+<li><p>WB Open Source <a href="https://opensource.worldbank.org/">https://opensource.worldbank.org/</a> — builds open source communities and shares open data, software, and research to advance transparent, evidence-based progress toward the SDGs.</p>
 <ul>
 <li><a href="https://worldbankgroup.service-now.com/wbg/en/github-open-source-public-repository-request?id=wbg_sc_catalog&amp;sys_id=63bb210e1b272610185ceb17b04bcbfa">make your code public</a> as part of WB Open Source.</li>
 </ul></li>
@@ -366,23 +450,23 @@ Eduard Bukin <a href="https://orcid.org/0000-0002-1003-1260" class="quarto-title
 </ul>
 </section>
 <section id="positron-assistant" class="slide level2 small-slide scrollable">
-<h2>Positron Assistant</h2>
-<p>It is needed to connect GitHub Copilot to Positron and use AI features in the editor and chat.</p>
+<h2><img data-src="../..\assets/img/positron-assistant-blue.svg" style="width:40px;height:40px;vertical-align:middle;"> Positron Assistant</h2>
+<p>The Positron Assistant connects GitHub Copilot to Positron, enabling AI features in the editor and chat.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<h3 id="enable">Enable</h3>
+<p><strong>Enable</strong></p>
 <ol type="1">
-<li>Settings (<code>Ctrl+,</code>) → search <code>positron.assistant.enable</code> → ☑️</li>
+<li>In Positron: Settings (<code>Ctrl+,</code>) → search <code>positron.assistant.enable</code> → ☑️</li>
 <li>Reload Positron</li>
 </ol>
-<h3 id="connect-to-copilot">Connect to Copilot</h3>
+<p><strong>Connect to Copilot</strong></p>
 <ol type="1">
 <li><code>Ctrl+Shift+P</code> → <em>Configure Language Model Providers</em></li>
 <li>Select <strong>GitHub Copilot</strong></li>
 <li>Sign in → complete GitHub OAuth</li>
 </ol>
 </div><div class="column" style="width:50%;">
-<h3 id="use">Use</h3>
+<p><strong>Use</strong></p>
 <ul>
 <li>Click chat icon in sidebar (or <code>Chat: Open Chat</code>)</li>
 <li>Type a question → press Enter</li>
@@ -403,8 +487,86 @@ Eduard Bukin <a href="https://orcid.org/0000-0002-1003-1260" class="quarto-title
 </div>
 </div></div>
 </section>
-<section id="support-links" class="slide level2 small-slide">
-<h2>Support &amp; Links</h2>
+<section id="what-about-claude-code" class="slide level2 small-slide">
+<h2><img data-src="../..\assets/img/claude.svg" style="width:40px;height:40px;vertical-align:middle;"> What about Claude Code?</h2>
+<p>Claude Code is an AI coding assistant that calls Anthropic’s Claude API directly — similar to Positron Assistant.</p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Claude API is not yet approved at WB</strong> — currently in review for release next FY.</p>
+</div>
+</div>
+</div>
+<p>We access the same Anthropic models (Claude Sonnet/Opus 4.5) through <strong>GitHub Copilot</strong>.</p>
+<p><strong>The LLMs are identical.</strong> Differences are only in:</p>
+<ul>
+<li>The interface (Positron Assistant vs.&nbsp;Claude Code)</li>
+<li>System instructions for content management</li>
+</ul>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p>Claude Code is not designed for data science and lacks the IDE integration of Positron + GitHub Copilot.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="working-folders-setup-and-data-12" class="slide level2 small-slide">
+<h2>Working folders setup and data (1/2)</h2>
+<div class="callout-danger">
+<p><strong>Do not use OneDrive for coding with Positron during this course! (temporary)</strong></p>
+<ul>
+<li>Positron is new software for the WB.</li>
+<li>WB security policies <strong>block Positron from writing text files</strong> on OneDrive.</li>
+<li><span class="alert">Do not save your code-in-progress in a OneDrive folder.</span></li>
+<li>New security policy will be implemented on <strong>Friday, April 24</strong> (spring meeting freeze).</li>
+</ul>
+</div>
+<p><span class="fg"><strong>Step 1 — Create working folders</strong></span></p>
+<ul>
+<li>Create a folder <code>C:\WBG\ai\</code> on your local drive (not OneDrive).</li>
+</ul>
+</section>
+<section id="working-folders-setup-and-data-22" class="slide level2 small-slide">
+<h2>Working folders setup and data (2/2)</h2>
+<p><span class="fg"><strong>Step 2 — Copy exercise templates and data</strong></span> into <code>C:\WBG\ai\ai4coding-practice\</code> from:</p>
+<ul>
+<li><p>either <a href="https://worldbankgroup-my.sharepoint.com/:f:/g/personal/ebukin_worldbank_org/IgCXQVakSxEpT7VJFmKp_qtnAXx8RX9iemnwfGwITkEA3bE?e=U08qTX" target="_blank"><strong>OneDrive (WB only):</strong> <code>ai4coding-examples</code></a></p></li>
+<li><p>or <a href="https://github.com/worldbank/ai4coding-examples" target="_blank"><strong>GitHub repo worldbank/ai4coding-examples</strong></a></p></li>
+<li><p>Data is shared through <strong>OneDrive (WB only):</strong> <a href="https://worldbankgroup-my.sharepoint.com/:f:/r/personal/ebukin_worldbank_org/Documents/AI/AI-course-2026-April/ai4coding-data?csf=1&amp;web=1&amp;e=ITG6Sk" target="_blank"><code>ai4coding-data</code></a></p></li>
+<li><p>It is <span class="alert">read-only</span>. You can sync it to your OneDrive and use it from there.</p></li>
+<li><p>If you encounter problems, copy the data to <code>C:\WBG\ai\ai4coding-data\</code>.</p></li>
+</ul>
+<p><strong>Your local folder structure should look like:</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource default number-lines"><code class="sourceCode default"><span id="cb1-1"><a></a>C:\WBG\ai\</span>
+<span id="cb1-2"><a></a>├── ai4coding-practice\    ← exercise templates (you write here)</span>
+<span id="cb1-3"><a></a>│   ├── ex01..\</span>
+<span id="cb1-4"><a></a>│   ├── ex02..\</span>
+<span id="cb1-5"><a></a>│   └── ...</span>
+<span id="cb1-6"><a></a>└── ai4coding-data\        ← course data (optional)</span></code></pre></div>
+</section>
+<section id="example-0-verify-your-setup" class="slide level2">
+<h2>Example 0: Verify your setup</h2>
+<p>Quick <a href="../../selfstudy/example-0.html" target="_blank"><span class="fg">Example 0</span></a> to verify your setup.</p>
+<ul>
+<li>Open <code>C:\WBG\ai\ai4coding-practice\ex00-positron-test</code> in Positron.</li>
+<li>Follow instructions in the README.md file to test your setup.</li>
+</ul>
+</section>
+<section id="supporting-materials-and-references" class="slide level2 small-slide">
+<h2>Supporting materials and references</h2>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -425,21 +587,48 @@ Eduard Bukin <a href="https://orcid.org/0000-0002-1003-1260" class="quarto-title
 <td>WB premium request chargeback</td>
 <td><a href="mailto:github@worldbank.org">github@worldbank.org</a> + manager CC</td>
 </tr>
+<tr class="even">
+<td>Course materials</td>
+<td><a href="https://worldbank.github.io/ai4coding">worldbank.github.io/ai4coding</a></td>
+</tr>
+<tr class="odd">
+<td>Course examples</td>
+<td><a href="https://github.com/worldbank/ai4coding-examples">github.com/worldbank/ai4coding-examples</a></td>
+</tr>
+<tr class="even">
+<td>Course data</td>
+<td><strong>OneDrive (WB only):</strong> <a href="https://worldbankgroup-my.sharepoint.com/:f:/r/personal/ebukin_worldbank_org/Documents/AI/AI-course-2026-April/ai4coding-data?csf=1&amp;web=1&amp;e=ITG6Sk" target="_blank"><code>ai4coding-data</code></a></td>
+</tr>
 </tbody>
 </table>
-<p><strong>Documentation:</strong></p>
 <ul>
-<li>Course materials: <a href="https://worldbank.github.io/ai4coding">worldbank.github.io/ai4coding</a></li>
 <li>Positron docs: <a href="https://positron.posit.co/">positron.posit.co</a></li>
 <li>GitHub Copilot docs: <a href="https://docs.github.com/en/copilot">docs.github.com/copilot</a></li>
 <li>WB GitHub overview: <a href="https://github.com/worldbank/ospo">github.com/worldbank/ospo</a></li>
 </ul>
+</section>
+<section id="example-1-explore-positron-and-copilot-self-study" class="slide level2 small-slide">
+<h2>Example 1: Explore Positron and Copilot (self-study)</h2>
+<p>The goal of this exercise is to get familiar with Positron’s AI assistance features and how they can be used to write and execute Stata code. We go through a typical workflow of creating a Stata do file, writing code with AI assistance, and executing it in the console.</p>
+<p>This exercise is pre-recorded for self-study (18 min), full details, suggested prompts, and instructions are in the <a href="../../selfstudy/example-1.html" target="_blank">Self-Study &gt; Example 1</a>.</p>
+</section>
+<section id="example-2-understanding-and-cleaning-the-data" class="slide level2 small-slide scrollable">
+<h2>Example 2: Understanding and cleaning the data</h2>
+<p><strong>You will practice using AI to:</strong></p>
+<ol type="1">
+<li>Set a clear objective and constraints for an AI session</li>
+<li>Build a <strong>data dictionary</strong> (variable names, types, labels) as the AI intermediary</li>
+<li>Document harmonization requirements as a <strong>mapping table</strong></li>
+<li>Generate modular cleaning code following <a href="https://dimewiki.worldbank.org/">DIME Wiki</a> best practices</li>
+<li>Iterate, verify with an independent auditor session, and document results</li>
+</ol>
+<p>Full details and prompts: <a href="../../selfstudy/example-2.html" target="_blank">Self-Study → Example 2</a></p>
 
 
 </section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
-<p><img src="../../../../assets/img/WBG-Prosperity Horizontal-Black.svg" class="slide-logo"></p>
+<p><img src="../../assets/img/WBG-Prosperity Horizontal-Black.svg" class="slide-logo"></p>
 <div class="footer footer-default">
 <p><a href="https://worldbank.github.io/ai4coding">worldbank.github.io/ai4coding</a> © 2026 World Bank.</p>
 </div>
