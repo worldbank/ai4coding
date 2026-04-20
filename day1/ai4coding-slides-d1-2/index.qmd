@@ -204,7 +204,7 @@ You can also sign in via the **Accounts** icon (bottom-left of Activity Bar).
 ::::
 :::::
 
-## ![](/assets/img/claude.svg){style="width:40px;height:40px;vertical-align:middle;"} What about Claude Code? {.small-slide}
+## ![](/assets/img/claude.svg){style="width:40px;height:40px;vertical-align:middle;"} What about Claude Code? {.tiny-slide}
 
 Claude Code is an AI coding assistant that calls Anthropic's Claude API directly — similar to Positron Assistant.
 
@@ -286,24 +286,23 @@ Quick [[Example 0]{.fg}](/selfstudy/example-0.qmd){target="_blank"} to verify yo
 - GitHub Copilot docs: [docs.github.com/copilot](https://docs.github.com/en/copilot)
 - WB GitHub overview: [github.com/worldbank/ospo](https://github.com/worldbank/ospo)
 
-## Example 1: Explore Positron and Copilot (self-study) {.small-slide}
 
-The goal of this exercise is to get familiar with Positron's AI assistance
-features and how they can be used to write and execute Stata code. We go
-through a typical workflow of creating a Stata do file, writing code with
-AI assistance, and executing it in the console.
+## What next? {.small-slide}
 
-This exercise is pre-recorded for self-study (18 min), full details, suggested prompts, and instructions are in the [Self-Study > Example 1](/selfstudy/example-1.qmd){target="_blank"}.
+::::: {.columns}
+:::: {.column width="50%"}
+[**Example 1: Explore Positron & Copilot**]{.fg}
 
+Get familiar with AI assistance features — create a Stata do file, write code with AI, and execute it in the console.
 
-## Example 2: Understanding and cleaning the data {.small-slide}
+Pre-recorded self-study (18 min) → [Example 1](/selfstudy/example-1.qmd){target="_blank"}
+::::
 
-**You will practice using AI to:**
+:::: {.column width="50%"}
+[**Example 2: Understand & clean data**]{.fg}
 
-1. Set a clear objective and constraints for an AI session
-2. Build a **data dictionary** (variable names, types, labels) as the AI intermediary
-3. Document harmonization requirements as a **mapping table**
-4. Generate modular cleaning code following [DIME Wiki](https://dimewiki.worldbank.org/) best practices
-5. Iterate, verify with an independent auditor session, and document results
+Use AI to build a data dictionary, document harmonization, generate modular cleaning code, and verify results.
 
-Full details and prompts: [Self-Study → Example 2](/selfstudy/example-2.qmd){target="_blank"}
+Full details and prompts → [Example 2](/selfstudy/example-2.qmd){target="_blank"}
+::::
+:::::
