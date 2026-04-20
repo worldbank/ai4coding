@@ -20,15 +20,64 @@ format:
         - /assets/img/WBG-Prosperity Horizontal-Black.svg
 ---
 
-<!-- ## Objective {.center .small-slide} -->
 
+## Why structure your AI workflow? {.small-slide}
 
+AI coding assistants are **probabilistic** — output quality depends on context quality.
 
-<!-- ## Common workflows in data analysis with AI -->
+A structured workflow narrows the AI's degrees of freedom **step by step**, so it has enough context to generate correct, reproducible code.
 
-<!-- TODO: include common workflow slides from methods/_common-workflow-intro.qmd -->
+:::: {.columns}
+::: {.column width="50%"}
+[**Without structure:**]{.warning}
 
-## Data safeguarding practices while using AI {.small-slide}
+- Vague prompts → generic, unusable output
+- Silent errors in data transformations
+- Hard to reproduce or audit
+:::
+::: {.column width="50%"}
+[**With structure:**]{.fg}
+
+- Each step builds on the previous
+- Misunderstandings caught early
+- Reproducible, documented results
+:::
+::::
+
+## Eight-step workflow {.tiny-slide}
+
+1. **Set objective & constraints** — state task, target spec, and language up front
+2. **Define inputs & outputs** — unit of observation, file format, ID conventions, parameterized paths
+3. **Create a data dictionary** — metadata from raw files; AI never sees actual microdata
+4. **Gather external metadata** — codebooks, catalogs, survey documentation
+5. **Verify understanding** — mapping table: target variable → source → transformation → open questions
+6. **Develop code iteratively** — master script first, then one module at a time; test and iterate
+7. **Independent verification** — fresh AI session audits code and summary statistics
+8. **Document** — objective, decisions, limitations, reproducibility checklist
+
+::: {.callout-note}
+Steps 3–4 involve raw data. Review [Safeguarding Data](https://worldbank.github.io/ai4coding/methods/safeguard-data.html) before proceeding.
+:::
+
+## References and verification are non-negotiable {.tiny-slide}
+
+[**Always give AI direct links to sources**]{.fg}
+
+- AI can fetch live documentation (codebooks, catalogs, DIME Wiki pages) if you provide URLs
+- Without references, AI invents plausible-sounding but wrong variable definitions
+- Paste the relevant section if web access is unavailable
+
+[**Always verify independently**]{.warning}
+
+- Step 7 **must** run in a **separate** AI session — the original agent is biased toward confirming its own work
+- Provide concrete summary statistics to the auditor, not just code
+- Resolve every issue raised before finalizing
+
+::: {.callout-tip}
+The mapping table from Step 5 is the single most important artifact. Review every row before any code is written.
+:::
+
+## Data safeguarding practices while using AI {.tiny-slide}
 
 If sensitive or confidential data leaks to AI models, it can lead to [**data breaches and privacy violations**]{.warning} bearing substantial legal and reputational risks.
 
