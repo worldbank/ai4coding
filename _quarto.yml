@@ -51,7 +51,7 @@ website:
             href: https://worldbank.github.io/geoPovLearn/
 
   sidebar:
-    - title: Prerequisites
+    - title: Software Setup
       style: "docked"
       pinned: true
       collapse-level: 10
@@ -61,8 +61,6 @@ website:
         - prerequisites/github.qmd
         - prerequisites/extensions.qmd
         - prerequisites/assistant.qmd
-        - prerequisites/verify.qmd
-        - prerequisites/common-problems.qmd
 
     - title: "Day 1"
       style: "docked"

@@ -1,11 +1,20 @@
 ---
-title: "Overview"
+title: "Software Setup"
 ---
 
-Complete these setup steps **before the first session**:
+Tu use Stata in Positron with GitHub Copilot, you need:
 
-1. [Software Setup](software.qmd) — Stata 19+ MP, R 4.5+, Python 3.13+ with `uv`, Positron, Quarto 1.9+, Git
-2. [GitHub & Copilot](github.qmd) — personal GitHub account, WB org membership, Copilot access and premium requests
-3. [Positron Extensions](extensions.qmd) — Positron Stata (or Stata MCP), stataglow, databot
-4. [Positron Assistant](assistant.qmd) — enable assistant, connect to GitHub Copilot provider
-5. [Common Problems](common-problems.qmd) — `uv` install issues, access denied, Positron update, Quarto
+1. [Setup Software](software.qmd) — Stata 19+ MP, R 4.5+, Python 3.13+ with `uv`, Positron, Quarto 1.9+, Git
+   If anything does not work, refer to the [Software Setup > Troubleshooting](software.qmd#troubleshooting) section.
+
+3. [Stata for Positron Extensions](extensions.qmd) — Stata for Positron Integrates stata in Positron
+
+   See the [Stata for Positron Extensions > Troubleshooting](extensions.qmd#sec-troubleshooting-stataextension) section for common issues with the
+   extension.
+
+4. [GitHub & Copilot](github.qmd) — personal GitHub account and GithHub Copilot
+   subscriptions are needed to use premium requests
+   Any quesitons? see the [GitHub & Copilot > Troubleshooting](github.qmd#sec-troubleshooting-ghcopilot) section for common issues with GitHub.
+
+5. [Positron Assistant](assistant.qmd) — enable assistant, connect to GitHub Copilot provider
+    See the [Positron Assistant > Troubleshooting](assistant.qmd#sec-troubleshooting-assistant) section for common issues with Positron Assistant.
