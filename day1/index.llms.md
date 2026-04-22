@@ -1,4 +1,4 @@
-# Day 1: Overview and Materials
+# Day 1: Overview
 
 Author
 

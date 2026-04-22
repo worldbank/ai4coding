@@ -367,41 +367,41 @@
   {
     "objectID": "day1/setup-overview.html",
     "href": "day1/setup-overview.html",
-    "title": "Positron + Copilot setup and overview",
+    "title": "Additional materials",
     "section": "",
     "text": "Key concepts are:",
     "crumbs": [
-      "Positron + Copilot setup and overview"
+      "Additional materials"
     ]
   },
   {
     "objectID": "day1/setup-overview.html#positron-ide-overview",
     "href": "day1/setup-overview.html#positron-ide-overview",
-    "title": "Positron + Copilot setup and overview",
+    "title": "Additional materials",
     "section": "Positron IDE Overview",
     "text": "Positron IDE Overview\n\nAdapted from Positron UI https://positron.posit.co/layout.html\n\n\n\n\nInterface of the Positron IDE showing Activity Bar, Primary Side Bar, Editor, Panel, and Secondary Side Bar\n\n\n\nThe Activity Bar provides quick access to switch between core views such as Explorer, Search, Source Control, and Extensions.\nThe Primary Side Bar is on the left by default and shows you different views depending on what you have chosen in the Activity Bar. When you choose the Explorer icon, this pane provides the File Explorer to navigate your project directory and the outline. When you choose the Assistant icon, this pane provides access to Positron Assistant.\nThe Editor is in the center by default, and is where you write your code. For editor controls, refer to VS Code Editor Basics.\nThe Panel is below the editor by default and contains the fully interactive, integrated Console as well as the Terminal. You can also access logs from Output channels in the Panel.\nThe Secondary Side Bar is on the right by default. You can switch between the Session pane (where you can explore the variables you have defined and the plots you have created), the Connections pane, the Help pane, the History pane, and the Viewer pane.\n\nThe Title Bar at the very top of the window shows the active file and project, along with window controls. Below it, the Top Bar provides global project tools such as file search, the project switcher, and the interpreter selector with the ability to start, stop, and switch interpreters. The Status Bar at the bottom of the window displays details such as your git branch, language mode, Quarto version, and cursor position.\n\nLayout customization\n\n\n\nInterface of the Positron IDE showing how panels can be rearranged by dragging and toggled in and out of view using commands\n\n\nPositron offers flexible layout options to suit a variety of development workflows. Almost every component can be rearranged by dragging.\n\n\nCommand Palette\nCommand Palette - Ctrl+Shift+P - https://positron.posit.co/command-palette.html - is your gateway to all Positron features. It provides quick access to commands, settings, and more. For example, you can open files, run code, manage git, and interact with the assistant all from the Command Palette.\n\n\n\nPositron IDE showing how to access settings through the command palette\n\n\nTry:\n\nCtrl+Shift+P → type “Open file”\nCtrl+Shift+P → type “Assistant: Configure Language Model Providers”\nCtrl+Shift+P → type “Preferences: Open Settings (UI)” and search for “Stata” to find all related settings in one place.\n\n\n\nSettings\nSettings can be accessed through:\n\nCtrl+Shift+P (Command Palette) &gt; search for “Preferences: Open Settings (UI)”\nor through the menu File &gt; Preferences &gt; Settings\nor Ctrl+,.\n\nHere you can customize your Positron experience, including enabling the Assistant and configuring GitHub Copilot.\n\nSettings marked with a vertical line are modified from their default values in your IDE. You can click “Gear &gt; Reset” button next to each setting to revert it to the default value.\n\n\n\n\n\n\nRead/watch more\n\nUI https://positron.posit.co/layout.html\nExtensions https://positron.posit.co/extensions.html\nData analysis https://positron.posit.co/data-explorer.html\n\n\nA quick tourExploratory Data Analysis (R)Quarto Document (Python)",
     "crumbs": [
-      "Positron + Copilot setup and overview"
+      "Additional materials"
     ]
   },
   {
     "objectID": "day1/setup-overview.html#workflow-overview",
     "href": "day1/setup-overview.html#workflow-overview",
-    "title": "Positron + Copilot setup and overview",
+    "title": "Additional materials",
     "section": "Workflow overview",
     "text": "Workflow overview\n\nOpen/create a working folder\nCreate your script or notebook and start coding\nExecute code.\nUse console directly\nExplore plots\nData viewer\nHelp pane for documentation\n\n\n\n\nPositron workflow overview",
     "crumbs": [
-      "Positron + Copilot setup and overview"
+      "Additional materials"
     ]
   },
   {
     "objectID": "day1/setup-overview.html#assistant-github-copilot-setup-and-overview",
     "href": "day1/setup-overview.html#assistant-github-copilot-setup-and-overview",
-    "title": "Positron + Copilot setup and overview",
+    "title": "Additional materials",
     "section": "Assistant + GitHub Copilot: Setup and Overview",
     "text": "Assistant + GitHub Copilot: Setup and Overview\nTo use the assistant’s AI features, you need to Enable Positron Assistant and Configure GitHub Copilot.\nThis can be done as follows:\n\nCtrl+Shift+P → “Preferences: Open Settings (UI)” → search positron.assistant.enable → ☑️\n\nOther settings to consider:\n\npositron.assistant.showTokenUsage.enable - to show token usage details in the assistant chat\npositron.assistant.toolDetails.enable - to show tool usage details in the assistant chat\n\nThe Assistant lets you use AI for inline code suggestions and chat-based help. See videos below for a quick tour or follow along with the course examples.\n\nRead/watch more\n\nAI tools https://positron.posit.co/assistant.html\n\n\nWhat can you do with assistant?AI-Powered Data Science in Positron",
     "crumbs": [
-      "Positron + Copilot setup and overview"
+      "Additional materials"
     ]
   },
   {
@@ -411,7 +411,7 @@
     "section": "",
     "text": "Minimum requirements for this course\n\nStata 19+ MP installed and licensed\nPositron (latest version)\nR (4.5.3+)\nPython (3.13+)\nuv environment manager for Python\nQuarto (1.9+)\nGit (2.52+)\n\nNote: This software stack powers the AI-assisted coding workflow used throughout the course and beyond.",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "Software Setup"
     ]
   },
@@ -422,7 +422,7 @@
     "section": "Step 1: Install software from the Software Center",
     "text": "Step 1: Install software from the Software Center\n\nWB LaptopPrivate Laptop\n\n\n\nRestart your computer to ensure pending updates are applied.\nOpen Software Center and install the items in Table 1 in order.\nIf any program does not appear in the Software Center, submit a Software Installation Request or contact ITHelp@worldbankgroup.org.\n\n\n\n\n\n\n\n\nIf you have previously installed any of the software manually (or using an admin password), contact ITHelp@worldbankgroup.org to remove it first, then install from the Software Center.\nIf you have Python already installed for some times, install new python from the software center (AWBG10201.4) because it has broader permissions. Then set the Python path, so that any program sees your new python as the main one. You can set the path by running command python set exec \"C:\\WBG\\Python313\\python.exe\", permanently and restart the positron.\n\n\n\n\n\n\n\nDownload and install each tool from the links in Table 1.\n\n\n\n\n\n\nTable 1: Software\n\n\n\n\n\nSoftware\nWB Laptop (Software Center)\nPrivate Laptop\n\n\n\n\nStata (19+ MP)\n\n\n\n\nPositron (latest)\n\npositron.posit.co\n\n\nQuarto (1.9+)\n\nquarto.org\n\n\nR (4.5.3+)\n\ncran.r-project.org\n\n\nPython (3.13+)\n\npython.org\n\n\nuv Python package manager\nSee below\nSee below\n\n\nGit (2.52+)\n\ngit-scm.com",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "Software Setup"
     ]
   },
@@ -433,7 +433,7 @@
     "section": "Step 2: Python: check latest version",
     "text": "Step 2: Python: check latest version\nThere could be many python installed on your computer. For the Positron Stata extension to work, you need to use the most recent one installed from the Software Center (AWBG10201.4 or later).\nAny program must use python from the path C:\\WBG\\Python313\\python.exe . If not, you might encounter issues running Stata code in Positron.\nTo check which python you are using do one of the following:\n\nPowerShellBash (if you have GIT installed)Command prompt\n\n\nOpen PowerShell: keyboard Windows &gt; type “PowerShell” &gt; hit Enter\nGet-Command python | Select-Object -ExpandProperty Source\npython --version\npip --version\nYou must see:\n\na path like C:\\WBG\\Python313\\python.exe and\na Python version 3.13.\n\n\n\n\nOpen Git Bash: keyboard Windows &gt; type “git bash” &gt; hit Enter\nwhich python\npython --version\npip --version\nYou must see: - a path like /c/WBG/Python313/python.exe and - a Python version 3.13 or later.\n\n\n\nOpen Command Prompt (cmd): keyboard Windows &gt; type “cmd” &gt; hit Enter\nwhere python\npython --version\npip --version\nYou must see: - a path like C:\\WBG\\Python313\\python.exe at the top. - There might be other paths listed below, but the top one is the one being used by default. - a Python version 3.13 or later.",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "Software Setup"
     ]
   },
@@ -444,7 +444,7 @@
     "section": "Step 3: uv (Python package manager)",
     "text": "Step 3: uv (Python package manager)\nThis is very important for using Stata in Positron. Because UV is used for package management in the Positron Stata extension, if it’s not installed correctly, you won’t be able to run Stata code in Positron.\n\n\n\n\n\n\nIf it did not work as explained below:\n\ncontact ITHelp@worldbank.org for assistance.\ncheck eservices KB: KB0114399 (WB VPN required to access)\n\n\n\n\nTo install and verify uv:\n\nPowerShellGit BashCommand Prompt\n\n\n\nOpen PowerShell: keyboard Windows &gt; type “PowerShell” &gt; hit Enter\nRun:\n\npip install uv\nuv --version\nYou should see:\n\nInstallation progress and completions\na version number printed\n\n\n\n\n\nOpen Git Bash: keyboard Windows &gt; type “git bash” &gt; hit Enter\nRun:\n\npip install uv\nuv --version\nIn success case, you would see the same as in power shell, but with different formatting.\n\n\n\nOpen Command Prompt: keyboard Windows &gt; type “cmd” &gt; hit Enter\nRun:\n\npip install uv\nuv --version",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "Software Setup"
     ]
   },
@@ -455,7 +455,7 @@
     "section": "Step 4: Verify software works",
     "text": "Step 4: Verify software works\n\nPositron\nOpen Positron — if it launches, it’s working.\n\nSee Positron Overview for a tour of the layout.\n\n\n\n\nPositron layout\n\n\n\n\nR\nIn Positron, open the Console (Ctrl+Shift+P → “Console: Focus on Console”).\n\nYou should see an R interpreter.\n\n\n\n\nPython in Positron Console\n\nOpen new session way 1Open new session way 2\n\n\n\n\n\n\n\n\n\n\n\nPython in Positron Terminal\nIn Positron, open the Terminal (Ctrl+Shift+P → “Terminal: Create New Terminal”).\npython --version\npip list\nYou should see the Python version and a list of installed packages.\n\n\n\nuv in Positron Terminal\nIn the Terminal, run:\nuv --version\nYou should see a version number.\n\n\n\nQuarto\nIn the Terminal, run:\nquarto --version\nquarto check\nYou should see a version number and a passing check.",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "Software Setup"
     ]
   },
@@ -466,7 +466,7 @@
     "section": "Step 5: Running R Python code in Positron",
     "text": "Step 5: Running R Python code in Positron\nFollow instructions based on the language you want to run:\n\nRPython\n\n\n\nOpen a new file (Ctrl+N), save it as test.R (Ctrl+S).\nCopy-paste the following code:\n\n\n# test-r.R\n# Verify R is working: package management, palmerpenguins data,\n# visualisations (scatter, histogram, box, facets), and regression.\n\n# -------------------------------------------------------\n# 1. Package check + install\n# -------------------------------------------------------\nrequired_pkgs &lt;- c(\"tidyverse\", \"ggplot2\", \"palmerpenguins\")\n\nmissing_pkgs &lt;- required_pkgs[\n  !sapply(required_pkgs, requireNamespace, quietly = TRUE)\n]\n\nif (length(missing_pkgs) &gt; 0) {\n  message(\"Installing missing packages: \", paste(missing_pkgs, collapse = \", \"))\n  install.packages(missing_pkgs, repos = \"https://cloud.r-project.org\")\n} else {\n  message(\"All required packages are already installed.\")\n}\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n\n# -------------------------------------------------------\n# 2. Data overview\n# -------------------------------------------------------\nglimpse(penguins)\n\npenguins_clean &lt;- penguins |&gt; drop_na()\ncat(sprintf(\n  \"\\nRows after dropping NAs: %d (removed %d)\\n\",\n  nrow(penguins_clean),\n  nrow(penguins) - nrow(penguins_clean)\n))\n\n# -------------------------------------------------------\n# 3. Figure 1 — Scatter: bill dimensions coloured by species\n# -------------------------------------------------------\nfig_scatter &lt;- ggplot(\n  penguins_clean,\n  aes(x = bill_length_mm, y = bill_depth_mm, colour = species, shape = species)\n) +\n  geom_point(alpha = 0.7, size = 2.5) +\n  geom_smooth(method = \"lm\", se = FALSE, linewidth = 0.9) +\n  scale_colour_manual(values = c(\"darkorange\", \"purple\", \"cyan4\")) +\n  scale_shape_manual(values = c(16, 17, 15)) +\n  labs(\n    title = \"Bill length vs. bill depth\",\n    subtitle = \"Linear fit per species\",\n    x = \"Bill length (mm)\",\n    y = \"Bill depth (mm)\",\n    colour = \"Species\",\n    shape = \"Species\"\n  ) +\n  theme_minimal(base_size = 13)\n\nprint(fig_scatter)\n\n# -------------------------------------------------------\n# 4. Figure 2 — Histogram: flipper length by species (overlaid)\n# -------------------------------------------------------\nfig_hist &lt;- ggplot(\n  penguins_clean,\n  aes(x = flipper_length_mm, fill = species)\n) +\n  geom_histogram(\n    alpha = 0.6,\n    binwidth = 5,\n    position = \"identity\",\n    colour = \"white\"\n  ) +\n  scale_fill_manual(values = c(\"darkorange\", \"purple\", \"cyan4\")) +\n  labs(\n    title = \"Flipper length distribution\",\n    x = \"Flipper length (mm)\",\n    y = \"Count\",\n    fill = \"Species\"\n  ) +\n  theme_minimal(base_size = 13)\n\nprint(fig_hist)\n\n# -------------------------------------------------------\n# 5. Figure 3 — Box plots: body mass by species and sex\n# -------------------------------------------------------\nfig_box &lt;- ggplot(\n  penguins_clean,\n  aes(x = species, y = body_mass_g, fill = sex)\n) +\n  geom_boxplot(alpha = 0.7, outlier.shape = 21, outlier.size = 2) +\n  scale_fill_manual(values = c(\"steelblue\", \"tomato\")) +\n  labs(\n    title = \"Body mass by species and sex\",\n    x = \"Species\",\n    y = \"Body mass (g)\",\n    fill = \"Sex\"\n  ) +\n  theme_minimal(base_size = 13) +\n  theme(legend.position = \"top\")\n\nprint(fig_box)\n\n# -------------------------------------------------------\n# 6. Figure 4 — Faceted scatter: bill dimensions faceted by island\n# -------------------------------------------------------\nfig_facet &lt;- ggplot(\n  penguins_clean,\n  aes(x = bill_length_mm, y = bill_depth_mm, colour = species, shape = species)\n) +\n  geom_point(alpha = 0.7, size = 2) +\n  facet_wrap(~island, nrow = 1) +\n  scale_colour_manual(values = c(\"darkorange\", \"purple\", \"cyan4\")) +\n  scale_shape_manual(values = c(16, 17, 15)) +\n  labs(\n    title = \"Bill dimensions by island\",\n    subtitle = \"Faceted by island of observation\",\n    x = \"Bill length (mm)\",\n    y = \"Bill depth (mm)\",\n    colour = \"Species\",\n    shape = \"Species\"\n  ) +\n  theme_minimal(base_size = 13) +\n  theme(\n    panel.spacing = unit(1, \"lines\"),\n    strip.text = element_text(face = \"bold\")\n  )\n\nprint(fig_facet)\n\n# -------------------------------------------------------\n# 7. Regression: body mass ~ flipper length + bill length + species\n# -------------------------------------------------------\nmodel &lt;- lm(\n  body_mass_g ~ flipper_length_mm + bill_length_mm + bill_depth_mm + species,\n  data = penguins_clean\n)\n\ncat(\"\\n---- OLS Regression: Body mass ----\\n\")\nprint(summary(model))\n\n# Tidy coefficient table\ncat(\"\\n---- Tidy coefficients ----\\n\")\ncoef_tbl &lt;- broom::tidy(model, conf.int = TRUE) |&gt;\n  mutate(across(where(is.numeric), \\(x) round(x, 3)))\nprint(coef_tbl)\n\ncat(sprintf(\n  \"\\nAdjusted R²: %.4f | Residual std. error: %.1f g\\n\",\n  summary(model)$adj.r.squared,\n  summary(model)$sigma\n))\n\n\n\n\nOpen a new file (Ctrl+N), save it as test.py (Ctrl+S).\nCopy-paste the following code:\n\n\n# test-python.py\n# Verify Python is working: package management, palmerpenguins data,\n# visualisations (violin, pairplot, bar + CI, KDE heatmap), and regression.\n\n# -------------------------------------------------------\n# 1. Package check + install\n# -------------------------------------------------------\nimport importlib\nimport subprocess\nimport sys\n\nrequired = [\"palmerpenguins\", \"pandas\", \"matplotlib\", \"seaborn\", \"statsmodels\", \"scikit-learn\"]\n\nmissing = [pkg for pkg in required if importlib.util.find_spec(pkg) is None]\nif missing:\n    print(f\"Installing missing packages: {', '.join(missing)}\")\n    subprocess.check_call([sys.executable, \"-m\", \"pip\", \"install\", *missing])\nelse:\n    print(\"All required packages are already installed.\")\n\n# -------------------------------------------------------\n# 2. Imports and data loading\n# -------------------------------------------------------\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom palmerpenguins import load_penguins\nimport statsmodels.formula.api as smf\nfrom sklearn.preprocessing import LabelEncoder\n\nsns.set_theme(style=\"whitegrid\", palette=\"colorblind\")\nSPECIES_PALETTE = {\"Adelie\": \"#FF8C00\", \"Chinstrap\": \"#9400D3\", \"Gentoo\": \"#008B8B\"}\n\n# -------------------------------------------------------\n# 3. Data loading\n# -------------------------------------------------------\npenguins = load_penguins()\npenguins_clean = penguins.dropna().copy()\n\nprint(f\"Total rows: {len(penguins)} | After dropping NAs: {len(penguins_clean)}\")\nprint(penguins_clean.describe().round(2))\n\n# -------------------------------------------------------\n# 4. Figure 1 — Violin plots: body mass by species and sex\n# -------------------------------------------------------\nfig, ax = plt.subplots(figsize=(9, 5))\nsns.violinplot(\n    data=penguins_clean,\n    x=\"species\", y=\"body_mass_g\",\n    hue=\"sex\", split=True,\n    palette={\"male\": \"steelblue\", \"female\": \"tomato\"},\n    inner=\"quartile\", linewidth=1.2,\n    ax=ax,\n)\nax.set_title(\"Body mass distribution by species and sex\", fontsize=14)\nax.set_xlabel(\"Species\")\nax.set_ylabel(\"Body mass (g)\")\nplt.tight_layout()\nplt.show()\n\n# -------------------------------------------------------\n# 5. Figure 2 — Pair plot of all numeric morphometrics\n# -------------------------------------------------------\nnumeric_cols = [\"bill_length_mm\", \"bill_depth_mm\", \"flipper_length_mm\", \"body_mass_g\"]\npair_data = penguins_clean[numeric_cols + [\"species\"]]\n\npg = sns.pairplot(\n    pair_data,\n    hue=\"species\",\n    palette=SPECIES_PALETTE,\n    diag_kind=\"kde\",\n    plot_kws={\"alpha\": 0.6, \"s\": 30},\n)\npg.figure.suptitle(\"Pairwise relationships — all morphometric variables\", y=1.02, fontsize=13)\nplt.show()\n\n# -------------------------------------------------------\n# 5. Figure 3 — Mean flipper length per species × island (bar + CI)\n# -------------------------------------------------------\nsummary = (\n    penguins_clean\n    .groupby([\"island\", \"species\"])[\"flipper_length_mm\"]\n    .agg([\"mean\", \"sem\"])\n    .reset_index()\n    .rename(columns={\"mean\": \"mean_flipper\", \"sem\": \"se_flipper\"})\n)\n\nfig, ax = plt.subplots(figsize=(9, 5))\nsns.barplot(\n    data=penguins_clean,\n    x=\"island\", y=\"flipper_length_mm\",\n    hue=\"species\",\n    palette=SPECIES_PALETTE,\n    errorbar=\"se\", capsize=0.08,\n    ax=ax,\n)\nax.set_title(\"Mean flipper length by island and species (±SE)\", fontsize=14)\nax.set_xlabel(\"Island\")\nax.set_ylabel(\"Flipper length (mm)\")\nax.legend(title=\"Species\", loc=\"lower right\")\nplt.tight_layout()\nplt.show()\n\n# -------------------------------------------------------\n# 6. Figure 4 — KDE + rug: bill length by species\n# -------------------------------------------------------\nfig, ax = plt.subplots(figsize=(9, 5))\nfor species, colour in SPECIES_PALETTE.items():\n    subset = penguins_clean.loc[penguins_clean[\"species\"] == species, \"bill_length_mm\"]\n    sns.kdeplot(subset, ax=ax, label=species, color=colour, linewidth=2, fill=True, alpha=0.15)\n    ax.plot(subset, [-0.002] * len(subset), \"|\", color=colour, alpha=0.5, markersize=8)\n\nax.set_title(\"Kernel density of bill length by species (with rug)\", fontsize=14)\nax.set_xlabel(\"Bill length (mm)\")\nax.set_ylabel(\"Density\")\nax.legend(title=\"Species\")\nplt.tight_layout()\nplt.show()\n\n# -------------------------------------------------------\n# 7. OLS regression: body mass ~ morphometrics + species\n# -------------------------------------------------------\nformula = \"body_mass_g ~ flipper_length_mm + bill_length_mm + bill_depth_mm + C(species)\"\nmodel = smf.ols(formula, data=penguins_clean).fit()\n\nprint(\"\\n\" + \"=\" * 60)\nprint(\"OLS Regression: body mass ~ morphometrics + species\")\nprint(\"=\" * 60)\nprint(model.summary())\nprint(f\"\\nN = {int(model.nobs)}  |  Adj. R² = {model.rsquared_adj:.4f}  |  RMSE = {model.mse_resid**0.5:.1f} g\")",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "Software Setup"
     ]
   },
@@ -477,7 +477,7 @@
     "section": "Step 6: Troubleshooting",
     "text": "Step 6: Troubleshooting\n\nPositron deinstalling itself after shutdown/restart\nThis is an irregular issue. It may be linked to:\n\nITS updated positron on the osftware center, which may have caused some conflicts with the previous version and deinstalled it.\nYour laptop requires maintenance. Contact ITHelp@worldbankgroup.org for assistance.\n\n\n\nPositron not launching after installation\n\nRestart your computer.\nHit Windows &gt; type “ED Version” &gt; hit Enter\nFind Positron in the list and uninstall it.\nRestart your computer again.\nInstall Positron again from the Software Center.\n\n\n\nPositron is installed from the software center but does not appear in the start menu\n\nRestart your computer. It may take few days or few restarts.\nCheck if Positron.exe is in C:\\Users\\wbXXXXXX\\AppData\\Local\\Programs\\Positron\\\nIf it is there, double click to launch it. If it works, pin it to the start menu. Icons will update eventuyally.\nIf it doesn’t work, try Positron not launching after installation steps above.\nIf it still doesn’t work, contact ITS.\n\n\n\nPython not found\n\nMake sure you have installed Python from the Software Center (AWBG10201.4 or later).\nCheck if your Python path is set to the new installation\nIf your python is not in C:\\WBG\\Python313\\python.exe, then do the following:\n\nContact ITHelp@worldbankgroup.org for assistance and tell them that you need to set the default python to the one installed from the software center (AWBG10201.4 or later). Currently when your computer uses python it uses an old installaiton of python that has limitations.\n\n\nPython does not start\n\nThis may happend. WB laptops have many security layers and sometimes they block some functionalities of the software or it just taking longer to laod.\n\nChck that the latest python is installed and the path is correct (see Python check).\nStart a new console for python and see if it works.\nRestart your computer and try again.\n\n\n\nuv is installed but does not work\nFor example:\n\nRunning pip install uv fails, or uv --version returns command not found / not recognised after installation.\nuv installs but does not work in the terminal or Positron, or you see an error like The system cannot find the file specified when running uv.\n\nReach out to ITHelp@worldbankgroup.org for assistance.\n\n\nIs the Stata available at the software center?\nStata must be requested. Make a Software Installation Request or use R/Python instead.\n\n\nSoftware does not install from the Software Center\nRestart your computer and try again. If it still doesn’t work, this is not normal and your PC requires a maintanance. Contact ITHelp@worldbankgroup.org for assistance.\n\n\nCannot create folder in C:\\WBG\\\nThi is not normal and your PC requires a maintanance. Contact ITHelp@worldbankgroup.org for assistance.\n\n\nIf I’m using STATA, do I need R or Python?\nYou need Python to use Stata in Positron, but you don’t need R. However, we recommend installing R as well to have the full AI-assisted coding experience in Positron.\n\n\nQuarto\nQuarto is not found after installation: contact ITHelp@worldbankgroup.org for assistance setting up the Quarto path in your user environment variables.\nWhen Quarto renders fail with an error like access denied or permission denied, you might be using a wrong path for your Quarto executable or may not have installed Quarto from the Software Center. Contact ITHelp@worldbankgroup.org for assistance.\n\n\nDo we need to install Quarto too?\nSee Software installation above.",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "Software Setup"
     ]
   },
@@ -488,7 +488,7 @@
     "section": "Licences",
     "text": "Licences\n\n\n\nTool\nLicence\n\n\n\n\nStata\nCommercial\n\n\nR\nFree and Open Source\n\n\nPython\nFree and Open Source\n\n\nPositron\nElastic License 2.0 - Source code available, built by Posit\n\n\nQuarto\nMIT - Free and open source, built by Posit\n\n\nGit\nFree and Open Source\n\n\nStata MCP extension\nMIT - Free, open source\n\n\nPositron Stata extension\nNot-clear…",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "Software Setup"
     ]
   },
@@ -499,7 +499,7 @@
     "section": "",
     "text": "WarningMinimum requirements for this course\n\n\n\n\nA personal GitHub account\nGitHub Copilot access (private or institutional)\nAvailable premium requests — check here",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "GitHub & Copilot"
     ]
   },
@@ -510,7 +510,7 @@
     "section": "Quick start",
     "text": "Quick start\n\nCreate a GitHub account with your personal email (not your WB email).\nJoin the github.com/worldbank organization.\nGet GitHub Copilot — either request access from WB or subscribe privately.\nSet up a premium request budget (recommended) — your plan includes a monthly allowance (WB: 300, Pro: 500, Pro+: 1,500). Once exhausted, advanced models are blocked unless you enable overuse billing:\n\nPrivate plan → GitHub &gt; Settings &gt; Budgets and Alerts &gt; + New Budget\nWB plan → Premium request chargeback\n\n\nQuestions? Email github@worldbank.org.",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "GitHub & Copilot"
     ]
   },
@@ -521,7 +521,7 @@
     "section": "Step 1. Create a GitHub account",
     "text": "Step 1. Create a GitHub account\nSign up at https://github.com/signup. Use your personal email address, not your World Bank email.",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "GitHub & Copilot"
     ]
   },
@@ -532,7 +532,7 @@
     "section": "Step 2. Join the WB GitHub organization",
     "text": "Step 2. Join the WB GitHub organization\n\nSubmit a Join GitHub Organization request on eServices.\nAccept the invitation email (sent to your private email linked with your GitHub account).\nConfirm membership by following the link in the email.\n\nInvitations expire after 7 days — resubmit through eServices if needed.\n\n\nSee WB GitHub Enterprise Overview for details.\n\n\n\n\n\n\nNote\n\n\n\nInactivity policy. Members inactive for several months may be removed automatically. Resubmit the eServices request to rejoin. This does not affect your personal GitHub account or Copilot subscription.",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "GitHub & Copilot"
     ]
   },
@@ -543,7 +543,7 @@
     "section": "Step 3. Get GitHub Copilot",
     "text": "Step 3. Get GitHub Copilot\nChoose one of the following:\n\nOption A: WB Organization accessOption B: Private subscription\n\n\nAfter joining the WB org, go to GitHub Settings &gt; Copilot:\n\nScroll to “Get Copilot from an organization” and click Request access from worldbank.\n\n\n\nRequest access button\n\n\nEmail github@worldbank.org:\n\nSubject: Request GitHub Copilot Access\nBody: your GitHub username + brief reason\nCC: your manager\n\n\n\n\nPurchase Copilot Pro or Pro+. This works independently of WB org membership.\n\n\n\n\n\n\nNote\n\n\n\nOnce you receive WB Copilot access, your private subscription is automatically cancelled and refunded. You cannot easily switch back to a private subscription afterward.",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "GitHub & Copilot"
     ]
   },
@@ -554,7 +554,7 @@
     "section": "Step 4. Verify Copilot access",
     "text": "Step 4. Verify Copilot access\nGo to GitHub Settings &gt; Copilot and confirm your status:\n\nNo Copilot accessPrivate or WB Copilot access granted\n\n\n\n\n\nNo Copilot access\n\n\n\n\n\n\n\nCopilot access confirmed\n\n\nNote: If you have copilot access from the WB, you will see “Managed by worldbank”.",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "GitHub & Copilot"
     ]
   },
@@ -565,7 +565,7 @@
     "section": "Step 5. Check premium requests usage",
     "text": "Step 5. Check premium requests usage\nGo to GitHub Settings &gt; Copilot.\n\n\n\nGH Copilot 100% use limit\n\n\n\n0–100% — share of your monthly allowance used so far.\n100%+ — overuse; billed at ~$0.04/request if a budget is enabled.\nResets monthly — usage drops to 0% at the start of each billing cycle.",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "GitHub & Copilot"
     ]
   },
@@ -576,7 +576,7 @@
     "section": "Step 6. Enable premium request budget (recommended)",
     "text": "Step 6. Enable premium request budget (recommended)\nWhen you reach your monthly limit, advanced models (Claude, GPT) are unavailable until the next month. To keep access, enable premium request budget billing:\n\nWB Copilot planPrivate plan\n\n\nFollow the Premium Request Chargeback Process:\n\nGet manager approval and a budget code.\nSet a monthly spending limit.\nEmail github@worldbank.org with your budget code (cc your manager).\n\n\n\nGo to GitHub Billing &gt; Budgets and set a spending limit.",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "GitHub & Copilot"
     ]
   },
@@ -587,7 +587,7 @@
     "section": "Step 7. Troubleshooting",
     "text": "Step 7. Troubleshooting\nDo we have enterprise account for Github Copilot?\n\nYou need to have a private avvount and become a member of the WB GitHub organization.\n\nI got the WB subscription but using my WB email.\n\nPlease change your email to a personal one.\n\nMay I ask how to get the WB subscription?\n\nYou need to have a private avvount and become a member of the WB GitHub organization.",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "GitHub & Copilot"
     ]
   },
@@ -598,7 +598,7 @@
     "section": "Premium requests",
     "text": "Premium requests\nGitHub Copilot’s advanced features (Chat, Agent mode, Claude/GPT models) consume premium requests. Each plan includes a monthly allowance:\n\n\n\nPlan\nPremium requests / month\n\n\n\n\nInstitutional WB org\n300\n\n\nPrivate Copilot Pro\n500\n\n\nPrivate Copilot Pro+\n1,500\n\n\n\nOnce you hit the limit, advanced AI features (Ask and Agent mode, Claude) are unavailable for the rest of the month. Basic inline completions still work, but with older, less capable models.\nCheck your usage → GitHub Settings &gt; Copilot, scroll to “Usage”.\nTo avoid hitting the limit, enable premium requests budget (~$0.04/request):\n\nPrivate plan → GitHub &gt; Settings &gt; Budgets and Alerts &gt; + New Budget\nWB plan → setup chargeback. Setting up private usage limit using a credit card is not possible for WB org members.\nNote: You can only have one active plan: private or institutional. If you have a private subscription and get institutional WB access, your private subscription is automatically cancelled and remaining balance is refunded. Exiting institutional subscription (e.g. leaving WB org) is only possible at the end of the month and does not restore private subscription — you would need to resubscribe privately if you want to switch back.",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "GitHub & Copilot"
     ]
   },
@@ -609,7 +609,7 @@
     "section": "Access levels",
     "text": "Access levels\n\n\n\n\n\n\n\n\nSetup\nRepos\nCopilot\n\n\n\n\nNo GitHub account\n✅ Public / ❌ Personal / ❌ WB\n❌\n\n\nPersonal account (free)\n+✅ Personal / ❌ WB\n⚠️ Only old LLMs\n\n\n+ Copilot Pro/Pro+ (private)\n+✅ Personal / ❌ WB\n✅ Claude+ 300/1500\n\n\n+ Premium requests budget (private)\n+✅ Personal / ❌ WB\n✅ + extra at $0.04/request\n\n\nWB Org member\n+✅ WB\n⚠️ No premium requests\n\n\n+ Private Copilot and premium requests budget\n+✅ WB\n✅ Claude+ 300/1500 (+ extra)\n\n\n+ WB Copilot access\n+✅ WB\n✅ 300 req/mo\n\n\n+ WB chargeback\n+✅ WB\n✅ + extra at $0.04/request",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "GitHub & Copilot"
     ]
   },
@@ -620,7 +620,7 @@
     "section": "",
     "text": "WarningMinimum requirements for this course\n\n\n\n\nPositron Assistant enabled and connected to the GitHub Copilot provider.\nThe steps below are adapted from the Positron Assistant Getting Started guide.",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "Positron Assistant"
     ]
   },
@@ -631,7 +631,7 @@
     "section": "Step 1 — Enable Positron Assistant",
     "text": "Step 1 — Enable Positron Assistant\n\nOpen Positron settings (Ctrl+,).\nSearch for positron.assistant.enable and check the box.\n\n\n\n\nEnable Positron Assistant setting\n\n\n\nRestart Positron or run the Developer: Reload Window command in the Command Palette (Ctrl+Shift+P).",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "Positron Assistant"
     ]
   },
@@ -642,7 +642,7 @@
     "section": "Step 2 — Configure a language model provider",
     "text": "Step 2 — Configure a language model provider\nAnthropic and GitHub Copilot are enabled by default. Other providers (Amazon Bedrock, Snowflake Cortex, OpenAI, Custom) are in preview/experimental and must be enabled through settings.\n\nGitHub Copilot\n\n\nGitHub Copilot is enabled by default when you are signed in.\n\nRun the command Positron Assistant: Configure Language Model Providers (Ctrl+Shift+P).\nSelect GitHub Copilot as the model provider.\n\n\n\n\nGitHub Copilot selected in provider modal\n\n\n\nSelect Sign in and complete the GitHub OAuth flow in your browser.\n\n\n\n\n\n\n\nNote\n\n\n\nYou can also sign in to GitHub via the Accounts icon (bottom-left of the Activity Bar).",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "Positron Assistant"
     ]
   },
@@ -653,7 +653,7 @@
     "section": "Step 3 — Use Positron Assistant",
     "text": "Step 3 — Use Positron Assistant\nOnce authenticated with at least one provider, open the Assistant chat:\n\nSelect the chat robot icon in the sidebar, or run Chat: Open Chat from the Command Palette.\n\n\n\n\n\n\nAssistant Sidebar Icon\n\n\n\n\n\n\nAssistant Panel\n\n\n\n\n\nType your question in the chat input box and press Enter.\n\nSee the full Positron Assistant Getting Started guide for all provider options.",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "Positron Assistant"
     ]
   },
@@ -664,7 +664,7 @@
     "section": "Step 4 — Troubleshooting",
     "text": "Step 4 — Troubleshooting\nAdvanced models (Claude, GPT) are not available for me in positron assistant.\n\nThis is because you do not have Github Copilot subscription, see Verify Github Copilot Access for details.\n\nMost often, issues with Positron Assistant and GitHub Copilot are related to authentication, configuration, or exceeding the free-requests quota.\n\nYou may not have activated GitHub Copilot through a private or WB subscription. Check the GitHub Copilot setup guide for details.\nCheck whether you still have free premium requests available. If you have exhausted your quota, you will need to wait until it resets or subscribe to a paid plan. See the GitHub Copilot setup guide for details.\nPositron Assistant may not be enabled or configured to use GitHub Copilot as the provider. Check the Positron Assistant setup guide for details.\n\nIf error messages persist after confirming the above, contact ITHelp@worldbankgroup.org for assistance and github@worldbankgroup.org to verify that your GitHub Copilot subscription is active.",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "Positron Assistant"
     ]
   },
@@ -724,7 +724,7 @@
     "section": "",
     "text": "WarningMinimum requirements for this course\n\n\n\nTo be able to run Stata code in Positron, you need to install a Positron extension that connects the editor to Stata. The recommended extension is Positron Stata, which provides native integration with console, data viewer, and plots.\nStata has no built-in editor integration. Extensions bridge the gap by connecting Positron to Stata’s backend, enabling an AI-assisted coding workflow. Three components work together:",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "Positron-Stata integration"
     ]
   },
@@ -735,7 +735,7 @@
     "section": "Step 1. Install the Stata for Positron",
     "text": "Step 1. Install the Stata for Positron\nNative Positron integration of Stata with console, data viewer, plots, help, and documentation are on GitHub along with issue reporting: github.com/ntluong95/positron-stata.\nTo install it:\n\nOpen the Extensions panel (Ctrl+Shift+X)\nSearch for Stat for Positron or ntluong95.positron-stata\nClick Install -&gt; Trust and Install\nReload Positron: Ctrl+Shift+P → Developer: Reload Window",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "Positron-Stata integration"
     ]
   },
@@ -746,7 +746,7 @@
     "section": "Step 2. Configure the extension",
     "text": "Step 2. Configure the extension\n\nOpen settings in Positron (Ctrl+,).\nSearch for positron.stata.installationPath\nNote setting name is “Positron &gt; Stata: Installation Path”. Check this is correct! Especially if you have or had multiple stata extensions installed in positron.\nSet the path to your Stata installation, e.g. C:\\Program Files\\StataNow19\\ It also works with Stata 18.",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "Positron-Stata integration"
     ]
   },
@@ -757,7 +757,7 @@
     "section": "Step 3. Verify Stata runs in Positron",
     "text": "Step 3. Verify Stata runs in Positron\n1 Create a new .do file and run example code to verify the extension is working (or open an existing one).\n\ncreate test.do with:\nsysuse auto\nsummarize price\ndisplay \"Stata is working!\"\nSave the file (Ctrl+S) — unsaved edits are not executed.\nRun the file (Ctrl+Shift+D or Ctrl+Shift+P → Stata: Run Current File)\n\n\nInstallationVerificationKey features\n\n\n\n\n\n\n\n\n\nCreate and run .do files\nAI agent integration\nConsole: execute Stata code and see output\nEnvironment: variables and globals\nData: view, and explore\nFigures: display, manage, and export\nHave multiple Stata sessions",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "Positron-Stata integration"
     ]
   },
@@ -768,7 +768,7 @@
     "section": "Step 4. Stata-MCP feature (optional)",
     "text": "Step 4. Stata-MCP feature (optional)\nThe extension also supports Model Context Protocol (MCP) for AI agent use. MCP allows AI agents to have full context of your Stata environment, including variables, data, and figures bypassing the console and enabling more powerful AI-assisted coding without distracting the user.\nThis reduce control as allows stata to run code without user explicitly accepting to run it. Use with caution!\nIn positron:\n\nCtrl+Shift+P → MCP: Open User Configuration\nPaste in there:\n{\n \"servers\": {\n     \"stata-mcp\": {\n         \"type\": \"sse\",\n         \"url\": \"http://localhost:4000/mcp\"\n     }\n}\n}\nSave the file\nCtrl+Shift+P → MCP: List Servers → stata-mcp → Start Server",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "Positron-Stata integration"
     ]
   },
@@ -779,7 +779,7 @@
     "section": "Step 5. Troubleshooting",
     "text": "Step 5. Troubleshooting\n\nStata console does not start\n\nError 1Error 2Error 3\n\n\n\n\n\n\n\n\n\n\n\n\nThis error can have multiple causes. Common fixes include:\n\nUV is not properly installed. Check Step 3: uv (Python package manager)\nPython cannot set environment using uv. Sometimes even when uv is installed, the extension cannot use it to set up the Python environment because of the software security settings on the laptops.\nto bypass it you may try manually installing python packages using pip install and once those are installed, it may start working.\nRequired packages are in requirements.txt. They include:\nfastapi==0.119.1\nuvicorn==0.38.0\nfastapi-mcp==0.4.0\nmcp==1.18.0\npydantic==2.11.1\npandas==2.3.3\nhttpx==0.28.1\nYou can install them in the global python environment by:\n\nKeyboard Windows &gt; PowerShell\nPaste in the power shell replacing wbXXXXXX with your WB username. check if requirements.txt exists in the folder specified before running the command.\npip install -r \"c:\\Users\\wbXXXXXX\\.positron\\extensions\\ntluong95.positron-stata-0.1.1-universal\\python\\requirements.txt\"\n\nRestart Positron and try running Stata again.\n\n\n\nNo stata runtime is available\n\nThis means that:\n\nYou did not set the Stata installation path, see Configure the extension\nYou set the path, but it is wrong. Check the path is correct and points to your Stata installation directory, e.g. C:\\Program Files\\StataNow19\\.\nYou set a correct path but to the wrong setting. Multiple extensions may require to set a Stata path. Make sure you set the path for the setting names positron.stata.installationPath and not another one (e.g. from a different Stata extension).",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "Positron-Stata integration"
     ]
   },
@@ -790,7 +790,7 @@
     "section": "Step 5. Limitations",
     "text": "Step 5. Limitations\nCustom logs not supported — log using &lt;filename&gt; conflicts with the extension’s own logging. Stata only allows one log at a time. Use capture log using &lt;filename&gt; to bypass this limitation.\n**Closing logs _all with capture breaks the code**. do not use cap log close _all because this will also close the logs used by the extension to capture Stata output, which will break the extension’s functionality. Instead, close logs individually with cap log close &lt;filename&gt;.\n\nBugs are possible — report issues to the extension developers",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "Positron-Stata integration"
     ]
   },
@@ -801,7 +801,7 @@
     "section": "Alternative stata extension: Stata MCP",
     "text": "Alternative stata extension: Stata MCP\nStata MCP is an alternative extension that integrates stata into the Positron. It is designed for VS Code / Cursor users, but underperforms in Positron, and does not have native Positron integration (e.g. no data viewer or plots in Positron). Installation is similar to Positron Stata above.\nKey differences:\n\n\n\n\n\n\n\n\nFeature\nPositron Stata\nStata MCP\n\n\n\n\nConsole output in Positron\n✅\n✅\n\n\nData viewer\n✅\n❌\n\n\nMultiple Stata sessions\n✅\n❌\n\n\nAI agent integration\n✅\n✅\n\n\nMCP support\n✅\n✅\n\n\nMaturity\nNew (2026)\nMore mature (2023)\n\n\nGood for…\nPositron users who want native integration\nVS Code / Cursor users who want MCP support",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "Positron-Stata integration"
     ]
   },
@@ -812,7 +812,7 @@
     "section": "Extensions in Positron",
     "text": "Extensions in Positron\nPositron/VS Code ships with minimal built-in functionality by design — extensions add support for specific languages, tools, and workflows without bloating the core editor.\nNotable extensions for this course:\n\nstataglow extension for Stata syntax highlighting.\nPositron Assistant — installed by default; provides AI code suggestions and completions via GitHub Copilot and other AI providers.\nClaude Code — agentic AI coding using Anthropic’s Claude models.\nPositron Databot — AI-assisted data analysis and visualization.\nVScode-pdf (tomoki1207.pdf) — view PDF files directly in Positron (e.g. for documentation).\nExcel Viewer (GrapeCity.gc-excelviewer) — view Excel files directly in Positron.\n\nInstalling any extensions\nOpen the Extensions panel with Ctrl+Shift+X or click the square icon  on the left sidebar.\nTo install any extension:\n\nSearch for it by name and hit Enter, e.g. positron assistant or claude code. Note that if in the search bar there is a tag starting with “@”, remove it.\nClick Install\nIf prompted “Do you trust the publisher?”, click Trust and Install\nIf needed, reload Positron: Ctrl+Shift+P → Developer: Reload Window\n\n\n\n\nExtensions panel\n\n\nAn alternative is the Stata MCP extension, which supports Model Context Protocol (MCP) for AI agent use.",
     "crumbs": [
-      "Prerequisites",
+      "Setup",
       "Positron-Stata integration"
     ]
   },
@@ -823,98 +823,97 @@
     "section": "",
     "text": "Tu use Stata in Positron with GitHub Copilot, you need:\n\nSetup Software — Stata 19+ MP, R 4.5+, Python 3.13+ with uv, Positron, Quarto 1.9+, Git\nIf anything does not work, refer to the Software Setup &gt; Troubleshooting section.\nStata for Positron Extensions — Stata for Positron Integrates stata in Positron\nSee the Stata for Positron Extensions &gt; Troubleshooting section for common issues with the extension.\nGitHub & Copilot — personal GitHub account and GithHub Copilot subscriptions are needed to use premium requests\nAny quesitons? see the GitHub & Copilot &gt; Troubleshooting section for common issues with GitHub.\nPositron Assistant — enable assistant, connect to GitHub Copilot provider\nSee the Positron Assistant &gt; Troubleshooting section for common issues with Positron Assistant.",
     "crumbs": [
-      "Prerequisites",
       "Setup"
     ]
   },
   {
     "objectID": "day1/index.html",
     "href": "day1/index.html",
-    "title": "Day 1: Overview and Materials",
+    "title": "Day 1: Overview",
     "section": "",
     "text": "Familiarize yourself with the basics of AI-assisted coding and its workflow.\nGet an intuitive understanding of the key concepts behind the technology, how it works and what are its capabilities, and limitations.\nSetup the software environment to be able to practice AI-assisted coding on your own during the self-study period following examples and supplementary materials.\nSee AI in action by following along with live demonstrations and examples of common use cases, such as data preparation and cleaning, and securing sensitive data.",
     "crumbs": [
-      "Day 1: Overview and Materials"
+      "Day 1: Overview"
     ]
   },
   {
     "objectID": "day1/index.html#welcome",
     "href": "day1/index.html#welcome",
-    "title": "Day 1: Overview and Materials",
+    "title": "Day 1: Overview",
     "section": "1. Learn: Welcome, introductions, and overview",
     "text": "1. Learn: Welcome, introductions, and overview\nIntroduction and housekeeping, then an overview of the day’s agenda and materials.\nSlides\n\nView slides in a new tab.",
     "crumbs": [
-      "Day 1: Overview and Materials"
+      "Day 1: Overview"
     ]
   },
   {
     "objectID": "day1/index.html#setup-overview",
     "href": "day1/index.html#setup-overview",
-    "title": "Day 1: Overview and Materials",
+    "title": "Day 1: Overview",
     "section": "2. Setup overview",
     "text": "2. Setup overview\n\nImportant: Setup your working folders properly!\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not use OneDrive for coding with Positron during this course! (temporary).\n\nPositron is a new software for the WB.\nUnfortunately we only discovered last week that WB security policies block Positron from writing text files on OneDrive.\nDo not save your code-in-progress in a OneDrive folder.\nNew security policy will be implemented Friday, April 24 (Because of the spring meeting freeze).\n\n\n\nTo follow along with the course and practice on your own, you need to:\n\nOn C:\\WBG\\ create a folder called ai.\nCopy exercise templates into C:\\WBG\\ai\\ai4coding-practice\\ using either:\n\nOneDrive (WB only) folder ai4coding-examples\nor forking the GitHub repo worldbank/ai4coding-examples\n\nWork in the relevant exercise subfolder, e.g. C:\\WBG\\ai\\ai4coding-practice\\ex01\\.\nAccess course data:\n\nShared through OneDrive (WB only) ai4coding-data\nIt is read-only. You can sync it to your OneDrive (where appropriate) and use it from there.\nIf you encounter problems, copy the data to C:\\WBG\\ai\\ai4coding-data\\.\n\n\nSlides\n\nView slides in a new tab.",
     "crumbs": [
-      "Day 1: Overview and Materials"
+      "Day 1: Overview"
     ]
   },
   {
     "objectID": "day1/index.html#ai-concepts",
     "href": "day1/index.html#ai-concepts",
-    "title": "Day 1: Overview and Materials",
+    "title": "Day 1: Overview",
     "section": "3. Core AI-related concepts",
     "text": "3. Core AI-related concepts\n\n\nView slides in a new tab.",
     "crumbs": [
-      "Day 1: Overview and Materials"
+      "Day 1: Overview"
     ]
   },
   {
     "objectID": "day1/index.html#ai-workflow",
     "href": "day1/index.html#ai-workflow",
-    "title": "Day 1: Overview and Materials",
+    "title": "Day 1: Overview",
     "section": "4. Common workflows and data safeguarding practices while using AI (slides)",
     "text": "4. Common workflows and data safeguarding practices while using AI (slides)\n\n\nView slides in a new tab.",
     "crumbs": [
-      "Day 1: Overview and Materials"
+      "Day 1: Overview"
     ]
   },
   {
     "objectID": "day1/index.html#example-0-test-your-setup-live",
     "href": "day1/index.html#example-0-test-your-setup-live",
-    "title": "Day 1: Overview and Materials",
+    "title": "Day 1: Overview",
     "section": "Example 0: Test your setup (live)",
     "text": "Example 0: Test your setup (live)\nThis presentation ends with an example that demonstrates how to test if the setup is working correctly. Example 0 could be found in Self-Study &gt; Example 0.",
     "crumbs": [
-      "Day 1: Overview and Materials"
+      "Day 1: Overview"
     ]
   },
   {
     "objectID": "day1/index.html#example-1-stata-in-positron-with-github-copilot",
     "href": "day1/index.html#example-1-stata-in-positron-with-github-copilot",
-    "title": "Day 1: Overview and Materials",
+    "title": "Day 1: Overview",
     "section": "Example 1: Stata in Positron with GitHub Copilot",
     "text": "Example 1: Stata in Positron with GitHub Copilot\nThis introductory example is plan for self-study, full details, suggested prompts, and instructions are in the Self-Study &gt; Example 1.",
     "crumbs": [
-      "Day 1: Overview and Materials"
+      "Day 1: Overview"
     ]
   },
   {
     "objectID": "day1/index.html#example-2-understanding-data-with-ai",
     "href": "day1/index.html#example-2-understanding-data-with-ai",
-    "title": "Day 1: Overview and Materials",
+    "title": "Day 1: Overview",
     "section": "Example 2: Understanding data with AI",
     "text": "Example 2: Understanding data with AI\nThis example is planned for live demonstration during the session, but you can also follow along on your own as a self-study exercise. Full details, suggested prompts, and instructions are in the Self-Study &gt; Example 2.",
     "crumbs": [
-      "Day 1: Overview and Materials"
+      "Day 1: Overview"
     ]
   },
   {
     "objectID": "day1/index.html#example-3-reproduce-revise-and-reuse",
     "href": "day1/index.html#example-3-reproduce-revise-and-reuse",
-    "title": "Day 1: Overview and Materials",
+    "title": "Day 1: Overview",
     "section": "Example 3: Reproduce, Revise, and Reuse",
     "text": "Example 3: Reproduce, Revise, and Reuse\nThis example is planned for a live demonstration during the session, but you can also follow along on your own as a self-study exercise. Full details, suggested prompts, and instructions are in the Self-Study &gt; Example 3.\nConsider using your own data and problem for this example if you have one in mind. The goal of this example is to practice the workflow of analysis refactoring and improvement. The example provided is based on a real analysis, but the workflow and principles apply broadly to any analysis you might be working on.\nThis example will show you how to use AI to:\n\nUnderstand and reproduce existing analysis.\nRevise it to make it clear, transparent, and well documented.\nSet up system prompt files that guide the AI on dos and don’ts.\nAdapt it to new data.\nDocument it in accordance with reproducibility package requirements.",
     "crumbs": [
-      "Day 1: Overview and Materials"
+      "Day 1: Overview"
     ]
   },
   {

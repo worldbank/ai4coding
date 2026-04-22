@@ -12,7 +12,7 @@ Tu use Stata in Positron with GitHub Copilot, you need:
 
 1.  [Setup Software](../prerequisites/software.llms.md) — Stata 19+ MP, R 4.5+, Python 3.13+ with `uv`, Positron, Quarto 1.9+, Git
 
-    If anything does not work, refer to the [Software Setup \> Troubleshooting](../prerequisites/software.llms.md#troubleshooting) section.
+    If anything does not work, refer to the [Software Setup \> Troubleshooting](../prerequisites/software.llms.md#common-problems) section.
 
 2.  [Stata for Positron Extensions](../prerequisites/extensions.llms.md) — Stata for Positron Integrates stata in Positron
 

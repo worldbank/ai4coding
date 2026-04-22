@@ -1,4 +1,4 @@
-# Positron + Copilot setup and overview
+# Additional materials
 
 Author
 
