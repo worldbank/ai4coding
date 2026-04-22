@@ -1,0 +1,79 @@
+---
+title: "AI 4 Coding"
+subtitle: "Day 2: New features: MCP, tools, skills, agents, prompt files, and more..."
+date: "April 23, 2026"
+format:
+  revealjs:
+    theme: [simple, /assets/custom.scss]
+    code-copy: false
+    # margin: 0.10
+    # html-math-method: mathjax
+    slide-number: c/t
+    background-transition: zoom
+    preload-iframes: true
+    scrollable: true
+    transition: fade
+    preview-links: true
+    logo: /assets/img/WBG-Prosperity Horizontal-Black.svg
+    footer: '[worldbank.github.io/ai4coding](https://worldbank.github.io/ai4coding) by Eduard Bukin © 2026 World Bank.'
+    resources:
+        - /assets/img/WBG-Prosperity Horizontal-Black.svg
+---
+
+# Introduction
+
+## Motivation {.small-slide}
+
+In Day 1, we covered basics and concluded that using AI comes with the
+practical limitataions such as:
+
+::: incremental
+
+1. **Context window size** — the amount of information you can provide to the AI
+    at once is limited.
+
+2. **Requests** — the number of interactions you can have with the AI in a
+   are costly and we need to minimize them by optimizing the context and prompting.
+
+3. **Hallucinations** — the AI may generate plausible-sounding but incorrect or
+   irrelevant information, which can lead to errors if not carefully managed.
+
+:::
+
+We also posited that there are techniques helping to mitigate some of the limitataions such as:
+
+::: incremental
+1. 🛠️ **MCP** — Model Context Protocol
+2. 🔧 **Tools** — connect LLMs to your file system, APIs, applications, databases, and the Internet.
+3. 📝 **Prompt files** and **custom instructions** — pre-load specific context and steer or template LLM responses.
+4. 🗺️ **Plan mode** — break down complex tasks into smaller steps, discuss implementation with the LLM, and execute an actionable plan.
+5. 🧩 **Skills** — knowledge that AI plugs into context when it encounters a specific problem.
+6. 🤖 **Agents** — AI-driven programs that autonomously execute tasks by orchestrating tools, skills, and APIs sequentially.
+:::
+
+
+## Agenda for today {.small-slide}
+
+Today we will:
+
+1. Explore **context engineering** with `#tools` and `MCP` connectors.
+2. Agents
+3. Look into the **Planning mode**.
+4. Customize your Positron's assistant with out-of-the-box `skills`.
+5. Write a `/prompt` file to execute a routine task.
+6. See where to learn further know-how to develop and use `skills`, `agents`, and more.
+
+# Planning mdode
+
+- Creates a step-by-step plan to accomplish your request.
+- Retrieves relevant context and develops a detailed plan, which it presents for your review before proceeding with execution.
+- [Positron Chat Agents](https://positron.posit.co/assistant-chat-agents.html)
+
+## Example: Planning mode in action {.small-slide}
+
+::: columns
+::: {.column width="50%"}
+:::
+::: {.column width="50%"}
+:::
+:::

@@ -31,7 +31,7 @@ website:
             href: selfstudy/index.qmd
           - text: "Day 2"
             href: day2/index.qmd
-      - text: "Prerequisites"
+      - text: "Setup"
         href: prerequisites/index.qmd
       - text: "Methods"
         href: methods/index.qmd

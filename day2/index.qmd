@@ -4,6 +4,7 @@ title: "Overview"
 
 We will focus **Day 2** on advanced AI features that enrich context and mitigate hallucinations:
 
+- 🛠️ **MCP** — Model Context Protocol
 - 🔧 **Tools** — connect LLMs to your file system, APIs, applications, databases, and the Internet.
 - 📝 **Prompt files** and **custom instructions** — pre-load specific context and steer or template LLM responses.
 - 🗺️ **Plan mode** — break down complex tasks into smaller steps, discuss implementation with the LLM, and execute an actionable plan.
