@@ -336,30 +336,34 @@ iteration.
 
 ::::: columns
 ::: {.column width="50%"}
+
 Agents run in different environments depending on when you need results
 and how much oversight you want.
 
 ![](images/agent-types.png){fig-align="center" width="100%"}
+
 :::
 
-::: {.column .small width="50%"}
+::: {.column width="50%"}
+
 | Type                | Where        | Interaction        |
 |---------------------|--------------|--------------------|
 | [Local]{.alert}     | Your machine | Interactive in IDE |
 | [Background]{.fg}   | Your machine | Autonomous, async  |
 | [Cloud]{.highlight} | GitHub infra | Autonomous, remote |
 
+
 **Choosing the right type:**
 
 - **Quick fix / refactor** → Local agent
 - **Long build / migration** → Background agent
 - **CI/CD, issue triage** → Cloud agent (GitHub Copilot coding agent)
+
 :::
 :::::
 
 ::: aside
-📖
-[code.visualstudio.com/docs/copilot/agents/overview](https://code.visualstudio.com/docs/copilot/agents/overview)
+📖 [code.visualstudio.com/docs/copilot/agents/overview](https://code.visualstudio.com/docs/copilot/agents/overview)
 :::
 
 ## Subagents {.small-slide}
@@ -390,12 +394,16 @@ window and report back.
 ::: {.callout-warning appearance="simple"}
 **Subagent burn premium requests.**
 :::
+
+:::
+
 :::
 
 ::: aside
 📖
 [code.visualstudio.com/docs/copilot/agents/subagents](https://code.visualstudio.com/docs/copilot/agents/subagents)
 :::
+
 
 ## Agent Memory (new in VS Code / not available in Postron yet) {.tiny-slide}
 
@@ -419,8 +427,8 @@ no more repeating yourself.
 | **User** (`/memories/`)            | Across workspaces    |
 | **Repository** (`/memories/repo/`) | Across conversations |
 | **Session** (`/memories/session/`) | Current conversation |
-:::
 
+:::
 ::: {.column width="40%"}
 **What memory captures:**
 
@@ -441,7 +449,7 @@ agent stores its plans at `/memories/session/plan.md`.
 [code.visualstudio.com/docs/copilot/agents/memory](https://code.visualstudio.com/docs/copilot/agents/memory)
 :::
 
-## Customising Agents (overview) {.tiny-slide}
+## Customising Agents (overview) {.small-slide}
 
 ::: {.compact-table .small}
 | Mechanism | What it is | When it fires | Scope |
@@ -454,10 +462,6 @@ agent stores its plans at `/memories/session/plan.md`.
 | [**MCP plugins**](https://code.visualstudio.com/docs/copilot/customization/mcp-servers) (`mcp.json` servers) | External servers exposing tools, resources, prompts via MCP | When agent selects the tool | Per-tool-call |
 :::
 
-::: aside
-📖
-[code.visualstudio.com/docs/copilot/customization/overview](https://code.visualstudio.com/docs/copilot/customization/overview)
-:::
 
 ::: notes
 The agent loop is not one-size-fits-all. Positron and VS Code Copilot
@@ -465,14 +469,15 @@ offer several customisation mechanisms:
 :::
 
 
-## Prompt files vs Custom instructions {.tiny-slide}
+## Prompt files vs Custom instructions {.small-slide}
 
-::::: columns
+::: columns
 ::: {.column width="50%"}
 
-::: {.compact-table .small}
+::: {.compact-table}
+
 |   | [Instructions]{.alert} | [Prompt files]{.fg} |
-|---|------------------------|---------------------|
+|------|------------------------|---------------------|
 | **File** | `.github/copilot-instructions.md` | `.github/prompts/*.prompt.md` |
 | **Activation** | Always on — injected into every request | On demand — user types `/promptName` |
 | **Purpose** | Global rules, conventions, guardrails | Reusable task templates with variables |
@@ -480,23 +485,22 @@ offer several customisation mechanisms:
 | **Variables** | No | Yes — `${file}`, `${selection}`, `${input:name}` |
 | **Can attach files** | No | Yes — `#file:path` references |
 | **Typical use** | "Always use `tidyverse`", "Follow DIME style" | "/clean-survey", "/build-indicator" |
-| **Multiple allowed** | One per workspace | Unlimited |
-:::
 
 :::
-::: {.column width="50%"}
+:::
+::: {.column width="50%" .small}
 
-**Instructions** (`.github/copilot-instructions.md`):
+**Instructions** always on.
 
-```markdown
+```{.markdown file-name=".github/copilot-instructions.md"}
 Always use Stata 17+ syntax.
 Follow the DIME Analytics coding standards.
 Use relative paths from the project root.
 ```
 
-**Prompt file** (`.github/prompts/clean-survey.prompt.md`):
+**Prompt file** invoked `/clean-survey`:
 
-```markdown
+```{.markdown file-name=".github/prompts/clean-survey.prompt.md"}
 ---
 description: Clean a survey dataset
 ---
@@ -505,21 +509,20 @@ the cleaning rules from #file:docs/cleaning.md.
 Report any variables with >10% missingness.
 ```
 
-Invoke with `/clean-survey` in chat.
+See: [Instructions](https://code.visualstudio.com/docs/copilot/customization/custom-instructions) · [Prompt files](https://code.visualstudio.com/docs/copilot/customization/prompt-files)
 
 :::
-:::::
-
-::: aside
-📖 [Instructions](https://code.visualstudio.com/docs/copilot/customization/custom-instructions) · [Prompt files](https://code.visualstudio.com/docs/copilot/customization/prompt-files)
 :::
+
 
 ## Agents vs Skills {.tiny-slide}
 
-::::: columns
+::: columns
 ::: {.column width="50%"}
 
-::: {.compact-table .small}
+
+::: {.compact-table}
+
 |   | [Custom agents]{.alert} | [Skills]{.fg} |
 |---|-------------------------|---------------|
 | **File** | `.github/agents/*.agent.md` | `.github/skills/*/SKILL.md` |
@@ -535,9 +538,9 @@ Invoke with `/clean-survey` in chat.
 :::
 ::: {.column width="50%"}
 
-**Custom agent** (`stata-analyst.agent.md`):
+**Custom agent** `@stata-analyst`:
 
-```{markdown file-name="stata-analyst.agent.md"}
+```{.markdown file-name="stata-analyst.agent.md"}
 ---
 description: Stata analyst
 tools:
@@ -550,9 +553,9 @@ the DIME coding conventions...
 
 Create via: `Chat: New Custom Agent…` (`Ctrl+Shift+P`).
 
-**Skill** (`dime-stata-style/SKILL.md`):
+**Skill** called automatically:
 
-```{markdown file-name="dime-stata-style/SKILL.md"}
+```{.markdown file-name="dime-stata-style/SKILL.md"}
 ---
 name: dime-stata-style
 description: >
@@ -562,13 +565,11 @@ description: >
 Code example:
 ```
 
-No designated manual invocation — fires automatically when the request matches.
+
+[Custom agents](https://code.visualstudio.com/docs/copilot/customization/custom-agents) · [Skills](https://code.visualstudio.com/docs/copilot/customization/agent-skills) · [Positron agents](https://positron.posit.co/assistant-chat-agents.html)
+
 
 :::
-:::::
-
-::: aside
-📖 [Custom agents](https://code.visualstudio.com/docs/copilot/customization/custom-agents) · [Skills](https://code.visualstudio.com/docs/copilot/customization/agent-skills) · [Positron agents](https://positron.posit.co/assistant-chat-agents.html)
 :::
 
 
@@ -641,9 +642,11 @@ This analysis should produce poverty and inequality statistics
 based on the individual data as well
 ```
 
-Use [Self-study Example2](/selfstudy/example-2.qmd){target="_blank"} as
+Use [Self-study: Example2](/selfstudy/example-2.qmd){target="_blank"} as
 a starting point, and observe how the agent approaches the task
 differently with the planning mode activated.
+
+
 
 ## Planning mode in action (2) {.small-slide}
 
@@ -666,15 +669,16 @@ will work before requesting my approval.
 :::
 
 :::: {.column width="50%"}
+
 **What the agent does:**
 
-::: incremental
 1.  Reads `analysis.do`, `README.md`, and related files
 2.  Reasons and Asks
 3.  Drafts a step-by-step plan for your review
 4.  On approval → hands off to the default agent for execution
-:::
+
 ::::
+
 ::::::
 
 ::: {.fragment .callout-tip appearance="minimal"}
@@ -691,151 +695,80 @@ A [Skill]{.alert} is a **scoped package of expertise** — a `SKILL.md`
 file with focused instructions (and optional reference files) that the
 agent loads **only when the request matches its description**.
 
-::::::::: columns
-:::: {.column width="55%"}
+::: columns
+::: {.column width="55%"}
 **Think of it as** a specialist colleague who walks into the meeting
 with the right handbook — only when the topic actually calls for them.
 
-::: incremental
 - **Always indexed:** skill name + one-line description.
 - **Loaded on match:** the `SKILL.md` body + any referenced files.
 - **Composable:** several skills can fire on the same request.
 - **Portable:** plain Markdown, version-controlled with the project.
 :::
-::::
 
-:::::: {.column width="45%"}
-::: {.phase-card .phase-day1}
-#### 1. TRIGGER
+::: {.column width="45%"}
+::: {.callout-tip appearance="minimal"}
+**1. TRIGGER**
 
 Request matches the skill's `description`.
 :::
 
-::: {.phase-card .phase-selfstudy}
-#### 2. LOAD
+::: {.callout-tip appearance="minimal"}
+**2. LOAD**
 
 Agent reads `SKILL.md` and pulls any referenced files.
 :::
 
-::: {.phase-card .phase-day2}
-#### 3. APPLY
+::: {.callout-tip appearance="minimal"}
+**3. APPLY**
 
 Agent follows the skill's rules and workflow for the rest of the task.
 :::
-::::::
-:::::::::
+:::
+:::
 
 ::: aside
 📖 [anthropic.com/news/skills](https://www.anthropic.com/news/skills) ·
 keeps the context window small via *progressive disclosure*
 :::
 
-## Anatomy of a Skill {.tiny-slide}
+## Useful platforms with skills
 
-A skill is a folder with `SKILL.md` at its root. The YAML frontmatter is
-the [trigger contract]{.alert} — write the `description` for the *model*
-to match on, listing the phrases and situations it should fire on.
+- Dylan T. Moore's [Stata Skill](https://github.com/dylantmoore/stata-skill){target="_blank"}
+  - a comprehensive Stata coding style and best practices skill.
 
-:::::: columns
-::: {.column width="55%"}
-``` yaml
----
-name: dime-stata-style
-description: >
-  Align Stata code (.do files, code blocks in
-  .qmd/.Rmd) to the DIME Analytics Stata Style
-  Guide. Use whenever the user asks to write,
-  review, refactor, or lint Stata code, or to
-  "apply DIME best practices". Always consult
-  before writing Stata in this project.
-metadata:
-  version: "1.0"
-  source: https://worldbank.github.io/dime-data-handbook/
----
+- Scott Cunningham [mixtape](https://github.com/scunning1975/MixtapeTools/){target="_blank"}
+  - a collection of skills for empirical researchers and writing.
 
-# DIME Stata Style Skill
-...core rules · decision tree · workflows...
+- k-dense.ai's [Scientific skills](https://github.com/K-Dense-AI/scientific-agent-skills/tree/main){target="_blank"}
+  - Community-contributed skills.
+
+- [Awesome Github Copilot Skills](https://awesome-copilot.github.com/skills/){target="_blank"}
+  - A community-curated list of skills for GitHub Copilot.
+
+- [Awesome Claude Skills](https://awesomeclaude.ai/awesome-claude-skills){target="_blank"}
+  - Community-curated list of skills for Anthropic's Claude.
+
+- [Awesome Claude Skills (alternative)](https://awesome-skills.com/){target="_blank"}
+  - A general directory of skills across platforms.
+
+
+# Practice
+
+Two excersises with planning an execution.
+
+
+
+
+# Plan and execute Example 2 {.small-slide}
+
+
+
+[Self-study: Example 3](/selfstudy/example-3.qmd){target="_blank"}
+
 ```
-:::
-
-:::: {.column width="45%"}
-``` text
-.github/skills/dime-stata-style/
-├── SKILL.md             ← always indexed
-└── references/
-    ├── style-guide.md   ← loaded on demand
-    ├── review-checklist.md
-    └── abbreviations.md
+/plan revising analysis do file to incorporate new wave of the survey data,
+2024 and align it with the DIME Stata Style Guide. Correct appropriate parts
+of the code and execute it iteratively until it runs successfully. Then,
+produce the output and summarize for me the changes you made.
 ```
-
-::: {.callout-insight appearance="minimal"}
-The agent reads only what it needs: `SKILL.md` first, then drills into
-`references/` for rule-level detail.
-:::
-::::
-::::::
-
-::: aside
-📖 See [.github/skills/](../../.github/skills/) in this repo for the
-full files.
-:::
-
-## Skills shipped with this course {.small-slide}
-
-Three skills live in [`.github/skills/`](../../.github/skills/) — each
-solves one narrow problem well, rather than one giant "do everything"
-prompt.
-
-::::::::: columns
-:::: {.column width="33%"}
-::: {.obj-card .card-understand}
-#### dime-stata-style
-
-- Enforces the DIME Analytics Stata Style Guide
-- Covers boilerplate, paths, naming, spacing, loops, missing values
-- Three reference files for deep rules
-:::
-::::
-
-:::: {.column width="33%"}
-::: {.obj-card .card-apply}
-#### proofread
-
-- Mechanical typo, grammar, punctuation, casing fixes on `.qmd` / `.md`
-- US English; preserves YAML, code, and Pandoc markup
-- Flags ambiguous fixes rather than guessing
-:::
-::::
-
-:::: {.column width="33%"}
-::: {.obj-card .card-control}
-#### brand-yml
-
-- Creates and edits `_brand.yml` for Quarto and Shiny
-- Colors, fonts, logos, identity — from one source of truth
-- Loads only on theming / branding requests
-:::
-::::
-:::::::::
-
-::: {.callout-tip appearance="minimal"}
-**Try it:** ask the agent to *"clean up the Stata snippet in
-`methods/example.do`"* — the `dime-stata-style` skill loads
-automatically on the word "Stata".
-:::
-
-::: aside
-📖 [anthropic.com/news/skills](https://www.anthropic.com/news/skills) —
-Anthropic's "Agent Skills" announcement (Oct 2025)
-:::
-
-# Practice:
-
-In this practice, we will use Example 3 to revise code and include new
-data for 2024 using the planning mode. We will also use tools and MCP
-features to optimize the process. Finally to give our agent some
-additional knowledge, we will use skills that are relevant for this
-task.
-
-## Planning to revise code in example 3 {.small-slide}
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::

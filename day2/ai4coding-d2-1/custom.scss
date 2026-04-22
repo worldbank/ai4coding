@@ -136,6 +136,16 @@
   padding-bottom: 0.15em;
 }
 
+/* ── Compact table utility ──────────────────────────────────────────── */
+.reveal .compact-table table,
+.reveal table.compact-table {
+  font-size: 0.68em;
+
+  th, td {
+    padding: 0.1em 0.3em;
+  }
+}
+
 // ============================================================
 // dtslides — Academic Theme (academic.scss)
 // Clean, neutral academic presentation theme
