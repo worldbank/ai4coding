@@ -189,10 +189,10 @@ MCP servers expose specialized **Tools** (executable functions), **Resources** (
 📖 [code.visualstudio.com/docs/copilot/customization/mcp-servers](https://code.visualstudio.com/docs/copilot/customization/mcp-servers)
 :::
 
-## MCP vs Tools
+## MCP vs Tools {.tiny-slide}
 
 | | [MCP]{.alert} | [Tools]{.fg} |
-|---|---|---|
+|---|---------|---------|
 | **What** | Open protocol / standard | IDE-level concept |
 | **Scope** | Server exposes **tools + resources + prompts** | Individual callable function |
 | **Runs as** | Separate process (local or remote) | Within the agent loop |
@@ -200,11 +200,16 @@ MCP servers expose specialized **Tools** (executable functions), **Resources** (
 | **Config** | `mcp.json` or extensions gallery | Built-in, extension, or MCP-sourced |
 | **Selection** | Server is enabled/disabled as a whole | Toggled individually per request |
 
+: {.sm .bordered}
+
 ::: {.callout-insight appearance="minimal"}
 **MCP** is *how* you connect external capabilities. **Tools** are *what* the agent uses during a chat session. MCP servers *provide* tools (and more).
 :::
 
-## Demo: Stata MCP
+## Demo: Stata MCP {.tiny-slide}
+
+::: columns
+::: {.column width="50%"}
 
 1. No need to install any additional software, only [Stata for Positron `ntluong95/positron-stata`](https://github.com/ntluong95/positron-stata) that we installed on Day 1.
 
@@ -216,11 +221,66 @@ MCP servers expose specialized **Tools** (executable functions), **Resources** (
 
 5. Observe the difference in executing code via the MCP tool.
 
+:::
+::: {.column width="50%"}
+
+
+**Customising the MCP connection:**
+
+`Ctrl+Shift+P` → `MCP: Open User Configuration` → edit server config:
+
+```json
+{"servers": {"stata-mcp": {
+"url": "http://localhost:4000/mcp-streamable"
+}}}
+```
+
+
 ![Adding MCP server config](images/mcp-config.png){fig-align="center" width="100%"}
+:::
+:::
+
+
+
 
 # Agents {.center}
 
-REVISE:TODO
+## What is an Agent? {.tiny-slide}
+
+An [agent]{.alert} is an AI system that autonomously **plans and executes** coding tasks. You give it a high-level goal — it breaks it into steps, executes them with tools, and self-corrects when it hits errors.
+
+::: columns
+::: {.column width="50%"}
+
+**Default agents in Positron:**
+
+| Agent | Purpose |
+|-------|---------|
+| **Ask** | Answers & code suggestions — no execution |
+| **Edit** | Suggests code changes for you to apply |
+| **Agent** | Autonomously runs code, edits files, calls tools |
+| **Plan** | Creates a detailed plan before execution |
+
+: {.sm .bordered}
+
+:::
+::: {.column width="50%"}
+
+**What makes agents powerful:**
+
+::: incremental
+- 🔁 **Iterative** — loop until the task is done
+- 🔧 **Tool-using** — read files, run commands, call APIs
+- 🧠 **Self-correcting** — diagnose errors and retry
+- 🎛️ **Customisable** — create custom `.agent.md` files with specific tools & instructions
+:::
+
+:::
+:::
+
+::: aside
+📖 [positron.posit.co/assistant-chat-agents](https://positron.posit.co/assistant-chat-agents.html) · [code.visualstudio.com/docs/copilot/concepts/agents](https://code.visualstudio.com/docs/copilot/concepts/agents)
+:::
 
 ## The Agent Loop {.small-slide}
 
@@ -254,6 +314,187 @@ At each step the model picks the next action. Tool outputs feed the next iterati
 ::: aside
 📖 [code.visualstudio.com/docs/copilot/concepts/agents](https://code.visualstudio.com/docs/copilot/concepts/agents#_planning)
 :::
+
+
+## Agent Types {.tiny-slide}
+
+::: columns
+::: {.column width="50%"}
+
+Agents run in different environments depending on when you need results and how much oversight you want.
+
+![](images/agent-types.png){fig-align="center" width="100%"}
+
+:::
+::: {.column width="50%" .small}
+
+| Type | Where | Interaction |
+|------|-------|-------------|
+| [Local]{.alert} | Your machine | Interactive in IDE |
+| [Background]{.fg} | Your machine | Autonomous, async |
+| [Cloud]{.highlight} | GitHub infra | Autonomous, remote|
+
+**Choosing the right type:**
+
+- **Quick fix / refactor** → Local agent
+- **Long build / migration** → Background agent
+- **CI/CD, issue triage** → Cloud agent (GitHub Copilot coding agent)
+
+:::
+:::
+
+::: aside
+📖 [code.visualstudio.com/docs/copilot/agents/overview](https://code.visualstudio.com/docs/copilot/agents/overview)
+:::
+
+
+## Subagents {.small-slide}
+
+For complex tasks, the main agent can [delegate subtasks]{.alert} to **subagents** — independent AI agents that work in their own context window and report back.
+
+::: columns
+::: {.column width="50%" .incremental}
+
+**Why subagents?**
+
+- [Context isolation]{.fg} — each subagent gets a **fresh context window**, preventing the main conversation from overflowing with intermediate results
+- [Parallel execution]{.highlight} — multiple subagents can run simultaneously (e.g. analyse security, performance, and accessibility at once)
+
+:::
+::: {.column width="50%" .incremental}
+
+- [Focused results]{.alert} — only the **summary** comes back to the main agent, reducing token usage
+
+-  **Example: Plan agent**
+
+::: fragment
+::: {.callout-warning appearance="simple"}
+**Subagent burn premium requests.**
+:::
+:::
+:::
+
+::: aside
+📖 [code.visualstudio.com/docs/copilot/agents/subagents](https://code.visualstudio.com/docs/copilot/agents/subagents)
+:::
+
+
+## Agent Memory (new in VS Code / not available in Postron yet) {.tiny-slide}
+
+::: columns
+::: {.column width="60%" }
+
+::: {.small}
+
+Agents use [memory]{.alert} to retain context **across conversations** — no more repeating yourself.
+
+- Agents read and write memory files automatically as they learn your patterns.
+
+- Note: this is an emerging feature. It is not yet supported by Postron yet.
+
+:::
+
+**Three memory scopes:**
+
+::: {.compact-table}
+| Scope | Persists |
+|-------|-------------------|
+| **User** (`/memories/`) | Across workspaces |
+| **Repository** (`/memories/repo/`) | Across conversations |
+| **Session** (`/memories/session/`) | Current conversation |
+:::
+
+:::
+::: {.column width="40%"}
+
+**What memory captures:**
+
+- 🎯 Your coding conventions and preferences
+- 📁 Project structure and key files
+- 🐛 Lessons from past debugging sessions
+- 📐 Architectural decisions
+
+::: {.callout-tip appearance="minimal"}
+View memory: `Chat: Show Memory Files` in Command Palette. The Plan agent stores its plans at `/memories/session/plan.md`.
+:::
+
+:::
+:::
+
+::: aside
+📖 [code.visualstudio.com/docs/copilot/agents/memory](https://code.visualstudio.com/docs/copilot/agents/memory)
+:::
+
+
+## Customising Agents (overview) {.tiny-slide}
+
+::: {.compact-table .small}
+
+| Mechanism | What it is | When it fires | Scope |
+|-----------|---------------------|-------------------|-------|
+| [**Instructions**](https://code.visualstudio.com/docs/copilot/customization/custom-instructions) (`.github/copilot-instructions.md`) | Global rules appended to every prompt | Every chat request | Workspace-wide |
+| [**Prompt files**](https://code.visualstudio.com/docs/copilot/customization/prompt-files) (`.github/prompts/*.prompt.md`) | Reusable task templates invoked with `/` | On demand (`/myPrompt`) | Per-task |
+| [**Custom agents**](https://code.visualstudio.com/docs/copilot/customization/custom-agents) (`.github/agents/*.agent.md`) | Persona + curated tool set | When user `@mentions` the agent | Per-conversation |
+| [**Skills**](https://code.visualstudio.com/docs/copilot/customization/agent-skills) (`.github/skills/*/SKILL.md`) | Scoped expertise package loaded by description match | Auto-matched to request | Per-request |
+| [**Hooks**](https://code.visualstudio.com/docs/copilot/customization/hooks) (`.vscode/hooks/*.md`) | Pre/post actions on agent events (save, create, command) | Automatically on event | Per-event |
+| [**MCP plugins**](https://code.visualstudio.com/docs/copilot/customization/mcp-servers) (`mcp.json` servers) | External servers exposing tools, resources, prompts via MCP | When agent selects the tool | Per-tool-call |
+
+:::
+
+::: {.callout-insight appearance="minimal"}
+**Instructions** = always on. **Prompt files** = user-triggered templates. **Agents** = switchable personas. **Skills** = auto-loaded expertise. **Hooks** = event-driven side effects. **Plugins** = external tool servers.
+:::
+
+::: aside
+📖 [code.visualstudio.com/docs/copilot/customization/overview](https://code.visualstudio.com/docs/copilot/customization/overview)
+:::
+
+::: notes
+
+The agent loop is not one-size-fits-all. Positron and VS Code Copilot offer several customisation mechanisms:
+
+:::
+## Prompt files and custom instructions {.small-slide}
+
+Table the compares what prompt files and instrucitons are
+
+## Agents and skills {.small-slide}
+
+::: columns
+::: {.column width="50%"}
+
+**Custom agents**
+
+```{markdown file-name="stata-anlyst.agent.md"}
+---
+description: Stata analyst
+tools:
+  - executeCode
+  - read
+  - search
+---
+
+You are a Stata specialist. Always follow
+the DIME coding conventions...
+```
+
+Create via: `Chat: New Custom Agent…` in Command Palette (`Ctrl+Shift+P`).
+
+:::
+::: {.column width="50%"}
+
+**Prompt files:**
+
+
+
+
+:::
+:::
+
+::: aside
+📖 [positron.posit.co/assistant-chat-agents](https://positron.posit.co/assistant-chat-agents.html) · [code.visualstudio.com/docs/copilot/customization/custom-agents](https://code.visualstudio.com/docs/copilot/customization/custom-agents)
+:::
+
 
 # Planning Mode: a useful agent {.center}
 
