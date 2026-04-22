@@ -21,24 +21,45 @@ Day 1: Introduction and common workflows
 | Time        | Topic |
 |-------------|--------------------------------------------------------------|
 | 9:00-9:10   | 1. [Welcome and course overview (slides)](#welcome) |
-| 9:10-9:40   | 2. [Setup overview (slides)](#setup-overview). [Example 0 (live)](#example-0) and [Example 1 (self-study)](#example-1) |
-| 9:40-10:20  | 3. [Example 2: Understanding data with AI (live)](#example-2) |
+| 9:10-9:40   | 2. [Setup overview (slides)](#setup-overview). |
+| 9:40-10:20  | 3. Live: [Self-Study > Example 0](/selfstudy/example-0.qmd) |
 | 10:20-10:30 | ☕ Break (10 min) |
 | 10:30-10:50 | 4. [Core AI-related concepts](#ai-concepts) |
 | 10:50-11:00 | 5. [Common workflows and data safeguarding (slides)](#ai-workflow) |
-| 11:00-11:30 | 6. [Example 3: Reproduce, Revise, and Reuse existing analysis (live/self-study)](#example-3) |
+| 11:00-11:30 | 6. [Example 2: Understanding data with AI (live)](#example-2) |
+
+Self-study:
+
+-  [Example 1](/selfstudy/example-1.qmd)
+-  [Example 3](/selfstudy/example-3.qmd)
 
 # Before You Arrive
 
-(Try) [completing the prerequisites](/prerequisites/index.qmd).
+(Try) [completing the setup](/prerequisites/index.qmd), For common issues and troubleshooting, refer to the relevant sections in the setup materials:
 
-If you run into issues, check [Common Problems](/prerequisites/common-problems.qmd) or
-contact [ITHelp@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org) before the session.
+- [Software Setup > Troubleshooting](/prerequisites/software.qmd#troubleshooting),
+- [Stata for Positron Extensions > Troubleshooting](/prerequisites/extensions.qmd#sec-troubleshooting-stataextension),
+- [GitHub & Copilot > Troubleshooting](/prerequisites/github.qmd#sec-troubleshooting-ghcopilot), and
+- [Positron Assistant > Troubleshooting](/prerequisites/assistant.qmd#sec-troubleshooting-assistant) sections for common issues with the setup.
+
+If you run into a dead end, contact [ITHelp@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org).
+
+
+-------------------------------------------------------------------------------
+
+# Resources {#resources}
+
+Course data is available in the OneDrive folder: [ai4coding-data](https://worldbankgroup-my.sharepoint.com/:f:/g/personal/ebukin_worldbank_org/IgBy2yGjpLJPRbM67FJpBFVgAbMRYhEPmS30H2RJSBFO_gE).
+
+Course examples and materials are available in this repository: [ai4coding](https://github.com/worldbank/ai4coding) or on OneDrive: [ai4coding-materials](https://worldbankgroup-my.sharepoint.com/:f:/g/personal/ebukin_worldbank_org/IgCXQVakSxEpT7VJFmKp_qtnAXx8RX9iemnwfGwITkEA3bE)
+
+If once you opened the link to OneDrive folder, you see a message that you don't have access,
+please request the access clicing the "Request Access" button on the page. I will
+be monitoring and approving access requests as they come in.
 
 -------------------------------------------------------------------------------
 
 # Day 1: Materials {#materials}
-
 
 ## 1. Learn: Welcome, introductions, and overview {#welcome}
 
@@ -67,33 +88,9 @@ View slides in a [new tab](/day1/ai4coding-slides-d1-1/index.html){target="_blan
 
 View slides in a [new tab](/day1/ai4coding-slides-d1-2/index.html){target="_blank"}.
 
-### Example 0: Test your setup (live) {#example-0}
+--------------------------------------------------------------------------------
 
-This presentation ends with an example that demonstrates how to test
-if the setup is working correctly. Example 0 could be found in [Self-Study > Example 0](/selfstudy/example-0.qmd).
-
-### Example 1: Stata in Positron with GitHub Copilot (self-study) {#example-1}
-
-This introductory example is plan for self-study, full details, suggested
-prompts, and instructions are in the [Self-Study > Example 1](/selfstudy/example-1.qmd).
-
-{{< include /selfstudy/_ex1-1-overview.qmd >}}
-
--------------------------------------------------------------------------------
-
-## 3. Example 2: Understanding data with AI (live) {#example-2}
-
-This example is planned for live demonstration during the session, but you can
-also follow along on your own as a self-study exercise. Full details, suggested
-prompts, and instructions are in the [Self-Study > Example 2](/selfstudy/example-2.qmd).
-
-### Overview
-
-{{< include /selfstudy/_ex1-2-overview.qmd >}}
-
--------------------------------------------------------------------------------
-
-## 4. Core AI-related concepts {#ai-concepts}
+## 3. Core AI-related concepts {#ai-concepts}
 
 ```{=html}
 <iframe class="slide-deck" src="/day1/ai4coding-slides-d1-3/index.html"></iframe>
@@ -104,7 +101,7 @@ View slides in a [new tab](/day1/ai4coding-slides-d1-3/index.html){target="_blan
 
 -------------------------------------------------------------------------------
 
-## 5. Common workflows and data safeguarding practices while using AI (slides) {#ai-workflow}
+## 4. Common workflows and data safeguarding practices while using AI (slides) {#ai-workflow}
 
 
 ```{=html}
@@ -114,10 +111,27 @@ View slides in a [new tab](/day1/ai4coding-slides-d1-3/index.html){target="_blan
 
 View slides in a [new tab](/day1/ai4coding-slides-d1-4/index.html){target="_blank"}.
 
+--------------------------------------------------------------------------------
 
--------------------------------------------------------------------------------
+# Examples
 
-## 6. Example 3: Reproduce, Revise, and Reuse (live/self-study) {#example-3}
+## Example 0: Test your setup (live)
+
+This presentation ends with an example that demonstrates how to test
+if the setup is working correctly. Example 0 could be found in [Self-Study > Example 0](/selfstudy/example-0.qmd).
+
+## Example 1: Stata in Positron with GitHub Copilot
+
+This introductory example is plan for self-study, full details, suggested
+prompts, and instructions are in the [Self-Study > Example 1](/selfstudy/example-1.qmd).
+
+## Example 2: Understanding data with AI
+
+This example is planned for live demonstration during the session, but you can
+also follow along on your own as a self-study exercise. Full details, suggested
+prompts, and instructions are in the [Self-Study > Example 2](/selfstudy/example-2.qmd).
+
+## Example 3: Reproduce, Revise, and Reuse
 
 This example is planned for a live demonstration during the session, but you can
 also follow along on your own as a self-study exercise. Full details, suggested
