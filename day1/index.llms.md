@@ -22,18 +22,38 @@ Day 1: Introduction and common workflows
 | Time | Topic |
 |----|----|
 | 9:00-9:10 | 1\. [Welcome and course overview (slides)](#welcome) |
-| 9:10-9:40 | 2\. [Setup overview (slides)](#setup-overview). [Example 0 (live)](#example-0) and [Example 1 (self-study)](#example-1) |
-| 9:40-10:20 | 3\. [Example 2: Understanding data with AI (live)](#example-2) |
+| 9:10-9:40 | 2\. [Setup overview (slides)](#setup-overview). |
+| 9:40-10:20 | 3\. Live: [Self-Study \> Example 0](../selfstudy/example-0.llms.md) |
 | 10:20-10:30 | ☕ Break (10 min) |
 | 10:30-10:50 | 4\. [Core AI-related concepts](#ai-concepts) |
 | 10:50-11:00 | 5\. [Common workflows and data safeguarding (slides)](#ai-workflow) |
-| 11:00-11:30 | 6\. [Example 3: Reproduce, Revise, and Reuse existing analysis (live/self-study)](#example-3) |
+| 11:00-11:30 | 6\. [Example 2: Understanding data with AI (live)](#example-2) |
+
+Self-study:
+
+- [Example 1](../selfstudy/example-1.llms.md)
+- [Example 3](../selfstudy/example-3.llms.md)
 
 # Before You Arrive
 
-(Try) [completing the prerequisites](../prerequisites/index.llms.md).
+(Try) [completing the setup](../prerequisites/index.llms.md), For common issues and troubleshooting, refer to the relevant sections in the setup materials:
 
-If you run into issues, check [Common Problems](../prerequisites/common-problems.llms.md) or contact <ITHelp@worldbankgroup.org> before the session.
+- [Software Setup \> Troubleshooting](../prerequisites/software.llms.md#troubleshooting),
+- [Stata for Positron Extensions \> Troubleshooting](../prerequisites/extensions.llms.md#sec-troubleshooting-stataextension),
+- [GitHub & Copilot \> Troubleshooting](../prerequisites/github.llms.md#sec-troubleshooting-ghcopilot), and
+- [Positron Assistant \> Troubleshooting](../prerequisites/assistant.llms.md#sec-troubleshooting-assistant) sections for common issues with the setup.
+
+If you run into a dead end, contact <ITHelp@worldbankgroup.org>.
+
+------------------------------------------------------------------------
+
+# Resources
+
+Course data is available in the OneDrive folder: [ai4coding-data](https://worldbankgroup-my.sharepoint.com/:f:/g/personal/ebukin_worldbank_org/IgBy2yGjpLJPRbM67FJpBFVgAbMRYhEPmS30H2RJSBFO_gE).
+
+Course examples and materials are available in this repository: [ai4coding](https://github.com/worldbank/ai4coding) or on OneDrive: [ai4coding-materials](https://worldbankgroup-my.sharepoint.com/:f:/g/personal/ebukin_worldbank_org/IgCXQVakSxEpT7VJFmKp_qtnAXx8RX9iemnwfGwITkEA3bE)
+
+If once you opened the link to OneDrive folder, you see a message that you don’t have access, please request the access clicing the “Request Access” button on the page. I will be monitoring and approving access requests as they come in.
 
 ------------------------------------------------------------------------
 
@@ -78,92 +98,35 @@ View slides in a [new tab](..\day1/ai4coding-slides-d1-1/index.llms.md).
 
 View slides in a [new tab](..\day1/ai4coding-slides-d1-2/index.llms.md).
 
-### Example 0: Test your setup (live)
-
-This presentation ends with an example that demonstrates how to test if the setup is working correctly. Example 0 could be found in [Self-Study \> Example 0](../selfstudy/example-0.llms.md).
-
-### Example 1: Stata in Positron with GitHub Copilot (self-study)
-
-This introductory example is plan for self-study, full details, suggested prompts, and instructions are in the [Self-Study \> Example 1](../selfstudy/example-1.llms.md).
-
-The goal of this exercise is to get familiar with Positron’s AI assistance features and how they can be used to write and execute Stata code. We go through a typical workflow of creating a Stata do file, writing code with AI assistance, and executing it in the console.
-
-This exercise overviews the following features of Positron’s AI assistance:
-
-- inline suggestions: accepting, rejecting, and customizing
-- chat mode: asking for code generation, revision, and troubleshooting
-- inline chat: revising specific code snippets without leaving the editor
-- agent mode: automating code execution and debugging
-- context monitoring
-
-**Watch the full video (18 min.) here**:
-
-# An error occurred.
-
-Unable to execute JavaScript.
-
 ------------------------------------------------------------------------
 
-## 3. Example 2: Understanding data with AI (live)
-
-This example is planned for live demonstration during the session, but you can also follow along on your own as a self-study exercise. Full details, suggested prompts, and instructions are in the [Self-Study \> Example 2](../selfstudy/example-2.llms.md).
-
-### Overview
-
-In this example, we explore how AI can support a common data science workflow: taking raw data and transforming it into a clean, analysis-ready format.
-
-Following the common agentic [data analysis workflow](../methods/common-workflow.llms.md) and principles of [safeguarding data](../methods/safeguard-data.llms.md), we adopt a **metadata-driven approach** — using a data dictionary as an intermediary between the raw data and the AI, rather than exposing sensitive data directly.
-
-### Learning objectives
-
-By the end of this example, you will have practiced using AI to:
-
-1.  Set a clear objective and constraints for an AI coding session.
-2.  Build a data dictionary that captures variable names, types, units, and labels — without sharing raw data with the AI.
-3.  Document data harmonization requirements systematically as a mapping table.
-4.  Generate modular cleaning code driven by metadata, following [DIME Wiki](https://dimewiki.worldbank.org/) best practices. (The example prompts use **Stata** but include a substitution table for adapting to R or Python.)
-5.  Iterate on that code to resolve errors and refine outputs.
-6.  Verify results using an independent AI auditor session.
-7.  Document the harmonization for reproducibility.
-
-### Data
-
-We use Mexico’s National Survey of Household Income and Expenditure (ENIGH) for 2016 and 2018, which contains detailed information on household income and other socio-economic characteristics.
-
-|  | Download | Metadata |
-|----|----|----|
-| 2016 | [INEGI](https://en.www.inegi.org.mx/programas/enigh/nc/2016/) | [Catalog](https://www.inegi.org.mx/rnm/index.php/catalog/310) (Spanish) |
-| 2018 | [INEGI](https://en.www.inegi.org.mx/programas/enigh/nc/2018/) | [Catalog](https://www.inegi.org.mx/rnm/index.php/catalog/511) (Spanish) |
-
-This data is stored on your local machine at `[your path to]/ai4coding-data/mex/` in subfolders `2016/` and `2018/` as read-only files.
-
-### Target specification
-
-The objective is to clean and harmonize this data to the Global Monitoring Database (GMD) specification, selectively outlined in [Self-Study → GMD requirements](../selfstudy/gmd-requirements.llms.md). We harmonize only these three modules:
-
-1.  Demographics
-2.  Income
-3.  Consumption
-
-### Where to start?
-
-The full example, including suggested prompts and instructions, is in `C:/WBG/ai/ai4coding-practice/ex02-understand-data/` in the self-study section. You can follow along
-
-------------------------------------------------------------------------
-
-## 4. Core AI-related concepts
+## 3. Core AI-related concepts
 
 View slides in a [new tab](..\day1/ai4coding-slides-d1-3/index.llms.md).
 
 ------------------------------------------------------------------------
 
-## 5. Common workflows and data safeguarding practices while using AI (slides)
+## 4. Common workflows and data safeguarding practices while using AI (slides)
 
 View slides in a [new tab](..\day1/ai4coding-slides-d1-4/index.llms.md).
 
 ------------------------------------------------------------------------
 
-## 6. Example 3: Reproduce, Revise, and Reuse (live/self-study)
+# Examples
+
+## Example 0: Test your setup (live)
+
+This presentation ends with an example that demonstrates how to test if the setup is working correctly. Example 0 could be found in [Self-Study \> Example 0](../selfstudy/example-0.llms.md).
+
+## Example 1: Stata in Positron with GitHub Copilot
+
+This introductory example is plan for self-study, full details, suggested prompts, and instructions are in the [Self-Study \> Example 1](../selfstudy/example-1.llms.md).
+
+## Example 2: Understanding data with AI
+
+This example is planned for live demonstration during the session, but you can also follow along on your own as a self-study exercise. Full details, suggested prompts, and instructions are in the [Self-Study \> Example 2](../selfstudy/example-2.llms.md).
+
+## Example 3: Reproduce, Revise, and Reuse
 
 This example is planned for a live demonstration during the session, but you can also follow along on your own as a self-study exercise. Full details, suggested prompts, and instructions are in the [Self-Study \> Example 3](../selfstudy/example-3.llms.md).
 

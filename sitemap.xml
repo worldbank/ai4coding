@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://worldbank.github.io/ai4coding/selfstudy/index.html</loc>
-    <lastmod>2026-04-20T07:32:29.407Z</lastmod>
+    <lastmod>2026-04-22T00:18:57.379Z</lastmod>
   </url>
   <url>
     <loc>https://worldbank.github.io/ai4coding/selfstudy/example-3.html</loc>
@@ -33,20 +33,16 @@
     <lastmod>2026-04-18T09:39:49.944Z</lastmod>
   </url>
   <url>
-    <loc>https://worldbank.github.io/ai4coding/prerequisites/verify.html</loc>
-    <lastmod>2026-04-18T09:59:31.488Z</lastmod>
+    <loc>https://worldbank.github.io/ai4coding/prerequisites/software.html</loc>
+    <lastmod>2026-04-22T00:18:23.595Z</lastmod>
   </url>
   <url>
-    <loc>https://worldbank.github.io/ai4coding/prerequisites/index.html</loc>
-    <lastmod>2026-04-18T09:47:42.111Z</lastmod>
-  </url>
-  <url>
-    <loc>https://worldbank.github.io/ai4coding/prerequisites/extensions.html</loc>
-    <lastmod>2026-04-20T03:09:30.405Z</lastmod>
+    <loc>https://worldbank.github.io/ai4coding/prerequisites/github.html</loc>
+    <lastmod>2026-04-21T23:47:43.597Z</lastmod>
   </url>
   <url>
     <loc>https://worldbank.github.io/ai4coding/prerequisites/assistant.html</loc>
-    <lastmod>2026-04-20T03:09:30.936Z</lastmod>
+    <lastmod>2026-04-21T23:49:53.405Z</lastmod>
   </url>
   <url>
     <loc>https://worldbank.github.io/ai4coding/about.html</loc>
@@ -57,20 +53,16 @@
     <lastmod>2026-04-18T02:29:58.569Z</lastmod>
   </url>
   <url>
-    <loc>https://worldbank.github.io/ai4coding/prerequisites/common-problems.html</loc>
-    <lastmod>2026-04-18T09:59:31.482Z</lastmod>
+    <loc>https://worldbank.github.io/ai4coding/prerequisites/extensions.html</loc>
+    <lastmod>2026-04-21T23:41:29.897Z</lastmod>
   </url>
   <url>
-    <loc>https://worldbank.github.io/ai4coding/prerequisites/github.html</loc>
-    <lastmod>2026-04-20T03:09:30.405Z</lastmod>
-  </url>
-  <url>
-    <loc>https://worldbank.github.io/ai4coding/prerequisites/software.html</loc>
-    <lastmod>2026-04-20T03:09:30.405Z</lastmod>
+    <loc>https://worldbank.github.io/ai4coding/prerequisites/index.html</loc>
+    <lastmod>2026-04-21T23:57:54.871Z</lastmod>
   </url>
   <url>
     <loc>https://worldbank.github.io/ai4coding/day1/index.html</loc>
-    <lastmod>2026-04-20T07:43:17.824Z</lastmod>
+    <lastmod>2026-04-22T00:16:01.285Z</lastmod>
   </url>
   <url>
     <loc>https://worldbank.github.io/ai4coding/day1/ai4coding-slides-d1-1/index.html</loc>
@@ -82,7 +74,7 @@
   </url>
   <url>
     <loc>https://worldbank.github.io/ai4coding/day2/index.html</loc>
-    <lastmod>2026-04-20T08:03:07.937Z</lastmod>
+    <lastmod>2026-04-22T00:16:06.528Z</lastmod>
   </url>
   <url>
     <loc>https://worldbank.github.io/ai4coding/methods/index.html</loc>

@@ -405,113 +405,212 @@
     ]
   },
   {
-    "objectID": "prerequisites/verify.html",
-    "href": "prerequisites/verify.html",
-    "title": "Verification",
+    "objectID": "prerequisites/software.html",
+    "href": "prerequisites/software.html",
+    "title": "Software Setup",
     "section": "",
-    "text": "Check that everything is set up correctly by following the instructions.",
+    "text": "Minimum requirements for this course\n\nStata 19+ MP installed and licensed\nPositron (latest version)\nR (4.5.3+)\nPython (3.13+)\nuv environment manager for Python\nQuarto (1.9+)\nGit (2.52+)\n\nNote: This software stack powers the AI-assisted coding workflow used throughout the course and beyond.",
     "crumbs": [
       "Prerequisites",
-      "Verification"
+      "Software Setup"
     ]
   },
   {
-    "objectID": "prerequisites/verify.html#positron-is-working",
-    "href": "prerequisites/verify.html#positron-is-working",
-    "title": "Verification",
-    "section": "Positron is working",
-    "text": "Positron is working\n\nOpen Positron.\nCreate a new working directory in C:\\WBG\\ai\\ called ex00-positron-test.\nOpen this folder in Positron.",
+    "objectID": "prerequisites/software.html#software-install",
+    "href": "prerequisites/software.html#software-install",
+    "title": "Software Setup",
+    "section": "Step 1: Install software from the Software Center",
+    "text": "Step 1: Install software from the Software Center\n\nWB LaptopPrivate Laptop\n\n\n\nRestart your computer to ensure pending updates are applied.\nOpen Software Center and install the items in Table 1 in order.\nIf any program does not appear in the Software Center, submit a Software Installation Request or contact ITHelp@worldbankgroup.org.\n\n\n\n\n\n\n\n\nIf you have previously installed any of the software manually (or using an admin password), contact ITHelp@worldbankgroup.org to remove it first, then install from the Software Center.\nIf you have Python already installed for some times, install new python from the software center (AWBG10201.4) because it has broader permissions. Then set the Python path, so that any program sees your new python as the main one. You can set the path by running command python set exec \"C:\\WBG\\Python313\\python.exe\", permanently and restart the positron.\n\n\n\n\n\n\n\nDownload and install each tool from the links in Table 1.\n\n\n\n\n\n\nTable 1: Software\n\n\n\n\n\nSoftware\nWB Laptop (Software Center)\nPrivate Laptop\n\n\n\n\nStata (19+ MP)\n\n\n\n\nPositron (latest)\n\npositron.posit.co\n\n\nQuarto (1.9+)\n\nquarto.org\n\n\nR (4.5.3+)\n\ncran.r-project.org\n\n\nPython (3.13+)\n\npython.org\n\n\nuv Python package manager\nSee below\nSee below\n\n\nGit (2.52+)\n\ngit-scm.com",
     "crumbs": [
       "Prerequisites",
-      "Verification"
+      "Software Setup"
     ]
   },
   {
-    "objectID": "prerequisites/verify.html#github-copilot-is-working",
-    "href": "prerequisites/verify.html#github-copilot-is-working",
-    "title": "Verification",
-    "section": "GitHub Copilot is working",
-    "text": "GitHub Copilot is working\n\nOpen chat in Positron (select the chat robot icon in the sidebar, or run Chat: Open Chat from the Command Palette Ctrl+Shift+P).\nAsk AI how to create a new .R script in Positron and write a simple R code to print “Hello World”.\nIf you see the code generated in the chat, and some answers, then everything is set up correctly.",
+    "objectID": "prerequisites/software.html#python-check",
+    "href": "prerequisites/software.html#python-check",
+    "title": "Software Setup",
+    "section": "Step 2: Python: check latest version",
+    "text": "Step 2: Python: check latest version\nThere could be many python installed on your computer. For the Positron Stata extension to work, you need to use the most recent one installed from the Software Center (AWBG10201.4 or later).\nAny program must use python from the path C:\\WBG\\Python313\\python.exe . If not, you might encounter issues running Stata code in Positron.\nTo check which python you are using do one of the following:\n\nPowerShellBash (if you have GIT installed)Command prompt\n\n\nOpen PowerShell: keyboard Windows &gt; type “PowerShell” &gt; hit Enter\nGet-Command python | Select-Object -ExpandProperty Source\npython --version\npip --version\nYou must see:\n\na path like C:\\WBG\\Python313\\python.exe and\na Python version 3.13.\n\n\n\n\nOpen Git Bash: keyboard Windows &gt; type “git bash” &gt; hit Enter\nwhich python\npython --version\npip --version\nYou must see: - a path like /c/WBG/Python313/python.exe and - a Python version 3.13 or later.\n\n\n\nOpen Command Prompt (cmd): keyboard Windows &gt; type “cmd” &gt; hit Enter\nwhere python\npython --version\npip --version\nYou must see: - a path like C:\\WBG\\Python313\\python.exe at the top. - There might be other paths listed below, but the top one is the one being used by default. - a Python version 3.13 or later.",
     "crumbs": [
       "Prerequisites",
-      "Verification"
+      "Software Setup"
     ]
   },
   {
-    "objectID": "prerequisites/verify.html#stata-r-python-quarto-are-working",
-    "href": "prerequisites/verify.html#stata-r-python-quarto-are-working",
-    "title": "Verification",
-    "section": "Stata / R / Python / Quarto are working",
-    "text": "Stata / R / Python / Quarto are working\n\nStataRPythonQuarto\n\n\n\nIn Positron create a new file test-stata.do in the ex00-positron-test folder.\nCopy paste the following code in this file and run it.\nIf you see results in the terminal, then Stata is working correctly.\n\n\n* Example stata code for Positron\n\n* Load auto dataset\nsysuse auto, clear\n* Generate a new variable for price in thousands\ngen price_k = price / 1000\n* Run a regression of price on weight and length\nregress price_k weight length\n* Create a scatter plot of price vs weight\nscatter price_k weight\n* Create a histogram of price\nhistogram price_k, normal\n* Save the dataset with the new variable\nsave auto_modified, replace\n\nIf there are no results, common problems may include:\n\nStata is not installed &gt;&gt;&gt; Check with ITS.\nPositron stata extension is not installed &gt;&gt;&gt; check Positron Stata extension\nStata path is not set correctly in Positron settings &gt;&gt;&gt; check Positron Stata extension\nPython package uv does not work properly &gt;&gt;&gt; check Common Problems\n\n\n\n\nCreate a new file test-r.R in the ex00-positron-test folder.\nCopy paste the following code in this file and run it. If you see the plots and regression output in the terminal, then R is working correctly.\nPress  to run it.\nIf something does not work, check the Software Setup\n\n\n# test-r.R\n# Verify R is working: package management, palmerpenguins data,\n# visualisations (scatter, histogram, box, facets), and regression.\n\n# -------------------------------------------------------\n# 1. Package check + install\n# -------------------------------------------------------\nrequired_pkgs &lt;- c(\"tidyverse\", \"ggplot2\", \"palmerpenguins\")\n\nmissing_pkgs &lt;- required_pkgs[\n  !sapply(required_pkgs, requireNamespace, quietly = TRUE)\n]\n\nif (length(missing_pkgs) &gt; 0) {\n  message(\"Installing missing packages: \", paste(missing_pkgs, collapse = \", \"))\n  install.packages(missing_pkgs, repos = \"https://cloud.r-project.org\")\n} else {\n  message(\"All required packages are already installed.\")\n}\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n\n# -------------------------------------------------------\n# 2. Data overview\n# -------------------------------------------------------\nglimpse(penguins)\n\npenguins_clean &lt;- penguins |&gt; drop_na()\ncat(sprintf(\n  \"\\nRows after dropping NAs: %d (removed %d)\\n\",\n  nrow(penguins_clean),\n  nrow(penguins) - nrow(penguins_clean)\n))\n\n# -------------------------------------------------------\n# 3. Figure 1 — Scatter: bill dimensions coloured by species\n# -------------------------------------------------------\nfig_scatter &lt;- ggplot(\n  penguins_clean,\n  aes(x = bill_length_mm, y = bill_depth_mm, colour = species, shape = species)\n) +\n  geom_point(alpha = 0.7, size = 2.5) +\n  geom_smooth(method = \"lm\", se = FALSE, linewidth = 0.9) +\n  scale_colour_manual(values = c(\"darkorange\", \"purple\", \"cyan4\")) +\n  scale_shape_manual(values = c(16, 17, 15)) +\n  labs(\n    title = \"Bill length vs. bill depth\",\n    subtitle = \"Linear fit per species\",\n    x = \"Bill length (mm)\",\n    y = \"Bill depth (mm)\",\n    colour = \"Species\",\n    shape = \"Species\"\n  ) +\n  theme_minimal(base_size = 13)\n\nprint(fig_scatter)\n\n# -------------------------------------------------------\n# 4. Figure 2 — Histogram: flipper length by species (overlaid)\n# -------------------------------------------------------\nfig_hist &lt;- ggplot(\n  penguins_clean,\n  aes(x = flipper_length_mm, fill = species)\n) +\n  geom_histogram(\n    alpha = 0.6,\n    binwidth = 5,\n    position = \"identity\",\n    colour = \"white\"\n  ) +\n  scale_fill_manual(values = c(\"darkorange\", \"purple\", \"cyan4\")) +\n  labs(\n    title = \"Flipper length distribution\",\n    x = \"Flipper length (mm)\",\n    y = \"Count\",\n    fill = \"Species\"\n  ) +\n  theme_minimal(base_size = 13)\n\nprint(fig_hist)\n\n# -------------------------------------------------------\n# 5. Figure 3 — Box plots: body mass by species and sex\n# -------------------------------------------------------\nfig_box &lt;- ggplot(\n  penguins_clean,\n  aes(x = species, y = body_mass_g, fill = sex)\n) +\n  geom_boxplot(alpha = 0.7, outlier.shape = 21, outlier.size = 2) +\n  scale_fill_manual(values = c(\"steelblue\", \"tomato\")) +\n  labs(\n    title = \"Body mass by species and sex\",\n    x = \"Species\",\n    y = \"Body mass (g)\",\n    fill = \"Sex\"\n  ) +\n  theme_minimal(base_size = 13) +\n  theme(legend.position = \"top\")\n\nprint(fig_box)\n\n# -------------------------------------------------------\n# 6. Figure 4 — Faceted scatter: bill dimensions faceted by island\n# -------------------------------------------------------\nfig_facet &lt;- ggplot(\n  penguins_clean,\n  aes(x = bill_length_mm, y = bill_depth_mm, colour = species, shape = species)\n) +\n  geom_point(alpha = 0.7, size = 2) +\n  facet_wrap(~island, nrow = 1) +\n  scale_colour_manual(values = c(\"darkorange\", \"purple\", \"cyan4\")) +\n  scale_shape_manual(values = c(16, 17, 15)) +\n  labs(\n    title = \"Bill dimensions by island\",\n    subtitle = \"Faceted by island of observation\",\n    x = \"Bill length (mm)\",\n    y = \"Bill depth (mm)\",\n    colour = \"Species\",\n    shape = \"Species\"\n  ) +\n  theme_minimal(base_size = 13) +\n  theme(\n    panel.spacing = unit(1, \"lines\"),\n    strip.text = element_text(face = \"bold\")\n  )\n\nprint(fig_facet)\n\n# -------------------------------------------------------\n# 7. Regression: body mass ~ flipper length + bill length + species\n# -------------------------------------------------------\nmodel &lt;- lm(\n  body_mass_g ~ flipper_length_mm + bill_length_mm + bill_depth_mm + species,\n  data = penguins_clean\n)\n\ncat(\"\\n---- OLS Regression: Body mass ----\\n\")\nprint(summary(model))\n\n# Tidy coefficient table\ncat(\"\\n---- Tidy coefficients ----\\n\")\ncoef_tbl &lt;- broom::tidy(model, conf.int = TRUE) |&gt;\n  mutate(across(where(is.numeric), \\(x) round(x, 3)))\nprint(coef_tbl)\n\ncat(sprintf(\n  \"\\nAdjusted R²: %.4f | Residual std. error: %.1f g\\n\",\n  summary(model)$adj.r.squared,\n  summary(model)$sigma\n))\n\n\n\n\nCreate a new file test-python.py in the ex00-positron-test folder.\nCopy paste the following code in this file and run it.\nIf you see the plots and regression output in the terminal, then Python is working correctly.\nPress  to run it.\n\n\n\n# test-python.py\n# Verify Python is working: package management, palmerpenguins data,\n# visualisations (violin, pairplot, bar + CI, KDE heatmap), and regression.\n\n# -------------------------------------------------------\n# 1. Package check + install\n# -------------------------------------------------------\nimport importlib\nimport subprocess\nimport sys\n\nrequired = [\"palmerpenguins\", \"pandas\", \"matplotlib\", \"seaborn\", \"statsmodels\", \"scikit-learn\"]\n\nmissing = [pkg for pkg in required if importlib.util.find_spec(pkg) is None]\nif missing:\n    print(f\"Installing missing packages: {', '.join(missing)}\")\n    subprocess.check_call([sys.executable, \"-m\", \"pip\", \"install\", *missing])\nelse:\n    print(\"All required packages are already installed.\")\n\n# -------------------------------------------------------\n# 2. Imports and data loading\n# -------------------------------------------------------\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom palmerpenguins import load_penguins\nimport statsmodels.formula.api as smf\nfrom sklearn.preprocessing import LabelEncoder\n\nsns.set_theme(style=\"whitegrid\", palette=\"colorblind\")\nSPECIES_PALETTE = {\"Adelie\": \"#FF8C00\", \"Chinstrap\": \"#9400D3\", \"Gentoo\": \"#008B8B\"}\n\n# -------------------------------------------------------\n# 3. Data loading\n# -------------------------------------------------------\npenguins = load_penguins()\npenguins_clean = penguins.dropna().copy()\n\nprint(f\"Total rows: {len(penguins)} | After dropping NAs: {len(penguins_clean)}\")\nprint(penguins_clean.describe().round(2))\n\n# -------------------------------------------------------\n# 4. Figure 1 — Violin plots: body mass by species and sex\n# -------------------------------------------------------\nfig, ax = plt.subplots(figsize=(9, 5))\nsns.violinplot(\n    data=penguins_clean,\n    x=\"species\", y=\"body_mass_g\",\n    hue=\"sex\", split=True,\n    palette={\"male\": \"steelblue\", \"female\": \"tomato\"},\n    inner=\"quartile\", linewidth=1.2,\n    ax=ax,\n)\nax.set_title(\"Body mass distribution by species and sex\", fontsize=14)\nax.set_xlabel(\"Species\")\nax.set_ylabel(\"Body mass (g)\")\nplt.tight_layout()\nplt.show()\n\n# -------------------------------------------------------\n# 5. Figure 2 — Pair plot of all numeric morphometrics\n# -------------------------------------------------------\nnumeric_cols = [\"bill_length_mm\", \"bill_depth_mm\", \"flipper_length_mm\", \"body_mass_g\"]\npair_data = penguins_clean[numeric_cols + [\"species\"]]\n\npg = sns.pairplot(\n    pair_data,\n    hue=\"species\",\n    palette=SPECIES_PALETTE,\n    diag_kind=\"kde\",\n    plot_kws={\"alpha\": 0.6, \"s\": 30},\n)\npg.figure.suptitle(\"Pairwise relationships — all morphometric variables\", y=1.02, fontsize=13)\nplt.show()\n\n# -------------------------------------------------------\n# 5. Figure 3 — Mean flipper length per species × island (bar + CI)\n# -------------------------------------------------------\nsummary = (\n    penguins_clean\n    .groupby([\"island\", \"species\"])[\"flipper_length_mm\"]\n    .agg([\"mean\", \"sem\"])\n    .reset_index()\n    .rename(columns={\"mean\": \"mean_flipper\", \"sem\": \"se_flipper\"})\n)\n\nfig, ax = plt.subplots(figsize=(9, 5))\nsns.barplot(\n    data=penguins_clean,\n    x=\"island\", y=\"flipper_length_mm\",\n    hue=\"species\",\n    palette=SPECIES_PALETTE,\n    errorbar=\"se\", capsize=0.08,\n    ax=ax,\n)\nax.set_title(\"Mean flipper length by island and species (±SE)\", fontsize=14)\nax.set_xlabel(\"Island\")\nax.set_ylabel(\"Flipper length (mm)\")\nax.legend(title=\"Species\", loc=\"lower right\")\nplt.tight_layout()\nplt.show()\n\n# -------------------------------------------------------\n# 6. Figure 4 — KDE + rug: bill length by species\n# -------------------------------------------------------\nfig, ax = plt.subplots(figsize=(9, 5))\nfor species, colour in SPECIES_PALETTE.items():\n    subset = penguins_clean.loc[penguins_clean[\"species\"] == species, \"bill_length_mm\"]\n    sns.kdeplot(subset, ax=ax, label=species, color=colour, linewidth=2, fill=True, alpha=0.15)\n    ax.plot(subset, [-0.002] * len(subset), \"|\", color=colour, alpha=0.5, markersize=8)\n\nax.set_title(\"Kernel density of bill length by species (with rug)\", fontsize=14)\nax.set_xlabel(\"Bill length (mm)\")\nax.set_ylabel(\"Density\")\nax.legend(title=\"Species\")\nplt.tight_layout()\nplt.show()\n\n# -------------------------------------------------------\n# 7. OLS regression: body mass ~ morphometrics + species\n# -------------------------------------------------------\nformula = \"body_mass_g ~ flipper_length_mm + bill_length_mm + bill_depth_mm + C(species)\"\nmodel = smf.ols(formula, data=penguins_clean).fit()\n\nprint(\"\\n\" + \"=\" * 60)\nprint(\"OLS Regression: body mass ~ morphometrics + species\")\nprint(\"=\" * 60)\nprint(model.summary())\nprint(f\"\\nN = {int(model.nobs)}  |  Adj. R² = {model.rsquared_adj:.4f}  |  RMSE = {model.mse_resid**0.5:.1f} g\")\n\n\n\n\nCreate a new file test-quarto.qmd in the ex00-positron-test folder.\nCopy paste the following code in this file and press “Preview”.\nIf you see the rendered HTML output, then Quarto is working correctly.\n\n\n---\ntitle: \"Exploring the Palmer Penguins Dataset\"\nauthor: \"Test Notebook\"\ndate: today\nformat:\n  html:\n    toc: true\n    toc-depth: 3\n    toc-title: \"Contents\"\n    code-fold: true\n    code-summary: \"Show code\"\n    theme: cosmo\n    highlight-style: github\n    embed-resources: true\nexecute:\n  warning: false\n  message: false\n---\n\n## Overview\n\nThis notebook explores the [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/)\ndataset — a modern alternative to the classic `iris` dataset — collected by Dr. Kristen Gorman\nat the Palmer Station, Antarctica.\n\nThe dataset contains size measurements for **344 penguins** across three species\n(*Adélie*, *Chinstrap*, and *Gentoo*) observed on three islands in the Palmer Archipelago.\n\n::: {layout=\"[1,2,2]\" layout-valign=\"center\"}\n![](https://allisonhorst.github.io/palmerpenguins/reference/figures/palmerpenguins.png){width=130 fig-alt=\"palmerpenguins hex sticker\"}\n\n![Meet the Palmer penguins — Adélie, Chinstrap and Gentoo](https://allisonhorst.github.io/palmerpenguins/reference/figures/lter_penguins.png){fig-alt=\"Illustration of the three penguin species: Adélie, Chinstrap and Gentoo\"}\n\n![Bill (culmen) length and depth measurements](https://allisonhorst.github.io/palmerpenguins/reference/figures/culmen_depth.png){fig-alt=\"Diagram showing how bill length and bill depth are measured on a penguin\"}\n:::\n\n*Artwork by [\\@allison_horst](https://www.allisonhorst.com/) — CC BY 4.0*\n\n::: {.callout-note}\n## Dataset Citation\nGorman KB, Williams TD, Fraser WR (2014). *Ecological sexual dimorphism and environmental\nvariability within a community of Antarctic penguins (genus Pygoscelis)*.\nPLoS ONE 9(3):e90081.\n:::\n\n---\n\n## Setup\n\nWe begin by verifying that all required packages are available, installing any that are\nmissing, and then loading them.\n\n\n::: {.cell}\n\n```{.r .cell-code  code-summary=\"Package management and library loading\"}\nrequired_pkgs &lt;- c(\"tidyverse\", \"ggplot2\", \"palmerpenguins\", \"broom\", \"knitr\")\n\nmissing_pkgs &lt;- required_pkgs[!sapply(required_pkgs, requireNamespace, quietly = TRUE)]\n\nif (length(missing_pkgs) &gt; 0) {\n  message(\"Installing: \", paste(missing_pkgs, collapse = \", \"))\n  install.packages(missing_pkgs, repos = \"https://cloud.r-project.org\")\n}\n\nlibrary(tidyverse)\n```\n\n::: {.cell-output .cell-output-stderr}\n\n```\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.6\n✔ forcats   1.0.1     ✔ stringr   1.6.0\n✔ ggplot2   4.0.1     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.2\n✔ purrr     1.2.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n```\n\n\n:::\n\n```{.r .cell-code  code-summary=\"Package management and library loading\"}\nlibrary(palmerpenguins)\n```\n\n::: {.cell-output .cell-output-stderr}\n\n```\n\nAttaching package: 'palmerpenguins'\n\nThe following objects are masked from 'package:datasets':\n\n    penguins, penguins_raw\n```\n\n\n:::\n\n```{.r .cell-code  code-summary=\"Package management and library loading\"}\nlibrary(broom)\nlibrary(knitr)\n```\n:::\n\n\n---\n\n## Data\n\n### Structure\n\nThe `penguins` data frame ships directly with the `palmerpenguins` package and is\nready to use after loading.\n\n\n::: {#tbl-glimpse .cell tbl-cap='First six rows of the penguins dataset.'}\n\n```{.r .cell-code}\nkable(head(penguins))\n```\n\n::: {.cell-output-display}\n\n\n|species |island    | bill_length_mm| bill_depth_mm| flipper_length_mm| body_mass_g|sex    | year|\n|:-------|:---------|--------------:|-------------:|-----------------:|-----------:|:------|----:|\n|Adelie  |Torgersen |           39.1|          18.7|               181|        3750|male   | 2007|\n|Adelie  |Torgersen |           39.5|          17.4|               186|        3800|female | 2007|\n|Adelie  |Torgersen |           40.3|          18.0|               195|        3250|female | 2007|\n|Adelie  |Torgersen |             NA|            NA|                NA|          NA|NA     | 2007|\n|Adelie  |Torgersen |           36.7|          19.3|               193|        3450|female | 2007|\n|Adelie  |Torgersen |           39.3|          20.6|               190|        3650|male   | 2007|\n\n\n:::\n:::\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\npenguins_clean &lt;- penguins |&gt; drop_na()\n```\n:::\n\n\nAfter removing 11 rows with missing values,\n333 complete observations remain across\n3 species and\n3 islands.\n\n### Summary statistics\n\n\n::: {#tbl-summary .cell tbl-cap='Per-species summary of key morphometric variables.'}\n\n```{.r .cell-code}\npenguins_clean |&gt;\n  summarise(\n    across(\n      c(bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g),\n      list(mean = \\(x) round(mean(x), 1), sd = \\(x) round(sd(x), 1))\n    ),\n    .by = species\n  ) |&gt;\n  kable()\n```\n\n::: {.cell-output-display}\n\n\n|species   | bill_length_mm_mean| bill_length_mm_sd| bill_depth_mm_mean| bill_depth_mm_sd| flipper_length_mm_mean| flipper_length_mm_sd| body_mass_g_mean| body_mass_g_sd|\n|:---------|-------------------:|-----------------:|------------------:|----------------:|----------------------:|--------------------:|----------------:|--------------:|\n|Adelie    |                38.8|               2.7|               18.3|              1.2|                  190.1|                  6.5|           3706.2|          458.6|\n|Gentoo    |                47.6|               3.1|               15.0|              1.0|                  217.2|                  6.6|           5092.4|          501.5|\n|Chinstrap |                48.8|               3.3|               18.4|              1.1|                  195.8|                  7.1|           3733.1|          384.3|\n\n\n:::\n:::\n\n\n::: {.callout-tip}\n## Simpson's Paradox\nThe overall correlation between bill length and bill depth is *negative*, but\n**positive within each species**. This is a textbook example of Simpson's Paradox —\na strong reason to always disaggregate by group before drawing conclusions.\n:::\n\n---\n\n## Visualisations\n\n### Bill Dimensions by Species {#sec-scatter}\n\n@fig-scatter shows the relationship between bill length and bill depth stratified by\nspecies, with per-species linear fits. The three species cluster distinctly,\nillustrating that species is a strong predictor of morphology.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nggplot(\n  penguins_clean,\n  aes(x = bill_length_mm, y = bill_depth_mm, colour = species, shape = species)\n) +\n  geom_point(alpha = 0.7, size = 2.5) +\n  geom_smooth(method = \"lm\", se = FALSE, linewidth = 0.9) +\n  scale_colour_manual(values = c(\"darkorange\", \"purple\", \"cyan4\")) +\n  scale_shape_manual(values = c(16, 17, 15)) +\n  labs(\n    title    = \"Bill length vs. bill depth\",\n    subtitle = \"Linear fit per species — note the within-group positive trend\",\n    x        = \"Bill length (mm)\",\n    y        = \"Bill depth (mm)\",\n    colour   = \"Species\", shape = \"Species\"\n  ) +\n  theme_minimal(base_size = 13)\n```\n\n::: {.cell-output .cell-output-stderr}\n\n```\n`geom_smooth()` using formula = 'y ~ x'\n```\n\n\n:::\n\n::: {.cell-output-display}\n![Bill length vs. bill depth coloured and fitted by species.](verify_files/figure-html/fig-scatter-1.png){#fig-scatter width=768}\n:::\n:::\n\n\n### Flipper Length Distribution {#sec-hist}\n\nThe histogram in @fig-hist reveals that Gentoo penguins have notably longer flippers\nthan Adélie or Chinstrap penguins, hinting at their larger overall body size.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nggplot(penguins_clean, aes(x = flipper_length_mm, fill = species)) +\n  geom_histogram(alpha = 0.6, binwidth = 5, position = \"identity\", colour = \"white\") +\n  scale_fill_manual(values = c(\"darkorange\", \"purple\", \"cyan4\")) +\n  labs(\n    title = \"Distribution of flipper length\",\n    x     = \"Flipper length (mm)\",\n    y     = \"Count\",\n    fill  = \"Species\"\n  ) +\n  theme_minimal(base_size = 13)\n```\n\n::: {.cell-output-display}\n![Overlaid histogram of flipper length for each species.](verify_files/figure-html/fig-hist-1.png){#fig-hist width=768}\n:::\n:::\n\n\n### Body Mass by Species and Sex {#sec-box}\n\n@fig-box uses box plots to visualise body mass split by both species and sex.\nSexual dimorphism is most pronounced in Gentoo penguins, where males are\nsubstantially heavier than females.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nggplot(penguins_clean, aes(x = species, y = body_mass_g, fill = sex)) +\n  geom_boxplot(alpha = 0.7, outlier.shape = 21, outlier.size = 2) +\n  scale_fill_manual(values = c(\"steelblue\", \"tomato\"), labels = c(\"Female\", \"Male\")) +\n  labs(\n    title = \"Body mass by species and sex\",\n    x     = \"Species\",\n    y     = \"Body mass (g)\",\n    fill  = \"Sex\"\n  ) +\n  theme_minimal(base_size = 13) +\n  theme(legend.position = \"top\")\n```\n\n::: {.cell-output-display}\n![Box plots of body mass grouped by species and sex.](verify_files/figure-html/fig-box-1.png){#fig-box width=768}\n:::\n:::\n\n\n### Faceted Bill Dimensions by Island {#sec-facet}\n\nThe faceted plot in @fig-facet breaks the bill dimension scatter down by island.\nThe composition of species varies strikingly across islands — Biscoe hosts almost\nexclusively Gentoo penguins, while Dream has a mix of Adélie and Chinstrap.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nggplot(\n  penguins_clean,\n  aes(x = bill_length_mm, y = bill_depth_mm, colour = species, shape = species)\n) +\n  geom_point(alpha = 0.7, size = 2) +\n  facet_wrap(~island, nrow = 1) +\n  scale_colour_manual(values = c(\"darkorange\", \"purple\", \"cyan4\")) +\n  scale_shape_manual(values = c(16, 17, 15)) +\n  labs(\n    title    = \"Bill dimensions faceted by island\",\n    subtitle = \"Species composition differs markedly across islands\",\n    x        = \"Bill length (mm)\",\n    y        = \"Bill depth (mm)\",\n    colour   = \"Species\", shape = \"Species\"\n  ) +\n  theme_minimal(base_size = 12) +\n  theme(\n    panel.spacing = unit(1.2, \"lines\"),\n    strip.text    = element_text(face = \"bold\", size = 12)\n  )\n```\n\n::: {.cell-output-display}\n![Bill length vs. depth faceted by island of observation.](verify_files/figure-html/fig-facet-1.png){#fig-facet width=1056}\n:::\n:::\n\n\n---\n\n## Regression Analysis {#sec-regression}\n\nWe fit an ordinary least squares model predicting **body mass** from flipper length,\nbill dimensions, and species. This allows us to ask: *after controlling for species,\nhow much of the variation in body mass is explained by morphometric measurements?*\n\n$$\n\\text{body mass}_i = \\beta_0 + \\beta_1\\,\\text{flipper} + \\beta_2\\,\\text{bill length} + \\beta_3\\,\\text{bill depth} + \\beta_4\\,\\text{species} + \\varepsilon_i\n$$\n\n\n::: {#tbl-model .cell tbl-cap='OLS regression results: body mass as outcome.'}\n\n```{.r .cell-code}\nmodel &lt;- lm(\n  body_mass_g ~ flipper_length_mm + bill_length_mm + bill_depth_mm + species,\n  data = penguins_clean\n)\n\ntidy(model, conf.int = TRUE) |&gt;\n  mutate(across(where(is.numeric), \\(x) round(x, 3))) |&gt;\n  rename(\n    Term         = term,\n    Estimate     = estimate,\n    `Std. Error` = std.error,\n    `t value`    = statistic,\n    `p value`    = p.value,\n    `CI Lower`   = conf.low,\n    `CI Upper`   = conf.high\n  ) |&gt;\n  kable()\n```\n\n::: {.cell-output-display}\n\n\n|Term              |  Estimate| Std. Error| t value| p value|  CI Lower|  CI Upper|\n|:-----------------|---------:|----------:|-------:|-------:|---------:|---------:|\n|(Intercept)       | -4282.080|    497.832|  -8.601|       0| -5261.438| -3302.723|\n|flipper_length_mm |    20.226|      3.135|   6.452|       0|    14.059|    26.394|\n|bill_length_mm    |    39.718|      7.227|   5.496|       0|    25.501|    53.936|\n|bill_depth_mm     |   141.771|     19.163|   7.398|       0|   104.072|   179.470|\n|speciesChinstrap  |  -496.758|     82.469|  -6.024|       0|  -658.995|  -334.521|\n|speciesGentoo     |   965.198|    141.770|   6.808|       0|   686.301|  1244.096|\n\n\n:::\n:::\n\n\n\n::: {.cell}\n\n:::\n\n\nThe model explains **84.7%** of the variance in body mass\n(adjusted R² = 0.847), with a residual standard error of\n315 g. Every additional millimetre of flipper length is associated with\nroughly 20.2 g of additional body mass,\nholding bill dimensions and species constant.\n\n::: {.callout-important}\n## Collinearity Note\nFlipper length, bill dimensions, and species are correlated predictors. The individual\ncoefficient estimates should be interpreted cautiously — the model is best used\nfor overall prediction rather than inferring causal effects of individual measurements.\n:::\n\n---\n\n## Summary\n\nThis notebook demonstrated a complete workflow with the Palmer Penguins dataset:\n\n| Step | Output |\n|------|--------|\n| Package management | Installed and loaded `tidyverse`, `palmerpenguins`, `broom` |\n| Data cleaning | Dropped 11 rows with NAs |\n| Scatter plot | Bill length vs. depth with per-species fits (@fig-scatter) |\n| Histogram | Flipper length distributions overlaid by species (@fig-hist) |\n| Box plot | Body mass by species × sex (@fig-box) |\n| Faceted scatter | Bill dimensions across islands (@fig-facet) |\n| Regression | Body mass ~ morphometrics + species (Adj. R² ≈ 0.85) |",
+    "objectID": "prerequisites/software.html#uv-install",
+    "href": "prerequisites/software.html#uv-install",
+    "title": "Software Setup",
+    "section": "Step 3: uv (Python package manager)",
+    "text": "Step 3: uv (Python package manager)\nThis is very important for using Stata in Positron. Because UV is used for package management in the Positron Stata extension, if it’s not installed correctly, you won’t be able to run Stata code in Positron.\n\n\n\n\n\n\nIf it did not work as explained below:\n\ncontact ITHelp@worldbank.org for assistance.\ncheck eservices KB: KB0114399 (WB VPN required to access)\n\n\n\n\nTo install and verify uv:\n\nPowerShellGit BashCommand Prompt\n\n\n\nOpen PowerShell: keyboard Windows &gt; type “PowerShell” &gt; hit Enter\nRun:\n\npip install uv\nuv --version\nYou should see:\n\nInstallation progress and completions\na version number printed\n\n\n\n\n\nOpen Git Bash: keyboard Windows &gt; type “git bash” &gt; hit Enter\nRun:\n\npip install uv\nuv --version\nIn success case, you would see the same as in power shell, but with different formatting.\n\n\n\nOpen Command Prompt: keyboard Windows &gt; type “cmd” &gt; hit Enter\nRun:\n\npip install uv\nuv --version",
     "crumbs": [
       "Prerequisites",
-      "Verification"
+      "Software Setup"
     ]
   },
   {
-    "objectID": "prerequisites/index.html",
-    "href": "prerequisites/index.html",
-    "title": "Overview",
+    "objectID": "prerequisites/software.html#verification",
+    "href": "prerequisites/software.html#verification",
+    "title": "Software Setup",
+    "section": "Step 4: Verify software works",
+    "text": "Step 4: Verify software works\n\nPositron\nOpen Positron — if it launches, it’s working.\n\nSee Positron Overview for a tour of the layout.\n\n\n\n\nPositron layout\n\n\n\n\nR\nIn Positron, open the Console (Ctrl+Shift+P → “Console: Focus on Console”).\n\nYou should see an R interpreter.\n\n\n\n\nPython in Positron Console\n\nOpen new session way 1Open new session way 2\n\n\n\n\n\n\n\n\n\n\n\nPython in Positron Terminal\nIn Positron, open the Terminal (Ctrl+Shift+P → “Terminal: Create New Terminal”).\npython --version\npip list\nYou should see the Python version and a list of installed packages.\n\n\n\nuv in Positron Terminal\nIn the Terminal, run:\nuv --version\nYou should see a version number.\n\n\n\nQuarto\nIn the Terminal, run:\nquarto --version\nquarto check\nYou should see a version number and a passing check.",
+    "crumbs": [
+      "Prerequisites",
+      "Software Setup"
+    ]
+  },
+  {
+    "objectID": "prerequisites/software.html#step-5-running-r-python-code-in-positron",
+    "href": "prerequisites/software.html#step-5-running-r-python-code-in-positron",
+    "title": "Software Setup",
+    "section": "Step 5: Running R Python code in Positron",
+    "text": "Step 5: Running R Python code in Positron\nFollow instructions based on the language you want to run:\n\nRPython\n\n\n\nOpen a new file (Ctrl+N), save it as test.R (Ctrl+S).\nCopy-paste the following code:\n\n\n# test-r.R\n# Verify R is working: package management, palmerpenguins data,\n# visualisations (scatter, histogram, box, facets), and regression.\n\n# -------------------------------------------------------\n# 1. Package check + install\n# -------------------------------------------------------\nrequired_pkgs &lt;- c(\"tidyverse\", \"ggplot2\", \"palmerpenguins\")\n\nmissing_pkgs &lt;- required_pkgs[\n  !sapply(required_pkgs, requireNamespace, quietly = TRUE)\n]\n\nif (length(missing_pkgs) &gt; 0) {\n  message(\"Installing missing packages: \", paste(missing_pkgs, collapse = \", \"))\n  install.packages(missing_pkgs, repos = \"https://cloud.r-project.org\")\n} else {\n  message(\"All required packages are already installed.\")\n}\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n\n# -------------------------------------------------------\n# 2. Data overview\n# -------------------------------------------------------\nglimpse(penguins)\n\npenguins_clean &lt;- penguins |&gt; drop_na()\ncat(sprintf(\n  \"\\nRows after dropping NAs: %d (removed %d)\\n\",\n  nrow(penguins_clean),\n  nrow(penguins) - nrow(penguins_clean)\n))\n\n# -------------------------------------------------------\n# 3. Figure 1 — Scatter: bill dimensions coloured by species\n# -------------------------------------------------------\nfig_scatter &lt;- ggplot(\n  penguins_clean,\n  aes(x = bill_length_mm, y = bill_depth_mm, colour = species, shape = species)\n) +\n  geom_point(alpha = 0.7, size = 2.5) +\n  geom_smooth(method = \"lm\", se = FALSE, linewidth = 0.9) +\n  scale_colour_manual(values = c(\"darkorange\", \"purple\", \"cyan4\")) +\n  scale_shape_manual(values = c(16, 17, 15)) +\n  labs(\n    title = \"Bill length vs. bill depth\",\n    subtitle = \"Linear fit per species\",\n    x = \"Bill length (mm)\",\n    y = \"Bill depth (mm)\",\n    colour = \"Species\",\n    shape = \"Species\"\n  ) +\n  theme_minimal(base_size = 13)\n\nprint(fig_scatter)\n\n# -------------------------------------------------------\n# 4. Figure 2 — Histogram: flipper length by species (overlaid)\n# -------------------------------------------------------\nfig_hist &lt;- ggplot(\n  penguins_clean,\n  aes(x = flipper_length_mm, fill = species)\n) +\n  geom_histogram(\n    alpha = 0.6,\n    binwidth = 5,\n    position = \"identity\",\n    colour = \"white\"\n  ) +\n  scale_fill_manual(values = c(\"darkorange\", \"purple\", \"cyan4\")) +\n  labs(\n    title = \"Flipper length distribution\",\n    x = \"Flipper length (mm)\",\n    y = \"Count\",\n    fill = \"Species\"\n  ) +\n  theme_minimal(base_size = 13)\n\nprint(fig_hist)\n\n# -------------------------------------------------------\n# 5. Figure 3 — Box plots: body mass by species and sex\n# -------------------------------------------------------\nfig_box &lt;- ggplot(\n  penguins_clean,\n  aes(x = species, y = body_mass_g, fill = sex)\n) +\n  geom_boxplot(alpha = 0.7, outlier.shape = 21, outlier.size = 2) +\n  scale_fill_manual(values = c(\"steelblue\", \"tomato\")) +\n  labs(\n    title = \"Body mass by species and sex\",\n    x = \"Species\",\n    y = \"Body mass (g)\",\n    fill = \"Sex\"\n  ) +\n  theme_minimal(base_size = 13) +\n  theme(legend.position = \"top\")\n\nprint(fig_box)\n\n# -------------------------------------------------------\n# 6. Figure 4 — Faceted scatter: bill dimensions faceted by island\n# -------------------------------------------------------\nfig_facet &lt;- ggplot(\n  penguins_clean,\n  aes(x = bill_length_mm, y = bill_depth_mm, colour = species, shape = species)\n) +\n  geom_point(alpha = 0.7, size = 2) +\n  facet_wrap(~island, nrow = 1) +\n  scale_colour_manual(values = c(\"darkorange\", \"purple\", \"cyan4\")) +\n  scale_shape_manual(values = c(16, 17, 15)) +\n  labs(\n    title = \"Bill dimensions by island\",\n    subtitle = \"Faceted by island of observation\",\n    x = \"Bill length (mm)\",\n    y = \"Bill depth (mm)\",\n    colour = \"Species\",\n    shape = \"Species\"\n  ) +\n  theme_minimal(base_size = 13) +\n  theme(\n    panel.spacing = unit(1, \"lines\"),\n    strip.text = element_text(face = \"bold\")\n  )\n\nprint(fig_facet)\n\n# -------------------------------------------------------\n# 7. Regression: body mass ~ flipper length + bill length + species\n# -------------------------------------------------------\nmodel &lt;- lm(\n  body_mass_g ~ flipper_length_mm + bill_length_mm + bill_depth_mm + species,\n  data = penguins_clean\n)\n\ncat(\"\\n---- OLS Regression: Body mass ----\\n\")\nprint(summary(model))\n\n# Tidy coefficient table\ncat(\"\\n---- Tidy coefficients ----\\n\")\ncoef_tbl &lt;- broom::tidy(model, conf.int = TRUE) |&gt;\n  mutate(across(where(is.numeric), \\(x) round(x, 3)))\nprint(coef_tbl)\n\ncat(sprintf(\n  \"\\nAdjusted R²: %.4f | Residual std. error: %.1f g\\n\",\n  summary(model)$adj.r.squared,\n  summary(model)$sigma\n))\n\n\n\n\nOpen a new file (Ctrl+N), save it as test.py (Ctrl+S).\nCopy-paste the following code:\n\n\n# test-python.py\n# Verify Python is working: package management, palmerpenguins data,\n# visualisations (violin, pairplot, bar + CI, KDE heatmap), and regression.\n\n# -------------------------------------------------------\n# 1. Package check + install\n# -------------------------------------------------------\nimport importlib\nimport subprocess\nimport sys\n\nrequired = [\"palmerpenguins\", \"pandas\", \"matplotlib\", \"seaborn\", \"statsmodels\", \"scikit-learn\"]\n\nmissing = [pkg for pkg in required if importlib.util.find_spec(pkg) is None]\nif missing:\n    print(f\"Installing missing packages: {', '.join(missing)}\")\n    subprocess.check_call([sys.executable, \"-m\", \"pip\", \"install\", *missing])\nelse:\n    print(\"All required packages are already installed.\")\n\n# -------------------------------------------------------\n# 2. Imports and data loading\n# -------------------------------------------------------\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom palmerpenguins import load_penguins\nimport statsmodels.formula.api as smf\nfrom sklearn.preprocessing import LabelEncoder\n\nsns.set_theme(style=\"whitegrid\", palette=\"colorblind\")\nSPECIES_PALETTE = {\"Adelie\": \"#FF8C00\", \"Chinstrap\": \"#9400D3\", \"Gentoo\": \"#008B8B\"}\n\n# -------------------------------------------------------\n# 3. Data loading\n# -------------------------------------------------------\npenguins = load_penguins()\npenguins_clean = penguins.dropna().copy()\n\nprint(f\"Total rows: {len(penguins)} | After dropping NAs: {len(penguins_clean)}\")\nprint(penguins_clean.describe().round(2))\n\n# -------------------------------------------------------\n# 4. Figure 1 — Violin plots: body mass by species and sex\n# -------------------------------------------------------\nfig, ax = plt.subplots(figsize=(9, 5))\nsns.violinplot(\n    data=penguins_clean,\n    x=\"species\", y=\"body_mass_g\",\n    hue=\"sex\", split=True,\n    palette={\"male\": \"steelblue\", \"female\": \"tomato\"},\n    inner=\"quartile\", linewidth=1.2,\n    ax=ax,\n)\nax.set_title(\"Body mass distribution by species and sex\", fontsize=14)\nax.set_xlabel(\"Species\")\nax.set_ylabel(\"Body mass (g)\")\nplt.tight_layout()\nplt.show()\n\n# -------------------------------------------------------\n# 5. Figure 2 — Pair plot of all numeric morphometrics\n# -------------------------------------------------------\nnumeric_cols = [\"bill_length_mm\", \"bill_depth_mm\", \"flipper_length_mm\", \"body_mass_g\"]\npair_data = penguins_clean[numeric_cols + [\"species\"]]\n\npg = sns.pairplot(\n    pair_data,\n    hue=\"species\",\n    palette=SPECIES_PALETTE,\n    diag_kind=\"kde\",\n    plot_kws={\"alpha\": 0.6, \"s\": 30},\n)\npg.figure.suptitle(\"Pairwise relationships — all morphometric variables\", y=1.02, fontsize=13)\nplt.show()\n\n# -------------------------------------------------------\n# 5. Figure 3 — Mean flipper length per species × island (bar + CI)\n# -------------------------------------------------------\nsummary = (\n    penguins_clean\n    .groupby([\"island\", \"species\"])[\"flipper_length_mm\"]\n    .agg([\"mean\", \"sem\"])\n    .reset_index()\n    .rename(columns={\"mean\": \"mean_flipper\", \"sem\": \"se_flipper\"})\n)\n\nfig, ax = plt.subplots(figsize=(9, 5))\nsns.barplot(\n    data=penguins_clean,\n    x=\"island\", y=\"flipper_length_mm\",\n    hue=\"species\",\n    palette=SPECIES_PALETTE,\n    errorbar=\"se\", capsize=0.08,\n    ax=ax,\n)\nax.set_title(\"Mean flipper length by island and species (±SE)\", fontsize=14)\nax.set_xlabel(\"Island\")\nax.set_ylabel(\"Flipper length (mm)\")\nax.legend(title=\"Species\", loc=\"lower right\")\nplt.tight_layout()\nplt.show()\n\n# -------------------------------------------------------\n# 6. Figure 4 — KDE + rug: bill length by species\n# -------------------------------------------------------\nfig, ax = plt.subplots(figsize=(9, 5))\nfor species, colour in SPECIES_PALETTE.items():\n    subset = penguins_clean.loc[penguins_clean[\"species\"] == species, \"bill_length_mm\"]\n    sns.kdeplot(subset, ax=ax, label=species, color=colour, linewidth=2, fill=True, alpha=0.15)\n    ax.plot(subset, [-0.002] * len(subset), \"|\", color=colour, alpha=0.5, markersize=8)\n\nax.set_title(\"Kernel density of bill length by species (with rug)\", fontsize=14)\nax.set_xlabel(\"Bill length (mm)\")\nax.set_ylabel(\"Density\")\nax.legend(title=\"Species\")\nplt.tight_layout()\nplt.show()\n\n# -------------------------------------------------------\n# 7. OLS regression: body mass ~ morphometrics + species\n# -------------------------------------------------------\nformula = \"body_mass_g ~ flipper_length_mm + bill_length_mm + bill_depth_mm + C(species)\"\nmodel = smf.ols(formula, data=penguins_clean).fit()\n\nprint(\"\\n\" + \"=\" * 60)\nprint(\"OLS Regression: body mass ~ morphometrics + species\")\nprint(\"=\" * 60)\nprint(model.summary())\nprint(f\"\\nN = {int(model.nobs)}  |  Adj. R² = {model.rsquared_adj:.4f}  |  RMSE = {model.mse_resid**0.5:.1f} g\")",
+    "crumbs": [
+      "Prerequisites",
+      "Software Setup"
+    ]
+  },
+  {
+    "objectID": "prerequisites/software.html#common-problems",
+    "href": "prerequisites/software.html#common-problems",
+    "title": "Software Setup",
+    "section": "Step 6: Troubleshooting",
+    "text": "Step 6: Troubleshooting\n\nPositron deinstalling itself after shutdown/restart\nThis is an irregular issue. It may be linked to:\n\nITS updated positron on the osftware center, which may have caused some conflicts with the previous version and deinstalled it.\nYour laptop requires maintenance. Contact ITHelp@worldbankgroup.org for assistance.\n\n\n\nPositron not launching after installation\n\nRestart your computer.\nHit Windows &gt; type “ED Version” &gt; hit Enter\nFind Positron in the list and uninstall it.\nRestart your computer again.\nInstall Positron again from the Software Center.\n\n\n\nPositron is installed from the software center but does not appear in the start menu\n\nRestart your computer. It may take few days or few restarts.\nCheck if Positron.exe is in C:\\Users\\wbXXXXXX\\AppData\\Local\\Programs\\Positron\\\nIf it is there, double click to launch it. If it works, pin it to the start menu. Icons will update eventuyally.\nIf it doesn’t work, try Positron not launching after installation steps above.\nIf it still doesn’t work, contact ITS.\n\n\n\nPython not found\n\nMake sure you have installed Python from the Software Center (AWBG10201.4 or later).\nCheck if your Python path is set to the new installation\nIf your python is not in C:\\WBG\\Python313\\python.exe, then do the following:\n\nContact ITHelp@worldbankgroup.org for assistance and tell them that you need to set the default python to the one installed from the software center (AWBG10201.4 or later). Currently when your computer uses python it uses an old installaiton of python that has limitations.\n\n\nPython does not start\n\nThis may happend. WB laptops have many security layers and sometimes they block some functionalities of the software or it just taking longer to laod.\n\nChck that the latest python is installed and the path is correct (see Python check).\nStart a new console for python and see if it works.\nRestart your computer and try again.\n\n\n\nuv is installed but does not work\nFor example:\n\nRunning pip install uv fails, or uv --version returns command not found / not recognised after installation.\nuv installs but does not work in the terminal or Positron, or you see an error like The system cannot find the file specified when running uv.\n\nReach out to ITHelp@worldbankgroup.org for assistance.\n\n\nIs the Stata available at the software center?\nStata must be requested. Make a Software Installation Request or use R/Python instead.\n\n\nSoftware does not install from the Software Center\nRestart your computer and try again. If it still doesn’t work, this is not normal and your PC requires a maintanance. Contact ITHelp@worldbankgroup.org for assistance.\n\n\nCannot create folder in C:\\WBG\\\nThi is not normal and your PC requires a maintanance. Contact ITHelp@worldbankgroup.org for assistance.\n\n\nIf I’m using STATA, do I need R or Python?\nYou need Python to use Stata in Positron, but you don’t need R. However, we recommend installing R as well to have the full AI-assisted coding experience in Positron.\n\n\nQuarto\nQuarto is not found after installation: contact ITHelp@worldbankgroup.org for assistance setting up the Quarto path in your user environment variables.\nWhen Quarto renders fail with an error like access denied or permission denied, you might be using a wrong path for your Quarto executable or may not have installed Quarto from the Software Center. Contact ITHelp@worldbankgroup.org for assistance.\n\n\nDo we need to install Quarto too?\nSee Software installation above.",
+    "crumbs": [
+      "Prerequisites",
+      "Software Setup"
+    ]
+  },
+  {
+    "objectID": "prerequisites/software.html#licences",
+    "href": "prerequisites/software.html#licences",
+    "title": "Software Setup",
+    "section": "Licences",
+    "text": "Licences\n\n\n\nTool\nLicence\n\n\n\n\nStata\nCommercial\n\n\nR\nFree and Open Source\n\n\nPython\nFree and Open Source\n\n\nPositron\nElastic License 2.0 - Source code available, built by Posit\n\n\nQuarto\nMIT - Free and open source, built by Posit\n\n\nGit\nFree and Open Source\n\n\nStata MCP extension\nMIT - Free, open source\n\n\nPositron Stata extension\nNot-clear…",
+    "crumbs": [
+      "Prerequisites",
+      "Software Setup"
+    ]
+  },
+  {
+    "objectID": "prerequisites/github.html",
+    "href": "prerequisites/github.html",
+    "title": "GitHub & Copilot",
     "section": "",
-    "text": "Complete these setup steps before the first session:\n\nSoftware Setup — Stata 19+ MP, R 4.5+, Python 3.13+ with uv, Positron, Quarto 1.9+, Git\nGitHub & Copilot — personal GitHub account, WB org membership, Copilot access and premium requests\nPositron Extensions — Positron Stata (or Stata MCP), stataglow, databot\nPositron Assistant — enable assistant, connect to GitHub Copilot provider\nCommon Problems — uv install issues, access denied, Positron update, Quarto",
+    "text": "WarningMinimum requirements for this course\n\n\n\n\nA personal GitHub account\nGitHub Copilot access (private or institutional)\nAvailable premium requests — check here",
     "crumbs": [
       "Prerequisites",
-      "Overview"
+      "GitHub & Copilot"
     ]
   },
   {
-    "objectID": "prerequisites/extensions.html",
-    "href": "prerequisites/extensions.html",
-    "title": "Positron Extensions",
-    "section": "",
-    "text": "WarningMinimum requirements for this course\n\n\n\n\nPositron Stata extension installed and configured.\nWhat you need to do:",
+    "objectID": "prerequisites/github.html#quick-start",
+    "href": "prerequisites/github.html#quick-start",
+    "title": "GitHub & Copilot",
+    "section": "Quick start",
+    "text": "Quick start\n\nCreate a GitHub account with your personal email (not your WB email).\nJoin the github.com/worldbank organization.\nGet GitHub Copilot — either request access from WB or subscribe privately.\nSet up a premium request budget (recommended) — your plan includes a monthly allowance (WB: 300, Pro: 500, Pro+: 1,500). Once exhausted, advanced models are blocked unless you enable overuse billing:\n\nPrivate plan → GitHub &gt; Settings &gt; Budgets and Alerts &gt; + New Budget\nWB plan → Premium request chargeback\n\n\nQuestions? Email github@worldbank.org.",
     "crumbs": [
       "Prerequisites",
-      "Positron Extensions"
+      "GitHub & Copilot"
     ]
   },
   {
-    "objectID": "prerequisites/extensions.html#extensions-overview",
-    "href": "prerequisites/extensions.html#extensions-overview",
-    "title": "Positron Extensions",
-    "section": "Extensions overview",
-    "text": "Extensions overview\nPositron/VS Code ships with minimal built-in functionality by design — extensions add support for specific languages, tools, and workflows without bloating the core editor.\nNotable extensions for this course:\n\nPositron Assistant — installed by default; provides AI code suggestions and completions via GitHub Copilot and other AI providers.\nClaude Code — agentic AI coding using Anthropic’s Claude models.\nPositron Databot — AI-assisted data analysis and visualization.",
+    "objectID": "prerequisites/github.html#step-1.-create-a-github-account",
+    "href": "prerequisites/github.html#step-1.-create-a-github-account",
+    "title": "GitHub & Copilot",
+    "section": "Step 1. Create a GitHub account",
+    "text": "Step 1. Create a GitHub account\nSign up at https://github.com/signup. Use your personal email address, not your World Bank email.",
     "crumbs": [
       "Prerequisites",
-      "Positron Extensions"
+      "GitHub & Copilot"
     ]
   },
   {
-    "objectID": "prerequisites/extensions.html#installing-any-extensions",
-    "href": "prerequisites/extensions.html#installing-any-extensions",
-    "title": "Positron Extensions",
-    "section": "Installing any extensions",
-    "text": "Installing any extensions\nOpen the Extensions panel with Ctrl+Shift+X or click the square icon  on the left sidebar.\nTo install any extension:\n\nSearch for it by name\nClick Install\nIf prompted “Do you trust the publisher?”, click Trust and Install\nIf needed, reload Positron: Ctrl+Shift+P → Developer: Reload Window\n\n\n\n\nExtensions panel\n\n\n\nPositron–Stata integration\nStata has no built-in editor integration. Extensions bridge the gap by connecting Positron to Stata’s backend, enabling an AI-assisted coding workflow. Three components work together:\n\nStata 18+ with Model Context Protocol (MCP) support executes Stata code.\nPython + uv — sends code to Stata and captures output.\nA Positron extension — surfaces results in the editor UI.\n\n\n\n\n\n\n\nWarningKnown limitations\n\n\n\n\nCustom logs not supported — log using &lt;filename&gt; conflicts with the extension’s own logging. Stata only allows one log at a time. Use capture log using &lt;filename&gt; to bypass this limitation.\nBugs are possible — report issues to the extension developers (links below).\n\n\n\n\n\nWhich extension to install?\nTwo extensions provide Stata integration. Install one — not both.\n\n\n\nExtension\nRecommendation\nHighlights\n\n\n\n\nPositron Stata\nRecommended\nNative Positron integration (console, data viewer, plots)\n\n\nStata MCP\nAlternative\nMore mature; better for VS Code / Cursor users\n\n\nstataglow\nStata syntax highlighting\nworks with either extension\n\n\n\nKey differences:\n\n\n\n\n\n\n\n\nFeature\nPositron Stata\nStata MCP\n\n\n\n\nConsole output in Positron\n✅\n✅\n\n\nData viewer\n✅\n❌\n\n\nMultiple Stata sessions\n✅\n❌\n\n\nAI agent integration\n✅\n✅\n\n\nMCP support\n✅\n✅\n\n\nMaturity\nNew (2026)\nMore mature (2023)\n\n\nGood for…\nPositron users who want native integration\nVS Code / Cursor users who want MCP support",
+    "objectID": "prerequisites/github.html#sec-join-wb-github-org",
+    "href": "prerequisites/github.html#sec-join-wb-github-org",
+    "title": "GitHub & Copilot",
+    "section": "Step 2. Join the WB GitHub organization",
+    "text": "Step 2. Join the WB GitHub organization\n\nSubmit a Join GitHub Organization request on eServices.\nAccept the invitation email (sent to your private email linked with your GitHub account).\nConfirm membership by following the link in the email.\n\nInvitations expire after 7 days — resubmit through eServices if needed.\n\n\nSee WB GitHub Enterprise Overview for details.\n\n\n\n\n\n\nNote\n\n\n\nInactivity policy. Members inactive for several months may be removed automatically. Resubmit the eServices request to rejoin. This does not affect your personal GitHub account or Copilot subscription.",
     "crumbs": [
       "Prerequisites",
-      "Positron Extensions"
+      "GitHub & Copilot"
     ]
   },
   {
-    "objectID": "prerequisites/extensions.html#sec-positron-stata-extension",
-    "href": "prerequisites/extensions.html#sec-positron-stata-extension",
-    "title": "Positron Extensions",
-    "section": "Positron Stata extension",
-    "text": "Positron Stata extension\nNative Positron integration of Stata with console, data viewer, plots. Help and documentation are on GitHub along with issue reporting: github.com/ntluong95/positron-stata.\nTo install it:\n\nOpen the Extensions panel (Ctrl+Shift+X)\nSearch for Positron Stata or ntluong95.positron-stata\nClick Install -&gt; Trust and Install\nReload Positron: Ctrl+Shift+P → Developer: Reload Window\nOpen settings in Positron (Ctrl+,).\nSearch for positron.stata.installationPath\nSet the path to your Stata installation, e.g. C:\\Program Files\\StataNow19\\ (adjust if Stata is installed elsewhere).\nCreate a new .do file and run example code to verify the extension is working (or open an existing one).\n\ncreate test.do with:\nsysuse auto\nsummarize price\ndisplay \"Stata is working!\"\nSave the file (Ctrl+S) — unsaved edits are not executed.\nRun the file (Ctrl+Shift+D or Ctrl+Shift+P → Stata: Run Current File)\n\n\n\nInstallationVerificationKey features\n\n\n\n\n\n\n\n\n\nCreate and run .do files\nAI agent integration\nConsole: execute Stata code and see output\nEnvironment: variables and globals\nData: view, and explore\nFigures: display, manage, and export\nHave multiple Stata sessions",
+    "objectID": "prerequisites/github.html#sec-get-gh-copilot",
+    "href": "prerequisites/github.html#sec-get-gh-copilot",
+    "title": "GitHub & Copilot",
+    "section": "Step 3. Get GitHub Copilot",
+    "text": "Step 3. Get GitHub Copilot\nChoose one of the following:\n\nOption A: WB Organization accessOption B: Private subscription\n\n\nAfter joining the WB org, go to GitHub Settings &gt; Copilot:\n\nScroll to “Get Copilot from an organization” and click Request access from worldbank.\n\n\n\nRequest access button\n\n\nEmail github@worldbank.org:\n\nSubject: Request GitHub Copilot Access\nBody: your GitHub username + brief reason\nCC: your manager\n\n\n\n\nPurchase Copilot Pro or Pro+. This works independently of WB org membership.\n\n\n\n\n\n\nNote\n\n\n\nOnce you receive WB Copilot access, your private subscription is automatically cancelled and refunded. You cannot easily switch back to a private subscription afterward.",
     "crumbs": [
       "Prerequisites",
-      "Positron Extensions"
+      "GitHub & Copilot"
     ]
   },
   {
-    "objectID": "prerequisites/extensions.html#stata-mcp-extension",
-    "href": "prerequisites/extensions.html#stata-mcp-extension",
-    "title": "Positron Extensions",
-    "section": "Stata MCP Extension",
-    "text": "Stata MCP Extension\nThe Stata MCP extension enables Model Context Protocol (MCP) for Stata. Help and documentation are on the Open VSX page.\nTo install it:\n\nOpen the Extensions panel (Ctrl+Shift+X)\nSearch for Stata MCP or DeepEcon.stata-mcp\nClick Install -&gt; Trust and Install\nReload Positron: Ctrl+Shift+P → Developer: Reload Window\nOpen settings in Positron (Ctrl+,).\nSearch for stata-vscode.stataPath\nSet the path to your Stata installation, e.g. C:\\Program Files\\StataNow19\\ (adjust if Stata is installed elsewhere).\nSearch for stata-vscode.stataEdition and set it to mp, se, or be depending on your Stata license.\nCreate a new .do file and run example code to verify the extension is working (or open an existing one).\n\ncreate test.do with:\nsysuse auto\nsummarize price\ndisplay \"Stata is working!\"\nSave the file (Ctrl+S) — unsaved edits are not executed.\nRun the file (Ctrl+Shift+D or Ctrl+Shift+P → Stata: Run Current File)\n\n\n\nInstallation, verification and features\n\n\n\nRun Stata .do files directly from Positron\nAI agent integration (GitHub Copilot, Claude) with full context of your Stata environment\nFunctions with other IDEs and tools that support MCP (e.g. VS Code, Cursor)",
+    "objectID": "prerequisites/github.html#sec-verify-gh-copilot-access",
+    "href": "prerequisites/github.html#sec-verify-gh-copilot-access",
+    "title": "GitHub & Copilot",
+    "section": "Step 4. Verify Copilot access",
+    "text": "Step 4. Verify Copilot access\nGo to GitHub Settings &gt; Copilot and confirm your status:\n\nNo Copilot accessPrivate or WB Copilot access granted\n\n\n\n\n\nNo Copilot access\n\n\n\n\n\n\n\nCopilot access confirmed\n\n\nNote: If you have copilot access from the WB, you will see “Managed by worldbank”.",
     "crumbs": [
       "Prerequisites",
-      "Positron Extensions"
+      "GitHub & Copilot"
+    ]
+  },
+  {
+    "objectID": "prerequisites/github.html#step-5.-check-premium-requests-usage",
+    "href": "prerequisites/github.html#step-5.-check-premium-requests-usage",
+    "title": "GitHub & Copilot",
+    "section": "Step 5. Check premium requests usage",
+    "text": "Step 5. Check premium requests usage\nGo to GitHub Settings &gt; Copilot.\n\n\n\nGH Copilot 100% use limit\n\n\n\n0–100% — share of your monthly allowance used so far.\n100%+ — overuse; billed at ~$0.04/request if a budget is enabled.\nResets monthly — usage drops to 0% at the start of each billing cycle.",
+    "crumbs": [
+      "Prerequisites",
+      "GitHub & Copilot"
+    ]
+  },
+  {
+    "objectID": "prerequisites/github.html#step-6.-enable-premium-request-budget-recommended",
+    "href": "prerequisites/github.html#step-6.-enable-premium-request-budget-recommended",
+    "title": "GitHub & Copilot",
+    "section": "Step 6. Enable premium request budget (recommended)",
+    "text": "Step 6. Enable premium request budget (recommended)\nWhen you reach your monthly limit, advanced models (Claude, GPT) are unavailable until the next month. To keep access, enable premium request budget billing:\n\nWB Copilot planPrivate plan\n\n\nFollow the Premium Request Chargeback Process:\n\nGet manager approval and a budget code.\nSet a monthly spending limit.\nEmail github@worldbank.org with your budget code (cc your manager).\n\n\n\nGo to GitHub Billing &gt; Budgets and set a spending limit.",
+    "crumbs": [
+      "Prerequisites",
+      "GitHub & Copilot"
+    ]
+  },
+  {
+    "objectID": "prerequisites/github.html#sec-troubleshooting-ghcopilot",
+    "href": "prerequisites/github.html#sec-troubleshooting-ghcopilot",
+    "title": "GitHub & Copilot",
+    "section": "Step 7. Troubleshooting",
+    "text": "Step 7. Troubleshooting\nDo we have enterprise account for Github Copilot?\n\nYou need to have a private avvount and become a member of the WB GitHub organization.\n\nI got the WB subscription but using my WB email.\n\nPlease change your email to a personal one.\n\nMay I ask how to get the WB subscription?\n\nYou need to have a private avvount and become a member of the WB GitHub organization.",
+    "crumbs": [
+      "Prerequisites",
+      "GitHub & Copilot"
+    ]
+  },
+  {
+    "objectID": "prerequisites/github.html#premium-requests",
+    "href": "prerequisites/github.html#premium-requests",
+    "title": "GitHub & Copilot",
+    "section": "Premium requests",
+    "text": "Premium requests\nGitHub Copilot’s advanced features (Chat, Agent mode, Claude/GPT models) consume premium requests. Each plan includes a monthly allowance:\n\n\n\nPlan\nPremium requests / month\n\n\n\n\nInstitutional WB org\n300\n\n\nPrivate Copilot Pro\n500\n\n\nPrivate Copilot Pro+\n1,500\n\n\n\nOnce you hit the limit, advanced AI features (Ask and Agent mode, Claude) are unavailable for the rest of the month. Basic inline completions still work, but with older, less capable models.\nCheck your usage → GitHub Settings &gt; Copilot, scroll to “Usage”.\nTo avoid hitting the limit, enable premium requests budget (~$0.04/request):\n\nPrivate plan → GitHub &gt; Settings &gt; Budgets and Alerts &gt; + New Budget\nWB plan → setup chargeback. Setting up private usage limit using a credit card is not possible for WB org members.\nNote: You can only have one active plan: private or institutional. If you have a private subscription and get institutional WB access, your private subscription is automatically cancelled and remaining balance is refunded. Exiting institutional subscription (e.g. leaving WB org) is only possible at the end of the month and does not restore private subscription — you would need to resubscribe privately if you want to switch back.",
+    "crumbs": [
+      "Prerequisites",
+      "GitHub & Copilot"
+    ]
+  },
+  {
+    "objectID": "prerequisites/github.html#access-levels",
+    "href": "prerequisites/github.html#access-levels",
+    "title": "GitHub & Copilot",
+    "section": "Access levels",
+    "text": "Access levels\n\n\n\n\n\n\n\n\nSetup\nRepos\nCopilot\n\n\n\n\nNo GitHub account\n✅ Public / ❌ Personal / ❌ WB\n❌\n\n\nPersonal account (free)\n+✅ Personal / ❌ WB\n⚠️ Only old LLMs\n\n\n+ Copilot Pro/Pro+ (private)\n+✅ Personal / ❌ WB\n✅ Claude+ 300/1500\n\n\n+ Premium requests budget (private)\n+✅ Personal / ❌ WB\n✅ + extra at $0.04/request\n\n\nWB Org member\n+✅ WB\n⚠️ No premium requests\n\n\n+ Private Copilot and premium requests budget\n+✅ WB\n✅ Claude+ 300/1500 (+ extra)\n\n\n+ WB Copilot access\n+✅ WB\n✅ 300 req/mo\n\n\n+ WB chargeback\n+✅ WB\n✅ + extra at $0.04/request",
+    "crumbs": [
+      "Prerequisites",
+      "GitHub & Copilot"
     ]
   },
   {
@@ -519,29 +618,51 @@
     "href": "prerequisites/assistant.html",
     "title": "Positron Assistant",
     "section": "",
-    "text": "WarningMinimum requirements for this course\n\n\n\n\nPositron Assistant enabled and connected to the GitHub Copilot provider.",
+    "text": "WarningMinimum requirements for this course\n\n\n\n\nPositron Assistant enabled and connected to the GitHub Copilot provider.\nThe steps below are adapted from the Positron Assistant Getting Started guide.",
     "crumbs": [
       "Prerequisites",
       "Positron Assistant"
     ]
   },
   {
-    "objectID": "prerequisites/assistant.html#enabling-positron-assistant-from-official-docs",
-    "href": "prerequisites/assistant.html#enabling-positron-assistant-from-official-docs",
+    "objectID": "prerequisites/assistant.html#step-1-enable-positron-assistant",
+    "href": "prerequisites/assistant.html#step-1-enable-positron-assistant",
     "title": "Positron Assistant",
-    "section": "Enabling Positron Assistant (from official docs)",
-    "text": "Enabling Positron Assistant (from official docs)\nThe steps below are adapted from the Positron Assistant Getting Started guide.\n\nStep 1 — Enable Positron Assistant\n\nOpen Positron settings (Ctrl+,).\nSearch for positron.assistant.enable and check the box.\n\n\n\n\nEnable Positron Assistant setting\n\n\n\nRestart Positron or run the Developer: Reload Window command in the Command Palette (Ctrl+Shift+P).\n\n\n\nStep 2 — Configure a language model provider\nAnthropic and GitHub Copilot are enabled by default. Other providers (Amazon Bedrock, Snowflake Cortex, OpenAI, Custom) are in preview/experimental and must be enabled through settings.\n\nGitHub Copilot\n\n\nGitHub Copilot is enabled by default when you are signed in.\n\nRun the command Positron Assistant: Configure Language Model Providers (Ctrl+Shift+P).\nSelect GitHub Copilot as the model provider.\n\n\n\n\nGitHub Copilot selected in provider modal\n\n\n\nSelect Sign in and complete the GitHub OAuth flow in your browser.\n\n\n\n\n\n\n\nNote\n\n\n\nYou can also sign in to GitHub via the Accounts icon (bottom-left of the Activity Bar).\n\n\n\n\n\n\n\nStep 3 — Use Positron Assistant\nOnce authenticated with at least one provider, open the Assistant chat:\n\nSelect the chat robot icon in the sidebar, or run Chat: Open Chat from the Command Palette.\n\n\n\n\n\n\nAssistant Sidebar Icon\n\n\n\n\n\n\nAssistant Panel\n\n\n\n\n\nType your question in the chat input box and press Enter.\n\nSee the full Positron Assistant Getting Started guide for all provider options.",
+    "section": "Step 1 — Enable Positron Assistant",
+    "text": "Step 1 — Enable Positron Assistant\n\nOpen Positron settings (Ctrl+,).\nSearch for positron.assistant.enable and check the box.\n\n\n\n\nEnable Positron Assistant setting\n\n\n\nRestart Positron or run the Developer: Reload Window command in the Command Palette (Ctrl+Shift+P).",
     "crumbs": [
       "Prerequisites",
       "Positron Assistant"
     ]
   },
   {
-    "objectID": "prerequisites/assistant.html#support",
-    "href": "prerequisites/assistant.html#support",
+    "objectID": "prerequisites/assistant.html#step-2-configure-a-language-model-provider",
+    "href": "prerequisites/assistant.html#step-2-configure-a-language-model-provider",
     "title": "Positron Assistant",
-    "section": "Support",
-    "text": "Support\n\nIT Help: ITHelp@worldbankgroup.org | Walk-in centres\nGitHub / Copilot access: github@worldbank.org\nAdditional resources: Positron docs · GitHub Copilot docs",
+    "section": "Step 2 — Configure a language model provider",
+    "text": "Step 2 — Configure a language model provider\nAnthropic and GitHub Copilot are enabled by default. Other providers (Amazon Bedrock, Snowflake Cortex, OpenAI, Custom) are in preview/experimental and must be enabled through settings.\n\nGitHub Copilot\n\n\nGitHub Copilot is enabled by default when you are signed in.\n\nRun the command Positron Assistant: Configure Language Model Providers (Ctrl+Shift+P).\nSelect GitHub Copilot as the model provider.\n\n\n\n\nGitHub Copilot selected in provider modal\n\n\n\nSelect Sign in and complete the GitHub OAuth flow in your browser.\n\n\n\n\n\n\n\nNote\n\n\n\nYou can also sign in to GitHub via the Accounts icon (bottom-left of the Activity Bar).",
+    "crumbs": [
+      "Prerequisites",
+      "Positron Assistant"
+    ]
+  },
+  {
+    "objectID": "prerequisites/assistant.html#step-3-use-positron-assistant",
+    "href": "prerequisites/assistant.html#step-3-use-positron-assistant",
+    "title": "Positron Assistant",
+    "section": "Step 3 — Use Positron Assistant",
+    "text": "Step 3 — Use Positron Assistant\nOnce authenticated with at least one provider, open the Assistant chat:\n\nSelect the chat robot icon in the sidebar, or run Chat: Open Chat from the Command Palette.\n\n\n\n\n\n\nAssistant Sidebar Icon\n\n\n\n\n\n\nAssistant Panel\n\n\n\n\n\nType your question in the chat input box and press Enter.\n\nSee the full Positron Assistant Getting Started guide for all provider options.",
+    "crumbs": [
+      "Prerequisites",
+      "Positron Assistant"
+    ]
+  },
+  {
+    "objectID": "prerequisites/assistant.html#sec-troubleshooting-assistant",
+    "href": "prerequisites/assistant.html#sec-troubleshooting-assistant",
+    "title": "Positron Assistant",
+    "section": "Step 4 — Troubleshooting",
+    "text": "Step 4 — Troubleshooting\nAdvanced models (Claude, GPT) are not available for me in positron assistant.\n\nThis is because you do not have Github Copilot subscription, see Verify Github Copilot Access for details.\n\nMost often, issues with Positron Assistant and GitHub Copilot are related to authentication, configuration, or exceeding the free-requests quota.\n\nYou may not have activated GitHub Copilot through a private or WB subscription. Check the GitHub Copilot setup guide for details.\nCheck whether you still have free premium requests available. If you have exhausted your quota, you will need to wait until it resets or subscribe to a paid plan. See the GitHub Copilot setup guide for details.\nPositron Assistant may not be enabled or configured to use GitHub Copilot as the provider. Check the Positron Assistant setup guide for details.\n\nIf error messages persist after confirming the above, contact ITHelp@worldbankgroup.org for assistance and github@worldbankgroup.org to verify that your GitHub Copilot subscription is active.",
     "crumbs": [
       "Prerequisites",
       "Positron Assistant"
@@ -597,157 +718,113 @@
     "text": "Schedule & Plan\nMorning Course — In Person and Virtual Join Teams Channel\n\n\n\nSession\nDate\nTime (ET)\n\n\n\n\n1\nMon Apr 20\n9:00 AM–12:00 PM\n\n\n2\nThu Apr 23\n9:00 AM–12:00 PM\n\n\n\nEvening Course (Repeat) — Virtual Join Teams Channel\n\n\n\nSession\nDate\nTime (ET)\nTime Jakarta (GMT+7)\n\n\n\n\n1\nMon Apr 20\n9:00 PM–12:00 AM\nTue Apr 21, 9:00 AM–12:00 PM\n\n\n2\nThu Apr 23\n9:00 PM–12:00 AM\nFri Apr 24, 9:00 AM–12:00 PM"
   },
   {
-    "objectID": "prerequisites/common-problems.html",
-    "href": "prerequisites/common-problems.html",
-    "title": "Common Problems",
+    "objectID": "prerequisites/extensions.html",
+    "href": "prerequisites/extensions.html",
+    "title": "Positron-Stata integration",
     "section": "",
-    "text": "Issues covered here:",
+    "text": "WarningMinimum requirements for this course\n\n\n\nTo be able to run Stata code in Positron, you need to install a Positron extension that connects the editor to Stata. The recommended extension is Positron Stata, which provides native integration with console, data viewer, and plots.\nStata has no built-in editor integration. Extensions bridge the gap by connecting Positron to Stata’s backend, enabling an AI-assisted coding workflow. Three components work together:",
     "crumbs": [
       "Prerequisites",
-      "Common Problems"
+      "Positron-Stata integration"
     ]
   },
   {
-    "objectID": "prerequisites/common-problems.html#github-copilot-positron-assistant-issues",
-    "href": "prerequisites/common-problems.html#github-copilot-positron-assistant-issues",
-    "title": "Common Problems",
-    "section": "GitHub Copilot / Positron Assistant Issues",
-    "text": "GitHub Copilot / Positron Assistant Issues\nMost often, issues with Positron Assistant and GitHub Copilot are related to authentication, configuration, or exceeding the free-requests quota.\n\nYou may not have activated GitHub Copilot through a private or WB subscription. Check the GitHub Copilot setup guide for details.\nCheck whether you still have free premium requests available. If you have exhausted your quota, you will need to wait until it resets or subscribe to a paid plan. See the GitHub Copilot setup guide for details.\nPositron Assistant may not be enabled or configured to use GitHub Copilot as the provider. Check the Positron Assistant setup guide for details.\n\nIf error messages persist after confirming the above, contact ITHelp@worldbankgroup.org for assistance and github@worldbankgroup.org to verify that your GitHub Copilot subscription is active.",
+    "objectID": "prerequisites/extensions.html#sec-positron-stata-extension",
+    "href": "prerequisites/extensions.html#sec-positron-stata-extension",
+    "title": "Positron-Stata integration",
+    "section": "Step 1. Install the Stata for Positron",
+    "text": "Step 1. Install the Stata for Positron\nNative Positron integration of Stata with console, data viewer, plots, help, and documentation are on GitHub along with issue reporting: github.com/ntluong95/positron-stata.\nTo install it:\n\nOpen the Extensions panel (Ctrl+Shift+X)\nSearch for Stat for Positron or ntluong95.positron-stata\nClick Install -&gt; Trust and Install\nReload Positron: Ctrl+Shift+P → Developer: Reload Window",
     "crumbs": [
       "Prerequisites",
-      "Common Problems"
+      "Positron-Stata integration"
     ]
   },
   {
-    "objectID": "prerequisites/common-problems.html#positron-update",
-    "href": "prerequisites/common-problems.html#positron-update",
-    "title": "Common Problems",
-    "section": "Positron Update",
-    "text": "Positron Update\nPositron shows a notification that an update is available but the update fails.\n\nReinstall Positron from the Software Center to get the latest version and restore auto-update functionality. See Software Setup for details.",
+    "objectID": "prerequisites/extensions.html#sec-configure-extension",
+    "href": "prerequisites/extensions.html#sec-configure-extension",
+    "title": "Positron-Stata integration",
+    "section": "Step 2. Configure the extension",
+    "text": "Step 2. Configure the extension\n\nOpen settings in Positron (Ctrl+,).\nSearch for positron.stata.installationPath\nNote setting name is “Positron &gt; Stata: Installation Path”. Check this is correct! Especially if you have or had multiple stata extensions installed in positron.\nSet the path to your Stata installation, e.g. C:\\Program Files\\StataNow19\\ It also works with Stata 18.",
     "crumbs": [
       "Prerequisites",
-      "Common Problems"
+      "Positron-Stata integration"
     ]
   },
   {
-    "objectID": "prerequisites/common-problems.html#python-uv-installation-problem",
-    "href": "prerequisites/common-problems.html#python-uv-installation-problem",
-    "title": "Common Problems",
-    "section": "Python uv Installation Problem",
-    "text": "Python uv Installation Problem\nFor example:\n\nRunning pip install uv fails, or uv --version returns command not found / not recognised after installation.\nuv installs but does not work in the terminal or Positron, or you see an error like The system cannot find the file specified when running uv.\n\nReach out to ITHelp@worldbankgroup.org for assistance.",
+    "objectID": "prerequisites/extensions.html#sec-verify-extension",
+    "href": "prerequisites/extensions.html#sec-verify-extension",
+    "title": "Positron-Stata integration",
+    "section": "Step 3. Verify Stata runs in Positron",
+    "text": "Step 3. Verify Stata runs in Positron\n1 Create a new .do file and run example code to verify the extension is working (or open an existing one).\n\ncreate test.do with:\nsysuse auto\nsummarize price\ndisplay \"Stata is working!\"\nSave the file (Ctrl+S) — unsaved edits are not executed.\nRun the file (Ctrl+Shift+D or Ctrl+Shift+P → Stata: Run Current File)\n\n\nInstallationVerificationKey features\n\n\n\n\n\n\n\n\n\nCreate and run .do files\nAI agent integration\nConsole: execute Stata code and see output\nEnvironment: variables and globals\nData: view, and explore\nFigures: display, manage, and export\nHave multiple Stata sessions",
     "crumbs": [
       "Prerequisites",
-      "Common Problems"
+      "Positron-Stata integration"
     ]
   },
   {
-    "objectID": "prerequisites/common-problems.html#quarto",
-    "href": "prerequisites/common-problems.html#quarto",
-    "title": "Common Problems",
-    "section": "Quarto",
-    "text": "Quarto\nQuarto is not found after installation: contact ITHelp@worldbankgroup.org for assistance setting up the Quarto path in your user environment variables.\nWhen Quarto renders fail with an error like access denied or permission denied, you might be using a wrong path for your Quarto executable or may not have installed Quarto from the Software Center. Contact ITHelp@worldbankgroup.org for assistance.",
+    "objectID": "prerequisites/extensions.html#step-4.-stata-mcp-feature-optional",
+    "href": "prerequisites/extensions.html#step-4.-stata-mcp-feature-optional",
+    "title": "Positron-Stata integration",
+    "section": "Step 4. Stata-MCP feature (optional)",
+    "text": "Step 4. Stata-MCP feature (optional)\nThe extension also supports Model Context Protocol (MCP) for AI agent use. MCP allows AI agents to have full context of your Stata environment, including variables, data, and figures bypassing the console and enabling more powerful AI-assisted coding without distracting the user.\nThis reduce control as allows stata to run code without user explicitly accepting to run it. Use with caution!\nIn positron:\n\nCtrl+Shift+P → MCP: Open User Configuration\nPaste in there:\n{\n \"servers\": {\n     \"stata-mcp\": {\n         \"type\": \"sse\",\n         \"url\": \"http://localhost:4000/mcp\"\n     }\n}\n}\nSave the file\nCtrl+Shift+P → MCP: List Servers → stata-mcp → Start Server",
     "crumbs": [
       "Prerequisites",
-      "Common Problems"
+      "Positron-Stata integration"
     ]
   },
   {
-    "objectID": "prerequisites/github.html",
-    "href": "prerequisites/github.html",
-    "title": "GitHub & Copilot",
+    "objectID": "prerequisites/extensions.html#sec-troubleshooting-stataextension",
+    "href": "prerequisites/extensions.html#sec-troubleshooting-stataextension",
+    "title": "Positron-Stata integration",
+    "section": "Step 5. Troubleshooting",
+    "text": "Step 5. Troubleshooting\n\nStata console does not start\n\nError 1Error 2Error 3\n\n\n\n\n\n\n\n\n\n\n\n\nThis error can have multiple causes. Common fixes include:\n\nUV is not properly installed. Check Step 3: uv (Python package manager)\nPython cannot set environment using uv. Sometimes even when uv is installed, the extension cannot use it to set up the Python environment because of the software security settings on the laptops.\nto bypass it you may try manually installing python packages using pip install and once those are installed, it may start working.\nRequired packages are in requirements.txt. They include:\nfastapi==0.119.1\nuvicorn==0.38.0\nfastapi-mcp==0.4.0\nmcp==1.18.0\npydantic==2.11.1\npandas==2.3.3\nhttpx==0.28.1\nYou can install them in the global python environment by:\n\nKeyboard Windows &gt; PowerShell\nPaste in the power shell replacing wbXXXXXX with your WB username. check if requirements.txt exists in the folder specified before running the command.\npip install -r \"c:\\Users\\wbXXXXXX\\.positron\\extensions\\ntluong95.positron-stata-0.1.1-universal\\python\\requirements.txt\"\n\nRestart Positron and try running Stata again.\n\n\n\nNo stata runtime is available\n\nThis means that:\n\nYou did not set the Stata installation path, see Configure the extension\nYou set the path, but it is wrong. Check the path is correct and points to your Stata installation directory, e.g. C:\\Program Files\\StataNow19\\.\nYou set a correct path but to the wrong setting. Multiple extensions may require to set a Stata path. Make sure you set the path for the setting names positron.stata.installationPath and not another one (e.g. from a different Stata extension).",
+    "crumbs": [
+      "Prerequisites",
+      "Positron-Stata integration"
+    ]
+  },
+  {
+    "objectID": "prerequisites/extensions.html#sec-limitations-stataextension",
+    "href": "prerequisites/extensions.html#sec-limitations-stataextension",
+    "title": "Positron-Stata integration",
+    "section": "Step 5. Limitations",
+    "text": "Step 5. Limitations\nCustom logs not supported — log using &lt;filename&gt; conflicts with the extension’s own logging. Stata only allows one log at a time. Use capture log using &lt;filename&gt; to bypass this limitation.\n**Closing logs _all with capture breaks the code**. do not use cap log close _all because this will also close the logs used by the extension to capture Stata output, which will break the extension’s functionality. Instead, close logs individually with cap log close &lt;filename&gt;.\n\nBugs are possible — report issues to the extension developers",
+    "crumbs": [
+      "Prerequisites",
+      "Positron-Stata integration"
+    ]
+  },
+  {
+    "objectID": "prerequisites/extensions.html#alternative-stata-extension-stata-mcp",
+    "href": "prerequisites/extensions.html#alternative-stata-extension-stata-mcp",
+    "title": "Positron-Stata integration",
+    "section": "Alternative stata extension: Stata MCP",
+    "text": "Alternative stata extension: Stata MCP\nStata MCP is an alternative extension that integrates stata into the Positron. It is designed for VS Code / Cursor users, but underperforms in Positron, and does not have native Positron integration (e.g. no data viewer or plots in Positron). Installation is similar to Positron Stata above.\nKey differences:\n\n\n\n\n\n\n\n\nFeature\nPositron Stata\nStata MCP\n\n\n\n\nConsole output in Positron\n✅\n✅\n\n\nData viewer\n✅\n❌\n\n\nMultiple Stata sessions\n✅\n❌\n\n\nAI agent integration\n✅\n✅\n\n\nMCP support\n✅\n✅\n\n\nMaturity\nNew (2026)\nMore mature (2023)\n\n\nGood for…\nPositron users who want native integration\nVS Code / Cursor users who want MCP support",
+    "crumbs": [
+      "Prerequisites",
+      "Positron-Stata integration"
+    ]
+  },
+  {
+    "objectID": "prerequisites/extensions.html#extensions-in-positron",
+    "href": "prerequisites/extensions.html#extensions-in-positron",
+    "title": "Positron-Stata integration",
+    "section": "Extensions in Positron",
+    "text": "Extensions in Positron\nPositron/VS Code ships with minimal built-in functionality by design — extensions add support for specific languages, tools, and workflows without bloating the core editor.\nNotable extensions for this course:\n\nstataglow extension for Stata syntax highlighting.\nPositron Assistant — installed by default; provides AI code suggestions and completions via GitHub Copilot and other AI providers.\nClaude Code — agentic AI coding using Anthropic’s Claude models.\nPositron Databot — AI-assisted data analysis and visualization.\nVScode-pdf (tomoki1207.pdf) — view PDF files directly in Positron (e.g. for documentation).\nExcel Viewer (GrapeCity.gc-excelviewer) — view Excel files directly in Positron.\n\nInstalling any extensions\nOpen the Extensions panel with Ctrl+Shift+X or click the square icon  on the left sidebar.\nTo install any extension:\n\nSearch for it by name and hit Enter, e.g. positron assistant or claude code. Note that if in the search bar there is a tag starting with “@”, remove it.\nClick Install\nIf prompted “Do you trust the publisher?”, click Trust and Install\nIf needed, reload Positron: Ctrl+Shift+P → Developer: Reload Window\n\n\n\n\nExtensions panel\n\n\nAn alternative is the Stata MCP extension, which supports Model Context Protocol (MCP) for AI agent use.",
+    "crumbs": [
+      "Prerequisites",
+      "Positron-Stata integration"
+    ]
+  },
+  {
+    "objectID": "prerequisites/index.html",
+    "href": "prerequisites/index.html",
+    "title": "Setup",
     "section": "",
-    "text": "WarningMinimum requirements for this course\n\n\n\n\nA personal GitHub account\nGitHub Copilot access (private or institutional)\nAvailable premium requests — check here",
+    "text": "Tu use Stata in Positron with GitHub Copilot, you need:\n\nSetup Software — Stata 19+ MP, R 4.5+, Python 3.13+ with uv, Positron, Quarto 1.9+, Git\nIf anything does not work, refer to the Software Setup &gt; Troubleshooting section.\nStata for Positron Extensions — Stata for Positron Integrates stata in Positron\nSee the Stata for Positron Extensions &gt; Troubleshooting section for common issues with the extension.\nGitHub & Copilot — personal GitHub account and GithHub Copilot subscriptions are needed to use premium requests\nAny quesitons? see the GitHub & Copilot &gt; Troubleshooting section for common issues with GitHub.\nPositron Assistant — enable assistant, connect to GitHub Copilot provider\nSee the Positron Assistant &gt; Troubleshooting section for common issues with Positron Assistant.",
     "crumbs": [
       "Prerequisites",
-      "GitHub & Copilot"
-    ]
-  },
-  {
-    "objectID": "prerequisites/github.html#quick-start",
-    "href": "prerequisites/github.html#quick-start",
-    "title": "GitHub & Copilot",
-    "section": "Quick start",
-    "text": "Quick start\n\nCreate a GitHub account with your personal email (not your WB email).\nJoin the github.com/worldbank organization.\nGet GitHub Copilot — either request access from WB or subscribe privately.\nSet up a premium request budget (recommended) — your plan includes a monthly allowance (WB: 300, Pro: 500, Pro+: 1,500). Once exhausted, advanced models are blocked unless you enable overuse billing:\n\nPrivate plan → GitHub &gt; Settings &gt; Budgets and Alerts &gt; + New Budget\nWB plan → Premium request chargeback\n\n\nQuestions? Email github@worldbank.org.",
-    "crumbs": [
-      "Prerequisites",
-      "GitHub & Copilot"
-    ]
-  },
-  {
-    "objectID": "prerequisites/github.html#premium-requests",
-    "href": "prerequisites/github.html#premium-requests",
-    "title": "GitHub & Copilot",
-    "section": "Premium requests",
-    "text": "Premium requests\nGitHub Copilot’s advanced features (Chat, Agent mode, Claude/GPT models) consume premium requests. Each plan includes a monthly allowance:\n\n\n\nPlan\nPremium requests / month\n\n\n\n\nInstitutional WB org\n300\n\n\nPrivate Copilot Pro\n500\n\n\nPrivate Copilot Pro+\n1,500\n\n\n\nOnce you hit the limit, advanced AI features (Ask and Agent mode, Claude) are unavailable for the rest of the month. Basic inline completions still work, but with older, less capable models.\nCheck your usage → GitHub Settings &gt; Copilot, scroll to “Usage”.\nTo avoid hitting the limit, enable premium requests budget (~$0.04/request):\n\nPrivate plan → GitHub &gt; Settings &gt; Budgets and Alerts &gt; + New Budget\nWB plan → setup chargeback. Setting up private usage limit using a credit card is not possible for WB org members.\nNote: You can only have one active plan: private or institutional. If you have a private subscription and get institutional WB access, your private subscription is automatically cancelled and remaining balance is refunded. Exiting institutional subscription (e.g. leaving WB org) is only possible in the end of the month and does not restore private subscription — you would need to resubscribe privately if you want to switch back.",
-    "crumbs": [
-      "Prerequisites",
-      "GitHub & Copilot"
-    ]
-  },
-  {
-    "objectID": "prerequisites/github.html#access-levels",
-    "href": "prerequisites/github.html#access-levels",
-    "title": "GitHub & Copilot",
-    "section": "Access levels",
-    "text": "Access levels\n\n\n\n\n\n\n\n\nSetup\nRepos\nCopilot\n\n\n\n\nNo GitHub account\n✅ Public / ❌ Personal / ❌ WB\n❌\n\n\nPersonal account (free)\n+✅Personal / ❌ WB\n⚠️ Only old LLMs\n\n\n+ Copilot Pro/Pro+ (private)\n+✅Personal / ❌ WB\n✅Claude+ 300/1500\n\n\n+ Premium requests budget (private)\n+✅Personal / ❌ WB\n✅ + extra at 0.04$/request\n\n\nWB Org member\n+✅ WB\n⚠️ No premium requests\n\n\n+ or Private Copilot and premium requests budget\n+✅ WB\n✅Claude+ 300/1500 (+ extra)\n\n\n+ or WB Copilot access\n+✅ WB\n✅ 300 req/mo\n\n\n+ WB chargeback\n+✅ WB\n✅ + extra at 0.04$/request",
-    "crumbs": [
-      "Prerequisites",
-      "GitHub & Copilot"
-    ]
-  },
-  {
-    "objectID": "prerequisites/github.html#step-by-step-setup",
-    "href": "prerequisites/github.html#step-by-step-setup",
-    "title": "GitHub & Copilot",
-    "section": "Step-by-step setup",
-    "text": "Step-by-step setup\n\n1. Create a GitHub account\nSign up at https://github.com/signup. Use your personal email address, not your World Bank email.\n\n\n2. Join the WB GitHub organization\n\nSubmit a Join GitHub Organization request on eServices.\nAccept the invitation email (sent to your private email linked with your GitHub account).\nConfirm membership by following the link in the email.\n\nInvitations expire after 7 days — resubmit through eServices if needed.\n\n\nSee WB GitHub Enterprise Overview for details.\n\nInactivity policy. Members inactive for several months may be removed automatically. Resubmit the eServices request to rejoin. This does not affect your personal GitHub account or Copilot subscription.\n\n\n\n3. Get GitHub Copilot\nChoose one of the following:\n\nOption A: WB Organization accessOption B: Private subscription\n\n\nAfter joining the WB org, go to GitHub Settings &gt; Copilot:\n\nScroll to “Get Copilot from an organization” and click Request access from worldbank.\n\n\n\nRequest access button\n\n\nEmail github@worldbank.org:\n\nSubject: Request GitHub Copilot Access\nBody: your GitHub username + brief reason\nCC: your manager\n\n\n\n\nPurchase Copilot Pro or Pro+. This works independently of WB org membership.\n\n\n\n\n\n\nNote\n\n\n\nOnce you receive WB Copilot access, your private subscription is automatically cancelled and refunded. You cannot easily switch back to a private subscription afterward.\n\n\n\n\n\n\n\n4. Verify Copilot access\nGo to GitHub Settings &gt; Copilot and confirm your status:\n\nNo Copilot accessPrivate or WB Copilot access granted\n\n\n\n\n\nNo Copilot access\n\n\n\n\n\n\n\nCopilot access confirmed\n\n\nNote: If you have copilot access from the WB, you will see “Managed by worldbank”.\n\n\n\n\n\n5. Check premium requests usage\nGo to GitHub Settings &gt; Copilot\n\n\n\nGH Copilot 100% use limit\n\n\n\n0–100% — share of your monthly allowance used so far.\n100%+ — overuse; billed at ~$0.04/request if a budget is enabled.\nResets monthly — usage drops to 0% at the start of each billing cycle.\n\n\n\n6. Enable premium request budget (recommended)\nWhen you reach your monthly limit, advanced models (Claude, GPT) are unavailable until the next month. To keep access, enable premium request budget billing:\n\nWB Copilot planPrivate plan\n\n\nFollow the Premium Request Chargeback Process:\n\nGet manager approval and a budget code.\nSet a monthly spending limit.\nEmail github@worldbank.org with your budget code (cc your manager).\n\n\n\nGo to GitHub Billing &gt; Budgets and set a spending limit.",
-    "crumbs": [
-      "Prerequisites",
-      "GitHub & Copilot"
-    ]
-  },
-  {
-    "objectID": "prerequisites/software.html",
-    "href": "prerequisites/software.html",
-    "title": "Software Setup",
-    "section": "",
-    "text": "WarningMinimum requirements for this course\n\n\n\n\nStata 19+ MP installed and licensed\nPositron (latest version)\nR (4.5.3+)\nPython (3.13+) with uv\nQuarto (1.9+) and Git (2.52+)\nWhat you need to do:",
-    "crumbs": [
-      "Prerequisites",
-      "Software Setup"
-    ]
-  },
-  {
-    "objectID": "prerequisites/software.html#installation",
-    "href": "prerequisites/software.html#installation",
-    "title": "Software Setup",
-    "section": "Installation",
-    "text": "Installation\n\nWB LaptopPrivate Laptop\n\n\n\nRestart your computer to ensure pending updates are applied.\nOpen Software Center and install the items in Table 1 in order.\nIf any program does not appear in the Software Center, submit a Software Installation Request or contact ITHelp@worldbankgroup.org.\n\n\n\n\nDownload and install each tool from the links in Table 1.\n\n\n\n\n\n\nTable 1: Software\n\n\n\n\n\nSoftware\nWB Laptop (Software Center)\nPrivate Laptop\n\n\n\n\nStata (19+ MP)\n\n\n\n\nPositron (latest)\n\npositron.posit.co\n\n\nQuarto (1.9+)\n\nquarto.org\n\n\nR (4.5.3+)\n\ncran.r-project.org\n\n\nPython (3.13+)\n\npython.org\n\n\nuv Python package manager\nSee below.\nSee below.\n\n\nGit (2.52+)\n\ngit-scm.com\n\n\n\n\n\n\nInstall uv (Python package manager)\n\nInstructions\n\n\n\nOpen PowerShell (press Windows key, type PowerShell, and open it).\nRun:\n\npip install uv\nuv --version\nYou should see a version number printed. If not, see Common Problems.\n\nVideo guide\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nIf any software was previously installed from the Software Center:\nPress “Install” and each eligible package will update to the latest version.\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\nIf any software was previously installed manually (by using an admin password):\nContact ITHelp@worldbankgroup.org to remove it first.",
-    "crumbs": [
-      "Prerequisites",
-      "Software Setup"
-    ]
-  },
-  {
-    "objectID": "prerequisites/software.html#verification",
-    "href": "prerequisites/software.html#verification",
-    "title": "Software Setup",
-    "section": "Verification",
-    "text": "Verification\n\nPositronRPythonuvQuarto\n\n\nOpen Positron — if it launches, it’s working. See Positron Overview for a tour of the layout.\n\n\n\nPositron layout\n\n\n\n\nIn Positron, open the Console (Ctrl+Shift+P → “Console: Focus on Console”). You should see an R prompt.\n\n\n\nIn Positron, open the Terminal (Ctrl+Shift+`) and run:\npython --version\npip list\nYou should see the Python version and a list of installed packages.\n\n\n\nIn the Terminal, run:\nuv --version\nYou should see a version number.\n\n\n\nIn the Terminal, run:\nquarto --version\nquarto check\nYou should see a version number and a passing check.",
-    "crumbs": [
-      "Prerequisites",
-      "Software Setup"
-    ]
-  },
-  {
-    "objectID": "prerequisites/software.html#licences",
-    "href": "prerequisites/software.html#licences",
-    "title": "Software Setup",
-    "section": "Licences",
-    "text": "Licences\n\n\n\nTool\nLicence\n\n\n\n\nStata\nCommercial\n\n\nR\nFree and Open Source\n\n\nPython\nFree and Open Source\n\n\nPositron\nElastic License 2.0 - Source code available, built by Posit\n\n\nQuarto\nMIT - Free and open source, built by Posit\n\n\nGit\nFree and Open Source\n\n\nStata MCP extension\nMIT - Free, open source\n\n\nPositron Stata extension\nNot-clear…",
-    "crumbs": [
-      "Prerequisites",
-      "Software Setup"
+      "Setup"
     ]
   },
   {
@@ -775,17 +852,7 @@
     "href": "day1/index.html#setup-overview",
     "title": "Day 1: Overview and Materials",
     "section": "2. Setup overview",
-    "text": "2. Setup overview\n\nImportant: Setup your working folders properly!\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not use OneDrive for coding with Positron during this course! (temporary).\n\nPositron is a new software for the WB.\nUnfortunately we only discovered last week that WB security policies block Positron from writing text files on OneDrive.\nDo not save your code-in-progress in a OneDrive folder.\nNew security policy will be implemented Friday, April 24 (Because of the spring meeting freeze).\n\n\n\nTo follow along with the course and practice on your own, you need to:\n\nOn C:\\WBG\\ create a folder called ai.\nCopy exercise templates into C:\\WBG\\ai\\ai4coding-practice\\ using either:\n\nOneDrive (WB only) folder ai4coding-examples\nor forking the GitHub repo worldbank/ai4coding-examples\n\nWork in the relevant exercise subfolder, e.g. C:\\WBG\\ai\\ai4coding-practice\\ex01\\.\nAccess course data:\n\nShared through OneDrive (WB only) ai4coding-data\nIt is read-only. You can sync it to your OneDrive (where appropriate) and use it from there.\nIf you encounter problems, copy the data to C:\\WBG\\ai\\ai4coding-data\\.\n\n\nSlides\n\nView slides in a new tab.\n\nExample 0: Test your setup (live)\nThis presentation ends with an example that demonstrates how to test if the setup is working correctly. Example 0 could be found in Self-Study &gt; Example 0.\n\n\nExample 1: Stata in Positron with GitHub Copilot (self-study)\nThis introductory example is plan for self-study, full details, suggested prompts, and instructions are in the Self-Study &gt; Example 1.\nThe goal of this exercise is to get familiar with Positron’s AI assistance features and how they can be used to write and execute Stata code. We go through a typical workflow of creating a Stata do file, writing code with AI assistance, and executing it in the console.\nThis exercise overviews the following features of Positron’s AI assistance:\n\ninline suggestions: accepting, rejecting, and customizing\nchat mode: asking for code generation, revision, and troubleshooting\ninline chat: revising specific code snippets without leaving the editor\nagent mode: automating code execution and debugging\ncontext monitoring\n\nWatch the full video (18 min.) here:",
-    "crumbs": [
-      "Day 1: Overview and Materials"
-    ]
-  },
-  {
-    "objectID": "day1/index.html#example-2",
-    "href": "day1/index.html#example-2",
-    "title": "Day 1: Overview and Materials",
-    "section": "3. Example 2: Understanding data with AI (live)",
-    "text": "3. Example 2: Understanding data with AI (live)\nThis example is planned for live demonstration during the session, but you can also follow along on your own as a self-study exercise. Full details, suggested prompts, and instructions are in the Self-Study &gt; Example 2.\n\nOverview\nIn this example, we explore how AI can support a common data science workflow: taking raw data and transforming it into a clean, analysis-ready format.\nFollowing the common agentic data analysis workflow and principles of safeguarding data, we adopt a metadata-driven approach — using a data dictionary as an intermediary between the raw data and the AI, rather than exposing sensitive data directly.\n\n\nLearning objectives\nBy the end of this example, you will have practiced using AI to:\n\nSet a clear objective and constraints for an AI coding session.\nBuild a data dictionary that captures variable names, types, units, and labels — without sharing raw data with the AI.\nDocument data harmonization requirements systematically as a mapping table.\nGenerate modular cleaning code driven by metadata, following DIME Wiki best practices. (The example prompts use Stata but include a substitution table for adapting to R or Python.)\nIterate on that code to resolve errors and refine outputs.\nVerify results using an independent AI auditor session.\nDocument the harmonization for reproducibility.\n\n\n\nData\nWe use Mexico’s National Survey of Household Income and Expenditure (ENIGH) for 2016 and 2018, which contains detailed information on household income and other socio-economic characteristics.\n\n\n\n\nDownload\nMetadata\n\n\n\n\n2016\nINEGI\nCatalog (Spanish)\n\n\n2018\nINEGI\nCatalog (Spanish)\n\n\n\nThis data is stored on your local machine at [your path to]/ai4coding-data/mex/ in subfolders 2016/ and 2018/ as read-only files.\n\n\nTarget specification\nThe objective is to clean and harmonize this data to the Global Monitoring Database (GMD) specification, selectively outlined in Self-Study → GMD requirements. We harmonize only these three modules:\n\nDemographics\nIncome\nConsumption\n\n\n\nWhere to start?\nThe full example, including suggested prompts and instructions, is in C:/WBG/ai/ai4coding-practice/ex02-understand-data/ in the self-study section. You can follow along",
+    "text": "2. Setup overview\n\nImportant: Setup your working folders properly!\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not use OneDrive for coding with Positron during this course! (temporary).\n\nPositron is a new software for the WB.\nUnfortunately we only discovered last week that WB security policies block Positron from writing text files on OneDrive.\nDo not save your code-in-progress in a OneDrive folder.\nNew security policy will be implemented Friday, April 24 (Because of the spring meeting freeze).\n\n\n\nTo follow along with the course and practice on your own, you need to:\n\nOn C:\\WBG\\ create a folder called ai.\nCopy exercise templates into C:\\WBG\\ai\\ai4coding-practice\\ using either:\n\nOneDrive (WB only) folder ai4coding-examples\nor forking the GitHub repo worldbank/ai4coding-examples\n\nWork in the relevant exercise subfolder, e.g. C:\\WBG\\ai\\ai4coding-practice\\ex01\\.\nAccess course data:\n\nShared through OneDrive (WB only) ai4coding-data\nIt is read-only. You can sync it to your OneDrive (where appropriate) and use it from there.\nIf you encounter problems, copy the data to C:\\WBG\\ai\\ai4coding-data\\.\n\n\nSlides\n\nView slides in a new tab.",
     "crumbs": [
       "Day 1: Overview and Materials"
     ]
@@ -794,8 +861,8 @@
     "objectID": "day1/index.html#ai-concepts",
     "href": "day1/index.html#ai-concepts",
     "title": "Day 1: Overview and Materials",
-    "section": "4. Core AI-related concepts",
-    "text": "4. Core AI-related concepts\n\n\nView slides in a new tab.",
+    "section": "3. Core AI-related concepts",
+    "text": "3. Core AI-related concepts\n\n\nView slides in a new tab.",
     "crumbs": [
       "Day 1: Overview and Materials"
     ]
@@ -804,18 +871,48 @@
     "objectID": "day1/index.html#ai-workflow",
     "href": "day1/index.html#ai-workflow",
     "title": "Day 1: Overview and Materials",
-    "section": "5. Common workflows and data safeguarding practices while using AI (slides)",
-    "text": "5. Common workflows and data safeguarding practices while using AI (slides)\n\n\nView slides in a new tab.",
+    "section": "4. Common workflows and data safeguarding practices while using AI (slides)",
+    "text": "4. Common workflows and data safeguarding practices while using AI (slides)\n\n\nView slides in a new tab.",
     "crumbs": [
       "Day 1: Overview and Materials"
     ]
   },
   {
-    "objectID": "day1/index.html#example-3",
-    "href": "day1/index.html#example-3",
+    "objectID": "day1/index.html#example-0-test-your-setup-live",
+    "href": "day1/index.html#example-0-test-your-setup-live",
     "title": "Day 1: Overview and Materials",
-    "section": "6. Example 3: Reproduce, Revise, and Reuse (live/self-study)",
-    "text": "6. Example 3: Reproduce, Revise, and Reuse (live/self-study)\nThis example is planned for a live demonstration during the session, but you can also follow along on your own as a self-study exercise. Full details, suggested prompts, and instructions are in the Self-Study &gt; Example 3.\nConsider using your own data and problem for this example if you have one in mind. The goal of this example is to practice the workflow of analysis refactoring and improvement. The example provided is based on a real analysis, but the workflow and principles apply broadly to any analysis you might be working on.\nThis example will show you how to use AI to:\n\nUnderstand and reproduce existing analysis.\nRevise it to make it clear, transparent, and well documented.\nSet up system prompt files that guide the AI on dos and don’ts.\nAdapt it to new data.\nDocument it in accordance with reproducibility package requirements.",
+    "section": "Example 0: Test your setup (live)",
+    "text": "Example 0: Test your setup (live)\nThis presentation ends with an example that demonstrates how to test if the setup is working correctly. Example 0 could be found in Self-Study &gt; Example 0.",
+    "crumbs": [
+      "Day 1: Overview and Materials"
+    ]
+  },
+  {
+    "objectID": "day1/index.html#example-1-stata-in-positron-with-github-copilot",
+    "href": "day1/index.html#example-1-stata-in-positron-with-github-copilot",
+    "title": "Day 1: Overview and Materials",
+    "section": "Example 1: Stata in Positron with GitHub Copilot",
+    "text": "Example 1: Stata in Positron with GitHub Copilot\nThis introductory example is plan for self-study, full details, suggested prompts, and instructions are in the Self-Study &gt; Example 1.",
+    "crumbs": [
+      "Day 1: Overview and Materials"
+    ]
+  },
+  {
+    "objectID": "day1/index.html#example-2-understanding-data-with-ai",
+    "href": "day1/index.html#example-2-understanding-data-with-ai",
+    "title": "Day 1: Overview and Materials",
+    "section": "Example 2: Understanding data with AI",
+    "text": "Example 2: Understanding data with AI\nThis example is planned for live demonstration during the session, but you can also follow along on your own as a self-study exercise. Full details, suggested prompts, and instructions are in the Self-Study &gt; Example 2.",
+    "crumbs": [
+      "Day 1: Overview and Materials"
+    ]
+  },
+  {
+    "objectID": "day1/index.html#example-3-reproduce-revise-and-reuse",
+    "href": "day1/index.html#example-3-reproduce-revise-and-reuse",
+    "title": "Day 1: Overview and Materials",
+    "section": "Example 3: Reproduce, Revise, and Reuse",
+    "text": "Example 3: Reproduce, Revise, and Reuse\nThis example is planned for a live demonstration during the session, but you can also follow along on your own as a self-study exercise. Full details, suggested prompts, and instructions are in the Self-Study &gt; Example 3.\nConsider using your own data and problem for this example if you have one in mind. The goal of this example is to practice the workflow of analysis refactoring and improvement. The example provided is based on a real analysis, but the workflow and principles apply broadly to any analysis you might be working on.\nThis example will show you how to use AI to:\n\nUnderstand and reproduce existing analysis.\nRevise it to make it clear, transparent, and well documented.\nSet up system prompt files that guide the AI on dos and don’ts.\nAdapt it to new data.\nDocument it in accordance with reproducibility package requirements.",
     "crumbs": [
       "Day 1: Overview and Materials"
     ]
@@ -982,7 +1079,7 @@
     "href": "day2/index.html#agenda",
     "title": "Overview",
     "section": "Agenda",
-    "text": "Agenda\nTBD",
+    "text": "Agenda",
     "crumbs": [
       "Overview"
     ]

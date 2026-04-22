@@ -351,7 +351,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../prerequisites/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Overview</span></a>
+ <span class="menu-text">Setup</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -369,25 +369,13 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../prerequisites/extensions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Positron Extensions</span></a>
+ <span class="menu-text">Positron-Stata integration</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../prerequisites/assistant.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Positron Assistant</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../prerequisites/verify.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Verification</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../prerequisites/common-problems.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Common Problems</span></a>
   </div>
 </li>
     </ul>
@@ -401,17 +389,15 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#quick-start" id="toc-quick-start" class="nav-link active" data-scroll-target="#quick-start">Quick start</a></li>
+  <li><a href="#step-1.-create-a-github-account" id="toc-step-1.-create-a-github-account" class="nav-link" data-scroll-target="#step-1.-create-a-github-account">Step 1. Create a GitHub account</a></li>
+  <li><a href="#sec-join-wb-github-org" id="toc-sec-join-wb-github-org" class="nav-link" data-scroll-target="#sec-join-wb-github-org">Step 2. Join the WB GitHub organization</a></li>
+  <li><a href="#sec-get-gh-copilot" id="toc-sec-get-gh-copilot" class="nav-link" data-scroll-target="#sec-get-gh-copilot">Step 3. Get GitHub Copilot</a></li>
+  <li><a href="#sec-verify-gh-copilot-access" id="toc-sec-verify-gh-copilot-access" class="nav-link" data-scroll-target="#sec-verify-gh-copilot-access">Step 4. Verify Copilot access</a></li>
+  <li><a href="#step-5.-check-premium-requests-usage" id="toc-step-5.-check-premium-requests-usage" class="nav-link" data-scroll-target="#step-5.-check-premium-requests-usage">Step 5. Check premium requests usage</a></li>
+  <li><a href="#step-6.-enable-premium-request-budget-recommended" id="toc-step-6.-enable-premium-request-budget-recommended" class="nav-link" data-scroll-target="#step-6.-enable-premium-request-budget-recommended">Step 6. Enable premium request budget <em>(recommended)</em></a></li>
+  <li><a href="#sec-troubleshooting-ghcopilot" id="toc-sec-troubleshooting-ghcopilot" class="nav-link" data-scroll-target="#sec-troubleshooting-ghcopilot">Step 7. Troubleshooting</a></li>
   <li><a href="#premium-requests" id="toc-premium-requests" class="nav-link" data-scroll-target="#premium-requests">Premium requests</a></li>
   <li><a href="#access-levels" id="toc-access-levels" class="nav-link" data-scroll-target="#access-levels">Access levels</a></li>
-  <li><a href="#step-by-step-setup" id="toc-step-by-step-setup" class="nav-link" data-scroll-target="#step-by-step-setup">Step-by-step setup</a>
-  <ul>
-  <li><a href="#create-a-github-account" id="toc-create-a-github-account" class="nav-link" data-scroll-target="#create-a-github-account">1. Create a GitHub account</a></li>
-  <li><a href="#join-the-wb-github-organization" id="toc-join-the-wb-github-organization" class="nav-link" data-scroll-target="#join-the-wb-github-organization">2. Join the WB GitHub organization</a></li>
-  <li><a href="#get-github-copilot" id="toc-get-github-copilot" class="nav-link" data-scroll-target="#get-github-copilot">3. Get GitHub Copilot</a></li>
-  <li><a href="#verify-copilot-access" id="toc-verify-copilot-access" class="nav-link" data-scroll-target="#verify-copilot-access">4. Verify Copilot access</a></li>
-  <li><a href="#check-premium-requests-usage" id="toc-check-premium-requests-usage" class="nav-link" data-scroll-target="#check-premium-requests-usage">5. Check premium requests usage</a></li>
-  <li><a href="#enable-premium-request-budget-recommended" id="toc-enable-premium-request-budget-recommended" class="nav-link" data-scroll-target="#enable-premium-request-budget-recommended">6. Enable premium request budget <em>(recommended)</em></a></li>
-  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/worldbank/ai4coding/blob/main/prerequisites/github.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/worldbank/ai4coding/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -486,123 +472,39 @@ ul.task-list li input[type="checkbox"] {
 <p>Questions? Email <a href="mailto:github@worldbank.org">github@worldbank.org</a>.</p>
 <hr>
 </section>
-<section id="premium-requests" class="level2">
-<h2 class="anchored" data-anchor-id="premium-requests">Premium requests</h2>
-<p>GitHub Copilot’s advanced features (Chat, Agent mode, Claude/GPT models) consume <strong>premium requests</strong>. Each plan includes a monthly allowance:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Plan</th>
-<th style="text-align: right;">Premium requests / month</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Institutional WB org</td>
-<td style="text-align: right;">300</td>
-</tr>
-<tr class="even">
-<td>Private Copilot Pro</td>
-<td style="text-align: right;">500</td>
-</tr>
-<tr class="odd">
-<td>Private Copilot Pro+</td>
-<td style="text-align: right;">1,500</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Once you hit the limit, advanced AI features (Ask and Agent mode, Claude) are unavailable for the rest of the month.</strong> Basic inline completions still work, but with older, less capable models.</p>
-<p><strong>Check your usage →</strong> <a href="https://github.com/settings/copilot/features">GitHub Settings &gt; Copilot</a>, scroll to “Usage”.</p>
-<p>To avoid hitting the limit, enable <strong>premium requests budget</strong> (~$0.04/request):</p>
-<ul>
-<li><p><strong>Private plan →</strong> <a href="https://github.com/settings/billing/budgets">GitHub &gt; Settings &gt; Budgets and Alerts &gt; + New Budget</a></p></li>
-<li><p><strong>WB plan →</strong> <a href="https://github.com/worldbank/ospo/blob/main/docs/copilot/premium-request-chargeback.md">setup chargeback</a>. Setting up private usage limit using a credit card is not possible for WB org members.</p></li>
-<li><p><strong>Note:</strong> You can only have one active plan: private or institutional. If you have a private subscription and get institutional WB access, your private subscription is automatically cancelled and remaining balance is refunded. Exiting institutional subscription (e.g.&nbsp;leaving WB org) is only possible in the end of the month and does not restore private subscription — you would need to resubscribe privately if you want to switch back.</p></li>
-</ul>
-</section>
-<section id="access-levels" class="level2">
-<h2 class="anchored" data-anchor-id="access-levels">Access levels</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Setup</th>
-<th>Repos</th>
-<th>Copilot</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>No GitHub account</td>
-<td>✅ Public / ❌ Personal / ❌ WB</td>
-<td>❌</td>
-</tr>
-<tr class="even">
-<td>Personal account (free)</td>
-<td>+✅Personal / ❌ WB</td>
-<td>⚠️ Only old LLMs</td>
-</tr>
-<tr class="odd">
-<td>+ Copilot Pro/Pro+ (private)</td>
-<td>+✅Personal / ❌ WB</td>
-<td>✅Claude+ 300/1500</td>
-</tr>
-<tr class="even">
-<td>+ Premium requests budget (private)</td>
-<td>+✅Personal / ❌ WB</td>
-<td>✅ + extra at 0.04$/request</td>
-</tr>
-<tr class="odd">
-<td>WB Org member</td>
-<td>+✅ WB</td>
-<td>⚠️ No premium requests</td>
-</tr>
-<tr class="even">
-<td>+ or Private Copilot and premium requests budget</td>
-<td>+✅ WB</td>
-<td>✅Claude+ 300/1500 (+ extra)</td>
-</tr>
-<tr class="odd">
-<td>+ or WB Copilot access</td>
-<td>+✅ WB</td>
-<td>✅ 300 req/mo</td>
-</tr>
-<tr class="even">
-<td>+ WB chargeback</td>
-<td>+✅ WB</td>
-<td>✅ + extra at 0.04$/request</td>
-</tr>
-</tbody>
-</table>
+<section id="step-1.-create-a-github-account" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="step-1.-create-a-github-account">Step 1. Create a GitHub account</h2>
+<p>Sign up at <a href="https://github.com/signup" class="uri">https://github.com/signup</a>. Use your <span style="background-color: #ff4f3c; color: black; padding: 2px 4px;"><strong>personal email address</strong></span>, not your World Bank email.</p>
 <hr>
 </section>
-<section id="step-by-step-setup" class="level2">
-<h2 class="anchored" data-anchor-id="step-by-step-setup">Step-by-step setup</h2>
-<section id="create-a-github-account" class="level3">
-<h3 class="anchored" data-anchor-id="create-a-github-account">1. Create a GitHub account</h3>
-<p>Sign up at <a href="https://github.com/signup" class="uri">https://github.com/signup</a>. Use your <span style="background-color: #ff4f3c; color: black; padding: 2px 4px;"><strong>personal email address</strong></span>, not your World Bank email.</p>
-</section>
-<section id="join-the-wb-github-organization" class="level3">
-<h3 class="anchored" data-anchor-id="join-the-wb-github-organization">2. Join the WB GitHub organization</h3>
+<section id="sec-join-wb-github-org" class="level2">
+<h2 class="anchored" data-anchor-id="sec-join-wb-github-org">Step 2. Join the WB GitHub organization</h2>
 <ol type="1">
-<li>Submit a <a href="https://worldbankgroup.service-now.com/wbg/en/join-github-organization-account-request?id=wbg_sc_catalog&amp;sys_id=910e1739db1a54903c5960ab13961912&amp;table=sc_cat_item&amp;searchTerm=github">Join GitHub Organization request</a> on eServices.</li>
-<li>Accept the invitation email (sent to your private email linked with your GitHub account).</li>
-<li>Confirm membership by following the link in the email.
+<li><p>Submit a <a href="https://worldbankgroup.service-now.com/wbg/en/join-github-organization-account-request?id=wbg_sc_catalog&amp;sys_id=910e1739db1a54903c5960ab13961912&amp;table=sc_cat_item&amp;searchTerm=github">Join GitHub Organization request</a> on eServices.</p></li>
+<li><p>Accept the invitation email (sent to your private email linked with your GitHub account).</p></li>
+<li><p>Confirm membership by following the link in the email.</p>
 <ul>
 <li><strong>Invitations expire after 7 days</strong> — resubmit through eServices if needed.</li>
 </ul></li>
 </ol>
 <p>See <a href="https://github.com/worldbank/ospo/tree/main?tab=readme-ov-file#octocat-github-enterprise">WB GitHub Enterprise Overview</a> for details.</p>
-<div class="callout-info">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p><strong>Inactivity policy.</strong> Members inactive for several months may be removed automatically. Resubmit the eServices request to rejoin. This does <strong>not</strong> affect your personal GitHub account or Copilot subscription.</p>
 </div>
+</div>
+<hr>
 </section>
-<section id="get-github-copilot" class="level3">
-<h3 class="anchored" data-anchor-id="get-github-copilot">3. Get GitHub Copilot</h3>
+<section id="sec-get-gh-copilot" class="level2">
+<h2 class="anchored" data-anchor-id="sec-get-gh-copilot">Step 3. Get GitHub Copilot</h2>
 <p>Choose <strong>one</strong> of the following:</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Option A: WB Organization access</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Option B: Private subscription</a></li></ul>
@@ -643,9 +545,10 @@ Note
 </div>
 </div>
 </div>
+<hr>
 </section>
-<section id="verify-copilot-access" class="level3">
-<h3 class="anchored" data-anchor-id="verify-copilot-access">4. Verify Copilot access</h3>
+<section id="sec-verify-gh-copilot-access" class="level2">
+<h2 class="anchored" data-anchor-id="sec-verify-gh-copilot-access">Step 4. Verify Copilot access</h2>
 <p>Go to <a href="https://github.com/settings/copilot">GitHub Settings &gt; Copilot</a> and confirm your status:</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">No Copilot access</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Private or WB Copilot access granted</a></li></ul>
@@ -669,10 +572,11 @@ Note
 </div>
 </div>
 </div>
+<hr>
 </section>
-<section id="check-premium-requests-usage" class="level3">
-<h3 class="anchored" data-anchor-id="check-premium-requests-usage">5. Check premium requests usage</h3>
-<p>Go to <a href="https://github.com/settings/copilot">GitHub Settings &gt; Copilot</a></p>
+<section id="step-5.-check-premium-requests-usage" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="step-5.-check-premium-requests-usage">Step 5. Check premium requests usage</h2>
+<p>Go to <a href="https://github.com/settings/copilot">GitHub Settings &gt; Copilot</a>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="..\assets/img/gh-max.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="GH Copilot 100% use limit"><img src="..\assets/img/gh-max.png" class="img-fluid figure-img" width="600" alt="GH Copilot 100% use limit"></a></p>
@@ -684,9 +588,10 @@ Note
 <li><strong>100%+</strong> — overuse; billed at ~$0.04/request if a budget is enabled.</li>
 <li><strong>Resets monthly</strong> — usage drops to 0% at the start of each billing cycle.</li>
 </ul>
+<hr>
 </section>
-<section id="enable-premium-request-budget-recommended" class="level3">
-<h3 class="anchored" data-anchor-id="enable-premium-request-budget-recommended">6. Enable premium request budget <em>(recommended)</em></h3>
+<section id="step-6.-enable-premium-request-budget-recommended" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="step-6.-enable-premium-request-budget-recommended">Step 6. Enable premium request budget <em>(recommended)</em></h2>
 <p>When you reach your monthly limit, advanced models (Claude, GPT) are unavailable until the next month. To keep access, enable premium request budget billing:</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">WB Copilot plan</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Private plan</a></li></ul>
@@ -704,9 +609,119 @@ Note
 </div>
 </div>
 </div>
-
-
+<hr>
 </section>
+<section id="sec-troubleshooting-ghcopilot" class="level2">
+<h2 class="anchored" data-anchor-id="sec-troubleshooting-ghcopilot">Step 7. Troubleshooting</h2>
+<p>Do we have enterprise account for Github Copilot?</p>
+<ul>
+<li>You need to have a private avvount and <a href="#sec-join-wb-github-org">become a member of the WB GitHub organization</a>.</li>
+</ul>
+<p>I got the WB subscription but using my WB email.</p>
+<ul>
+<li>Please change your email to a personal one.</li>
+</ul>
+<p>May I ask how to get the WB subscription?</p>
+<ul>
+<li>You need to have a private avvount and <a href="#sec-join-wb-github-org">become a member of the WB GitHub organization</a>.</li>
+</ul>
+<hr>
+</section>
+<section id="premium-requests" class="level2">
+<h2 class="anchored" data-anchor-id="premium-requests">Premium requests</h2>
+<p>GitHub Copilot’s advanced features (Chat, Agent mode, Claude/GPT models) consume <strong>premium requests</strong>. Each plan includes a monthly allowance:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Plan</th>
+<th style="text-align: right;">Premium requests / month</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Institutional WB org</td>
+<td style="text-align: right;">300</td>
+</tr>
+<tr class="even">
+<td>Private Copilot Pro</td>
+<td style="text-align: right;">500</td>
+</tr>
+<tr class="odd">
+<td>Private Copilot Pro+</td>
+<td style="text-align: right;">1,500</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Once you hit the limit, advanced AI features (Ask and Agent mode, Claude) are unavailable for the rest of the month.</strong> Basic inline completions still work, but with older, less capable models.</p>
+<p><strong>Check your usage →</strong> <a href="https://github.com/settings/copilot/features">GitHub Settings &gt; Copilot</a>, scroll to “Usage”.</p>
+<p>To avoid hitting the limit, enable <strong>premium requests budget</strong> (~$0.04/request):</p>
+<ul>
+<li><p><strong>Private plan →</strong> <a href="https://github.com/settings/billing/budgets">GitHub &gt; Settings &gt; Budgets and Alerts &gt; + New Budget</a></p></li>
+<li><p><strong>WB plan →</strong> <a href="https://github.com/worldbank/ospo/blob/main/docs/copilot/premium-request-chargeback.md">setup chargeback</a>. Setting up private usage limit using a credit card is not possible for WB org members.</p></li>
+<li><p><strong>Note:</strong> You can only have one active plan: private or institutional. If you have a private subscription and get institutional WB access, your private subscription is automatically cancelled and remaining balance is refunded. Exiting institutional subscription (e.g.&nbsp;leaving WB org) is only possible at the end of the month and does not restore private subscription — you would need to resubscribe privately if you want to switch back.</p></li>
+</ul>
+<hr>
+</section>
+<section id="access-levels" class="level2">
+<h2 class="anchored" data-anchor-id="access-levels">Access levels</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Setup</th>
+<th>Repos</th>
+<th>Copilot</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>No GitHub account</td>
+<td>✅ Public / ❌ Personal / ❌ WB</td>
+<td>❌</td>
+</tr>
+<tr class="even">
+<td>Personal account (free)</td>
+<td>+✅ Personal / ❌ WB</td>
+<td>⚠️ Only old LLMs</td>
+</tr>
+<tr class="odd">
+<td>+ Copilot Pro/Pro+ (private)</td>
+<td>+✅ Personal / ❌ WB</td>
+<td>✅ Claude+ 300/1500</td>
+</tr>
+<tr class="even">
+<td>+ Premium requests budget (private)</td>
+<td>+✅ Personal / ❌ WB</td>
+<td>✅ + extra at $0.04/request</td>
+</tr>
+<tr class="odd">
+<td>WB Org member</td>
+<td>+✅ WB</td>
+<td>⚠️ No premium requests</td>
+</tr>
+<tr class="even">
+<td>+ Private Copilot and premium requests budget</td>
+<td>+✅ WB</td>
+<td>✅ Claude+ 300/1500 (+ extra)</td>
+</tr>
+<tr class="odd">
+<td>+ WB Copilot access</td>
+<td>+✅ WB</td>
+<td>✅ 300 req/mo</td>
+</tr>
+<tr class="even">
+<td>+ WB chargeback</td>
+<td>+✅ WB</td>
+<td>✅ + extra at $0.04/request</td>
+</tr>
+</tbody>
+</table>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -1130,8 +1145,8 @@ Note
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../prerequisites/extensions.html" class="pagination-link" aria-label="Positron Extensions">
-        <span class="nav-page-text">Positron Extensions</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../prerequisites/extensions.html" class="pagination-link" aria-label="Positron-Stata integration">
+        <span class="nav-page-text">Positron-Stata integration</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

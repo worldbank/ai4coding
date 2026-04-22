@@ -44,4 +44,4 @@ Exercises are designed to be progressively more complex, but feel free to jump a
 
 # Supporting materials
 
-- [Global Monitoring Database (GMD) variables description](..\methods/gmd-variables.qmd) is a key reference for the Example 2.
+- [Global Monitoring Database (GMD) variables description](..\methods/gmd-requirements.qmd) is a key reference for the Example 2.

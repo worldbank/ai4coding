@@ -14,11 +14,11 @@ Distributional Impact of Policies. Fiscal Policy and Growth Department
 
 > **Why?** Positron Assistant is the built-in AI coding companion in Positron. It connects you to language models (GitHub Copilot, Anthropic Claude, OpenAI, etc.) for chat-based help, inline code suggestions, and code completions — all inside the editor. Enabling it is required for the AI-assisted workflows used in this course.
 
-## Enabling Positron Assistant (from official docs)
-
 The steps below are adapted from the [Positron Assistant Getting Started](https://positron.posit.co/assistant-getting-started.html) guide.
 
-### Step 1 — Enable Positron Assistant
+------------------------------------------------------------------------
+
+## Step 1 — Enable Positron Assistant
 
 1.  Open Positron settings (`Ctrl+,`).
 2.  Search for `positron.assistant.enable` and check the box.
@@ -29,7 +29,9 @@ Enable Positron Assistant setting
 
 3.  Restart Positron or run the *Developer: Reload Window* command in the Command Palette (`Ctrl+Shift+P`).
 
-### Step 2 — Configure a language model provider
+------------------------------------------------------------------------
+
+## Step 2 — Configure a language model provider
 
 Anthropic and GitHub Copilot are enabled by default. Other providers (Amazon Bedrock, Snowflake Cortex, OpenAI, Custom) are in preview/experimental and must be enabled through settings.
 
@@ -50,7 +52,9 @@ GitHub Copilot selected in provider modal
 >
 > You can also sign in to GitHub via the **Accounts** icon (bottom-left of the Activity Bar).
 
-### Step 3 — Use Positron Assistant
+------------------------------------------------------------------------
+
+## Step 3 — Use Positron Assistant
 
 Once authenticated with at least one provider, open the Assistant chat:
 
@@ -68,8 +72,20 @@ Assistant Panel
 
 See the full [Positron Assistant Getting Started](https://positron.posit.co/assistant-getting-started.html) guide for all provider options.
 
-## Support
+------------------------------------------------------------------------
 
-- IT Help: <ITHelp@worldbankgroup.org> \| [Walk-in centres](https://worldbankgroup.sharepoint.com/sites/itsupport/SitePages/PublishingPages/Walk-in-Centers-in-Washington-DC--05042021-1608401_new.aspx)
-- GitHub / Copilot access: <github@worldbank.org>
-- Additional resources: [Positron docs](https://positron.posit.co/) · [GitHub Copilot docs](https://docs.github.com/en/copilot)
+## Step 4 — Troubleshooting
+
+Advanced models (Claude, GPT) are not available for me in positron assistant.
+
+- This is because you do not have Github Copilot subscription, see [Verify Github Copilot Access](../prerequisites/github.llms.md#sec-verify-gh-copilot-access) for details.
+
+Most often, issues with Positron Assistant and GitHub Copilot are related to **authentication**, **configuration**, or **exceeding the free-requests quota**.
+
+- You may not have activated GitHub Copilot through a private or WB subscription. Check the [GitHub Copilot setup guide](../prerequisites/github.llms.md) for details.
+
+- Check whether you still have free premium requests available. If you have exhausted your quota, you will need to wait until it resets or subscribe to a paid plan. See the [GitHub Copilot setup guide](../prerequisites/github.llms.md) for details.
+
+- Positron Assistant may not be enabled or configured to use GitHub Copilot as the provider. Check the [Positron Assistant setup guide](../prerequisites/assistant.llms.md) for details.
+
+If error messages persist after confirming the above, contact <ITHelp@worldbankgroup.org> for assistance and <github@worldbankgroup.org> to verify that your GitHub Copilot subscription is active.

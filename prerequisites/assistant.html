@@ -33,7 +33,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../prerequisites/verify.html" rel="next">
 <link href="../prerequisites/extensions.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -351,7 +350,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../prerequisites/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Overview</span></a>
+ <span class="menu-text">Setup</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -369,25 +368,13 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../prerequisites/extensions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Positron Extensions</span></a>
+ <span class="menu-text">Positron-Stata integration</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../prerequisites/assistant.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Positron Assistant</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../prerequisites/verify.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Verification</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../prerequisites/common-problems.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Common Problems</span></a>
   </div>
 </li>
     </ul>
@@ -400,13 +387,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#enabling-positron-assistant-from-official-docs" id="toc-enabling-positron-assistant-from-official-docs" class="nav-link active" data-scroll-target="#enabling-positron-assistant-from-official-docs">Enabling Positron Assistant (from official docs)</a>
-  <ul>
-  <li><a href="#step-1-enable-positron-assistant" id="toc-step-1-enable-positron-assistant" class="nav-link" data-scroll-target="#step-1-enable-positron-assistant">Step 1 — Enable Positron Assistant</a></li>
+  <li><a href="#step-1-enable-positron-assistant" id="toc-step-1-enable-positron-assistant" class="nav-link active" data-scroll-target="#step-1-enable-positron-assistant">Step 1 — Enable Positron Assistant</a></li>
   <li><a href="#step-2-configure-a-language-model-provider" id="toc-step-2-configure-a-language-model-provider" class="nav-link" data-scroll-target="#step-2-configure-a-language-model-provider">Step 2 — Configure a language model provider</a></li>
   <li><a href="#step-3-use-positron-assistant" id="toc-step-3-use-positron-assistant" class="nav-link" data-scroll-target="#step-3-use-positron-assistant">Step 3 — Use Positron Assistant</a></li>
-  </ul></li>
-  <li><a href="#support" id="toc-support" class="nav-link" data-scroll-target="#support">Support</a></li>
+  <li><a href="#sec-troubleshooting-assistant" id="toc-sec-troubleshooting-assistant" class="nav-link" data-scroll-target="#sec-troubleshooting-assistant">Step 4 — Troubleshooting</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/worldbank/ai4coding/blob/main/prerequisites/assistant.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/worldbank/ai4coding/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -464,11 +448,10 @@ ul.task-list li input[type="checkbox"] {
 <blockquote class="blockquote">
 <p><strong>Why?</strong> Positron Assistant is the built-in AI coding companion in Positron. It connects you to language models (GitHub Copilot, Anthropic Claude, OpenAI, etc.) for chat-based help, inline code suggestions, and code completions — all inside the editor. Enabling it is required for the AI-assisted workflows used in this course.</p>
 </blockquote>
-<section id="enabling-positron-assistant-from-official-docs" class="level2">
-<h2 class="anchored" data-anchor-id="enabling-positron-assistant-from-official-docs">Enabling Positron Assistant (from official docs)</h2>
 <p>The steps below are adapted from the <a href="https://positron.posit.co/assistant-getting-started.html">Positron Assistant Getting Started</a> guide.</p>
-<section id="step-1-enable-positron-assistant" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-enable-positron-assistant">Step 1 — Enable Positron Assistant</h3>
+<hr>
+<section id="step-1-enable-positron-assistant" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-enable-positron-assistant">Step 1 — Enable Positron Assistant</h2>
 <ol type="1">
 <li>Open Positron settings (<code>Ctrl+,</code>).</li>
 <li>Search for <code>positron.assistant.enable</code> and check the box.</li>
@@ -482,9 +465,10 @@ ul.task-list li input[type="checkbox"] {
 <ol start="3" type="1">
 <li>Restart Positron or run the <em>Developer: Reload Window</em> command in the Command Palette (<code>Ctrl+Shift+P</code>).</li>
 </ol>
+<hr>
 </section>
-<section id="step-2-configure-a-language-model-provider" class="level3">
-<h3 class="anchored" data-anchor-id="step-2-configure-a-language-model-provider">Step 2 — Configure a language model provider</h3>
+<section id="step-2-configure-a-language-model-provider" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-configure-a-language-model-provider">Step 2 — Configure a language model provider</h2>
 <p>Anthropic and GitHub Copilot are enabled by default. Other providers (Amazon Bedrock, Snowflake Cortex, OpenAI, Custom) are in preview/experimental and must be enabled through settings.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">GitHub Copilot</a></li></ul>
@@ -520,9 +504,10 @@ Note
 </div>
 </div>
 </div>
+<hr>
 </section>
-<section id="step-3-use-positron-assistant" class="level3">
-<h3 class="anchored" data-anchor-id="step-3-use-positron-assistant">Step 3 — Use Positron Assistant</h3>
+<section id="step-3-use-positron-assistant" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-use-positron-assistant">Step 3 — Use Positron Assistant</h2>
 <p>Once authenticated with at least one provider, open the Assistant chat:</p>
 <ol type="1">
 <li>Select the chat robot icon in the sidebar, or run <code>Chat: Open Chat</code> from the Command Palette.</li>
@@ -548,15 +533,21 @@ Note
 <li>Type your question in the chat input box and press <code>Enter</code>.</li>
 </ol>
 <p>See the full <a href="https://positron.posit.co/assistant-getting-started.html">Positron Assistant Getting Started</a> guide for all provider options.</p>
+<hr>
 </section>
-</section>
-<section id="support" class="level2">
-<h2 class="anchored" data-anchor-id="support">Support</h2>
+<section id="sec-troubleshooting-assistant" class="level2">
+<h2 class="anchored" data-anchor-id="sec-troubleshooting-assistant">Step 4 — Troubleshooting</h2>
+<p>Advanced models (Claude, GPT) are not available for me in positron assistant.</p>
 <ul>
-<li>IT Help: <a href="mailto:ITHelp@worldbankgroup.org">ITHelp@worldbankgroup.org</a> | <a href="https://worldbankgroup.sharepoint.com/sites/itsupport/SitePages/PublishingPages/Walk-in-Centers-in-Washington-DC--05042021-1608401_new.aspx">Walk-in centres</a></li>
-<li>GitHub / Copilot access: <a href="mailto:github@worldbank.org">github@worldbank.org</a></li>
-<li>Additional resources: <a href="https://positron.posit.co/">Positron docs</a> · <a href="https://docs.github.com/en/copilot">GitHub Copilot docs</a></li>
+<li>This is because you do not have Github Copilot subscription, see <a href="../prerequisites/github.html#sec-verify-gh-copilot-access">Verify Github Copilot Access</a> for details.</li>
 </ul>
+<p>Most often, issues with Positron Assistant and GitHub Copilot are related to <strong>authentication</strong>, <strong>configuration</strong>, or <strong>exceeding the free-requests quota</strong>.</p>
+<ul>
+<li><p>You may not have activated GitHub Copilot through a private or WB subscription. Check the <a href="../prerequisites/github.html">GitHub Copilot setup guide</a> for details.</p></li>
+<li><p>Check whether you still have free premium requests available. If you have exhausted your quota, you will need to wait until it resets or subscribe to a paid plan. See the <a href="../prerequisites/github.html">GitHub Copilot setup guide</a> for details.</p></li>
+<li><p>Positron Assistant may not be enabled or configured to use GitHub Copilot as the provider. Check the <a href="../prerequisites/assistant.html">Positron Assistant setup guide</a> for details.</p></li>
+</ul>
+<p>If error messages persist after confirming the above, contact <a href="mailto:ITHelp@worldbankgroup.org">ITHelp@worldbankgroup.org</a> for assistance and <a href="mailto:github@worldbankgroup.org">github@worldbankgroup.org</a> to verify that your GitHub Copilot subscription is active.</p>
 
 
 </section>
@@ -977,14 +968,11 @@ Note
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../prerequisites/extensions.html" class="pagination-link" aria-label="Positron Extensions">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Positron Extensions</span>
+      <a href="../prerequisites/extensions.html" class="pagination-link" aria-label="Positron-Stata integration">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Positron-Stata integration</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../prerequisites/verify.html" class="pagination-link" aria-label="Verification">
-        <span class="nav-page-text">Verification</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

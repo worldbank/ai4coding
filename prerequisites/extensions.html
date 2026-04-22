@@ -8,7 +8,7 @@
 
 <meta name="author" content="Eduard Bukin">
 
-<title>Positron Extensions – AI for Coding</title>
+<title>Positron-Stata integration – AI for Coding</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -371,7 +371,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../prerequisites/extensions.html">Positron Extensions</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../prerequisites/extensions.html">Positron-Stata integration</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -386,7 +386,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../prerequisites/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Overview</span></a>
+ <span class="menu-text">Setup</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -404,25 +404,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../prerequisites/extensions.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Positron Extensions</span></a>
+ <span class="menu-text">Positron-Stata integration</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../prerequisites/assistant.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Positron Assistant</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../prerequisites/verify.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Verification</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../prerequisites/common-problems.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Common Problems</span></a>
   </div>
 </li>
     </ul>
@@ -435,14 +423,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#extensions-overview" id="toc-extensions-overview" class="nav-link active" data-scroll-target="#extensions-overview">Extensions overview</a></li>
-  <li><a href="#installing-any-extensions" id="toc-installing-any-extensions" class="nav-link" data-scroll-target="#installing-any-extensions">Installing any extensions</a>
+  <li><a href="#sec-positron-stata-extension" id="toc-sec-positron-stata-extension" class="nav-link active" data-scroll-target="#sec-positron-stata-extension">Step 1. Install the Stata for Positron</a></li>
+  <li><a href="#sec-configure-extension" id="toc-sec-configure-extension" class="nav-link" data-scroll-target="#sec-configure-extension">Step 2. Configure the extension</a></li>
+  <li><a href="#sec-verify-extension" id="toc-sec-verify-extension" class="nav-link" data-scroll-target="#sec-verify-extension">Step 3. Verify Stata runs in Positron</a></li>
+  <li><a href="#step-4.-stata-mcp-feature-optional" id="toc-step-4.-stata-mcp-feature-optional" class="nav-link" data-scroll-target="#step-4.-stata-mcp-feature-optional">Step 4. Stata-MCP feature (optional)</a></li>
+  <li><a href="#sec-troubleshooting-stataextension" id="toc-sec-troubleshooting-stataextension" class="nav-link" data-scroll-target="#sec-troubleshooting-stataextension">Step 5. Troubleshooting</a>
   <ul>
-  <li><a href="#positronstata-integration" id="toc-positronstata-integration" class="nav-link" data-scroll-target="#positronstata-integration">Positron–Stata integration</a></li>
-  <li><a href="#which-extension-to-install" id="toc-which-extension-to-install" class="nav-link" data-scroll-target="#which-extension-to-install">Which extension to install?</a></li>
+  <li><a href="#stata-console-does-not-start" id="toc-stata-console-does-not-start" class="nav-link" data-scroll-target="#stata-console-does-not-start">Stata console does not start</a></li>
+  <li><a href="#no-stata-runtime-is-available" id="toc-no-stata-runtime-is-available" class="nav-link" data-scroll-target="#no-stata-runtime-is-available">No stata runtime is available</a></li>
   </ul></li>
-  <li><a href="#sec-positron-stata-extension" id="toc-sec-positron-stata-extension" class="nav-link" data-scroll-target="#sec-positron-stata-extension">Positron Stata extension</a></li>
-  <li><a href="#stata-mcp-extension" id="toc-stata-mcp-extension" class="nav-link" data-scroll-target="#stata-mcp-extension">Stata MCP Extension</a></li>
+  <li><a href="#sec-limitations-stataextension" id="toc-sec-limitations-stataextension" class="nav-link" data-scroll-target="#sec-limitations-stataextension">Step 5. Limitations</a></li>
+  <li><a href="#alternative-stata-extension-stata-mcp" id="toc-alternative-stata-extension-stata-mcp" class="nav-link" data-scroll-target="#alternative-stata-extension-stata-mcp">Alternative stata extension: Stata MCP</a></li>
+  <li><a href="#extensions-in-positron" id="toc-extensions-in-positron" class="nav-link" data-scroll-target="#extensions-in-positron">Extensions in Positron</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/worldbank/ai4coding/blob/main/prerequisites/extensions.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/worldbank/ai4coding/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -452,7 +444,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Positron Extensions</h1>
+<h1 class="title">Positron-Stata integration</h1>
 </div>
 
 
@@ -482,7 +474,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout callout-style-simple callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -492,111 +484,159 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ol type="1">
-<li><strong>Positron Stata</strong> extension installed and configured.</li>
-</ol>
+<p>To be able to run Stata code in Positron, you need to install a Positron extension that connects the editor to Stata. The recommended extension is <a href="https://open-vsx.org/vscode/item?itemName=ntluong95.positron-stata">Positron Stata</a>, which provides native integration with console, data viewer, and plots.</p>
 </div>
 </div>
-<blockquote class="blockquote">
-<p><strong>Why?</strong> Positron extensions add language support, tooling, and AI features to the editor. The extensions below are required for AI-assisted Stata workflows in this course.</p>
-</blockquote>
-<p><strong>What you need to do:</strong></p>
-<ol type="1">
-<li>Install extensions in positron:
-<ol type="1">
-<li><a href="https://open-vsx.org/vscode/item?itemName=ntluong95.positron-stata">Positron Stata</a> extension (or alternative <a href="https://open-vsx.org/vscode/item?itemName=DeepEcon.stata-mcp">Stata MCP</a>).</li>
-<li><a href="https://open-vsx.org/vscode/item?itemName=randrescastaneda.stataglow">stataglow</a> extension for Stata syntax highlighting.</li>
-<li><a href="https://open-vsx.org/vscode/item?itemName=posit.databot">databot</a> extension for AI-assisted data analysis in R (optional).</li>
-<li>Other extensions as desired (e.g., Python, R, Quarto support).</li>
-</ol></li>
-<li>Set correct settings for some extensions, e.g.
-<ol type="1">
-<li>Set <a href="vscode-server://settings/positron.stata.installationPath">Stata installation path</a> in Positron settings.</li>
-<li>Set Stata MCP server settings for autonomous agent use (optional).</li>
-<li>Set <a href="vscode-server://settings/positron.stata.stataEdition">stataEdition</a> to <code>mp</code>, <code>se</code>, or <code>be</code> depending on your Stata license.</li>
-</ol></li>
-<li>Verify that Stata runs correctly from Positron.</li>
-</ol>
-<section id="extensions-overview" class="level2">
-<h2 class="anchored" data-anchor-id="extensions-overview">Extensions overview</h2>
-<p>Positron/VS Code ships with minimal built-in functionality by design — extensions add support for specific languages, tools, and workflows without bloating the core editor.</p>
-<p>Notable extensions for this course:</p>
-<ul>
-<li><a href="https://open-vsx.org/vscode/item?itemName=posit.assistant">Positron Assistant</a> — installed by default; provides AI code suggestions and completions via GitHub Copilot and other AI providers.</li>
-<li><a href="https://open-vsx.org/vscode/item?itemName=Anthropic.claude-code">Claude Code</a> — agentic AI coding using Anthropic’s Claude models.</li>
-<li><a href="https://open-vsx.org/vscode/item?itemName=posit.databot">Positron Databot</a> — AI-assisted data analysis and visualization.</li>
-</ul>
-</section>
-<section id="installing-any-extensions" class="level2">
-<h2 class="anchored" data-anchor-id="installing-any-extensions">Installing any extensions</h2>
-<p>Open the <strong>Extensions panel</strong> with <code>Ctrl+Shift+X</code> or click the square icon <img src="..\assets/img/extensions.png" class="img-fluid" alt="Extensions panel"> on the left sidebar.</p>
-<p>To install any extension:</p>
-<ol type="1">
-<li><strong>Search</strong> for it by name</li>
-<li>Click <strong>Install</strong></li>
-<li>If prompted “Do you trust the publisher?”, click <strong>Trust and Install</strong></li>
-<li>If needed, <strong>reload Positron</strong>: <code>Ctrl+Shift+P</code> → <code>Developer: Reload Window</code></li>
-</ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="..\assets/img/extensions-panel.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Extensions panel"><img src="..\assets/img/extensions-panel.png" class="img-fluid figure-img" width="600" alt="Extensions panel"></a></p>
-<figcaption>Extensions panel</figcaption>
-</figure>
-</div>
-<section id="positronstata-integration" class="level3">
-<h3 class="anchored" data-anchor-id="positronstata-integration">Positron–Stata integration</h3>
 <p>Stata has no built-in editor integration. Extensions bridge the gap by connecting Positron to Stata’s backend, enabling an AI-assisted coding workflow. Three components work together:</p>
 <ol type="1">
 <li><strong>Stata 18+</strong> with Model Context Protocol (MCP) support executes Stata code.</li>
 <li><strong>Python + <code>uv</code></strong> — sends code to Stata and captures output.</li>
 <li><strong>A Positron extension</strong> — surfaces results in the editor UI.</li>
 </ol>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Known limitations
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li><strong>Custom logs not supported</strong> — <code>log using &lt;filename&gt;</code> conflicts with the extension’s own logging. Stata only allows one log at a time. Use <code>capture log using &lt;filename&gt;</code> to bypass this limitation.</li>
-<li><strong>Bugs are possible</strong> — report issues to the extension developers (links below).</li>
-</ul>
-</div>
-</div>
+<hr>
+<section id="sec-positron-stata-extension" class="level2">
+<h2 class="anchored" data-anchor-id="sec-positron-stata-extension">Step 1. Install the Stata for Positron</h2>
+<p>Native Positron integration of Stata with console, data viewer, plots, help, and documentation are on GitHub along with issue reporting: <a href="https://github.com/ntluong95/positron-stata">github.com/ntluong95/positron-stata</a>.</p>
+<p>To install it:</p>
+<ol type="1">
+<li><p>Open the Extensions panel (<code>Ctrl+Shift+X</code>)</p></li>
+<li><p>Search for <strong>Stat for Positron</strong> or <code>ntluong95.positron-stata</code></p></li>
+<li><p>Click <strong>Install</strong> -&gt; <strong>Trust and Install</strong></p></li>
+<li><p>Reload Positron: <code>Ctrl+Shift+P</code> → <code>Developer: Reload Window</code></p></li>
+</ol>
+<hr>
 </section>
-<section id="which-extension-to-install" class="level3">
-<h3 class="anchored" data-anchor-id="which-extension-to-install">Which extension to install?</h3>
-<p>Two extensions provide Stata integration. <span style="background-color: #28c86b; color: black; padding: 2px 4px;">Install one — not both.</span></p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Extension</th>
-<th>Recommendation</th>
-<th>Highlights</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><a href="https://open-vsx.org/extension/ntluong95/positron-stata"><strong>Positron Stata</strong></a></td>
-<td><strong>Recommended</strong></td>
-<td>Native Positron integration (console, data viewer, plots)</td>
-</tr>
-<tr class="even">
-<td><a href="https://open-vsx.org/extension/DeepEcon/stata-mcp">Stata MCP</a></td>
-<td>Alternative</td>
-<td>More mature; better for VS Code / Cursor users</td>
-</tr>
-<tr class="odd">
-<td><a href="https://open-vsx.org/vscode/item?itemName=randrescastaneda.stataglow"><strong>stataglow</strong></a></td>
-<td>Stata syntax highlighting</td>
-<td>works with either extension</td>
-</tr>
-</tbody>
-</table>
+<section id="sec-configure-extension" class="level2">
+<h2 class="anchored" data-anchor-id="sec-configure-extension">Step 2. Configure the extension</h2>
+<ol type="1">
+<li><p>Open settings in Positron (<code>Ctrl+,</code>).</p></li>
+<li><p>Search for <a href="vscode-server://settings/positron.stata.installationPath"><code>positron.stata.installationPath</code></a></p>
+<p>Note setting name is <span style="color: #c0392b;">“<strong>Positron &gt; Stata</strong>: Installation Path”</span>. Check this is correct! Especially if you have or had multiple stata extensions installed in positron.</p></li>
+<li><p>Set the path to your Stata installation, e.g. <code>C:\Program Files\StataNow19\</code> It also works with Stata 18.</p></li>
+</ol>
+<hr>
+</section>
+<section id="sec-verify-extension" class="level2">
+<h2 class="anchored" data-anchor-id="sec-verify-extension">Step 3. Verify Stata runs in Positron</h2>
+<p>1 Create a new <code>.do</code> file and run example code to verify the extension is working (or open an existing one).</p>
+<ul>
+<li><p>create <code>test.do</code> with:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">sysuse</span> auto</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">summarize</span> price</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="kw">display</span> <span class="st">"Stata is working!"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Save the file (<code>Ctrl+S</code>) — <strong>unsaved edits are not executed</strong>.</p></li>
+<li><p>Run the file (<code>Ctrl+Shift+D</code> or <code>Ctrl+Shift+P</code> → <code>Stata: Run Current File</code>)</p></li>
+</ul>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Installation</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Verification</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Key features</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p><a href="..\assets/img/pos-stat-p1.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="..\assets/img/pos-stat-p1.gif" class="img-fluid" width="600"></a></p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p><a href="..\assets/img/pos-stat-p2.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="..\assets/img/pos-stat-p2.gif" class="img-fluid" width="600"></a></p>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<ul>
+<li>Create and run <code>.do</code> files</li>
+<li>AI agent integration</li>
+<li>Console: execute Stata code and see output</li>
+<li>Environment: variables and globals</li>
+<li>Data: view, and explore</li>
+<li>Figures: display, manage, and export</li>
+<li>Have multiple Stata sessions</li>
+</ul>
+<p><a href="..\assets/img/pos-stata-ext1.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="..\assets/img/pos-stata-ext1.gif" class="img-fluid" width="600"></a></p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="step-4.-stata-mcp-feature-optional" class="level2">
+<h2 class="anchored" data-anchor-id="step-4.-stata-mcp-feature-optional">Step 4. Stata-MCP feature (optional)</h2>
+<p>The extension also supports Model Context Protocol (MCP) for AI agent use. MCP allows AI agents to have full context of your Stata environment, including variables, data, and figures bypassing the console and enabling more powerful AI-assisted coding without distracting the user.</p>
+<p><strong>This reduce control as allows stata to run code without user explicitly</strong> <strong>accepting to run it. Use with caution!</strong></p>
+<p>In positron:</p>
+<ol type="1">
+<li><p><code>Ctrl+Shift+P</code> → <code>MCP: Open User Configuration</code></p></li>
+<li><p>Paste in there:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">{</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a> <span class="dt">"servers"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>     <span class="dt">"stata-mcp"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a>         <span class="dt">"type"</span><span class="fu">:</span> <span class="st">"sse"</span><span class="fu">,</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>         <span class="dt">"url"</span><span class="fu">:</span> <span class="st">"http://localhost:4000/mcp"</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>     <span class="fu">}</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a><span class="fu">}</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Save the file</p></li>
+<li><p><code>Ctrl+Shift+P</code> → <code>MCP: List Servers</code> → <code>stata-mcp</code> → <code>Start Server</code></p></li>
+</ol>
+<hr>
+</section>
+<section id="sec-troubleshooting-stataextension" class="level2">
+<h2 class="anchored" data-anchor-id="sec-troubleshooting-stataextension">Step 5. Troubleshooting</h2>
+<section id="stata-console-does-not-start" class="level3">
+<h3 class="anchored" data-anchor-id="stata-console-does-not-start">Stata console does not start</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Error 1</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Error 2</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">Error 3</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<p><a href="images/stata-error-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/stata-error-1.png" class="img-fluid" width="500"></a></p>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p><a href="images/stata-error-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="images/stata-error-2.png" class="img-fluid" width="500"></a></p>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<p><a href="images/stata-error-3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="images/stata-error-3.png" class="img-fluid" width="500"></a></p>
+</div>
+</div>
+</div>
+<p>This error can have multiple causes. Common fixes include:</p>
+<ol type="1">
+<li><p>UV is not properly installed. Check <a href="../prerequisites/software.html#uv-install">Step 3: <code>uv</code> (Python package manager)</a></p></li>
+<li><p>Python cannot set environment using <code>uv</code>. Sometimes even when <code>uv</code> is installed, the extension cannot use it to set up the Python environment because of the software security settings on the laptops.</p>
+<p>to bypass it you may try manually installing python packages using <code>pip install</code> and once those are installed, it may start working.</p>
+<p>Required packages are in <a href="https://github.com/ntluong95/positron-stata/blob/main/python/requirements.txt">requirements.txt</a>. They include:</p>
+<pre><code>fastapi==0.119.1
+uvicorn==0.38.0
+fastapi-mcp==0.4.0
+mcp==1.18.0
+pydantic==2.11.1
+pandas==2.3.3
+httpx==0.28.1</code></pre>
+<p>You can install them in the global python environment by:</p>
+<ul>
+<li><p>Keyboard <code>Windows</code> &gt; <code>PowerShell</code></p></li>
+<li><p>Paste in the power shell replacing <code>wbXXXXXX</code> with your WB username. check if <code>requirements.txt</code> exists in the folder specified before running the command.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb4-1"><a href="#cb4-1"></a>pip install <span class="op">-</span>r <span class="st">"c:\Users\wbXXXXXX\.positron\extensions\ntluong95.positron-stata-0.1.1-universal\python\requirements.txt"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ul></li>
+<li><p>Restart Positron and try running Stata again.</p></li>
+</ol>
+</section>
+<section id="no-stata-runtime-is-available" class="level3">
+<h3 class="anchored" data-anchor-id="no-stata-runtime-is-available">No stata runtime is available</h3>
+<p><a href="images/stata-error-10.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="images/stata-error-10.png" class="img-fluid" width="300"></a></p>
+<p>This means that:</p>
+<ol type="1">
+<li><p>You did not set the Stata installation path, see <a href="#sec-configure-extension">Configure the extension</a></p></li>
+<li><p>You set the path, but it is wrong. Check the path is correct and points to your Stata installation directory, e.g.&nbsp;<code>C:\Program Files\StataNow19\</code>.</p></li>
+<li><p>You set a correct path but to the wrong setting. Multiple extensions may require to set a Stata path. Make sure you set the path for the setting names <a href="vscode-server://settings/positron.stata.installationPath"><code>positron.stata.installationPath</code></a> and not another one (e.g.&nbsp;from a different Stata extension).</p></li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="sec-limitations-stataextension" class="level2">
+<h2 class="anchored" data-anchor-id="sec-limitations-stataextension">Step 5. Limitations</h2>
+<p><strong>Custom logs not supported</strong> — <code>log using &lt;filename&gt;</code> conflicts with the extension’s own logging. Stata only allows one log at a time. Use <code>capture log using &lt;filename&gt;</code> to bypass this limitation.</p>
+<p>**Closing logs _all with capture breaks the code**. do not use <code>cap log close _all</code> because this will also close the logs used by the extension to capture Stata output, which will break the extension’s functionality. Instead, close logs individually with <code>cap log close &lt;filename&gt;</code>.</p>
+<ul>
+<li><strong>Bugs are possible</strong> — report <a href="https://github.com/ntluong95/positron-stata/issues">issues to the extension developers</a></li>
+</ul>
+<hr>
+</section>
+<section id="alternative-stata-extension-stata-mcp" class="level2">
+<h2 class="anchored" data-anchor-id="alternative-stata-extension-stata-mcp">Alternative stata extension: Stata MCP</h2>
+<p><a href="https://open-vsx.org/extension/DeepEcon/stata-mcp">Stata MCP</a> is an alternative extension that integrates stata into the Positron. It is designed for VS Code / Cursor users, but underperforms in Positron, and does not have native Positron integration (e.g.&nbsp;no data viewer or plots in Positron). Installation is similar to Positron Stata above.</p>
 <p><strong>Key differences:</strong></p>
 <table class="caption-top table">
 <colgroup>
@@ -649,90 +689,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
+<hr>
 </section>
-</section>
-<section id="sec-positron-stata-extension" class="level2">
-<h2 class="anchored" data-anchor-id="sec-positron-stata-extension">Positron Stata extension</h2>
-<p>Native Positron integration of Stata with console, data viewer, plots. Help and documentation are on GitHub along with issue reporting: <a href="https://github.com/ntluong95/positron-stata">github.com/ntluong95/positron-stata</a>.</p>
-<p>To install it:</p>
-<ol type="1">
-<li><p>Open the Extensions panel (<code>Ctrl+Shift+X</code>)</p></li>
-<li><p>Search for <strong>Positron Stata</strong> or <code>ntluong95.positron-stata</code></p></li>
-<li><p>Click <strong>Install</strong> -&gt; <strong>Trust and Install</strong></p></li>
-<li><p>Reload Positron: <code>Ctrl+Shift+P</code> → <code>Developer: Reload Window</code></p></li>
-<li><p>Open settings in Positron (<code>Ctrl+,</code>).</p></li>
-<li><p>Search for <a href="vscode-server://settings/positron.stata.installationPath"><code>positron.stata.installationPath</code></a></p></li>
-<li><p>Set the path to your Stata installation, e.g.&nbsp;<code>C:\Program Files\StataNow19\</code> (adjust if Stata is installed elsewhere).</p></li>
-<li><p>Create a new <code>.do</code> file and run example code to verify the extension is working (or open an existing one).</p>
+<section id="extensions-in-positron" class="level2">
+<h2 class="anchored" data-anchor-id="extensions-in-positron">Extensions in Positron</h2>
+<p>Positron/VS Code ships with minimal built-in functionality by design — extensions add support for specific languages, tools, and workflows without bloating the core editor.</p>
+<p>Notable extensions for this course:</p>
 <ul>
-<li><p>create <code>test.do</code> with:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">sysuse</span> auto</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">summarize</span> price</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="kw">display</span> <span class="st">"Stata is working!"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Save the file (<code>Ctrl+S</code>) — <strong>unsaved edits are not executed</strong>.</p></li>
-<li><p>Run the file (<code>Ctrl+Shift+D</code> or <code>Ctrl+Shift+P</code> → <code>Stata: Run Current File</code>)</p></li>
-</ul></li>
-</ol>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Installation</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Verification</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Key features</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p><a href="..\assets/img/pos-stat-p1.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="..\assets/img/pos-stat-p1.gif" class="img-fluid" width="600"></a></p>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p><a href="..\assets/img/pos-stat-p2.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="..\assets/img/pos-stat-p2.gif" class="img-fluid" width="600"></a></p>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<ul>
-<li>Create and run <code>.do</code> files</li>
-<li>AI agent integration</li>
-<li>Console: execute Stata code and see output</li>
-<li>Environment: variables and globals</li>
-<li>Data: view, and explore</li>
-<li>Figures: display, manage, and export</li>
-<li>Have multiple Stata sessions</li>
+<li><p><a href="https://open-vsx.org/vscode/item?itemName=randrescastaneda.stataglow">stataglow</a> extension for Stata syntax highlighting.</p></li>
+<li><p><a href="https://open-vsx.org/vscode/item?itemName=posit.assistant">Positron Assistant</a> — installed by default; provides AI code suggestions and completions via GitHub Copilot and other AI providers.</p></li>
+<li><p><a href="https://open-vsx.org/vscode/item?itemName=Anthropic.claude-code">Claude Code</a> — agentic AI coding using Anthropic’s Claude models.</p></li>
+<li><p><a href="https://open-vsx.org/vscode/item?itemName=posit.databot">Positron Databot</a> — AI-assisted data analysis and visualization.</p></li>
+<li><p><a href="https://open-vsx.org/vscode/item?itemName=tomoki1207.pdf">VScode-pdf (tomoki1207.pdf)</a> — view PDF files directly in Positron (e.g.&nbsp;for documentation).</p></li>
+<li><p><a href="https://open-vsx.org/vscode/item?itemName=GrapeCity.gc-excelviewer">Excel Viewer (GrapeCity.gc-excelviewer)</a> — view Excel files directly in Positron.</p></li>
 </ul>
-<p><a href="..\assets/img/pos-stata-ext1.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="..\assets/img/pos-stata-ext1.gif" class="img-fluid" width="600"></a></p>
-</div>
-</div>
-</div>
-</section>
-<section id="stata-mcp-extension" class="level2">
-<h2 class="anchored" data-anchor-id="stata-mcp-extension">Stata MCP Extension</h2>
-<p>The <a href="https://open-vsx.org/extension/DeepEcon/stata-mcp">Stata MCP extension</a> enables <strong>Model Context Protocol (MCP)</strong> for Stata. Help and documentation are on the <a href="https://open-vsx.org/extension/DeepEcon/stata-mcp">Open VSX page</a>.</p>
-<p>To install it:</p>
+<p><strong>Installing any extensions</strong></p>
+<p>Open the <strong>Extensions panel</strong> with <code>Ctrl+Shift+X</code> or click the square icon <img src="..\assets/img/extensions.png" class="img-fluid" alt="Extensions panel"> on the left sidebar.</p>
+<p>To install any extension:</p>
 <ol type="1">
-<li><p>Open the Extensions panel (<code>Ctrl+Shift+X</code>)</p></li>
-<li><p>Search for <strong>Stata MCP</strong> or <code>DeepEcon.stata-mcp</code></p></li>
-<li><p>Click <strong>Install</strong> -&gt; <strong>Trust and Install</strong></p></li>
-<li><p>Reload Positron: <code>Ctrl+Shift+P</code> → <code>Developer: Reload Window</code></p></li>
-<li><p>Open settings in Positron (<code>Ctrl+,</code>).</p></li>
-<li><p>Search for <code>stata-vscode.stataPath</code></p></li>
-<li><p>Set the path to your Stata installation, e.g.&nbsp;<code>C:\Program Files\StataNow19\</code> (adjust if Stata is installed elsewhere).</p></li>
-<li><p>Search for <code>stata-vscode.stataEdition</code> and set it to <code>mp</code>, <code>se</code>, or <code>be</code> depending on your Stata license.</p></li>
-<li><p>Create a new <code>.do</code> file and run example code to verify the extension is working (or open an existing one).</p>
-<ul>
-<li><p>create <code>test.do</code> with:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">sysuse</span> auto</span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="kw">summarize</span> price</span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="kw">display</span> <span class="st">"Stata is working!"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Save the file (<code>Ctrl+S</code>) — <strong>unsaved edits are not executed</strong>.</p></li>
-<li><p>Run the file (<code>Ctrl+Shift+D</code> or <code>Ctrl+Shift+P</code> → <code>Stata: Run Current File</code>)</p></li>
-</ul></li>
+<li><p><strong>Search</strong> for it by name and hit Enter, e.g.&nbsp;<code>positron assistant</code> or <code>claude code</code>. Note that if in the search bar there is a tag starting with “@”, remove it.</p></li>
+<li><p>Click <strong>Install</strong></p></li>
+<li><p>If prompted “Do you trust the publisher?”, click <strong>Trust and Install</strong></p></li>
+<li><p>If needed, <strong>reload Positron</strong>: <code>Ctrl+Shift+P</code> → <code>Developer: Reload Window</code></p></li>
 </ol>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Installation, verification and features</a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<ul>
-<li>Run Stata <code>.do</code> files directly from Positron</li>
-<li>AI agent integration (GitHub Copilot, Claude) with full context of your Stata environment</li>
-<li>Functions with other IDEs and tools that support MCP (e.g.&nbsp;VS Code, Cursor)</li>
-</ul>
-<p><a href="..\assets/img/pos-stata-ext2-demo.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="..\assets/img/pos-stata-ext2-demo.gif" class="img-fluid" width="600"></a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="..\assets/img/extensions-panel.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Extensions panel"><img src="..\assets/img/extensions-panel.png" class="img-fluid figure-img" width="600" alt="Extensions panel"></a></p>
+<figcaption>Extensions panel</figcaption>
+</figure>
 </div>
-</div>
-</div>
+<p>An alternative is the <a href="https://open-vsx.org/vscode/item?itemName=DeepEcon.stata-mcp">Stata MCP</a> extension, which supports Model Context Protocol (MCP) for AI agent use.</p>
 
 
 </section>

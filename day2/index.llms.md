@@ -32,8 +32,6 @@ By the end of this session you should be able to delegate a complex analytical t
 
 ## Agenda
 
-TBD
-
 ## Before You Arrive
 
 Post your questions, challenges, and discoveries from the self-study exercises in the Teams chat a day before the session to help guide the discussion and practice exercises.
