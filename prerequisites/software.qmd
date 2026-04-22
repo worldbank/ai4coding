@@ -287,6 +287,7 @@ Follow instructions based on the language you want to run:
 1. Open a new file (`Ctrl+N`), save it as `test.R` (`Ctrl+S`).
 2. Copy-paste the following code:
 
+::: {.scrollable-code}
 
 ```r
 # test-r.R
@@ -443,11 +444,15 @@ cat(sprintf(
 
 ```
 
+:::
 
 ## Python
 
 1. Open a new file (`Ctrl+N`), save it as `test.py` (`Ctrl+S`).
 2. Copy-paste the following code:
+
+
+::: {.scrollable-code}
 
 ```python
 # test-python.py
@@ -583,6 +588,7 @@ print(f"\nN = {int(model.nobs)}  |  Adj. R² = {model.rsquared_adj:.4f}  |  RMSE
 
 ```
 
+:::
 
 ::::::
 

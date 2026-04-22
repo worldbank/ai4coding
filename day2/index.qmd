@@ -30,7 +30,22 @@ off track using appropriate tools and prompting techniques.
 
 ## Agenda
 
-TBD
+<!-- Day 2: Advanced AI features
+
+| Time        | Topic |
+|-------------|--------------------------------------------------------------|
+| 9:00-9:10   | 1. [Welcome and course overview (slides)](#welcome) |
+| 9:10-9:40   | 2. [Setup overview (slides)](#setup-overview). |
+| 9:40-10:20  | 3. Live: [Self-Study > Example 0](/selfstudy/example-0.qmd) |
+| 10:20-10:30 | ☕ Break (10 min) |
+| 10:30-10:50 | 4. [Core AI-related concepts](#ai-concepts) |
+| 10:50-11:00 | 5. [Common workflows and data safeguarding (slides)](#ai-workflow) |
+| 11:00-11:30 | 6. [Example 2: Understanding data with AI (live)](#example-2) |
+
+Self-study:
+
+-  [Example 1](/selfstudy/example-1.qmd)
+-  [Example 3](/selfstudy/example-3.qmd) -->
 
 ## Before You Arrive
 
