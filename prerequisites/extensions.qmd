@@ -48,7 +48,9 @@ To install it:
 2.  Search for
     [`positron.stata.installationPath`](vscode-server://settings/positron.stata.installationPath)
 
-    Note setting name is ["**Positron > Stata**: Installation Path"]{style="color: #c0392b;"}. Check this is correct! Especially if you have or had multiple stata extensions installed in positron.
+    Note setting name is ["**Positron > Stata**: Installation Path"]{style="color: #c0392b;"}.
+    Check this is correct! Especially if you have or had multiple stata extensions
+    installed in positron.
 
 3.  Set the path to your Stata installation, e.g.
     `C:\Program Files\StataNow19\`
@@ -76,11 +78,11 @@ To install it:
 ::: panel-tabset
 ## Installation
 
-![](/assets/img/pos-stat-p1.gif){width="600"}
+![](images/pos-stat-p1.gif){width="600"}
 
 ## Verification
 
-![](/assets/img/pos-stat-p2.gif){width="600"}
+![](images/pos-stat-p2.gif){width="600"}
 
 ## Key features
 
@@ -92,7 +94,7 @@ To install it:
 - Figures: display, manage, and export
 - Have multiple Stata sessions
 
-![](/assets/img/pos-stata-ext1.gif){width="600"}
+![](images/pos-stata-ext1.gif){width="600"}
 :::
 
 ---------------------------------------------------------------------------
