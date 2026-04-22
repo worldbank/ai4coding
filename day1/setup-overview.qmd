@@ -1,5 +1,5 @@
 ---
-title: "Positron + Copilot setup and overview"
+title: "Additional materials"
 ---
 
 Key concepts are:
