@@ -172,7 +172,7 @@ the AI agent.
 :::
 :::::
 
-## MCP Servers in Positron {.small-slide}
+## MCP Servers in Positron {#mcp-server .small-slide }
 
 1.  Only by configurinf **`.vscode/mcp.json`** through **Command
     Palette** — `MCP: Add Server`.
@@ -468,74 +468,47 @@ The agent loop is not one-size-fits-all. Positron and VS Code Copilot
 offer several customisation mechanisms:
 :::
 
-
-## Prompt files vs Custom instructions {.small-slide}
-
-::: columns
-::: {.column width="50%"}
+## Instructions, Prompts, Agents & Skills {.tiny-slide}
 
 ::: {.compact-table}
 
-|   | [Instructions]{.alert} | [Prompt files]{.fg} |
-|------|------------------------|---------------------|
-| **File** | `.github/copilot-instructions.md` | `.github/prompts/*.prompt.md` |
-| **Activation** | Always on — injected into every request | On demand — user types `/promptName` |
-| **Purpose** | Global rules, conventions, guardrails | Reusable task templates with variables |
-| **Scope** | Entire workspace | Single task / workflow |
-| **Variables** | No | Yes — `${file}`, `${selection}`, `${input:name}` |
-| **Can attach files** | No | Yes — `#file:path` references |
-| **Typical use** | "Always use `tidyverse`", "Follow DIME style" | "/clean-survey", "/build-indicator" |
+|   | [Instructions]{.alert} | [Prompt files]{.fg} | [Custom agents]{.highlight} | [Skills]{.fg} |
+|---|------------------------|---------------------|-----------------------------|---------------|
+| **File** | `.github/copilot-instructions.md` | `.github/prompts/*.prompt.md` | `.github/agents/*.agent.md` | `.github/skills/*/SKILL.md` |
+| **Activation** | Always on | On demand — `/promptName` | Explicit `@mention` | Auto-matched by description |
+| **Purpose** | Global rules & guardrails | Reusable task templates | Persona + curated tool set | Scoped expertise package |
+| **Variables** | No | Yes — `${file}`, `${input:name}` | No | No |
+| **Tools** | No | No | Declares allowed tools | No |
+| **Scope** | Entire workspace | Single task | Entire conversation | Single request |
+| **Stacking** | One file | Multiple prompts | One agent at a time | Multiple skills can fire together |
+| **Typical use** | "Always use `tidyverse`" | `/clean-survey` | `@stata-analyst` | Style guide, linting |
 
 :::
-:::
-::: {.column width="50%" .small}
 
-**Instructions** always on.
-
-```{.markdown file-name=".github/copilot-instructions.md"}
-Always use Stata 17+ syntax.
-Follow the DIME Analytics coding standards.
-Use relative paths from the project root.
-```
-
-**Prompt file** invoked `/clean-survey`:
-
-```{.markdown file-name=".github/prompts/clean-survey.prompt.md"}
----
-description: Clean a survey dataset
----
-Read #file:${input:dofile} and apply
-the cleaning rules from #file:docs/cleaning.md.
-Report any variables with >10% missingness.
-```
-
-See: [Instructions](https://code.visualstudio.com/docs/copilot/customization/custom-instructions) · [Prompt files](https://code.visualstudio.com/docs/copilot/customization/prompt-files)
-
-:::
+::: aside
+📖 [Instructions](https://code.visualstudio.com/docs/copilot/customization/custom-instructions) · [Prompt files](https://code.visualstudio.com/docs/copilot/customization/prompt-files) · [Custom agents](https://code.visualstudio.com/docs/copilot/customization/custom-agents) · [Skills](https://code.visualstudio.com/docs/copilot/customization/agent-skills)
 :::
 
+## Custom Instructions {.tiny-slide}
 
-## Agents vs Skills {.tiny-slide}
+[Instructions]{.alert} are global rules injected into **every** agent request — no activation needed.
 
 ::: columns
 ::: {.column width="50%"}
+**How it works:**
 
+- Stored in `.github/copilot-instructions.md`
+- Automatically prepended to every chat message
+- Use for conventions that should **always** apply
+- No variables, no tool declarations
 
-::: {.compact-table}
+**When to use:**
 
-|   | [Custom agents]{.alert} | [Skills]{.fg} |
-|---|-------------------------|---------------|
-| **File** | `.github/agents/*.agent.md` | `.github/skills/*/SKILL.md` |
-| **Activation** | Explicit `@mention` by user | Auto-matched by description |
-| **Purpose** | Persona with curated tool set | Scoped expertise package |
-| **Tools** | Declares allowed tools in YAML | No tool declarations |
-| **Scope** | Entire conversation | Single request (composable) |
-| **Stacking** | One agent per conversation | Multiple skills can fire together |
-| **Typical use** | `@stata-analyst`, `@data-reviewer` | Style guide enforcement, linting rules |
-| **Reference files** | Instructions inline | `references/` folder loaded on demand |
+- Coding style & language preferences
+- Project structure conventions
+- Team guardrails ("never use absolute paths")
 :::
 
-:::
 ::: {.column width="50%"}
 
 **Custom agent** `@stata-analyst`:
@@ -553,21 +526,7 @@ the DIME coding conventions...
 
 Create via: `Chat: New Custom Agent…` (`Ctrl+Shift+P`).
 
-**Skill** called automatically:
-
-```{.markdown file-name="dime-stata-style/SKILL.md"}
----
-name: dime-stata-style
-description: >
-  Align Stata code to the DIME Style Guide.
-  Triggers on Stata writing, review, or lint.
----
-Code example:
-```
-
-
-[Custom agents](https://code.visualstudio.com/docs/copilot/customization/custom-agents) · [Skills](https://code.visualstudio.com/docs/copilot/customization/agent-skills) · [Positron agents](https://positron.posit.co/assistant-chat-agents.html)
-
+[Custom agents](https://code.visualstudio.com/docs/copilot/customization/custom-agents) · [Positron agents](https://positron.posit.co/assistant-chat-agents.html)
 
 :::
 :::
@@ -752,19 +711,94 @@ keeps the context window small via *progressive disclosure*
 - [Awesome Claude Skills (alternative)](https://awesome-skills.com/){target="_blank"}
   - A general directory of skills across platforms.
 
+## Skills and Positron (1) {.small-slide}
+
+Skills live in **two scopes** — user-wide or project-specific — and in **two locations** depending on your AI client.
+
+::: {.compact-table}
+|   | [User (global)]{.alert} | [Project (repo)]{.fg} |
+|---|-------------------------|-----------------------|
+| **VS Code / Positron** | `~/.copilot/skills/**/SKILL.md` | `.github/skills/*/SKILL.md` |
+| **Claude (Anthropic)** | `~/.claude/skills/*/SKILL.md` | `.claude/skills/*/SKILL.md` |
+| **Scope** | All workspaces | This repo only |
+| **Version-controlled** | No | Yes — commit with project |
+| **Typical use** | Personal conventions, preferred style | Team standards, project-specific rules |
+:::
+
+Go to Settings in Positron and search for "skills" to find the user skills folder.
+
+`Ctrl+Shift+P` → `Preferences: Open User Settings (JSON)` →
+
+Search for `chat.agentSkillsLocations` to see the path.
+
+## Importing skills {.small-slide}
+
+**Project level skills**
+
+1. Create a folder in your project, e.g. `.github/skills/`
+2. Create a folder with the skill name, e.g. `.github/skills/dime-stata-style/`
+3. Add a `SKILL.md` file with the skill description and instructions.
+4. Optionally, add reference files (e.g. `references/style-guide.md`).
+
+**User-wide skills**
+
+1.  Create a folder in your home directory, e.g. `~/.copilot/skills/`
+2.  Create a folder with the skill name, e.g. `~/.copilot/skills/dime-stata-style/`
+3.  Add a `SKILL.md` file with the skill description and instructions.
+4.  Optionally, add reference files (e.g. `references/style-guide.md`).
+
+Let us make: Dime as User-wide skill. Stata as Project-specific skill.
 
 # Practice
 
 Two excersises with planning an execution.
 
+## Plan and execute Example 1 {.tiny-slide}
 
+Step 1. Open a copy of [Self-study: Example 1](/selfstudy/example-1.qmd){target="_blank"} on your local machine.
+Step 2. Remove oldcode (if there is any) and leave only data in.
+Step 3. Connect [Stata MCP server](#mcp-server).
+Step 4. Load DIME Stata Style Guide as a user-wide skill.
+Step 5. Open chat and write a prompt:
 
+```{.markdown file-name="Prompt"}
+Goal: To learn how to use Positron AI assistance to write Stata code and
+execute it. This code should include: data loading, descriptive statistics,
+regression analysis, and visualization.
+
+In details, these steps are:
+1. Load exemplary data from data/raw/
+2. Summarize descriptive statistics of all variables
+3. Run a regression of income on individual characteristics
+4. Create a scatter plot of income vs age
+5. Create a box plot of income vs education levels
+6. Save regression results and figures in an Excel file
+
+Use /plan to create a step-by-step plan for this task. Then, execute the plan
+iteratively to achieve the goal. Use #stata-mcp to execute code and iterate
+untill everything runs successfully. If you need to use any other tools,
+explain why they are needed and how they will work before requesting my approval.
+Redulsting stata do file should be named `example2-planned.do` and saved in
+the root of the project.
+```
 
 # Plan and execute Example 2 {.small-slide}
 
 
+Step 1. Open [Self-study: Example 3](/selfstudy/example-3.qmd){target="_blank"} on your local machine.
+Step 2. Leave only the original version of hte script
+Step 3. Add stata skill as project-specific skill
+Step 4. Open chat and write a prompt:
 
-[Self-study: Example 3](/selfstudy/example-3.qmd){target="_blank"}
+```{.markdown file-name="Prompt"}
+/plan refactor `analysis.do` in the way that it is clear, transparent,
+well-documented, and aligned with the DIME Style Guide. Besides it must use
+state of the art Stata coding practices. Ask any clarifying questions you
+have before drafting the plan. Then, produce a step-by-step plan for my review.
+If you need to use any tools, explain why they are needed and how they will
+work before requesting my approval.
+```
+
 
 ```
 /plan revising analysis do file to incorporate new wave of the survey data,
