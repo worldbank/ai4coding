@@ -58,7 +58,7 @@ jump around based on your interests and needs.
 
 # Supporting materials
 
-- [Global Monitoring Database (GMD) variables description](/methods/gmd-variables.qmd)
+- [Global Monitoring Database (GMD) variables description](/methods/gmd-requirements.qmd)
   is a key reference for the Example 2.
 
 

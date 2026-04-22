@@ -17,12 +17,6 @@ title: "Software Setup"
 Note: This software stack powers the AI-assisted coding workflow used throughout the course and beyond.
 :::
 
-**What you need to do:**
-
-1. Install all tools: Stata, R, Python, `uv`, Positron, Quarto, and Git
-2. Verify each tool works correctly (see [Verification](#verification))
-3. Troubleshoot any issues (see [Common Problems](common-problems.qmd))
-
 ------------------------------------------------------------------------
 
 ## Step 1: Install software from the Software Center {#software-install}
