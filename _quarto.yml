@@ -8,6 +8,7 @@ project:
     - day1/*.qmd
     - day1/**/*.qmd
     - day2/*.qmd
+    - day2/**/*.qmd
     - methods/*.qmd
     - selfstudy/*.qmd
 
@@ -99,6 +100,7 @@ website:
         - methods/index.qmd
         - methods/common-workflow.qmd
         - methods/safeguard-data.qmd
+        - methods/dime-handbook-appendix.qmd
   page-navigation: true
   back-to-top-navigation: false
 

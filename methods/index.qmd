@@ -30,6 +30,11 @@ the working folder, and applying statistical disclosure control techniques
 (suppression, generalization, noise addition, pseudonymization) with
 dedicated packages.
 
+## [DIME Data Handbook Appendix: AI and reproducible research](/methods/dime-handbook-appendix.qmd)
+
+This is a reference section adapted from the DIME Data Handbook covering how
+for the purpose of using in the course as an online material for AI's digestion.
+
 ## External references
 
 ::: callout-tip
