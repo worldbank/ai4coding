@@ -13,7 +13,7 @@ format:
     preload-iframes: true
     scrollable: true
     transition: fade
-    preview-links: true
+    preview-links: false
     logo: /assets/img/WBG-Prosperity Horizontal-Black.svg
     footer: '[worldbank.github.io/ai4coding](https://worldbank.github.io/ai4coding) by Eduard Bukin © 2026 World Bank.'
     resources:
@@ -74,7 +74,7 @@ Change the location of output to the current working directory and
 run/debug code execution iteratively.
 ```
 
-3. Analyze for coding standards
+3. Analyze coding standards
 
 ```{.markdown}
 Analyse this code for alignment with the DIME coding standards. Identify areas of
