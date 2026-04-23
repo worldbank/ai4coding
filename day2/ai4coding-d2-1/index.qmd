@@ -44,13 +44,44 @@ practical limitataions such as:
 
 Today we will:
 
-1.  Explore **context engineering** with `#tools` and `MCP` connectors.
-2.  `agents` and `skills` for becoming a specialist.
-3.  Look into the **Planning mode**.
-4.  Customize your Positron's assistant with out-of-the-box `skills`.
-5.  Write a `/prompt` file to execute a routine task.
-6.  See where to learn further know-how to develop and use `skills`,
-    `agents`, and more.
+1.  Address questions from Day 1 and excerise agentic workflow on [Self-study Example 3](/selfstudy/example-3.qmd).
+2.  Explore **context engineering** with `#tools`, `MCP`, `instructions`, `/prompts`, `agents`, and `skills`.
+3.  Use **Planning mode**.
+4.  Integrate customization into Positron's assistant.
+5.  Whrite instruction and prompt files.
+6.  Know where to read more.
+
+# Scaffolding on [Self-study Example 3](/selfstudy/example-3.qmd)
+
+1. Reproduce the analysis by running the code and understanding the data transformation.
+2. Analyze if and how it aligns with the DIME's coding standards.
+3. Revise the code to align it with the standards and check the output is the same.
+
+## Prompts examples {.tiny-slide}
+
+1. Understand
+
+```{.markdown}
+Explain to me what this analysis does. Summarise inputs and outputs, where
+they come from and where they are saved. Critically reflect on strengths and
+weaknesses of this code.
+```
+2. Adjust and reproduce
+
+```{.markdown}
+Change the location of output to the current working directory and
+run/debug code execution iteratively.
+```
+
+3. Analyze for coding standards
+
+```{.markdown}
+Analyse this code for alignment with the DIME coding standards. Identify areas of
+misalignment and suggest specific revisions to improve compliance with the standards.
+The standards are here:
+https://raw.githubusercontent.com/worldbank/ai4coding/refs/heads/main/methods/dime-handbook-appendix.qmd
+```
+4. Revise - Do at home.
 
 # Tools and MCP
 
@@ -116,12 +147,20 @@ name:
 [code.visualstudio.com/docs/copilot/agents/agent-tools](https://code.visualstudio.com/docs/copilot/agents/agent-tools)
 :::
 
-## Demo: Tools in action
+## Demo: Tools in action {.tiny-slide}
 
-1.  Open Positron and a random stata do file.
-2.  Write a prompt that references a tool, e.g. `#codebase` or
-    `#inspectVariable`.
-3.  Observe the tool being called and the response generated.
+1.  Continue with the same [Self-study: Example 3](/selfstudy/example-3.qmd){target="_blank"}.
+
+
+3.  Open a new chat and ask it to inspect the `#codebase` or run code
+    using `#runInTerminal` instead of `#executeCode`.
+
+```{.markdown}
+Run the code using `#runInTerminal` tool. If it fails, identify the error and
+fix it iteratively until it runs successfully. Then, produce the output.
+```
+
+4.  Observe the tool being called and the response generated.
 
 ## What is MCP? {.small-slide}
 
@@ -146,13 +185,15 @@ the AI agent.
 [modelcontextprotocol.io/docs/getting-started/intro](https://modelcontextprotocol.io/docs/getting-started/intro)
 :::
 
-## MCP (WB caviats)
+## MCP @ WB (caviats)
 
 ::::: columns
 ::: {.column width="50%"}
 1.  MCP are still in early stages of adoption and tooling ecosystem is
     evolving rapidly.
+
 2.  MCP are not allowed in the VS Code from the WB Software Center.
+
 3.  Thus, to use MCP servers, you need to have some coding skills to set
     them up.
 :::
@@ -185,25 +226,23 @@ the AI agent.
 
 ``` json
 {
-    "servers": {
-        "stata-mcp": {
-            "type": "sse",
-            "url": "http://localhost:4000/mcp"
-        }
-   }
+  "servers": {
+		"stata-mcp": {
+			"url": "http://localhost:4000/mcp-streamable"
+		}
+  }
 }
 ```
 :::
 
 ::: {.column width="50%"}
-![Adding MCP server config](images/mcp-config.png){fig-align="center"
+![Adding MCP server](images/mcp-config.png){fig-align="center"
 width="100%"}
 :::
 :::::
 
 ::: aside
-📖
-[code.visualstudio.com/docs/copilot/customization/mcp-servers](https://code.visualstudio.com/docs/copilot/customization/mcp-servers)
+📖 [VS Code: MCPservers](https://code.visualstudio.com/docs/copilot/customization/mcp-servers)
 :::
 
 ## MCP vs Tools {.tiny-slide}
@@ -256,6 +295,34 @@ more).
 width="100%"}
 :::
 :::::
+
+## Demo: MCP in action {.tiny-slide}
+
+1. Use the same [Self-study: Example 3](/selfstudy/example-3.qmd){target="_blank"}.
+
+
+2.  Open a new chat and instruct it to introduce errors in the current code:
+
+```{.markdown}
+Introduce errors in the code to make it fail. I need it for experimental and
+teaching purpose to teach students how to debug it. introduce 3-5 errors of
+different types that will make code fail. Make sure to not break the overall
+structure of the code.
+```
+
+3. Open a new chat and ask it to fix the code using the MCP tool:
+
+```{.markdown}
+Fix code using #executeCode and iterating untill it works.
+```
+
+4. Now reject the changes and ask it to fix the code using the MCP tool:
+
+```{.markdown}
+Fix code using #stata-mcp
+```
+
+5. Opserve the difference in the process.
 
 # Agents {.center}
 
@@ -459,7 +526,7 @@ agent stores its plans at `/memories/session/plan.md`.
 | [**Custom agents**](https://code.visualstudio.com/docs/copilot/customization/custom-agents) (`.github/agents/*.agent.md`) | Persona + curated tool set | User `@mentions` the agent | Per-conversation |
 | [**Skills**](https://code.visualstudio.com/docs/copilot/customization/agent-skills) (`.github/skills/*/SKILL.md`) | Scoped expertise package loaded by description match | Auto-matched depending on the prompt and skill description | Per-request |
 | [**Hooks**](https://code.visualstudio.com/docs/copilot/customization/hooks) (`.vscode/hooks/*.md`) | Pre/post actions on agent events (save, create, command) | Automatically on event | Per-event |
-| [**MCP plugins**](https://code.visualstudio.com/docs/copilot/customization/mcp-servers) (`mcp.json` servers) | External servers exposing tools, resources, prompts via MCP | When agent selects the tool | Per-tool-call |
+| [**Plugins**](https://code.visualstudio.com/docs/copilot/customization/agent-plugins)  | Prepackaged bundles of chat customizations | Many options | Project/user |
 :::
 
 
@@ -489,50 +556,236 @@ offer several customisation mechanisms:
 📖 [Instructions](https://code.visualstudio.com/docs/copilot/customization/custom-instructions) · [Prompt files](https://code.visualstudio.com/docs/copilot/customization/prompt-files) · [Custom agents](https://code.visualstudio.com/docs/copilot/customization/custom-agents) · [Skills](https://code.visualstudio.com/docs/copilot/customization/agent-skills)
 :::
 
-## Custom Instructions {.tiny-slide}
+## `.instructions.md` {.tiny-slide}
 
 [Instructions]{.alert} are global rules injected into **every** agent request — no activation needed.
 
 ::: columns
 ::: {.column width="50%"}
-**How it works:**
 
-- Stored in `.github/copilot-instructions.md`
-- Automatically prepended to every chat message
-- Use for conventions that should **always** apply
-- No variables, no tool declarations
+Copilot uses all typical instruction files, also specific to Claude Code and other IDEs.
 
-**When to use:**
+```text
+├── .github/
+│   ├── instructions/
+│   │   ├── stata.instructions.md
+│   │   ├── <instruction-name>.instructions.md
+│   │   └── data/
+│   │       └── <instruction-name>.instructions.md
+│   └── copilot-instructions.md
+├── AGENTS.md                    (for Other IDEs)
+├── CLAUDE.md                    (for Claude Code)
+└── .claude/rules/<rule-name>.md`(for Claude Code)
+```
 
-- Coding style & language preferences
-- Project structure conventions
-- Team guardrails ("never use absolute paths")
+::: {.small}
+Coding style & language preferences
+
+Project structure conventions
+
+Team guardrails ("never use absolute paths")
+
+:::
+
 :::
 
 ::: {.column width="50%"}
 
-**Custom agent** `@stata-analyst`:
+`.github/instructions/stata.instructions.md`
 
-```{.markdown file-name="stata-analyst.agent.md"}
+```{.markdown file-name="stata.instructions.md"}
 ---
-description: Stata analyst
+name: 'Stata Standards'
+description: 'Coding conventions for Stata files'
+applyTo: '**/*.do'
+---
+# Stata coding standards
+- Follow the DIME coding conventions (see examples below).
+- Use consistent indentation.
+- Comment your code why, not what.
+- Avoid hardcoding paths.
+- ...
+
+```
+
+::: {.small}
+
+
+Use AI to create, or `Ctrl+Shift+P` → `Chat: Configure Instructions`
+
+See: [Positron / VS Code instructions file format](https://code.visualstudio.com/docs/copilot/customization/custom-instructions#_instructions-file-format), [Claude rules](https://code.claude.com/docs/en/memory#organize-rules-with-claude/rules/), [Repository of instructions](https://github.com/github/awesome-copilot/tree/main/instructions).
+
+:::
+
+:::
+:::
+
+## Demo: Instructions in action {.tiny-slide}
+
+1. Open [Self-study: Example 3](/selfstudy/example-3.qmd){target="_blank"} (original one)
+
+2. Start iterating with it asking to rewrite the code according to the DIME coding standards.
+
+3. Then Ask AI to sumarise the coding standards it applied and create and instruction file for it.
+
+4. Open a new agent, provide it with the link to [VS Code instructions documentation](https://code.visualstudio.com/docs/copilot/customization/custom-instructions) and [Positron instructions documentation](https://positron.posit.co/assistant-chat-instructions.html) and ask it to revise the instruction file.
+
+5. Provide link to the [Dime Coding Standards](https://raw.githubusercontent.com/worldbank/ai4coding/refs/heads/main/methods/dime-handbook-appendix.qmd) and ask it to align the instruction file with the standard.
+
+## `/prompt-file` {.tiny-slide}
+
+[Prompt files]{.alert} are **reusable task templates** invoked on demand with `/my-prompt`
+
+::: columns
+::: {.column width="50%"}
+
+```text
+.
+├── .github/
+│   └── prompts/
+│       ├── clean-survey.prompt.md
+│       └── <prompt-name>.prompt.md
+├── .claude/commands/<command-name>.md
+```
+
+::: small
+Repetitive multi-step tasks, e.g. onboarding templates
+
+Invoke with `/clean-survey` in the chat panel.
+
+Inject dynamic context: `${file}`, `${selection}`, `${input:name}` .
+
+Refere tools `#tool:<tool-name>`
+
+Use AI to create, or `Ctrl+Shift+P` → `Chat: New Prompt File…`
+
+More: [Positron/VS Code/Copilot](https://code.visualstudio.com/docs/copilot/customization/prompt-files).
+
+:::
+
+:::
+
+::: {.column width="50%"}
+
+```{.markdown file-name="clean-survey.prompt.md"}
+---
+name: clean-survey
+description: 'Clean and label dataset'
+agent: 'agent' # or 'ask' 'plan'
+model: Claude Sonnet 4.6 # optional
 tools:
   - executeCode
   - read
 ---
-You are a Stata specialist. Always follow
-the DIME coding conventions...
+# Clean survey data
+
+1. #read ${input:filepath}.
+2. Drop observations where `consent != 1`.
+3. Label all variables using codebook.md
+4. Save cleaned data to `data/clean/`.
+```
+:::
+:::
+
+## `@agents` {.tiny-slide}
+
+[Custom agents]{.alert} are **personas with specific tool access** to handle specialized tasks.
+
+::: columns
+::: {.column width="50%"}
+```text
+├── .github/
+│   └── agents/
+│       ├── stata-analyst.agent.md
+│       └── <agent-name>.agent.md
+├── .claude/agents/<agent-name>.md (Claude Code only)
 ```
 
-Create via: `Chat: New Custom Agent…` (`Ctrl+Shift+P`).
 
-[Custom agents](https://code.visualstudio.com/docs/copilot/customization/custom-agents) · [Positron agents](https://positron.posit.co/assistant-chat-agents.html)
+`feature-builder.agent.md `
+
+```markdown
+---
+name: Feature Builder
+description: Build features by researching first, then implementing
+tools: ['agent']
+agents: ['Researcher', 'Implementer']
+---
+You are a feature builder. For each task:
+1. Use the Researcher agent to gather context and find relevant patterns in the codebase
+2. Use the Implementer agent to make the actual code changes based on research findings
+
+```
+
+::: {.small}
+Use AI to create, or `Chat: New Custom Agent…` (`Ctrl+Shift+P`).
+
+[Custom agents](https://code.visualstudio.com/docs/copilot/customization/custom-agents) · [Positron agents](https://positron.posit.co/assistant-chat-agents.html) · [Claude Code Agents](https://code.claude.com/docs/en/sub-agents).
+:::
+
+:::
+
+::: {.column width="50%"}
+
+
+`researcher.agent.md`
+
+```markdown
+---
+name: Researcher
+description: Research codebase patterns and gather context
+tools: ['search/codebase', 'web/fetch', 'search/usages']
+---
+Research thoroughly using read-only tools. Return a summary of findings.
+```
+
+`implementer.agent.md`
+
+```markdown
+---
+name: Implementer
+description: Implement code changes based on provided context
+tools: ['edit', 'read/terminalLastCommand']
+---
+Implement changes following existing code patterns. Make minimal, focused edits.
+```
+
+[Repository of agents](https://github.com/github/awesome-copilot/tree/main/agents)
 
 :::
 :::
 
+## Skills {.tiny-slide}
 
-# Planning Mode: a useful agent {.center}
+A [Skill]{.alert} is a **scoped package of expertise** — a `SKILL.md` file that the agent loads **only when the request matches its description**.
+
+
+```text
+├── .github/
+│   └── skills/
+│       └── <skill-name>/
+│           └── SKILL.md
+├── .claude/skills/   (Claude Code)
+```
+
+Also user-wide:
+
+- `~/.copilot/skills/*/SKILL.md`
+- `~/.claude/skills/*/SKILL.md`
+- `Ctrl+Shift+P` → `Preferences: Open User Settings (UI)` → search for `chat.agentSkillsLocations` to see the path.
+
+::: small
+
+**Loaded on match**, **Composable:**, **Portable:**.
+
+More: [VS Code Skills](https://code.visualstudio.com/docs/copilot/customization/agent-skills) · [Anthropic Skills](https://www.anthropic.com/news/skills) · [Repository of skills](https://awesome-copilot.github.com/skills/)
+
+:::
+
+
+
+
+# Planning Mode: an agent {.center}
 
 - Creates a step-by-step plan to accomplish your request.
 
@@ -591,6 +844,8 @@ agents/planning](https://code.visualstudio.com/docs/copilot/agents/planning)
 :::::
 :::::::::
 
+
+
 ## `/plan` analysis example
 
 Try interacting with the agent in Plan mode with this prompt:
@@ -646,50 +901,6 @@ Use a **powerful reasoning model** (e.g. `claude-4.6-sonnet`,
 implementation.
 :::
 
-# Skills
-
-## What is a Skill? {.small-slide}
-
-A [Skill]{.alert} is a **scoped package of expertise** — a `SKILL.md`
-file with focused instructions (and optional reference files) that the
-agent loads **only when the request matches its description**.
-
-::: columns
-::: {.column width="55%"}
-**Think of it as** a specialist colleague who walks into the meeting
-with the right handbook — only when the topic actually calls for them.
-
-- **Always indexed:** skill name + one-line description.
-- **Loaded on match:** the `SKILL.md` body + any referenced files.
-- **Composable:** several skills can fire on the same request.
-- **Portable:** plain Markdown, version-controlled with the project.
-:::
-
-::: {.column width="45%"}
-::: {.callout-tip appearance="minimal"}
-**1. TRIGGER**
-
-Request matches the skill's `description`.
-:::
-
-::: {.callout-tip appearance="minimal"}
-**2. LOAD**
-
-Agent reads `SKILL.md` and pulls any referenced files.
-:::
-
-::: {.callout-tip appearance="minimal"}
-**3. APPLY**
-
-Agent follows the skill's rules and workflow for the rest of the task.
-:::
-:::
-:::
-
-::: aside
-📖 [anthropic.com/news/skills](https://www.anthropic.com/news/skills) ·
-keeps the context window small via *progressive disclosure*
-:::
 
 ## Useful platforms with skills
 
