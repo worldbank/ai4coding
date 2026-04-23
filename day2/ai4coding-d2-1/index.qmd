@@ -322,7 +322,7 @@ Fix code using #executeCode and iterating untill it works.
 Fix code using #stata-mcp
 ```
 
-5. Opserve the difference in the process.
+5. Opserve the difference in the process. `Ctrl+Shift+P` → `MCP: List Servers` -> `stata-mcp` -> `Show output` to see the interaction with the MCP server.
 
 # Agents {.center}
 
@@ -359,10 +359,7 @@ errors.
 ::::::
 
 ::: aside
-📖
-[positron.posit.co/assistant-chat-agents](https://positron.posit.co/assistant-chat-agents.html)
-·
-[code.visualstudio.com/docs/copilot/concepts/agents](https://code.visualstudio.com/docs/copilot/concepts/agents)
+See: [Positron: Chat agents](https://positron.posit.co/assistant-chat-agents.html), [VS Code agents](https://code.visualstudio.com/docs/copilot/concepts/agents)
 :::
 
 ## The Agent Loop {.small-slide}
@@ -467,8 +464,7 @@ window and report back.
 :::
 
 ::: aside
-📖
-[code.visualstudio.com/docs/copilot/agents/subagents](https://code.visualstudio.com/docs/copilot/agents/subagents)
+See: [VS Code subagents](https://code.visualstudio.com/docs/copilot/agents/subagents)
 :::
 
 
@@ -512,8 +508,7 @@ agent stores its plans at `/memories/session/plan.md`.
 :::
 
 ::: aside
-📖
-[code.visualstudio.com/docs/copilot/agents/memory](https://code.visualstudio.com/docs/copilot/agents/memory)
+See: [VS Code memory](https://code.visualstudio.com/docs/copilot/agents/memory)
 :::
 
 ## Customising Agents (overview) {.small-slide}
@@ -620,9 +615,9 @@ See: [Positron / VS Code instructions file format](https://code.visualstudio.com
 :::
 :::
 
-## Demo: Instructions in action {.tiny-slide}
+## Demo: Instructions in action (1) {.tiny-slide}
 
-1. Open [Self-study: Example 3](/selfstudy/example-3.qmd){target="_blank"} (original one)
+1. Open existing [Self-study: Example 3](/selfstudy/example-3.qmd){target="_blank"} from the tools excersise and open chat, where we asked if the analisis aligns with the DIME coding standards.
 
 2. Start iterating with it asking to rewrite the code according to the DIME coding standards.
 
@@ -632,6 +627,30 @@ See: [Positron / VS Code instructions file format](https://code.visualstudio.com
 
 5. Provide link to the [Dime Coding Standards](https://raw.githubusercontent.com/worldbank/ai4coding/refs/heads/main/methods/dime-handbook-appendix.qmd) and ask it to align the instruction file with the standard.
 
+6. Ask to revise the code.
+
+## Demo: Instructions in action (2) {.tiny-slide}
+
+1. First agent
+
+```{.markdown}
+Create an instruction file that will enforce the coding standards discussed
+in the chat before. Use the DIME coding standards as a reference:
+https://raw.githubusercontent.com/worldbank/ai4coding/refs/heads/main/methods/dime-handbook-appendix.qmd
+```
+2. Second agent
+
+```{.markdown}
+Check if .github/instructions/stata.instructions.md file adheres to the DIME
+coding standards. Report any gaps and misallignments and suggest improvements.
+```
+
+3. Refactoring code
+
+```{.markdown}
+Refactor code to adhere to the DIME coding standards as per the instruction file.
+```
+
 ## `/prompt-file` {.tiny-slide}
 
 [Prompt files]{.alert} are **reusable task templates** invoked on demand with `/my-prompt`
@@ -640,7 +659,6 @@ See: [Positron / VS Code instructions file format](https://code.visualstudio.com
 ::: {.column width="50%"}
 
 ```text
-.
 ├── .github/
 │   └── prompts/
 │       ├── clean-survey.prompt.md
@@ -687,6 +705,19 @@ tools:
 :::
 :::
 
+## Demo: Prompt files in action {.tiny-slide}
+
+1.  After the process of the code refactoring above, ask AI to create a prompt
+    for code upgrade to the DIME's standard.
+
+2.  Open chat, where you asked the code to first undersnand and reproduce the code,
+    and ask this chat to createa a prompt file `reproduce-stata`.
+
+3.  Open new project with [Self-study: Example 3](/selfstudy/example-3.qmd){target="_blank"}
+    and place there `.github/prompts/` and `.github/instructions/` folders with the files created in the previous demo.
+
+4.  Open a new chat and invoke the prompt file with `/refactor-code` or `/reproduce-stata` and provide the filepath to the raw survey data as input.
+
 ## `@agents` {.tiny-slide}
 
 [Custom agents]{.alert} are **personas with specific tool access** to handle specialized tasks.
@@ -700,7 +731,6 @@ tools:
 │       └── <agent-name>.agent.md
 ├── .claude/agents/<agent-name>.md (Claude Code only)
 ```
-
 
 `feature-builder.agent.md `
 
@@ -759,6 +789,9 @@ Implement changes following existing code patterns. Make minimal, focused edits.
 
 A [Skill]{.alert} is a **scoped package of expertise** — a `SKILL.md` file that the agent loads **only when the request matches its description**.
 
+::: columns
+::: {.column width="50%"}
+Project-level skills:
 
 ```text
 ├── .github/
@@ -767,11 +800,16 @@ A [Skill]{.alert} is a **scoped package of expertise** — a `SKILL.md` file tha
 │           └── SKILL.md
 ├── .claude/skills/   (Claude Code)
 ```
+:::
+::: {.column width="50%"}
+User-level skills:
+```
+~/.copilot/skills/*/SKILL.md
+~/.claude/skills/*/SKILL.md
+```
+:::
+:::
 
-Also user-wide:
-
-- `~/.copilot/skills/*/SKILL.md`
-- `~/.claude/skills/*/SKILL.md`
 - `Ctrl+Shift+P` → `Preferences: Open User Settings (UI)` → search for `chat.agentSkillsLocations` to see the path.
 
 ::: small
@@ -782,7 +820,48 @@ More: [VS Code Skills](https://code.visualstudio.com/docs/copilot/customization/
 
 :::
 
+## Demo: Skills out of the box {.tiny-slide}
 
+Stata skills are very important for AI as it had a very limited stata training base.
+Dylan T. Moore's developed [Stata Skill](https://github.com/dylantmoore/stata-skill){target="_blank"}:
+a comprehensive Stata coding style and best practices skill.
+
+Let us import it into the project and see how it works in action, when
+we ask the agent to refactor the code to align with the DIME coding standards
+using the prompt file or in the chat.
+
+To import the skill:
+
+1. Download skill files form [Stata Skill](https://github.com/dylantmoore/stata-skill){target="_blank"} GitHub.
+2. Find skill folder for `stata`, which is in `plugins/stata/skills/stata`
+
+3. Copy last `stata` folder into `.github/skills/` in your project.
+
+4. Invoke a prompt to reproduce the analysis and observe if the skill is
+   automatically loaded and applied to the request.
+
+5. Ask in chat: `What skills are available for you?` to see the list of possible skills.
+
+
+## Useful platforms with skills {.tiny-slide}
+
+- Dylan T. Moore's [Stata Skill](https://github.com/dylantmoore/stata-skill){target="_blank"}
+  - a comprehensive Stata coding style and best practices skill.
+
+- Scott Cunningham [mixtape](https://github.com/scunning1975/MixtapeTools/){target="_blank"}
+  - a collection of skills for empirical researchers and writing.
+
+- k-dense.ai's [Scientific skills](https://github.com/K-Dense-AI/scientific-agent-skills/tree/main){target="_blank"}
+  - Community-contributed skills.
+
+- [Awesome Github Copilot Skills](https://awesome-copilot.github.com/skills/){target="_blank"}
+  - A community-curated list of skills for GitHub Copilot.
+
+- [Awesome Claude Skills](https://awesomeclaude.ai/awesome-claude-skills){target="_blank"}
+  - Community-curated list of skills for Anthropic's Claude.
+
+- [Awesome Claude Skills (alternative)](https://awesome-skills.com/){target="_blank"}
+  - A general directory of skills across platforms.
 
 
 # Planning Mode: an agent {.center}
@@ -844,8 +923,7 @@ agents/planning](https://code.visualstudio.com/docs/copilot/agents/planning)
 :::::
 :::::::::
 
-
-
+<!--
 ## `/plan` analysis example
 
 Try interacting with the agent in Plan mode with this prompt:
@@ -859,41 +937,37 @@ based on the individual data as well
 Use [Self-study: Example2](/selfstudy/example-2.qmd){target="_blank"} as
 a starting point, and observe how the agent approaches the task
 differently with the planning mode activated.
+ -->
 
 
+## Planning mode in action  {.tiny-slide}
 
-## Planning mode in action (2) {.small-slide}
+1. Open a fresh copy of [Self-study: Example 3](/selfstudy/example-3.qmd){target="_blank"} on your local machine.
 
-:::::: columns
-::: {.column width="50%"}
-**Scenario:** refactor a Stata script to follow project conventions
-using [Self-study: Example 3](/selfstudy/example-3.qmd){target="_blank"}
+2. Copy into it
+   - `.github/instructions/` folder
+   - `.github/prompts/` folder
+   - `.github/skills/` folder
+
+3. Plan the revision of `analysis`
 
 ``` text
-/plan revising `analysis.do` to
-incorporate new 2024 wave of the
-survey data. Ask any clarifying
-questions you have before drafting
-the plan. Then, produce a step-by-
-step plan for my review. If you
-need to use any tools, explain
-why they are needed and how they
+/plan revising `analysis_xxx.do` to 1. Reproduce it, 2. Refactor it
+so that it aligns with the DIME coding standards specified in
+instruction file and 3. Upgrade the analysis to incorporate new wave of the
+survey data. Ask any clarifying questions you have before drafting
+the plan. Then, produce a step-by-step plan for my review. If you
+need to use any tools, explain why they are needed and how they
 will work before requesting my approval.
 ```
-:::
+4. Iterate to refine the plan until it looks good to you.
 
-:::: {.column width="50%"}
+5. Ask to write the plan into a prompt file.
 
-**What the agent does:**
+6. Curate the tools used by the plan.
 
-1.  Reads `analysis.do`, `README.md`, and related files
-2.  Reasons and Asks
-3.  Drafts a step-by-step plan for your review
-4.  On approval → hands off to the default agent for execution
+7. Execute the plan using the prompt file and observe the process.
 
-::::
-
-::::::
 
 ::: {.fragment .callout-tip appearance="minimal"}
 Use a **powerful reasoning model** (e.g. `claude-4.6-sonnet`,
@@ -902,75 +976,19 @@ implementation.
 :::
 
 
-## Useful platforms with skills
-
-- Dylan T. Moore's [Stata Skill](https://github.com/dylantmoore/stata-skill){target="_blank"}
-  - a comprehensive Stata coding style and best practices skill.
-
-- Scott Cunningham [mixtape](https://github.com/scunning1975/MixtapeTools/){target="_blank"}
-  - a collection of skills for empirical researchers and writing.
-
-- k-dense.ai's [Scientific skills](https://github.com/K-Dense-AI/scientific-agent-skills/tree/main){target="_blank"}
-  - Community-contributed skills.
-
-- [Awesome Github Copilot Skills](https://awesome-copilot.github.com/skills/){target="_blank"}
-  - A community-curated list of skills for GitHub Copilot.
-
-- [Awesome Claude Skills](https://awesomeclaude.ai/awesome-claude-skills){target="_blank"}
-  - Community-curated list of skills for Anthropic's Claude.
-
-- [Awesome Claude Skills (alternative)](https://awesome-skills.com/){target="_blank"}
-  - A general directory of skills across platforms.
-
-## Skills and Positron (1) {.small-slide}
-
-Skills live in **two scopes** — user-wide or project-specific — and in **two locations** depending on your AI client.
-
-::: {.compact-table}
-|   | [User (global)]{.alert} | [Project (repo)]{.fg} |
-|---|-------------------------|-----------------------|
-| **VS Code / Positron** | `~/.copilot/skills/**/SKILL.md` | `.github/skills/*/SKILL.md` |
-| **Claude (Anthropic)** | `~/.claude/skills/*/SKILL.md` | `.claude/skills/*/SKILL.md` |
-| **Scope** | All workspaces | This repo only |
-| **Version-controlled** | No | Yes — commit with project |
-| **Typical use** | Personal conventions, preferred style | Team standards, project-specific rules |
-:::
-
-Go to Settings in Positron and search for "skills" to find the user skills folder.
-
-`Ctrl+Shift+P` → `Preferences: Open User Settings (JSON)` →
-
-Search for `chat.agentSkillsLocations` to see the path.
-
-## Importing skills {.small-slide}
-
-**Project level skills**
-
-1. Create a folder in your project, e.g. `.github/skills/`
-2. Create a folder with the skill name, e.g. `.github/skills/dime-stata-style/`
-3. Add a `SKILL.md` file with the skill description and instructions.
-4. Optionally, add reference files (e.g. `references/style-guide.md`).
-
-**User-wide skills**
-
-1.  Create a folder in your home directory, e.g. `~/.copilot/skills/`
-2.  Create a folder with the skill name, e.g. `~/.copilot/skills/dime-stata-style/`
-3.  Add a `SKILL.md` file with the skill description and instructions.
-4.  Optionally, add reference files (e.g. `references/style-guide.md`).
-
-Let us make: Dime as User-wide skill. Stata as Project-specific skill.
-
-# Practice
+# Other examples
 
 Two excersises with planning an execution.
 
-## Plan and execute Example 1 {.tiny-slide}
+## Plan and execute Example 1 (1) {.small-slide}
 
 Step 1. Open a copy of [Self-study: Example 1](/selfstudy/example-1.qmd){target="_blank"} on your local machine.
 Step 2. Remove oldcode (if there is any) and leave only data in.
 Step 3. Connect [Stata MCP server](#mcp-server).
 Step 4. Load DIME Stata Style Guide as a user-wide skill.
 Step 5. Open chat and write a prompt:
+
+## Plan and execute Example 1 (2) {.small-slide}
 
 ```{.markdown file-name="Prompt"}
 Goal: To learn how to use Positron AI assistance to write Stata code and
@@ -984,7 +1002,11 @@ In details, these steps are:
 4. Create a scatter plot of income vs age
 5. Create a box plot of income vs education levels
 6. Save regression results and figures in an Excel file
+```
 
+## Plan and execute Example 1 (3) {.small-slide}
+
+```text
 Use /plan to create a step-by-step plan for this task. Then, execute the plan
 iteratively to achieve the goal. Use #stata-mcp to execute code and iterate
 untill everything runs successfully. If you need to use any other tools,
@@ -993,11 +1015,11 @@ Redulsting stata do file should be named `example2-planned.do` and saved in
 the root of the project.
 ```
 
-# Plan and execute Example 2 {.small-slide}
+## Plan and execute Example 3 {.tiny-slide}
 
 
 Step 1. Open [Self-study: Example 3](/selfstudy/example-3.qmd){target="_blank"} on your local machine.
-Step 2. Leave only the original version of hte script
+Step 2. Leave only the original version of the script
 Step 3. Add stata skill as project-specific skill
 Step 4. Open chat and write a prompt:
 
@@ -1009,7 +1031,6 @@ have before drafting the plan. Then, produce a step-by-step plan for my review.
 If you need to use any tools, explain why they are needed and how they will
 work before requesting my approval.
 ```
-
 
 ```
 /plan revising analysis do file to incorporate new wave of the survey data,
