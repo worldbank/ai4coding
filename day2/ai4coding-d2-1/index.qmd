@@ -1,6 +1,6 @@
 ---
 title: "AI 4 Coding"
-subtitle: "Day 2: New features: MCP, tools, skills, agents, prompt files, and more..."
+subtitle: "Day 2. Advanced features: `#tools`, MCP, instructions, `/prompts`, `@agents`, and more..."
 date: "April 23, 2026"
 format:
   revealjs:
@@ -25,12 +25,13 @@ format:
 ## Motivation {.small-slide}
 
 In Day 1, we covered basics and concluded that using AI comes with the
-practical limitataions such as:
+practical limitations such as:
 
 ::: incremental
 1.  **Context window size** — the amount of information you can provide
     to the AI at once is limited.
 
+<!-- REVIEW: "in a are costly" — missing a word after "in a" (session? day?) or "in a" is extraneous -->
 2.  **Requests** — the number of interactions you can have with the AI
     in a are costly and we need to minimize them by optimizing the
     context and prompting.
@@ -44,11 +45,11 @@ practical limitataions such as:
 
 Today we will:
 
-1.  Address questions from Day 1 and excerise agentic workflow on [Self-study Example 3](/selfstudy/example-3.qmd).
+1.  Address questions from Day 1 and exercise agentic workflow on [Self-study Example 3](/selfstudy/example-3.qmd).
 2.  Explore **context engineering** with `#tools`, `MCP`, `instructions`, `/prompts`, `agents`, and `skills`.
 3.  Use **Planning mode**.
 4.  Integrate customization into Positron's assistant.
-5.  Whrite instruction and prompt files.
+5.  Write instruction and prompt files.
 6.  Know where to read more.
 
 # Scaffolding on [Self-study Example 3](/selfstudy/example-3.qmd)
@@ -95,7 +96,7 @@ https://raw.githubusercontent.com/worldbank/ai4coding/refs/heads/main/methods/di
 
 ## Tools in Positron {.small-slide}
 
-[Tools]{.alert} extend agents with specialised functionality: searching
+[Tools]{.alert} extend agents with specialized functionality: searching
 code, running commands, fetching web content, or invoking APIs.
 
 ::::: columns
@@ -185,14 +186,15 @@ the AI agent.
 [modelcontextprotocol.io/docs/getting-started/intro](https://modelcontextprotocol.io/docs/getting-started/intro)
 :::
 
-## MCP @ WB (caviats)
+## MCP @ WB (caveats)
 
 ::::: columns
 ::: {.column width="50%"}
+<!-- REVIEW: "MCP are" — MCP (Model Context Protocol) is singular; did you mean "MCP is" or "MCP servers are"? -->
 1.  MCP are still in early stages of adoption and tooling ecosystem is
     evolving rapidly.
 
-2.  MCP are not allowed in the VS Code from the WB Software Center.
+2.  MCP is not allowed in VS Code from the WB Software Center.
 
 3.  Thus, to use MCP servers, you need to have some coding skills to set
     them up.
@@ -215,8 +217,9 @@ the AI agent.
 
 ## MCP Servers in Positron {#mcp-server .small-slide }
 
-1.  Only by configurinf **`.vscode/mcp.json`** through **Command
+1.  Only by configuring **`.vscode/mcp.json`** through **Command
     Palette** — `MCP: Add Server`.
+<!-- REVIEW: "WB Disables:" reads as a sentence fragment — rephrase? e.g. "Disabled by WB:" or "At the WB, this is disabled:" -->
 2.  WB Disables: **Extensions view** — search `@mcp` and install from
     the MCP server gallery
 
@@ -242,7 +245,7 @@ width="100%"}
 :::::
 
 ::: aside
-📖 [VS Code: MCPservers](https://code.visualstudio.com/docs/copilot/customization/mcp-servers)
+📖 [VS Code: MCP servers](https://code.visualstudio.com/docs/copilot/customization/mcp-servers)
 :::
 
 ## MCP vs Tools {.tiny-slide}
@@ -322,7 +325,7 @@ Fix code using #executeCode and iterating untill it works.
 Fix code using #stata-mcp
 ```
 
-5. Opserve the difference in the process. `Ctrl+Shift+P` → `MCP: List Servers` -> `stata-mcp` -> `Show output` to see the interaction with the MCP server.
+5. Observe the difference in the process. `Ctrl+Shift+P` → `MCP: List Servers` -> `stata-mcp` -> `Show output` to see the interaction with the MCP server.
 
 # Agents {.center}
 
@@ -352,7 +355,7 @@ errors.
 - 🔁 **Iterative** — loop until the task is done
 - 🔧 **Tool-using** — read files, run commands, call APIs
 - 🧠 **Self-correcting** — diagnose errors and retry
-- 🎛️ **Customisable** — create custom `.agent.md` files with specific
+- 🎛️ **Customizable** — create custom `.agent.md` files with specific
   tools & instructions
 :::
 ::::
@@ -445,7 +448,7 @@ window and report back.
   window**, preventing the main conversation from overflowing with
   intermediate results
 - [Parallel execution]{.highlight} — multiple subagents can run
-  simultaneously (e.g. analyse security, performance, and accessibility
+  simultaneously (e.g., analyze security, performance, and accessibility
   at once)
 :::
 
@@ -468,7 +471,7 @@ See: [VS Code subagents](https://code.visualstudio.com/docs/copilot/agents/subag
 :::
 
 
-## Agent Memory (new in VS Code / not available in Postron yet) {.tiny-slide}
+## Agent Memory (new in VS Code / not available in Positron yet) {.tiny-slide}
 
 ::: columns
 ::: {.column width="60%"}
@@ -479,8 +482,7 @@ no more repeating yourself.
 - Agents read and write memory files automatically as they learn your
   patterns.
 
-- Note: this is an emerging feature. It is not yet supported by Postron
-  yet.
+- Note: this is an emerging feature. It is not yet supported by Positron.
 :::
 
 **Three memory scopes:**
@@ -527,7 +529,7 @@ See: [VS Code memory](https://code.visualstudio.com/docs/copilot/agents/memory)
 
 ::: notes
 The agent loop is not one-size-fits-all. Positron and VS Code Copilot
-offer several customisation mechanisms:
+offer several customization mechanisms:
 :::
 
 ## Instructions, Prompts, Agents & Skills {.tiny-slide}
@@ -617,11 +619,11 @@ See: [Positron / VS Code instructions file format](https://code.visualstudio.com
 
 ## Demo: Instructions in action (1) {.tiny-slide}
 
-1. Open existing [Self-study: Example 3](/selfstudy/example-3.qmd){target="_blank"} from the tools excersise and open chat, where we asked if the analisis aligns with the DIME coding standards.
+1. Open existing [Self-study: Example 3](/selfstudy/example-3.qmd){target="_blank"} from the tools exercise and open chat, where we asked if the analysis aligns with the DIME coding standards.
 
 2. Start iterating with it asking to rewrite the code according to the DIME coding standards.
 
-3. Then Ask AI to sumarise the coding standards it applied and create and instruction file for it.
+3. Then Ask AI to summarize the coding standards it applied and create an instruction file for it.
 
 4. Open a new agent, provide it with the link to [VS Code instructions documentation](https://code.visualstudio.com/docs/copilot/customization/custom-instructions) and [Positron instructions documentation](https://positron.posit.co/assistant-chat-instructions.html) and ask it to revise the instruction file.
 
@@ -642,7 +644,7 @@ https://raw.githubusercontent.com/worldbank/ai4coding/refs/heads/main/methods/di
 
 ```{.markdown}
 Check if .github/instructions/stata.instructions.md file adheres to the DIME
-coding standards. Report any gaps and misallignments and suggest improvements.
+coding standards. Report any gaps and misalignments and suggest improvements.
 ```
 
 3. Refactoring code
@@ -667,7 +669,7 @@ Refactor code to adhere to the DIME coding standards as per the instruction file
 ```
 
 ::: small
-Repetitive multi-step tasks, e.g. onboarding templates
+Repetitive multi-step tasks, e.g., onboarding templates
 
 Invoke with `/clean-survey` in the chat panel.
 
@@ -710,8 +712,8 @@ tools:
 1.  After the process of the code refactoring above, ask AI to create a prompt
     for code upgrade to the DIME's standard.
 
-2.  Open chat, where you asked the code to first undersnand and reproduce the code,
-    and ask this chat to createa a prompt file `reproduce-stata`.
+2.  Open chat, where you asked the code to first understand and reproduce the code,
+    and ask this chat to create a prompt file `reproduce-stata`.
 
 3.  Open new project with [Self-study: Example 3](/selfstudy/example-3.qmd){target="_blank"}
     and place there `.github/prompts/` and `.github/instructions/` folders with the files created in the previous demo.
@@ -940,7 +942,7 @@ differently with the planning mode activated.
  -->
 
 
-## Planning mode in action  {.tiny-slide}
+## Planning mode in action (1) {.tiny-slide}
 
 1. Open a fresh copy of [Self-study: Example 3](/selfstudy/example-3.qmd){target="_blank"} on your local machine.
 
@@ -952,14 +954,17 @@ differently with the planning mode activated.
 3. Plan the revision of `analysis`
 
 ``` text
-/plan revising `analysis_xxx.do` to 1. Reproduce it, 2. Refactor it
+/plan revising `analysis_xxx.do` to 1-Reproduce it, 2-Refactor it
 so that it aligns with the DIME coding standards specified in
-instruction file and 3. Upgrade the analysis to incorporate new wave of the
-survey data. Ask any clarifying questions you have before drafting
+instruction file and 3-Upgrade the analysis to incorporate new wave of the
+survey data for 2024. Ask any clarifying questions you have before drafting
 the plan. Then, produce a step-by-step plan for my review. If you
-need to use any tools, explain why they are needed and how they
-will work before requesting my approval.
+need to use any tools, explain why they are needed and how they are needed
+and how they will work before requesting my approval.
 ```
+
+## Planning mode in action (2)
+
 4. Iterate to refine the plan until it looks good to you.
 
 5. Ask to write the plan into a prompt file.
@@ -975,10 +980,9 @@ Use a **powerful reasoning model** (e.g. `claude-4.6-sonnet`,
 implementation.
 :::
 
-
 # Other examples
 
-Two excersises with planning an execution.
+Planning and execution new analysis.
 
 ## Plan and execute Example 1 (1) {.small-slide}
 
@@ -1013,28 +1017,4 @@ untill everything runs successfully. If you need to use any other tools,
 explain why they are needed and how they will work before requesting my approval.
 Redulsting stata do file should be named `example2-planned.do` and saved in
 the root of the project.
-```
-
-## Plan and execute Example 3 {.tiny-slide}
-
-
-Step 1. Open [Self-study: Example 3](/selfstudy/example-3.qmd){target="_blank"} on your local machine.
-Step 2. Leave only the original version of the script
-Step 3. Add stata skill as project-specific skill
-Step 4. Open chat and write a prompt:
-
-```{.markdown file-name="Prompt"}
-/plan refactor `analysis.do` in the way that it is clear, transparent,
-well-documented, and aligned with the DIME Style Guide. Besides it must use
-state of the art Stata coding practices. Ask any clarifying questions you
-have before drafting the plan. Then, produce a step-by-step plan for my review.
-If you need to use any tools, explain why they are needed and how they will
-work before requesting my approval.
-```
-
-```
-/plan revising analysis do file to incorporate new wave of the survey data,
-2024 and align it with the DIME Stata Style Guide. Correct appropriate parts
-of the code and execute it iteratively until it runs successfully. Then,
-produce the output and summarize for me the changes you made.
 ```
