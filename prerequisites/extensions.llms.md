@@ -66,11 +66,11 @@ To install it:
 
 ## Installation
 
-[![](..\assets/img/pos-stat-p1.gif)](..\assets/img/pos-stat-p1.gif)
+[![](images/pos-stat-p1.gif)](images/pos-stat-p1.gif)
 
 ## Verification
 
-[![](..\assets/img/pos-stat-p2.gif)](..\assets/img/pos-stat-p2.gif)
+[![](images/pos-stat-p2.gif)](images/pos-stat-p2.gif)
 
 ## Key features
 
@@ -82,7 +82,7 @@ To install it:
 - Figures: display, manage, and export
 - Have multiple Stata sessions
 
-[![](..\assets/img/pos-stata-ext1.gif)](..\assets/img/pos-stata-ext1.gif)
+[![](images/pos-stata-ext1.gif)](images/pos-stata-ext1.gif)
 
 ------------------------------------------------------------------------
 

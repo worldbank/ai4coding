@@ -8,7 +8,7 @@
 
 <meta name="author" content="Eduard Bukin">
 
-<title>Day 2: Overview – AI for Coding</title>
+<title>Reproduce, Revise, and Reuse: practical examples – AI for Coding</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -79,7 +114,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../assets/custom.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -326,53 +361,25 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../day2/index.html">Day 2: Overview</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../day2/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Day 2: Overview</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#goals-for-day-2" id="toc-goals-for-day-2" class="nav-link active" data-scroll-target="#goals-for-day-2">Goals for Day 2</a></li>
-  <li><a href="#agenda" id="toc-agenda" class="nav-link" data-scroll-target="#agenda">Agenda</a></li>
-  <li><a href="#before-you-arrive" id="toc-before-you-arrive" class="nav-link" data-scroll-target="#before-you-arrive">Before You Arrive</a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
-  <li><a href="#materials" id="toc-materials" class="nav-link" data-scroll-target="#materials">Day 2: Materials</a>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#step-1.-reproduce-understand-the-code-and-data-transformation-to-reproduce-the-analysis" id="toc-step-1.-reproduce-understand-the-code-and-data-transformation-to-reproduce-the-analysis" class="nav-link" data-scroll-target="#step-1.-reproduce-understand-the-code-and-data-transformation-to-reproduce-the-analysis">Step 1. Reproduce: Understand the code and data transformation to reproduce the analysis</a>
   <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link" data-scroll-target="#welcome">1. Welcome, review of Day 1, and agenda</a></li>
-  <li><a href="#scaffolding" id="toc-scaffolding" class="nav-link" data-scroll-target="#scaffolding">2. Scaffolding on Self-study Example 3 (live)</a></li>
-  <li><a href="#tools-mcp" id="toc-tools-mcp" class="nav-link" data-scroll-target="#tools-mcp">3. Tools and MCP (slides + demos)</a></li>
-  <li><a href="#agents" id="toc-agents" class="nav-link" data-scroll-target="#agents">4. Agents and customization (slides + demos)</a></li>
-  <li><a href="#planning" id="toc-planning" class="nav-link" data-scroll-target="#planning">5. Planning mode and exercises (slides + live)</a></li>
+  <li><a href="#research-the-code" id="toc-research-the-code" class="nav-link" data-scroll-target="#research-the-code">Research the code</a></li>
+  <li><a href="#reproduce-the-code" id="toc-reproduce-the-code" class="nav-link" data-scroll-target="#reproduce-the-code">Reproduce the code</a></li>
   </ul></li>
+  <li><a href="#step-2.-plan-review" id="toc-step-2.-plan-review" class="nav-link" data-scroll-target="#step-2.-plan-review">Step 2. Plan: review</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/worldbank/ai4coding/blob/main/day2/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/worldbank/ai4coding/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/worldbank/ai4coding/blob/main/day2/understand-data.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/worldbank/ai4coding/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -380,7 +387,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Day 2: Overview</h1>
+<h1 class="title">Reproduce, Revise, and Reuse: practical examples</h1>
 </div>
 
 
@@ -410,124 +417,51 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="goals-for-day-2" class="level1">
-<h1>Goals for Day 2</h1>
+<p>This example demonstrates how to use AI to understand and review data. it uses <a href="../selfstudy/example-3.html">Self-study Example 3</a> as a starting point, and expands on it by introducing <strong>Plan mode</strong> and features such as <strong>MCP</strong>, <strong>Tools</strong>, and <strong>Prompt files</strong> as well as <strong>skills</strong>.</p>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This workflow incorporates best practices from:</p>
 <ul>
-<li><strong>Address questions</strong> from the self-study period and Day 1.</li>
-<li><strong>Explore context engineering</strong> with <code>#tools</code>, <code>MCP</code>, <code>instructions</code>, <code>/prompts</code>, <code>@agents</code>, <code>skills</code>, and other relevant features.</li>
-<li><strong>Learn Planning mode</strong> to execute complex, multi-step tasks with an AI agent.</li>
-<li><strong>Delegate</strong> a complex analytical task to an AI agent, supervise its execution, and course-correct when it goes off track.</li>
-<li><strong>Customize</strong> your Positron’s assistant with instructions, prompt files, and skills.</li>
+<li>Claude’s <a href="https://code.claude.com/docs/en/common-workflows">Common workflows</a> and <a href="https://code.claude.com/docs/en/best-practices">Best practices for code review</a>, which include:</li>
+<li>Day 1’s <a href="../methods/common-workflow.html">Common workflows</a>.</li>
 </ul>
 </section>
-<section id="agenda" class="level1">
-<h1>Agenda</h1>
-<p>Day 2: Advanced AI features</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Time</th>
-<th>Topic</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>9:00-9:40</td>
-<td>1. <a href="#welcome">Welcome and Self-Study Q&amp;A</a></td>
-</tr>
-<tr class="even">
-<td>9:40-10:20</td>
-<td>2. <a href="#scaffolding">Scaffolding on Self-study Example 3 (live)</a></td>
-</tr>
-<tr class="odd">
-<td>10:20-10:30</td>
-<td><strong>Break</strong></td>
-</tr>
-<tr class="even">
-<td>10:30-11:00</td>
-<td>3. <a href="#tools-mcp">Tools and MCP (slides + demos)</a></td>
-</tr>
-<tr class="odd">
-<td>11:00-11:30</td>
-<td>4. <a href="#agents">Agents and customization (slides + demos)</a></td>
-</tr>
-<tr class="even">
-<td>11:30-12:00</td>
-<td>5. <a href="#planning">Planning mode and exercises (slides + live)</a></td>
-</tr>
-</tbody>
-</table>
-<p>We will use same examples as in the self-study exercises. Please note that you may need to create several fresh copies of the same example to practice different features:</p>
+<section id="step-1.-reproduce-understand-the-code-and-data-transformation-to-reproduce-the-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="step-1.-reproduce-understand-the-code-and-data-transformation-to-reproduce-the-analysis">Step 1. Reproduce: Understand the code and data transformation to reproduce the analysis</h2>
+<section id="research-the-code" class="level3">
+<h3 class="anchored" data-anchor-id="research-the-code">Research the code</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-file-name="Prompt"><pre class="sourceCode numberSource markdows number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>Audit this analysis code end‑to‑end. Produce a structured walkthrough</span>
+<span id="cb1-2"><a href="#cb1-2"></a>with sections: Inputs, Outputs, Step‑by‑step pipeline, Key</span>
+<span id="cb1-3"><a href="#cb1-3"></a>assumptions/decision points, Validation checks, Potential issues.</span>
+<span id="cb1-4"><a href="#cb1-4"></a>In the pipeline section, describe the data flow as “A → B → C”,</span>
+<span id="cb1-5"><a href="#cb1-5"></a>naming intermediate datasets/objects and the operations applied.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="reproduce-the-code" class="level3">
+<h3 class="anchored" data-anchor-id="reproduce-the-code">Reproduce the code</h3>
+<p>Ok prompt that contains ambiguity example:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-file-name="Prompt"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1"></a>Ran this code and produce the output. If it fails, identify the error and</span>
+<span id="cb2-2"><a href="#cb2-2"></a>fix it iteratively until it runs successfully. Then, produce the output.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Better prompt example:</p>
 <ul>
-<li><a href="../selfstudy/example-1.html">Example 1</a></li>
-<li><a href="../selfstudy/example-3.html">Example 3</a></li>
+<li>Explicitly mention the tool to use</li>
+<li>If any other tool is needed, ask to explain why it is proposed and how it will work before request is submitted for my approval.</li>
 </ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-file-name="Prompt"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1"></a>Execute script attached using #executeCode tool. If it fails, identify the error</span>
+<span id="cb3-2"><a href="#cb3-2"></a>and fix it iteratively until it runs successfully. Then, produce the output.</span>
+<span id="cb3-3"><a href="#cb3-3"></a>If you need to use any other tool, explain why it is needed and how it will</span>
+<span id="cb3-4"><a href="#cb3-4"></a>work before requesting my approval.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="before-you-arrive" class="level1">
-<h1>Before You Arrive</h1>
-<p>Post your questions, challenges, and discoveries from the self-study exercises in the Teams chat.</p>
-<hr>
 </section>
-<section id="resources" class="level1">
-<h1>Resources</h1>
-<p>Course data is available in the OneDrive folder: <a href="https://worldbankgroup-my.sharepoint.com/:f:/g/personal/ebukin_worldbank_org/IgBy2yGjpLJPRbM67FJpBFVgAbMRYhEPmS30H2RJSBFO_gE">ai4coding-data</a>.</p>
-<p>Course examples and materials are available in this repository: <a href="https://github.com/worldbank/ai4coding">ai4coding</a> or on OneDrive: <a href="https://worldbankgroup-my.sharepoint.com/:f:/g/personal/ebukin_worldbank_org/IgCXQVakSxEpT7VJFmKp_qtnAXx8RX9iemnwfGwITkEA3bE">ai4coding-materials</a></p>
-<hr>
-</section>
-<section id="materials" class="level1">
-<h1>Day 2: Materials</h1>
-<p><strong>Slides</strong></p>
-<iframe class="slide-deck" src="../day2/ai4coding-d2-1/index.html"></iframe>
-<p>View slides in a <a href="..\day2/ai4coding-d2-1/index.html" target="_blank">new tab</a>.</p>
-<section id="welcome" class="level2">
-<h2 class="anchored" data-anchor-id="welcome">1. Welcome, review of Day 1, and agenda</h2>
-<p>Review of Day 1 topics, Q&amp;A from self-study exercises, and overview of today’s agenda.</p>
-<hr>
-</section>
-<section id="scaffolding" class="level2">
-<h2 class="anchored" data-anchor-id="scaffolding">2. Scaffolding on Self-study Example 3 (live)</h2>
-<p>Live walkthrough of <a href="../selfstudy/example-3.html">Self-study: Example 3</a> — reproduce the analysis, check alignment with DIME coding standards, and revise the code using an agentic workflow.</p>
-<blockquote class="blockquote">
-<p>Examples of the prompts and instructions is in the slides.</p>
-</blockquote>
-<hr>
-</section>
-<section id="tools-mcp" class="level2">
-<h2 class="anchored" data-anchor-id="tools-mcp">3. Tools and MCP (slides + demos)</h2>
-<p>Explore how <strong>tools</strong> extend agents with specialized functionality and how <strong>MCP</strong> (Model Context Protocol) connects AI to external systems.</p>
-<ul>
-<li>Built-in tools, MCP tools, and extension tools.</li>
-<li>Using tools explicitly in chat with <code>#tool-name</code>.</li>
-<li>Configuring and using MCP servers (e.g., Stata MCP).</li>
-<li>Demo: debugging with tools and MCP side-by-side.</li>
-</ul>
-<hr>
-</section>
-<section id="agents" class="level2">
-<h2 class="anchored" data-anchor-id="agents">4. Agents and customization (slides + demos)</h2>
-<p>Understanding agents, subagents, and the agent loop. Customizing AI behaviour with instructions, prompt files, custom agents, and skills.</p>
-<ul>
-<li>The agent loop: Understand → Act → Validate.</li>
-<li>Agent types: local, background, and cloud.</li>
-<li><code>.instructions.md</code> — global rules injected into every request.</li>
-<li><code>.prompt.md</code> — reusable task templates invoked with <code>/my-prompt</code>.</li>
-<li><code>.agent.md</code> — custom personas with curated tool access.</li>
-<li><code>SKILL.md</code> — scoped expertise auto-loaded on description match.</li>
-<li>Demo: creating instruction files, prompt files, and importing skills.</li>
-</ul>
-<hr>
-</section>
-<section id="planning" class="level2">
-<h2 class="anchored" data-anchor-id="planning">5. Planning mode and exercises (slides + live)</h2>
-<p>Use <strong>Plan mode</strong> to research and design before writing code — a 4-phase workflow: Discovery → Alignment → Design → Refinement.</p>
-<ul>
-<li>Activating plan mode with <code>/plan</code> in chat.</li>
-<li>Demo: planning the revision of an analysis do-file.</li>
-<li>Exercise: plan and execute <a href="../selfstudy/example-1.html">Example 1</a> and <a href="../selfstudy/example-3.html">Example 3</a> end-to-end.</li>
-</ul>
+<section id="step-2.-plan-review" class="level2">
+<h2 class="anchored" data-anchor-id="step-2.-plan-review">Step 2. Plan: review</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-file-name="Prompt"><pre class="sourceCode numberSource markdows number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href="#cb4-1"></a>/plan revising `analysis.do` to incorporate new wave of the survey data, 2024.</span>
+<span id="cb4-2"><a href="#cb4-2"></a>Correct appropriate parts of the code and execute it iteratively until it runs</span>
+<span id="cb4-3"><a href="#cb4-3"></a>successfully. Then, produce the output and summarize for me the changes you made</span>
+<span id="cb4-4"><a href="#cb4-4"></a>and how you revised the code to accommodate the new data. Also summarize</span>
+<span id="cb4-5"><a href="#cb4-5"></a>how outputs look like now. If you need to use any tools, explain why they are</span>
+<span id="cb4-6"><a href="#cb4-6"></a>needed and how they will work before requesting my approval.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -949,4 +883,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/worldbank/ai4coding/blob/main/day2/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/worldbank/ai4coding/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/worldbank/ai4coding/blob/main/day2/understand-data.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/worldbank/ai4coding/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

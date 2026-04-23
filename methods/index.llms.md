@@ -18,6 +18,10 @@ AI coding assistants are probabilistic — the quality of their output depends h
 
 If sensitive microdata leaks into AI context it can create data-breach, privacy, and reputational risks. This section identifies the four main exposure channels (prompts, console output, file reads, command-line searches) and provides concrete remedies: curating prompts, setting system instructions to block file access and raw-data printing, generating lightweight metadata files in place of raw data, relocating data outside the working folder, and applying statistical disclosure control techniques (suppression, generalization, noise addition, pseudonymization) with dedicated packages.
 
+## [DIME Data Handbook Appendix: AI and reproducible research](../methods/dime-handbook-appendix.llms.md)
+
+This is a reference section adapted from the DIME Data Handbook covering how for the purpose of using in the course as an online material for AI’s digestion.
+
 ## External references
 
 > **TIP:**
