@@ -1,0 +1,64 @@
+---
+title: "Reproduce, Revise, and Reuse: practical examples"
+---
+
+This example demonstrates how to use AI to understand and review data.
+it uses [Self-study Example 3](/selfstudy/example-3.qmd) as a starting point,
+and expands on it by introducing **Plan mode** and features such as
+**MCP**, **Tools**, and **Prompt files** as well as **skills**.
+
+## Overview
+
+This workflow incorporates best practices from:
+
+- Claude's [Common workflows](https://code.claude.com/docs/en/common-workflows)
+  and [Best practices for code review](https://code.claude.com/docs/en/best-practices),
+  which include:
+- Day 1's [Common workflows](/methods/common-workflow.qmd).
+
+
+## Step 1. Reproduce: Understand the code and data transformation to reproduce the analysis
+
+### Research the code
+
+```{.markdows file-name="Prompt"}
+Audit this analysis code end‑to‑end. Produce a structured walkthrough
+with sections: Inputs, Outputs, Step‑by‑step pipeline, Key
+assumptions/decision points, Validation checks, Potential issues.
+In the pipeline section, describe the data flow as “A → B → C”,
+naming intermediate datasets/objects and the operations applied.
+```
+
+### Reproduce the code
+
+Ok prompt that contains ambiguity example:
+
+```{.markdown file-name="Prompt"}
+Ran this code and produce the output. If it fails, identify the error and
+fix it iteratively until it runs successfully. Then, produce the output.
+```
+
+Better prompt example:
+
+- Explicitly mention the tool to use
+- If any other tool is needed, ask to explain why it is proposed and how it will
+  work before request is submitted for my approval.
+
+```{.markdown file-name="Prompt"}
+Execute script attached using #executeCode tool. If it fails, identify the error
+and fix it iteratively until it runs successfully. Then, produce the output.
+If you need to use any other tool, explain why it is needed and how it will
+work before requesting my approval.
+```
+
+## Step 2. Plan: review
+
+
+```{.markdows file-name="Prompt"}
+/plan revising `analysis.do` to incorporate new wave of the survey data, 2024.
+Correct appropriate parts of the code and execute it iteratively until it runs
+successfully. Then, produce the output and summarize for me the changes you made
+and how you revised the code to accommodate the new data. Also summarize
+how outputs look like now. If you need to use any tools, explain why they are
+needed and how they will work before requesting my approval.
+```

@@ -1,18 +1,18 @@
 ---
-title: "Day 1: Overview and Materials"
+title: "Day 1: Overview"
 ---
 
 # Goals for Day 1
 
 - **Familiarize yourself** with the basics of AI-assisted coding and its workflow.
 - **Get an intuitive understanding** of the key concepts behind the technology,
-  how it works and what are its capabilities, and limitations.
-- **Setup the software environment** to be able to practice AI-assisted coding on
+  how it works and what its capabilities and limitations are.
+- **Set up the software environment** to be able to practice AI-assisted coding on
   your own during the self-study period following examples and
   supplementary materials.
-- **See AI in action** by following along with live demonstrations and
-  examples of common use cases, such as data preparation and cleaning, and
-  securing sensitive data.
+- **See AI in action** by following along with live demonstrations:
+  understanding data with AI and reproducing, revising, and reusing existing
+  analysis.
 
 # Agenda
 
@@ -21,28 +21,52 @@ Day 1: Introduction and common workflows
 | Time        | Topic |
 |-------------|--------------------------------------------------------------|
 | 9:00-9:10   | 1. [Welcome and course overview (slides)](#welcome) |
-| 9:10-9:40   | 2. [Setup overview (slides)](#setup-overview). [Example 0 (live)](#example-0) and [Example 1 (self-study)](#example-1) |
-| 9:40-10:20  | 3. [Example 2: Understanding data with AI (live)](#example-2) |
+| 9:10-9:40   | 2. [Setup overview (slides)](#setup-overview) |
+| 9:40-10:20  | 3. Live: [Self-Study > Example 0](/selfstudy/example-0.qmd) |
 | 10:20-10:30 | ☕ Break (10 min) |
 | 10:30-10:50 | 4. [Core AI-related concepts](#ai-concepts) |
 | 10:50-11:00 | 5. [Common workflows and data safeguarding (slides)](#ai-workflow) |
-| 11:00-11:30 | 6. [Example 3: Reproduce, Revise, and Reuse existing analysis (live/self-study)](#example-3) |
+| 11:00-11:30 | 6. [Example 2: Understanding data with AI (live)](#example-2) |
+
+Self-study:
+
+-  [Example 1](/selfstudy/example-1.qmd)
+-  [Example 3](/selfstudy/example-3.qmd)
 
 # Before You Arrive
 
-(Try) [completing the prerequisites](/prerequisites/index.qmd).
+(Try) [completing the setup](/prerequisites/index.qmd). For common issues and troubleshooting, refer to the relevant sections in the setup materials:
 
-If you run into issues, check [Common Problems](/prerequisites/common-problems.qmd) or
-contact [ITHelp@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org) before the session.
+- [Software Setup > Troubleshooting](/prerequisites/software.qmd#troubleshooting),
+- [Stata for Positron Extensions > Troubleshooting](/prerequisites/extensions.qmd#sec-troubleshooting-stataextension),
+- [GitHub & Copilot > Troubleshooting](/prerequisites/github.qmd#sec-troubleshooting-ghcopilot), and
+- [Positron Assistant > Troubleshooting](/prerequisites/assistant.qmd#sec-troubleshooting-assistant) sections for common issues with the setup.
+
+If you run into a dead end, contact [ITHelp@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org).
+
+
+-------------------------------------------------------------------------------
+
+# Resources {#resources}
+
+Course data is available in the OneDrive folder: [ai4coding-data](https://worldbankgroup-my.sharepoint.com/:f:/g/personal/ebukin_worldbank_org/IgBy2yGjpLJPRbM67FJpBFVgAbMRYhEPmS30H2RJSBFO_gE).
+
+Course examples and materials are available in this repository: [ai4coding](https://github.com/worldbank/ai4coding) or on OneDrive: [ai4coding-materials](https://worldbankgroup-my.sharepoint.com/:f:/g/personal/ebukin_worldbank_org/IgCXQVakSxEpT7VJFmKp_qtnAXx8RX9iemnwfGwITkEA3bE).
+
+If, once you open the link to the OneDrive folder, you see a message that you don't have access,
+please request access by clicking the "Request Access" button on the page. I will
+be monitoring and approving access requests as they come in.
 
 -------------------------------------------------------------------------------
 
 # Day 1: Materials {#materials}
 
+## 1. Welcome and course overview {#welcome}
 
-## 1. Learn: Welcome, introductions, and overview {#welcome}
-
-Introduction and housekeeping, then an overview of the day's agenda and materials.
+Motivation for AI-assisted coding in an IDE versus copy-pasting from chat-based
+tools. Overview of the course structure: two sessions, self-study in between,
+and the key tools — Positron and GitHub Copilot. Course goals: understand,
+practice, and take control of AI-assisted coding.
 
 **Slides**
 
@@ -55,9 +79,14 @@ View slides in a [new tab](/day1/ai4coding-slides-d1-1/index.html){target="_blan
 
 ## 2. Setup overview {#setup-overview}
 
-> **Important**: Setup your working folders properly!
+> **Important**: Set up your working folders properly!
 
 {{< include /day1/_working-folder.qmd >}}
+
+Detailed setup requirements: software (Positron, Python, R, Stata, Quarto),
+GitHub account and WB organization membership, GitHub Copilot access (WB plan
+or private), and Positron Assistant configuration. Working folder structure
+for exercises and data.
 
 **Slides**
 
@@ -67,71 +96,67 @@ View slides in a [new tab](/day1/ai4coding-slides-d1-1/index.html){target="_blan
 
 View slides in a [new tab](/day1/ai4coding-slides-d1-2/index.html){target="_blank"}.
 
-### Example 0: Test your setup (live) {#example-0}
-
-This presentation ends with an example that demonstrates how to test
-if the setup is working correctly. Example 0 could be found in [Self-Study > Example 0](/selfstudy/example-0.qmd).
-
-### Example 1: Stata in Positron with GitHub Copilot (self-study) {#example-1}
-
-This introductory example is plan for self-study, full details, suggested
-prompts, and instructions are in the [Self-Study > Example 1](/selfstudy/example-1.qmd).
-
-{{< include /selfstudy/_ex1-1-overview.qmd >}}
-
 -------------------------------------------------------------------------------
 
-## 3. Example 2: Understanding data with AI (live) {#example-2}
+## 3. Live: Self-Study > Example 0 {#example-0}
 
-This example is planned for live demonstration during the session, but you can
-also follow along on your own as a self-study exercise. Full details, suggested
-prompts, and instructions are in the [Self-Study > Example 2](/selfstudy/example-2.qmd).
-
-### Overview
-
-{{< include /selfstudy/_ex1-2-overview.qmd >}}
+Live walkthrough of [Self-Study > Example 0](/selfstudy/example-0.qmd) — open
+the `ex00-positron-test` folder in Positron, follow the README, and verify that
+your setup (Positron, Copilot, Stata extension) is working correctly.
 
 -------------------------------------------------------------------------------
 
 ## 4. Core AI-related concepts {#ai-concepts}
 
+Key concepts behind how AI coding assistants work: IDEs, LLMs, context windows,
+tokens, and embeddings. How context size and quality affect response accuracy.
+Context saturation and best practices for managing it. Hallucinations — what
+causes them and how to mitigate them. Data exposure risks when using AI in an
+IDE. Preview of Day 2 topics: agents, tools, prompt files, and skills.
+
+**Slides**
+
 ```{=html}
 <iframe class="slide-deck" src="/day1/ai4coding-slides-d1-3/index.html"></iframe>
-
 ```
 
 View slides in a [new tab](/day1/ai4coding-slides-d1-3/index.html){target="_blank"}.
 
 -------------------------------------------------------------------------------
 
-## 5. Common workflows and data safeguarding practices while using AI (slides) {#ai-workflow}
+## 5. Common workflows and data safeguarding {#ai-workflow}
 
+A structured eight-step workflow for AI-assisted data analysis: from setting
+objectives and defining inputs/outputs, to iterative code development and
+independent verification. Why structure matters — vague prompts produce generic
+output; each step narrows the AI's degrees of freedom.
+
+Data safeguarding practices: key exposure channels (prompts, console output,
+file reads, shell commands) and five remedies — careful prompting, system
+instructions, metadata-only approach, data anonymization, and keeping raw data
+outside the project folder. WB AI Use Policy and responsible use guidelines.
+
+**Slides**
 
 ```{=html}
 <iframe class="slide-deck" src="/day1/ai4coding-slides-d1-4/index.html"></iframe>
-
 ```
 
 View slides in a [new tab](/day1/ai4coding-slides-d1-4/index.html){target="_blank"}.
 
+-------------------------------------------------------------------------------
+
+## 6. Live: Self-Study > Example 2 {#example-2}
+
+Live walkthrough of [Self-Study > Example 2](/selfstudy/example-2.qmd) —
+using AI to understand an unfamiliar dataset: building a data dictionary,
+documenting harmonization, generating modular cleaning code, and verifying
+results. Participants follow along in their own environment.
 
 -------------------------------------------------------------------------------
 
-## 6. Example 3: Reproduce, Revise, and Reuse (live/self-study) {#example-3}
+## Self-Study Examples
 
-This example is planned for a live demonstration during the session, but you can
-also follow along on your own as a self-study exercise. Full details, suggested
-prompts, and instructions are in the [Self-Study > Example 3](/selfstudy/example-3.qmd).
-
-Consider using your own data and problem for this example if you have one in
-mind. The goal of this example is to practice the workflow of analysis
-refactoring and improvement. The example provided is based on a real analysis,
-but the workflow and principles apply broadly to any analysis you might be working on.
-
-This example will show you how to use AI to:
-
-1. Understand and reproduce existing analysis.
-2. Revise it to make it clear, transparent, and well documented.
-3. Set up system prompt files that guide the AI on dos and don'ts.
-4. Adapt it to new data.
-5. Document it in accordance with reproducibility package requirements.
+- [Example 0](/selfstudy/example-0.qmd) — Test your setup
+- [Example 1](/selfstudy/example-1.qmd) — Explore Positron and GitHub Copilot
+- [Example 3](/selfstudy/example-3.qmd) — Reproduce, Revise, and Reuse existing analysis

@@ -3,12 +3,11 @@ project:
   render:
     - about.qmd
     - index.qmd
-    # - materials.qmd
     - prerequisites/*.qmd
     - day1/*.qmd
     - day1/**/*.qmd
     - day2/*.qmd
-    - methods/*.qmd
+    - day2/**/*.qmd
     - selfstudy/*.qmd
 
 
@@ -31,7 +30,7 @@ website:
             href: selfstudy/index.qmd
           - text: "Day 2"
             href: day2/index.qmd
-      - text: "Prerequisites"
+      - text: "Setup"
         href: prerequisites/index.qmd
       - text: "Methods"
         href: methods/index.qmd
@@ -51,7 +50,7 @@ website:
             href: https://worldbank.github.io/geoPovLearn/
 
   sidebar:
-    - title: Prerequisites
+    - title: Setup
       style: "docked"
       pinned: true
       collapse-level: 10
@@ -61,8 +60,6 @@ website:
         - prerequisites/github.qmd
         - prerequisites/extensions.qmd
         - prerequisites/assistant.qmd
-        - prerequisites/verify.qmd
-        - prerequisites/common-problems.qmd
 
     - title: "Day 1"
       style: "docked"
@@ -101,6 +98,7 @@ website:
         - methods/index.qmd
         - methods/common-workflow.qmd
         - methods/safeguard-data.qmd
+        - methods/dime-handbook-appendix.qmd
   page-navigation: true
   back-to-top-navigation: false
 
@@ -111,15 +109,12 @@ author:
   - name: Eduard Bukin
     email: ebukin@worldbank.org
     url: https://github.com/ebukin
-    orcid: 0000-0002-1003-1260
     affiliations: Distributional Impact of Policies. Fiscal Policy and Growth Department
 
 format:
   html:
     css: assets/custom.css
     theme:
-    #   - cosmo
-    #   - brand
       light: cosmo
       dark: darkly
     toc: true
@@ -128,7 +123,6 @@ format:
     lightbox: true
     code-overflow: wrap
     code-fold: show
-    # code-tools: true
     code-copy: true
     code-line-numbers: true
     code-block-border-left: true

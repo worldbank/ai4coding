@@ -42,7 +42,7 @@ format:
 To be able to reproduce examples and follow along with AI for coding in Stata,
 you need to have a [minimal setup]{.warning} in place (or [optimal setup]{.fg} if possible). This includes:
 
-- ![](/assets/img/positron.svg){style="width:35px;height:35px;vertical-align:middle;"} [**Software** —  Positron, Python, R, Stata]{.warning}, and [Quarto]{.fg}
+- ![](/assets/img/positron.svg){style="width:35px;height:35px;vertical-align:middle;"} [**Software** — Positron, Python, R, Stata]{.warning}, and [Quarto]{.fg}
 - [Stata extension in Positron]{.warning}
 - {{< fa brands github >}} [**GitHub account**]{.warning} on private email
 - [Access to github.com/worldbank organization]{.fg}
@@ -79,7 +79,7 @@ If any problems arise: follow the [troubleshooting guide](/prerequisites/common-
 
 - Submit [eServices request](https://worldbankgroup.service-now.com/wbg/en/join-github-organization-account-request?id=wbg_sc_catalog&sys_id=910e1739db1a54903c5960ab13961912&table=sc_cat_item&searchTerm=github) to join [github.com/worldbank](https://github.com/worldbank)
 
-- Accept invitation email within 7 days
+- Accept the invitation email within 7 days
 
 
 ## ![](/assets/img/github-copilot-icon.svg){style="width:40px;height:40px;vertical-align:middle;"} GitHub Copilot: WB vs. Private {.tiny-slide}
@@ -114,7 +114,7 @@ Every chat/agent interaction is a **premium request** (with Claude, GPT-5, Gemin
 | Private Copilot Pro | 500 |
 | Private Copilot Pro+ | 1,500 |
 
-Check **usage** [GitHub Settings → Copilot](https://github.com/settings/copilot/features){target="_blank"}.
+Check **usage** at [GitHub Settings → Copilot](https://github.com/settings/copilot/features){target="_blank"}.
 
 ![](/assets/img/gh-max.png){width="80%"}
 
@@ -204,7 +204,7 @@ You can also sign in via the **Accounts** icon (bottom-left of Activity Bar).
 ::::
 :::::
 
-## ![](/assets/img/claude.svg){style="width:40px;height:40px;vertical-align:middle;"} What about Claude Code? {.small-slide}
+## ![](/assets/img/claude.svg){style="width:40px;height:40px;vertical-align:middle;"} What about Claude Code? {.tiny-slide}
 
 Claude Code is an AI coding assistant that calls Anthropic's Claude API directly — similar to Positron Assistant.
 
@@ -232,7 +232,7 @@ Claude Code is not designed for data science and lacks the IDE integration of Po
 - Positron is new software for the WB.
 - WB security policies **block Positron from writing text files** on OneDrive.
 - [Do not save your code-in-progress in a OneDrive folder.]{.alert}
-- New security policy will be implemented on **Friday, April 24** (spring meeting freeze).
+- A new security policy will be implemented on **Friday, April 24** (spring meeting freeze).
 :::
 
 [**Step 1 — Create working folders**]{.fg}
@@ -286,24 +286,23 @@ Quick [[Example 0]{.fg}](/selfstudy/example-0.qmd){target="_blank"} to verify yo
 - GitHub Copilot docs: [docs.github.com/copilot](https://docs.github.com/en/copilot)
 - WB GitHub overview: [github.com/worldbank/ospo](https://github.com/worldbank/ospo)
 
-## Example 1: Explore Positron and Copilot (self-study) {.small-slide}
 
-The goal of this exercise is to get familiar with Positron's AI assistance
-features and how they can be used to write and execute Stata code. We go
-through a typical workflow of creating a Stata do file, writing code with
-AI assistance, and executing it in the console.
+## What next? {.small-slide}
 
-This exercise is pre-recorded for self-study (18 min), full details, suggested prompts, and instructions are in the [Self-Study > Example 1](/selfstudy/example-1.qmd){target="_blank"}.
+::::: {.columns}
+:::: {.column width="50%"}
+[**Example 1: Explore Positron & Copilot**]{.fg}
 
+Get familiar with AI assistance features — create a Stata do-file, write code with AI, and execute it in the console.
 
-## Example 2: Understanding and cleaning the data {.small-slide}
+Pre-recorded self-study (18 min) → [Example 1](/selfstudy/example-1.qmd){target="_blank"}
+::::
 
-**You will practice using AI to:**
+:::: {.column width="50%"}
+[**Example 2: Understand & clean data**]{.fg}
 
-1. Set a clear objective and constraints for an AI session
-2. Build a **data dictionary** (variable names, types, labels) as the AI intermediary
-3. Document harmonization requirements as a **mapping table**
-4. Generate modular cleaning code following [DIME Wiki](https://dimewiki.worldbank.org/) best practices
-5. Iterate, verify with an independent auditor session, and document results
+Use AI to build a data dictionary, document harmonization, generate modular cleaning code, and verify results.
 
-Full details and prompts: [Self-Study → Example 2](/selfstudy/example-2.qmd){target="_blank"}
+Full details and prompts → [Example 2](/selfstudy/example-2.qmd){target="_blank"}
+::::
+:::::
