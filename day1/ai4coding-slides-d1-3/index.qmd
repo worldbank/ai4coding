@@ -22,7 +22,7 @@ format:
 
 ## Core AI-related concepts worth knowing about {.small-slide .center}
 
-- 💻 IDE: Integrated Development Environment, e.g., Positron, RStudio, VSCode, and more.
+- 💻 IDE: Integrated Development Environment, e.g., Positron, RStudio, VS Code, and more.
 
 - 🤖 AI assistants:
 

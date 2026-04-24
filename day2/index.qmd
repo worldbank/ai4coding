@@ -10,7 +10,7 @@ title: "Day 2: Overview"
 - **Learn Planning mode** to execute complex, multi-step tasks with an AI agent.
 - **Delegate** a complex analytical task to an AI agent, supervise its
   execution, and course-correct when it goes off track.
-- **Customize** your Positron's assistant with instructions, prompt files, and
+- **Customize** your Positron assistant with instructions, prompt files, and
   skills.
 
 # Agenda
@@ -26,7 +26,7 @@ Day 2: Advanced AI features
 | 11:00-11:30 | 4. [Agents and customization (slides + demos)](#agents) |
 | 11:30-12:00 | 5. [Planning mode and exercises (slides + live)](#planning) |
 
-We will use same examples as in the self-study exercises. Please note that
+We will use the same examples as in the self-study exercises. Please note that
 you may need to create several fresh copies of the same example to practice
 different features:
 
@@ -44,7 +44,7 @@ in the Teams chat.
 
 Course data is available in the OneDrive folder: [ai4coding-data](https://worldbankgroup-my.sharepoint.com/:f:/g/personal/ebukin_worldbank_org/IgBy2yGjpLJPRbM67FJpBFVgAbMRYhEPmS30H2RJSBFO_gE).
 
-Course examples and materials are available in this repository: [ai4coding](https://github.com/worldbank/ai4coding) or on OneDrive: [ai4coding-materials](https://worldbankgroup-my.sharepoint.com/:f:/g/personal/ebukin_worldbank_org/IgCXQVakSxEpT7VJFmKp_qtnAXx8RX9iemnwfGwITkEA3bE)
+Course examples and materials are available in this repository: [ai4coding](https://github.com/worldbank/ai4coding) or on OneDrive: [ai4coding-materials](https://worldbankgroup-my.sharepoint.com/:f:/g/personal/ebukin_worldbank_org/IgCXQVakSxEpT7VJFmKp_qtnAXx8RX9iemnwfGwITkEA3bE).
 
 -------------------------------------------------------------------------------
 
@@ -70,7 +70,12 @@ Live walkthrough of [Self-study: Example 3](/selfstudy/example-3.qmd) —
 reproduce the analysis, check alignment with DIME coding standards, and
 revise the code using an agentic workflow.
 
-> Examples of the prompts and instructions is in the slides.
+**Workflow steps:**
+
+1. **Understand** — ask the AI to explain inputs, outputs, strengths, and weaknesses.
+2. **Adjust and reproduce** — change output paths and debug iteratively.
+3. **Analyze standards** — check alignment with DIME coding standards.
+4. **Revise** — apply suggested changes (self-study).
 
 -------------------------------------------------------------------------------
 
@@ -81,14 +86,19 @@ Explore how **tools** extend agents with specialized functionality and how
 
 - Built-in tools, MCP tools, and extension tools.
 - Using tools explicitly in chat with `#tool-name`.
-- Configuring and using MCP servers (e.g., Stata MCP).
+- **Permission levels**: Default Approvals, Bypass Approvals, and Autopilot (preview).
+- Configuring and using MCP servers (e.g., Stata MCP, Data360 MCP).
+- **WB caveat**: MCP extensions are not available via the WB Software Center;
+  servers must be configured manually in `.vscode/mcp.json`.
+- Key distinction: MCP is a protocol exposing tools + resources + prompts;
+  tools are individual callable functions within the IDE.
 - Demo: debugging with tools and MCP side-by-side.
 
 -------------------------------------------------------------------------------
 
 ## 4. Agents and customization (slides + demos) {#agents}
 
-Understanding agents, subagents, and the agent loop. Customizing AI behaviour
+Understanding agents, subagents, and the agent loop. Customizing AI behavior
 with instructions, prompt files, custom agents, and skills.
 
 - The agent loop: Understand → Act → Validate.
