@@ -84,7 +84,7 @@ Introducing [**Positron**]{.bg} with [**GitHub Copilot**]{.fg} is the goal of th
 
 - Use AI to write code and reuse old code
 - Plan execution and write prompts for multi-step tasks
-- Supervise and course-correct an AI-generated code
+- Supervise and course-correct AI-generated code
 - Leverage out-of-the-box tech: `#tools`, `skills`, `/agents`, `/prompts`, etc.
 :::
 
@@ -112,7 +112,7 @@ Introducing [**Positron**]{.bg} with [**GitHub Copilot**]{.fg} is the goal of th
 
 - Software setup & walk-through
 - Key concepts: IDE, assistants, context, tokens, LLM, and how it works
-- Examples: data preparation and cleaning and security techniques
+- Examples: data preparation and cleaning, and security techniques
 - Common techniques: managing AI's context and securing your data
 :::
 

@@ -3,13 +3,11 @@ project:
   render:
     - about.qmd
     - index.qmd
-    # - materials.qmd
     - prerequisites/*.qmd
     - day1/*.qmd
     - day1/**/*.qmd
     - day2/*.qmd
     - day2/**/*.qmd
-    - methods/*.qmd
     - selfstudy/*.qmd
 
 
@@ -111,15 +109,12 @@ author:
   - name: Eduard Bukin
     email: ebukin@worldbank.org
     url: https://github.com/ebukin
-    orcid: 0000-0002-1003-1260
     affiliations: Distributional Impact of Policies. Fiscal Policy and Growth Department
 
 format:
   html:
     css: assets/custom.css
     theme:
-    #   - cosmo
-    #   - brand
       light: cosmo
       dark: darkly
     toc: true
@@ -128,7 +123,6 @@ format:
     lightbox: true
     code-overflow: wrap
     code-fold: show
-    # code-tools: true
     code-copy: true
     code-line-numbers: true
     code-block-border-left: true

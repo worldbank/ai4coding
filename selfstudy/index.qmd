@@ -59,7 +59,7 @@ jump around based on your interests and needs.
 # Supporting materials
 
 - [Global Monitoring Database (GMD) variables description](/selfstudy/gmd-requirements.qmd)
-  is a key reference for the Example 2.
+  is a key reference for Example 2.
 
 
 

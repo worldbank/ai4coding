@@ -675,7 +675,7 @@ Invoke with `/clean-survey` in the chat panel.
 
 Inject dynamic context: `${file}`, `${selection}`, `${input:name}` .
 
-Refere tools `#tool:<tool-name>`
+Reference tools `#tool:<tool-name>`
 
 Use AI to create, or `Ctrl+Shift+P` → `Chat: New Prompt File…`
 
@@ -825,7 +825,7 @@ More: [VS Code Skills](https://code.visualstudio.com/docs/copilot/customization/
 ## Demo: Skills out of the box {.tiny-slide}
 
 Stata skills are very important for AI as it had a very limited stata training base.
-Dylan T. Moore's developed [Stata Skill](https://github.com/dylantmoore/stata-skill){target="_blank"}:
+Dylan T. Moore developed the [Stata Skill](https://github.com/dylantmoore/stata-skill){target="_blank"}:
 a comprehensive Stata coding style and best practices skill.
 
 Let us import it into the project and see how it works in action, when
@@ -834,10 +834,10 @@ using the prompt file or in the chat.
 
 To import the skill:
 
-1. Download skill files form [Stata Skill](https://github.com/dylantmoore/stata-skill){target="_blank"} GitHub.
-2. Find skill folder for `stata`, which is in `plugins/stata/skills/stata`
+1. Download skill files from [Stata Skill](https://github.com/dylantmoore/stata-skill){target="_blank"} GitHub.
+2. Find the skill folder for `stata`, which is in `plugins/stata/skills/stata`
 
-3. Copy last `stata` folder into `.github/skills/` in your project.
+3. Copy the last `stata` folder into `.github/skills/` in your project.
 
 4. Invoke a prompt to reproduce the analysis and observe if the skill is
    automatically loaded and applied to the request.
@@ -975,7 +975,7 @@ and how they will work before requesting my approval.
 
 
 ::: {.fragment .callout-tip appearance="minimal"}
-Use a **powerful reasoning model** (e.g. `claude-4.6-sonnet`,
+Use a **powerful reasoning model** (e.g., `claude-4.6-sonnet`,
 `claude-4.6-opus`) for planning and a **faster model** for
 implementation.
 :::
@@ -987,7 +987,7 @@ Planning and execution new analysis.
 ## Plan and execute Example 1 (1) {.small-slide}
 
 Step 1. Open a copy of [Self-study: Example 1](/selfstudy/example-1.qmd){target="_blank"} on your local machine.
-Step 2. Remove oldcode (if there is any) and leave only data in.
+Step 2. Remove old code (if there is any) and leave only data in.
 Step 3. Connect [Stata MCP server](#mcp-server).
 Step 4. Load DIME Stata Style Guide as a user-wide skill.
 Step 5. Open chat and write a prompt:

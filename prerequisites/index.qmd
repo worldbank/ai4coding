@@ -2,21 +2,21 @@
 title: "Setup"
 ---
 
-Tu use Stata in Positron with GitHub Copilot, you need:
+To use Stata in Positron with GitHub Copilot, you need:
 
 1. [Setup Software](software.qmd) — Stata 19+ MP, R 4.5+, Python 3.13+ with `uv`, Positron, Quarto 1.9+, Git
 
    If anything does not work, refer to the [Software Setup > Troubleshooting](software.qmd#common-problems) section.
 
-2. [Stata for Positron Extensions](extensions.qmd) — Stata for Positron Integrates stata in Positron
+2. [Stata for Positron Extensions](extensions.qmd) — Stata for Positron integrates Stata in Positron
 
    See the [Stata for Positron Extensions > Troubleshooting](extensions.qmd#sec-troubleshooting-stataextension) section for common issues with the
    extension.
 
-3. [GitHub & Copilot](github.qmd) — personal GitHub account and GithHub Copilot
+3. [GitHub & Copilot](github.qmd) — personal GitHub account and GitHub Copilot
    subscriptions are needed to use premium requests
 
-   Any quesitons? see the [GitHub & Copilot > Troubleshooting](github.qmd#sec-troubleshooting-ghcopilot) section for common issues with GitHub.
+   Any questions? See the [GitHub & Copilot > Troubleshooting](github.qmd#sec-troubleshooting-ghcopilot) section for common issues with GitHub.
 
 4. [Positron Assistant](assistant.qmd) — enable assistant, connect to GitHub Copilot provider
 
