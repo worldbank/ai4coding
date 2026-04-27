@@ -1,4 +1,5 @@
 library(tidyverse)
+library(here)
 
 # --- 1. Helper: read Teams attendance CSVs (UTF-16LE encoded) --------------
 
@@ -32,20 +33,20 @@ read_teams_attendance <- function(filepath) {
 
 # --- 2. Read & combine all attendance files --------------------------------
 
-attendance_dir <- "blog-post/atendance"
+attendance_dir <- here::here("blog-post/attendance")
 
 files_info <- tribble(
-  ~file                                                                                                                                  , ~event    , ~session     , ~date ,
-  "Revolutionize Your Analysis in Stata and R_ AI Agent-Assisted Workflow with GitHub Copilot and Claude - Attendance report 2-05-2.csv" ,
-  "seminar_feb"                                                                                                                          , "single"  , "2025-02-05" ,
-  "Poverty Learning Series-Morning Session[Mon_Thur 9AM EST] - Attendance report 4-20-26.csv"                                            ,
-  "workshop_apr"                                                                                                                         , "morning" , "2026-04-20" ,
-  "AI-Assisted Coding for Economists-Evening Session [Mon_Thur 9PM EST] - Attendance report 4-20-26.csv"                                 ,
-  "workshop_apr"                                                                                                                         , "evening" , "2026-04-20" ,
-  "Poverty Learning Series-Morning Session[Mon_Thur 9AM EST] - Attendance report 4-23-26.csv"                                            ,
-  "workshop_apr"                                                                                                                         , "morning" , "2026-04-23" ,
-  "AI-Assisted Coding for Economists-Evening Session [Mon_Thur 9PM EST] - Attendance report 4-23-26.csv"                                 ,
-  "workshop_apr"                                                                                                                         , "evening" , "2026-04-23"
+  ~file                                                                                                                                      , ~event    , ~session     , ~date ,
+  "Revolutionize Your Analysis in Stata and R_ AI Agent-Assisted Workflow with GitHub Copilot and Claude - Attendance report 2-05-2 (1).csv" ,
+  "seminar_feb"                                                                                                                              , "single"  , "2025-02-05" ,
+  "Poverty Learning Series-Morning Session[Mon_Thur 9AM EST] - Attendance report 4-20-26.csv"                                                ,
+  "workshop_apr"                                                                                                                             , "morning" , "2026-04-20" ,
+  "AI-Assisted Coding for Economists-Evening Session [Mon_Thur 9PM EST] - Attendance report 4-20-26.csv"                                     ,
+  "workshop_apr"                                                                                                                             , "evening" , "2026-04-20" ,
+  "Poverty Learning Series-Morning Session[Mon_Thur 9AM EST] - Attendance report 4-23-26.csv"                                                ,
+  "workshop_apr"                                                                                                                             , "morning" , "2026-04-23" ,
+  "AI-Assisted Coding for Economists-Evening Session [Mon_Thur 9PM EST] - Attendance report 4-23-26.csv"                                     ,
+  "workshop_apr"                                                                                                                             , "evening" , "2026-04-23"
 ) |>
   mutate(
     date = as.Date(date),
@@ -83,7 +84,7 @@ attendance <- raw |>
       email_clean
     ),
     event_label = case_when(
-      event == "seminar_feb" ~ "1. Feb Seminar (45 min)",
+      event == "seminar_feb" ~ "1. Feb Seminar (1h)",
       part == "part1" ~ "2. Apr Workshop Day 1 (2h40m)",
       part == "part2" ~ "3. Apr Workshop Day 2 (2h40m)"
     )
@@ -187,7 +188,7 @@ participation_patterns
 
 # --- 9. Load roster & merge profile info -----------------------------------
 
-roster_dir <- "blog-post/roster"
+roster_dir <- here::here("blog-post/roster")
 
 read_roster <- function(filepath) {
   read_csv(filepath, skip = 19, show_col_types = FALSE, name_repair = "minimal")
@@ -495,10 +496,10 @@ p_flow_headcount <- ggplot(
   ) +
   scale_x_discrete(
     limits = c(
-      "Feb Seminar\n(45 min)",
+      "Feb Seminar\n(1h)",
       "OLC\nRegistered",
-      "Apr Day 1\n(2h 40m)",
-      "Apr Day 2\n(2h 40m)"
+      "Apr Day 1\n(3h)",
+      "Apr Day 2\n(3h)"
     ),
     expand = c(0.12, 0.05)
   ) +
@@ -882,9 +883,9 @@ p_flow_hours <- ggplot() +
   scale_x_continuous(
     breaks = 1:3,
     labels = c(
-      "Feb Seminar\n(45 min)",
-      "Apr Day 1\n(2h 40m)",
-      "Apr Day 2\n(2h 40m)"
+      "Feb Seminar\n(1h)",
+      "Apr Day 1\n(3h)",
+      "Apr Day 2\n(3h)"
     ),
     limits = c(0.7, 3.3)
   ) +
@@ -977,10 +978,10 @@ p_flow_pmu <- ggplot(
   ) +
   scale_x_discrete(
     limits = c(
-      "Feb Seminar\n(45 min)",
+      "Feb Seminar\n(1h)",
       "OLC\nRegistered",
-      "Apr Day 1\n(2h 40m)",
-      "Apr Day 2\n(2h 40m)"
+      "Apr Day 1\n(3h)",
+      "Apr Day 2\n(3h)"
     ),
     expand = c(0.12, 0.05)
   ) +
@@ -1112,7 +1113,24 @@ unique_combined <- bind_rows(
         paste0("h_", c("HQ", "CO", "NA"))
       )
     )
-  )
+  ) |>
+  # Pre-compute y midpoint of each stacked segment for right-side labels
+  arrange(bar, desc(fill_key)) |>
+  group_by(bar) |>
+  mutate(
+    y_top = cumsum(n),
+    y_mid = y_top - n / 2
+  ) |>
+  # Nudge label positions upward where segments are too close, preserving order
+  mutate(label_y = {
+    y <- y_mid
+    gap <- 20 # minimum vertical spacing between label centres (data units)
+    for (i in seq_along(y)[-1]) {
+      if (y[i] - y[i - 1] < gap) y[i] <- y[i - 1] + gap
+    }
+    y
+  }) |>
+  ungroup()
 
 all_fill_colors <- c(
   grade_colors,
@@ -1126,19 +1144,34 @@ p_overall_combined <- ggplot(
   aes(x = bar, y = n, fill = fill_key)
 ) +
   geom_col(width = 0.55, color = "white", linewidth = 0.3) +
+  # Connector line: from right edge of bar (at y_mid) to start of label (at label_y)
+  geom_segment(
+    aes(
+      x = as.numeric(bar) + 0.28,
+      xend = as.numeric(bar) + 0.30,
+      y = y_mid,
+      yend = label_y
+    ),
+    colour = "grey60",
+    linewidth = 0.3,
+    data = unique_combined |> filter(abs(label_y - y_mid) > 3)
+  ) +
   geom_text(
     aes(
-      label = paste0(group, ": ", n, " (", round(pct * 100), "%)"),
-      colour = fill_key
+      x = as.numeric(bar) + 0.31,
+      y = label_y,
+      label = paste0(group, ": ", n, "\n(", round(pct * 100), "%)")
     ),
-    position = position_stack(vjust = 1),
-    vjust = -0.3,
-    size = 2.5,
-    fontface = "bold"
+    colour = "black",
+    size = 2.6,
+    fontface = "bold",
+    hjust = 0,
+    lineheight = 0.9
   ) +
   scale_fill_manual(values = all_fill_colors, guide = "none") +
-  scale_colour_manual(values = all_fill_colors, guide = "none") +
+  scale_x_discrete(expand = expansion(add = c(0.6, 0.5))) +
   scale_y_continuous(expand = expansion(mult = c(0, 0)), limits = c(0, 600)) +
+  coord_cartesian(clip = "off") +
   labs(
     title = "Unique Attendees Across All Sessions",
     subtitle = paste0(nrow(registered_all), " registered or attended"),
@@ -1150,7 +1183,8 @@ p_overall_combined <- ggplot(
     panel.grid.major.x = element_blank(),
     panel.grid.minor = element_blank(),
     plot.title = element_text(face = "bold"),
-    plot.subtitle = element_text(color = "grey40")
+    plot.subtitle = element_text(color = "grey40"),
+    plot.margin = margin(5, 120, 5, 5)
   )
 
 
@@ -1306,10 +1340,10 @@ p_flow_grade <- ggplot(
   ) +
   scale_x_discrete(
     limits = c(
-      "Feb Seminar\n(45 min)",
+      "Feb Seminar\n(1h)",
       "OLC\nRegistered",
-      "Apr Day 1\n(2h 40m)",
-      "Apr Day 2\n(2h 40m)"
+      "Apr Day 1\n(3h)",
+      "Apr Day 2\n(3h)"
     ),
     expand = c(0.12, 0.05)
   ) +
@@ -1337,7 +1371,7 @@ p_flow_grade <- ggplot(
 # --- Save figures ----------------------------------------------------------
 
 ggsave(
-  "blog-post/fig-attendees-by-event.png",
+  here::here("blog-post/fig-attendees-by-event.png"),
   p_attendees,
   width = 7,
   height = 5,
@@ -1345,7 +1379,7 @@ ggsave(
   bg = "white"
 )
 ggsave(
-  "blog-post/fig-watchtime-by-event.png",
+  here::here("blog-post/fig-watchtime-by-event.png"),
   p_watchtime,
   width = 7,
   height = 5,
@@ -1353,7 +1387,7 @@ ggsave(
   bg = "white"
 )
 ggsave(
-  "blog-post/fig-participant-flow.png",
+  here::here("blog-post/fig-participant-flow.png"),
   p_flow_headcount,
   width = 10,
   height = 6,
@@ -1361,7 +1395,7 @@ ggsave(
   bg = "white"
 )
 ggsave(
-  "blog-post/fig-flow-pmu.png",
+  here::here("blog-post/fig-flow-pmu.png"),
   p_flow_pmu,
   width = 12,
   height = 7,
@@ -1369,7 +1403,7 @@ ggsave(
   bg = "white"
 )
 ggsave(
-  "blog-post/fig-attendees-grade.png",
+  here::here("blog-post/fig-attendees-grade.png"),
   p_attendees_grade,
   width = 8,
   height = 5,
@@ -1377,7 +1411,7 @@ ggsave(
   bg = "white"
 )
 ggsave(
-  "blog-post/fig-watchtime-grade.png",
+  here::here("blog-post/fig-watchtime-grade.png"),
   p_watchtime_grade,
   width = 8,
   height = 5,
@@ -1385,7 +1419,7 @@ ggsave(
   bg = "white"
 )
 ggsave(
-  "blog-post/fig-flow-grade.png",
+  here::here("blog-post/fig-flow-grade.png"),
   p_flow_grade,
   width = 12,
   height = 7,
@@ -1404,7 +1438,7 @@ combined <- (p_attendees | p_overall_combined) /
     )
   )
 ggsave(
-  "blog-post/attendance-figures.png",
+  here::here("blog-post/attendance-figures.png"),
   combined,
   width = 9,
   height = 9,
@@ -1424,7 +1458,7 @@ combined_grade <- ((p_attendees_grade | p_overall_combined) +
     )
   )
 ggsave(
-  "blog-post/attendance-figures-grade.png",
+  here::here("blog-post/attendance-figures-grade.png"),
   combined_grade,
   width = 9,
   height = 6,
