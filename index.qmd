@@ -1,6 +1,10 @@
 ---
 title: "AI for Coding"
 sidebar: false
+format:
+  html:
+    include-in-header:
+      - text: "<style>.quarto-title-meta{display:none}</style>"
 ---
 
 ## What this course is about
@@ -22,8 +26,8 @@ multi-step analytical tasks to an AI agent.
 | **Apply** | AI assistance to read, revise, and reuse existing code; plan and execute complex tasks with agentic workflows; engineer context with `#tools`, `skills`, and `/agents` |
 | **Take control** | Safeguard sensitive data, follow WB responsible-use guidelines, and supervise AI-generated code through iterative review |
 
-All materials — slides, written guides, exercises, and **recordings** — are
-available on this site for self-paced review.
+All materials — slides, written guides, exercises, and some pre-recorded sessions
+are available on this site for self-paced review.
 
 ## Recorded materials
 

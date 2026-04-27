@@ -1,24 +1,17 @@
 ---
 title: "About"
 sidebar: false
+about:
+  id: about-author
+  template: trestles
+  image: assets/img/eduard-bukin.jpg
+  image-shape: round
 ---
 
-## Author
+:::{#about-author}
 
-### Eduard Bukin
+## Eduard Bukin
 
-:::: {.columns}
-
-::: {.column width="25%"}
-![](assets/img/eduard-bukin.jpg){style="border-radius: 50%; width: 100%;" .no-lightbox}
-
-*Economist passionate about spatial data and poverty analysis*
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="70%"}
 Eduard Bukin is an experienced economist, data scientist, and statistician
 spending the last decade at the World Bank, UN, and academia. His career has focused
 on econometrics, economic research, microeconomics, and statistics, with a
@@ -31,11 +24,11 @@ programming languages such as R, Python, STATA, and GIS tools. He holds a
 Master's degree in Rural Development from Ghent University and pursues a Ph.D. in
 Agricultural Economics from Justus Liebig University Giessen.
 
-- Email: [ebukin@worldbank.org](mailto:ebukin@worldbank.org)
-- GitHub/Website: [EBukin](https://github.com/EBukin)
-:::
+[{{< fa envelope >}} Email](mailto:ebukin@worldbank.org){.btn .btn-outline-dark .btn-sm}
+[{{< fa brands github >}} GitHub](https://github.com/EBukin){.btn .btn-outline-dark .btn-sm}
+[{{< ai google-scholar >}} Google Scholar](https://scholar.google.com/citations?user=REPLACE_WITH_YOUR_ID){.btn .btn-outline-dark .btn-sm}
 
-::::
+:::
 
 ## License & Reuse
 

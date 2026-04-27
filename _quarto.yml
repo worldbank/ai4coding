@@ -42,12 +42,19 @@ website:
         aria-label: GitHub
       - text: "Internal Resources"
         menu:
+          - text: "WB AI‑Assisted Coding for Economists"
+            href: https://worldbankgroup.sharepoint.com/:u:/r/sites/FPG/SitePages/PublishingPages/ai4econ-coding-1776997693304.aspx?csf=1&web=1&e=jx31Xp
+          - text: "GeoPov project"
+            href: https://worldbankgroup.sharepoint.com/:u:/r/sites/FPG/SitePages/PublishingPages/GeoPov-1770874931043.aspx?csf=1&web=1&e=aAiQuQ
+          - text: "geoPovLearn"
+            href: https://worldbank.github.io/geoPovLearn/
+          - text: "Open Source @ WB"
+            href: https://opensource.worldbank.org/
           - text: "Prosperity VP"
             href: https://worldbankgroup.sharepoint.com/sites/WBgge/
           - text: "Distributional Impact of Policies Dep."
             href: https://worldbankgroup.sharepoint.com/sites/wbpoverty
-          - text: "geoPovLearn"
-            href: https://worldbank.github.io/geoPovLearn/
+
 
   sidebar:
     - title: Setup
@@ -108,7 +115,7 @@ execute:
 author:
   - name: Eduard Bukin
     email: ebukin@worldbank.org
-    url: https://github.com/ebukin
+    url: https://github.com/EBukin
     affiliations: Distributional Impact of Policies. Fiscal Policy and Growth Department
 
 format:
