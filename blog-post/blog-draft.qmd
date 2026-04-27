@@ -5,8 +5,13 @@
 ## The demand is real
 
 In February 2026, the World Bank's Distributional Impact of Policies
-department launched an event series aimed at Revolutionizing Analysis in
-Stata and R using the AI Agent-Assisted Workflow and GitHub
+Unit launched an event series aimed at Revolutionizing Stata (and R/Python)
+coding workflow among economists by using generative AI agents and
+GitHub Copilot. With the first seminar we aimed at introducing the
+key concept of AI-Assisted coding, such as Integrated Development
+Environments (IDEs)
+
+
 CopilotJustndefined" seminar on AI-assisted coding with Positron, the
 new data science IDE from Posit. The response was immediate: colleagues
 across units asked for more. That seminar led directly to a full two-day
