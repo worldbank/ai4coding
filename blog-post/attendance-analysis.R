@@ -277,11 +277,7 @@ day1_status <- person_flow |>
     .by = person_id
   ) |>
   mutate(
-    day1 = case_when(
-      session == "morning" ~ "Morning",
-      session == "evening" ~ "Evening",
-      TRUE ~ "Both sessions"
-    )
+    day1 = if_else(session == "morning", "Morning", "Evening")
   ) |>
   select(person_id, day1)
 
@@ -292,11 +288,7 @@ day2_status <- person_flow |>
     .by = person_id
   ) |>
   mutate(
-    day2 = case_when(
-      session == "morning" ~ "Morning",
-      session == "evening" ~ "Evening",
-      TRUE ~ "Both sessions"
-    )
+    day2 = if_else(session == "morning", "Morning", "Evening")
   ) |>
   select(person_id, day2)
 
@@ -325,11 +317,7 @@ day1_time <- person_flow |>
     .by = person_id
   ) |>
   mutate(
-    day1 = case_when(
-      day1_sess == "morning" ~ "Morning",
-      day1_sess == "evening" ~ "Evening",
-      TRUE ~ "Both sessions"
-    )
+    day1 = if_else(day1_sess == "morning", "Morning", "Evening")
   ) |>
   select(person_id, day1_min, day1)
 
@@ -341,11 +329,7 @@ day2_time <- person_flow |>
     .by = person_id
   ) |>
   mutate(
-    day2 = case_when(
-      day2_sess == "morning" ~ "Morning",
-      day2_sess == "evening" ~ "Evening",
-      TRUE ~ "Both sessions"
-    )
+    day2 = if_else(day2_sess == "morning", "Morning", "Evening")
   ) |>
   select(person_id, day2_min, day2)
 
@@ -472,16 +456,10 @@ p_watchtime <- ggplot(
 
 alluvial_headcount <- all_persons_full |>
   mutate(
-    feb = factor(feb, levels = c("Attended", "Did not attend")),
-    olc_reg = factor(olc_reg, levels = c("Registered", "Not registered")),
-    day1 = factor(
-      day1,
-      levels = c("Morning", "Evening", "Both sessions", "Did not attend")
-    ),
-    day2 = factor(
-      day2,
-      levels = c("Morning", "Evening", "Both sessions", "Did not attend")
-    )
+    feb = factor(feb, levels = c("Did not attend", "Attended")),
+    olc_reg = factor(olc_reg, levels = c("Not registered", "Registered")),
+    day1 = factor(day1, levels = c("Did not attend", "Evening", "Morning")),
+    day2 = factor(day2, levels = c("Did not attend", "Evening", "Morning"))
   ) |>
   count(feb, olc_reg, day1, day2, name = "n")
 
@@ -494,9 +472,25 @@ p_flow_headcount <- ggplot(
   alluvial_headcount,
   aes(axis1 = feb, axis2 = olc_reg, axis3 = day1, axis4 = day2, y = n)
 ) +
-  geom_alluvium(aes(fill = feb), width = 1 / 6, alpha = 0.55, knot.pos = 0.4) +
-  geom_stratum(width = 1 / 4, fill = "grey90", color = "grey40") +
-  geom_text(stat = "stratum", aes(label = after_stat(stratum)), size = 2.8) +
+  geom_alluvium(
+    aes(fill = feb),
+    width = 1 / 4,
+    alpha = 0.55,
+    knot.pos = 0.4,
+    aes.bind = "flows"
+  ) +
+  geom_stratum(
+    width = 1 / 3,
+    fill = "grey92",
+    color = "grey30",
+    linewidth = 0.5
+  ) +
+  geom_text(
+    stat = "stratum",
+    aes(label = after_stat(stratum)),
+    size = 3,
+    fontface = "bold"
+  ) +
   scale_x_discrete(
     limits = c(
       "Feb Seminar\n(45 min)",
@@ -938,31 +932,47 @@ alluvial_pmu <- all_persons_full |>
       pmu_group,
       levels = c(top_pmus, "Other", "Not in roster")
     ),
-    feb = factor(feb, levels = c("Attended", "Did not attend")),
-    olc_reg = factor(olc_reg, levels = c("Registered", "Not registered")),
-    day1 = factor(
-      day1,
-      levels = c("Morning", "Evening", "Both sessions", "Did not attend")
+    fill_group = if_else(
+      feb == "Did not attend" &
+        day1 == "Did not attend" &
+        day2 == "Did not attend",
+      "No-show",
+      as.character(pmu_group)
     ),
-    day2 = factor(
-      day2,
-      levels = c("Morning", "Evening", "Both sessions", "Did not attend")
-    )
+    fill_group = factor(
+      fill_group,
+      levels = c(top_pmus, "Other", "Not in roster", "No-show")
+    ),
+    feb = factor(feb, levels = c("Did not attend", "Attended")),
+    olc_reg = factor(olc_reg, levels = c("Not registered", "Registered")),
+    day1 = factor(day1, levels = c("Did not attend", "Evening", "Morning")),
+    day2 = factor(day2, levels = c("Did not attend", "Evening", "Morning"))
   ) |>
-  count(pmu_group, feb, olc_reg, day1, day2, name = "n")
+  count(fill_group, feb, olc_reg, day1, day2, name = "n")
 
 p_flow_pmu <- ggplot(
   alluvial_pmu,
   aes(axis1 = feb, axis2 = olc_reg, axis3 = day1, axis4 = day2, y = n)
 ) +
   geom_alluvium(
-    aes(fill = pmu_group),
-    width = 1 / 6,
+    aes(fill = fill_group),
+    width = 1 / 4,
     alpha = 0.7,
-    knot.pos = 0.4
+    knot.pos = 0.4,
+    aes.bind = "flows"
   ) +
-  geom_stratum(width = 1 / 4, fill = "grey90", color = "grey40") +
-  geom_text(stat = "stratum", aes(label = after_stat(stratum)), size = 2.6) +
+  geom_stratum(
+    width = 1 / 3,
+    fill = "grey92",
+    color = "grey30",
+    linewidth = 0.5
+  ) +
+  geom_text(
+    stat = "stratum",
+    aes(label = after_stat(stratum)),
+    size = 3,
+    fontface = "bold"
+  ) +
   scale_x_discrete(
     limits = c(
       "Feb Seminar\n(45 min)",
@@ -972,7 +982,11 @@ p_flow_pmu <- ggplot(
     ),
     expand = c(0.12, 0.05)
   ) +
-  scale_fill_manual(values = pmu_colors, name = "Unit (PMU)") +
+  scale_fill_manual(
+    values = c(pmu_colors, "No-show" = "#D9D9D9"),
+    name = "Unit (PMU)",
+    breaks = c(top_pmus, "Other", "Not in roster")
+  ) +
   labs(
     title = "Participant Flow Across Events by Unit (PMU)",
     subtitle = "581 registered or attended | width ~ number of people",
@@ -1111,32 +1125,40 @@ alluvial_grade <- all_persons_full |>
       grade %in% c("GH", "GI", "GJ", "GK", "GL", "GM", "GN") ~ "GH+",
       TRUE ~ "NA"
     ),
-    grade_group = factor(grade_group, levels = grade_levels),
-    feb = factor(feb, levels = c("Attended", "Did not attend")),
-    olc_reg = factor(olc_reg, levels = c("Not registered", "Registered")),
-    day1 = factor(
-      day1,
-      levels = c("Morning", "Evening", "Both sessions", "Did not attend")
+    fill_group = factor(
+      grade_group,
+      levels = c("NA", "ST", "ET/EC", "≤GE", "GF", "GG", "GH+")
     ),
-    day2 = factor(
-      day2,
-      levels = c("Morning", "Evening", "Both sessions", "Did not attend")
-    )
+    feb = factor(feb, levels = c("Did not attend", "Attended")),
+    olc_reg = factor(olc_reg, levels = c("Not registered", "Registered")),
+    day1 = factor(day1, levels = c("Did not attend", "Evening", "Morning")),
+    day2 = factor(day2, levels = c("Did not attend", "Evening", "Morning"))
   ) |>
-  count(grade_group, feb, olc_reg, day1, day2, name = "n")
+  count(fill_group, feb, olc_reg, day1, day2, name = "n")
 
 p_flow_grade <- ggplot(
   alluvial_grade,
   aes(axis1 = feb, axis2 = olc_reg, axis3 = day1, axis4 = day2, y = n)
 ) +
   geom_alluvium(
-    aes(fill = grade_group),
-    width = 1 / 6,
+    aes(fill = fill_group),
+    width = 1 / 4,
     alpha = 0.7,
-    knot.pos = 0.4
+    knot.pos = 0.4,
+    aes.bind = "alluvia"
   ) +
-  geom_stratum(width = 1 / 4, fill = "grey90", color = "grey40") +
-  geom_text(stat = "stratum", aes(label = after_stat(stratum)), size = 2.6) +
+  geom_stratum(
+    width = 1 / 3,
+    fill = "grey92",
+    color = "grey30",
+    linewidth = 0.5
+  ) +
+  geom_text(
+    stat = "stratum",
+    aes(label = after_stat(stratum)),
+    size = 3,
+    fontface = "bold"
+  ) +
   scale_x_discrete(
     limits = c(
       "Feb Seminar\n(45 min)",
@@ -1146,7 +1168,11 @@ p_flow_grade <- ggplot(
     ),
     expand = c(0.12, 0.05)
   ) +
-  scale_fill_manual(values = grade_colors, name = "Grade") +
+  scale_fill_manual(
+    values = grade_colors,
+    name = "Grade",
+    breaks = c("NA", "ST", "ET/EC", "≤GE", "GF", "GG", "GH+")
+  ) +
   labs(
     title = "Participant Flow Across Events by Grade",
     subtitle = "581 registered or attended | width ~ number of people",
