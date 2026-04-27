@@ -197,7 +197,7 @@ roster_raw <- list.files(roster_dir, pattern = "\\.csv$", full.names = TRUE) |>
   map(read_roster) |>
   bind_rows()
 
-# Extract 6 profile fields; use lowercased email as join key
+# Extract profile fields; use lowercased email as join key
 roster_profile <- roster_raw |>
   transmute(
     person_id = str_to_lower(str_trim(`Person E-mail`)),
@@ -205,50 +205,12 @@ roster_profile <- roster_raw |>
     org_name = `Person Organization Name`,
     org_acronym = `Person Custom3/Person ORG Acronym`,
     city = `Person City`,
-    grade = `Person Custom4/Person Grade`
+    grade = `Person Custom4/Person Grade`,
+    gender = `Person Gender`,
+    hq_co = `Additional Profile Fields HQ/CO Flag`
   ) |>
   filter(!is.na(person_id), person_id != "") |>
   distinct(person_id, .keep_all = TRUE)
-
-# Full join: everyone who attended OR registered
-# Roster-only rows (registered but no-show) get "Did not attend" for all events
-all_persons_full <- full_join(
-  all_persons,
-  roster_profile,
-  join_by(person_id)
-) |>
-  mutate(
-    feb = replace_na(feb, "Did not attend"),
-    day1 = replace_na(day1, "Did not attend"),
-    day2 = replace_na(day2, "Did not attend"),
-    # OLC registration = person appeared in the April workshop roster
-    olc_reg = if_else(!is.na(pmu), "Registered", "Not registered")
-  )
-
-all_persons_full
-
-
-# ============================================================================
-# FIGURES
-# ============================================================================
-
-library(ggalluvial)
-library(ggrepel)
-library(scales)
-library(patchwork)
-
-# --- Shared palette --------------------------------------------------------
-
-session_colors <- c(
-  "Single session" = "#2171B5",
-  "Morning" = "#2171B5",
-  "Evening" = "#6BAED6"
-)
-
-flow_colors <- c(
-  "Attended" = "#2171B5",
-  "Did not attend" = "#D9D9D9"
-)
 
 # --- Data prep: person-level presence per event stage & session -------------
 
@@ -301,6 +263,46 @@ all_persons <- tibble(person_id = unique(attendance$person_id)) |>
     day1 = replace_na(day1, "Did not attend"),
     day2 = replace_na(day2, "Did not attend")
   )
+
+# Full join: everyone who attended OR registered
+# Roster-only rows (registered but no-show) get "Did not attend" for all events
+all_persons_full <- full_join(
+  all_persons,
+  roster_profile,
+  join_by(person_id)
+) |>
+  mutate(
+    feb = replace_na(feb, "Did not attend"),
+    day1 = replace_na(day1, "Did not attend"),
+    day2 = replace_na(day2, "Did not attend"),
+    # OLC registration = person appeared in the April workshop roster
+    olc_reg = if_else(!is.na(pmu), "Registered", "Not registered")
+  )
+
+all_persons_full
+
+
+# ============================================================================
+# FIGURES
+# ============================================================================
+
+library(ggalluvial)
+library(ggrepel)
+library(scales)
+library(patchwork)
+
+# --- Shared palette --------------------------------------------------------
+
+session_colors <- c(
+  "Single session" = "#2171B5",
+  "Morning" = "#2171B5",
+  "Evening" = "#6BAED6"
+)
+
+flow_colors <- c(
+  "Attended" = "#2171B5",
+  "Did not attend" = "#D9D9D9"
+)
 
 # --- Aggregate watch-time per person per stage for Figure 4 ----------------
 
@@ -397,7 +399,7 @@ p_attendees <- ggplot(
   scale_y_continuous(expand = expansion(mult = c(0, 0.12))) +
   labs(
     title = "Unique Attendees per Event",
-    subtitle = "Apr workshop offered morning & evening sessions (same content)",
+    # subtitle = "Apr workshop offered morning & evening sessions (same content)",
     x = NULL,
     y = "Unique attendees"
   ) +
@@ -477,7 +479,7 @@ p_flow_headcount <- ggplot(
     width = 1 / 4,
     alpha = 0.55,
     knot.pos = 0.4,
-    aes.bind = "flows"
+    aes.bind = "alluvia"
   ) +
   geom_stratum(
     width = 1 / 3,
@@ -908,17 +910,17 @@ p_flow_hours <- ggplot() +
 top_pmus <- c("DEC", "WKP", "AFE", "EAP", "AFW", "ECA", "MAP", "LCR", "SAR")
 
 pmu_colors <- c(
-  "DEC" = "#08519C",
-  "WKP" = "#2171B5",
-  "AFE" = "#4292C6",
-  "EAP" = "#6BAED6",
-  "AFW" = "#9ECAE1",
-  "ECA" = "#C6DBEF",
-  "MAP" = "#74C476",
-  "LCR" = "#41AB5D",
-  "SAR" = "#006D2C",
-  "Other" = "#BDBDBD",
-  "Not in roster" = "#F0F0F0"
+  "DEC" = "#7B2D8B",
+  "WKP" = "#D94E0F",
+  "AFE" = "#F4A11F",
+  "EAP" = "#1B998B",
+  "AFW" = "#E84855",
+  "ECA" = "#5C4D8A",
+  "MAP" = "#0D7BC7",
+  "LCR" = "#3BAA6E",
+  "SAR" = "#C9523B",
+  "Other" = "#888888",
+  "NA" = "#D0D0D0"
 )
 
 alluvial_pmu <- all_persons_full |>
@@ -926,11 +928,11 @@ alluvial_pmu <- all_persons_full |>
     pmu_group = case_when(
       pmu %in% top_pmus ~ pmu,
       !is.na(pmu) ~ "Other",
-      TRUE ~ "Not in roster"
+      TRUE ~ "NA"
     ),
     pmu_group = factor(
       pmu_group,
-      levels = c(top_pmus, "Other", "Not in roster")
+      levels = c(top_pmus, "Other", "NA")
     ),
     fill_group = if_else(
       feb == "Did not attend" &
@@ -941,7 +943,7 @@ alluvial_pmu <- all_persons_full |>
     ),
     fill_group = factor(
       fill_group,
-      levels = c(top_pmus, "Other", "Not in roster", "No-show")
+      levels = c(top_pmus, "Other", "NA", "No-show")
     ),
     feb = factor(feb, levels = c("Did not attend", "Attended")),
     olc_reg = factor(olc_reg, levels = c("Not registered", "Registered")),
@@ -959,7 +961,7 @@ p_flow_pmu <- ggplot(
     width = 1 / 4,
     alpha = 0.7,
     knot.pos = 0.4,
-    aes.bind = "flows"
+    aes.bind = "alluvia"
   ) +
   geom_stratum(
     width = 1 / 3,
@@ -985,7 +987,7 @@ p_flow_pmu <- ggplot(
   scale_fill_manual(
     values = c(pmu_colors, "No-show" = "#D9D9D9"),
     name = "Unit (PMU)",
-    breaks = c(top_pmus, "Other", "Not in roster")
+    breaks = c(top_pmus, "Other", "NA")
   ) +
   labs(
     title = "Participant Flow Across Events by Unit (PMU)",
@@ -1003,13 +1005,156 @@ p_flow_pmu <- ggplot(
   )
 
 
-# --- Figure 6-8: Grade bar charts + alluvial -------------------------------
+# --- Figure 5b-e: Unique attendees by Grade, PMU, Gender & Location --------
 
 grade_levels <- c("ST", "ET/EC", "≤GE", "GF", "GG", "GH+", "NA")
 grade_colors <- setNames(
   c(RColorBrewer::brewer.pal(6, "Paired"), "#F0F0F0"),
   grade_levels
 )
+
+attendees_only <- all_persons_full |>
+  filter(
+    feb != "Did not attend" |
+      day1 != "Did not attend" |
+      day2 != "Did not attend"
+  )
+
+# All registered or attended (includes no-shows)
+registered_all <- all_persons_full
+
+unique_by_grade <- registered_all |>
+  mutate(
+    grade_group = case_when(
+      grade %in% c("UC", "UA", "UJ") ~ "ST",
+      str_starts(grade, "ET") | str_starts(grade, "EC") ~ "ET/EC",
+      grade %in% c("GA", "GB", "GC", "GD", "GE") ~ "≤GE",
+      grade == "GF" ~ "GF",
+      grade == "GG" ~ "GG",
+      grade %in% c("GH", "GI", "GJ", "GK", "GL", "GM", "GN") ~ "GH+",
+      TRUE ~ "NA"
+    ),
+    grade_group = factor(grade_group, levels = grade_levels)
+  ) |>
+  count(grade_group, name = "n") |>
+  mutate(pct = n / sum(n))
+
+unique_by_pmu <- registered_all |>
+  mutate(
+    pmu_group = case_when(
+      pmu %in% top_pmus ~ pmu,
+      !is.na(pmu) ~ "Other",
+      TRUE ~ "NA"
+    ),
+    pmu_group = factor(pmu_group, levels = c(top_pmus, "Other", "NA"))
+  ) |>
+  count(pmu_group, name = "n") |>
+  mutate(pct = n / sum(n))
+
+unique_by_gender <- registered_all |>
+  mutate(gender_group = replace_na(gender, "NA")) |>
+  count(gender_group, name = "n") |>
+  mutate(pct = n / sum(n))
+
+unique_by_hqco <- registered_all |>
+  mutate(hqco_group = replace_na(hq_co, "NA")) |>
+  count(hqco_group, name = "n") |>
+  mutate(pct = n / sum(n))
+
+gender_colors <- c("Male" = "#2166AC", "Female" = "#D6604D", "NA" = "#BBBBBB")
+hqco_colors <- c("HQ" = "#4DAC26", "CO" = "#B45E00", "NA" = "#BBBBBB")
+
+unique_combined <- bind_rows(
+  unique_by_grade |>
+    transmute(
+      bar = "By Grade",
+      group = as.character(grade_group),
+      n,
+      pct,
+      fill_key = as.character(grade_group)
+    ),
+  unique_by_pmu |>
+    transmute(
+      bar = "By Unit (PMU)",
+      group = as.character(pmu_group),
+      n,
+      pct,
+      fill_key = paste0("pmu_", as.character(pmu_group))
+    ),
+  unique_by_gender |>
+    transmute(
+      bar = "By Gender",
+      group = as.character(gender_group),
+      n,
+      pct,
+      fill_key = paste0("g_", gender_group)
+    ),
+  unique_by_hqco |>
+    transmute(
+      bar = "By Location",
+      group = as.character(hqco_group),
+      n,
+      pct,
+      fill_key = paste0("h_", hqco_group)
+    )
+) |>
+  mutate(
+    bar = factor(
+      bar,
+      levels = c("By Grade", "By Unit (PMU)", "By Gender", "By Location")
+    ),
+    fill_key = factor(
+      fill_key,
+      levels = c(
+        grade_levels,
+        paste0("pmu_", c(top_pmus, "Other", "NA")),
+        paste0("g_", c("Male", "Female", "NA")),
+        paste0("h_", c("HQ", "CO", "NA"))
+      )
+    )
+  )
+
+all_fill_colors <- c(
+  grade_colors,
+  setNames(unname(pmu_colors), paste0("pmu_", names(pmu_colors))),
+  setNames(unname(gender_colors), paste0("g_", names(gender_colors))),
+  setNames(unname(hqco_colors), paste0("h_", names(hqco_colors)))
+)
+
+p_overall_combined <- ggplot(
+  unique_combined,
+  aes(x = bar, y = n, fill = fill_key)
+) +
+  geom_col(width = 0.55, color = "white", linewidth = 0.3) +
+  geom_text(
+    aes(
+      label = paste0(group, ": ", n, " (", round(pct * 100), "%)"),
+      colour = fill_key
+    ),
+    position = position_stack(vjust = 1),
+    vjust = -0.3,
+    size = 2.5,
+    fontface = "bold"
+  ) +
+  scale_fill_manual(values = all_fill_colors, guide = "none") +
+  scale_colour_manual(values = all_fill_colors, guide = "none") +
+  scale_y_continuous(expand = expansion(mult = c(0, 0)), limits = c(0, 600)) +
+  labs(
+    title = "Unique Attendees Across All Sessions",
+    subtitle = paste0(nrow(registered_all), " registered or attended"),
+    x = NULL,
+    y = "Unique attendees"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor = element_blank(),
+    plot.title = element_text(face = "bold"),
+    plot.subtitle = element_text(color = "grey40")
+  )
+
+
+# --- Figure 6-8: Grade bar charts + alluvial -------------------------------
 
 # Join grade groups onto person_flow
 person_flow_grade <- person_flow |>
@@ -1249,7 +1394,7 @@ ggsave(
 )
 
 # Combined panel — overview (session breakdown)
-combined <- (p_attendees | p_watchtime) /
+combined <- (p_attendees | p_overall_combined) /
   p_flow_headcount /
   p_flow_pmu +
   plot_annotation(
@@ -1261,15 +1406,16 @@ combined <- (p_attendees | p_watchtime) /
 ggsave(
   "blog-post/attendance-figures.png",
   combined,
-  width = 7,
-  height = 8,
+  width = 9,
+  height = 9,
   dpi = 300,
   scale = 1.5,
   bg = "white"
 )
 
 # Combined panel — grade breakdown
-combined_grade <- (p_attendees_grade | p_watchtime_grade) /
+combined_grade <- ((p_attendees_grade | p_overall_combined) +
+  plot_layout(widths = c(2, 3))) /
   p_flow_grade +
   plot_annotation(
     title = "AI-Assisted Coding Event Series — Grade Breakdown",
@@ -1280,9 +1426,9 @@ combined_grade <- (p_attendees_grade | p_watchtime_grade) /
 ggsave(
   "blog-post/attendance-figures-grade.png",
   combined_grade,
-  width = 7,
-  height = 7,
+  width = 9,
+  height = 6,
   dpi = 300,
-  scale = 1.8,
+  scale = 1.5,
   bg = "white"
 )
