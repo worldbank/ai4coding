@@ -57,3 +57,5 @@ _freeze/
 
 .DS_Store
 **/*_files/
+blog-post/**/*.csv
+blog-post/**/*.xlsx
