@@ -74,6 +74,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>.quarto-title-meta{display:none}</style>
 
 
 <link rel="stylesheet" href="assets/custom.css">
@@ -286,7 +287,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Setup</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./methods/index.html"> 
+    <a class="nav-link" href="./methods/index.qmd"> 
 <span class="menu-text">Methods</span></a>
   </li>  
   <li class="nav-item">
@@ -306,16 +307,28 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-internal-resources">    
         <li>
+    <a class="dropdown-item" href="https://worldbankgroup.sharepoint.com/:u:/r/sites/FPG/SitePages/PublishingPages/ai4econ-coding-1776997693304.aspx?csf=1&amp;web=1&amp;e=jx31Xp">
+ <span class="dropdown-text">WB AI‑Assisted Coding for Economists</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://worldbankgroup.sharepoint.com/:u:/r/sites/FPG/SitePages/PublishingPages/GeoPov-1770874931043.aspx?csf=1&amp;web=1&amp;e=aAiQuQ">
+ <span class="dropdown-text">GeoPov project</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://worldbank.github.io/geoPovLearn/">
+ <span class="dropdown-text">geoPovLearn</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://opensource.worldbank.org/">
+ <span class="dropdown-text">Open Source @ WB</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="https://worldbankgroup.sharepoint.com/sites/WBgge/">
  <span class="dropdown-text">Prosperity VP</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="https://worldbankgroup.sharepoint.com/sites/wbpoverty">
  <span class="dropdown-text">Distributional Impact of Policies Dep.</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="https://worldbank.github.io/geoPovLearn/">
- <span class="dropdown-text">geoPovLearn</span></a>
   </li>  
     </ul>
   </li>
@@ -336,9 +349,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#course-overview-and-learning-objectives" id="toc-course-overview-and-learning-objectives" class="nav-link active" data-scroll-target="#course-overview-and-learning-objectives">Course Overview and learning objectives</a></li>
-  <li><a href="#format-and-logistics" id="toc-format-and-logistics" class="nav-link" data-scroll-target="#format-and-logistics">Format and logistics</a></li>
-  <li><a href="#schedule-plan" id="toc-schedule-plan" class="nav-link" data-scroll-target="#schedule-plan">Schedule &amp; Plan</a></li>
+  <li><a href="#what-this-course-is-about" id="toc-what-this-course-is-about" class="nav-link active" data-scroll-target="#what-this-course-is-about">What this course is about</a></li>
+  <li><a href="#what-you-will-learn" id="toc-what-you-will-learn" class="nav-link" data-scroll-target="#what-you-will-learn">What you will learn</a></li>
+  <li><a href="#recorded-materials" id="toc-recorded-materials" class="nav-link" data-scroll-target="#recorded-materials">Recorded materials</a></li>
+  <li><a href="#acknowledgments" id="toc-acknowledgments" class="nav-link" data-scroll-target="#acknowledgments">Acknowledgments</a></li>
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites — Complete Before Day 1</a></li>
+  <li><a href="#day1" id="toc-day1" class="nav-link" data-scroll-target="#day1">Day 1: Introduction and Common Workflows</a></li>
+  <li><a href="#selfstudy" id="toc-selfstudy" class="nav-link" data-scroll-target="#selfstudy">Self-Study</a></li>
+  <li><a href="#day2" id="toc-day2" class="nav-link" data-scroll-target="#day2">Day 2: Advanced AI Features</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/worldbank/ai4coding/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/worldbank/ai4coding/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -357,7 +375,7 @@ ul.task-list li input[type="checkbox"] {
   <div class="quarto-title-meta-heading">Affiliation</div>
   
     <div class="quarto-title-meta-contents">
-    <p class="author"><a href="https://github.com/ebukin">Eduard Bukin</a> <a href="mailto:ebukin@worldbank.org" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0002-1003-1260" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+    <p class="author"><a href="https://github.com/EBukin">Eduard Bukin</a> <a href="mailto:ebukin@worldbank.org" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
   </div>
   <div class="quarto-title-meta-contents">
         <p class="affiliation">
@@ -378,119 +396,95 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="course-overview-and-learning-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="course-overview-and-learning-objectives">Course Overview and learning objectives</h2>
-<p>This course aims to equip economists who regularly use Stata and other modern statistical programming languages to leverage AI-assisted coding tools effectively and responsibly. It introduces participants to AI coding assistants (GitHub Copilot) within the Positron IDE, across two 3-hour sessions with a self-study period in between and afterwards.</p>
-<p>By the end of this course, participants will be able to:</p>
-<ul>
-<li><p><strong>Understand</strong></p>
-<ul>
-<li>Core LLM concepts (tokens, prompts, context windows, agents) and how they affect AI-assisted coding</li>
-<li>Strengths and limitations of AI code assistants for analytical work</li>
-</ul></li>
-<li><p><strong>Apply</strong></p>
-<ul>
-<li>AI assistant for 3R: read, revise, and reuse existing code.</li>
-<li>Prompts engineering and context management for precise AI answers and code generation</li>
-<li>Planning and executing complex tasks with multi-step agentic workflows</li>
-<li><code>#tools</code>, <code>skills</code>, and <code>/agents</code></li>
-<li>Supervise and course-correct AI-generated code through iterative review</li>
-</ul></li>
-<li><p><strong>Take control</strong></p>
-<ul>
-<li>Apply data-security practices when using AI tools with sensitive or confidential data</li>
-<li>Follow responsible-use guidelines for AI-assisted research workflows</li>
-</ul></li>
-</ul>
+<section id="what-this-course-is-about" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-course-is-about">What this course is about</h2>
+<p>AI coding assistants can do much more than autocomplete. With the right setup, they read your data dictionaries, generate analysis code in Stata, R, or Python, check it against coding standards, and iterate until the output is correct — while you stay in control of every step.</p>
+<p>This course teaches you how. Two 3-hour live sessions, a self-study period in between, and structured exercises take you from first setup to delegating multi-step analytical tasks to an AI agent.</p>
 </section>
-<section id="format-and-logistics" class="level2">
-<h2 class="anchored" data-anchor-id="format-and-logistics">Format and logistics</h2>
-<p>This course is designed to be self-explanatory and self-paced, with a mix of live sessions, pre-recorded materials, written guides, and exercises. The main learning happens through doing, so active participation in exercises and practice is highly encouraged.</p>
-<p>The course consis of:</p>
-<ul>
-<li><p><a href="./prerequisites/index.html"><strong>Prerequiisites</strong></a>: detailed instructions on software and github setup.</p></li>
-<li><p><a href="./day1/index.html"><strong>Day 1</strong></a>: introduction to AI-assisted coding, setup, and live demo, which covers:</p>
-<ul>
-<li>Basic workflow of AI-assisted coding for data cleaning, preparation, and exploratory analysis</li>
-<li>Key methods of securing sensitive data when using AI tools: working with metadata, ananonymizing data, and synthetic data generation</li>
-<li>Key AI concepts: tokens, prompts, context windows, agents, and how they affect AI-assisted coding</li>
-<li>Strengths and limitations of AI code assistants for analytical work</li>
-</ul></li>
-<li><p><a href="./selfstudy/index.html"><strong>Self-study</strong></a>: 2–3 days of independent practice based on the provided exercises and team’s channel for support.</p></li>
-<li><ul>
-<li>Main goals are to build confidence and discover how to use AI tools in your own workflow.</li>
-<li>Please share your challenges, discoveries, and questions in the Team’s chat to get support from the team and other participants.</li>
-<li>We will review common challenges and questions in the beginning of Day 2.</li>
-</ul></li>
-<li><p><a href="./day2/index.html"><strong>Day 2</strong></a>: advanced features and workflows</p>
-<ul>
-<li>Planning and executing complex tasks with multi-step agentic workflows</li>
-<li>Context engineering: <code>#tools</code>, <code>skills</code>, <code>MCP</code>, and other relevant features</li>
-<li>Agents customization: <code>/prompts</code> and <code>/agents</code></li>
-<li><code>skills</code>: integrating precise knowladge to yout analysis</li>
-<li>Q&amp;A and discussion</li>
-</ul></li>
-</ul>
-<p><strong>Materials</strong>: slide decks, written gudes, examples, exercises, and <strong>recordings</strong> for self-paced review.</p>
-<!-- ## How to start?
-
-1. Install all software and [complete all prerequisites](prerequisites/index.qmd).
-
-   - [Verify that everything works](prerequisites/verify.qmd)
-
-2. Familiarize yourself with the materials and schedule for Day 1 (see [Day 1 materials](day1/index.qmd)).
-
-3.  -->
-</section>
-<section id="schedule-plan" class="level2">
-<h2 class="anchored" data-anchor-id="schedule-plan">Schedule &amp; Plan</h2>
-<p><strong>Morning Course — In Person and Virtual</strong> <a href="https://teams.microsoft.com/meet/27612063989198?p=jK5O2M12JmSoQGPFcg">Join Teams Channel</a></p>
+<section id="what-you-will-learn" class="level2">
+<h2 class="anchored" data-anchor-id="what-you-will-learn">What you will learn</h2>
 <table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Session</th>
-<th>Date</th>
-<th>Time (ET)</th>
-</tr>
-</thead>
+<colgroup>
+<col style="width: 16%">
+<col style="width: 83%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td>1</td>
-<td>Mon Apr 20</td>
-<td>9:00 AM–12:00 PM</td>
+<td><strong>Understand</strong></td>
+<td>How LLMs, tokens, context windows, and agents work — and where they fail</td>
 </tr>
 <tr class="even">
-<td>2</td>
-<td>Thu Apr 23</td>
-<td>9:00 AM–12:00 PM</td>
+<td><strong>Apply</strong></td>
+<td>AI assistance to read, revise, and reuse existing code; plan and execute complex tasks with agentic workflows; engineer context with <code>#tools</code>, <code>skills</code>, and <code>/agents</code></td>
+</tr>
+<tr class="odd">
+<td><strong>Take control</strong></td>
+<td>Safeguard sensitive data, follow WB responsible-use guidelines, and supervise AI-generated code through iterative review</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Evening Course (Repeat) — Virtual</strong> <a href="https://teams.microsoft.com/meet/22792960965888?p=7H3zxnQKgcG0elimZb">Join Teams Channel</a></p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Session</th>
-<th>Date</th>
-<th>Time (ET)</th>
-<th>Time Jakarta (GMT+7)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>Mon Apr 20</td>
-<td>9:00 PM–12:00 AM</td>
-<td>Tue Apr 21, 9:00 AM–12:00 PM</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>Thu Apr 23</td>
-<td>9:00 PM–12:00 AM</td>
-<td>Fri Apr 24, 9:00 AM–12:00 PM</td>
-</tr>
-</tbody>
-</table>
+<p>All materials — slides, written guides, exercises, and some pre-recorded sessions are available on this site for self-paced review.</p>
+</section>
+<section id="recorded-materials" class="level2">
+<h2 class="anchored" data-anchor-id="recorded-materials">Recorded materials</h2>
+<p>This course took place on April 20 and 23, 2026 at World Bank HQ in Washington, DC at the <a href="https://worldbankgroup.sharepoint.com/sites/FPG">Fiscal Policy and Growth (FPG) department</a> of <a href="https://worldbankgroup.sharepoint.com/sites/WBgge/">Prosperity Vice Presidency</a>.</p>
+<p>All recordings are available on the <a href="https://worldbankgroup.sharepoint.com/:u:/r/sites/FPG/SitePages/PublishingPages/ai4econ-coding-1776997693304.aspx?csf=1&amp;web=1&amp;e=jx31Xp">AI‑Assisted Coding for Economists: Learning Hub</a> (internal WB access only).</p>
+</section>
+<section id="acknowledgments" class="level2">
+<h2 class="anchored" data-anchor-id="acknowledgments">Acknowledgments</h2>
+<p>It was prepared and delivered by <a href="mailto:ebukin@worldbank.org">Eduard Bukin</a> <a href="https://github.com/ebukin">github.com/ebukin</a> with amazing support of Lead Economist <a href="mailto:mgenoni@worldbank.org">Maria Eugenia Genoni</a>, Knowledge Management Officer <a href="mailto:jseo@worldbank.org">Jeeyeon Seo</a>, team assistants <a href="mailto:ywang68@worldbank.org">Phoebe Yuxuan Wang</a> and <a href="mailto:cgutierrez1@worldbank.org">Claudia Gutierrez</a>, and Manager of <a href="https://worldbankgroup.sharepoint.com/sites/wbpoverty">Distributional Impact of Policies group</a> <a href="mailto:ginchauste@worldbank.org">Gabriela Inchauste</a>.</p>
+<p>This course was preceded by the seminar: <a href="https://worldbankgroup.sharepoint.com/sites/FPG/SitePages/SystemPages/Detail.aspx/Events/mode=view?_Id=2&amp;SiteURL=/sites/FPG">Revolutionize Your Analysis in Stata and R: AI Agent-Assisted Workflow with GitHub Copilot and Claude</a> held in February 2026, which was a part of the <a href="https://worldbankgroup.sharepoint.com/:u:/r/sites/FPG/SitePages/PublishingPages/GeoPov-1770874931043.aspx?csf=1&amp;web=1&amp;e=aAiQuQ">GeoPov team’s</a> learning <a href="https://worldbank.github.io/geoPovLearn/seminars/">initiative</a>. Initial seminar benefited tremendously from brainstorming, trials and errors with <a href="mailto:hstemmler@worldbank.org">Henry Stemmler</a> and Senior Economist <a href="mailto:nnguyen3@worldbank.org">Nga Thi Viet Nguyen</a>.</p>
+</section>
+<section id="prerequisites" class="level2">
+<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites — Complete Before Day 1</h2>
+<p>Set up your environment before the first session. Follow each step in order:</p>
+<ol type="1">
+<li><a href="./prerequisites/software.html"><strong>Software Setup</strong></a> — Stata 19+ MP, R 4.5+, Python 3.13+ with <code>uv</code>, Positron, Quarto 1.9+, Git</li>
+<li><a href="./prerequisites/extensions.html"><strong>Stata for Positron Extensions</strong></a> — integrate Stata into Positron</li>
+<li><a href="./prerequisites/github.html"><strong>GitHub &amp; Copilot</strong></a> — personal GitHub account and GitHub Copilot subscription</li>
+<li><a href="./prerequisites/assistant.html"><strong>Positron Assistant</strong></a> — enable the assistant and connect to GitHub Copilot</li>
+</ol>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Troubleshooting
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If something doesn’t work, check the troubleshooting section for each step:</p>
+<ul>
+<li><a href="./prerequisites/software.html#troubleshooting">Software Setup &gt; Troubleshooting</a></li>
+<li><a href="./prerequisites/extensions.html#sec-troubleshooting-stataextension">Stata Extension &gt; Troubleshooting</a></li>
+<li><a href="./prerequisites/github.html#sec-troubleshooting-ghcopilot">GitHub &amp; Copilot &gt; Troubleshooting</a></li>
+<li><a href="./prerequisites/assistant.html#sec-troubleshooting-assistant">Positron Assistant &gt; Troubleshooting</a></li>
+</ul>
+<p>If you hit a dead end, contact <a href="mailto:ITHelp@worldbankgroup.org">ITHelp@worldbankgroup.org</a>.</p>
+</div>
+</div>
+</section>
+<section id="day1" class="level2">
+<h2 class="anchored" data-anchor-id="day1">Day 1: Introduction and Common Workflows</h2>
+<p><a href="./day1/index.html"><strong>Go to Day 1 →</strong></a></p>
+<p>Verify your setup works, then dive straight into live demos — cleaning data with AI, reproducing existing analysis, and safeguarding sensitive data. You’ll leave with a working environment and a clear mental model of when AI helps and when it doesn’t.</p>
+</section>
+<section id="selfstudy" class="level2">
+<h2 class="anchored" data-anchor-id="selfstudy">Self-Study</h2>
+<p><a href="./selfstudy/index.html"><strong>Go to Self-Study Exercises →</strong></a></p>
+<p>2–3 days of independent practice. Share challenges and questions in the Teams chat.</p>
+<ul>
+<li><a href="./selfstudy/example-0.html">Example 0</a> — Test your setup</li>
+<li><a href="./selfstudy/example-1.html">Example 1</a> — Explore Positron and GitHub Copilot</li>
+<li><a href="./selfstudy/example-2.html">Example 2</a> — Understanding data with AI</li>
+<li><a href="./selfstudy/example-3.html">Example 3</a> — Reproduce, Revise, and Reuse existing analysis</li>
+</ul>
+</section>
+<section id="day2" class="level2">
+<h2 class="anchored" data-anchor-id="day2">Day 2: Advanced AI Features</h2>
+<p><a href="./day2/index.html"><strong>Go to Day 2 →</strong></a></p>
+<p>We start with your questions from self-study, then move to the advanced toolkit: delegate multi-step tasks to an AI agent, connect external tools via MCP, and build reusable prompt files and skills tailored to your analytical workflow.</p>
 
 
 </section>

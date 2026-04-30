@@ -4,13 +4,13 @@ Author
 
 Affiliation
 
-[Eduard Bukin](https://github.com/ebukin) [](mailto:ebukin@worldbank.org) [![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==)](https://orcid.org/0000-0002-1003-1260)
+[Eduard Bukin](https://github.com/EBukin) [](mailto:ebukin@worldbank.org)
 
 Distributional Impact of Policies. Fiscal Policy and Growth Department
 
 In this example, we explore how AI can support a common data science workflow: taking raw data and transforming it into a clean, analysis-ready format.
 
-Following the common agentic [data analysis workflow](../methods/common-workflow.llms.md) and principles of [safeguarding data](../methods/safeguard-data.llms.md), we adopt a **metadata-driven approach** — using a data dictionary as an intermediary between the raw data and the AI, rather than exposing sensitive data directly.
+Following the common agentic [data analysis workflow](..\methods/common-workflow.qmd) and principles of [safeguarding data](..\methods/safeguard-data.qmd), we adopt a **metadata-driven approach** — using a data dictionary as an intermediary between the raw data and the AI, rather than exposing sensitive data directly.
 
 ### Learning objectives
 
@@ -47,7 +47,7 @@ The objective is to clean and harmonize this data to the Global Monitoring Datab
 
 The full example, including suggested prompts and instructions, is in `C:/WBG/ai/ai4coding-practice/ex02-understand-data/` in the self-study section. You can follow along
 
-Let us proceed with the analysis of the data following the common agentic [data analysis workflow](../methods/common-workflow.llms.md).
+Let us proceed with the analysis of the data following the common agentic [data analysis workflow](..\methods/common-workflow.qmd).
 
 > **TIP:**
 >
@@ -155,7 +155,7 @@ Do not write any code yet.
 
 > **NOTE:**
 >
-> The data dictionary is the bridge between your data and the AI. It lets the AI reason about variable structure without ever seeing actual observations — a key [data safeguarding](../methods/safeguard-data.llms.md) practice.
+> The data dictionary is the bridge between your data and the AI. It lets the AI reason about variable structure without ever seeing actual observations — a key [data safeguarding](..\methods/safeguard-data.qmd) practice.
 
 ``` numberSource
 Write Stata code in file `01-data-dictionary.do` that creates a data
@@ -447,7 +447,7 @@ merge or reshape, verify the unit of observation with `isid`.
 
 > **IMPORTANT:**
 >
-> This step **must** be executed in a **different** AI agent session (a new chat window or a different AI tool) than the one that wrote the cleaning code. The AI that produced the code is biased toward confirming its own work — it will tend to overlook its own mistakes. A fresh agent has no prior context and will review the code on its merits alone. This follows the independent verification principle from the [common workflow](../methods/common-workflow.llms.md).
+> This step **must** be executed in a **different** AI agent session (a new chat window or a different AI tool) than the one that wrote the cleaning code. The AI that produced the code is biased toward confirming its own work — it will tend to overlook its own mistakes. A fresh agent has no prior context and will review the code on its merits alone. This follows the independent verification principle from the [common workflow](..\methods/common-workflow.qmd).
 
 ``` numberSource
 Act as an independent data auditor. I will provide:

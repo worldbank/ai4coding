@@ -37,7 +37,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-4b8b535605d27086117a1b1ae3a37b34.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-5bff2ba0731e695f8f21b1268c83896f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
@@ -47,9 +46,10 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-4171068133aede7dcdd4332bb120bd8a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-99caa98c746fb559f6a2efa6562da6f3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="site_libs/bootstrap/bootstrap-4171068133aede7dcdd4332bb120bd8a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/academicons-1.9.4/all.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/academicons-1.9.4/size.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -289,7 +289,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Setup</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./methods/index.html"> 
+    <a class="nav-link" href="./methods/index.qmd"> 
 <span class="menu-text">Methods</span></a>
   </li>  
   <li class="nav-item">
@@ -309,16 +309,28 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-internal-resources">    
         <li>
+    <a class="dropdown-item" href="https://worldbankgroup.sharepoint.com/:u:/r/sites/FPG/SitePages/PublishingPages/ai4econ-coding-1776997693304.aspx?csf=1&amp;web=1&amp;e=jx31Xp">
+ <span class="dropdown-text">WB AI‑Assisted Coding for Economists</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://worldbankgroup.sharepoint.com/:u:/r/sites/FPG/SitePages/PublishingPages/GeoPov-1770874931043.aspx?csf=1&amp;web=1&amp;e=aAiQuQ">
+ <span class="dropdown-text">GeoPov project</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://worldbank.github.io/geoPovLearn/">
+ <span class="dropdown-text">geoPovLearn</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://opensource.worldbank.org/">
+ <span class="dropdown-text">Open Source @ WB</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="https://worldbankgroup.sharepoint.com/sites/WBgge/">
  <span class="dropdown-text">Prosperity VP</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="https://worldbankgroup.sharepoint.com/sites/wbpoverty">
  <span class="dropdown-text">Distributional Impact of Policies Dep.</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="https://worldbank.github.io/geoPovLearn/">
- <span class="dropdown-text">geoPovLearn</span></a>
   </li>  
     </ul>
   </li>
@@ -339,10 +351,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#author" id="toc-author" class="nav-link active" data-scroll-target="#author">Author</a>
-  <ul>
-  <li><a href="#eduard-bukin" id="toc-eduard-bukin" class="nav-link" data-scroll-target="#eduard-bukin">Eduard Bukin</a></li>
-  </ul></li>
+  <li><a href="#eduard-bukin" id="toc-eduard-bukin" class="nav-link active" data-scroll-target="#eduard-bukin">Eduard Bukin</a></li>
   <li><a href="#license-reuse" id="toc-license-reuse" class="nav-link" data-scroll-target="#license-reuse">License &amp; Reuse</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/worldbank/ai4coding/blob/main/about.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/worldbank/ai4coding/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -351,18 +360,22 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content">
 
 
+
+
+
+<div class="quarto-about-trestles">
+  <div class="about-entity">
+    <img src="assets/img/eduard-bukin.jpg" class="about-image
+  round " style="height: 20em; width: 20em;">
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">About</h1>
 </div>
-
-
 <div class="quarto-title-meta-author">
   <div class="quarto-title-meta-heading">Author</div>
   <div class="quarto-title-meta-heading">Affiliation</div>
-  
     <div class="quarto-title-meta-contents">
-    <p class="author"><a href="https://github.com/ebukin">Eduard Bukin</a> <a href="mailto:ebukin@worldbank.org" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0002-1003-1260" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+    <p class="author"><a href="https://github.com/EBukin">Eduard Bukin</a> <a href="mailto:ebukin@worldbank.org" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
   </div>
   <div class="quarto-title-meta-contents">
         <p class="affiliation">
@@ -370,43 +383,24 @@ ul.task-list li input[type="checkbox"] {
           </p>
       </div>
   </div>
-
 <div class="quarto-title-meta">
-
-      
-  
-    
   </div>
-  
-
-
 </header>
-
-
-<section id="author" class="level2">
-<h2 class="anchored" data-anchor-id="author">Author</h2>
-<section id="eduard-bukin" class="level3">
-<h3 class="anchored" data-anchor-id="eduard-bukin">Eduard Bukin</h3>
-<div class="columns">
-<div class="column" style="width:25%;">
-<p><a href="assets/img/eduard-bukin.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="assets/img/eduard-bukin.jpg" class="no-lightbox img-fluid" style="border-radius: 50%; width: 100%;"></a></p>
-<p><em>Economist passionate about spatial data and poverty analysis</em></p>
-</div><div class="column" style="width:5%;">
-
-</div><div class="column" style="width:70%;">
+  </div>
+  <div class="about-contents"><div id="about-author">
+<section id="eduard-bukin" class="level2">
+<h2 data-anchor-id="eduard-bukin">Eduard Bukin</h2>
 <p>Eduard Bukin is an experienced economist, data scientist, and statistician spending the last decade at the World Bank, UN, and academia. His career has focused on econometrics, economic research, microeconomics, and statistics, with a strong emphasis on empowering non-specialists to extract insights from complex datasets and effectively communicate analyses through interactive web tools, and artificial intelligence.</p>
 <p>Key technical expertise lies in the use of modern data science technologies and programming languages such as R, Python, STATA, and GIS tools. He holds a Master’s degree in Rural Development from Ghent University and pursues a Ph.D.&nbsp;in Agricultural Economics from Justus Liebig University Giessen.</p>
-<ul>
-<li>Email: <a href="mailto:ebukin@worldbank.org">ebukin@worldbank.org</a></li>
-<li>GitHub/Website: <a href="https://github.com/EBukin">EBukin</a></li>
-</ul>
-</div>
-</div>
+<p><a href="mailto:ebukin@worldbank.org" class="btn btn-outline-dark btn-sm"><i class="fa-solid fa-envelope" aria-label="envelope"></i> Email</a> <a href="https://github.com/EBukin" class="btn btn-outline-dark btn-sm"><i class="fa-brands fa-github" aria-label="github"></i> GitHub</a> <a href="https://scholar.google.com/citations?user=REPLACE_WITH_YOUR_ID" class="btn btn-outline-dark btn-sm"><i class="ai  ai-google-scholar" aria-label="google-scholar"></i> Google Scholar</a></p>
 </section>
-</section>
+</div></div>
+</div>
+
 <section id="license-reuse" class="level2">
-<h2 class="anchored" data-anchor-id="license-reuse">License &amp; Reuse</h2>
+<h2 data-anchor-id="license-reuse">License &amp; Reuse</h2>
 <p>This project is licensed under the MIT License together with the <a href="WB-IGO-RIDER.md">World Bank IGO Rider</a>. The Rider is purely procedural: it reserves all privileges and immunities enjoyed by the World Bank, without adding restrictions to the MIT permissions. Please review both files before using, distributing or contributing.</p>
+
 
 
 </section>
@@ -427,13 +421,6 @@ ul.task-list li input[type="checkbox"] {
       window.document.body.appendChild(a);
     }
     setColorSchemeToggle(hasAlternateSentinel())
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
@@ -826,40 +813,8 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/worldbank/ai4coding/blob/main/about.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/worldbank/ai4coding/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 
 
-</body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/worldbank/ai4coding/blob/main/about.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/worldbank/ai4coding/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

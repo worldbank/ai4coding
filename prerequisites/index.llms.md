@@ -4,23 +4,23 @@ Author
 
 Affiliation
 
-[Eduard Bukin](https://github.com/ebukin) [](mailto:ebukin@worldbank.org) [![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==)](https://orcid.org/0000-0002-1003-1260)
+[Eduard Bukin](https://github.com/EBukin) [](mailto:ebukin@worldbank.org)
 
 Distributional Impact of Policies. Fiscal Policy and Growth Department
 
-Tu use Stata in Positron with GitHub Copilot, you need:
+To use Stata in Positron with GitHub Copilot, you need:
 
 1.  [Setup Software](../prerequisites/software.llms.md) — Stata 19+ MP, R 4.5+, Python 3.13+ with `uv`, Positron, Quarto 1.9+, Git
 
     If anything does not work, refer to the [Software Setup \> Troubleshooting](../prerequisites/software.llms.md#common-problems) section.
 
-2.  [Stata for Positron Extensions](../prerequisites/extensions.llms.md) — Stata for Positron Integrates stata in Positron
+2.  [Stata for Positron Extensions](../prerequisites/extensions.llms.md) — Stata for Positron integrates Stata in Positron
 
     See the [Stata for Positron Extensions \> Troubleshooting](../prerequisites/extensions.llms.md#sec-troubleshooting-stataextension) section for common issues with the extension.
 
-3.  [GitHub & Copilot](../prerequisites/github.llms.md) — personal GitHub account and GithHub Copilot subscriptions are needed to use premium requests
+3.  [GitHub & Copilot](../prerequisites/github.llms.md) — personal GitHub account and GitHub Copilot subscriptions are needed to use premium requests
 
-    Any quesitons? see the [GitHub & Copilot \> Troubleshooting](../prerequisites/github.llms.md#sec-troubleshooting-ghcopilot) section for common issues with GitHub.
+    Any questions? See the [GitHub & Copilot \> Troubleshooting](../prerequisites/github.llms.md#sec-troubleshooting-ghcopilot) section for common issues with GitHub.
 
 4.  [Positron Assistant](../prerequisites/assistant.llms.md) — enable assistant, connect to GitHub Copilot provider
 

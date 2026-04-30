@@ -1,0 +1,12 @@
+---
+title: "AI Workflow"
+date: 2026-04-17
+---
+
+## Overview
+
+{{< include /methods/_common-workflow-intro.qmd >}}
+
+## Detailed workflow
+
+{{< include /methods/_common-workflow-details.qmd >}}
