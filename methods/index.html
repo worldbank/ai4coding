@@ -8,7 +8,7 @@
 
 <meta name="author" content="Eduard Bukin">
 
-<title>Setup – AI for Coding</title>
+<title>Methods – AI for Coding</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,7 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../prerequisites/software.html" rel="next">
+<link href="../methods/common-workflow.html" rel="next">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -102,7 +102,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../prerequisites/index.html" aria-current="page"> 
+    <a class="nav-link" href="../prerequisites/index.html"> 
 <span class="menu-text">Software setup</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -125,7 +125,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../methods/index.html"> 
+    <a class="nav-link active" href="../methods/index.html" aria-current="page"> 
 <span class="menu-text">Common approaches</span></a>
   </li>  
   <li class="nav-item">
@@ -186,7 +186,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../prerequisites/index.html">Setup</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../methods/index.html">Methods</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -200,32 +200,26 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../prerequisites/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Setup</span></a>
+  <a href="../methods/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Methods</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../prerequisites/software.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Software Setup</span></a>
+  <a href="../methods/common-workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">AI Workflow</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../prerequisites/github.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">GitHub &amp; Copilot</span></a>
+  <a href="../methods/safeguard-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Safeguarding data</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../prerequisites/extensions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Positron-Stata integration</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../prerequisites/assistant.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Positron Assistant</span></a>
+  <a href="../methods/dime-handbook-appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The DIME Analytics Data Handbook Analytics Coding Guide: Appendix</span></a>
   </div>
 </li>
     </ul>
@@ -233,15 +227,29 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#ai-workflow-for-data-analysis" id="toc-ai-workflow-for-data-analysis" class="nav-link active" data-scroll-target="#ai-workflow-for-data-analysis">AI workflow for data analysis</a></li>
+  <li><a href="#safeguarding-confidential-data" id="toc-safeguarding-confidential-data" class="nav-link" data-scroll-target="#safeguarding-confidential-data">Safeguarding confidential data</a></li>
+  <li><a href="#dime-data-handbook-appendix-ai-and-reproducible-research" id="toc-dime-data-handbook-appendix-ai-and-reproducible-research" class="nav-link" data-scroll-target="#dime-data-handbook-appendix-ai-and-reproducible-research">DIME Data Handbook Appendix: AI and reproducible research</a></li>
+  <li><a href="#external-references" id="toc-external-references" class="nav-link" data-scroll-target="#external-references">External references</a>
+  <ul>
+  <li><a href="#reproducible-research-and-data-analysis" id="toc-reproducible-research-and-data-analysis" class="nav-link" data-scroll-target="#reproducible-research-and-data-analysis">Reproducible research and data analysis</a></li>
+  <li><a href="#data-privacy-and-anonymization" id="toc-data-privacy-and-anonymization" class="nav-link" data-scroll-target="#data-privacy-and-anonymization">Data privacy and anonymization</a></li>
+  <li><a href="#ai-policies-and-responsible-use" id="toc-ai-policies-and-responsible-use" class="nav-link" data-scroll-target="#ai-policies-and-responsible-use">AI policies and responsible use</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/worldbank/ai4coding/edit/main/methods/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/worldbank/ai4coding/blob/main/methods/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/worldbank/ai4coding/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Setup</h1>
+<h1 class="title">Methods</h1>
 </div>
 
 
@@ -271,19 +279,72 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>To use Stata in Positron with GitHub Copilot, you need:</p>
-<ol type="1">
-<li><p><a href="../prerequisites/software.html">Setup Software</a> — Stata 19+ MP, R 4.5+, Python 3.13+ with <code>uv</code>, Positron, Quarto 1.9+, Git</p>
-<p>If anything does not work, refer to the <a href="../prerequisites/software.html#common-problems">Software Setup &gt; Troubleshooting</a> section.</p></li>
-<li><p><a href="../prerequisites/extensions.html">Stata for Positron Extensions</a> — Stata for Positron integrates Stata in Positron</p>
-<p>See the <a href="../prerequisites/extensions.html#sec-troubleshooting-stataextension">Stata for Positron Extensions &gt; Troubleshooting</a> section for common issues with the extension.</p></li>
-<li><p><a href="../prerequisites/github.html">GitHub &amp; Copilot</a> — personal GitHub account and GitHub Copilot subscriptions are needed to use premium requests</p>
-<p>Any questions? See the <a href="../prerequisites/github.html#sec-troubleshooting-ghcopilot">GitHub &amp; Copilot &gt; Troubleshooting</a> section for common issues with GitHub.</p></li>
-<li><p><a href="../prerequisites/assistant.html">Positron Assistant</a> — enable assistant, connect to GitHub Copilot provider</p>
-<p>See the <a href="../prerequisites/assistant.html#sec-troubleshooting-assistant">Positron Assistant &gt; Troubleshooting</a> section for common issues with Positron Assistant.</p></li>
-</ol>
+<p>This section covers methods and best practices for working with AI in data analysis. The two topics below complement each other: the workflow tells you <em>how</em> to structure an AI-assisted project, while the safeguarding guide tells you <em>what to protect</em> along the way.</p>
+<section id="ai-workflow-for-data-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="ai-workflow-for-data-analysis"><a href="../methods/common-workflow.html">AI workflow for data analysis</a></h2>
+<p>AI coding assistants are probabilistic — the quality of their output depends heavily on the context you provide. A structured, eight-step workflow (objective → inputs/outputs → data dictionary → external metadata → checkpoint → iterative coding → independent verification → documentation) consistently produces better results than ad-hoc prompting. The workflow applies regardless of language (Stata, R, Python) or domain and gradually narrows the AI’s degrees of freedom until it can generate correct, reproducible code.</p>
+</section>
+<section id="safeguarding-confidential-data" class="level2">
+<h2 class="anchored" data-anchor-id="safeguarding-confidential-data"><a href="../methods/safeguard-data.html">Safeguarding confidential data</a></h2>
+<p>If sensitive microdata leaks into AI context, it can create data-breach, privacy, and reputational risks. This section identifies the four main exposure channels (prompts, console output, file reads, command-line searches) and provides concrete remedies: curating prompts, setting system instructions to block file access and raw-data printing, generating lightweight metadata files in place of raw data, relocating data outside the working folder, and applying statistical disclosure control techniques (suppression, generalization, noise addition, pseudonymization) with dedicated packages.</p>
+</section>
+<section id="dime-data-handbook-appendix-ai-and-reproducible-research" class="level2">
+<h2 class="anchored" data-anchor-id="dime-data-handbook-appendix-ai-and-reproducible-research"><a href="../methods/dime-handbook-appendix.html">DIME Data Handbook Appendix: AI and reproducible research</a></h2>
+<!-- REVIEW: garbled sentence — "covering how for the purpose of using in the course" is unclear; rephrase -->
+<p>This is a reference section adapted from the DIME Data Handbook covering how for the purpose of using in the course as an online material for AI’s digestion.</p>
+</section>
+<section id="external-references" class="level2">
+<h2 class="anchored" data-anchor-id="external-references">External references</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>These references can be included as URLs directly in your prompts — most AI coding assistants will fetch and read the linked content, giving them richer context for code generation and advice.</p>
+</div>
+</div>
+<section id="reproducible-research-and-data-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="reproducible-research-and-data-analysis">Reproducible research and data analysis</h3>
+<ul>
+<li><a href="https://dimewiki.worldbank.org/Reproducible_Research">DIME Wiki — Reproducible Research</a></li>
+<li><a href="https://worldbank.github.io/wb-reproducible-research-repository/">World Bank Reproducible Research Repository</a></li>
+<li><a href="https://dimewiki.worldbank.org/Data_Analysis">DIME Wiki — Data Analysis</a></li>
+<li><a href="https://dimewiki.worldbank.org/Checklist%3A_Data_Cleaning">DIME Wiki — Data Cleaning Checklist</a></li>
+<li><a href="https://worldbank.github.io/dime-data-handbook/">DIME Data Handbook</a></li>
+<li><a href="https://dimewiki.worldbank.org/Master_Do-files">DIME Wiki — Master Do-files</a></li>
+<li><a href="https://dimewiki.worldbank.org/Master_Dataset">DIME Wiki — Master Dataset</a></li>
+<li><a href="https://dimewiki.worldbank.org/ID_Variable_Properties">DIME Wiki — ID Variable Properties</a></li>
+<li><a href="https://dimewiki.worldbank.org/Stata_Coding_Practices">DIME Wiki — Stata Coding Practices</a></li>
+</ul>
+</section>
+<section id="data-privacy-and-anonymization" class="level3">
+<h3 class="anchored" data-anchor-id="data-privacy-and-anonymization">Data privacy and anonymization</h3>
+<ul>
+<li><a href="https://worldbank.github.io/dime-data-handbook/processing.html#processing-confidential-data">DIME Data Handbook — Processing confidential data</a></li>
+<li><a href="https://worldbank.github.io/dime-data-handbook/acquisition.html#handling-data-securely">DIME Data Handbook — Handling data securely</a></li>
+<li><a href="https://www.ihsn.org/anonymization">IHSN — Microdata Anonymization</a></li>
+<li><a href="https://utrechtuniversity.github.io/dataprivacyhandbook/">Utrecht University — Data Privacy Handbook</a></li>
+<li><a href="https://sdctheory.readthedocs.io/en/latest/">IHSN — SDC Theory Guide</a></li>
+</ul>
+</section>
+<section id="ai-policies-and-responsible-use" class="level3">
+<h3 class="anchored" data-anchor-id="ai-policies-and-responsible-use">AI policies and responsible use</h3>
+<ul>
+<li><a href="https://ai.worldbank.org/policy">World Bank AI Use Policy</a></li>
+<li><a href="https://ai.worldbank.org/guidelines">World Bank Responsible AI Guidelines</a></li>
+<li><a href="https://positron.posit.co/assistant-provider-info.html">Positron Assistant Provider Privacy Information</a></li>
+<li><a href="https://docs.github.com/en/copilot/responsible-use/copilot-code-completion">GitHub Copilot — Responsible use of code completion</a></li>
+<li><a href="https://docs.github.com/en/copilot/responsible-use/chat-in-your-ide">GitHub Copilot — Responsible use of Chat in your IDE</a></li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -690,8 +751,8 @@ ul.task-list li input[type="checkbox"] {
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../prerequisites/software.html" class="pagination-link" aria-label="Software Setup">
-        <span class="nav-page-text">Software Setup</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../methods/common-workflow.html" class="pagination-link" aria-label="AI Workflow">
+        <span class="nav-page-text">AI Workflow</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -700,4 +761,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/worldbank/ai4coding/edit/main/prerequisites/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/worldbank/ai4coding/blob/main/prerequisites/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/worldbank/ai4coding/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/worldbank/ai4coding/edit/main/methods/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/worldbank/ai4coding/blob/main/methods/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/worldbank/ai4coding/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

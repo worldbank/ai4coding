@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://worldbank.github.io/ai4coding/methods/safeguard-data.html</loc>
+    <lastmod>2026-05-13T00:27:19.519Z</lastmod>
+  </url>
+  <url>
+    <loc>https://worldbank.github.io/ai4coding/methods/dime-handbook-appendix.html</loc>
+    <lastmod>2026-05-13T00:27:19.515Z</lastmod>
+  </url>
+  <url>
     <loc>https://worldbank.github.io/ai4coding/selfstudy/index.html</loc>
     <lastmod>2026-05-13T00:27:19.669Z</lastmod>
   </url>
@@ -66,7 +74,7 @@
   </url>
   <url>
     <loc>https://worldbank.github.io/ai4coding/day1/ai4coding-slides-d1-2/index.html</loc>
-    <lastmod>2026-05-13T00:27:18.981Z</lastmod>
+    <lastmod>2026-05-13T01:59:02.373Z</lastmod>
   </url>
   <url>
     <loc>https://worldbank.github.io/ai4coding/day1/ai4coding-slides-d1-4/index.html</loc>
@@ -87,5 +95,13 @@
   <url>
     <loc>https://worldbank.github.io/ai4coding/selfstudy/gmd-requirements.html</loc>
     <lastmod>2026-05-13T00:27:19.666Z</lastmod>
+  </url>
+  <url>
+    <loc>https://worldbank.github.io/ai4coding/methods/common-workflow.html</loc>
+    <lastmod>2026-05-13T00:27:19.513Z</lastmod>
+  </url>
+  <url>
+    <loc>https://worldbank.github.io/ai4coding/methods/index.html</loc>
+    <lastmod>2026-05-13T00:27:19.518Z</lastmod>
   </url>
 </urlset>

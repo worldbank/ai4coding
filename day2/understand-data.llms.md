@@ -15,7 +15,7 @@ This example demonstrates how to use AI to understand and review data. it uses [
 This workflow incorporates best practices from:
 
 - Claude’s [Common workflows](https://code.claude.com/docs/en/common-workflows) and [Best practices for code review](https://code.claude.com/docs/en/best-practices), which include:
-- Day 1’s [Common workflows](..\methods/common-workflow.qmd).
+- Day 1’s [Common workflows](../methods/common-workflow.llms.md).
 
 ## Step 1. Reproduce: Understand the code and data transformation to reproduce the analysis
 

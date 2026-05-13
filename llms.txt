@@ -2,6 +2,8 @@
 
 ## Pages
 
+- [Safeguarding data](https://worldbank.github.io/ai4coding/methods/safeguard-data.llms.md)
+- [The DIME Analytics Data Handbook Analytics Coding Guide: Appendix](https://worldbank.github.io/ai4coding/methods/dime-handbook-appendix.llms.md)
 - [Overview](https://worldbank.github.io/ai4coding/selfstudy/index.llms.md)
 - [Ex.3 Reproduce, Revise, and Reuse existing analysis (self-study)](https://worldbank.github.io/ai4coding/selfstudy/example-3.llms.md)
 - [Ex.1 Stata in Positron and Copilot](https://worldbank.github.io/ai4coding/selfstudy/example-1.llms.md)
@@ -19,3 +21,5 @@
 - [Ex.0 Test your setup](https://worldbank.github.io/ai4coding/selfstudy/example-0.llms.md)
 - [Ex.2 Understanding data with AI](https://worldbank.github.io/ai4coding/selfstudy/example-2.llms.md)
 - [gmd-requirements](https://worldbank.github.io/ai4coding/selfstudy/gmd-requirements.llms.md)
+- [AI Workflow](https://worldbank.github.io/ai4coding/methods/common-workflow.llms.md)
+- [Methods](https://worldbank.github.io/ai4coding/methods/index.llms.md)

@@ -10,7 +10,7 @@ Distributional Impact of Policies. Fiscal Policy and Growth Department
 
 In this example, we explore how AI can support a common data science workflow: taking raw data and transforming it into a clean, analysis-ready format.
 
-Following the common agentic [data analysis workflow](..\methods/common-workflow.qmd) and principles of [safeguarding data](..\methods/safeguard-data.qmd), we adopt a **metadata-driven approach** — using a data dictionary as an intermediary between the raw data and the AI, rather than exposing sensitive data directly.
+Following the common agentic [data analysis workflow](../methods/common-workflow.llms.md) and principles of [safeguarding data](../methods/safeguard-data.llms.md), we adopt a **metadata-driven approach** — using a data dictionary as an intermediary between the raw data and the AI, rather than exposing sensitive data directly.
 
 ### Learning objectives
 
@@ -47,7 +47,7 @@ The objective is to clean and harmonize this data to the Global Monitoring Datab
 
 The full example, including suggested prompts and instructions, is in `C:/WBG/ai/ai4coding-practice/ex02-understand-data/` in the self-study section. You can follow along
 
-Let us proceed with the analysis of the data following the common agentic [data analysis workflow](..\methods/common-workflow.qmd).
+Let us proceed with the analysis of the data following the common agentic [data analysis workflow](../methods/common-workflow.llms.md).
 
 > **TIP:**
 >
@@ -155,7 +155,7 @@ Do not write any code yet.
 
 > **NOTE:**
 >
-> The data dictionary is the bridge between your data and the AI. It lets the AI reason about variable structure without ever seeing actual observations — a key [data safeguarding](..\methods/safeguard-data.qmd) practice.
+> The data dictionary is the bridge between your data and the AI. It lets the AI reason about variable structure without ever seeing actual observations — a key [data safeguarding](../methods/safeguard-data.llms.md) practice.
 
 ``` numberSource
 Write Stata code in file `01-data-dictionary.do` that creates a data
@@ -447,7 +447,7 @@ merge or reshape, verify the unit of observation with `isid`.
 
 > **IMPORTANT:**
 >
-> This step **must** be executed in a **different** AI agent session (a new chat window or a different AI tool) than the one that wrote the cleaning code. The AI that produced the code is biased toward confirming its own work — it will tend to overlook its own mistakes. A fresh agent has no prior context and will review the code on its merits alone. This follows the independent verification principle from the [common workflow](..\methods/common-workflow.qmd).
+> This step **must** be executed in a **different** AI agent session (a new chat window or a different AI tool) than the one that wrote the cleaning code. The AI that produced the code is biased toward confirming its own work — it will tend to overlook its own mistakes. A fresh agent has no prior context and will review the code on its merits alone. This follows the independent verification principle from the [common workflow](../methods/common-workflow.llms.md).
 
 ``` numberSource
 Act as an independent data auditor. I will provide:
