@@ -63,7 +63,7 @@ If in doubt, [follow the detailed instructions in the prerequisites](/prerequisi
 - **Stata 19+ MP**, **Positron** (latest), **R 4.5.3+**, **Python 3.13+**, **Quarto 1.9+**, and **Git 2.52+**
 - Everything except Stata is **free and open source** — [no license required.]{.highlight}
 
-If any problems arise: follow the [troubleshooting guide](/prerequisites/common-problems.qmd) or contact [ITHelp@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org).
+If any problems arise: follow the [troubleshooting guide](/prerequisites/index.qmd) or contact [ITHelp@worldbankgroup.org](mailto:ITHelp@worldbankgroup.org).
 
 
 ## {{< fa brands github >}} GitHub Account Setup {.small-slide}

@@ -9,20 +9,29 @@ project:
     - day2/*.qmd
     - day2/**/*.qmd
     - selfstudy/*.qmd
+    - methods/*.qmd
 
+brand: _brand.yml
 
 website:
   title: "AI for Coding"
   llms-txt: true
+  site-url: https://worldbank.github.io/ai4coding/
   repo-url: https://github.com/worldbank/ai4coding
-  repo-actions: [source, issue]
+  repo-actions: [edit, source, issue]
+  reader-mode: true
+  page-navigation: true
+  back-to-top-navigation: false
+  page-footer: ""
+
   navbar:
-    background: primary
     search: true
     left:
       - text: "Home"
         href: index.qmd
-      - text: "Course materials (April 2026)"
+      - text: "Software setup"
+        href: prerequisites/index.qmd
+      - text: "Materials (April 2026)"
         menu:
           - text: "Day 1"
             href: day1/index.qmd
@@ -30,12 +39,11 @@ website:
             href: selfstudy/index.qmd
           - text: "Day 2"
             href: day2/index.qmd
-      - text: "Setup"
-        href: prerequisites/index.qmd
-      - text: "Methods"
+      - text: "Common approaches"
         href: methods/index.qmd
       - text: "About"
         href: about.qmd
+
     right:
       - icon: github
         href: https://github.com/worldbank/ai4coding
@@ -55,9 +63,8 @@ website:
           - text: "Distributional Impact of Policies Dep."
             href: https://worldbankgroup.sharepoint.com/sites/wbpoverty
 
-
   sidebar:
-    - title: Setup
+    - title: Software setup
       style: "docked"
       pinned: true
       collapse-level: 10
@@ -97,7 +104,9 @@ website:
       collapse-level: 10
       contents:
         - day2/index.qmd
-    - title: "Methods"
+        - day2/ai4coding-d2-1/
+
+    - title: "Common approaches"
       style: "docked"
       pinned: true
       collapse-level: 10
@@ -106,8 +115,6 @@ website:
         - methods/common-workflow.qmd
         - methods/safeguard-data.qmd
         - methods/dime-handbook-appendix.qmd
-  page-navigation: true
-  back-to-top-navigation: false
 
 execute:
   freeze: true
@@ -120,10 +127,14 @@ author:
 
 format:
   html:
+    page-layout: article
+    grid:
+      # sidebar-width: 350px
+      margin-width: 450px
     css: assets/custom.css
-    theme:
-      light: cosmo
-      dark: darkly
+    # theme:
+      # light: cosmo
+      # dark: darkly
     toc: true
     toc-depth: 4
     toc-location: right
