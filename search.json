@@ -710,7 +710,7 @@
     "href": "prerequisites/extensions.html#step-4.-stata-mcp-feature-optional",
     "title": "Positron-Stata integration",
     "section": "Step 4. Stata-MCP feature (optional)",
-    "text": "Step 4. Stata-MCP feature (optional)\nThe extension also supports Model Context Protocol (MCP) for AI agent use. MCP allows AI agents to have full context of your Stata environment, including variables, data, and figures bypassing the console and enabling more powerful AI-assisted coding without distracting the user.\nThis reduce control as allows stata to run code without user explicitly accepting to run it. Use with caution!\nIn positron:\n\nCtrl+Shift+P → MCP: Open User Configuration\nPaste in there:\n{\n \"servers\": {\n     \"stata-mcp\": {\n         \"type\": \"sse\",\n         \"url\": \"http://localhost:4000/mcp\"\n     }\n}\n}\nSave the file\nCtrl+Shift+P → MCP: List Servers → stata-mcp → Start Server",
+    "text": "Step 4. Stata-MCP feature (optional)\nThe extension also supports Model Context Protocol (MCP) for AI agent use. MCP allows AI agents to have full context of your Stata environment, including variables, data, and figures bypassing the console and enabling more powerful AI-assisted coding without distracting the user.\nThis reduce control as allows stata to run code without user explicitly accepting to run it. Use with caution!\nIn positron:\n\nCtrl+Shift+P → MCP: Open User Configuration\nPaste in there:\n{\n   \"servers\": {\n     \"stata-mcp\": {\n         \"url\": \"http://localhost:4000/mcp-streamable\"\n     }\n  }\n}\nSave the file\nCtrl+Shift+P → MCP: List Servers → stata-mcp → Start Server",
     "crumbs": [
       "Setup",
       "Positron-Stata integration"

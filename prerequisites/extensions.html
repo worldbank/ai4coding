@@ -573,13 +573,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><code>Ctrl+Shift+P</code> → <code>MCP: Open User Configuration</code></p></li>
 <li><p>Paste in there:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">{</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a> <span class="dt">"servers"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>   <span class="dt">"servers"</span><span class="fu">:</span> <span class="fu">{</span></span>
 <span id="cb2-3"><a href="#cb2-3"></a>     <span class="dt">"stata-mcp"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a>         <span class="dt">"type"</span><span class="fu">:</span> <span class="st">"sse"</span><span class="fu">,</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a>         <span class="dt">"url"</span><span class="fu">:</span> <span class="st">"http://localhost:4000/mcp"</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a>     <span class="fu">}</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a><span class="fu">}</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<span id="cb2-4"><a href="#cb2-4"></a>         <span class="dt">"url"</span><span class="fu">:</span> <span class="st">"http://localhost:4000/mcp-streamable"</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>     <span class="fu">}</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>  <span class="fu">}</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Save the file</p></li>
 <li><p><code>Ctrl+Shift+P</code> → <code>MCP: List Servers</code> → <code>stata-mcp</code> → <code>Start Server</code></p></li>
 </ol>

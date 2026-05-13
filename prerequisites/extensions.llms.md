@@ -100,12 +100,11 @@ In positron:
 
     ``` numberSource
     {
-     "servers": {
+       "servers": {
          "stata-mcp": {
-             "type": "sse",
-             "url": "http://localhost:4000/mcp"
+             "url": "http://localhost:4000/mcp-streamable"
          }
-    }
+      }
     }
     ```
 
