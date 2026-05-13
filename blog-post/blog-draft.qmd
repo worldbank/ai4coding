@@ -1,0 +1,181 @@
+# ai4coding \@ WB : Building right context to effective analysis
+
+*Eduard Bukin — April 2026*
+
+## The demand is real
+
+In February 2026, the World Bank's Distributional Impact of Policies
+Unit launched an event series aimed at Revolutionizing Stata (and R/Python)
+coding workflow among economists by using generative AI agents and
+GitHub Copilot. With the first seminar we aimed at introducing the
+key concept of AI-Assisted coding, such as Integrated Development
+Environments (IDEs)
+
+
+CopilotJustndefined" seminar on AI-assisted coding with Positron, the
+new data science IDE from Posit. The response was immediate: colleagues
+across units asked for more. That seminar led directly to a full two-day
+course in April 2026 — not proposed top-down, but demanded by staff.
+Across both events, XXX unique participants joined, ranging from
+experienced Stata analysts to R and Python users. The common thread was
+clear: everyone wanted to move beyond pasting code into a browser
+chatbot and start using AI where it actually matters — inside their
+development environment.
+
+This post distills the core argument from that course: adopting AI for
+coding is not just about having access to a large language model. It is
+about embedding AI into the right tools so it can see your workspace,
+understand your data, execute your code, and iterate autonomously.
+
+## What the course taught: from chat to agentic IDE
+
+The course followed a deliberate progression. Day 1 covered the
+foundations: setting up Positron with Stata, R, and Python; configuring
+GitHub Copilot access; understanding how large language models work —
+token prediction, context windows, and why hallucinations happen.
+Participants wrote their first AI-assisted code edits and learned basic
+prompting techniques.
+
+Day 2 moved to advanced features: tools and the Model Context Protocol
+(MCP), custom instructions and prompt files, autonomous agents, skills
+files, and planning agents. A recurring theme was version control with
+Git — not as a side topic, but as an essential practice when an
+autonomous agent is editing your files on your behalf.
+
+The core lesson across both days was this: there is a fundamental
+difference between asking AI a question in a browser window and giving
+AI access to your workspace, your data, and your execution environment.
+The first is convenient. The second is transformative.
+
+## Why the IDE is the multiplier
+
+### Chat-based AI works blind
+
+When you paste a code snippet into ChatGPT or Claude in a browser, the
+model sees only what you give it. It has no access to your files, your
+data dictionaries, your folder structure, or your Stata installation. It
+cannot run your code. It cannot observe the error message that comes
+back. It certainly cannot fix the error and try again.
+
+This limitation matters. In a 2023 World Bank blog post, Owen Ozier
+tested ChatGPT on six Stata coding tasks. The results were mixed at
+best. The model hallucinated a fictitious `pwvariance` function, blended
+SAS and Stata syntax, and misinterpreted a standard regression
+specification. It produced working recursive Fibonacci code in R,
+Python, Matlab, and C — but not in Stata. Ozier attributed this partly
+to Stata's smaller internet footprint: less public code means less
+training data.
+
+### IDE integration changes the equation
+
+Three years later, the picture has changed — but not primarily because
+models got smarter. In an April 2026 blog post, Visintini, Jones, and
+Singh from DIME ran current AI tools on a past version of their research
+assistant hiring test. Without an execution environment, GitHub Copilot
+scored roughly 50% in both R and Stata — approximately the level of a
+median human applicant. With an agentic setup — Claude Code or OpenAI's
+Codex running inside Positron — scores jumped to approximately 80% in
+both languages.
+
+The gap between 50% and 80% is not a model upgrade. It is an environment
+upgrade. When the AI agent can read data files, execute code, observe
+errors, and iterate, it closes the gap that blind code generation
+cannot.
+
+### What IDE integration unlocks
+
+An AI-capable IDE provides several capabilities that a browser chat does
+not:
+
+- **Context integration.** The AI reads your entire workspace — scripts,
+  data dictionaries, configuration files — not just the snippet you
+  paste in. It understands the project structure.
+- **Secure workspace access.** The AI operates within a sandboxed
+  project folder through controlled tools. It does not have arbitrary
+  access to your system.
+- **Inline assistance.** Completions, suggestions, and edits happen
+  directly in your code. There is no copy-paste cycle between a browser
+  tab and your editor.
+- **Autonomous agents.** This is the critical capability. The AI
+  executes your code, reads the output or error, adjusts, and tries
+  again — repeating until the objective is met or it asks for guidance.
+  During the course, participants watched an agent run an entire Stata
+  do-file, encounter path errors, fix them, re-execute, and produce
+  correct output — all within Positron, all reviewable through Git
+  diffs.
+
+### Niche languages are no longer a barrier
+
+The early concern — that Stata's small public footprint would
+permanently disadvantage AI assistance in that language — has not held.
+The technology has shifted. Skills files and custom instructions allow
+users to preload domain-specific knowledge into an agent. The DIME
+Analytics coding standards, for example, can be loaded as a skill,
+causing the agent to follow style conventions it was never trained on.
+The Stata MCP server gives the agent direct access to the Stata runtime,
+enabling it to execute and debug `.do` files natively.
+
+The Visintini et al. results confirm this: once the agent has an
+execution environment, Stata and R scores are nearly identical. The
+pattern generalizes. Any niche tool — any proprietary language, any
+specialized data format — can be made AI-accessible through context
+engineering.
+
+## The new skill set: from coder to agent manager
+
+The most important shift the course aimed to convey is not technical. It
+is about workflow. The traditional workflow is: I write code, I run it,
+I read the error, I fix it. The AI-assisted workflow is: I specify the
+objective, the agent writes and runs the code, I review the output and
+diffs, I steer.
+
+This is a genuine change in how analytical work gets done. It does not
+eliminate the need for coding knowledge — it redirects where that
+knowledge matters most. The Visintini et al. blog post makes this point
+directly: AI-generated code that scored 77% on their test was flagged by
+a Stata expert as unnecessarily complex, with elaboration that obscured
+rather than clarified analytical intent. Producing working code is not
+the same as producing maintainable, research-grade code. The skill of
+recognizing the difference is precisely what a good analyst needs.
+
+From the course experience and the evolving landscape, several skills
+are becoming essential for analysts who use AI effectively:
+
+- **Context engineering.** Structuring your projects, instructions, and
+  skills files so the AI has the information it needs — and does not
+  waste context on information it does not.
+- **Prompt discipline.** Writing clear, scoped requests that reduce
+  hallucination and keep the agent focused. Understanding when to ask AI
+  to explain first and act second.
+- **Code review and validation.** Reading AI-generated diffs critically.
+  Catching unnecessary complexity, redundant logic, or deviations from
+  established coding standards.
+- **Version control.** Git is no longer optional when an autonomous
+  agent edits your files. The ability to review changes line by line,
+  revert, and accept selectively is fundamental.
+- **Domain judgment.** Knowing what the analysis should produce.
+  Understanding the data, the econometrics, the policy context — the
+  parts that no model can replace.
+- **Tool orchestration.** Choosing and configuring the right MCP
+  servers, skills files, and agent configurations for the task at hand.
+
+DIME's own hiring process is evolving along these lines. Their next
+recruitment round will ask candidates to submit AI chat transcripts
+alongside their code, evaluating not only the final script but how tools
+were used and corrected during the task. The assessment question is
+shifting from "can you code?" to "can you use AI to produce
+research-grade code?"
+
+## Conclusion
+
+The productivity frontier in AI-assisted coding is no longer "AI versus
+no AI." It is "chat-based AI versus IDE-integrated agentic AI." The
+evidence — from controlled tests, from training hundreds of colleagues,
+from daily practice — consistently shows that the execution environment
+is the multiplier.
+
+The demand from XXX colleagues who joined the February seminar and April
+course signals that the organization is ready. The tools — Positron,
+GitHub Copilot, MCP servers, skills files — are available now. What
+remains is sustained investment in both the tooling and the skills to
+use it well. The returns compound.

@@ -1,0 +1,12 @@
+---
+title: "Safeguarding data"
+date: 2026-04-17
+---
+
+## Overview
+
+{{< include /methods/_safeguard-data-overview.qmd >}}
+
+## Detailed instructions and best practices
+
+{{< include /methods/_safeguard-data-details.qmd >}}

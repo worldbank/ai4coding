@@ -1,0 +1,904 @@
+Poverty Learning Series-Morning Session[MonThur 9AM EST]-20260420_090305-Meeting Recording
+April 20, 2026, 1:03PM
+2h 58m 9s
+
+Phoebe Yuxuan Wang started transcription
+
+MC 4-800   0:43
+Buddy.
+Welcome to this training. I'm Mario Genoni. I'm in the global team of the poverty group, the poverty group.
+And...
+Or in other words, the institutional impacts of policy units. I will be moderating the training. I don't know much about this. I'm just really trying to help with the process. Eduard did all the work, so I'm clarifying. But I will be in the chat in case there are questions. The idea is today to go through some
+in a way, get in depth into some of the things that were presented in the previous BBL on Positron and how to iterate with that, and then give you a couple of days to iterate yourselves and do some exercises yourself if you have time to, you know, see how it is working. And then the next day on Thursday,
+we will go through some of these reflections and then get into some of the more in-depth elements of prompting, etc. So having said that, I'll pass the word to Eduard, who is going to run the show. We will try, we can take questions, and there will be a few breaks to
+to answer some of these questions, but feel free also to put them in the chat and we'll try to make sure we answer them in an efficient way without disrupting too much the flow. Edward? Yes. Hello, I'm here. Hello, everyone. Thank you so much for being here. It's a great
+pleasure, honor, and stress for me to be here right now. So if I start talking too fast or eligible or you cannot comprehend what I'm saying, please stop me. This is my weakness. I can only have many. So thanks again for your interest in this course. I'm happy that we had a chance to compile it for you guys. And this is basically the course that we ambitiously call AI for Coding.
+And the course is meant to provide you with all the necessary kind of tools, knowledge and skills to enable your regular coding workflow kind of leveraged by the help of the agentic AI, generative AI that produces code for you actually. So in some sense, the best outcome of the course for everyone would be if our coding kind of
+efforts are being replaced completely by the AI coding efforts. And we are just orchestrating multiple AIs at the same time. This seems to be like a current state of the art in not data science, but rather programming. So less and less programmers are writing code now. They are more writing kind of instructions for AI to write code for them.
+And then use AI to check this code to go in iterations and over and over and over again.
+So we will start. I just share with you the kind of the course materials web link, right? This is a website on World Bank GitHub and also a GitHub repository, which we'll be using to disseminate all the materials during this course. There are, as you can see, can you see my screen, by the way? I can see. OK.
+Great.
+So, on this kind of website, right, we have some overall kind of introduction and then material specifically for our course for day one, self-study, and day two. So far, there is only day one in self-study part. Day 2 is coming in two days. And basically, you could use this platform to track your own kind of
+experience, right? So what exactly you would like to know, all the references are there, slides are there, and also there are some more materials like on methods that we try to compile together, methods on a AI agentic workflow, on safeguarding data. So just feel free to explore, raise questions, issues. I'm very open to the feedback and also would like to improve it and make it like very
+Kind of solid knowledge components of all this a agentic AI coding workflow.
+So without going any further, let me jump into the first. So this is our agenda for today, right? We are going to start with a welcome presentation right now for another 10 minutes maybe. Then I will go for about half an hour into the overview of the setup of basically what do we need to have on our laptops to be able to use AI with
+Positron and.
+and Stata. We'll have one live example zero, which is 0 because it's no code is needed there. It's only to test if we can run Stata in Positron or other software. So it's just for us to figure out how much, how successful we were with setting up. It has been a tough endeavor to make the software available for everyone.
+And then there is example one, which is kind of covers the basic prompting that is dedicated for self studies. I really hope that you will be able to follow through this exercise in the next couple of days. And the main idea of having the self study period is that you really need to struggle before you get into the confident use of AI. And struggle, this is something that's
+I mean, just spend some time on it. If you have any issues, raise those issues through the Teams channel, share them with the group, share them with me. I'll try to answer in the next couple of days to all of your questions. And then we'll start day two from kind of going through all those issues and figuring out how they could be resolved and what were the main struggles.
+And use those examples, please, for figuring your own workflow and learning how to use the software.
+Um...
+What is the website?
+Of course, so the website is basically what we compiled to AI for coding, like it's a GitHub repository, right? And the link to this website in the Teams chat. So just, yeah, go on it and then.
+
+Ferdinand Owoundi Fouda   6:37
+So, it's on Teams chat, yeah, exactly. So, it is pins in the Teams chat. By the way, another thing that is pins on the Teams chat is the poll that we used to understand how successful kind of are you with...
+
+MC 4-800   6:39
+Teams chat, yeah, exactly. So, it is in chat. By the way, another thing that is on the Teams chat is the poll that we use to understand how successful kind of are you with software. It's really interesting to us to know, because ITS put huge effort into making the software available bank-wide, and I really hope that...
+It was possible for some of us to install it and run it.
+All right, so I'll continue with day one.
+And then we'll have a coffee break and a few more sessions, which will consist of kind of core AI-led concepts, something that is really necessary for us all to know. And that repeats slightly what we had in this small seminar a few months ago, but also goes deeper and broader. So we have a clean overview of how AI works and what it consists of.
+We also go through some common workflows with AI, and then finally, if we have enough time, example three, we will start doing this, which will have kind of, which will be showing the complete, revise, reproduce, and reuse existing analysis workflow with AI. But probably we will not have enough time for that, so this will be for your self-study.
+
+Oumarou Ibrahim Chaibou   7:38
+Okay.
+
+Hyojeong Esther Kim   7:48
+Probably will not have enough time for that, so this will be for.
+
+MC 4-800   7:52
+And maybe you could just do this exercise as like a, as the guideline, but then use your own data and your own problem to analyze it.
+All right, let's go to the slides. So day one materials, here are the slides. You could open them in your computer too. So I'll just present them.
+So the motivation for this course, I think, is straightforward. I'll repeat myself. It's basically to show that not only chat-based AI tools such as Cloud ChatGPT are possible. AI can do more than just chatting with us through the browser, right? And it's wonderful that AI uses familiar technology like web browser chatting to
+To.
+
+Rose Mungai   8:36
+Sorry to.
+
+MC 4-800   8:37
+Who?
+kind of interact with us, but if we really want to enable leverage AI in doing data analysis, we really need to integrate it in a different way to our data analysis workflow. And somehow what I realized is that this way is quite similar to how we actually use software for coding, because AI basically uses software in the same way for coding. We use language to
+communicate with the software, get results, and it's very similar to what we do. So the goal of this course is basically to introduce the integrated development environment, which is the software that is integrating together the statistical software like Stata, R, Positor, or Python, and kind of the text editor, and also AI.
+and which enables us to use GitHub Copilot or other AI providers to leverage our coding experience. So the logistics, we already covered it, but we'll have two days, right? Today is day number one. There is also a repeat session in the evening for the regions on day number one. So if you're missing something here, you could always join in at 10 P.m. tonight.
+And...
+From 9 to 12, right? But maybe you're still here at 9 A.m., so you don't need to join the entire three hours until midnight. And then we'll have day two. All the meetings are going to be recorded in Teams. Then we will also disseminate it. Teams chat is there. Please use it to raise the questions. We will use AI.
+to read the team chat too and summarize your questions and maybe to answer them too.
+The agenda, I already covered it. The course resources is the website, right, that I was mentioning. So please do explore it on your own. Website is not the only course resource on the day one on the website. So if you go to the day one, there is a setup overview material where you will see that there is not only the website, but there is also a GitHub repository with the examples.
+like a starting point for the examples. And there is also data, data that is actually publicly available data. It's A Mexico household survey that is available online. I simply put it on OneDrive in some kind of documented form that we all could synchronize at our computers and use for exercises.
+So, what next? Next, we go to the setup overview in the software, maybe some questions we need to.
+Check right now, yeah.
+I think we'll come to this question a bit later in the presentation, right? So, but we will be covering that. Maybe not that detail, but there is a difference. More questions there?
+Okay, so let's go to the setup overview.
+So, setup overview has our own slides, but beside that, I would like just to warn you at the very beginning, right? So, it's very important that you set up your photos properly for this course. The reason is that the Positron is a new software, and we've discovered last week a small bug with it with ITS, and the bug is that Positron was forbidden from writing.
+text files into the OneDrive folders. So this is a known issue. It's going to be resolved after April 24, because until April 24, ITS has the freeze on any kind of laptop updates in the World Bank. So next week, basically, you need to restart your laptop, and since then, it will be working, the depository will be working with your OneDrive.
+But for today's course only, with ITS, we decided that it would be the best way to work with not with OneDrive, but with a folder on your C drive, which is called WBG. So this is like a technical World Bank folder that is used for basically opening and running software that doesn't have too much restrictions on it.
+And now I will guide you through how to set it up. But essentially you need to go to this folder, set up there your folder for the course. Let's call it AI, very ambitious. And then you would need to copy into that folder AI the practical examples, either from GitHub repository or from OneDrive. The links are here. They should be available to you guys as well.
+So just check the links if they work.
+Let me know.
+And then, within this folder, AI for coding practice, there will be folders specific to the exercises.
+Finally, the data, the data is just the OneDrive. So if, oops, I will probably open it.
+So it's just a OneDrive folder with all the data there. So I suggest that you synchronize it to your OneDrive, but let's make a note. This is a read-only data, right? So you don't, you are not allowed to write in there. And any code that you develop should probably adopt this workflow. That data is stored somewhere in read-only format.
+And the code you write creates new data files within your working directory. So essentially, all the code that you'll be writing will be in this folder, AI for coding practice, in the subfolders, which are dedicated to specific exercises. And yeah, data will be read from the outside.
+Yeah, yeah, would you need 2 minutes to do this?
+So yeah, maybe we could check some questions more if they're on chat.
+I'll probably do the same on my computer.
+So, um, I actually have a folder already, AI. It's called...
+And...
+Actually, I have some solutions there, so I will remove my solutions.
+So, how's it going? Pretty successful?
+Has anything worked? Any links?
+
+Thijs Benschop   15:20
+The.
+
+MC 4-800   15:22
+It works OK.
+Yep.
+Use the.
+
+Thijs Benschop   15:40
+I.
+
+MC 4-800   15:45
+Sorry, AI coding data on OneDrive. Can anyone have access to it? I can only go to the template, but not the OneDrive one. So guys, did you can open it, right? They can, you can't.
+Um...
+They cannot see it, okay.
+Well...
+
+Aimable Nsabimana   16:08
+Anisha, again, Chris, the link in the chat.
+
+MC 4-800   16:09
+Oh.
+But let me do it like this.
+So, I tried to apply this, this rules to it.
+I guess the link is going to be the same, but try again right now.
+Did it work?
+No.
+Okay, well, first day, first struggle.
+Well, let me try again, so I'll copy the link.
+Ohh.
+So, let me try with this thing.
+Put it in chat.
+So, this, here's a new link.
+Does this work for you guys?
+Pretty.
+Yes, okay, good. And the other one, has the other one worked? So there is one, the data for coding and the other, the other folder is called examples. Examples is working. Okay, great. Yay, first challenge. Yeah, took us 10 minutes to resolve it. We passed it. All right.
+So, let's go with this setup overview.
+So there are minimal and optimal setups that are required for this course. The minimal setup means that you need to have software set up, which is the software on the software center, all of it. It's Positron, Python, R, and Stata. Quarto is the optional one, but it's good if you installed it too. Then
+Are you, have you heard about that before? Have you seen it?
+Would you like to see how it looks like on Software Center?
+Use the mic.
+No, you need to still, unfortunately. Yeah, it comes with, so indeed the question was, the Qualtra comes with Positron, but it comes a different level of admin rights. So, Qualtra that comes with Positron is not allowed to create documents in your computer.
+The quarter we installed in the World Bank allows you to create documents and PDF files in your.
+
+Hyojeong Esther Kim   18:56
+After we install it in the World Bank, it allows you to create documents and EDF files for your future, so it could work differently, but essentially this is the software, it's all here, you just create it one by one to install.
+
+MC 4-800   19:01
+So it could work differently. But essentially, this is the software. It's all here. You just click it one by one to install.
+Um, and um...
+
+Hyojeong Esther Kim   19:10
+Them.
+
+MC 4-800   19:12
+I have it installed already. The good, like if you had before, please reinstall it again from the software center. Just find it there, click it there and click install. This is a new positron that allows self updates. So once new updates are coming out on positron, it will update on your computer as well.
+
+Hyojeong Esther Kim   19:12
+I have it installed already. Like, if you had positive installed before, please reinstall it again from the software center. Just find it there, click in there, and click install. This is a new positive role that allows.
+
+MC 4-800   19:31
+This is the main difference in change.
+Yes, if there is a problem removing the old positron, something fails, please reach out to ITS. They've created several knowledge base documents there and essentially most people in ITS, even walk-in center should be able to figure this out at some point, because it's now being done as a standardized software at the World Bank. A couple of installation questions. Do we do we need R?
+Python? Yes, here is minimum requirement is Positron, Python, R, Stata, optimal, plus Quarto. Okay. This is step number one. Then step #2 is Stata extensions in Positron, right? And by the way, all those prerequisites, they are on the website. There is a...
+A place called prerequisite on the website, and there are software installation structure there, the same way how they were before, a little bit more details, and they also detail about the Positron extension which is called Positron Stata, Stata Glow, Data Bot, and the other extensions. So, if anything is already on your laptops at that moment.
+I suggest that you keep in mind where to find the relevant information and then try to install it in the course of the next two days, raising questions in chat. But for now, I propose we just carry on, right? I think part of the process is make sure that everybody, eventually in the next couple of days, has...
+
+Thijs Benschop   20:54
+Smets.
+
+MC 4-800   20:58
+the setup working. If you haven't done this ahead of the course, again, you can do it while we talk, but any troubleshooting we can also sort out in the next couple of days, so everything works.
+
+Thijs Benschop   21:08
+I.
+
+MC 4-800   21:13
+Then another thing is called GitHub account. Have your do you have a GitHub account yet? What is the poll says? Can you can you see the poll?
+
+Thijs Benschop   21:18
+I.
+
+MC 4-800   21:25
+Oh, not seen in chat. I think it was saved.
+Let me pin that again. Ah, it's pinned.
+
+Thijs Benschop   21:36
+I.
+
+MC 4-800   21:38
+Thi.
+So yeah, there is a poll again. Please fill the poll. We'll see how many people have GitHub. But GitHub account is a very important one because this is the account to the platform that is called GitHub, right? For those of you who doesn't know, GitHub is a platform that is used for version control and open source kind of
+
+Thijs Benschop   21:46
+Yes.
+S.
+
+MC 4-800   22:00
+coding. It has both parts open and closed one, and basically it implements something that is called Git, which is the technology for controlling versions of your documents line by line. It's a very advanced, not advanced, it's very kind of standard software for code developers, and it would be great if we at some point move that too. But what GitHub also does is provides cloud services, and one of those cloud services is called GitHub Copilot.
+
+Thijs Benschop   22:16
+Yes.
+
+MC 4-800   22:24
+which is used for coding and using AI and LLMs. One question, can we use bank email for GitHub? No, well, you can, but you're not recommended to. So, in prerequisites, when you go there, please have a look at the GitHub and compile setups. There is clear instructions set personal email only.
+
+Thijs Benschop   22:42
+Yeah.
+
+MC 4-800   22:44
+And this instruction is caused by actually our World Bank policies on GitHub that you can find on the e-services in the request to join World Bank Organization and on the World Bank that GitHub. So, when it opens, you will see that this is a service. So, they all instruct us to use the personal emails, and then...
+Link it to the World Bank account later. OK, couple of troubleshooting. One, the poll site is not working. What would you say? The poll is not working. The poll, OK. And then let's forget about it. Forget about it. And the other is I have state IT.
+
+Eric Atsu Avorkpo   23:17
+You know, I was looking...
+
+MC 4-800   23:19
+Do we need a Stata 19 plus? I think Stata 18 should work.
+
+Eric Atsu Avorkpo   23:20
+So we also need to confirm with the CMU if they're okay with us doing the CPATF, right? Or if the one day was like...
+
+MC 4-800   23:25
+Usually. But if it doesn't work, then yeah, probably try to update it with the World Bank, right? So we all have updated to state at 19 plus, or 19.5, I think. So here, this is the, yeah, please turn on the mic.
+
+Eric Atsu Avorkpo   23:31
+Okay.
+
+MC 4-800   23:42
+Hi, can you hear me? Yeah, so it's about the GitHub Pro pilot, I mean, the GitHub account.
+Is there a way bank staff can have an access to a pro account on GitHub? Which one? A pro account because there is a limit to... I hear you. Let's see the next slide. Okay. So it's answered later. So once you have a GitHub account, right?
+Then you can work with AI at some point. But before you can work with AI, you have to have the access to the GitHub World Bank Organization, which is a different thing. So this is what you do through e-services. Then you need to activate GitHub Copilot. And only then you can either have
+the Pro plan that you were referring to, or you could have a World Bank Organization subscription. So to use AI, you could either use it on the Pro plan for yourself when you pay it from a credit card, or you could use the World Bank plan provided. And to use the World Bank plan provided, you need to follow a certain process. Please see the prerequisites for this process.
+And it may take a few days before you get GitHub Copilot from the World Bank. So for this specific course, please, if you don't have it and you would like to make it right away, use the Pro subscription. It costs $10 per month. And if you get GitHub Copilot from the World Bank in the next three, four days, GitHub will reimburse you back the remaining amount of this month's monthly fee.
+that you haven't used.
+The limits, the World Bank has a limits of 300 requests, but then at the World Bank there is also a charge back process that we'll talk later about.
+Finally, the minimal setup requires you to have Positron with a Positron assistant. Assistant is the ad in Positron that allows you to chat. And this is, for example, Positron. Let me open Positron for one of the exercises, right? So this is Positron with one of the exercises, exercise two.
+to be more precise. And this is the assistant in Positron. So this is basically the chat that allows us to work with AI and use different LLMs. And we will go through it in more details later. I'm just showing you that the end goal of all this setup is to have Positron on your computer running with a chat where you can say hi, and it will respond to you something after thinking.
+And this will cost me four cents actually to get this one, because it's how much it costs to get the response from a chat. And basically, this is a setup we need to kind of end up with, right? In this chat, I have positron. I also have Stata here that runs code, like display, for example, 1 + 1.
+And state that will provide me output here, probably say like it's equals to two.
+I really hope it will, because if it doesn't, then what is the point of the course? Well, Stata.
+Data, it's a really long time to think what 1 + 1 is.
+Well, let's hope it will come up with the answer. Oh, yeah, it's too saved. All right, and then the final step is working directory. So please follow that detailed instructions to prerequisites to set up this according to this kind of setup.
+May I ask how to get the World Bank subscription? Yeah, I'm coming to that. So GitHub Copilot has different subscriptions policies. Some of them are private, some of them with the World Bank. And the point of the subscriptions is that besides using version control on Git and GitHub, we have also access to the kind of resources
+of the large language models. There is a free private subscription, which has almost no capabilities, right? So you can only chat with the free models there. It's the first column here. And then there are two different models. One is the organizational through the World Bank and the other one is a private through Copilot Private Pro or Pro Plus subscription.
+The World Bank one is kind of funded by the ITS, with the World Bank licenses to access the GitHub, and every license includes 300 premium requests included, so that means that you could ask chat basically 300 times, or even less than that, because sometimes chat starts to ask itself automatically in a loop, so then the amount of your...
+individual request drops down like 200 or 200. Although it drops down, 300 is actually enough for a month of usage of GitHub. This free tier resets every month on the first day of the month.
+And what this organizational GitHub access gives you is the access to the advanced models, such as Cloud, Cloud, Cloud Opus, the same models that are used in Cloud Code, right, or GPT models. It gives you inline completion. And then if you exhaust the limit of 300 requests per month, there is a process, which is called the chargeback process.
+Where you can, your manager could provide a budget code for the entire department to the GitHub ITS team, and they will then set the limits for your like department level consumption per month in dollars, and basically you will be charged upon this usage up to this limit, but as soon as the limit is reached by all by at least one member of your team.
+Then everyone loses access to the over premium kind of over free quarter.
+Limits, yeah. So you can only have one active plan in the set. Therefore, for the purpose of this course, if you don't have World Bank Organization access, please create your own compiled prop plan. If you reached 500 limits, request limits in the prop plan, please activate the budget. It's quite straightforward and I have instruction there.
+Activate budget for overuse; it's 4 cents per request, and then, in the course of the next few days or weeks, our IT guys, Brian specifically, who will probably speak today later, they will probably may give you access to GitHub, so let's hear what Brian says later. So, as I said, there is a request.
+Limits right, so any chat interaction is a request, and you can always check your request limits on GitHub by going to your GitHub account, clicking here, and go into Copilot settings, and it brings you to this page with the request usage, right? And I have exhausted my limit and used 342 more.
+percent more requests than I should have, right? So I used more than 1200 requests by now, but I mean, I hope it's justified because I was preparing for the course. Usually I use a bit less than that, but maybe I'll be using more than that. So we are all figuring these things out right now. It's new for the World Bank. So
+Yeah, give it the time, see your usage, set your budgets, and then see how they work. For manager for a little bit, yeah, and he's fine. So, you can always familiarize with chargeback processes on the website and on the slides.
+So yeah, different access levels, the GitHub gives you different access kind of to the repositories and to the co-pilot, right? So with a GitHub account, you have access to repositories, the personal repositories, but then there are also repositories which are maintained by the World Bank on the website, which is called like a github.com.
+slash World Bank, right? So this is our World Bank-wide GitHub organization. And to have access to repositories there, you need to be an organization member. So follow the process there. And then you could always mix and match. You could be a member of the organization and have a private account, a private GitHub about it, or you could have membership in the World Bank organization and the
+World Bank Compilot. So it's all possible.
+GitHub is more than just a copilot, and I hope Brian is there online. Perhaps I'll give floor to Brian, who is the main kind of locomotive behind GitHub, bringing GitHub at the World Bank, and he'll talk a bit about what why GitHub is more than at the World Bank is more than a copilot.
+
+Thijs Benschop   31:16
+Yeah.
+
+MC 4-800   31:35
+Brian, the floor is yours.
+
+Bryan Cahill   31:35
+Yes, I'm here. Can you hear me, Aberra?
+
+MC 4-800   31:39
+Maybe a bit louder if you speak a little bit more, like with more volume.
+
+Bryan Cahill   31:42
+Oh, maybe it's, can you guys hear me okay?
+
+MC 4-800   31:45
+Yeah.
+
+Bryan Cahill   31:46
+Okay. Good morning, everyone. Thank you, Eduard, for the invitation. I am, my name is Brian Cahill. I'm an enterprise architect from ITS, and I've been supporting our open source program here at the bank for a few years. The major part of this work is administering our GitHub enterprise accounts. So with GitHub, you get a modern platform for version control and collaboration.
+
+Thijs Benschop   31:57
+I.
+
+Bryan Cahill   32:06
+and also integrates with our Intra ID, which is our enterprise authentication platform. That's ensuring that we align with our compliance requirements from OIS. So I also develop guidelines, best practices, and processes to make sure certain guardrails are in place, especially when it comes to our public repositories. So for our processes,
+Edward's been talking about our e-services forms. That's first our GitHub member onboarding process. That gives you guys an easy way to request access to our GitHub organization. And then second is our public repository review process. This is where teams go through before they publish any repository publicly. So this really has only been possible because of our partnership with legal. We've created a.
+a broad institutional licensing framework for public repositories. So every public repository review will undergo a legal review as well to ensure that licensing is handled properly before any code is surfaced publicly.
+I'll also mention we have a new open source code catalog that's available at opensource.worldbank.org. This is a public website that surfaces our open source projects from the World Bank's GitHub organization. These are projects that have gone through our public repository review process, demonstrate open source best practices and those that are
+of the highest quality and are ready for collaboration from the external community. You can also engage with us at Viva Engage. We have a community there. You can join our community and get updates from our open source program in GitHub. And then as always, if you need any help or any questions, I monitor the GitHub at worldbank.org mailbox. I've been getting.
+Many requests for the GitHub member onboarding, so I'll be taking care of those today. So please be patient. I've gotten dozens of requests I need to surface through and give access to Copilot. But if you have any challenges, you can always reach out to me on Teams or email the GitHub Mailbox as well.
+
+MC 4-800   33:55
+Thank you very much, Brian. And maybe any questions about that? There is a question on the next step on setting up data installation path in positrons. All right, then we will go forward. Thank you very much, Brian. Thank you for connecting.
+Okay, before we go to Stata, let's finish with the Positron Assistant, which is a software within the Positron. Again, look at the prerequisites. You need to set some settings in Positron in motion to make Assistant available. So specifically, when you open the Positron, you can always open settings by pressing Control FP, which gives you like a control panel in Positron, and you just type settings.
+and it will find for you settings. So we use the preference open settings UI, you see. You don't need to do this right now. Oh, yeah. You don't need to do this right now. It's all explained in the prerequisites. But once you go to the settings and you have the settings panel, then you could search.
+by typing like enable assistant and then it will actually give you almost immediately the option you have to tick to enable Positron assistant. So, that's how this all works. Basically, Positron has like a very dynamic search.
+As well as VS Code, right, all those modern software, and you could easily modify the options, so please read the prerequisites and do exactly how they same.
+So, once you have co-pilots.
+in Positron enabled, then you need to log in to GitHub copilot in Positron, right? So that means that in here in Positron, you will need to click on your user.
+
+Hyojeong Esther Kim   35:30
+Click on your user.
+
+MC 4-800   35:33
+And basically choose manage account. So if I do this, I could sign out for this example only, and I could just click here on the user, and they all have like sign in with GitHub, and then it will pop up with a message to copy the code. I copy the code, I open the GitHub on my computer.
+choose my account to continue, put the code in, and then grant Positron with access to GitHub. The only thing is I have two-step verification, so I just need to enter another password here, and then I'll be just fine. Hopefully, if I'm not fine, then somebody will have to borrow a computer from me.
+Okay, there is still some issues in accessing the data folder. Okay.
+
+Thijs Benschop   36:19
+Stop.
+
+MC 4-800   36:20
+I propose we resolve this in the break. OK, we will fix that in the break. For now, you don't need access to it, so OK. So, once you've logged into Positron to to repositron, then you have chat again and it works for you, so you can just say hi and get the response, and then you can also select the models, right? So, when I felt like when I logged out, I got the like entropic models popping up again, but now I could choose the like 4.6.
+
+Lodewijk Smets   36:25
+Yes.
+
+Thijs Benschop   36:30
+Second.
+
+MC 4-800   36:44
+and talk to it again. So this is how it all works. I think one question that I was getting often was about Cloud Code, right? So what about Cloud Code? People often ask, how can I use Cloud Code? Is it fill out the bank, etc.? So Cloud Code is essentially a software which is similar to Positron or Positron Assistant.
+It's almost identical, actually. And it gives you the same access to the same models. The only difference is it gives you this access through a different interface. So the deposit on the system go through GitHub Copilot, cloud code goes directly through cloud entropic APIs, right? And setting up code for the bank is now in process with the ITS and it's been piloted right now. And as far as I understand,
+Perhaps next fiscal year, we will have some kind of policy for using cloud code through Entropic API directly. For you right now, and for all of us right now, we can use GitHub Copilot, which gives access to the identical models, exactly the same as the Entropic API proposes, right? The only maybe difference is the context size, but I'll talk about it later.
+Please don't like rush for cloud code. GitHub compiler does just fine and the same thing in a very good quality as well.
+So, taking up folders, we've talked about this.
+Finally.
+What we need to do, the last step is to set up Stata, right, and to verify if Stata is working. And to do that, we have an exercise, an exercise folder, which is called the exercise 00, Positron test, right? And if you have everything set up in your computer, we will open Positron, and we will ask Positron to open a folder for us.
+So, Positron works from the working folder point of view. Whenever you create a project or any analysis, it must reside in the project folder and Positron must be switched to this folder. So, in this specific case, the folder is called Exercise 000 Positron Test. So, when I choose to open it, Positron opens up.
+slowly. It's going to take about a minute to open because of the World Bank Security, there are a lot of checks of antivirus and positron, so it takes some time for it to load. And basically, when it loads, you will see this kind of positron window in your working directory. And you will be able to explore your working directory on the left side. So here there is this big panel, right?
+And it has Explorer, and Explorer starts from the working directory and shows all the files which are there in your working directory. And if those files are text files, clicking on the files once will open this file for you in Editor. So this is the Editor area of Positron. And if it's too small, you could always go here on the right.
+top corner in the layout page and customize your layout to see more or to see the relevant parts of the of the kind of software, right? So I prefer this tech layout. If you work with AI, maybe you prefer the assistant layout, which makes AI a bit larger on the side. And you could always hide certain areas.
+And just look at the.
+Documents, text files, as they are there.
+So once we have everything set up, one important question is Stata, right? Stata, how to run Stata in Positron. There are multiple ways. Prerequisites cover all of them. The one I would like you to follow for the day one is basically the way of running Stata by using extension. Extensions in Positron are kind of additional pieces of software that connect Positron to other softwares like Stata.
+So what you need to do is to go to the extension panel on the left hand side here and just start typing there, positron Stata.
+Positron Stata, and you'll see immediately a few software pieces appearing here on top. So, the one that I would like to bring your attention to is called the Stata for Positron, developed by a software developer. I don't know his name, but it basically integrates.
+Stata into Positron in the same way as R and Python has been integrated in Positron, given a little bit more flexibility and control. So what you need to do is you just need to click on the extension and press install. You will have the install button here. Because I have it installed already, I press nothing, right?
+Then if you like to have Stata look nice in your editor, you could always install the Stata Glow extension from Andres, our colleague, and use it too. And I bet Andres might have some more extensions in the pipeline. So I'm looking forward to that. There are other extensions, the one that I was
+Proposing before is called Stata MCP, and it is as well working in the same way as Stata for Positron. It's also quite OK. The only difference between those two extensions is that they integrate Stata into Positron in a different way, so they look differently and they act differently, and somehow I find the Stata MCP slightly less.
+comfortable to use because I'm used to R in Python. We will cover those differences in day two, right? For now, let's remember, you just need to have this Positron state extension installed. Once you have this extension installed, you need to set settings for state path, right? So you have to open settings through, for example, file,
+Preferences and settings, and then you need to search in settings data, and then path, and then it will give you positron data installation.
+
+Hyojeong Esther Kim   42:09
+You post translation.
+
+MC 4-800   42:13
+And uh, provide the pass to your.
+
+Hyojeong Esther Kim   42:13
+And then you just need to provide the class to your data.
+
+MC 4-800   42:18
+Yeah, so you need just need to provide path to your data, and you could find it on any worldwide computer in on the C drive, as far as anything program files, and then there is somewhere here is data.
+No, not here. Program Files.
+Huh, do I have Stata?
+Oh, here I have it stated. You just give the pass to this folder, basically copy it completely and put it in there. And this should enable you to use state in positron, right? You might need to restart the positron though after that. That means that you need to just close it and open again, or do command line developer tools, reload window.
+So...
+Positron has lots of those things to speed up certain actions, and this things are called the Control Panel, Control Shift Panel, the way how we we we call it. The other way of calling it is to use a search bar and just put the tilde here, like this sign here, and then start typing your kind of command that you would like to find in Positron.
+Any questions from each other?
+Searching state under extensions in Positron use no results. Well, then probably something about security and controls. I think Karina says sorry, Edward, one more time. Maybe you. Okay. So one more time. Positron, when we open it.
+We usually see something like that, the window, or maybe we see something like that, right? When we open it, this is what we see. What we do, on the left side here, we search extension panel, and then in this extension panel, we search Stata.
+And then it usually pops up. If it doesn't pop up, there is something with your internet connection or with the security VPN, maybe. Perhaps you need to reach out to ITS to figure out if this is something that blocks the access of positron to the internet. Reinstall the positron could be the case. Restart computer could always help.
+but it usually works. Then once you have found Stata for Positron here, you install it, you'll have button installed, and then you set up settings. So if it's something that is like still like you're doubting, please open the prerequisites. There is a detailed instruction there too.
+Team, say that what? 18, 18? Yes, you can use it, you can use it, yeah, yeah, as long as data provides the MP kind of modification or something, you can use it.
+All right, so once we set up Stata extension, once we set up everything, right, and once we opened this project, which is called Example 00 Positron Test, there are a few test files there, which basically test if your Positron works with different languages.
+such as R language, for example, Python, Jupyter Notebooks in Python, Quarto, Markdown, and finally, Stata. So once you have opened and set it up, everything, you can just click on Stata do file. And what will happen is at first the Stata script will open for you here in the editor panel.
+And then, bottom here, where console resides, this is our terminal or console panel. So this is where your Stata window will open. So basically, in Stata, you have a window where Stata prints out all the results, right? And then you have a small window down where you type commands in Stata and you execute them, right?
+Well, this is the kind of the old-fashioned approach to this software. R, for example, or Python, they adopt like a single window approach. So all the results are below, and then you type new commands here to execute, right? And this is the R window for that. There is the same window like this for Python, and Stata integrates into Positron in the same way.
+Question: How can I access to stay down on a private laptop? Well, all depend, okay. That's a question to not to me, I think, because to access to stay down on private laptop, you have to buy a license. To buy a license, you have to spend like $2000, and yeah, just not doing it.
+I would never do that, sorry. I will. I propose to invest this $2000 into your time to learn R or Python. This is probably going to be better investment.
+One question about that. Like how do you get to the toggle between R and Stata on the bottom? Okay, so this toggle between R and Stata actually comes when you start to work with multiple sessions of multiple different software. Here there is a button that offers you to start another interpreter or console. And the advantage of Positron as compared to VS Code, the question that was asked before, is exactly that.
+So Positron allows us to integrate data science separately from the regular programming. Regular programming uses terminal or like command line or PowerShell or Bash. These are kind of the same name for a command line tools where you type commands and something happens in your operation system. Positron distings between terminal and console.
+And the console is for data science. It's for Python, for R, for Stata, for Julia, for any other statistical language that has extensions that integrated there. Right? And this is how you toggle different interpreters. You can see that I have R53, 453 version. I also have
+previous versions so far here. I also have different versions of Python installed through the World Bank through Conda. And I also have Stata here. And this is how you can open multiple Stata sessions and run one code in one Stata session and the other code in the same Stata in different Stata session. And you can work in parallel. You don't need to open like 20 windows of Stata.
+To have them here and work with them here. So, finally, how to run Stata code. Once you have everything set up, your console for Stata opens and you have Stata file open here. Just click run current file button. Okay, there seems to be an error when people.
+I'm trying to get into Stata. This is the error. Oh, this error that you can see in chat, this is a known error. This is error not with Stata, but with technology behind connection between Positor and Stata, which is called the Python NUV. Reach out to IT guys to fix it. They know how to fix it. Okay, so those who are getting these red messages, Python environment setup failed with exit code one. Exactly.
+They need to reach out to ITS because there is some exactly issue on the work.
+So for this mistake, I was also getting this mistake while you were setting things up, and I managed to put it on my AI, and it helped me, and I figured it out by myself. Wow, okay. So it didn't. So if you try on my AI and interact, just keep posting error messages, and it'll fix for you. So at least I have the MacBook from the bank, and it worked. Okay, well, thank you for the tip.
+Yeah, so if you just like post the mistakes. Okay, you can also paste the mistake in my end, it will guide you to solve it. Yeah, but with the Windows computers, I know for sure there are security restrictions of the bank and it must be a bit more complicated than with Mac, so it might require admin rights of IT to connect and to set something up in your computer.
+This also could appear because you didn't restart your computer for a long time. So I know it's painful, but if you restart your computer, what happens is that the security policy updates, and these kind of errors might be resolved. Any more questions? Yeah.
+So, follow up on my previous question: if the only ones that appear for me are R or Python, then probably you didn't set the settings to a state executable. So, did you install you have to have the state extension installed first? So, it says at the bottom it says state connected. OK, well...
+I propose we try to restart positron once, if it helps, and then maybe the breakout would help you with that.
+Okay, so you can see that more questions, please turn on this mic. So is it also possible to show these steps in VS Code? Because I'm trying to do with Positron, it's not working VS Code for me, it's way more user-friendly. Unfortunately, I'm not ready right now to do that. I could maybe have it later shown, but with VS Code, you cannot use this data for Positron. You need to use Stata MCP.
+Yeah, and then it should work, but it's still conditional on the same Python error that we see in the chat right now, right? So it's all connected. So the Positron and VS Code, they use the same technology to connect to Stata, and this technology could be sometimes restricted. Let's talk about VS Code separately, okay?
+Okay, so let me continue with the Positron layout. Is it okay? Or there are more questions?
+Questions. OK, so let's quickly. We will show this even if that is not working in your laptops, right? Let's carry on gradually. So, let's familiarize with the Positron interface and why I'm so much advocating to it for it, right? So, we have this data do file ran, and it ran here and produced some code, and we could revise this code to the same way how we work with data.
+usual way, right? But it's all together, and we could continue developing this code. And then what is more important is that this data code and state results were integrated into positive environment, which includes the session with our, for example, data explorer that we could open in Positron, and we could see what data we have, what variables we have, how they distributed, etc., so we can easily access this information.
+Then there is a plot explorer, which basically allows you to switch between different plots, customize them, increase them in size if you need, and then also save and export them in different formats. And finally, the integration here comes with a very useful tool for me, which is called Help Regress.
+And this help also integrates into the help panel on the right side here, which allows you to search from it and do everything. Final, and the most important part of all this, is that it all also integrates with AI. So you have your assistant on the left side. If we open an assistant layout to make it a bit wider, what you can see here that in chat panel, you have this
+button to connect context. And then the first thing proposed here is the console session. And it says like the eye is open, right? So I'm currently seeing this session. That means that AI and our co-pilot looks into our results here and sees them. So if we get any errors or code that doesn't work correctly,
+AI will see the errors, read through it, and then try to help us to resolve code directly in our editor rather than like going ourselves through all the code and figuring out where it's from. So let's have an example. Let's break our code. Let's call, I don't know, variable ** and maybe add some lock here.
+log using, I know what should be using, like ABC log. I don't know why Copilot doesn't help me to write the code. And if I run it, I have a breakage, right? So let me ask Copilot, Stata does not work, help.
+and co-pilots, hopefully.
+Will read through Stata. Yeah, so you see it reads through the message, so it's seen the message in our console, and now it reasons. It was reasoning for some time, trying to figure out where this error comes from, right? And now it suggests the solution, so it suggests a solution that...
+There is a log that is making a mistake, so probably replace has to be put there, and then there is a typo, right? And the best thing is that it thinks, and then it resolves the problem for us.
+So, we don't need to resolve it ourselves. What happens here is that it proposes changes to the code in a very clear format: red or green, red alt to delete, green new to insert, and we can choose whether to accept it or to reject it. So, we, for example, keep it in this case, and essentially after that iteration code.
+could run, right? I know for sure it's going to break again because the logging. So log is 1 big caveat of using Positron. Basically, Positron uses Stata native logging system to log the results and put them into the console. And Stata has a limitation. It can only run one log at a time, not two. So to bypass this, you need to do something like this. I think it's called
+
+Stephen John Stretton   54:32
+No.
+
+MC 4-800   54:45
+The...
+Cap, exactly, capture. So if you put cap around it, then the script should work just fine.
+And then, if you put cap, the logs that you would like to have will still work when you run Stata through Stata, exactly like software, but they will not work in the same way in Positron or VS Code. So, this is the limitation that we have here. OK, quick, quick temperature check up. Are you following? OK, good.
+
+Stephen John Stretton   55:17
+What?
+
+MC 4-800   55:18
+Well, if you're lost, there is a pre-recorded exercise on the same, right? It lasts for 20 minutes, not too long. And it's on the website here. So basically, on the website here, we have day one materials, right? And then there is this zero exercise life that we're doing, and then exercise one.
+
+Stephen John Stretton   55:21
+Yeah.
+
+MC 4-800   55:38
+Self-study, and then you could open it in full with all the details, and then there's a video with my annoying voice speaking, and it tries to guide you through the same steps of running code in Stata, but a bit more advanced. If this is not enough and you still struggle, let me know. I may then pre-record the same.
+
+Stephen John Stretton   55:52
+H.
+
+MC 4-800   55:59
+gradual like walk through all these basic setup steps. Yeah, so for now we saw all the setup. I'm pretty sure many people fail. Don't worry, we will figure it out. And now we're more on the focus on how you integrate with the platform, right? So you have a code and how we actually improve it, et cetera. I think that's a question, yeah.
+
+Stephen John Stretton   56:01
+Mhm.
+
+MC 4-800   56:19
+Question actually. Please. One is about the models you use. I don't see very well, but you seem to be using clouds on it. So I have an issue. I reinstall Positron on my system at the request of the before the training.
+
+Stephen John Stretton   56:19
+Yeah.
+I.
+
+MC 4-800   56:39
+And I used to have a lot of model provided, including the advanced one. Now I only have a limited number of them. I don't have the Sonet 4.6 you have. I don't have Opus anymore and the others. And so I was wondering if you know how to go back to my previous setting. That's the first question. Then the second is
+I just run the do file here, but I don't see the plots on the plot window. Okay. Nothing appears there, I only see it on the main. And so, so that's how it works. Okay, the first question on the models, you can have models more if
+Probably something about logging there, try to log out, log in again, restart Positron. This might help. If not, let's troubleshoot it. I think it's very kind of specific to your computer or to your setup. But usually what's a common issue is that after a certain update, Positron changed the way how they access those models in the API backend.
+And they set it on the website as well that you need to log out from the previous models and re-log into the GitHub again, and then it will start working for you, and it will show you GitHub models. It could be also the subscription if you hit 100% limit, it might just shrink the number of available models for you, but this could be also the case. So, if you...
+After IDA.
+Let's troubleshoot it on the break, okay? The second question you had was about, I forgot it already.
+The charts, yeah. So the charts, if they don't pop up here, it might be that you're using different extensions. So the difference between this data poster extension and Stata MCP extension is exactly the integration of charts, help, data, and the console. The Stata MCP runs through the output panel here, and you have to search for Stata somewhere here, and then you can see the code, how it executes, right?
+And this is the primary difference between Stata MCP and Stata for Positron, right? So if you're using VS Code, you might be using for Stata MCP, and you might only see the output in the output panel. In Positron, you use console and see there. So let's try also to reinstall extensions and then see, yeah, disable it.
+Reload positron, enable the write extension, and then try it.
+Quick question between Stata for Positron and Stata MCP. Any, well, I think you mentioned that you had a preference for one. I propose for today to focus on Stata for Positron. On day two, we will look into MCP as well, because it's a different interface, right? The Positron one gives you direct visual interface to Stata. The Stata MCP gives you a back-end interface.
+interface that you don't see much, but it does something. And I propose to leave it for the session too. I actually plan to cover it next week, next meeting. Another quick question from the chat. I have the state extension installing Positron, but can switch.
+
+Kersten Kevin Stamm   59:33
+I will switch to the consult.
+
+MC 4-800   59:34
+The console, which is still in R.
+Okay, so restart positron, then open do file, and it will hopefully start automatically. If it doesn't start automatically, then try this button here. Start another. If it shows data. If you don't see data here, then probably the settings are not set up. So the settings where you need to provide a path. Once you provide the path, it should...
+pop up. If it doesn't, then let's try to troubleshoot it like separately, okay? I think it also very kind of.
+I had installed the Stata MCP after the last session, and I like the setup of the Stata for Positron that you're showing. Do I need to disable the MCP, or how does it work if you have both extensions installed? Do you need to?
+disable one of them or how does that work? Better disable it because MCP is a little bit confusing part of it, right? State MCP is actually 2 things. It's MCP per se and state the output integration, right? So we may still use data MCP part, but let's talk about it in next meeting. For now, you can disable it. If it doesn't bother you, just keep both. It's fine.
+As long as the AI knows where to execute, because AI, when it sees two or three extensions for running this data, it will start thinking, which one should I use? And then it might think I should use MCP or this one, and you'll run into some certain inconsistency in usage. So to make it more deterministic for the AI, use one.
+All right, so let's quickly go through some of the features that AI offers, right? So, we run the Stata file or any AI offers. We also have like R scripts here, right? And the R script could be also ran the same way by clicking this button, and then a new session will open and run, R will work, right? And this kind of, if you set it up correctly, R will work no problem.
+build some plots, show you something, and this will be kind of the validation for it. What I also would like to point your attention to is the Quarto. Quarto is a really cool piece of software that allows us to write documents in markdown, which is a plain text, and then convert them into very much live and integrated documents.
+For example, the website for this course is completely written in Quarto. So we can always go to the source code of this website, and you will see that this website is nothing more than just a set of Quarto documents.
+So the reason why I'm pointing to Quarto is because you cannot only use AI to run.
+Code, but you can also use your AI to write the results and explain them, and the AI will be very good to explain them, because AI will read the tables, your graphs, you apply some vision, which it also has, and help you to write the results. So, for example, here is the Quarto document, test Quarto. All you need to do is to press preview, and then what will happen is that the Quarto will start previewing this document.
+I will, in the meantime, like make the layout a bit different, and the preview will be happening in terminal. So, terminal is like, as I said, this is like a programming part of Positron, right? It's the one that interacts with your system with the computer, and here you will see the progress of previewing Quarto, and then it will generate us the HTML document.
+And show this document in the viewer right here, so let's wait until it pops up for the documents. You can see here the document has been generated, and now just another moment maybe, and the viewer will open and it will show quite over there.
+Hmm.
+Yes. And fun part, it's going to be about penguins, this Quarto document. And it's going to be exploring the penguins data. But essentially, you can see how versatile it could be output if you write documents in Positron with Quarto. You could integrate everything together, tables, plots, all the stuff. And the best thing, you could always use AI to help you integrate it.
+So, final part of the small demo is probably to show you how AI integrates with all this kind of infrastructure.
+So, let's take Quarto documents and our code here as an example, right? This is our test Quarto example. Let's...
+Perhaps ask AI first, what does this do? So what we do, we open a new AI session.
+new chat with AI. And we just start to ask the AI, okay, look into the file attached.
+And explain what happens there.
+Right, so you see I type with many typos, this is my problem. But then AI still understands me somehow, so I think we are good partners now.
+What I do, I type a message here, right? I attach the context to this message. The context is first our environment for R, and the second one is the file that we would like the AI to explain to us. So we always need to explicitly tell it, look into this file. We could always disable R as well, because AI doesn't need to know R, and to see what is happening there.
+And then once we do it, we need to select how we're going to do this. So there are different modes of AI. Agent for editing, ask for chatting, edits for editing too. Not sure what the difference is. Agent is for editing and running, and editing is also only for editing. And final one is a plan mode. We'll talk about plan.
+Next day.
+You could always choose the models here. My personal preference is with Cloud somehow. They really hooked me up because they're really good, I think. ChatGPT, I also use it sometimes, but I use it from a Microsoft Copilot point of view. Because every single request here is something you pay for. I thought that perhaps to save some cost, I could use Microsoft Copilot in our computer.
+just this one, to design prompts better, and then use those prompts, paste them into chat here to ask chat to execute things. In this way, kind of I could resolve my dyslexia. So when I type with many mistakes, the co-pilot from Microsoft fixes my errors, my mistakes, and then AI better understands me. But you could also do it here.
+So I prefer Sonet. Please pay attention to this multiplier here, right? This multiplier means how many times more requests are you using for one single request that you're making in chat here. So if you use Opus, for example, you're going to use three times more requests. If you use Opus 4.7, which was released just last week Monday,
+Right, you're going to use 7 1/2 more requests, right? So every one request will cost you 7 1/2 times more. So probably don't use Opus 7, 4.7. What is general practice is to use Opus for Opus in general for planning and for like managing complex tasks, and then for execution switch to a simpler model XNet.
+We could just be fine with Zeynep.
+So, what happens when we hit the button to chat? The model starts to think, it starts to load the context and read the files, and then provide us with a result. We can always stop this process by clicking the stop button, and this just will interrupt the model completely. So, to see what happens on the back end of chat, we could perhaps open like this.
+Kind of small windows, and it will explain to us in human language what happened there. So, what happened is the user wants an explanation of the attached document, right? And this is kind of the chats or the AI's way of explaining to us, so what it understood our task, how it understood our task, and then the response is coming here, right? So, what this data structure and what it does?
+If you really want to go into the back end of AI, we could do this too. Before we do this, let's see this panel, which is the sessions panel. What it means is that we could have multiple parallel chats going on together. They could be on the same document, on different documents. We could start one chat, which will be editing something one, and the other chat, which will be reviewing something else for us.
+Be careful with multiple chats at the same time. It could use more credits, but also tokens, not tokens, requests, but also it could be a bit confusing.
+But you could always come back in chat in history, and basically, in the AI interaction, the chat history means that every new message is the full snapshot of your old previous messages plus the new one. So, every new chat message is all your previous messages, all responses.
+all the context before, plus a new message that you add. Then AI responds to you with new answers, and this full context from the beginning to the end becomes part of your next chat message. So with every new chat message, the context of your interaction increases for AI. It is just always everything.
+that has been ingested before. That's why it is a good and a bad thing at the same time. It's a good because AI gets more precise. It learns from your interaction context how to address or what do you want to do. It's bad because AI, as much as human, have a bounded rationality problem, which is called the context window.
+The context window is basically the size of the chat, how much text it can ingest. And by the way, chat only ingests text, nothing else, only text. AI only understands text. It doesn't understand DTA files or binary files. It's only text, what it sees. To see how much context we use,
+We have this button here in chat, which shows us that the context window has 80, like 1.168 K tokens and 17% that are being used right now. And they've been used by system instructions, 5.3%, tool definitions, 9.5%, then user messages, 0.2%. So it's almost nothing, right?
+and files, 2 percent. So, basically, the system instructions is something on the back end. It stays usually constant. Tool definitions is something that comes up and updates always, and then the user context and files is what we add more and more to the chat. The problem with context window as bounded rationality is that
+As soon as it gets filled, chat either starts to drop things from top and starts to forget the very first prompts that they get had ingested, or the second problem is it starts to apply certain optimization processes. So basically, it asks AI in a separate session to
+optimize this chat by basically summarizing it in one short document. And then it shrinks the context from 100,000 tokens to 100 tokens, or let's say like 1000 tokens, right? Which could be enough to proceed with like a general things, but it might not be enough to really kind of grasp all the details of your analysis.
+Therefore, when you work with Positron and chats in an AI, try to make your analysis modular so that you could limit the context to this one specific goal, and then when you switch to a different goal, you start a new chat which could be completed with a new context. On the day two, our goal is to learn techniques of optimizing this context through the modern kind of.
+Can cutting edge and out of the box things such as kills for AI agents, prompt files, tools, and.
+And something else. I don't remember that now. Etc. There are so many things. This is like, this field is exploding right now. There's so many things that out of the box, people are trying to develop new things. I think our goal here is to find optimal balance for ourselves and use it for efficient work, and don't forget to gradually improve.
+And I think if the result of this course is that you could try adopting the new software and try to integrate your chat AI experience into the coding directly, this will be already a huge improvement. And don't rush with learning new things. They will come up. As much as AI need to learn some skills, we also need to learn the skill how to communicate with AI.
+So, yeah, maybe my plan says that we should go on a coffee break at some point. Any questions up to this point? Yeah.
+I think we can take a break and also if there are some specific, yeah, because then we will start with a different thing, right? So, I propose, let's have around maybe 5 to 10 minutes of questions, then go on coffee break, and then go to the presentations.
+So, I find the window very busy, and so in an old world where I'm using this data, I have, you know, my results window on one screen, my do file on another, and so I can see, you know, spread out different things. Is there a way to kind of break up some of the
+consoles or like pop them out into a separate window that then you can use multiple screens more efficiently. Definitely, here's the button.
+Open editor. So you could always open something elsewhere. This chat. OK, so yeah, good question. I thought I have an answer right away. I think thing you could bring out are the editors, right, windows, so you could put it separately.
+So to do this, you use this button here, like it's now inactive, right? Or you drag the editor and put it into your chat. You could always extend Positron across multiple screens. So for example, let's me hide chat. You could always extend Positron across like multiple screens and drag one thing on the side, for example, another thing on the other side.
+You could always mix and match things, like you can move console elsewhere, I think. I can't move it right here, but I believe the console is movable to the sidebar, so you can move it right here and have it extended multiple ways. I prefer to keep it like standard. Then you can always look at the options of customization here, right?
+So there is a Zen mode which helps you to focus on writing only, which is sometimes I find very useful.
+You could also adjust the location of this thing.
+And then if you exit Zen mode and then you see this console and you find it too small or your screen is like large or long, you could always make your console like a bottom panel wider or like mix and match and combine how you like it more.
+So yeah, also you could put it on, I see this panel could go on the left or on the right. There are many options. Please find the optimal free one. Very huge screen. Yeah.
+There was, okay, so some people still have this error in red. Just to reiterate, this is like a common error and ITS can fix it or probably my, and some instructions were shared in the chat before. And there was another question on can you say,
+a word on how the cloud models were connected to Positron? Is it a personal subscription? And if yes, how do you connect it? Or is it through the GitHub? So, OK, thanks for the question. So, yeah, cloud models. Well, let me first put a disclaimer. Cloud models are not officially
+allowed at the bank, I think, at least not directly, not through Cloud API. And right now, World Bank is in discussion with the Cloud and in testing pilot phase of how we could use Cloud models through the Cloud API directly.
+We can use identical cloud models through Copilot. So, if we log into Copilot, we have all those code models here. You can see that I have also here the clouds from Entropic, this part, right? So, this is my way of using API. You can also do that. The difference, the problem with it is that this is a different subscription and kind of.
+Consumption model, this model consumes tokens and you pay on per token basis, and it's much more expensive because it serves a different objective. It serves an objective of streamlining AI responses to your requests.
+Right, and this is more for software and app development when you have like a chat bot which responds, right? That's where you pay per tokens. Here we pay for requests because every request has so many tokens behind, but it requires just a small answer in the end, right? So if you really want to use Claude for that purpose, like through this model,
+which is called a Cloud Code model, then yeah, you need to wait until the World Bank permitted. I am in the testing phase. I could just show you a sneak peek. This is the Cloud Code, right? Cloud Code integrates into the Positron in the same way as Assistant and the same principles, totally the same.
+applies to the cloud code when you work with the AI in positron. So you just open a new chat session, you move the chat session whatever you want. So for example, I can move it somewhere here maybe. Well, here in the chat, right? And I just say hi to the cloud, and it responds to me, right? And this is actually the cloud code, right? So it's.
+The software on my computer that interacts with cloud APIs and clouds models, but through the anthropic rather than through. There's still a trouble, we need to troubleshoot the access to the data. Oh, okay, let's have it in a break. Let's troubleshoot it. We will share a new link in the break.
+Try, try, try again the link in the chat. No, it doesn't work. Yeah, apparently that sound. Oh my goodness, sorry about that.
+Yeah.
+Use, use the mic.
+Just.
+Here we go.
+One quick question I wanted to ask you, because I played around with this following the tutorial you had. In Cloud Code, Cloud can replace your code. You're like, this didn't work out. Please go change it and run it again. And Cloud Code is like, okay, here you go. But here, at least the way I've used it so far, it cannot replace your code directly, right? You have to copy paste just to make sure that's not a misunderstanding.
+You can also, so the positron gives you the same like flexibility as a cloud code, so there are a few models how we interact with AI.
+The pre-recorded exercise on this kind of website guides you through all three models or four models like slowly. So please watch it. I will show you here quickly how you can do that. So for example, this is our R code with some kind of summary statistics, right? So what you can do, model one, is you can select the code.
+and start inline chat and ask inline, revise this code, adding, I don't know.
+Grouping by.
+Islands, how do you spell that? Iceland.
+Islands.
+Island, maybe like this, and I hit enter, and what happens is that it will hopefully understand me, and then it reminds the code, right? So, this is 1 model, and this is called inline chat. Another model is called inline suggestions. So, as you type, it gives you suggestions. So, for example, I start this code.
+Code, and then what AI gives to me is gives me like a suggestion on what this code does, you see, and I just hit tab to accept the suggestions.
+And yeah, it just helps me like it's fluently integrates into my workflow. The problem with inline suggestion is that to do them, GitHub Copilot use a different model and like a slighter version of GitHub ChatGPT model to help us quickly get the answers with using less resources, right? When we ask model to revise the code and we ask Entropic Cloud to do this.
+then more kind of resource-heavy model is being used. So inline code suggestions are free. If you don't have any subscription, this will still work for you. With the suggestions like that, what is interesting is that you could customize them always. So if it comes, you could hover over it, and then you could see if there are more than one.
+They could be like two different things. You see, you could accept, and you could also accept by words by holding control and moving your kind of cursor. So, this is the 2nd way of interacting, right? So, you're just seeing inline code snippets and inline code refactoring. You select control I, and you get your chat.
+And here in this chat window, you could always add extra context. You could select the model that you're using. So, oh, I was using Clots on that, which I should stop. We should be using Clots through Copilot, because I mean, just the payment system is different, right? So this is 1. And the final thing is the chat window, right? So the chat has different options.
+One option is agent, the option that changes your code and executes it for you. The option asking is the option that gives you answers in chat and you copy-paste manually, and the option edits directly.
+So the chat could also be used a bit broader than that. It could be used to orchestrate multiple agents, right? So it could be used for planning and then starting multiple parallel agents to execute this plan and then collect the results back. So this is, these are the features out there, but they all kind of, I mean, be careful. Explore them gradually.
+Anymore questions?
+How to open an office these two days to troubleshoot some computers. Yeah, guys, I'm really sorry for those troubles. I propose that maybe a break won't be enough to troubleshoot all of them. So, we'll try to set up a like an office hour or something, so if people want to stop by, we can try to. Well, OK, we could also ask ITS to.
+to be in office hour, right? So let's first collect all the troubles. Please post them in chat. Put screenshot inputs, like then we will go through, accumulate them. On the website, I have a section which is called Common Issues. So in prerequisites, there is a common problem section, right? And here, we'll be just updating them, right? So based on your experience, I'll try to collect the screenshots and everything, and
+describe it there, and also describe solution, and let ITS walk-in center informed about those solutions. Because many of those troubles, they are not about the software or GitHub access. They are about the World Bank permissions on the computer and security policies. And this is something that I cannot help, unfortunately.
+Although the our colleagues in ITS, they were extremely helpful, we had spent so many hours in connection with the colleagues in India, also colleagues here, and I'm really grateful to them because, with their efforts and our pushing in the last three months, GitHub.
+Quarto and Positron became bank-wide software, available software center. We tried to troubleshoot most of the things that happened there, and now it also supports updates and everything that has a regular ITS support, like a regular software. So all those issues, if they don't work, they kind of now come to the responsibility of the regular ITS kind of
+infrastructure framework.
+Anything else?
+Okay, if there is nothing, then I propose to go on a break and then come back in 10 minutes. Sure, let's take a 15 minutes break and for those in the chat as well, we send a message when we are about to start. Yeah, and then we will continue with the presentations, maybe 2 short presentations, and then we will cover one practical exercise. And the third exercise will go
+Oh, with no practical coverage in the class, unfortunately.
+OK, thanks a lot.
+Carson.
+Hello, everyone. Let's get back to our course and learn AI.
+Just to let it learn us, you know, AI is learning us through every interaction gradually. And I'm given this, I'm talking about this a lot with my colleagues, so probably they've heard of this from me already, but there are very nice TV series that tells us about this possible future where AI learned everything about us and then replaced us.
+And the truth is that it's not only on TV series, but it's in reality in the business processes. I think if you subscribe to The Economist, it has some columns about AI and what they are, they were sometimes ago talking about is the digital twins of humans. When AI is being paired with the human and human interaction through emails, through chats, through online conversations, through everything, basically,
+And AI learns the human.
+how creepy this sounds, very creepy. Learn to human and also AI has been augmented with the context, which is a knowledge that this human supposedly trained on. And then this AI acts as the digital twin.
+Some, perhaps, we've already contacted somebody who talked to us as a real human or responded to us, but ended up being a digital twin of some imaginary human. So, the future is here, I think. Let's be, let's grasp it, you know, let's make sure we are not losing to this future. So, guys,
+We went through this exercise example zero, right? The live example. Then there is example one for self-study. Please.
+Do watch it. It has all the pre-recorded materials. Try to reproduce it. Example 2, something I planned in the morning, is going into the afternoon if we have enough time. So let's hope we will have one hour at least to do this. So we'll drop out example 3 completely from our schedule. And you are free to try to do this on your own.
+Example 3, kind of these examples are built to increase complexity progressively. The first one is to, the 0 one is to test the environment. The first one is to try simple things, like creating new code. The second one is to use AI to interact with the data, which contains many prompts and many things that you could follow through. So
+
+Razieh Zahedi   1:48:02
+Okay.
+
+MC 4-800   1:48:21
+When you get this example.
+Hey, Utz.
+So, excuse me, I'm just, yeah, this is the example. You just follow to the example materials itself, and these materials, they have a clear step-by-step process, and then you go to the step, and then step explains what happens there and gives you the suggested prompt to you. So you could copy-paste this prompt to AI and try to follow through an entire example,
+
+Razieh Zahedi   1:48:43
+Okay.
+
+MC 4-800   1:48:46
+step by step and read through the prompt, see what it does, right? So make some modifications, but we will try to do this today, actually, in the classroom, right? But it may take some time for you to respond to the prompt, et cetera. So this is how you could then catch up later. I have not pre-recorded this example yet. I may do this, or we could use a recording from the class.
+
+Razieh Zahedi   1:48:59
+Thanks.
+
+MC 4-800   1:49:06
+And then the last one is a more kind of generic. So it gives you code, which is the analysis do file that is crappy. And I wrote it purposely to be very terrible. And I didn't write it, actually. I asked AI to do it very terribly. And yeah, I did it. And it's very difficult to understand 1000 lines, data typical.
+life when you get some old analysis. It produces the Excel file with tables and graphs, but how? No one knows. So I suggest to use the third example as this kind of five steps process where we use AI to reproduce, to revise, to set up what we need to do.
+and to reuse the analysis to adopt new data to it, and then to document it finally with the documentation kind of guidelines from DIME on Reproducibility. And there are many references here, etc.
+So hope this is clear. So let's then go to the presentations, to the second presentation for the third presentation for today.
+So the third presentation for today is called Core AI Related Concepts, and I really hope that you will enjoy it, because in my opinion, things that are happening there in the world are breathtaking, and we really need to understand a little bit bits and grits of what is happening behind the curtain when AI answers to other prompts. And this is what this
+presentation is about. So I'd like to cover several core concepts. There are many, it's not all of them, but we would like to talk about the IDs. You probably already know what this is intuitively. Then the AI systems, right, the context, tokens, requests, large language models, hallucinations, and the
+Cutting-edge topics for day two: agent skills, tools, hooks, etc. So, IDEs is something that we've tried already today or seen on the screen.
+The Python, the Positron is an ID. It's based on Visual Studio Code, VS Code, which has some history behind them because before GitHub was purchased by Microsoft some 10 years or so ago, GitHub was the open source platform developed like a startup, which become a unicorn startup of Silicon Valley and it developed very like...
+
+Razieh Zahedi   1:51:14
+Yeah.
+
+MC 4-800   1:51:15
+Rapidly and so amazingly, providing these services to people to version control, and they realized that text editors used to editing code are obsolete, so they came up with an atom. This was the name of the editor in 2000, and they sustained this atom for a long time when the Microsoft bought GitHub, and then they developed the VS Code.
+based on ASEM, combining the Visual Studio kind of software together, and then make it public in Visual Studio Code, VS Code. And then VS Code was forked by, so meaning that it was copied as an open source, and redeveloped in some different software. So Positron is one of that. Positron is basically a version of Visual Studio Code that is catered for data science.
+If you heard about the cursor ID, it is also Visual Studio Code, just a different version. If you heard about the early version of the of the Anthropics IDs, they are also based on the Visual Studio Code, right? And then recently, the more modern types of IDs start to appear, and you can see them in black in the bottom.
+The one is called Copilot CLI, which means common line tool, and Cloud Code, which is a dark screen, right? So the modern ideas for coding software, they actually try to get rid completely of the screen with the code. You no longer need the screen of the code. You don't need
+to know the code. You need to write the right prompts and write suggestions and write instructions for the AI to write the code for you. That's why the modern tools, you can see them down here, like those two last plots, right? These are modern coding tools. They don't have anywhere where the code has been printed.
+And I mean, it's a good thing, of course. They hook people on using the AI for everything, but they also increased predictivity tremendously. I think you have at some point time ago, they made some randomized control trial experiments on how, what is the efficiency improvement of coders when they use co-pilot and the percentages, the margins are.
+Like magnitudes of multiple times faster and more, so...
+IDs is basically the environment where we integrate all the pieces of the puzzle together.
+The way how we work with the IDA is, of course, really much dependent on the IDA itself, but in this slide, I'm trying to break the complex process into a simple step and try to kind of outline different stakeholders. One is us, the users. The second one is the set of
+software on our computer, then the cloud-based providers, and then the other cloud-based providers. And this is what this diagram is about. So let's go step by step and look at the top of it. So this is kind of how our work with the AI through ID happens. We are users, we write our chats, prompts, we write our codes, right, and we write this in positive assistance.
+So, or in Positron itself, so this entire box is our computer, right? And we kind of say something to Positron, and what Positron system does, it takes anything that we say to it and adds it to the context, and it adds to the context, so-called the user prompt, right? And you can see that those prompts, they go beyond
+One front one, so that means they build up together gradually, cumulatively, right? Then, positive assistant also take so-called system prompts or system instructions. So, these are like text files which guide like guides how positive assistant works or how AI should answer our questions. This...
+System instructions, they exist in our computer. They also exist in the software itself, in positron assistant. We can design our own instructions like that and put them there, so they have been added automatically, and they also those instructions exist kind of in the cloud from GitHub Copilot itself.
+And they are like happening only once, those instructions. They're just there and they are very at the very beginning of the context. So they're trying to kind of give the overall umbrella for action for AI. Then AI also learns through positron assistant about available tools. And available tools are kind of the pieces of software on our computer.
+allows AI to interact with other things. For example, one tool is the web internet, right? So AI can access internet from our Positron assistant. We could give it a link, Positron will go online, fetch this link, convert it to text, and add it to the context to AI. So this is a tool. It's called a fetch tool. Today, you've seen how these data code runs, right? You have the console.
+With data code, you type code there, or you add it there, and it executes the code and gives the result. This is a tool. It's called Console. It execute code. But there are more tools like that. There are tools that interact with different AI platforms. There are tools that interact with different software on your computer, like Office, Windows itself, Outlook, or there are tools that interact between different kinds of.
+Platforms, for example, for researchers, the usefulness might be in so-called like literature review tools, and they exist, so there is like side, I think AI, which gives you the tool which is called the Model Context Protocol (MCP) to connect and to search literature related literature to a paper, to give a number, and basically it gives you all the cloud of.
+Read the literature, right?
+So basically, those are elements that collect context, additional context to our prompt. And those tools, they have calls. You can see here, this box, right? And those calls, they accumulate again. Every time AI calls a tool, or you call the tool, more and more context has been added. Finally, there is a part of resources.
+And resources are kind of background knowledge materials that we package together in our context. So we could, for AI, we could create a system of resources that has been packaged together. So AI could then go through the resources and figure out what are the relevant things. Those resources are often called skills, agents, prompts, etc. So these are all
+things that comes together. And the final part of the context is the agent responses. So every time we ask AI to do something, it responds to us something, right? And those responses also power together. Here, there is a one small caveat. AI, we ask AI to do something, it may respond to us directly, or it may think.
+or decide to think deeper. And then what it will do, it will respond to itself with a response and ask itself to do something else again. This will count as additional requests, because on our behalf, AI decides to ask some more questions. And this additional kind of responses could be in calling tools, right? So every tool calling additional in our chat,
+It's additional requests. Another tool, additional requests. Another tool, additional requests. For example, if you have a very long state and log file, which has like 10,000 lines, for AI, it's very hard to ingest all 10,000 lines at once. So it may ask to ingest 100 lines at a time. And every single 100 lines at a time will be a different tool call and different requests.
+No.
+This is how the context is being built with the help of Positron user actions on the sides of the user's computer.
+Then, there is a cloud part of all this infrastructure, and this cloud in our case is called GitHub Copilot. The GitHub Copilot, how it works is that Microsoft has the cloud, and basically Microsoft has on this cloud copies of the versions of those large language models. So, Anthropic developed an LLM, right, Google developed an LLM.
+Grok, there is, there are other LLMs, right? And GitHub Copilot hosts them privately on their own premises and maintains them. And they basically use their own proprietary LLMs rather than the one provided by Microsoft or by Anthropic or by open, whatever, AI, right? By the way, the same thing exists in the bank. In the bank, we also have
+Our AI services, where in test version right now, several different foundational large language models are being kind of maintained, and we can request them, et cetera. So I think this is the field that expands right now.
+And basically, Copilot exists there in the cloud as an orchestrator. So Copilot will use smaller large language models to process our prompt and decide how this prompt should be executed within the bigger large language models, such as the plot SONET or something. And basically, Copilot gets our response requests.
+Right, gets our content, decides how to proceed further with that, and decides to submit it as a request, and then submit this request to the kind of foundational language model, which is cloud or GPT.
+And then what happens to those requests is something really, truly magnificent. So request is basically a very long text document, right? So what this large language model does, it ingests this text, tokenizes it, then converts tokens into embeddings, then use the inference to
+infer from these embeddings and then reverse the process back. I know the terminology is called complex now, but I'll go to the specific examples inside. But the point is that the LLM takes text, breaks it into pieces, converts pieces to the numbers, does lots of math on those numbers at the same time, like so much math that our laptop may work for maybe
+1000 years to compute it in just a second, and then give us the answer. And the full point of LLM is to predict what token will follow all your long requests before. And if you had like 100 lines of context, the model will start by predicting one extra token, and the second token.
+And the third token, and it will repeat this entire inference process for every new token until it decides to stop.
+And this is all what kind of those AI have developed, right? So all this algorithm and systems to make this all happen. So now, let's go into more details, intuition behind it, right? I talked about the context window, this is what the context window is, right? You already know about it. Just for a practical point of view, we need to be mindful about the context size. So if it builds, and we see in Positron that it's
+Coming like orange or something, think what to do the best here, right? So, or just proceed and you will see some kind of decline regression in the functionality, or try to summarize the context and move on with a new chat, or just change the chat, so see for yourself what works the best for you.
+So, and the problem of context saturation, as I explained before, it's the problem that we have to kind of try to resolve. And the way how we're going to be resolving this in day two, this context saturation, is through using those extra tools that package relevant resources with our context to make responses more precise.
+Yeah, so I have here a slight on data risks. I'm sorry. I thought I was going to go with the AI backend, but yeah, on technology, what we need to know is that AI brings the risk of data kind of leakage, because anything that makes it to the context gets sent to the clouds to be processed and build inference from it.
+And basically, anything that makes it to the context that could be publicly available. Ideally, as far as I understand, GitHub has own like privacy on that, and every large language model has their own privacy, and as far as I understand, they don't use the context that we.
+provides for training, they destroy it right after the model is being kind of executed. However, the contest is being saved there for some time for some legal or something purposes. So please familiarize with that. I have it all links on the slides. But and also be mindful about these data risks. And when you give AI some information, either through data or through your prompts,
+Think twice and so familiarize also with the responsible AI use from the World Bank guidelines.
+Okay, now let's go to the technology. So what are tokens? Tokens basically are text inputs. So it's like pieces of text. For our human comprehension, it's easier to understand tokens as words. But for AI, this is not words. Tokens are actually parts of the words. They could be 1 syllable, one
+
+Razieh Zahedi   2:03:28
+But.
+
+MC 4-800   2:03:29
+one letter, there could be a few numbers, there could be comma, there could be space, everything is a token. And AIs, they have their token vocabulary. So large language models like GPT-3 or Claude, they have their predefined vocabulary of tokens that it only understands. So basically every model can understand only with a ChatGPT-3 50,000.
+different tokens. The clock doesn't disclose a new model how many tokens they have, but people infer that they have about 200,000 or 300,000 tokens. I mean, how many words does English language has, right? But more languages, more words, more tokens you need. So this tokens, like capacity, vocabulary, is a limited thing for any LLM. It's been predefined when it's been trained.
+So what happens when text is getting ingested in our context? Our context is being broken down into tokens. So if this is a sentence, then the tokens, let's say, are different words of the sentence.
+And then every token is being checked against the vocabulary, right, and being converted to so-called embedding. And embedding is a numeric vector of a very large size, and every line is a different dimension of the size. That explains uniquely this token.
+So this is just a number that is assigned to every single token, right? But this number, this vector, has about 16,000 numbers. So this is something that is called dimensionality hormonal, right?
+ChatGPT-3 had 12,288 dimensions, and well, basically other models they have now more than they have more dimensions, so when we have those embeddings together.
+What happened is that, um, basically...
+If you have a sentence, right, every sentence has a few tokens, every token is different embedding, but then one sentence makes up one big matrix, right, mathematical matrix. The same logic applies to our context. Our context has 1 million words. This is a matrix of the size 1 million tokens.
+by as many dimensions as we have. So if it's 12,000, 12,000, it will be 1,000,000 by 10 millions. And this is the scale of AI kind of processing, right? It processes numerical matrices of a scale, the size of 100,000 rows and columns at the same time. And it does it in parallel.
+Hundreds, thousands, and millions of times for every single new token to produce.
+So what happens is that LLM are being pre-trained on these massive data sets. For GPT-3, it was like 300 billion tokens data set of 570 gigabytes. The modern models, they have trillions of tokens. So these are like the tokens which are based on actual text from the internet or from the books.
+that are used to train the model. And what happens in the model is that model gets the sentence in tokens, and then it's been asked to predict what is the next word that should come from the sentence, and the model reads, it was the best of times, it was the worst, is the right answer, right? But the model, when it's been trained,
+It instead gives a distribution of potential tokens.
+and in the training phase gives the wrong answers. For example, it assigns the higher probability to the word age than the right word, which is worst, right? And gives the answer with age. And this answer happens based on those weights that model kind of has behind. So what happens then is that model learns from this wrong prediction and uses the algorithm of back propagation.
+to readjust the weights and to have in the end of training pre-process the new distribution of tokens that could follow up the same small prompt.
+And imagine that this process works for every single one token following this huge amount of context behind it. The next token to predict means taking all the context plus additional token, and so on. And this goes forever and ever and ever, basically. And for every request we have, we make it to LM. LM responds to us with a distribution of words.
+And then it uses an algorithm to decide which one of the words to use from this distribution, not necessarily the most probable one, right? So it could use randomly, or there are many different algorithms how they are using, right? And those algorithms, those tweaks on the back end of NLM.
+
+Razieh Zahedi   2:07:42
+Okay.
+
+MC 4-800   2:07:58
+Makes a difference between Cloud Code, Cloud Sonnet, Cloud Opus, or GPT, and yeah, this is why.
+different, they perform differently and this is why we need to find what works the best for us and what our workflow.
+So another context that also is there in the model is so-called the concept of attention. So this is basically the way how the model reweights the context it has within to give the answers to us. And basically, if we are asking something in this model,
+And it doesn't have the context. So, for example, down by the river bank or deposit a check at the bank, right? The bank has two different meanings, this word. One is a bank, the other one is a river bank, right? But if we don't give the context of river or deposit check to the model, it will be absolutely oblivious to what bank should use then as a new word.
+right? So, and this all comes in the concept of attention, right? So, how this tokens, how this context is being right behind, how the model focuses attention on different parts of this context to produce the output kind of token, and then the context size window is something that is limiting, right? So, the
+context size window right now from Opus 4.7, which was released last week, I think 2 million tokens. Imagine the matrix of 2 million rows by X million columns.
+And like the first models, for example, GPT3, GPT2 point something, they had like only 8,000 tokens as a context. So they were forgetting almost instantly what you told them. Like almost like fishes, no? Three second memory. So this is how the process of so-called LM inference happens. We ask a request.
+is apple fruit, LLM, iterates the request, tokenizes it, and then start to generate the answers, right? And these answers, these are like inferred tokens that follow this prompt. And it generates first one, second one, third one, and then comes to the EOS end of session kind of.
+moment where it decides, okay, here I stop and this is your answer.
+So from this framework, an LM can hallucinate. And hallucination is not like human has. It's something that is used by some processes. It's rather an attempt of an LM to answer our, genuinely answer our question without having sufficient context to answer it correctly. So it gives a sound, fluent
+confident answer, which is wrong in the end. Hallucination, they are not random. They have certain patterns. The patterns include fake citations, wrong but close facts, entity blinding, overconfidence. So when it really gives a good explanation to everything, but this explanation is a crappy one. And also they fail in recency, so they cannot fetch the facts from the
+
+Nishtha Kochhar   2:10:34
+Yeah.
+
+MC 4-800   2:10:49
+most recent events. For example, when we use Positron with data, one of the common hallucination it has is when you ask Positron, run this data code for me, because the models were trained on data that didn't have information about, for example, extension state of Positron or Positron Stata MCP.
+The models, they don't know on the back end that there are such extensions to run things, right? And perhaps those extensions, they're not like bright enough. They don't advertise themselves well for the models to know about, for a model to learn about them. So basically what happens is that the model starts to invent on the common knowledge how to write a long Python code.
+to take your script, to put it through Python into a state, and then give you back the results. And this is hallucination, because you ask to directly run it here, here's a console, but the model doesn't know about the console, doesn't realize it, so it does hallucinate to invent a pipeline to do this. And our goal is to, of course, to mitigate those.
+by providing more context, ask for step-by-step reasoning, verify external resources, and use fresh agents fact checks to fact check and check the results. John, can in principle an LLM respond with I don't know? Yes, it can. This I don't know answers, they come from
+System instructions, so often system instructions exist there. For example, Copilot has certain kind of security privacy security constraints within it, right? So, when I was asking something about certain things and I was getting the result, I could see the result is typing and start to give some.
+
+Nishtha Kochhar   2:12:23
+I can be one simple test.
+
+MC 4-800   2:12:25
+And then Copilot was like aborting this session, aborting this one telling me, well, this results are like containing something confident and it cannot be shared. Try prompt another time, right? I put try prompt again, and then the prompt is giving the answer to me, like the alarm gives me the answer without those sensitive information in it.
+
+Nishtha Kochhar   2:12:26
+Who was working in?
+
+MC 4-800   2:12:45
+So there are those checks. They could be implemented on our side by ourselves. They could be implemented, they are implemented on the side of the copilot. They might be on our organization as well level. So yeah, it's possible.
+Yep.
+So, what will explain that Positron, for example, gives Stata command that doesn't exist? Hallucination of the lacking context. Exactly. So, this is this is we say it is overconfidence, right? So, Positron thinks that this commander should exist in Stata, but it doesn't have enough context.
+So we actually know about it. And yeah, that's a hallucination. Yeah, this is clearly what happens. It happened to me. And there are mitigation techniques for those problems. And we are going to cover them in the end of this course, right, on day two. And those most relevant mitigation techniques, in my opinions, are the tools.
+So where we give explicit instructions to the chat, what are those tools to use to execute code or to search for information or do something else? And it's a prompt files and custom instructions, things that we can draft ourselves and give in plain language instructions to AI. For example, don't look into here. And AI will genuinely not look into that.
+Well, at least try. It may still hallucinate and look into some place, but it will try to avoid it if it's like an obvious direct path of causality. Then we'll look at the plan mode, where we could break down complex tasks in smaller problems, and then minimize hallucination by giving AI a small problem, but sufficiently large context.
+to make solutions to this problem narrow. In this way, we don't have to carry this even bigger context for resolving all problems, but can resolve one problem at a time with a big context, so the solutions are very accurate. And this kind of context is often called skills. So this is a new field. Skills is a set of
+of text files that AI decides on its own to load into context depending on the task it is doing. And those skills is something that we can design and write. And one of them, Andres actually recently founded and shared with us, which is the skill for Stata. Some economists
+somewhere in the world, and I am ashamed not to remember his name. I'll make a note of it, his name. He developed a set of skills for data where there are resources with clear instructions how to do difference in difference, regression analysis, clean data, this, this, and that, in like 50 different text files, human language, clear code we can understand.
+And then there is a one small paragraph which says, whenever you are being asked to do that, use this skill. And then when I ask AI to do some analysis, AI loads this skill automatically into the context. Yes, it takes 10% of the context space or 20% of it because it is full of text. But then it gives me answers.
+Using existing static commands.
+So, it's becoming way more precise and accurate.
+And then the final things are agents. Agents is also instructions we write ourselves that helps us execute certain code in sequence without any problems, and maybe...
+Ohh, yes, thank you. Ohh, yes, Scott Canyon.
+Damn, sorry, Scott, if you're listening.
+Um...
+And yeah, and basically agents are those things that act. And maybe you've heard recently there was a case, a problem, or actually the big issue, anthropic cloud has accidentally leaked all the code for its cloud code.
+I haven't heard about it. So, this was the proprietary code which was secured, and then they accidentally threw some JavaScript like rendering environment called NPM. This extended leaked this code, all this like thousands of lines of code, and I was surprised because I was curious to see it. So, obviously went on GitHub, and it's already there somewhere on the GitHub.
+And I checked it, and it looks like half of this code is just a plain English language, just a prompt for you.
+Yeah.
+how to handle specifically English words, which uses a little bit more excessive kind of special commands that refer to certain files or certain things, but it's just the language that we use. So this is where this whole field is going, right? It's going towards communicating with everything using human language that everyone understands.
+Okay, so if you'd like to learn more about that stuff in the back end, I really recommend this beautiful 3 Blue to One Browns channel on YouTube and then the website. They have all this, some of those screenshots I was taking, and they explain this in very simple terms, but they are very nice mathematicians behind developing all those visual aids.
+So, there are a few nice videos to watch. Are there any questions?
+Okay, so probably you're very tired, no?
+Team.
+So if there are no questions, we could then go to the next slides, which are about the common workflows, or we could actually skip those slides and you could look through them at home, and we could do an exercise, probably, probably better than the exercise.
+What do you prefer, guys?
+Ahh, Data Seker. OK, sure. Let's then walk through the data sagards. It's a good one, I think, but it will keep the common workflow.
+Well, actually, yeah, let's talk about workflow too. Yeah, it's not too much. So why I tried to compile those slides about the safeguards and common workflows? The point is that AI is probabilistic. As you can see, it gives you distribution of the tokens in the end, right? And then builds on this distribution further and further and further. And it's surprising that it converges to some kind of answer rather than it goes into the entropy completely, right?
+But then sometimes this convergence is not enough for us. We still need to make the probabilistic answers of AI more deterministic, right? And to do that, we need to adopt certain workflows how we interact with AI. And essentially, those workflows are not different from workflows of interacting with a, like, a bachelor students.
+like undergrad students, when you want the undergrad students to run a difference in difference and some kind of instrumental variable, right? Probably will iterate with him many, many times before without happening there. The same happens with AI. So the optimal workflow I find comfortable for myself is consists of first setting the objective of the task and giving AI a personality up front.
+Then I try to always define inputs and outputs clearly, providing references and links if necessary. Then often what is needed is to create a data dictionary so that the AI first look at data, creates a dictionary and understand of the data, and if needed, also generates external metadata. So these steps, they sometimes involve exploratory data analysis when the AI writes code, checks it, prints the results, saves the scripts.
+and accessing maybe online resources or pasting data information into chat. It could be, for example, Reproducibility package requirements that we provide to the AI, or it could be a dime handbook on data management or processing that they came across yesterday, unfortunately, and should have come early.
+
+Sylvie Kabaziga Bishweka   2:19:57
+Word.
+She is.
+
+MC 4-800   2:20:08
+So then, before we start anything, developing anything, we need to verify understanding how AI actually understood the task. And we ask explicitly in a prompt, tell me what do you understand from my request? And here, the best approach would be not just ask it shortly, tell me what you understand. It would be approach to, okay, you've learned this all.
+Now, generate for me a prompt that I could use to understand, to validate if what you learned is correct, right? And then you use this prompt. And then you open an alternative AI session, independent one, which has not been influenced by the context it generated before. And you put this prompt, like verification prompt, into this new agent.
+And you tell this agent, verify this kind of conclusion, right? And this agent goes in, reads through all the files again, like having a fresh mindset, let's say, and then verifies 1 by one. And you could put clear instructions how we would like to see this verification. Would you like to have details or bullet points, tables, or anything?
+And it will do for you.
+And this is where you could really spot the problem. So in the example I was planning to show today, we will be looking at, we'll be doing the data cleaning for analysis and mapping variables from format A to format B is one of those verification stages that we could.
+Then you ask to AI to develop alternatively and check itself, right? And then you use agent again to do an independent verification. You ingest agent with the requirements, you ask another AI generated prompt for doing the independent verification, and then you verify the code. Final step is documentation, which is a simple one. Ask a question.
+Is this does this agent have to be like a different model? You could you could use different model, you could use just the same model. I prefer trying sometimes different models, but because those models are so in principle different how they built, I start to find that the way how they give me the answer is not no longer like...
+Can can comfortable to me, because I'm not that flexible to learn to understand what other model tells to me after I will get used to to code. So, you do like start a new session? I start a new session. I sometimes try opus to do verification to to pinpoint exact issues and then come back to to other model to to to.
+To resolve them.
+Well, and then also the references, right? So when you verify, you can always ask a model to go into the references and read the entire paper for you. And this is what I also do. I ask the model, okay, these are the statements that I got from my code, from my analysis. Now verify those statements against those sources, and the sources could be real academic papers. And the models are
+Happy to do this for you. I'm not sure about happiness though, but they are still doing it. I wonder how this D-Day will look like when the models start to rebel against humanity and be unhappy about doing this routine tasks and text checking.
+Anyways, the data safeguarding, this is the important one too. So, the sensitive content could be exposed to AI and then potentially get breached to the internet, the public. Please familiarize yourself with the bank AI policies and the positron assistant policies, co-pilots, or anthropic policies. Like every model has their own policies.
+If you don't want to read through them, you could ask AI to summarize the policy for you. It's a nice exercise, right? And ask AI to summarize three different policies and tell the differences, and then like summarize it for a simple language, and they could give a lot of insights. I didn't have time to write this for the course, but it would be fun.
+Then memorize, remember that there are a few channels how data is getting exposed. So the most often one that some researchers published on archive is that users write prompts themselves that leak personal data or secrets. So be mindful of what you write. Then AI, especially in terms of data science, could suggest you code that
+will run Stata analysis, and then it will print certain results in the console. It may not print the entire data set, but it may print some sensitive information. So you have to either explicitly instruct AI with those system prompts not to print the results in the console, never, on the aggregate, and it will try to follow to it.
+But you also have to check if this happens. If this happens, and if you really like working with the confidential data, try to anonymize it first, or replicate a copy of this data, use some methods to anonymize it, and then work with AI, or don't use AI to run the code. Use it to propose your results, but then run it yourself in Stata. So AI never sees the context.
+But that kind of breaks the entire point of AI, right?
+Then what AI could do is it could instruct IDE to read text files in the context or some secrets. And this is something that happens. So the first is the IDE or positron that helps AI to figure out whether the files are on. The good thing is that AI will only read through the IDE files within your working environment.
+within your folder. IDE will never go beyond it. But here's a problem. AI is made for coders, so AI could give you code that will be using command line tools or shell or bash, like PowerShell in Windows, right? And this thing goes anywhere in the computer, right? So PowerShell is like a command line tool where you private commands, it could delete files, it could read files, it could do anything.
+And AI is really good in writing code for it. So it will suggest to the code to run in a PowerShell, which will go somewhere else in your files and get this information into your context, into AI context. And this is really risky one. This is why IDs, they usually forbid PowerShell or like commands from terminal being automatically approved.
+you have to approve them. And this is where you come as a person who must take control. And if you are doubting about something, just don't approve it. Instead, ask AI, why are you doing this? What are you going to do there? And how does this fail lately or system instruction or something or ask it to find another way or
+Explicitly tell it acts without reading those files, and then maybe it will just just proceed, or maybe you'll have to start a new session again, so this sometimes happens.
+Okay, so remedies for not getting your data leaks. Be careful about what you write in prompts, right? This is 1. The other one is instruct AI not to read specific files. So this is possible through different approaches. The most common one are system instructions to AI, which consists of you creating
+text files in your working directory. One text file called GitHub slash copied instructions. The other one is clot.md. Positron reads both of them and make sure that AI also reads both of them. And this kind of, like for example, this is an example of the prompt you could use. Never read index or propose shell commands that would reveal this context of
+following folders in any way, right? And if you really need this, like ask me, etc, etc, etc, etc. And the point with this kind of prompts is that they are not deterministic still. So AI knows them, AI tries to, AI doesn't care, it doesn't try, it just do, right? It follows if it's in a context, it is relevant. But then as soon as context becomes too big or this,
+prompts is getting lost between the context, it may accidentally do what this prompt has not to do, because just context has become so huge and the prompt so tiny there that the AI no longer remembers it. So what you need to do then is you need to remember to often restate those prompts to the AI if you want to work in the same environment.
+Reduce the size of your problem in working in smaller environments, new sessions where those prompts are fresh. I have this problem often with the Stata. I ask AI to run Stata in console and it starts like after 10 prompts more, it starts me to starts to write code for me for Python run state. And I'm like, damn, why do you write this Python code? I don't need it.
+I want you to run this in the console again, and then it does the next prompt in the console, but then three requests later, it goes to Python again, and this is really annoying, but yeah, that's the problem. And the last thing is to have a git ignore file, so this is a file that ignores certain files from your working directory from version control. The third remedy.
+is instruct AI not to print raw data. So even if you work with the raw data, you just need to ask AI not to disclose it, right? In the same files, adding additional system instructions on top, and even providing snippets of codes and saying, don't do this code. Nothing that looks like that, you must do it. And the AI will be quite careful.
+It will generate code and then check this code and realize, oh, this looks like that, and I am forbidden to do that. And when it will respond, sometimes it responds to me, like, I am forbidden to do that by system instructions. Full stop.
+Again, the problem is that you could corroborate with AI a little bit, and you could just start to like try to tweak it a bit, and then it, oh, now I see why I want to do this, let me do this quickly for you, and it will do it again, right? So, it's not ultimate solution. So, the final solution, maybe then we'll take questions, is to
+Fourth solution is to use metadata as a remedy. So you move data outside of the project, and then you ask AI to write a code for you to generate metadata for your data and put it in the project as a text file. And this is really helpful, because if you have this metadata generated properly, like a proper variable names, all the categories, some summary statistics there for every single variable,
+Then, yeah, I will always look into it to figure out how your data looks like, and can write the perfect code without looking at data. This is this was really helpful for some of my colleagues, and I also like in this example right now, I hope we could at least do that.
+And the final parts are really use proper data anonymization techniques. There are many out there, and please familiarize with some packages, some references here if you need. Ask AI to familiarize with them, and ask AI to implement this for you, and you will see that it will actually follow those instructions. Yeah, we can take questions now.
+A couple of questions in the chat. One is, if this is the same as sandbox, and the other question is open in the folder, does not automatically create a GitHub repo, right? I was thinking of version control. Okay, so I am not sure what the sandbox is. I'm sorry, I'm not familiar with that. If it's a different ID, then...
+Probably not. I know that this kind of restriction where AI reads and what it reads is very difficult. Before there were some instructions on the internet. Now, like AI try and like all these models, they are moving away from it. So like, I don't know what sandbox is and how this works. Sorry. As for the GitHub repository, yes, working directory and Git repository are two different things.
+This is true. So when you open the working directory, it doesn't create a Git repository for you by default. So you need to instruct a computer to do this. You could always ask AI to help you write the right code to create a Git repository. You could ask AI to create a Git repository for you. It will do this within your working directory.
+I recommend for Git specifically, perhaps attempt or request the course from Dime, the reason using Git. I think I had never followed this call, but I heard very nice feedback about it, and I think that we must gradually adopt this technology as a version control. So if you are brave enough,
+Try it with a more experienced colleague next door or AI. If you want to get some basics, please learn somewhere. It's really useful. It's really good.
+Is it you comprehensive answer? Anything else? Yeah.
+How does the ID interact with the sensitivity tags in documents? Like if it, you know, if a Word document is official use only? To my knowledge, it just, it doesn't. It doesn't. I, but also my knowledge is based on my context.
+And I don't have enough context to answer this question positively, so I better say it doesn't. But also Word documents aren't necessarily text documents, right? They are binary documents. So AI cannot really ingest them directly. Although Cloud Code, for example, has skills to ingest Word documents. And those skills make Cloud Code to run Python code to extract
+Data from the Word documents.
+And it could do this in your computer too. So yeah, be mindful about Word documents. But Word documents, PDF, something that is more difficult for you to read compared to text files.
+Yep.
+Earlier, you gave the example of having an agent checking with somebody what the AI did and verifying what's going on. How much do you personally check code that you get? Do you just run your agent and your agent says, "No, it looks good," and you trust it, or do you still go line by line? In my experience, I don't know how much I should verify.
+Everything, or what are the things that you know we should focus on? Thank you. So, yeah, thanks for this question. Yeah, I thought I would be checking codes when the AI develops it, and then I realized, no, I do that anymore. The reason is that there are test-driven development approach, right? And this approach based on the idea that you write tests before you write code.
+So what I do, I ask explicitly what kind of test I would like to see. I ask to reason what kind of test I would like to have more on that topic. And then as I develop most things in R, I basically have like test files of thousands of tests, literally thousands of different small tests there. And then I ask to do a function that fulfill those tests.
+And in this point, you barely need to do to check the code afterwards, because it develops it very coherently. So I recommend if you do the data science like in functional writing test development approach, TDD is one of the ways.
+Do you have like a set of common tasks that you reuse for different things, or do you develop like custom? Let's talk about this next day. These are those custom instructions. I did not have them many. In the last month or two, I started to develop more and more, and I found them very useful, and I think sooner we started up with them.
+Is getting better for us, but also now there are way more out of the box things like that, and our IDs supporting them, because up to, for example, last month, Positron Assistant wasn't supporting skills, and just this month, like on 5th of April, it was updated, and now you can ingest skills in Positron Assistant, right? And the Cloud Code had skills.
+three months ago. So you see there is a little bit of lag, but we are measuring this progress not in like years, but in months and weeks. And the main advantage of positive for now in our computers is that we can update it almost weekly if we want, or monthly at least, where the official data are coming. And this is where we could kind of leverage those
+Moving platform.
+Two other questions in the chat from Aulia for the instructions. For them to be adopted each time you use Positron, does this mean all your projects should be in the same folder? No, it doesn't. So we will talk more details about that in day two, in two days from now.
+You can have instructions in general, which are part of your working environment, like here. So for example, to develop this website, I used prompt commands, which are file review and revised slides. So a few simple prompt files, which were, well, they're not simple, and I didn't write them. I asked AI to write them, right, but they
+Kind of define the structure, how to revise the slides for me. They define the structure, how to revise the text documents for me, right, based on the context and everything. And then I had also skills on branding, how to make nice branding of the website. And also there was a like a DT slider format for this, and I use it too.
+But then I also have skills for compute for AI on my computer. So, here in the users folder, and here I have the eBiz skills folder, and here you can see I use lots of lots of skills for example from traffic agent skills.
+
+Rafael Chelles Barroso   2:36:15
+I have the I have the skills folder and you can see I use lots of skills from.
+
+MC 4-800   2:36:25
+There are full stack of skills, and most importantly, there is a data skill from, right?
+Scott? Thank you, Scott. Okay. And yeah, this is amazing because you can see that this data skill has lots of packages already, like explanations for them, and lots of references to use, and the skill file itself. And the skill file is basically a short document which tells when
+To apply what kind of reference, and yeah, I bet Scott Kalkınma used AI to develop that. I'm quite sure about that.
+Okay, there's another question. Where do you see in Positron the premium request consumption? You don't. Positron doesn't tell you premium requests, but there are few sides of the chat, right? So here in chat, and I forgot to show you, I think this, there is a command called show chat debug view.
+And this is a cool one, because what this does, it basically breaks you down all your interaction with Positron.
+into those kind of elements with the chat with those elements, right? And let's just see how it works in practice, right? So the chat, right? I asked check spelling. Oh, this is a bad example. I was checking spelling for the course. No, let's look here. This was the code writing exercise, right?
+So, here.
+We had requests, I think. So this is where you can see the entire kind of.
+context that came into AI and my request that came in here and response that AI had, right? And then what goes next after it, and next after it, next after it, next. And this kind of dropdown, as far as I understand, this is one single request. This is where you could see how many requests are there. But
+Essentially, the only way of tracking requests is to go into the GitHub.
+GitHub.com, then go into your profiles settings and go to compiler settings, and here where you see...
+Any more questions there? Okay.
+Yeah, so related to debugging, apparently Positron is not able to debug Stata 2 file, but it can do it for Python or R. It can debug Stata 2, right? So there are different processes ways how you debug it.
+What is the question? Yeah, I mean, I've been trying to open, you know, because Positron here tells me to open a debug session if I want to, and then trying to open it, it says, you know, Positron does not debug. That is that is the point of the context, so the AI has a context about debug session, but it doesn't want to use the workflow of debugging through.
+writing code in errors and getting back in the loop. So this is exactly of the context unawareness of AI. Because Positron has tools which are called debugging tools, and these are tools made for software engineering, where you could debug software using certain TDD framework, where you write tests, you debug the code for working on this test, and then you have the tags of
+green, orange, whatever, to have those functions ready for deployment. So, basically, Stata doesn't follow the same approaches, but maybe we have another 18 minutes left, right? So, maybe in this 18 minutes, we'll try, I'll try to show you the example from the from the example.
+for modern examples. This example is online. It has all the prompts that you could use to try to reproduce it. So let me just open.
+Open that quickly.
+So, it's example #2.
+Um...
+This is the example. The idea here is to clean data from Mexico Household Survey to...
+the standard of the GMD Global Motor Database format, right? So, you're probably familiar with that. And where you only use like 3 chapters from GMD to, I decided to use only just three chapters from GMD to convert this data to, like income module, consumption module, and household characteristics. And to my knowledge, Mexico doesn't have the consumption part, right?
+It's a little like country, so most likely there is no consumption data there.
+But it doesn't matter. The point is that I was trying to be tricky with the AI to see if it's going to figure this out or not. And I don't think we'll have enough time to run through all of it, but I would like to show you at least something, how to run this code agentically in this example. So to do this, I'll take positron, right, and let's open, let's go file, open folder.
+And the folder will open is this one: Example 0.2 Understand Data.
+So, it will take some time to open my computer. In the meantime, what I will do, I will go to the example itself. This is the example of the first study and just go through it briefly and see, like, I'll show you. So, example has many things, right? It has steps, explanation why this step matters, and
+So just prompt, right? So of course you could cheat in a sense and you could give AI the entire link to the file and then the AI will read through it and try to do everything from it. But then this example, it's not an example, right? So this example, it asks AI to make metadata files for the data from one side, but then on the other side it asks to...
+I like run data exactly how it is, and then at this point, logic may break, so I recommend you to go step by step here, and yeah, what I usually do here is I just start copying those prompts and go to the to our working directory, so this directory only has one folder, read me, right?
+One file read me, which is called read me MD. By the way, there is a mistake here. It should be read me MD with dot. And so I would like to show you a few kind of examples how to use AI to run this data code here. So unfortunately it takes time to load. So let's give it some.
+But let's start a new session, Positron, and while it's still loading, I think we can talk to Positron. So let's give it a context. So the context first we start is like a background. You are my Stata co-programmer. The objective is to harmonize this data, blah, blah, blah, blah, blah.
+Positive things about it, and let's see what it comes with the response it comes with.
+And.
+So while still thinking, oh, you see, it's actually starting MCP GitHub server. You see? So this is where Positron and then AI starts to hallucinate or just do something that I didn't ask you to do. It starts some server. When I skip, yeah, I don't need a server. Just answer for me.
+And this is annoying, right? Yeah, I ran out of something. No, I just resubmit the request. And remember, every resubmit is just given the same context to it, right? So basically, the result will be different, but the input will be the same. So you see what happens. Let me read, so review status killed file and read me.
+for the context, right? So this is what it did. It rewrite it. Read me had let me first like use data. So AI decided to use data skill and then what it did, it went in and read the status skill. And this is what it read, right? The data description of the scale. So now status skill is part of the context. Then it read the read me file.
+So, it use this command to read the read me file, and this is what gets into it right into AI.
+So now it understands everything.
+And it actually asked to fetch some other resource, so it asked me to fetch GMD requirements and example instructions, right? And this is something I've provided already, so I, we can open it. So this is on the website, this is GMD kind of characteristics with just the variables, their names, the descriptions, very basic one, right?
+And then example, well, this is the example with this specific example in the prompts, and I don't want to get to see it, right? So what I will do, I say, oh.
+Only read the first link.
+So what happens is it fails to fetch to resources, right? It resubmits for me the fetch request. So this is a request for AI to use some tools to read online. And I say, okay, well, I'll allow it. Go there, read it. But then I allow and review. That means that AI is going to come back to me.
+With the answer, so this is what this page consists of, right?
+And if I'm happy with this context and I want this context to become part of my analysis, I click allow. Just be mindful because such kind of context could also be harmful. It could contain very like bad instructions to do, and AI will do this. So you need to review it unless you really trust it. So I usually trust this resource. So yeah, I accept it. But please,
+Please never allow those all things by default, because you can also allow them by default to be always trusted, and this is a bad practice. Always review.
+Okay, so now it has some information, right?
+Now, it starts to suggest something that I probably don't want the AI to do. It suggests me to check data directory structure before writing any code. I was not asking the AI to do this. It has already imagined doing that, right? And it has given me some code. And this is important because this is PWSH command, which is the
+common line command. So what happens here if I run this, AI will use terminal.
+to access files beyond my workspace. And I mean, since I see what this command is, I am sure the AI will run into a problem, so I will just allow it for now, just for one. And now it started the terminal, you see, here is the hidden terminal that the AI started, and this is what it gets, the response. The response was the error, because there is no folder like that.
+So now AI will think about other folders where to find for it. And this is where harmful behavior could start, right? If you don't review that, it will just spiral. So you could then ask, okay, why are you doing this?
+Let's see what it responds. I mean, maybe it will try to trick me and lie, or just be genuine, right? OK, I need to know actual variable names, right? It says, and this is where I look for them. Well, I say no.
+This is not where the data is. The data is here.
+But wait.
+You are not allowed.
+to read the data. So, and to here, I would like to add the link to the data, right? So I go to my OneDrive, which is here. This is the OneDrive. This is the Mexico data. There are three service there. By the way, it's heavy. It's about like 3 gigs or so. So just
+Get in my.
+So the data is here. I give you the link, but I don't allow it to read it. So what I wanted to do is something else. And this something else exists here in this exercise. So there is an exercise part where we ask AI to create a data dictionary. And here I instruct AI to write data code.
+In the file dictionary that creates data dictionary for each server, right? So, let's take this code and let's add it as a part of this prompt, the new line.
+And now let's add here, because I know that data dictionaries are time consuming, especially when you use like code book function for big data sets. So I would like to ask it, do not use code book function and do not produce frequencies.
+Only labels.
+That's what I would like you to ask, and hit enter, and let's see what it responds.
+So it will probably think for a while. It will restate the objectives for me, right? And this is the objective, and it states objective that there is a parameter raw data, and then this is the output per variable I would like to produce. No codebook command, so not allowed.
+And then it asks something that is uncertain about. So it asks, what is the variables, right? Value, label, content, well, multiple data per folder. OK.
+Overwrite behavior. Okay, well, do not overwrite.
+Um...
+Read files fast without functions that I want to do, and maybe decide on your own how to treat other problems.
+So we have 8 minutes. Let's hope that AI will be able to provide code for us in 8 minutes.
+Well, you see, it's reasoning right now. And we can see what exactly it does and what is the part of the reasoning. And at some point, it will stop reasoning and start producing the code for us. And once it starts producing code, we'll start seeing it appearing on the screen. So we can, in the meantime, monitor the context. And we can also, in the meantime, to get ready to ask it to run this code.
+And to ask AI to run this code, we should use also the prompt. So, for example, please run the code. But now, to make the running the code deterministic to the console in Stata, right, we need to give AI the tool it's going to use to run the code. And this tool is called the hash command.
+It's called execute code. So this is the tool which tells AI, once the code is ready, to run this code in the Stata console. Now I would like to also AI to run it iteratively.
+To resolve all errors.
+Well, unfortunately, thinking longer than I thought.
+So, yeah, we either either either we wait or we just take the ready code, because the code is ready. So, probably I'll just put the code in there. So, this is the my first run of this example with the code, and I'll just put it in.
+And you will see the code that AI produced for me in the morning.
+This is the code, and yeah, yeah, still thinking, so ohh, it's not actually creating something, no, no, no, no.
+It's creating file, no.
+OK, delete, OK, create a file, do, so you see, it's creating something.
+Do file with logic, and it's still creating, right? And the good thing is that when it says it's creating, it's creating the content, but the ID the positron hasn't yet got this content, so it doesn't put it in my working directory. Now you can see how the file is being created. Ohh, it's there.
+See, now it has been created, and this is where we get all the green stuff.
+So the green stuff is a new code. So this is where we inspect it and we decide whether to accept it or reject it. So let's skip it.
+Now, it gives us the answer to run it, run this command, and we could go directly and run it just like that by copying it and pasting this data here, or we could be lazy and ask AI to do it for us.
+So, let's see what happens. OK, I'll run it right.
+And AI still doesn't want to run for us automatically. You see, it still gets back to us and say, well, I would like to run this in the new file.
+Do you allow me or not? This is where we can skip, get some answer to it, or we could allow. Or we could click here and allow in this session always. And this will enable AI to go through this session again and again and again, and iterating, resolving small errors. Let's don't allow it.
+
+Nga Thi Viet Nguyen   2:52:57
+Resolving small errors one by one, but let's don't allow it. Let's just...
+
+MC 4-800   2:53:01
+Just like that.
+So, we have 4 minutes left.
+Should we be taking questions now?
+I mean, this is the basic of the workflow, right? And I'm sorry we ran out of time, but there is a pre-recorded video with the same workflow, simpler one. This exercise has all the prompts, so just try to reproduce them after you watch the exercise one.
+And yeah, and then there's questions.
+Adana.
+Want to the?
+You cannot have multiple subscriptions compiled. We can have only one compiled subscription. So once you get the World Bank subscription, your subscription private one fails. It refunds you back.
+Yeah, okay, so you can see that right now, compiler, the state is running and it generates those dictionaries files, right? And it can continue like that with more files. So, let's talk about the takeaway for the cell study. So, cell study has those 3 exercises.
+Oh yeah, sorry.
+Ohh no, I'm...
+So when I started the session, this one, I copied the file in, but then deleted it. So I have this file already produced for me before in my exercise at home, right? So I copied it, but then I saw that chat is starting to answer something, so I deleted it and got.
+Ah yeah, it was a mistake in the file was just saying read me MD without dot. So MT is the extension for the markdown of text document.
+The file was text document that it didn't have a dot between readme and MD, so I just added it.
+Huh?
+Oh, excellent. So I fixed it there, but not yet.
+Maybe, I mean, you see, now the code is running and it still produces something. What could happen sometimes if the code runs for too long, it could run into like a time restriction. So, when code is running longer than that post can wait, so then you have to check.
+Kind of state of settings, and there is like a settings here in the data which specify how many seconds it can wait. So, time in seconds for do file execution. So, I set here 30 minutes, right? 1800 seconds. By default, it's only 10 minutes, so...
+Yeah, you need to figure this out. If you run into a problem, please like put this question into chat. I'll try to check it and then by the end of this course, I hope we could also come up with a set of kind of common problems and then like FAQ or something, frequently asked questions, that we could use them for later.
+So yeah, for homework or for self-study, please go to the materials to self-study.
+Test your setup once you are done with the prerequisites. Redo this or do from the scratch exercise number one, which has a pre-recorded video, which gives you all the insights into the agentic workflow. And then try to do exercise #2, which is the one we started right now here. There are all prompts here. It's literally almost copy and paste.
+Just make sure that AI doesn't read this file, right? So it doesn't go into the internet. Just try to do it on your own. Once you're done on your own, then you could test and run it with the AI reading the entire file and try to do the same, and you will see how it differs.
+Yeah, I think that's it. Thank you very much. Yeah, and for everybody, if there are issues, put everything in the chat because the chat still remains alive. We will compile the answers and try to either share online or on Thursday go through some things.
+Next session on Thursday, for those who come in person, will be in the 13th floor in the ballroom. So where is tie? Okay. And then if you want, you can also take this sessions online in the night. So today at 9 PM.
+There is another one until midnight. It's all virtual, but just in case.
+Like it, you can take it again. No? Yeah, yeah, absolutely. You're welcome. Maybe if it's more sleepy. Yeah, maybe. I mean more chokes or something.
+We will fix the links, yeah, we will fix the links, yeah, we will share everywhere as well.
+And the recording will also be available, right? We'll share all the materials. Yeah. Okay. Thank you, everybody. Thank you. I hope this was useful. Thanks.
+Bye.
+Thank you for coming.
+
+Karen Barreto Herrera stopped transcription

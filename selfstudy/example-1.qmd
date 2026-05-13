@@ -1,0 +1,7 @@
+---
+title: "Ex.1 Stata in Positron and Copilot"
+---
+
+{{< include /selfstudy/_ex1-1-overview.qmd >}}
+
+{{< include /selfstudy/_ex1-1-details.qmd >}}

@@ -1,0 +1,21 @@
+::: {.callout-warning}
+**Do not use OneDrive for coding with Positron during this course! (temporary)**.
+
+- Positron is a new software for the WB.
+- Unfortunately we only discovered last week that WB security policies **block Positron from writing text files** on OneDrive.
+- Do not save your code-in-progress in a OneDrive folder.
+- New security policy will be implemented Friday, April 24 (Because of the spring meeting freeze).
+
+:::
+
+**To follow along with the course and practice on your own, you need to:**
+
+1. On `C:\WBG\` **create a folder** called `ai`.
+2. Copy exercise templates into `C:\WBG\ai\ai4coding-practice\` using either:
+   - **OneDrive (WB only)** folder [`ai4coding-examples`](https://worldbankgroup-my.sharepoint.com/:f:/g/personal/ebukin_worldbank_org/IgCXQVakSxEpT7VJFmKp_qtnAXx8RX9iemnwfGwITkEA3bE?e=U08qTX)
+   - or **forking the GitHub repo** [worldbank/ai4coding-examples](https://github.com/worldbank/ai4coding-examples)
+3. Work in the relevant exercise subfolder, e.g. `C:\WBG\ai\ai4coding-practice\ex01\`.
+4. Access course data:
+   - Shared through **OneDrive (WB only)** [`ai4coding-data`](https://worldbankgroup-my.sharepoint.com/:f:/r/personal/ebukin_worldbank_org/Documents/AI/AI-course-2026-April/ai4coding-data?csf=1&web=1&e=ITG6Sk)
+   - It is read-only. You can sync it to your OneDrive (where appropriate) and use it from there.
+   - If you encounter problems, copy the data to `C:\WBG\ai\ai4coding-data\`.

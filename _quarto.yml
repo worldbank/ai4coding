@@ -3,66 +3,133 @@ project:
   render:
     - about.qmd
     - index.qmd
-    # - materials/index.qmd
-    - materials/prerequisites/*
-    - materials/day1/*.qmd
-    # - materials/day2/*.qmd
-    # - materials/selfstudy/*.qmd
+    - prerequisites/*.qmd
+    - day1/*.qmd
+    - day1/**/*.qmd
+    - day2/*.qmd
+    - day2/**/*.qmd
+    - selfstudy/*.qmd
 
 
 website:
   title: "AI for Coding"
+  llms-txt: true
+  repo-url: https://github.com/worldbank/ai4coding
+  repo-actions: [source, issue]
   navbar:
     background: primary
     search: true
     left:
       - text: "Home"
         href: index.qmd
-      - text: "Materials"
-        href: materials/index.qmd
+      - text: "Course materials (April 2026)"
+        menu:
+          - text: "Day 1"
+            href: day1/index.qmd
+          - text: "Self Study"
+            href: selfstudy/index.qmd
+          - text: "Day 2"
+            href: day2/index.qmd
+      - text: "Setup"
+        href: prerequisites/index.qmd
+      - text: "Methods"
+        href: methods/index.qmd
       - text: "About"
         href: about.qmd
+    right:
+      - icon: github
+        href: https://github.com/worldbank/ai4coding
+        aria-label: GitHub
+      - text: "Internal Resources"
+        menu:
+          - text: "WB AI‑Assisted Coding for Economists"
+            href: https://worldbankgroup.sharepoint.com/:u:/r/sites/FPG/SitePages/PublishingPages/ai4econ-coding-1776997693304.aspx?csf=1&web=1&e=jx31Xp
+          - text: "GeoPov project"
+            href: https://worldbankgroup.sharepoint.com/:u:/r/sites/FPG/SitePages/PublishingPages/GeoPov-1770874931043.aspx?csf=1&web=1&e=aAiQuQ
+          - text: "geoPovLearn"
+            href: https://worldbank.github.io/geoPovLearn/
+          - text: "Open Source @ WB"
+            href: https://opensource.worldbank.org/
+          - text: "Prosperity VP"
+            href: https://worldbankgroup.sharepoint.com/sites/WBgge/
+          - text: "Distributional Impact of Policies Dep."
+            href: https://worldbankgroup.sharepoint.com/sites/wbpoverty
+
 
   sidebar:
-    - title: "Materials"
+    - title: Setup
       style: "docked"
       pinned: true
       collapse-level: 10
       contents:
-        - section: "Pre-requisites"
-          href: materials/prerequisites/index.qmd
-          contents:
-            - materials/prerequisites/software.qmd
-            - materials/prerequisites/github.qmd
-            - materials/prerequisites/extensions.qmd
-            - materials/prerequisites/assistant.qmd
-            - materials/prerequisites/common-problems.qmd
-        - section: "Day 1"
-          href: materials/day1/index.qmd
-          # contents:
-            # - materials/day1/slides.qmd
-            # - materials/day1/ai-overview.qmd
-            # - materials/day1/case-studies.qmd
-        - section: "Self Study"
-          href: materials/selfstudy/index.qmd
-  #       #   # contents:
-  #       #     # - materials/self-study/case-studies.qmd
-        - section: "Day 2"
-          href: materials/day2/index.qmd
-  #       #   # contents:
-  #       #     # - materials/day2/advanced-topics.qmd
-  #       #     # - materials/day2/case-studies.qmd
+        - prerequisites/index.qmd
+        - prerequisites/software.qmd
+        - prerequisites/github.qmd
+        - prerequisites/extensions.qmd
+        - prerequisites/assistant.qmd
+
+    - title: "Day 1"
+      style: "docked"
+      pinned: true
+      collapse-level: 10
+      contents:
+        - day1/index.qmd
+        - day1/setup-overview.qmd
+        - day1/ai4coding-slides-d1-1/
+        - day1/ai4coding-slides-d1-2/
+        - day1/ai4coding-slides-d1-3/
+
+    - title: "Self Study"
+      style: "docked"
+      pinned: true
+      collapse-level: 10
+      contents:
+        - selfstudy/index.qmd
+        - selfstudy/example-0.qmd
+        - selfstudy/example-1.qmd
+        - selfstudy/example-2.qmd
+        - selfstudy/example-3.qmd
+        - selfstudy/gmd-requirements.qmd
+
+    - title: "Day 2"
+      style: "docked"
+      pinned: true
+      collapse-level: 10
+      contents:
+        - day2/index.qmd
+    - title: "Methods"
+      style: "docked"
+      pinned: true
+      collapse-level: 10
+      contents:
+        - methods/index.qmd
+        - methods/common-workflow.qmd
+        - methods/safeguard-data.qmd
+        - methods/dime-handbook-appendix.qmd
   page-navigation: true
-  back-to-top-navigation: true
+  back-to-top-navigation: false
 
 execute:
   freeze: true
 
+author:
+  - name: Eduard Bukin
+    email: ebukin@worldbank.org
+    url: https://github.com/EBukin
+    affiliations: Distributional Impact of Policies. Fiscal Policy and Growth Department
+
 format:
   html:
+    css: assets/custom.css
     theme:
-      - cosmo
-      - brand
+      light: cosmo
+      dark: darkly
     toc: true
+    toc-depth: 4
     toc-location: right
     lightbox: true
+    code-overflow: wrap
+    code-fold: show
+    code-copy: true
+    code-line-numbers: true
+    code-block-border-left: true

@@ -1,0 +1,265 @@
+﻿---
+title: Global Monitoring Database (GMD) variables specification
+---
+
+## 2. ID Module (IDN)
+
+Household and individual unique identifier
+
+**Table 2.1: ID Module**
+
+| # | Module Code | Variable name | Variable label | Description | Tier |
+|---|-------------|---------------|----------------|-------------|------|
+| 1 | ID | countrycode | Country code | String | 1 |
+| 2 | ID | year | 4-digit survey start year | Numeric | 1 |
+| 3 | ID | int_year | 4-digit year of household survey interview | Numeric | 1 |
+| 4 | ID | int_month | Month of household survey interview | Numeric | 1 |
+| 5 | ID | hhid_orig | Household unique identifier in the raw data | Numeric or string | 1 |
+| 6 | ID | hhid | Household unique identifier | String or numeric | 1 |
+| 7 | ID | pid_orig | Personal unique identifier in the raw data | Numeric or string | 1 |
+| 8 | ID | pid | Personal unique identifier | String or numeric | 1 |
+| 9 | ID | weight | Household weights | Numeric | 1 |
+| 10 | ID | variable name in raw data | Variables used to construct Household identifier | Numeric or string | 1 |
+
+## 3. Geography (GEO)
+
+Location identifier
+
+**Table 3.1: Geography Module**
+
+| # | Module Code | Variable name | Variable label | Allowed codes after standardization | Tier |
+|---|-------------|---------------|----------------|--------------------------------------|------|
+| 1 | ID | countrycode | Country code | String; See Table 2.1 | 1 |
+| 2 | ID | year | Year | Numeric; See Table 2.1 | 1 |
+| 3 | ID | hhid | Household identifier | String or Numeric; See Table 2.1 | 1 |
+| 4 | ID | weight | Household weights | Numeric; See Table 2.1 | 1 |
+| 5 | Geography | subnatid1 | Subnational ID - highest level | String, country-specific categorical variable; numeric entries in string format using the following naming convention: "1 - Hatay" (as string) | 1 |
+| 6 | Geography | subnatid2 | Subnational ID - second highest level | String, country-specific categorical variable; numeric entries in string format using the following naming convention: "1 - Hatay" (as string) | 1 |
+| 7 | Geography | subnatid3 | Subnational ID - third highest level | String, country-specific categorical variable; numeric entries in string format using the following naming convention: "1 - Hatay" (as string) | 2 |
+| 8 | Geography | subnatid4 | Subnational ID - fourth highest level | String, country-specific categorical variable; numeric entries in string format using the following naming convention: "1 - Hatay" (as string) | 2 |
+| 9 | Geography | subnatidsurvey | Lowest level of Subnational ID | String | 1 |
+| 10 | Geography | strata | Strata | String | 1 |
+| 11 | Geography | psu | PSU | Numeric, country-specific | 1 |
+| 12 | Geography | subnatid1_prev | SUBNATID previous - highest level | String, country-specific categorical variable | 2 |
+| 13 | Geography | subnatid2_prev | SUBNATID previous - second highest level | String, country-specific categorical variable | 2 |
+| 14 | Geography | subnatid3_prev | SUBNATID previous - third highest level | String, country-specific categorical variable | 2 |
+| 15 | Geography | subnatid4_prev | SUBNATID previous - lowest level | String, country-specific categorical variable | 2 |
+| 16 | Geography | gaul_adm1_code | Gaul Code | Numeric | 1 |
+| 17 | Geography | gaul_adm2_code | Gaul Code | Numeric | 1 |
+| 18 | Geography | urban | Urban | 1 = Urban; 0 = Rural | 1 |
+
+## 4. Demography, Education & Disability
+
+**Table 4.1: Demography, Education & Disability Module**
+
+| # | Module Code | Variable name | Variable label | Allowed codes after standardization | Tier |
+|---|-------------|---------------|----------------|--------------------------------------|------|
+| 1 | ID | countrycode | Country code | String; See Table 2.1 | 1 |
+| 2 | ID | year | Year | Numeric; See Table 2.1 | 1 |
+| 3 | ID | hhid | Household identifier | String or numeric; See Table 2.1 | 1 |
+| 4 | ID | pid | Personal identifier | String or numeric | 1 |
+| 5 | ID | weight | Weight | Numeric; See Table 2.1 | 1 |
+| 6 | Demography | language | Language | String, country-specific categorical variable | 2 |
+| 7 | Demography | age | Age of individual (continuous) | Numeric, continuous | 1 |
+| 8 | Demography | agecat | Age of individual (categorical) | String, country-specific categorical variable | 1 |
+| 9 | Demography | childyr | Child age in years for those under 5 | Numeric, continuous | 1 |
+| 10 | Demography | childmth | Child age in months those under 5 | Numeric, continuous | 1 |
+| 11 | Demography | male | Sex of household member | 1 = Male; 0 = Female | 1 |
+| 12 | Demography | relationcs | Relationship to head of household country/region specific | String, country-specific categorical variable | 1 |
+| 13 | Demography | relationharm | Relationship to head of household harmonized across all regions | 1 = Head; 2 = Spouse; 3 = Children; 4 = Parent; 5 = Other relative; 6 = Non-relative | 1 |
+| 14 | Demography | marital | Marital status | 1 = Married; 2 = Never married; 3 = Living together; 4 = Divorced/separated; 5 = Widowed | 1 |
+| 15 | Education | literacy | Can both read and write | 1 = Yes; 0 = No | 1 |
+| 16 | Education | everattend | Ever attended school | 1 = Yes; 0 = No | 1 |
+| 17 | Education | mineducatage | Education module application age (country specific) | Numeric | 1 |
+| 18 | Education | educat7 | Highest level of education completed (7 categories) | 1 = No education; 2 = Primary incomplete | 1 |
+| 19 | Education | educat5 | Highest level of education completed (5 categories) | 1 = No education; 2 = Primary incomplete; 3 = Primary complete but secondary incomplete; 4 = Secondary complete; 5 = Some tertiary/post-secondary | 1 |
+| 20 | Education | educat4 | Highest level of education completed (4 categories) | 1 = Incomplete secondary; 2 = General Secondary; 3 = Special Secondary; 4 = Tertiary; 5 = None or incomplete primary | 1 |
+| 21 | Education | educy | Years of education | Numeric | |
+| 22 | Education | primarycomp | Primary school completion | 1 = Yes; 0 = No | 1 |
+| 23 | Education | school | Currently enrolled in school | 1 = Yes; 0 = No | 1 |
+| 24 | Disability | eye_dsablty | Eye disability | 1 = No - no difficulty; 2 = Yes - some difficulty; 3 = Yes - a lot of difficulty; 4 = Cannot do at all | 1 |
+| 25 | Disability | hear_dsablty | Hearing disability | 1 = No - no difficulty; 2 = Yes - some difficulty; 3 = Yes - a lot of difficulty; 4 = Cannot do at all | 1 |
+| 26 | Disability | walk_dsablty | Walk disability | 1 = No - no difficulty; 2 = Yes - some difficulty; 3 = Yes - a lot of difficulty; 4 = Cannot do at all | 1 |
+| 27 | Disability | conc_dsord | Concentration disorder | 1 = No - no difficulty; 2 = Yes - some difficulty; 3 = Yes - a lot of difficulty; 4 = Cannot do at all | 1 |
+| 28 | Disability | slfcre_dsablty | Selfcare disability | 1 = No - no difficulty; 2 = Yes - some difficulty; 3 = Yes - a lot of difficulty; 4 = Cannot do at all | 1 |
+| 29 | Disability | comm_dsablty | Communication disability | 1 = No - no difficulty; 2 = Yes - some difficulty; 3 = Yes - a lot of difficulty; 4 = Cannot do at all | 1 |
+
+## 5. Labor Module (LBR)
+
+Labor (7-day recall and 12-month recall)
+
+**Table 5.1: Labor status, 7-day reference period**
+
+| # | Module Code | Variable name | Variable label | Allowed codes after standardization | Tier |
+|---|-------------|---------------|----------------|--------------------------------------|------|
+| 1 | ID | countrycode | Country code | String; See Table 2.1 | 1 |
+| 2 | ID | year | Year | Numeric; See Table 2.1 | 1 |
+| 3 | ID | hhid | Household identifier | String or numeric; See Table 2.1 | 1 |
+| 4 | ID | pid | Personal identifier | String or numeric; See Table 2.1 | 1 |
+| 5 | ID | weight | Weight | Numeric; See Table 2.1 | 1 |
+| 6 | Labor | minlaborage | Labor module application age (country-specific) | Numeric | 1 |
+| 7 | Labor | lstatus | Labor status (7-day ref period) | 1 = Employed; 2 = Unemployed; 3 = Not-in-labor force | 1 |
+| 9 | Labor | nlfreason | Reason not in the labor force (7-day ref period) | 1 = Student; 2 = Housewife; 3 = Retired; 4 = Disabled; 5 = Other | 1 |
+| 10 | Labor | unempldur_l | Unemployment duration (months) lower bracket (7-day ref period) | Continuous variable | 1 |
+| 11 | Labor | unempldur_u | Unemployment duration (months) upper bracket (7-day ref period) | Continuous variable | 1 |
+
+**Table 5.2: Primary Employment, 7-day reference period**
+
+| # | Module Code | Variable name | Variable label | Allowed codes after standardization | Tier |
+|---|-------------|---------------|----------------|--------------------------------------|------|
+| 1 | Labor | empstat | Employment status, primary job (7-day ref period) | 1 = Paid Employee; 2 = Non-Paid Employee; 3 = Employer; 4 = Self-employed; 5 = Other, workers not classifiable by status | 1 |
+| 2 | Labor | ocusec | Sector of activity, primary job (7-day ref period) | 1 = Public sector, Central Government, Army; 2 = Private, NGO; 3 = State owned; 4 = Public or State-owned, but cannot distinguish | 1 |
+| 3 | Labor | industry_orig | Original industry code, primary job (7-day ref period) | Country specific | 1 |
+| 4 | Labor | industrycat10 | 1 digit industry classification, primary job (7-day ref period) | 1 = Agriculture, Hunting, Fishing, etc.; 2 = Mining; 3 = Manufacturing; 4 = Public Utility Services; 5 = Construction; 6 = Commerce; 7 = Transport and Communications; 8 = Financial and Business Services; 9 = Public Administration; 10 = Other Services, Unspecified | 1 |
+| 5 | Labor | industrycat4 | 4-category industry classification, primary job (7-day ref period) | 1 = Agriculture; 2 = Industry; 3 = Services; 4 = Other | 1 |
+| 6 | Labor | occup_orig | Original occupation classification, primary job (7-day ref period) | Country specific | 1 |
+| 7 | Labor | occup | 1-digit occupation classification, primary job (7-day ref period) | 1 = Managers; 2 = Professionals; 3 = Technicians and associate professionals; 4 = Clerical support workers; 5 = Service and sales workers; 6 = Skilled agricultural, forestry and fishery workers; 7 = Craft and related trades workers; 8 = Plant and machine operators, and assemblers; 9 = Elementary occupations; 10 = Armed forces occupations; 99 = Other/unspecified | 1 |
+| 8 | Labor | wage_no_compen | Last wage payment, primary job, excl. bonuses, etc. (7-day ref period) | Continuous variable | 1 |
+| 9 | Labor | unitwage | Time unit of last wages payment, primary job (7-day ref period) | 1 = Daily; 2 = Weekly; 3 = Every two weeks; 4 = Every two months; 5 = Monthly; 6 = Quarterly; 7 = Every six months; 8 = Annually; 9 = Hourly; 10 = Other | 1 |
+| 10 | Labor | whours | Hours of work in last week, primary job (7-day ref period) | Continuous variable | 1 |
+| 11 | Labor | wmonths | Months worked in the last 12 months, primary job (7-day ref period) | Continuous variable | 1 |
+| 12 | Labor | wage_total | Annualized total wage, primary job (7-day ref period) | Continuous variable | 1 |
+| 13 | Labor | contract | Contract (7-day ref period) | 0 = No; 1 = Yes | 1 |
+| 14 | Labor | healthins | Health insurance (7-day ref period) | 0 = No; 1 = Yes | 1 |
+| 15 | Labor | socialsec | Social security (7-day ref period) | 0 = No; 1 = Yes | 1 |
+| 16 | Labor | union | Union membership (7-day ref period) | 0 = No; 1 = Yes | 1 |
+| 17 | Labor | firmsize_l | Firm size (lower bracket), primary job (7-day ref period) | Continuous variable | 1 |
+| 18 | Labor | firmsize_u | Firm size (upper bracket), primary job (7-day ref period) | Continuous variable | 1 |
+
+**Table 5.3: Secondary Employment, 7-day reference period**
+
+| # | Module Code | Variable name | Variable label | Allowed codes after standardization | Tier |
+|---|-------------|---------------|----------------|--------------------------------------|------|
+| 1 | Labor | empstat_2 | Employment status, secondary job (7-day ref period) | 1 = Paid Employee; 2 = Non-Paid Employee; 3 = Employer; 4 = Self-employed; 5 = Other, workers not classifiable by status | 2 |
+| 2 | Labor | ocusec_2 | Sector of activity, secondary job (7-day ref period) | 1 = Public sector, Central Government, Army; 2 = Private, NGO; 3 = State owned; 4 = Public or State-owned, but cannot distinguish | 2 |
+| 3 | Labor | industry_orig_2 | Original industry code, secondary job (7-day ref period) | Country specific | 2 |
+| 4 | Labor | industrycat10_2 | 1 digit industry classification, secondary job (7-day ref period) | 1 = Agriculture, Hunting, Fishing, etc.; 2 = Mining; 3 = Manufacturing; 4 = Public Utility Services; 5 = Construction; 6 = Commerce; 7 = Transport and Communications; 8 = Financial and Business Services; 9 = Public Administration; 10 = Other Services, Unspecified | 2 |
+| 5 | Labor | industrycat4_2 | 4-category industry classification, secondary job (7-day ref period) | 1 = Agriculture; 2 = Industry; 3 = Services; 4 = Other | 2 |
+| 6 | Labor | occup_orig_2 | Original occupational classification, secondary job (7-day ref period) | Country specific | 2 |
+| 7 | Labor | occup_2 | 1-digit occupation classification, secondary job (7-day ref period) | 1 = Managers; 2 = Professionals; 3 = Technicians and associate professionals; 4 = Clerical support workers; 5 = Service and sales workers; 6 = Skilled agricultural, forestry and fishery workers; 7 = Craft and related trades workers; 8 = Plant and machine operators, and assemblers; 9 = Elementary occupations; 10 = Armed forces occupations; 99 = Other/unspecified | 2 |
+| 8 | Labor | wage_nc_2 | Last wage payment, secondary job, excl. bonuses, etc. (7-day ref period) | Continuous variable | 2 |
+| 9 | Labor | unitwage_2 | Time unit of last wages payment, secondary job (7-day ref period) | 1 = Daily; 2 = Weekly; 3 = Every two weeks; 4 = Every two months; 5 = Monthly; 6 = Quarterly; 7 = Every six months; 8 = Annually; 9 = Hourly; 10 = Other | 2 |
+| 10 | Labor | whours_2 | Hours of work in last week, secondary job (7-day ref period) | Continuous variable | 1 |
+| 11 | Labor | wmonths_2 | Months worked in the last 12 months, secondary job (7-day ref period) | Continuous variable | 1 |
+| 12 | Labor | wage_total_2 | Annualized total wage, secondary job (7-day ref period) | Continuous variable | 2 |
+| 13 | Labor | firmsize_l_2 | Firm size (lower bracket), secondary job (7-day ref period) | Continuous variable | 2 |
+| 14 | Labor | firmsize_u_2 | Firm size (upper bracket), secondary job (7-day ref period) | Continuous variable | 2 |
+
+**Table 5.4: Other employment earnings, 7-day reference period**
+
+| # | Module Code | Variable name | Variable label | Allowed codes after standardization | Tier |
+|---|-------------|---------------|----------------|--------------------------------------|------|
+| 1 | Labor | t_hours_others | Total hours of work in the last 7-day in other jobs excluding the primary and secondary ones | Continuous variable | 1 |
+| 2 | Labor | t_wage_nc_others | Annualized wage in all jobs excluding the primary and secondary ones (excluding tips, bonuses, etc.) | Continuous variable | 1 |
+| 3 | Labor | t_wage_others | Annualized wage (including tips, bonuses, etc.) in all other jobs excluding the primary and secondary ones | Continuous variable | 1 |
+
+**Table 5.5: Total employment earnings, 7-day reference period**
+
+| # | Module Code | Variable name | Variable label | Allowed codes after standardization | Tier |
+|---|-------------|---------------|----------------|--------------------------------------|------|
+| 1 | Labor | t_hours_total | Annualized hours worked in all jobs (7-day ref period) | Continuous variable | 1 |
+| 2 | Labor | t_wage_nc_total | Annualized wage in all jobs excl. bonuses, etc. (7-day ref period) | Continuous variable | 1 |
+| 3 | Labor | t_wage_total | Annualized total wage for all jobs (7-day ref period) | Continuous variable | 1 |
+
+**Table 5.6: Labour force status, 12-month reference period**
+
+| # | Module Code | Variable name | Variable label | Allowed codes after standardization | Tier |
+|---|-------------|---------------|----------------|--------------------------------------|------|
+| 1 | Labor | minlaborage_year | Labor module application age | Numeric | 1 |
+| 2 | Labor | lstatus_year | Labor status (12-month ref period) | 1 = Employed; 2 = Unemployed; 3 = Not-in-labor force | 1 |
+| 3 | Labor | nlfreason_year | Reason not in the labor force (12-month ref period) | 1 = Student; 2 = Housewife; 3 = Retired; 4 = Disabled; 5 = Other | 1 |
+| 4 | Labor | unempldur_l_year | Unemployment duration (months) lower bracket (12-month ref period) | Continuous variable | 1 |
+| 5 | Labor | unempldur_u_year | Unemployment duration (months) upper bracket (12-month ref period) | Continuous variable | 1 |
+
+**Table 5.7: Primary Employment, 12-month reference period**
+
+| # | Module Code | Variable name | Variable label | Allowed codes after standardization | Tier |
+|---|-------------|---------------|----------------|--------------------------------------|------|
+| 1 | Labor | empstat_year | Employment status, primary job (12-month ref period) | 1 = Paid Employee; 2 = Non-Paid Employee; 3 = Employer; 4 = Self-employed; 5 = Other workers not classifiable by status | 1 |
+| 2 | Labor | ocusec_year | Sector of activity, primary job (12-month ref period) | 1 = Public sector, Central Government, Army; 2 = Private, NGO; 3 = State owned; 4 = Public or State-owned, but cannot distinguish | 1 |
+| 3 | Labor | industry_orig_year | Original industry code, primary job (12-month ref period) | Country specific | 1 |
+| 4 | Labor | industrycat10_year | 1 digit industry classification, primary job (12-month ref period) | 1 = Agriculture, Hunting, Fishing, etc.; 2 = Mining; 3 = Manufacturing; 4 = Public Utility Services; 5 = Construction; 6 = Commerce; 7 = Transport and Communications; 8 = Financial and Business Services; 9 = Public Administration; 10 = Other Services, Unspecified | 1 |
+| 5 | Labor | industrycat4_year | 4-category industry classification, primary job (12-month ref period) | 1 = Agriculture; 2 = Industry; 3 = Services; 4 = Other | 1 |
+| 6 | Labor | occup_orig_year | Original occupation classification, primary job (12-month ref period) | Country specific | 1 |
+| 7 | Labor | occup_year | 1-digit occupation classification, primary job (12-month ref period) | 1 = Managers; 2 = Professionals; 3 = Technicians and associate professionals; 4 = Clerical support workers; 5 = Service and sales workers; 6 = Skilled agricultural, forestry and fishery workers; 7 = Craft and related trades workers; 8 = Plant and machine operators, and assemblers; 9 = Elementary occupations; 10 = Armed forces occupations; 99 = Other/unspecified | 1 |
+| 8 | Labor | wage_nc_year | Last wage payment, primary job, excl. bonuses, etc. (12-month ref period) | Continuous variable | 1 |
+| 9 | Labor | unitwage_year | Time unit of last wages payment, primary job (12-month ref period) | 1 = Daily; 2 = Weekly; 3 = Every two weeks; 4 = Every two months; 5 = Monthly; 6 = Quarterly; 7 = Every six months; 8 = Annually; 9 = Hourly; 10 = Other | 1 |
+| 10 | Labor | whours_year | Hours of work in last week, primary job (12-month ref period) | Continuous variable | 1 |
+| 11 | Labor | wmonths_year | Months worked in the last 12 months, primary job (12-month ref period) | Continuous variable | 1 |
+| 12 | Labor | wage_total_year | Annualized total wage, primary job (12-month ref period) | Continuous variable | 1 |
+| 13 | Labor | contract_year | Contract (12-month ref period) | 0 = No; 1 = Yes | 1 |
+| 14 | Labor | healthins_year | Health insurance (12-month ref period) | 0 = No; 1 = Yes | 1 |
+| 15 | Labor | socialsec_year | Social security (12-month ref period) | 0 = No; 1 = Yes | 1 |
+| 16 | Labor | union_year | Union membership (12-month ref period) | 0 = No; 1 = Yes | 1 |
+| 17 | Labor | firmsize_l_year | Firm size (lower bracket), primary job (12-month ref period) | Continuous variable | 1 |
+| 18 | Labor | firmsize_u_year | Firm size (upper bracket), primary job (12-month ref period) | Continuous variable | 1 |
+
+**Table 5.8: Secondary Employment, 12-month reference period**
+
+| # | Module Code | Variable name | Variable label | Allowed codes after standardization | Tier |
+|---|-------------|---------------|----------------|--------------------------------------|------|
+| 1 | Labor | empstat_2_year | Employment status, primary job (12-month ref period) | 1 = Paid Employee; 2 = Non-Paid Employee; 3 = Employer; 4 = Self-employed; 5 = Other workers not classifiable by status | 2 |
+| 2 | Labor | ocusec_2_year | Sector of activity, secondary job (12-month ref period) | 1 = Public sector, Central Government, Army; 2 = Private, NGO; 3 = State owned; 4 = Public or State-owned, but cannot distinguish | 2 |
+| 3 | Labor | industry_orig_2_year | Original industry code, secondary job (12-month ref period) | Country specific | 2 |
+| 4 | Labor | industrycat10_2_year | 1 digit industry classification, secondary job (12-month ref period) | 1 = Agriculture, Hunting, Fishing, etc.; 2 = Mining; 3 = Manufacturing; 4 = Public Utility Services; 5 = Construction; 6 = Commerce; 7 = Transport and Communications; 8 = Financial and Business Services; 9 = Public Administration; 10 = Other Services, Unspecified | 2 |
+| 5 | Labor | industrycat4_2_year | 4-category industry classification, secondary job (12-month ref period) | 1 = Agriculture; 2 = Industry; 3 = Services; 4 = Other | 2 |
+| 6 | Labor | occup_orig_2_year | Original occupation classification, secondary job (12-month ref period) | Country specific | 2 |
+| 7 | Labor | occup_2_year | 1-digit occupation classification, secondary job (12-month ref period) | 1 = Managers; 2 = Professionals; 3 = Technicians and associate professionals; 4 = Clerical support workers; 5 = Service and sales workers; 6 = Skilled agricultural, forestry and fishery workers; 7 = Craft and related trades workers; 8 = Plant and machine operators, and assemblers; 9 = Elementary occupations; 10 = Armed forces occupations; 99 = Other/unspecified | 2 |
+| 8 | Labor | wage_nc_2_year | Last wage payment, secondary job, excl. bonuses, etc. (12-month ref period) | Continuous variable | 1 |
+| 9 | Labor | unitwage_2_year | Time unit of last wages payment, secondary job (12-month ref period) | 1 = Daily; 2 = Weekly; 3 = Every two weeks; 4 = Every two months; 5 = Monthly; 6 = Quarterly; 7 = Every six months; 8 = Annually; 9 = Hourly; 10 = Other | 1 |
+| 10 | Labor | whours_2_year | Hours of work in last week, secondary job (12-month ref period) | Continuous variable | 1 |
+| 11 | Labor | wmonths_2_year | Months worked in the last 12 months, secondary job (12-month ref period) | Continuous variable | 1 |
+| 12 | Labor | wage_total_2_year | Annualized total wage, secondary job (12-month ref period) | | 2 |
+| 13 | Labor | firmsize_l_2_year | Firm size (lower bracket), secondary job (12-month ref period) | Continuous variable | 2 |
+| 14 | Labor | firmsize_u_2_year | Firm size (upper bracket), secondary job (12-month ref period) | Continuous variable | 2 |
+
+**Table 5.9: Other employment earnings, 12-month reference period**
+
+| # | Module Code | Variable name | Variable label | Allowed codes after standardization | Tier |
+|---|-------------|---------------|----------------|--------------------------------------|------|
+| 1 | Labor | t_hours_others_year | Total hours of work in the last 12 months in other jobs excluding the primary and secondary ones | Continuous variable | 1 |
+| 2 | Labor | t_wage_nc_others_year | Annualized wage in all jobs excluding the primary and secondary ones (excluding tips, bonuses, etc.) | Continuous variable | 1 |
+| 3 | Labor | t_wage_others_year | Annualized wage (including tips, bonuses, etc.) in all other jobs excluding the primary and secondary ones | Continuous variable | 1 |
+
+**Table 5.10: Total employment earnings, 12-month reference period**
+
+| # | Module Code | Variable name | Variable label | Allowed codes after standardization | Tier |
+|---|-------------|---------------|----------------|--------------------------------------|------|
+| 1 | Labor | t_hours_total_year | Annualized hours worked in all jobs (12-month ref period) | Continuous variable | 1 |
+| 2 | Labor | t_wage_nc_total_year | Annualized wage in all jobs excl. bonuses, etc. (12-month ref period) | Continuous variable | 1 |
+| 3 | Labor | t_wage_total_year | Annualized total wage for all jobs (12-month ref period) | Continuous variable | 1 |
+
+**Table 5.11: Total Labor Income**
+
+| # | Module Code | Variable name | Variable label | Allowed codes after standardization | Tier |
+|---|-------------|---------------|----------------|--------------------------------------|------|
+| 1 | Labor | njobs | Total number of jobs | Continuous variable | 1 |
+| 2 | Labor | t_hours_annual | Total hours worked in all jobs in the previous 12 months | Continuous variable | 1 |
+| 3 | Labor | linc_nc | Total annual wage income in all jobs, excl. bonuses, etc. | Continuous variable | 1 |
+| 4 | Labor | laborincome | Total annual individual labor income in all jobs, incl. bonuses, etc. | Continuous variable | 1 |
+
+## 8. Consumption (CONS)
+
+Consumption variables used for national and international level poverty estimation.
+
+**Table 8.1: Consumption variables**
+
+| # | Module code | Variable name | Variable label | Tier |
+|---|-------------|---------------|----------------|------|
+| 1 | ID | countrycode | Country code | 1 |
+| 2 | ID | year | Year (survey start year) | 1 |
+| 3 | ID | hhid | Household unique identifier | 1 |
+| 4 | ID | weight | Household weights | 1 |
+| 5 | ID | hhsize | Household size | 1 |
+| 6 | ID | ctry_adq | Sum total of adult equivalent scales (country-specific scales) | 1 |
+| 7 | Consumption | fdtexp_own | Total annual household own food consumption | 1 |
+| 8 | Consumption | fdtexp_buy | Total annual household purchased food consumption | 1 |
+| 9 | Consumption | fdtexp | Total annual household food expenditure | 1 |
+| 10 | Consumption | nfdtexp | Total annual non-food expenditure | 1 |
+| 11 | Consumption | totexp | Total annual consumption of food and nonfood | 1 |
+| 12 | Consumption | fdpindex | Food price index (spatial and/or temporal) | 1 |
+| 13 | Consumption | nfdpindex | Non-food price index (spatial and/or temporal) | 1 |
+| 14 | Consumption | pindex | Price index (spatial and/or temporal) | 1 |
+| 15 | Consumption | ctry_totexp | Total annual consumption of food and nonfood | 1 |
+| 16 | Consumption | pl_ext | Extreme poverty line | 1 |
+| 17 | Consumption | pl_abs | Absolute/overall poverty line | 1 |

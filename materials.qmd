@@ -1,0 +1,22 @@
+## What this course is about
+
+AI coding assistants can do much more than autocomplete. With the right setup,
+they read your data dictionaries, generate analysis code in Stata, R, or Python,
+check it against coding standards, and iterate until the output is correct —
+while you stay in control of every step.
+
+This course teaches you how. Two 3-hour live sessions, a self-study period in
+between, and structured exercises take you from first setup to delegating
+multi-step analytical tasks to an AI agent.
+
+## What you will learn
+
+| | |
+|---|---|
+| **Understand** | How LLMs, tokens, context windows, and agents work — and where they fail |
+| **Apply** | AI assistance to read, revise, and reuse existing code; plan and execute complex tasks with agentic workflows; engineer context with `#tools`, `skills`, and `/agents` |
+| **Take control** | Safeguard sensitive data, follow WB responsible-use guidelines, and supervise AI-generated code through iterative review |
+
+The course is hands-on — the main learning happens through doing. All
+materials — slides, written guides, exercises, and **recordings** — are
+available on this site for self-paced review.

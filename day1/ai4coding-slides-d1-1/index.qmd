@@ -1,0 +1,206 @@
+---
+title: "AI 4 Coding"
+subtitle: "Day 1: Course Overview"
+date: "April 20, 2026"
+format:
+  revealjs:
+    theme: [simple, custom.scss]
+    include-after-body:
+      - text: |
+          <script>
+          (function() {
+            function toggleFooter() {
+              var f = document.querySelector(".reveal > .footer");
+              if (!f || typeof Reveal === "undefined") return;
+              var i = Reveal.getIndices();
+              f.style.display = (i.h === 0 && i.v === 0) ? "none" : "block";
+            }
+            if (typeof Reveal !== "undefined") {
+              Reveal.on("slidechanged", toggleFooter);
+              Reveal.on("ready", toggleFooter);
+              if (Reveal.isReady()) toggleFooter();
+            }
+          })();
+          </script>
+    code-copy: false
+    margin: 0.10
+    html-math-method: mathjax
+    slide-number: c/t
+    background-transition: zoom
+    preload-iframes: true
+    scrollable: true
+    transition: fade
+    preview-links: auto
+    logo: /assets/img/WBG-Prosperity Horizontal-Black.svg
+    footer: '[worldbank.github.io/ai4coding](https://worldbank.github.io/ai4coding) © 2026 World Bank.'
+    resources:
+        - /assets/img/WBG-Prosperity Horizontal-Black.svg
+---
+
+
+## Motivation
+
+::::::::: {.small}
+:::::: columns
+::: {.column width="50%"}
+**Chat-Based AI tools** [Claude](https://www.anthropic.com/claude) \| [ChatGPT](https://chatgpt.com/) \| [Gemini](https://search.google/ai-in-search/) \| [MAI](https://ai.worldbank.org/chat/mai)
+
+- Use familiar technologies: 🌐 web browser, 💬 chat, 📝 Stata editor, [**📋 copy-paste**]{.warning}.
+- Improve our workflow.
+
+[**Is this the most effective way to use AI in coding❓**]{.fg}
+:::
+
+::: {.column width="50%"}
+There are many [**Integrated** Development Environments (IDEs)]{.highlight} for data science with AI as a part of your coding workflow.
+Introducing [**Positron**]{.bg} with [**GitHub Copilot**]{.fg} is the goal of this course.
+:::
+::::::
+
+[See also: previous seminar on [AI-Assisted Coding in Stata and R](https://worldbank.github.io/geoPovLearn/seminars/seminar-2026-02/overview.html) on [GeoPovlearn](https://worldbank.github.io/geoPovLearn).]{.center .alert}
+:::::::::
+
+## Course Overview {.center .small-slide}
+
+[**Goal:** Equip economists with AI-skills for coding.]{.alert}
+
+[2 × 3-hour sessions]{.pill} [Self-study in between]{.pill} [GitHub Copilot · Positron IDE]{.pill} [Stata & modern stat languages]{.pill}
+
+:::: {.columns}
+
+::: {.column width="32%" .obj-card .card-understand}
+#### Understand
+
+- Core LLM concepts: tokens, prompts, context windows, agents
+- How these affect AI-assisted coding
+- AI's strengths and limitations
+:::
+
+::: {.column width="2%" }
+:::
+
+::: {.column width="33%" .obj-card .card-apply}
+#### Practice
+
+- Use AI to write code and reuse old code
+- Plan execution and write prompts for multi-step tasks
+- Supervise and course-correct AI-generated code
+- Leverage out-of-the-box tech: `#tools`, `skills`, `/agents`, `/prompts`, etc.
+:::
+
+::: {.column width="2%" }
+:::
+
+::: {.column width="31%" .obj-card .card-control}
+#### Take Control
+
+- Adopt decent workflows for AI-assisted coding.
+- Comply with data-safeguard practices.
+- Use AI responsibly for coding.
+:::
+
+::::
+
+
+## Course content {.small-slide}
+
+:::: {.columns}
+
+::: {.column width="30%" .phase-card .phase-day1}
+#### [Day 1](/day1/index.qmd#materials)
+**Basics**
+
+- Software setup & walk-through
+- Key concepts: IDE, assistants, context, tokens, LLM, and how it works
+- Examples: data preparation and cleaning, and security techniques
+- Common techniques: managing AI's context and securing your data
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="30%" .phase-card .phase-selfstudy}
+#### Self-Study
+**The most important part**
+
+- Practice AI use with your own code
+- [Structured examples](/selfstudy/index.qmd) and <!-- REVIEW: empty href — add target URL for learning materials --> [learning materials]() to guide you
+- Examples:
+  - [Testing your setup](/selfstudy/example-0.qmd){target="_blank"}
+  - [Explore positron (self-study)](/selfstudy/example-1.qmd){target="_blank"}
+  - [Understanding data with AI (live)](/selfstudy/example-2.qmd){target="_blank"}
+  - [Reproduce, Revise, and Reuse existing analysis](/selfstudy/example-3.qmd){target="_blank"}
+- Come back with questions & observations
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="30%" .phase-card .phase-day2}
+#### Day 2
+**Go deeper**
+
+- Debrief self-study experiences
+- Examples: `planning`, using `#tools`, `skills`, `/agents`, and `/prompt-files`.
+- Other relevant techniques
+:::
+
+::::
+
+## Logistics
+
+| | Morning | Evening (repeat) |
+|-----------| ---------------------- | ----------------------|
+| **Format** | In person + virtual | Virtual only |
+| **Day 1** | Mon Apr 20, 9 AM–12 PM ET | Mon Apr 20, 9 PM–12 AM ET |
+| **Day 2** | Thu Apr 23, 9 AM–12 PM ET | Thu Apr 23, 9 PM–12 AM ET |
+
+- Evening repeat session is for those who cannot attend the morning session. It will cover the same material, but it will be virtual only.
+
+- Questions during the session: **use the Teams chat** or raise your hand.
+
+## Today's Agenda {.tiny-slide}
+
+| Time        | Topic |
+|---------------|----------------------------------------------------------|
+| 9:00-9:10   | 1. Welcome and course overview (slides) |
+| 9:10-9:40   | 2. Setup overview (slides). Example 0 (live) and Example 1 (self-study) |
+| 9:40-10:20  | 3. Example 2: Understanding data with AI (live) |
+| 10:20-10:30 | ☕ Break (10 min) |
+| 10:30-10:50 | 4. Core AI-related concepts |
+| 10:50-11:00 | 5. Common workflows and data safeguarding (slides) |
+| 11:00-11:30 | 6. Example 3: Reproduce, Revise, and Reuse existing analysis (live/self-study) |
+
+## Course resources {.small-slide .slide-resources}
+
+:::: {.columns}
+::: {.column width="40%"}
+[worldbank.github.io/ai4coding](https://worldbank.github.io/ai4coding)
+
+- References, detailed explanations, guided self-study exercises and recordings, along with in-class materials.
+
+[github.com/worldbank/ai4coding-examples](https://github.com/worldbank/ai4coding-examples)
+
+- Code for exercises and examples.
+- Also available on OneDrive for WB staff: [ai4coding-examples](https://worldbankgroup-my.sharepoint.com/:f:/g/personal/ebukin_worldbank_org/IgCXQVakSxEpT7VJFmKp_qtnAXx8RX9iemnwfGwITkEA3bE?e=U08qTX)
+
+[ai4coding-data](https://worldbankgroup-my.sharepoint.com/:f:/g/personal/ebukin_worldbank_org/IgBy2yGjpLJPRbM67FJpBFVgAbMRYhEPmS30H2RJSBFO_gE?e=GlDEiR) - data for exercises (OneDrive - WB only)
+
+Previous seminar on [AI-Assisted Coding in Stata and R](https://worldbank.github.io/geoPovLearn/seminars/seminar-2026-02/overview.html) on [GeoPovlearn](https://worldbank.github.io/geoPovLearn)
+
+:::
+::: {.column width="60%"}
+:::
+::::
+
+<iframe src="/index.html" class="absolute" style="right: 0; top: 0; width: 60%; height: 100%; border: 1px solid #ccc; zoom: 0.4;">
+
+</iframe>
+
+## What next?
+
+1. [Set up the software](/prerequisites/software.qmd){target="_blank"}.
+
+2. [Set up your course working folder](/day1/index.qmd#setup-overview){target="_blank"} and copy relevant materials into it.
+
+3. Follow along with the materials for [Day 1](/day1/index.qmd).
